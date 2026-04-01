@@ -1,6 +1,13 @@
 {
-  "arow_websocket_url": null,
-  "arow_active": false,
-  "ephemeris_url": null,
-  "message": "Artemis II launches April 1, 2026!"
+  "arow_active": true,
+  "arow_polling": true,
+  "arow_base_url": "https://storage.googleapis.com/p-2-cen1/",
+  "arow_data_files": [
+    "October/1/October_105_1.txt",
+    "lo/2/lo_108_2.txt"
+  ],
+  "arow_poll_interval_seconds": 10,
+  "message": "AROW is live! Telemetry streaming from Google Cloud Storage via HTTP polling.",
+  "launch_time_utc": "2026-04-01T22:24:00Z",
+  "updated_at": "2026-04-02T00:24:00+02:00"
 }
