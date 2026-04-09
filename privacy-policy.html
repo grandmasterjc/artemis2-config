@@ -14,7 +14,7 @@
 </head>
 <body>
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: March 25, 2026</p>
+    <p class="updated">Last updated: April 9, 2026</p>
 
     <p>Artemis II Tracker ("the App") is developed by Bit Factory. This policy describes how the App handles your information.</p>
 
@@ -22,11 +22,21 @@
     <p>The App does <strong>not</strong> collect, store, or transmit any personal data. Specifically:</p>
     <ul>
         <li>No account or login is required</li>
-        <li>No personal information is requested or stored</li>
-        <li>No analytics or tracking SDKs are included</li>
-        <li>No cookies or identifiers are used</li>
-        <li>No data is shared with third parties</li>
+        <li>No personal information (name, email, location) is requested or stored</li>
+        <li>No advertising identifiers (IDFA) are collected</li>
+        <li>No cookies are used</li>
     </ul>
+
+    <h2>Analytics</h2>
+    <p>The App uses <strong>Google Firebase Analytics</strong> to collect anonymous usage data. This helps us understand how the App is used and improve it. The data collected includes:</p>
+    <ul>
+        <li>App opens and screen views</li>
+        <li>Feature usage (e.g., which screens are visited most)</li>
+        <li>Purchase events (product type only, no payment details)</li>
+        <li>Device type and operating system version</li>
+        <li>Approximate location (country/region level, derived from IP address)</li>
+    </ul>
+    <p>This data is <strong>anonymous</strong> and cannot be used to identify you personally. No Advertising Identifier (IDFA) is collected, and no data is shared with advertisers. You can learn more about Google's data practices at <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</p>
 
     <h2>Network Requests</h2>
     <p>The App makes network requests to the following public services to display mission data:</p>
@@ -34,16 +44,18 @@
         <li><strong>NASA Open APIs</strong> (api.nasa.gov) — Astronomy Picture of the Day, space weather data</li>
         <li><strong>Launch Library 2</strong> (ll.thespacedevs.com) — Launch date and status</li>
         <li><strong>NASA AROW</strong> (nasa.gov) — Real-time Orion telemetry (when active during the mission)</li>
+        <li><strong>Community Orbit API</strong> (artemis.cdnspace.ca) — Orbital position data derived from JPL Horizons</li>
         <li><strong>RSS feeds</strong> — News from NASA, Spaceflight Now, Ars Technica, NASASpaceflight, Space.com</li>
         <li><strong>GitHub</strong> (raw.githubusercontent.com) — App configuration file</li>
+        <li><strong>Google Firebase</strong> (app-analytics-services.com) — Anonymous analytics data</li>
     </ul>
-    <p>These requests contain no personal information. Only publicly available mission data is retrieved.</p>
+    <p>Mission data requests contain no personal information. Only publicly available data is retrieved.</p>
 
     <h2>Local Storage</h2>
-    <p>The App stores your unit preference (Imperial/Metric) locally on your device using UserDefaults. This data never leaves your device.</p>
+    <p>The App stores your preferences (unit system, notification settings) locally on your device using UserDefaults. This data never leaves your device.</p>
 
     <h2>Children's Privacy</h2>
-    <p>The App does not collect any personal information from anyone, including children under 13.</p>
+    <p>The App does not knowingly collect any personal information from anyone, including children under 13.</p>
 
     <h2>Changes to This Policy</h2>
     <p>If this policy is updated, the changes will be posted on this page with an updated date.</p>
