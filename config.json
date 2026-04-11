@@ -1,7 +1,6 @@
 {
   "schema_version": 2,
-  "updated_at": "2026-04-11T09:12:00+02:00",
-
+  "updated_at": "2026-04-11T09:52:00+02:00",
   "mission": {
     "id": "artemis-ii",
     "name": "Artemis II",
@@ -18,7 +17,6 @@
     },
     "duration_days": 10
   },
-
   "phases": [
     {
       "id": "launch",
@@ -85,7 +83,6 @@
       "color": "#06D6A0"
     }
   ],
-
   "telemetry": {
     "sources": [
       {
@@ -114,7 +111,6 @@
     ],
     "consecutive_successes_for_switch": 2
   },
-
   "ui": {
     "mission_complete_card": {
       "enabled": true,
@@ -124,7 +120,6 @@
     "banners": [],
     "comms_blackout_windows": []
   },
-
   "sale": {
     "active": false,
     "discount_percent": 70,
@@ -132,16 +127,36 @@
     "yearly_price_override": "$5.99",
     "lifetime_price_override": "$14.99"
   },
-
   "arow_active": true,
   "arow_polling": true,
   "arow_base_url": "https://storage.googleapis.com/p-2-cen1/",
-  "arow_data_files": ["October/1/October_105_1.txt", "lo/2/lo_108_2.txt"],
+  "arow_data_files": [
+    "October/1/October_105_1.txt",
+    "lo/2/lo_108_2.txt"
+  ],
   "arow_poll_interval_seconds": 10,
   "message": "Mission complete.",
   "launch_time_utc": "2026-04-01T22:35:12Z",
   "splashdown_date": "2026-04-11T00:07:00Z",
   "mission_complete": true,
   "splashdown_confirmed": true,
-  "sale_active": false
+  "sale_active": false,
+  "mission_summary": {
+    "total_distance_miles": 700237,
+    "total_distance_km": 1127000,
+    "peak_distance_miles": 252756,
+    "peak_distance_km": 406771,
+    "peak_speed_mph": 24664,
+    "peak_speed_kmh": 39688,
+    "mission_duration": "9 days, 1 hour, 31 minutes",
+    "crew_size": 4,
+    "orbits_of_moon": 0,
+    "closest_lunar_approach_miles": 4067,
+    "closest_lunar_approach_km": 6545,
+    "landing_accuracy": "Within 1 mile of target",
+    "peak_g_force": 3.9,
+    "records_broken": [
+      "Farthest humans from Earth (surpassed Apollo 13 by 4,101 miles)"
+    ]
+  }
 }
