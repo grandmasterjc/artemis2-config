@@ -1,16 +1,146 @@
 {
+  "schema_version": 2,
+  "updated_at": "2026-04-11T09:12:00+02:00",
+
+  "mission": {
+    "id": "artemis-ii",
+    "name": "Artemis II",
+    "state": "complete",
+    "launch": {
+      "date": "2026-04-01T22:35:12Z",
+      "site": "Launch Complex 39B, Kennedy Space Center",
+      "confirmed": true
+    },
+    "splashdown": {
+      "date": "2026-04-11T00:07:00Z",
+      "location": "Pacific Ocean, off the coast of San Diego",
+      "confirmed": true
+    },
+    "duration_days": 10
+  },
+
+  "phases": [
+    {
+      "id": "launch",
+      "name": "Launch",
+      "short": "LAUNCH",
+      "starts_at": "2026-04-01T22:35:12Z",
+      "icon": "flame.fill",
+      "color": "#FF6B35"
+    },
+    {
+      "id": "high_earth_orbit",
+      "name": "High Earth Orbit",
+      "short": "HEO",
+      "starts_at": "2026-04-02T00:35:12Z",
+      "icon": "globe.americas.fill",
+      "color": "#4CC9F0"
+    },
+    {
+      "id": "tli",
+      "name": "Translunar Injection",
+      "short": "TLI",
+      "starts_at": "2026-04-03T00:35:12Z",
+      "icon": "arrow.up.right.circle.fill",
+      "color": "#F72585"
+    },
+    {
+      "id": "coast_to_moon",
+      "name": "Coast to Moon",
+      "short": "COAST TO MOON",
+      "starts_at": "2026-04-03T04:35:12Z",
+      "icon": "moon.fill",
+      "color": "#7B2CBF"
+    },
+    {
+      "id": "lunar_flyby",
+      "name": "Lunar Flyby",
+      "short": "LUNAR FLYBY",
+      "starts_at": "2026-04-06T20:35:12Z",
+      "icon": "moon.circle.fill",
+      "color": "#FFD60A"
+    },
+    {
+      "id": "return_coast",
+      "name": "Return Coast",
+      "short": "RETURN COAST",
+      "starts_at": "2026-04-07T04:35:12Z",
+      "icon": "arrow.turn.down.left",
+      "color": "#4CC9F0"
+    },
+    {
+      "id": "reentry",
+      "name": "Reentry & Splashdown",
+      "short": "REENTRY",
+      "starts_at": "2026-04-10T22:35:12Z",
+      "icon": "flame.fill",
+      "color": "#FF6B35"
+    },
+    {
+      "id": "splashdown",
+      "name": "Splashdown",
+      "short": "SPLASHDOWN",
+      "starts_at": "2026-04-11T00:07:00Z",
+      "icon": "water.waves",
+      "color": "#06D6A0"
+    }
+  ],
+
+  "telemetry": {
+    "sources": [
+      {
+        "id": "arow_gcs",
+        "name": "NASA AROW",
+        "url": "https://storage.googleapis.com/p-2-cen1/October/1/October_105_1.txt",
+        "type": "gcs_text",
+        "priority": 1,
+        "poll_interval_seconds": 60,
+        "stale_after_seconds": 90
+      },
+      {
+        "id": "orbit_api",
+        "name": "JPL Horizons",
+        "url": "https://artemis.cdnspace.ca/api/orbit",
+        "type": "json",
+        "priority": 2,
+        "poll_interval_seconds": 60,
+        "stale_after_seconds": 120,
+        "field_map": {
+          "earth_distance_km": "earthDistKm",
+          "moon_distance_km": "moonDistKm",
+          "speed_km_s": "speedKmS"
+        }
+      }
+    ],
+    "consecutive_successes_for_switch": 2
+  },
+
+  "ui": {
+    "mission_complete_card": {
+      "enabled": true,
+      "title": "MISSION COMPLETE",
+      "body": "Artemis II splashed down safely in the Pacific Ocean on April 10, 2026 at 8:07 PM EDT. All four crew members recovered in good health."
+    },
+    "banners": [],
+    "comms_blackout_windows": []
+  },
+
+  "sale": {
+    "active": false,
+    "discount_percent": 70,
+    "end_condition": "mission_complete",
+    "yearly_price_override": "$5.99",
+    "lifetime_price_override": "$14.99"
+  },
+
   "arow_active": true,
   "arow_polling": true,
   "arow_base_url": "https://storage.googleapis.com/p-2-cen1/",
-  "arow_data_files": [
-    "October/1/October_105_1.txt",
-    "lo/2/lo_108_2.txt"
-  ],
+  "arow_data_files": ["October/1/October_105_1.txt", "lo/2/lo_108_2.txt"],
   "arow_poll_interval_seconds": 10,
-  "message": "AROW is live! Telemetry streaming from Google Cloud Storage via HTTP polling.",
-  "launch_time_utc": "2026-04-01T22:24:00Z",
+  "message": "Mission complete.",
+  "launch_time_utc": "2026-04-01T22:35:12Z",
   "splashdown_date": "2026-04-11T00:07:00Z",
-  "updated_at": "2026-04-11T08:17:00+02:00",
   "mission_complete": true,
   "splashdown_confirmed": true,
   "sale_active": false
