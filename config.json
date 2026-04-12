@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "updated_at": "2026-04-11T09:52:00+02:00",
+  "updated_at": "2026-04-12T08:56:00+02:00",
   "mission": {
     "id": "artemis-ii",
     "name": "Artemis II",
@@ -158,5 +158,145 @@
     "records_broken": [
       "Farthest humans from Earth (surpassed Apollo 13 by 4,101 miles)"
     ]
+  },
+  "nasa_live_video_id": "LHUvedAssyE",
+  "media": {
+    "photos": [
+      {
+        "id": "earthset",
+        "title": "Earthset Behind the Moon",
+        "date": "2026-04-07",
+        "url": "https://www.nasa.gov/image-article/earthset-behind-the-moon/",
+        "thumbnail": "https://www.nasa.gov/wp-content/uploads/2026/04/art002e009275.jpg",
+        "credit": "NASA/Artemis II Crew"
+      },
+      {
+        "id": "hello_world",
+        "title": "Hello, World",
+        "date": "2026-04-03",
+        "url": "https://www.nasa.gov/image-article/hello-world/",
+        "thumbnail": "https://www.nasa.gov/wp-content/uploads/2026/04/art002e000190.jpg",
+        "credit": "NASA/Reid Wiseman"
+      },
+      {
+        "id": "orion_selfie",
+        "title": "Orion Selfie in Deep Space",
+        "date": "2026-04-03",
+        "url": "https://www.nasa.gov/gallery/journey-to-the-moon/",
+        "thumbnail": "https://www.nasa.gov/wp-content/uploads/2026/04/art002e004357.jpg",
+        "credit": "NASA"
+      },
+      {
+        "id": "solar_eclipse",
+        "title": "Solar Eclipse from Orion",
+        "date": "2026-04-07",
+        "url": "https://www.nasa.gov/gallery/journey-to-the-moon/",
+        "thumbnail": "https://www.nasa.gov/wp-content/uploads/2026/04/art002e009276.jpg",
+        "credit": "NASA/Artemis II Crew"
+      },
+      {
+        "id": "wiseman_window",
+        "title": "Commander Wiseman at the Window",
+        "date": "2026-04-06",
+        "url": "https://www.nasa.gov/gallery/journey-to-the-moon/",
+        "thumbnail": "https://www.nasa.gov/wp-content/uploads/2026/04/art002e008486.jpg",
+        "credit": "NASA"
+      },
+      {
+        "id": "koch_window",
+        "title": "Koch Peers at the Moon",
+        "date": "2026-04-06",
+        "url": "https://www.nasa.gov/gallery/journey-to-the-moon/",
+        "thumbnail": "https://www.nasa.gov/wp-content/uploads/2026/04/art002e009274.jpg",
+        "credit": "NASA"
+      },
+      {
+        "id": "glover_window",
+        "title": "Glover Looks Toward Home",
+        "date": "2026-04-06",
+        "url": "https://www.nasa.gov/gallery/journey-to-the-moon/",
+        "thumbnail": "https://www.nasa.gov/wp-content/uploads/2026/04/art002e009273.jpg",
+        "credit": "NASA"
+      },
+      {
+        "id": "hansen_window",
+        "title": "Hansen at the Far Side",
+        "date": "2026-04-06",
+        "url": "https://www.nasa.gov/gallery/journey-to-the-moon/",
+        "thumbnail": "https://www.nasa.gov/wp-content/uploads/2026/04/art002e009272.jpg",
+        "credit": "NASA"
+      },
+      {
+        "id": "earth_sliver",
+        "title": "A Sliver of Earth",
+        "date": "2026-04-04",
+        "url": "https://www.nasa.gov/gallery/journey-to-the-moon/",
+        "thumbnail": "https://www.nasa.gov/wp-content/uploads/2026/04/art002e004462.jpg",
+        "credit": "NASA/Artemis II Crew"
+      },
+      {
+        "id": "full_moon",
+        "title": "Full Moon from Approach",
+        "date": "2026-04-06",
+        "url": "https://www.nasa.gov/gallery/journey-to-the-moon/",
+        "thumbnail": "https://www.nasa.gov/wp-content/uploads/2026/04/art002e009212.jpg",
+        "credit": "NASA/Artemis II Crew"
+      },
+      {
+        "id": "nearside_moon",
+        "title": "Nearside of the Moon",
+        "date": "2026-04-04",
+        "url": "https://www.nasa.gov/gallery/journey-to-the-moon/",
+        "thumbnail": "https://www.nasa.gov/wp-content/uploads/2026/04/art002e009057.jpg",
+        "credit": "NASA"
+      },
+      {
+        "id": "earth_atmosphere",
+        "title": "Earth's Thin Atmosphere",
+        "date": "2026-04-04",
+        "url": "https://www.nasa.gov/gallery/journey-to-the-moon/",
+        "thumbnail": "https://www.nasa.gov/wp-content/uploads/2026/04/art002e009205.jpg",
+        "credit": "NASA/Artemis II Crew"
+      }
+    ],
+    "videos": [
+      {
+        "id": "highlights",
+        "title": "Artemis II Mission Highlights",
+        "youtube_id": "LHUvedAssyE",
+        "date": "2026-04-11",
+        "duration": "4:32"
+      },
+      {
+        "id": "splashdown_broadcast",
+        "title": "Artemis II Crew Comes Home",
+        "youtube_id": "nfhDuOHMp0A",
+        "date": "2026-04-11",
+        "duration": "3:53:40"
+      },
+      {
+        "id": "flyby",
+        "title": "Lunar Flyby Coverage",
+        "youtube_id": "L0xyWwODvq0",
+        "date": "2026-04-07",
+        "duration": "8:04:16"
+      },
+      {
+        "id": "day4",
+        "title": "Flight Day 4 Highlights",
+        "youtube_id": "UEJV1XLEXP0",
+        "date": "2026-04-05",
+        "duration": "15:42"
+      },
+      {
+        "id": "launch",
+        "title": "Artemis II Launch (Full Broadcast)",
+        "youtube_id": "m3kR2KK8TEs",
+        "date": "2026-04-01",
+        "duration": "3:12:08"
+      }
+    ],
+    "nasa_gallery_url": "https://www.nasa.gov/gallery/journey-to-the-moon/",
+    "nasa_wallpapers_url": "https://www.nasa.gov/artemis-ii-mobile-wallpapers/"
   }
 }
