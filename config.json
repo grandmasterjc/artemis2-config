@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "updated_at": "2026-04-12T08:56:00+02:00",
+  "updated_at": "2026-04-12T09:12:00+02:00",
   "mission": {
     "id": "artemis-ii",
     "name": "Artemis II",
@@ -167,7 +167,7 @@
         "title": "Earthset Behind the Moon",
         "date": "2026-04-07",
         "url": "https://www.nasa.gov/image-article/earthset-behind-the-moon/",
-        "thumbnail": "https://www.nasa.gov/wp-content/uploads/2026/04/art002e009275.jpg",
+        "thumbnail": "https://images-assets.nasa.gov/image/art002e009567/art002e009567~large.jpg",
         "credit": "NASA/Artemis II Crew"
       },
       {
@@ -175,88 +175,88 @@
         "title": "Hello, World",
         "date": "2026-04-03",
         "url": "https://www.nasa.gov/image-article/hello-world/",
-        "thumbnail": "https://www.nasa.gov/wp-content/uploads/2026/04/art002e000190.jpg",
+        "thumbnail": "https://images-assets.nasa.gov/image/art002e004438/art002e004438~large.jpg",
         "credit": "NASA/Reid Wiseman"
       },
       {
-        "id": "orion_selfie",
-        "title": "Orion Selfie in Deep Space",
-        "date": "2026-04-03",
+        "id": "goodnight_moon",
+        "title": "Goodnight Moon",
+        "date": "2026-04-06",
         "url": "https://www.nasa.gov/gallery/journey-to-the-moon/",
-        "thumbnail": "https://www.nasa.gov/wp-content/uploads/2026/04/art002e004357.jpg",
-        "credit": "NASA"
-      },
-      {
-        "id": "solar_eclipse",
-        "title": "Solar Eclipse from Orion",
-        "date": "2026-04-07",
-        "url": "https://www.nasa.gov/gallery/journey-to-the-moon/",
-        "thumbnail": "https://www.nasa.gov/wp-content/uploads/2026/04/art002e009276.jpg",
+        "thumbnail": "https://images-assets.nasa.gov/image/art002e009210/art002e009210~large.jpg",
         "credit": "NASA/Artemis II Crew"
       },
       {
-        "id": "wiseman_window",
-        "title": "Commander Wiseman at the Window",
-        "date": "2026-04-06",
+        "id": "launch_01",
+        "title": "Artemis II Launch",
+        "date": "2026-04-01",
         "url": "https://www.nasa.gov/gallery/journey-to-the-moon/",
-        "thumbnail": "https://www.nasa.gov/wp-content/uploads/2026/04/art002e008486.jpg",
+        "thumbnail": "https://images-assets.nasa.gov/image/SLS_MAF_20260401_ArtemisIILaunch_05/SLS_MAF_20260401_ArtemisIILaunch_05~large.jpg",
         "credit": "NASA"
       },
       {
-        "id": "koch_window",
-        "title": "Koch Peers at the Moon",
-        "date": "2026-04-06",
+        "id": "launch_02",
+        "title": "Liftoff from Pad 39B",
+        "date": "2026-04-01",
         "url": "https://www.nasa.gov/gallery/journey-to-the-moon/",
-        "thumbnail": "https://www.nasa.gov/wp-content/uploads/2026/04/art002e009274.jpg",
+        "thumbnail": "https://images-assets.nasa.gov/image/SLS_MAF_20260401_ArtemisIILaunch_01/SLS_MAF_20260401_ArtemisIILaunch_01~large.jpg",
         "credit": "NASA"
       },
       {
-        "id": "glover_window",
-        "title": "Glover Looks Toward Home",
-        "date": "2026-04-06",
+        "id": "launch_wide",
+        "title": "Artemis II Rises Over Kennedy",
+        "date": "2026-04-01",
         "url": "https://www.nasa.gov/gallery/journey-to-the-moon/",
-        "thumbnail": "https://www.nasa.gov/wp-content/uploads/2026/04/art002e009273.jpg",
+        "thumbnail": "https://images-assets.nasa.gov/image/KSC-04012026-Artemis II_Launch-1/KSC-04012026-Artemis II_Launch-1~large.jpg",
+        "credit": "NASA/KSC"
+      },
+      {
+        "id": "launch_night",
+        "title": "Night Launch",
+        "date": "2026-04-01",
+        "url": "https://www.nasa.gov/gallery/journey-to-the-moon/",
+        "thumbnail": "https://images-assets.nasa.gov/image/SLS_MAF_20260401_ArtemisIILaunch_09/SLS_MAF_20260401_ArtemisIILaunch_09~large.jpg",
         "credit": "NASA"
       },
       {
-        "id": "hansen_window",
-        "title": "Hansen at the Far Side",
-        "date": "2026-04-06",
+        "id": "launch_flame",
+        "title": "SLS First Stage Burn",
+        "date": "2026-04-01",
         "url": "https://www.nasa.gov/gallery/journey-to-the-moon/",
-        "thumbnail": "https://www.nasa.gov/wp-content/uploads/2026/04/art002e009272.jpg",
+        "thumbnail": "https://images-assets.nasa.gov/image/SLS_MAF_20260401_ArtemisIILaunch_03/SLS_MAF_20260401_ArtemisIILaunch_03~large.jpg",
         "credit": "NASA"
       },
       {
-        "id": "earth_sliver",
-        "title": "A Sliver of Earth",
-        "date": "2026-04-04",
+        "id": "pad_moon",
+        "title": "Moon Behind Artemis II on the Pad",
+        "date": "2026-01-29",
+        "url": "https://www.nasa.gov/gallery/artemis/",
+        "thumbnail": "https://images-assets.nasa.gov/image/Artemis II at the pad Moon 01292026_4/Artemis II at the pad Moon 01292026_4~large.jpg",
+        "credit": "NASA/KSC"
+      },
+      {
+        "id": "rollout",
+        "title": "Artemis II Arrives at Pad 39B",
+        "date": "2026-01-17",
+        "url": "https://www.nasa.gov/gallery/artemis/",
+        "thumbnail": "https://images-assets.nasa.gov/image/KSC-01172026-Artemis II_Rollout-1/KSC-01172026-Artemis II_Rollout-1~large.jpg",
+        "credit": "NASA/KSC"
+      },
+      {
+        "id": "orion_pov",
+        "title": "Destination and Home",
+        "date": "2026-04-06",
         "url": "https://www.nasa.gov/gallery/journey-to-the-moon/",
-        "thumbnail": "https://www.nasa.gov/wp-content/uploads/2026/04/art002e004462.jpg",
+        "thumbnail": "https://images-assets.nasa.gov/image/art002e009567/art002e009567~large.jpg",
         "credit": "NASA/Artemis II Crew"
       },
       {
-        "id": "full_moon",
-        "title": "Full Moon from Approach",
-        "date": "2026-04-06",
+        "id": "launch_closeup",
+        "title": "SLS Clears the Tower",
+        "date": "2026-04-01",
         "url": "https://www.nasa.gov/gallery/journey-to-the-moon/",
-        "thumbnail": "https://www.nasa.gov/wp-content/uploads/2026/04/art002e009212.jpg",
-        "credit": "NASA/Artemis II Crew"
-      },
-      {
-        "id": "nearside_moon",
-        "title": "Nearside of the Moon",
-        "date": "2026-04-04",
-        "url": "https://www.nasa.gov/gallery/journey-to-the-moon/",
-        "thumbnail": "https://www.nasa.gov/wp-content/uploads/2026/04/art002e009057.jpg",
+        "thumbnail": "https://images-assets.nasa.gov/image/SLS_MAF_20260401_ArtemisIILaunch_04/SLS_MAF_20260401_ArtemisIILaunch_04~large.jpg",
         "credit": "NASA"
-      },
-      {
-        "id": "earth_atmosphere",
-        "title": "Earth's Thin Atmosphere",
-        "date": "2026-04-04",
-        "url": "https://www.nasa.gov/gallery/journey-to-the-moon/",
-        "thumbnail": "https://www.nasa.gov/wp-content/uploads/2026/04/art002e009205.jpg",
-        "credit": "NASA/Artemis II Crew"
       }
     ],
     "videos": [
@@ -297,6 +297,7 @@
       }
     ],
     "nasa_gallery_url": "https://www.nasa.gov/gallery/journey-to-the-moon/",
-    "nasa_wallpapers_url": "https://www.nasa.gov/artemis-ii-mobile-wallpapers/"
+    "nasa_wallpapers_url": "https://www.nasa.gov/artemis-ii-mobile-wallpapers/",
+    "nasa_images_api_query": "artemis+II"
   }
 }
