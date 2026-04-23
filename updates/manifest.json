@@ -1,14 +1,58 @@
 {
   "updates": [
     {
+      "id": "artemis2-what-we-learned",
+      "title": "What Artemis II Taught Us",
+      "subtitle": "Key engineering takeaways from the first crewed flight beyond LEO since 1972",
+      "date": "2026-04-30T18:00:00Z",
+      "mission": "artemis2",
+      "premium": false,
+      "hero_image": "https://grandmasterjc.github.io/artemis2-config/updates/images/artemis2_mission.jpg",
+      "summary": "The data is in from humanity's first crewed mission beyond low Earth orbit in over 50 years. Here's what surprised engineers most.",
+      "author": "Joachim Gresslien"
+    },
+    {
       "id": "artemis3-starship-preview",
       "title": "Starship HLS: The Artemis III Lander",
       "subtitle": "A look at the SpaceX vehicle that will take humans back to the Moon",
       "date": "2026-04-28T18:00:00Z",
       "mission": "artemis3",
       "premium": false,
-      "hero_image": "https://grandmasterjc.github.io/artemis2-config/updates/images/starship_hls_hero.jpg",
+      "hero_image": "https://grandmasterjc.github.io/artemis2-config/updates/images/artemis_moon.jpg",
       "summary": "Artemis III is ~14 months away. Here's what we know about the SpaceX Starship HLS that will carry astronauts to lunar orbit.",
+      "author": "Joachim Gresslien"
+    },
+    {
+      "id": "artemis2-photo-archive",
+      "title": "Mission in Pictures",
+      "subtitle": "The best images from Artemis II, from launch to splashdown",
+      "date": "2026-04-25T18:00:00Z",
+      "mission": "artemis2",
+      "premium": false,
+      "hero_image": "https://grandmasterjc.github.io/artemis2-config/updates/images/artemis2_photos.jpg",
+      "summary": "Every major moment of the Artemis II mission, captured in high resolution. A visual retrospective.",
+      "author": "Joachim Gresslien"
+    },
+    {
+      "id": "artemis3-crew-selection",
+      "title": "How NASA Picks Moonwalkers",
+      "subtitle": "Inside the selection process for Artemis III crew members",
+      "date": "2026-04-22T18:00:00Z",
+      "mission": "artemis3",
+      "premium": true,
+      "hero_image": "https://grandmasterjc.github.io/artemis2-config/updates/images/artemis_moon.jpg",
+      "summary": "A deep dive into how NASA evaluates and selects the astronauts who will fly the Artemis III mission. Exclusive to Artemis+.",
+      "author": "Joachim Gresslien"
+    },
+    {
+      "id": "artemis-program-overview",
+      "title": "The Road Ahead: Artemis III Through V",
+      "subtitle": "Understanding the full Artemis program roadmap",
+      "date": "2026-04-20T18:00:00Z",
+      "mission": "all",
+      "premium": false,
+      "hero_image": "https://grandmasterjc.github.io/artemis2-config/updates/images/artemis2_photos.jpg",
+      "summary": "From orbital tests to surface bases — where Artemis is going over the next decade.",
       "author": "Joachim Gresslien"
     }
   ]
