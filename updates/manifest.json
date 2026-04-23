@@ -1,0 +1,15 @@
+{
+  "updates": [
+    {
+      "id": "artemis3-starship-preview",
+      "title": "Starship HLS: The Artemis III Lander",
+      "subtitle": "A look at the SpaceX vehicle that will take humans back to the Moon",
+      "date": "2026-04-28T18:00:00Z",
+      "mission": "artemis3",
+      "premium": false,
+      "hero_image": "https://grandmasterjc.github.io/artemis2-config/updates/images/starship_hls_hero.jpg",
+      "summary": "Artemis III is ~14 months away. Here's what we know about the SpaceX Starship HLS that will carry astronauts to lunar orbit.",
+      "author": "Joachim Gresslien"
+    }
+  ]
+}
