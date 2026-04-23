@@ -1,6 +1,17 @@
 {
   "updates": [
     {
+      "id": "artemis2-mission-recap",
+      "title": "Artemis II: The Complete Mission Recap",
+      "subtitle": "Ten days that changed human spaceflight — from launch to splashdown in pictures and video",
+      "date": "2026-04-23T12:00:00Z",
+      "mission": "artemis2",
+      "premium": false,
+      "hero_image": "https://grandmasterjc.github.io/artemis2-config/updates/images/artemis2_photos.jpg",
+      "summary": "A visual retrospective of the 10-day mission that took humans farther from Earth than anyone since Apollo 17. With NASA's official mission recap video.",
+      "author": "Joachim Gresslien"
+    },
+    {
       "id": "artemis2-what-we-learned",
       "title": "What Artemis II Taught Us",
       "subtitle": "Key engineering takeaways from the first crewed flight beyond LEO since 1972",
