@@ -1,12 +1,20 @@
-The astronauts who will walk on the Moon during Artemis III and IV won't be wearing NASA-built spacesuits. For the first time in the agency's history, that hardware is being designed and built by a private company.
+When NASA astronauts eventually walk on the Moon again, they won't be wearing a NASA-built spacesuit. For the first time in the agency's history, that hardware is being designed and built by a private company — with help from an unexpected fashion partner.
 
 In 2022, NASA awarded a $228 million contract to **Axiom Space** — a Houston-based company better known for sending private astronauts to the International Space Station — to develop the next-generation lunar spacesuit. The result is called the **Axiom Extravehicular Mobility Unit**, or AxEMU.
+
+## A Note on Which Mission Wears It First
+
+The AxEMU is being developed for the Artemis program broadly, but the first actual lunar surface walk using it will be on **Artemis IV** (targeted early 2028) — not Artemis III.
+
+Artemis III, scheduled for mid-2027, is an orbital demonstration: a crewed docking between Orion and SpaceX's Starship HLS in low Earth orbit. No lunar landing, no surface EVA. That mission is about proving the docking architecture works before committing astronauts to a Moon landing.
+
+The AxEMU will likely have its first EVA use during Artemis IV's lunar surface stay — making it the first new American lunar suit to touch the Moon since Apollo 17 in 1972.
 
 ## Why Not Just Use Apollo Suits?
 
 The Apollo A7L suits were marvels of 1960s engineering, but they were built for a very different mission. Astronauts walked on the equatorial regions of the Moon, in relatively mild thermal conditions, for hours at a time — never days.
 
-Artemis III is different:
+Artemis IV's lunar landing will be dramatically different:
 
 - The landing site is near the **lunar south pole**, where temperatures drop to -180°C in permanently shadowed craters
 - Astronauts need to survive conditions ranging from deep shadow to direct sunlight on the same EVA
@@ -44,12 +52,12 @@ NASA and Axiom are running AxEMU through increasingly demanding test campaigns:
 - **Lunar surface simulation** on mock-ups of the south pole terrain
 - **Extended duration trials** — astronauts working in the suit for full 8-hour shifts
 
-Crew selection for Artemis III hasn't been announced yet, but candidates are already working with early AxEMU prototypes to refine the design.
+Artemis IV crew selection is expected to be announced within the next year, and candidates are already working with early AxEMU prototypes to refine the design.
 
 ## The Bigger Picture
 
 NASA's decision to outsource spacesuit development was controversial. Some argued the agency was ceding a core capability to private industry. Others saw it as the natural evolution of the commercial spaceflight era — let NASA focus on mission objectives and science, let companies like Axiom build the hardware.
 
-Whether that model works will be proven on the surface of the Moon sometime in 2027 or 2028. For now, the AxEMU is one of the few pieces of Artemis III hardware that actually appears to be on schedule.
+Whether that model works will be proven on the surface of the Moon during Artemis IV. For now, the AxEMU is one of the few pieces of future Artemis hardware that actually appears to be on schedule.
 
-The crew has a way to get to the Moon. They have something to wear once they arrive. The remaining question — as covered in our previous update — is whether Starship HLS will be ready to take them there.
+The crew selected for Artemis IV will have something remarkable to wear when they step onto the lunar regolith. The remaining question — covered in our previous update — is whether the rest of the Artemis architecture will be ready to get them there.
