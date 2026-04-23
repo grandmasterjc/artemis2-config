@@ -1,6 +1,17 @@
 {
   "updates": [
     {
+      "id": "artemis3-refueling-challenge",
+      "title": "Artemis III's Most Improbable Maneuver",
+      "subtitle": "A fleet of Starship tankers. Cryogenic propellant transfer in orbit. An engineering challenge that has never been attempted — and could derail NASA's entire Moon plan.",
+      "date": "2026-04-23T14:00:00Z",
+      "mission": "artemis3",
+      "premium": false,
+      "hero_image": "https://grandmasterjc.github.io/artemis2-config/updates/images/starship_hls_hero.jpg",
+      "summary": "Before humans can return to the Moon, SpaceX has to solve an orbital refueling problem no one has ever attempted. Here's why experts are worried.",
+      "author": "Joachim Gresslien"
+    },
+    {
       "id": "artemis2-mission-recap",
       "title": "Artemis II: The Complete Mission Recap",
       "subtitle": "Ten days that changed human spaceflight — from launch to splashdown in pictures and video",
