@@ -8,6 +8,12 @@ Liftoff from Pad 39B on April 1, 2026 at 18:35 EDT.
 
 The SLS Block 1 rocket produced 8.8 million pounds of thrust at ignition — the most powerful rocket to carry humans since the Saturn V.
 
+## Mission Gallery
+
+Swipe through the best moments from the mission. Tap any image to view full-screen.
+
+@gallery(https://grandmasterjc.github.io/artemis2-config/updates/images/artemis2_photo_1.jpg, https://grandmasterjc.github.io/artemis2-config/updates/images/artemis2_photo_2.jpg, https://grandmasterjc.github.io/artemis2-config/updates/images/artemis2_photo_3.jpg, https://grandmasterjc.github.io/artemis2-config/updates/images/artemis2_photo_4.jpg)
+
 ## Lunar Flyby
 
 On flight day 6, Orion reached its closest approach to the Moon — just 9,200 km above the far side. From there, the crew could see the Earth rise over the lunar horizon.
