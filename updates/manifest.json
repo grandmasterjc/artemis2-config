@@ -2,46 +2,46 @@
   "updates": [
     {
       "id": "artemis3-axemu-spacesuit",
-      "title": "The First Private Spacesuit",
-      "subtitle": "Axiom Space — with an assist from Prada — is building the next-generation lunar suit. Here's what makes it different.",
+      "title": "The $228 Million Moon Suit Prada Helped Design",
+      "subtitle": "NASA outsourced the most iconic garment in human exploration to a fashion house and a startup. Here's what that looks like.",
       "date": "2026-04-24T10:00:00Z",
       "mission": "artemis3",
       "premium": false,
-      "hero_image": "https://grandmasterjc.github.io/artemis2-config/updates/images/starship_lunar_surface.jpg",
-      "summary": "For the first time, NASA astronauts on the Moon will wear a spacesuit built by a private company. A look inside the AxEMU.",
+      "hero_image": "https://grandmasterjc.github.io/artemis2-config/updates/images/axemu_spacesuit.jpg",
+      "summary": "For the first time ever, NASA astronauts will walk on the Moon in a privately-built spacesuit — co-designed by Italian fashion house Prada.",
       "author": "Joachim Gresslien"
     },
     {
       "id": "artemis3-refueling-challenge",
-      "title": "Artemis III's Most Improbable Maneuver",
-      "subtitle": "A fleet of Starship tankers. Cryogenic propellant transfer in orbit. An engineering challenge that has never been attempted — and could derail NASA's entire Moon plan.",
+      "title": "The Moon Landing That Needs 12 Refueling Flights",
+      "subtitle": "Before any Artemis III astronaut even leaves Earth, SpaceX must solve an orbital refueling problem no one has ever attempted. The stakes could not be higher.",
       "date": "2026-04-23T14:00:00Z",
       "mission": "artemis3",
-      "premium": false,
+      "premium": true,
       "hero_image": "https://grandmasterjc.github.io/artemis2-config/updates/images/starship_hls_hero_v2.jpg",
-      "summary": "Before humans can return to the Moon, SpaceX has to solve an orbital refueling problem no one has ever attempted. Here's why experts are worried.",
+      "summary": "Exclusive deep dive: why NASA's safety panel, the Inspector General, and a former administrator all think Artemis III could be years late.",
       "author": "Joachim Gresslien"
     },
     {
       "id": "artemis2-what-we-learned",
-      "title": "What Artemis II Taught Us",
-      "subtitle": "Thermal performance, communications, heat shield behavior — here's what engineers discovered in the post-flight data review.",
+      "title": "6 Things NASA Just Figured Out About Going to the Moon",
+      "subtitle": "The post-flight data from Artemis II is in — and some of the findings surprised even the engineers who designed the hardware.",
       "date": "2026-04-24T12:00:00Z",
       "mission": "artemis2",
-      "premium": false,
+      "premium": true,
       "hero_image": "https://grandmasterjc.github.io/artemis2-config/updates/images/artemis2_mission.jpg",
-      "summary": "The data is in from humanity's first crewed mission beyond LEO in over 50 years. Six things engineers have learned so far.",
+      "summary": "Thermal margins exceeded predictions. Astronauts adapted faster than Apollo crews. And one engineering fix worked better than expected. Inside the Artemis II debrief.",
       "author": "Joachim Gresslien"
     },
     {
       "id": "artemis2-mission-recap",
-      "title": "Artemis II: The Complete Mission Recap",
-      "subtitle": "Ten days that changed human spaceflight — from launch to splashdown in pictures and video",
+      "title": "Relive the Mission That Made History",
+      "subtitle": "Ten days, four astronauts, and humanity's first crewed trip beyond Earth orbit since 1972 — all in pictures, video, and the full NASA recap.",
       "date": "2026-04-23T12:00:00Z",
       "mission": "artemis2",
       "premium": false,
       "hero_image": "https://grandmasterjc.github.io/artemis2-config/updates/images/artemis2_photos.jpg",
-      "summary": "A visual retrospective of the 10-day mission that took humans farther from Earth than anyone since Apollo 17. With NASA's official mission recap video.",
+      "summary": "The visual recap of Artemis II — launch, lunar flyby, Earth rise, and splashdown. Includes NASA's official 3-minute mission summary.",
       "author": "Joachim Gresslien"
     }
   ]
