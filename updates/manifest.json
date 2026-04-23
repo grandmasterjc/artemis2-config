@@ -1,14 +1,36 @@
 {
   "updates": [
     {
+      "id": "artemis3-axemu-spacesuit",
+      "title": "The First Private Spacesuit",
+      "subtitle": "Axiom Space — with an assist from Prada — is building the next-generation lunar suit. Here's what makes it different.",
+      "date": "2026-04-24T10:00:00Z",
+      "mission": "artemis3",
+      "premium": false,
+      "hero_image": "https://grandmasterjc.github.io/artemis2-config/updates/images/starship_lunar_surface.jpg",
+      "summary": "For the first time, NASA astronauts on the Moon will wear a spacesuit built by a private company. A look inside the AxEMU.",
+      "author": "Joachim Gresslien"
+    },
+    {
       "id": "artemis3-refueling-challenge",
       "title": "Artemis III's Most Improbable Maneuver",
       "subtitle": "A fleet of Starship tankers. Cryogenic propellant transfer in orbit. An engineering challenge that has never been attempted — and could derail NASA's entire Moon plan.",
       "date": "2026-04-23T14:00:00Z",
       "mission": "artemis3",
       "premium": false,
-      "hero_image": "https://grandmasterjc.github.io/artemis2-config/updates/images/starship_hls_hero.jpg",
+      "hero_image": "https://grandmasterjc.github.io/artemis2-config/updates/images/starship_hls_hero_v2.jpg",
       "summary": "Before humans can return to the Moon, SpaceX has to solve an orbital refueling problem no one has ever attempted. Here's why experts are worried.",
+      "author": "Joachim Gresslien"
+    },
+    {
+      "id": "artemis2-what-we-learned",
+      "title": "What Artemis II Taught Us",
+      "subtitle": "Thermal performance, communications, heat shield behavior — here's what engineers discovered in the post-flight data review.",
+      "date": "2026-04-24T12:00:00Z",
+      "mission": "artemis2",
+      "premium": false,
+      "hero_image": "https://grandmasterjc.github.io/artemis2-config/updates/images/artemis2_mission.jpg",
+      "summary": "The data is in from humanity's first crewed mission beyond LEO in over 50 years. Six things engineers have learned so far.",
       "author": "Joachim Gresslien"
     },
     {
