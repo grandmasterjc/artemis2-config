@@ -2,13 +2,13 @@
   "updates": [
     {
       "id": "artemis2-mission-recap",
-      "title": "Ten Days That Brought Humans Back to the Moon",
-      "subtitle": "An hour-long eclipse no one on Earth could see. A view of the lunar far side captured by human eyes. The full story of Artemis II \u2014 in NASA's own photographs.",
-      "date": "2026-04-27T18:00:00Z",
+      "title": "The Moment That Made the Crew Cry on the Way to the Moon",
+      "subtitle": "Apollo's Earthrise. A solar eclipse no one on Earth could see. And a private gesture between four astronauts that no press release captured. Here's what really happened on Artemis II.",
+      "date": "2026-04-27T17:00:00Z",
       "mission": "artemis2",
       "premium": false,
       "hero_image": "https://grandmasterjc.github.io/artemis2-config/updates/images/a2_earthrise.jpg",
-      "summary": "Inside the most consequential crewed spaceflight in over fifty years \u2014 what the four astronauts saw, what they brought back, and why it matters.",
+      "summary": "What the four astronauts saw on the lunar far side. What they did during the 40 minutes they were cut off from Earth. And the moment all four of them broke down.",
       "author": "Joachim Gresslien"
     },
     {

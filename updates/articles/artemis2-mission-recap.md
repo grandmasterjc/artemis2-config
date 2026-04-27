@@ -1,6 +1,8 @@
-For ten days in early April, four people lived farther from Earth than any humans in over fifty years. They saw the Moon up close. They watched the Sun get blotted out by it. They saw their planet shrink to a marble in the void. And they came home.
+For ten days in early April, four people lived farther from Earth than any humans in over fifty years. They saw the Moon up close. They watched the Sun get blotted out by it. They saw their planet shrink to a marble in the void.
 
-This is the full story of Artemis II — what happened, what it means, and why it matters.
+And on day six, somewhere between Earth and the lunar far side, all four of them broke down crying.
+
+This is the full story of Artemis II — the official record, but also what happened that NASA didn't put in the press release.
 
 ## April 1, 6:35 PM EDT
 
@@ -11,11 +13,11 @@ The Space Launch System lit up Kennedy Space Center's Pad 39B with 8.8 million p
 
 Inside the Orion capsule sat NASA astronauts Reid Wiseman, Victor Glover, Christina Koch, and Canadian Space Agency astronaut Jeremy Hansen. Wiseman commanded the mission. Glover flew it. Koch and Hansen were the science specialists.
 
-Two minutes after launch, the solid rocket boosters separated. Eight minutes after launch, the core stage cut off and fell away. By the time most of America had finished dinner, four humans were on a free-return trajectory to the Moon — the first to make that journey since Apollo 17 splashed down in December 1972.
+What none of the millions of viewers watching the launch could have known was that something unusual had been planned for this mission. Three of the four crew members had agreed to it during pre-launch quarantine. The fourth — the one who would be most affected — had no idea.
 
 ## Flight Day 3: Hello, World
 
-Two days into the mission, Orion's high-gain antenna was operating perfectly, and the crew began sending images home in earnest. The first one shocked even NASA's veteran public affairs team.
+Two days into the mission, Orion's high-gain antenna was operating perfectly. The crew began sending images home in earnest. The first one shocked even NASA's veteran public affairs team.
 
 Looking back at Earth from a distance of nearly 200,000 kilometers, the planet appeared as a perfect curve against absolute blackness. Two auroras — green-and-red curtains over the polar regions — were clearly visible. So was zodiacal light, the faint band of dust scattered along the plane of the solar system, normally only seen from observatories in remote deserts.
 
@@ -35,11 +37,29 @@ The crew had a seven-hour observation period scheduled. They used every minute o
 ![Hertzsprung Basin in detail](https://grandmasterjc.github.io/artemis2-config/updates/images/a2_hertzsprung.jpg)
 *Hertzsprung Basin's distinctive concentric rings. Photo: NASA*
 
+## A Crater Called Carroll
+
+It was during the observation period that the secret came out.
+
+Reid Wiseman is a single father. His wife Carroll died of cancer in 2020, leaving him to raise their three daughters alone. He hasn't spoken about it publicly often. The crew knew.
+
+What he didn't know — until that moment, somewhere over the lunar far side — was that during pre-launch quarantine at Kennedy Space Center, Glover, Koch, and Hansen had quietly agreed to a plan. They would, on behalf of the Artemis II crew, formally request that a previously unnamed crater on the Moon be designated "Carroll" in her memory.
+
+Jeremy Hansen made the announcement on the live downlink.
+
+Wiseman recounted the moment afterward:
+
+> "I couldn't give the speech. And Jeremy, the kind of guy he is, he said he would do it. When Jeremy spelled Carroll's name… that's when I was overwhelmed with emotion. I looked over and Christina was crying. I put my hand down on Jeremy's hand as he was still talking. I could just tell he was trembling. We all pretty much broke down right there."
+
+It was, he said later, the pinnacle moment of the mission. Not the launch. Not the eclipse. Not the photographs. This.
+
+The International Astronomical Union — the body that approves planetary nomenclature — has not yet ruled on the request. But somewhere on the lunar far side, a feature already exists in the hearts of four astronauts and three girls in Houston. Whatever the IAU decides, the name is already real to them.
+
 ## The Eclipse Nobody Saw From Earth
 
 For 54 minutes during the flyby, something happened that has never been observed by humans before: a total solar eclipse, watched from beyond the Earth.
 
-From Orion's perspective, the Moon was large enough to completely block the Sun. The corona — the Sun's outer atmosphere, only visible during eclipses — glowed in full detail around a perfectly black lunar disc. Stars appeared in the sky next to it. With no Earth atmosphere distorting the view, the eclipse was the cleanest, sharpest one ever witnessed by people.
+From Orion's perspective, the Moon was large enough to completely block the Sun. The corona — the Sun's outer atmosphere, only visible during eclipses — glowed in full detail around a perfectly black lunar disc. Stars appeared in the sky next to it. Mars was visible. With no Earth atmosphere distorting the view, the eclipse was the cleanest, sharpest one ever witnessed by people.
 
 ![The Moon eclipsing the Sun during Artemis II's lunar flyby](https://grandmasterjc.github.io/artemis2-config/updates/images/a2_eclipse.jpg)
 *The Moon fully eclipses the Sun, captured during the Artemis II lunar flyby. Photo: NASA*
@@ -57,6 +77,10 @@ Apollo 8 took the original Earthrise photograph in December 1968. That image —
 
 The Artemis II version is sharper, more detailed, and shows additional context the Apollo cameras couldn't capture. But the emotional payload is the same: from out there, this place is small. There is no political map drawn on it. It's a single, fragile, blue object suspended in nothing.
 
+Christina Koch, looking back at it from beyond the Moon, summarized something most viewers won't see in the official mission report:
+
+> "Ultimately, we will always choose Earth. We will always choose each other."
+
 ## Inside the Capsule
 
 Photos from inside Orion show a tighter, more cluttered space than the marketing materials suggest. The capsule has a habitable volume of about 9 cubic meters — not much more than a large car. Four people lived there for ten days.
@@ -66,7 +90,9 @@ Photos from inside Orion show a tighter, more cluttered space than the marketing
 
 The crew slept in shifts. They cycled through observation duties around the clock during the lunar flyby. They ran science experiments — radiation monitoring, communications tests, biological samples that NASA wanted to expose to deep-space conditions. They took thousands of photographs.
 
-And they ate, exercised, slept, and waited for the next milestone.
+There was one moment of complete silence. As Orion passed directly behind the Moon, all communications with Earth went dark for forty minutes. No voice. No video. No telemetry. The four of them were as alone as humans have ever been.
+
+Hansen had brought maple cookies from home. They ate them in the silence and waited for the signal to come back.
 
 ## Coming Home
 
@@ -78,15 +104,15 @@ This was not the path NASA followed during Apollo. The skip reentry profile was 
 
 Three drogue chutes deployed at 8 kilometers altitude. Three main parachutes at 2 kilometers. Splashdown was a perfect bullseye, west of San Diego.
 
-Within hours, the crew was on the recovery ship USS John P. Murtha, in good health, smiling for cameras.
+Within hours, the crew was on the recovery ship USS John P. Murtha, in good health, smiling for cameras. Hansen would fly back to Canada in time for his 23rd wedding anniversary with his wife Catherine. Wiseman would fly back to Houston to his three daughters.
 
-## Why It Matters
+## What It Proved
 
 Artemis II is not Apollo 11. It's closer in spirit to Apollo 8 — the first crewed mission to leave Earth orbit, the proof of concept for the actual landing.
 
 What Artemis II proved, in order of importance:
 
-**1. The hardware works with humans aboard.** SLS, Orion, the European Service Module, and the launch and recovery infrastructure all performed within specifications. The Artemis I mission proved the rocket. Artemis II proved the rocket plus the crew.
+**1. The hardware works with humans aboard.** SLS, Orion, the European Service Module, and the launch and recovery infrastructure all performed within specifications. Artemis I proved the rocket. Artemis II proved the rocket plus the crew.
 
 **2. Communications hold up at lunar distance.** The Deep Space Network maintained voice, video, and telemetry at 9,200 kilometers beyond the far side. Reliability of these links is critical for the rendezvous and docking maneuvers planned for Artemis III.
 
@@ -102,6 +128,6 @@ Artemis III is currently targeted for mid-2027. It's not a lunar landing — tha
 
 A separate update on this mission's challenges — including the Starship orbital refueling problem and NASA's safety panel concerns — is available elsewhere in the app.
 
-For now, four people came home from a place humans hadn't been in more than five decades. They brought back thousands of photographs, terabytes of data, and the proof that NASA is back.
+For now, four people came home from a place humans hadn't been in more than five decades. They brought back thousands of photographs, terabytes of data, a quiet promise about a crater, and the proof that NASA is back.
 
 Welcome home, *Integrity*.
