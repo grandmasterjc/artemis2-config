@@ -1,8 +1,8 @@
 For ten days in early April, four people lived farther from Earth than any humans in over fifty years. They saw the Moon up close. They watched the Sun get blotted out by it. They saw their planet shrink to a marble in the void.
 
-And on day six, somewhere between Earth and the lunar far side, all four of them broke down crying.
+And on day three, they had to start using emergency urine bags.
 
-This is the full story of Artemis II — the official record, but also what happened that NASA didn't put in the press release.
+This is the full story of Artemis II — the historic, the emotional, and the parts that don't make it onto the iconic photographs.
 
 ## April 1, 6:35 PM EDT
 
@@ -13,15 +13,21 @@ The Space Launch System lit up Kennedy Space Center's Pad 39B with 8.8 million p
 
 Inside the Orion capsule sat NASA astronauts Reid Wiseman, Victor Glover, Christina Koch, and Canadian Space Agency astronaut Jeremy Hansen. Wiseman commanded the mission. Glover flew it. Koch and Hansen were the science specialists.
 
-What none of the millions of viewers watching the launch could have known was that something unusual had been planned for this mission. Three of the four crew members had agreed to it during pre-launch quarantine. The fourth — the one who would be most affected — had no idea.
+A fifth passenger floated near them: a small white plush moon, no larger than a softball, wearing a tiny baseball cap with a piece of Earth on it. His name is Rise. We'll come back to him.
 
-## Flight Day 3: Hello, World
+## Flight Day 3: Hello, World — and a Plumbing Problem
 
 Two days into the mission, Orion's high-gain antenna was operating perfectly. The crew began sending images home in earnest. The first one shocked even NASA's veteran public affairs team.
 
 Looking back at Earth from a distance of nearly 200,000 kilometers, the planet appeared as a perfect curve against absolute blackness. Two auroras — green-and-red curtains over the polar regions — were clearly visible. So was zodiacal light, the faint band of dust scattered along the plane of the solar system, normally only seen from observatories in remote deserts.
 
-The crew named the spacecraft "Integrity" before launch. As the days passed, the name took on weight.
+While the crew sent home humanity's most distant photographs, mission control was solving a more terrestrial problem: the toilet had stopped working properly.
+
+Specifically, the wastewater vent line had iced over. The toilet still worked for "number one," NASA's deputy program manager explained at a press conference, but the crew had been instructed to use collapsible contingency urine bags as a backup until engineers could figure out how to thaw the line — which required pointing the spacecraft in a specific orientation that conflicted with power and thermal constraints.
+
+"It's a little bit of camping in space already," one official said. "But then it makes the camping a little bit tougher when you don't have the full capability of the toilet."
+
+The first humans to leave Earth orbit in 50 years spent part of flight day 3 dealing with frozen pipes. Some things about space are still very human.
 
 ## Flight Day 6: The Far Side
 
@@ -30,7 +36,7 @@ April 6 was the mission's defining moment. Orion swung around the lunar far side
 ![The Moon's heavily cratered far side, photographed from Orion](https://grandmasterjc.github.io/artemis2-config/updates/images/a2_far_side.jpg)
 *The lunar far side, captured by the Artemis II crew during their seven-hour observation period. Photo: NASA*
 
-The far side of the Moon faces permanently away from Earth. It's not "dark" — it gets the same sunlight as the near side — but humans never see it from home. The Soviet Union photographed it for the first time in 1959. NASA mapped it from orbit during Apollo. But no human had ever stared at it through a window.
+The far side faces permanently away from Earth. The Soviet Union photographed it for the first time in 1959. NASA mapped it from orbit during Apollo. But no human had ever stared at it through a window.
 
 The crew had a seven-hour observation period scheduled. They used every minute of it. They photographed Hertzsprung Basin, an enormous double-ringed impact crater. They photographed the eastern terminator, where shadows stretched across ancient lava plains. They photographed each other, photographing the Moon.
 
@@ -39,21 +45,21 @@ The crew had a seven-hour observation period scheduled. They used every minute o
 
 ## A Crater Called Carroll
 
-It was during the observation period that the secret came out.
+It was during the observation period that the most emotional moment of the mission unfolded.
 
-Reid Wiseman is a single father. His wife Carroll died of cancer in 2020, leaving him to raise their three daughters alone. He hasn't spoken about it publicly often. The crew knew.
+Reid Wiseman is a single father. His wife Carroll, a pediatric nurse practitioner, died of cancer in 2020 at age 46, leaving him to raise their two daughters Ellie and Katherine alone.
 
-What he didn't know — until that moment, somewhere over the lunar far side — was that during pre-launch quarantine at Kennedy Space Center, Glover, Koch, and Hansen had quietly agreed to a plan. They would, on behalf of the Artemis II crew, formally request that a previously unnamed crater on the Moon be designated "Carroll" in her memory.
+What Wiseman didn't know was that during pre-launch quarantine at Kennedy Space Center, Glover, Koch, and Hansen had quietly agreed to a plan. They would, on behalf of the Artemis II crew, formally request that an unnamed bright crater on the Moon — visible from Earth, located near the lunar near-side/far-side boundary — be designated "Carroll" in her memory.
 
-Jeremy Hansen made the announcement on the live downlink.
+Jeremy Hansen made the announcement on the live downlink to mission control. Wiseman's daughters were present in Houston watching when their mother's name was spoken from the Moon.
 
 Wiseman recounted the moment afterward:
 
 > "I couldn't give the speech. And Jeremy, the kind of guy he is, he said he would do it. When Jeremy spelled Carroll's name… that's when I was overwhelmed with emotion. I looked over and Christina was crying. I put my hand down on Jeremy's hand as he was still talking. I could just tell he was trembling. We all pretty much broke down right there."
 
-It was, he said later, the pinnacle moment of the mission. Not the launch. Not the eclipse. Not the photographs. This.
+It was, Wiseman said later, the pinnacle moment of the mission. Not the launch. Not the eclipse. Not the photographs. This.
 
-The International Astronomical Union — the body that approves planetary nomenclature — has not yet ruled on the request. But somewhere on the lunar far side, a feature already exists in the hearts of four astronauts and three girls in Houston. Whatever the IAU decides, the name is already real to them.
+The International Astronomical Union — the body that approves planetary nomenclature — must still formally rule on the request. But the name is already real to the people who matter.
 
 ## The Eclipse Nobody Saw From Earth
 
@@ -66,6 +72,20 @@ From Orion's perspective, the Moon was large enough to completely block the Sun.
 
 On Earth, total solar eclipses last a few minutes at most. The Artemis II crew had nearly an hour. From a vantage point above the lunar surface, with no atmosphere in the way, equipped with cameras designed for exactly this kind of observation. The data has been called scientifically irreplaceable.
 
+## Who Is Rise?
+
+The plush toy that floated through Orion alongside the four astronauts was designed by an 8-year-old.
+
+In March 2025, NASA partnered with the world's largest crowdsourcing platform to run an open design contest. The brief was unusual: design a "zero-gravity indicator" — a visual cue that would float when the spacecraft reached weightlessness — that also had to fit in a 6×6×6-inch box, weigh under 12 ounces, be made from a specific list of approved materials, and "represent humanity, exploration, and the spirit of the Artemis campaign."
+
+Lucas Ye, then a second-grader in Mountain View, California, entered. His design — a smiling moon-shaped plush wearing a baseball cap, with the constellation Orion on the brim and a footprint on the back referencing Neil Armstrong — was selected from 2,605 entries from over 50 countries.
+
+But here's the part most coverage missed: tucked inside Rise's body is a pocket containing a micro SD card. On that card are **5.6 million names**, submitted through NASA's "Send Your Name with Artemis" public campaign.
+
+Every one of those names traveled to the Moon. Every one came back.
+
+If you sent your name in, it floated past Hertzsprung Basin. It witnessed the eclipse. It came home with the crew.
+
 ## Earthrise
 
 The image that will likely become the iconic photo of the mission is not technically of the Moon at all. It's of Earth.
@@ -73,24 +93,17 @@ The image that will likely become the iconic photo of the mission is not technic
 ![Earthrise from the Orion spacecraft](https://grandmasterjc.github.io/artemis2-config/updates/images/a2_earthrise.jpg)
 *Echoing the iconic 1968 Earthrise photograph from Apollo 8, the Artemis II crew captured Earth rising over the Moon's horizon. Photo: NASA*
 
-Apollo 8 took the original Earthrise photograph in December 1968. That image — a small blue planet appearing over a cratered gray surface — is widely credited with launching the modern environmental movement. People had simply never seen Earth this way before.
+Apollo 8 took the original Earthrise photograph in December 1968. That image — a small blue planet appearing over a cratered gray surface — is widely credited with launching the modern environmental movement.
 
-The Artemis II version is sharper, more detailed, and shows additional context the Apollo cameras couldn't capture. But the emotional payload is the same: from out there, this place is small. There is no political map drawn on it. It's a single, fragile, blue object suspended in nothing.
+Rise, the plush moon designed by Lucas Ye, was inspired by exactly this photograph. The cap on Rise's head is itself a reference to Earthrise. So when Lucas's creation drifted past the windows of Orion as the real Earth rose over the real Moon, two versions of the same image were in the same place at the same time — separated by 58 years.
 
-Christina Koch, looking back at it from beyond the Moon, summarized something most viewers won't see in the official mission report:
+Christina Koch, looking back at it from beyond the Moon, summarized something most viewers won't catch in the official mission report:
 
 > "Ultimately, we will always choose Earth. We will always choose each other."
 
-## Inside the Capsule
+## The Forty Minutes of Silence
 
-Photos from inside Orion show a tighter, more cluttered space than the marketing materials suggest. The capsule has a habitable volume of about 9 cubic meters — not much more than a large car. Four people lived there for ten days.
-
-![Pilot Victor Glover inside Orion](https://grandmasterjc.github.io/artemis2-config/updates/images/a2_glover_window.jpg)
-*NASA astronaut and Artemis II Pilot Victor Glover at one of Orion's windows during the mission. Photo: NASA*
-
-The crew slept in shifts. They cycled through observation duties around the clock during the lunar flyby. They ran science experiments — radiation monitoring, communications tests, biological samples that NASA wanted to expose to deep-space conditions. They took thousands of photographs.
-
-There was one moment of complete silence. As Orion passed directly behind the Moon, all communications with Earth went dark for forty minutes. No voice. No video. No telemetry. The four of them were as alone as humans have ever been.
+As Orion passed directly behind the Moon, all communications with Earth went dark for forty minutes. No voice. No video. No telemetry. The four of them were as alone as humans have ever been.
 
 Hansen had brought maple cookies from home. They ate them in the silence and waited for the signal to come back.
 
@@ -100,11 +113,13 @@ The return trip was uneventful in the way that NASA loves: nominal trajectory, n
 
 On April 11 at 00:07 UTC, Orion hit the upper atmosphere over the Pacific at roughly 11 kilometers per second — about 40% faster than a return from low Earth orbit. The heat shield experienced temperatures up to 2,800°C as Orion executed a "skip reentry" — dipping into the atmosphere, skipping back out, then reentering again to bleed off speed gradually.
 
-This was not the path NASA followed during Apollo. The skip reentry profile was specifically designed for Orion to handle the higher return speeds from a lunar mission while keeping the heat shield within tolerance. The first version, tested unmanned on Artemis I in 2022, showed unexpected erosion on its heat shield. The Artemis II profile was modified based on those findings. Preliminary post-flight inspection suggests the modifications worked.
+This was not the path NASA followed during Apollo. The skip reentry profile was specifically designed for Orion to handle the higher return speeds from a lunar mission while keeping the heat shield within tolerance. Artemis I, the unmanned version of this profile in 2022, showed unexpected erosion on its heat shield. The Artemis II version was modified based on those findings. Preliminary post-flight inspection suggests the modifications worked.
 
 Three drogue chutes deployed at 8 kilometers altitude. Three main parachutes at 2 kilometers. Splashdown was a perfect bullseye, west of San Diego.
 
-Within hours, the crew was on the recovery ship USS John P. Murtha, in good health, smiling for cameras. Hansen would fly back to Canada in time for his 23rd wedding anniversary with his wife Catherine. Wiseman would fly back to Houston to his three daughters.
+Within hours, the crew was on the recovery ship USS John P. Murtha, in good health, smiling for cameras. Rise rode home with them.
+
+Hansen flew back to Canada in time for his 23rd wedding anniversary with his wife Catherine. Wiseman flew home to his three daughters. Lucas Ye, the boy who designed Rise, watched the splashdown coverage from his living room.
 
 ## What It Proved
 
@@ -116,7 +131,7 @@ What Artemis II proved, in order of importance:
 
 **2. Communications hold up at lunar distance.** The Deep Space Network maintained voice, video, and telemetry at 9,200 kilometers beyond the far side. Reliability of these links is critical for the rendezvous and docking maneuvers planned for Artemis III.
 
-**3. Crew adaptation is faster than expected.** Modern training and the more spacious Orion cabin appear to result in faster adjustment to deep-space conditions than the Apollo program saw. This matters because future missions will be longer.
+**3. Crew adaptation is faster than expected.** Modern training and the more spacious Orion cabin appear to result in faster adjustment to deep-space conditions than the Apollo program saw.
 
 **4. The skip reentry works.** Returning from lunar distance is nontrivial. The thermal protection system held.
 

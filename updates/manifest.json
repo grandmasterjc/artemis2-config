@@ -2,13 +2,13 @@
   "updates": [
     {
       "id": "artemis2-mission-recap",
-      "title": "The Moment That Made the Crew Cry on the Way to the Moon",
-      "subtitle": "Apollo's Earthrise. A solar eclipse no one on Earth could see. And a private gesture between four astronauts that no press release captured. Here's what really happened on Artemis II.",
+      "title": "Artemis II: Everything That Floated Past the Moon",
+      "subtitle": "Iconic photographs, an hour-long eclipse, an emotional crater dedication \u2014 and one small plush toy carrying 5.6 million names. The full story.",
       "date": "2026-04-27T17:00:00Z",
       "mission": "artemis2",
       "premium": false,
       "hero_image": "https://grandmasterjc.github.io/artemis2-config/updates/images/a2_earthrise.jpg",
-      "summary": "What the four astronauts saw on the lunar far side. What they did during the 40 minutes they were cut off from Earth. And the moment all four of them broke down.",
+      "summary": "What really happened during Artemis II's ten days in deep space. Including the part with the toilet, the eight-year-old who shipped 5.6 million names to the Moon, and the moment the crew broke down.",
       "author": "Joachim Gresslien"
     },
     {
