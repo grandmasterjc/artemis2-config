@@ -1,6 +1,28 @@
 {
   "updates": [
     {
+      "id": "artemis2-mission-recap",
+      "title": "Ten Days That Brought Humans Back to the Moon",
+      "subtitle": "An hour-long eclipse no one on Earth could see. A view of the lunar far side captured by human eyes. The full story of Artemis II \u2014 in NASA's own photographs.",
+      "date": "2026-04-27T18:00:00Z",
+      "mission": "artemis2",
+      "premium": false,
+      "hero_image": "https://grandmasterjc.github.io/artemis2-config/updates/images/a2_earthrise.jpg",
+      "summary": "Inside the most consequential crewed spaceflight in over fifty years \u2014 what the four astronauts saw, what they brought back, and why it matters.",
+      "author": "Joachim Gresslien"
+    },
+    {
+      "id": "artemis2-what-we-learned",
+      "title": "6 Things NASA Just Figured Out About Going to the Moon",
+      "subtitle": "The post-flight data from Artemis II is in \u2014 and some of the findings surprised even the engineers who designed the hardware.",
+      "date": "2026-04-24T12:00:00Z",
+      "mission": "artemis2",
+      "premium": true,
+      "hero_image": "https://grandmasterjc.github.io/artemis2-config/updates/images/artemis2_mission.jpg",
+      "summary": "Thermal margins exceeded predictions. Astronauts adapted faster than Apollo crews. And one engineering fix worked better than expected. Inside the Artemis II debrief.",
+      "author": "Joachim Gresslien"
+    },
+    {
       "id": "artemis3-axemu-spacesuit",
       "title": "The $228 Million Moon Suit Prada Helped Design",
       "subtitle": "NASA outsourced the most iconic garment in human exploration to a fashion house and a startup. Here's what that looks like.",
@@ -8,7 +30,7 @@
       "mission": "artemis3",
       "premium": false,
       "hero_image": "https://grandmasterjc.github.io/artemis2-config/updates/images/axemu_spacesuit.jpg",
-      "summary": "For the first time ever, NASA astronauts will walk on the Moon in a privately-built spacesuit — co-designed by Italian fashion house Prada.",
+      "summary": "For the first time ever, NASA astronauts will walk on the Moon in a privately-built spacesuit \u2014 co-designed by Italian fashion house Prada.",
       "author": "Joachim Gresslien"
     },
     {
@@ -20,28 +42,6 @@
       "premium": true,
       "hero_image": "https://grandmasterjc.github.io/artemis2-config/updates/images/starship_hls_hero_v2.jpg",
       "summary": "Exclusive deep dive: why NASA's safety panel, the Inspector General, and a former administrator all think Artemis III could be years late.",
-      "author": "Joachim Gresslien"
-    },
-    {
-      "id": "artemis2-what-we-learned",
-      "title": "6 Things NASA Just Figured Out About Going to the Moon",
-      "subtitle": "The post-flight data from Artemis II is in — and some of the findings surprised even the engineers who designed the hardware.",
-      "date": "2026-04-24T12:00:00Z",
-      "mission": "artemis2",
-      "premium": true,
-      "hero_image": "https://grandmasterjc.github.io/artemis2-config/updates/images/artemis2_mission.jpg",
-      "summary": "Thermal margins exceeded predictions. Astronauts adapted faster than Apollo crews. And one engineering fix worked better than expected. Inside the Artemis II debrief.",
-      "author": "Joachim Gresslien"
-    },
-    {
-      "id": "artemis2-mission-recap",
-      "title": "Relive the Mission That Made History",
-      "subtitle": "Ten days, four astronauts, and humanity's first crewed trip beyond Earth orbit since 1972 — all in pictures, video, and the full NASA recap.",
-      "date": "2026-04-23T12:00:00Z",
-      "mission": "artemis2",
-      "premium": false,
-      "hero_image": "https://grandmasterjc.github.io/artemis2-config/updates/images/artemis2_photos.jpg",
-      "summary": "The visual recap of Artemis II — launch, lunar flyby, Earth rise, and splashdown. Includes NASA's official 3-minute mission summary.",
       "author": "Joachim Gresslien"
     }
   ]
