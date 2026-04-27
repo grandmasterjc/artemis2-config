@@ -2,6 +2,9 @@ When NASA astronauts eventually walk on the Moon again, they won't be wearing a 
 
 In 2022, NASA awarded a $228 million contract to **Axiom Space** — a Houston-based company better known for sending private astronauts to the International Space Station — to develop the next-generation lunar spacesuit. The result is called the **Axiom Extravehicular Mobility Unit**, or AxEMU.
 
+![The AxEMU spacesuit unveiled by Axiom Space and Prada](https://grandmasterjc.github.io/artemis2-config/updates/images/axemu_full_front.jpg)
+*The full AxEMU design, revealed in October 2024. Photo: Axiom Space / Prada*
+
 ## A Note on Which Mission Wears It First
 
 The AxEMU is being developed for the Artemis program broadly, but the first actual lunar surface walk using it will be on **Artemis IV** (targeted early 2028) — not Artemis III.
@@ -27,6 +30,9 @@ The A7L simply couldn't handle any of that.
 
 The AxEMU represents roughly 50 years of spacesuit advancement compressed into a single program. Notable improvements over Apollo:
 
+![AxEMU studio portrait showing the suit's silhouette](https://grandmasterjc.github.io/artemis2-config/updates/images/axemu_studio.jpg)
+*The AxEMU's redesigned silhouette emphasizes mobility at the joints. Photo: Axiom Space / Prada*
+
 **Fit**: Apollo suits were sized for individual astronauts. The AxEMU is modular — the same core design accommodates everyone from roughly the 1st to the 99th percentile of body sizes, male and female.
 
 **Mobility**: Bearings in the shoulders, hips, ankles, and waist let astronauts walk, kneel, and climb far more naturally than in Apollo suits.
@@ -35,13 +41,20 @@ The AxEMU represents roughly 50 years of spacesuit advancement compressed into a
 
 **Thermal Control**: Advanced insulation and active heating protect astronauts in -180°C shadows and reflect heat in direct sunlight.
 
-**HUD and Comms**: A heads-up display inside the helmet gives astronauts mission data without taking their eyes off their work. Modern radio equipment replaces the VHF systems of Apollo.
+**HUD and Comms**: A heads-up display inside the helmet gives astronauts mission data without taking their eyes off their work. Modern radio equipment replaces the VHF systems of Apollo, including support for 4G connectivity for the first time.
+
+![AxEMU communications system close-up](https://grandmasterjc.github.io/artemis2-config/updates/images/axemu_4g_comms.jpg)
+*The AxEMU integrates a 4G-capable communications stack — a first for any lunar suit. Photo: Axiom Space*
 
 ## The Axiom + Prada Collaboration
 
 In an unusual partnership, Axiom Space is collaborating with Italian fashion house **Prada** on the outer layer of the suit. Prada's expertise in high-performance textiles — from racing yachts to Formula 1 — is being applied to the outer garment's fabric and thermal protection.
 
 It sounds like a stunt, but the collaboration is substantive. The outer layer of a spacesuit isn't decorative. It has to withstand micrometeorite impacts, block ultraviolet radiation, resist abrasion from lunar dust, and maintain flexibility across a 300-degree temperature range. Few companies have more experience solving similar problems in terrestrial applications.
+
+## Gallery: The AxEMU Up Close
+
+@gallery(https://grandmasterjc.github.io/artemis2-config/updates/images/axemu_full_front.jpg, https://grandmasterjc.github.io/artemis2-config/updates/images/axemu_studio.jpg, https://grandmasterjc.github.io/artemis2-config/updates/images/axemu_4g_comms.jpg, https://grandmasterjc.github.io/artemis2-config/updates/images/axemu_design_detail.jpg, https://grandmasterjc.github.io/artemis2-config/updates/images/axemu_full_view.jpg)
 
 ## How It's Being Tested
 
