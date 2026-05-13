@@ -16,6 +16,8 @@ The issue wasn’t that the shield failed. It was that the wear pattern didn’t
 
 That difference matters because Orion’s crewed flights have almost no margin for “we’ll learn more next time.” If the heat shield loses material in the wrong place at the wrong time, there’s no abort mode during peak heating.
 
+![Artemis I heat shield post-flight, showing the unexpected char loss pattern that triggered a two-year investigation. NASA OIG report.](https://grandmasterjc.github.io/artemis2-config/updates/images/artemis1-heat-shield-damage.jpg)
+
 ## NASA’s diagnosis: permeability, gas, and the skip-entry problem
 
 Spaceflight Now’s technical reporting (based on NASA’s analysis and interviews) describes the leading explanation NASA settled on after Artemis I: permeability — specifically, the heat shield’s lack of it during a key phase of the skip-entry trajectory. (Spaceflight Now, April 10, 2026)
@@ -47,6 +49,8 @@ Wiseman, describing the program’s internal pitch to the crew, said the analysi
 
 This is where the human part of the story matters. Astronauts do not sign up for “trust us.” They sign up for a risk argument that has been beaten up by analysis, testing, and dissent.
 
+![Engineers inspect the Artemis II Orion heat shield during installation — a fully assembled Avcoat ablator weighing thousands of pounds. Credit: NASA.](https://grandmasterjc.github.io/artemis2-config/updates/images/artemis2-heat-shield-install.jpg)
+
 ## “Significantly reduced” — what NASA confirmed after splashdown
 
 NASA’s April 20 update is deliberately conservative: it’s an initial assessment, not a final report. But it gives several concrete takeaways:
@@ -59,8 +63,6 @@ NASA’s April 20 update is deliberately conservative: it’s an initial assessm
 Wiseman’s own “first look” was similarly cautious: during re-entry, he and pilot Victor Glover “maybe saw two moments of a touch of char loss,” and after recovery he noticed “a little bit of char loss on what’s called the shoulder.” (Reuters, April 17, 2026)
 
 Those details line up with NASA's framing: some loss occurred, but not in the alarming, widespread pattern that drove the Artemis I investigation.
-
-![Reid Wiseman hugging a NASA engineer after Artemis II splashdown](https://grandmasterjc.github.io/artemis2-config/updates/images/artemis2-heatshield-verdict.jpg)
 
 ## The debate didn't disappear — it narrowed
 
