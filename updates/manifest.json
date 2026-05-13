@@ -1,6 +1,17 @@
 {
   "updates": [
     {
+      "id": "artemis2-heatshield-verdict",
+      "title": "Reid Wiseman Needed to Hug an Engineer",
+      "subtitle": "Artemis II’s heat shield came back cleaner than Artemis I — and NASA still has work to do before Artemis III.",
+      "date": "2026-05-13T16:33:05Z",
+      "mission": "artemis2",
+      "premium": false,
+      "hero_image": "https://grandmasterjc.github.io/artemis2-config/updates/images/artemis2-heatshield-verdict.jpg",
+      "summary": "Artemis II’s post-flight heat shield imagery suggests NASA’s re-entry changes worked — but the hardest validation work for Artemis III is still ahead.",
+      "author": "Joachim Gresslien"
+    },
+    {
       "id": "artemis3-schedule-slipping",
       "title": "Artemis III: The Rocket Is Moving, the Plan Isn't",
       "subtitle": "Two months after NASA's mission rewrite, several core questions about Artemis III still don't have public answers.",
@@ -8,13 +19,13 @@
       "mission": "artemis3",
       "premium": true,
       "hero_image": "https://grandmasterjc.github.io/artemis2-config/updates/images/orion_hls_docking.jpg",
-      "summary": "NASA still hasn't named a crew, an orbit, or a duration for Artemis III \u2014 and the launch date is quietly drifting toward late 2027. Here's why a modest slip removes one of the two planned 2028 lunar landings.",
+      "summary": "NASA still hasn't named a crew, an orbit, or a duration for Artemis III — and the launch date is quietly drifting toward late 2027. Here's why a modest slip removes one of the two planned 2028 lunar landings.",
       "author": "Joachim Gresslien"
     },
     {
       "id": "artemis2-mission-recap",
       "title": "Artemis II: Everything That Floated Past the Moon",
-      "subtitle": "Iconic photographs, an hour-long eclipse, an emotional crater dedication \u2014 and one small plush toy carrying 5.6 million names. The full story.",
+      "subtitle": "Iconic photographs, an hour-long eclipse, an emotional crater dedication — and one small plush toy carrying 5.6 million names. The full story.",
       "date": "2026-04-27T17:00:00Z",
       "mission": "artemis2",
       "premium": false,
@@ -25,7 +36,7 @@
     {
       "id": "artemis2-what-we-learned",
       "title": "6 Things NASA Just Figured Out About Going to the Moon",
-      "subtitle": "The post-flight data from Artemis II is in \u2014 and some of the findings surprised even the engineers who designed the hardware.",
+      "subtitle": "The post-flight data from Artemis II is in — and some of the findings surprised even the engineers who designed the hardware.",
       "date": "2026-04-24T12:00:00Z",
       "mission": "artemis2",
       "premium": true,
@@ -41,7 +52,7 @@
       "mission": "artemis3",
       "premium": false,
       "hero_image": "https://grandmasterjc.github.io/artemis2-config/updates/images/axemu_2024_milan.jpg",
-      "summary": "For the first time ever, NASA astronauts will walk on the Moon in a privately-built spacesuit \u2014 co-designed by Italian fashion house Prada.",
+      "summary": "For the first time ever, NASA astronauts will walk on the Moon in a privately-built spacesuit — co-designed by Italian fashion house Prada.",
       "author": "Joachim Gresslien"
     },
     {
