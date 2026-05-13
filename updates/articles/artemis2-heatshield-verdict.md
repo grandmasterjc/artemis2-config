@@ -6,8 +6,6 @@ That line is the earliest official signal that the program’s most visible tech
 
 In the crew’s first press conference after splashdown, commander Reid Wiseman described the end of the mission in plain terms: “We came in fast, and we came in hot.” (Reuters, April 17, 2026) NASA’s own early look says the thermal protection system performed as expected, with “no unusual conditions identified.” (NASA, April 20, 2026)
 
-![](images/artemis2-heatshield-verdict.jpg)
-
 ## What the heat shield was supposed to do — and what went wrong on Artemis I
 
 Orion’s heat shield is a 16.5-foot-wide ablative system. “Ablative” means it is designed to burn and erode in a controlled way, carrying heat away from the structure underneath.
@@ -60,9 +58,11 @@ NASA’s April 20 update is deliberately conservative: it’s an initial assessm
 
 Wiseman’s own “first look” was similarly cautious: during re-entry, he and pilot Victor Glover “maybe saw two moments of a touch of char loss,” and after recovery he noticed “a little bit of char loss on what’s called the shoulder.” (Reuters, April 17, 2026)
 
-Those details line up with NASA’s framing: some loss occurred, but not in the alarming, widespread pattern that drove the Artemis I investigation.
+Those details line up with NASA's framing: some loss occurred, but not in the alarming, widespread pattern that drove the Artemis I investigation.
 
-## The debate didn’t disappear — it narrowed
+![Reid Wiseman hugging a NASA engineer after Artemis II splashdown](https://grandmasterjc.github.io/artemis2-config/updates/images/artemis2-heatshield-verdict.jpg)
+
+## The debate didn't disappear — it narrowed
 
 Even before Artemis II flew, critics argued NASA was accepting too much uncertainty.
 
@@ -74,7 +74,7 @@ NASA’s public posture has been that the system has margin, and that the trajec
 
 Now Artemis II has returned, the argument has shifted. The question is no longer whether the shield can survive a crewed lunar return at all. It did.
 
-The more precise question is: did Artemis II validate the *mechanism* NASA believed was driving the Artemis I behavior — and will that mechanism hold across the range of plausible Artemis III conditions?
+The more precise question is: did Artemis II validate the mechanism NASA believed was driving the Artemis I behavior — and will that mechanism hold across the range of plausible Artemis III conditions?
 
 ## What this means for Artemis III
 
