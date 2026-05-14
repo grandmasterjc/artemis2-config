@@ -18,6 +18,8 @@ That difference matters because Orion’s crewed flights have almost no margin f
 
 ![Artemis I heat shield post-flight, showing the unexpected char loss pattern that triggered a two-year investigation. NASA OIG report.](https://grandmasterjc.github.io/artemis2-config/updates/images/artemis1-heat-shield-damage.jpg)
 
+That image — char layer fractured rather than smoothly eroded — is what NASA spent two years explaining.
+
 ## NASA’s diagnosis: permeability, gas, and the skip-entry problem
 
 Spaceflight Now’s technical reporting (based on NASA’s analysis and interviews) describes the leading explanation NASA settled on after Artemis I: permeability — specifically, the heat shield’s lack of it during a key phase of the skip-entry trajectory. (Spaceflight Now, April 10, 2026)
@@ -50,6 +52,8 @@ Wiseman, describing the program’s internal pitch to the crew, said the analysi
 This is where the human part of the story matters. Astronauts do not sign up for “trust us.” They sign up for a risk argument that has been beaten up by analysis, testing, and dissent.
 
 ![Engineers inspect the Artemis II Orion heat shield during installation — a fully assembled Avcoat ablator weighing thousands of pounds. Credit: NASA.](https://grandmasterjc.github.io/artemis2-config/updates/images/artemis2-heat-shield-install.jpg)
+
+That is the actual hardware that flew on Artemis II. The question after splashdown was whether it would tell a different story than Artemis I.
 
 ## “Significantly reduced” — what NASA confirmed after splashdown
 
