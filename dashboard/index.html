@@ -85,9 +85,50 @@
   .task-list li { padding: 8px 0; border-top: 1px solid #1A1F3A;
     font-size: 13px; }
   .task-list li:first-child { border-top: none; }
+  .task-row { display: flex; gap: 8px; align-items: flex-start; }
+  .task-arrow { flex-shrink: 0; color: #4CC9F0; font-size: 10px;
+    line-height: 1.6; transition: transform 0.2s; user-select: none; }
+  .task-arrow.expanded { transform: rotate(90deg); }
+  .task-text { flex: 1; }
   .task-title { display: block; }
   .task-meta { display: block; font-size: 11px; color: #6B7280;
     margin-top: 2px; }
+  .task-item:hover .task-row { opacity: 0.85; }
+  .task-detail { margin-top: 12px; padding: 12px; background: #050514;
+    border-radius: 6px; border: 1px solid #1A1F3A; font-size: 12px; }
+  .detail-section { margin-bottom: 14px; }
+  .detail-section:last-child { margin-bottom: 0; }
+  .detail-section h4 { font-size: 10px; text-transform: uppercase;
+    letter-spacing: 0.6px; color: #A8B3CF;
+    margin-bottom: 6px; font-weight: 700; }
+  .detail-section p { font-size: 12px; line-height: 1.5;
+    color: #FFFFFF; }
+  .plan-ref-text { font-style: italic; color: #A8B3CF; }
+  .subtask-progress { font-size: 10px; padding: 2px 6px;
+    background: #1A1F3A; border-radius: 3px;
+    color: #A8B3CF; margin-left: 4px; letter-spacing: 0; }
+  .subtask-list { list-style: none; }
+  .subtask, .subtask-done { padding: 4px 0; font-size: 12px;
+    display: flex; gap: 8px; align-items: flex-start; }
+  .subtask-done { color: #6B7280; text-decoration: line-through; }
+  .check { flex-shrink: 0; color: #2CE771; font-size: 12px; }
+  .subtask .check { color: #6B7280; }
+  .link-list { display: flex; flex-direction: column; gap: 4px; }
+  .detail-link { color: #4CC9F0; text-decoration: none;
+    font-size: 12px; padding: 4px 0; }
+  .detail-link:hover { text-decoration: underline; }
+  .note-list { display: flex; flex-direction: column; gap: 8px; }
+  .note-item { font-size: 12px; padding: 6px 8px;
+    background: #0A0F29; border-left: 2px solid #4CC9F0;
+    border-radius: 3px; }
+  .note-date { display: block; font-size: 10px; color: #6B7280;
+    margin-bottom: 2px; }
+  .note-text { display: block; color: #FFFFFF;
+    line-height: 1.4; }
+  .dep-list { display: flex; flex-wrap: wrap; gap: 6px; }
+  .dep-item { font-size: 11px; padding: 3px 8px;
+    background: #0A0F29; border-radius: 4px;
+    border: 1px solid #1A1F3A; }
   .empty { color: #6B7280; font-style: italic; }
   footer { margin-top: 60px; padding-top: 24px; border-top: 1px solid #1A1F3A;
     font-size: 11px; color: #6B7280; }
@@ -100,7 +141,7 @@
 <div class="wrap">
   <header>
     <h1><span class="accent-bar"></span>ARTEMIS · DASHBOARD</h1>
-    <div class="updated">Updated 2026-05-14 15:06 CEST</div>
+    <div class="updated">Updated 2026-05-14 15:10 CEST</div>
   </header>
 
   <div class="kpi-row">
@@ -244,29 +285,394 @@
     
   
     <section class="section">
-      <h2>Tasks</h2>
+      <h2>Tasks <span class="meta" style="font-weight: 400; font-size: 11px; margin-left: 8px;">Click any task to expand details</span></h2>
       <div class="task-grid">
         <div class="task-col">
           <h3 style="color: #F8C537;">In progress · 2</h3>
-          <ul class="task-list"><li><span class="task-title">Ship v2.3.0 to App Store (email capture, time-sensitive notifications)</span><span class="task-meta">2026-05-20</span></li><li><span class="task-title">Draft pitch: 'Norwegian indie dev outranks NASA' for TechCrunch/MacStories/Daring Fireball</span><span class="task-meta">2026-05-31</span></li></ul>
+          <ul class="task-list"><li class="task-item" id="task-li-v23-release" onclick="toggleTask('v23-release')" style="cursor: pointer;">
+                <div class="task-row">
+                  <span class="task-arrow" id="arrow-v23-release">▸</span>
+                  <div class="task-text">
+                    <span class="task-title">Ship v2.3.0 to App Store (email capture, time-sensitive notifications)</span>
+                    <span class="task-meta">2026-05-20</span>
+                  </div>
+                </div>
+                <div class="task-detail" id="detail-v23-release" style="display: none;">
+                  <div class="detail-section"><h4>Plan reference</h4><p class="plan-ref-text">Required for email-capture-modal to reach users</p></div><div class="detail-section"><h4>Description</h4><p>Release v2.3.0 with the in-app email capture modal, Time Sensitive Notifications entitlement, ntfy purchase alerts on every verified transaction, and server-driven merch. This is the build that activates the newsletter funnel for all users.</p></div><div class="detail-section"><h4>Subtasks <span class="subtask-progress">2/9</span></h4><ul class="subtask-list"><li class="subtask"><span class="check">○</span>git fetch + reset to origin/main on Mac</li><li class="subtask"><span class="check">○</span>Remove Communication Notifications capability if still present (caused ITMS-90894)</li><li class="subtask"><span class="check">○</span>Bump version to 2.3.0</li><li class="subtask"><span class="check">○</span>Bump build number</li><li class="subtask-done"><span class="check">✔</span>Verify in simulator: modal triggers on 2nd article open</li><li class="subtask-done"><span class="check">✔</span>Verify in simulator: subscribe writes to Kit</li><li class="subtask"><span class="check">○</span>Archive + upload to App Store Connect</li><li class="subtask"><span class="check">○</span>Write 'What's New' release notes (English)</li><li class="subtask"><span class="check">○</span>Submit for review</li></ul></div><div class="detail-section"><h4>Dependencies</h4><div class="dep-list"><span class="dep-item">✅ Email Capture Modal</span></div></div><div class="detail-section"><h4>Links</h4><div class="link-list"><a href="https://appstoreconnect.apple.com" target="_blank" class="detail-link">App Store Connect →</a><a href="https://github.com/grandmasterjc/ArtemisTracker" target="_blank" class="detail-link">GitHub repo →</a><a href="https://github.com/grandmasterjc/ArtemisTracker/commits/main" target="_blank" class="detail-link">Most recent commit →</a></div></div><div class="detail-section"><h4>Notes</h4><div class="note-list"><div class="note-item"><span class="note-date">2026-05-14</span><span class="note-text">Modal verified end-to-end with test signup (joachim.gresslien+artemis@gmail.com landed in Kit).</span></div></div></div>
+                </div>
+              </li><li class="task-item" id="task-li-press-pitch-indie-dev" onclick="toggleTask('press-pitch-indie-dev')" style="cursor: pointer;">
+                <div class="task-row">
+                  <span class="task-arrow" id="arrow-press-pitch-indie-dev"></span>
+                  <div class="task-text">
+                    <span class="task-title">Draft pitch: 'Norwegian indie dev outranks NASA' for TechCrunch/MacStories/Daring Fireball</span>
+                    <span class="task-meta">2026-05-31</span>
+                  </div>
+                </div>
+                <div class="task-detail" id="detail-press-pitch-indie-dev" style="display: none;">
+                  <div class="detail-section"><h4>Plan reference</h4><p class="plan-ref-text">Phase 1 §4.2.E (deferred from launch into Phase 2)</p></div>
+                </div>
+              </li></ul>
         </div>
         <div class="task-col">
           <h3 style="color: #4CC9F0;">Upcoming · 16</h3>
-          <ul class="task-list"><li><span class="task-title">Open @ArtemisTracker on X and Threads (Master must-do #7)</span><span class="task-meta">2026-05-21</span></li><li><span class="task-title">First tweet-thread based on 'What we learned' article (Master must-do #8)</span><span class="task-meta">2026-05-23</span></li><li><span class="task-title">Apple Search Ads Basic — $5/day on 'artemis' (Master must-do #5)</span><span class="task-meta">2026-05-25</span></li><li><span class="task-title">Reserve artemistracker.com / bittefactory.no/artemis (Master must-do #6)</span><span class="task-meta">2026-05-25</span></li><li><span class="task-title">Identify 5 evergreen article topics for arkivet (Master must-do #9)</span><span class="task-meta">2026-06-01</span></li><li><span class="task-title">Decide on pricing A/B-test plan (Master must-do #10)</span><span class="task-meta">2026-06-15</span></li><li><span class="task-title">Decide: SpaceX Tracker as separate app or defer (Master must-do #11)</span><span class="task-meta">2026-06-15</span></li><li><span class="task-title">Android Play Store ASO refresh</span><span class="task-meta">2026-07-01</span></li><li><span class="task-title">Send 'How was your mission?' survey to paying users</span><span class="task-meta">2026-07-15</span></li><li><span class="task-title">Decide co-founder / hire / sabbatical path (Master must-do #12)</span><span class="task-meta">2026-08-01</span></li><li><span class="task-title">Launch Mission Pass concept ($9.99 one-time)</span><span class="task-meta">2026-11-01</span></li><li><span class="task-title">Launch mission patch series ($14.99)</span><span class="task-meta">2026-12-01</span></li><li><span class="task-title">Black Friday: Lifetime $39.99 for 96 timer + push</span><span class="task-meta">2026-11-27</span></li><li><span class="task-title">Yearly $19.99 → $24.99, Lifetime $49.99 → $69.99 (pre-Artemis III)</span><span class="task-meta">2027-03-15</span></li><li><span class="task-title">Pitch Apple App Store editorial team for Featured (3 mnd før A3)</span><span class="task-meta">2027-04-15</span></li><li><span class="task-title">PR-push to TechCrunch, The Verge, MacStories, ArsTechnica (pre-A3)</span><span class="task-meta">2027-05-01</span></li></ul>
+          <ul class="task-list"><li class="task-item" id="task-li-x-threads-accounts" onclick="toggleTask('x-threads-accounts')" style="cursor: pointer;">
+                <div class="task-row">
+                  <span class="task-arrow" id="arrow-x-threads-accounts">▸</span>
+                  <div class="task-text">
+                    <span class="task-title">Open @ArtemisTracker on X and Threads (Master must-do #7)</span>
+                    <span class="task-meta">2026-05-21</span>
+                  </div>
+                </div>
+                <div class="task-detail" id="detail-x-threads-accounts" style="display: none;">
+                  <div class="detail-section"><h4>Plan reference</h4><p class="plan-ref-text">Must-do #7 — 'Opprett @ArtemisTracker på X og Threads'</p></div><div class="detail-section"><h4>Description</h4><p>Open @ArtemisTracker (or similar handle) on X and Threads. Use the app icon as profile image, bio: 'Independent analysis of NASA's Artemis program. Written by the developer behind the #1 Artemis app on the App Store.'</p></div><div class="detail-section"><h4>Subtasks <span class="subtask-progress">0/6</span></h4><ul class="subtask-list"><li class="subtask"><span class="check">○</span>Reserve @ArtemisTracker handle on X</li><li class="subtask"><span class="check">○</span>Reserve @ArtemisTracker handle on Threads (via IG)</li><li class="subtask"><span class="check">○</span>Upload 800x800 app icon as profile</li><li class="subtask"><span class="check">○</span>Upload header image (NASA Artemis II hero)</li><li class="subtask"><span class="check">○</span>Add bio + link to artemisbriefing.beehiiv.com</li><li class="subtask"><span class="check">○</span>Follow 30 space-relevant accounts</li></ul></div><div class="detail-section"><h4>Links</h4><div class="link-list"><a href="https://x.com/signup" target="_blank" class="detail-link">X signup →</a><a href="https://threads.net" target="_blank" class="detail-link">Threads →</a></div></div>
+                </div>
+              </li><li class="task-item" id="task-li-first-tweet-thread" onclick="toggleTask('first-tweet-thread')" style="cursor: pointer;">
+                <div class="task-row">
+                  <span class="task-arrow" id="arrow-first-tweet-thread">▸</span>
+                  <div class="task-text">
+                    <span class="task-title">First tweet-thread based on 'What we learned' article (Master must-do #8)</span>
+                    <span class="task-meta">2026-05-23</span>
+                  </div>
+                </div>
+                <div class="task-detail" id="detail-first-tweet-thread" style="display: none;">
+                  <div class="detail-section"><h4>Plan reference</h4><p class="plan-ref-text">Must-do #8</p></div><div class="detail-section"><h4>Description</h4><p>Write and post the first build-in-public thread. Topic: '7 things NASA just learned from Artemis II about going to the Moon'. Hook the indie-dev angle: 'I built the #1 Artemis app on the App Store as a hobby project.'</p></div><div class="detail-section"><h4>Subtasks <span class="subtask-progress">0/4</span></h4><ul class="subtask-list"><li class="subtask"><span class="check">○</span>Draft 7-tweet thread</li><li class="subtask"><span class="check">○</span>Add app screenshots / artwork</li><li class="subtask"><span class="check">○</span>Post + pin to profile</li><li class="subtask"><span class="check">○</span>Cross-post to Threads</li></ul></div><div class="detail-section"><h4>Dependencies</h4><div class="dep-list"><span class="dep-item">⏳ X Threads Accounts</span></div></div>
+                </div>
+              </li><li class="task-item" id="task-li-apple-search-ads" onclick="toggleTask('apple-search-ads')" style="cursor: pointer;">
+                <div class="task-row">
+                  <span class="task-arrow" id="arrow-apple-search-ads">▸</span>
+                  <div class="task-text">
+                    <span class="task-title">Apple Search Ads Basic — $5/day on 'artemis' (Master must-do #5)</span>
+                    <span class="task-meta">2026-05-25</span>
+                  </div>
+                </div>
+                <div class="task-detail" id="detail-apple-search-ads" style="display: none;">
+                  <div class="detail-section"><h4>Plan reference</h4><p class="plan-ref-text">Must-do #5 — protect #1 organic ranking</p></div><div class="detail-section"><h4>Description</h4><p>Set up Apple Search Ads Basic at $5/day on brand-defense keywords. Goal: protect #1 ranking on 'artemis' search and capture overflow from broader space search.</p></div><div class="detail-section"><h4>Subtasks <span class="subtask-progress">0/5</span></h4><ul class="subtask-list"><li class="subtask"><span class="check">○</span>Activate Apple Search Ads Basic</li><li class="subtask"><span class="check">○</span>Bid on 'artemis', 'moon mission tracker', 'nasa launch'</li><li class="subtask"><span class="check">○</span>Set $5/day budget</li><li class="subtask"><span class="check">○</span>Set up conversion tracking</li><li class="subtask"><span class="check">○</span>Review CPI after 7 days, adjust if needed</li></ul></div><div class="detail-section"><h4>Links</h4><div class="link-list"><a href="https://searchads.apple.com" target="_blank" class="detail-link">Apple Search Ads →</a></div></div>
+                </div>
+              </li><li class="task-item" id="task-li-domain-reservation" onclick="toggleTask('domain-reservation')" style="cursor: pointer;">
+                <div class="task-row">
+                  <span class="task-arrow" id="arrow-domain-reservation"></span>
+                  <div class="task-text">
+                    <span class="task-title">Reserve artemistracker.com / bittefactory.no/artemis (Master must-do #6)</span>
+                    <span class="task-meta">2026-05-25</span>
+                  </div>
+                </div>
+                <div class="task-detail" id="detail-domain-reservation" style="display: none;">
+                  <div class="detail-section"><h4>Plan reference</h4><p class="plan-ref-text">Must-do #6</p></div>
+                </div>
+              </li><li class="task-item" id="task-li-evergreen-article-list" onclick="toggleTask('evergreen-article-list')" style="cursor: pointer;">
+                <div class="task-row">
+                  <span class="task-arrow" id="arrow-evergreen-article-list"></span>
+                  <div class="task-text">
+                    <span class="task-title">Identify 5 evergreen article topics for arkivet (Master must-do #9)</span>
+                    <span class="task-meta">2026-06-01</span>
+                  </div>
+                </div>
+                <div class="task-detail" id="detail-evergreen-article-list" style="display: none;">
+                  <div class="detail-section"><h4>Plan reference</h4><p class="plan-ref-text">Must-do #9 — 'Identifiser 5 evergreen-artikkel-temaer'</p></div>
+                </div>
+              </li><li class="task-item" id="task-li-price-experiment-plan" onclick="toggleTask('price-experiment-plan')" style="cursor: pointer;">
+                <div class="task-row">
+                  <span class="task-arrow" id="arrow-price-experiment-plan"></span>
+                  <div class="task-text">
+                    <span class="task-title">Decide on pricing A/B-test plan (Master must-do #10)</span>
+                    <span class="task-meta">2026-06-15</span>
+                  </div>
+                </div>
+                <div class="task-detail" id="detail-price-experiment-plan" style="display: none;">
+                  <div class="detail-section"><h4>Plan reference</h4><p class="plan-ref-text">Must-do #10 — Phase 1 lifetime sale experiment</p></div>
+                </div>
+              </li><li class="task-item" id="task-li-spacex-tracker-decision" onclick="toggleTask('spacex-tracker-decision')" style="cursor: pointer;">
+                <div class="task-row">
+                  <span class="task-arrow" id="arrow-spacex-tracker-decision"></span>
+                  <div class="task-text">
+                    <span class="task-title">Decide: SpaceX Tracker as separate app or defer (Master must-do #11)</span>
+                    <span class="task-meta">2026-06-15</span>
+                  </div>
+                </div>
+                <div class="task-detail" id="detail-spacex-tracker-decision" style="display: none;">
+                  <div class="detail-section"><h4>Plan reference</h4><p class="plan-ref-text">Must-do #11</p></div>
+                </div>
+              </li><li class="task-item" id="task-li-android-aso-refresh" onclick="toggleTask('android-aso-refresh')" style="cursor: pointer;">
+                <div class="task-row">
+                  <span class="task-arrow" id="arrow-android-aso-refresh"></span>
+                  <div class="task-text">
+                    <span class="task-title">Android Play Store ASO refresh</span>
+                    <span class="task-meta">2026-07-01</span>
+                  </div>
+                </div>
+                <div class="task-detail" id="detail-android-aso-refresh" style="display: none;">
+                  <div class="detail-section"><h4>Plan reference</h4><p class="plan-ref-text">Phase 1 §4.2.D — 'ASO-refresh'</p></div>
+                </div>
+              </li><li class="task-item" id="task-li-ask-survey" onclick="toggleTask('ask-survey')" style="cursor: pointer;">
+                <div class="task-row">
+                  <span class="task-arrow" id="arrow-ask-survey"></span>
+                  <div class="task-text">
+                    <span class="task-title">Send 'How was your mission?' survey to paying users</span>
+                    <span class="task-meta">2026-07-15</span>
+                  </div>
+                </div>
+                <div class="task-detail" id="detail-ask-survey" style="display: none;">
+                  <div class="detail-section"><h4>Plan reference</h4><p class="plan-ref-text">Phase 1 Quick win #7 — kvalitative data om konvertering</p></div>
+                </div>
+              </li><li class="task-item" id="task-li-cofounder-decision" onclick="toggleTask('cofounder-decision')" style="cursor: pointer;">
+                <div class="task-row">
+                  <span class="task-arrow" id="arrow-cofounder-decision">▸</span>
+                  <div class="task-text">
+                    <span class="task-title">Decide co-founder / hire / sabbatical path (Master must-do #12)</span>
+                    <span class="task-meta">2026-08-01</span>
+                  </div>
+                </div>
+                <div class="task-detail" id="detail-cofounder-decision" style="display: none;">
+                  <div class="detail-section"><h4>Plan reference</h4><p class="plan-ref-text">Must-do #12 — 'Bestem co-founder/første ansatt-vei innen 1. august 2026'</p></div><div class="detail-section"><h4>Description</h4><p>Decision required by Aug 1, 2026. Three paths: A) Hobby model (~$200-400K netto over 30 mo), B) Co-founder/first hire (~$400-600K netto), C) Sabbatical 6-9 mo around Artemis IV (~$650-850K netto). Decision drives everything in 2027-2028.</p></div><div class="detail-section"><h4>Subtasks <span class="subtask-progress">0/5</span></h4><ul class="subtask-list"><li class="subtask"><span class="check">○</span>Reflect on workload capacity through 2028</li><li class="subtask"><span class="check">○</span>Talk to medeier in Bit Factory AS</li><li class="subtask"><span class="check">○</span>If A: continue as-is, accept revenue ceiling</li><li class="subtask"><span class="check">○</span>If B: identify candidate co-founder profile</li><li class="subtask"><span class="check">○</span>If C: discuss with employer + reserve runway</li></ul></div><div class="detail-section"><h4>Links</h4><div class="link-list"><a href="#" target="_blank" class="detail-link">Master plan section 10 →</a></div></div><div class="detail-section"><h4>Notes</h4><div class="note-list"><div class="note-item"><span class="note-date">2026-05-10</span><span class="note-text">Initial discussion: Bit Factory AS is 50/50 ownership. Talk needed with medeier about app ownership before any decision.</span></div></div></div>
+                </div>
+              </li><li class="task-item" id="task-li-mission-passes" onclick="toggleTask('mission-passes')" style="cursor: pointer;">
+                <div class="task-row">
+                  <span class="task-arrow" id="arrow-mission-passes"></span>
+                  <div class="task-text">
+                    <span class="task-title">Launch Mission Pass concept ($9.99 one-time)</span>
+                    <span class="task-meta">2026-11-01</span>
+                  </div>
+                </div>
+                <div class="task-detail" id="detail-mission-passes" style="display: none;">
+                  <div class="detail-section"><h4>Plan reference</h4><p class="plan-ref-text">Phase 2 §5.2 November experiment</p></div>
+                </div>
+              </li><li class="task-item" id="task-li-merch-mission-patches" onclick="toggleTask('merch-mission-patches')" style="cursor: pointer;">
+                <div class="task-row">
+                  <span class="task-arrow" id="arrow-merch-mission-patches"></span>
+                  <div class="task-text">
+                    <span class="task-title">Launch mission patch series ($14.99)</span>
+                    <span class="task-meta">2026-12-01</span>
+                  </div>
+                </div>
+                <div class="task-detail" id="detail-merch-mission-patches" style="display: none;">
+                  <div class="detail-section"><h4>Plan reference</h4><p class="plan-ref-text">Phase 2 §5.4 merch utvidelse</p></div>
+                </div>
+              </li><li class="task-item" id="task-li-black-friday-lifetime" onclick="toggleTask('black-friday-lifetime')" style="cursor: pointer;">
+                <div class="task-row">
+                  <span class="task-arrow" id="arrow-black-friday-lifetime"></span>
+                  <div class="task-text">
+                    <span class="task-title">Black Friday: Lifetime $39.99 for 96 timer + push</span>
+                    <span class="task-meta">2026-11-27</span>
+                  </div>
+                </div>
+                <div class="task-detail" id="detail-black-friday-lifetime" style="display: none;">
+                  <div class="detail-section"><h4>Plan reference</h4><p class="plan-ref-text">Phase 2 §5.2 December experiment</p></div>
+                </div>
+              </li><li class="task-item" id="task-li-price-increase-pre-a3" onclick="toggleTask('price-increase-pre-a3')" style="cursor: pointer;">
+                <div class="task-row">
+                  <span class="task-arrow" id="arrow-price-increase-pre-a3"></span>
+                  <div class="task-text">
+                    <span class="task-title">Yearly $19.99 → $24.99, Lifetime $49.99 → $69.99 (pre-Artemis III)</span>
+                    <span class="task-meta">2027-03-15</span>
+                  </div>
+                </div>
+                <div class="task-detail" id="detail-price-increase-pre-a3" style="display: none;">
+                  <div class="detail-section"><h4>Plan reference</h4><p class="plan-ref-text">Phase 3 §6.1.A pris-økning #1</p></div>
+                </div>
+              </li><li class="task-item" id="task-li-apple-featured-pitch" onclick="toggleTask('apple-featured-pitch')" style="cursor: pointer;">
+                <div class="task-row">
+                  <span class="task-arrow" id="arrow-apple-featured-pitch"></span>
+                  <div class="task-text">
+                    <span class="task-title">Pitch Apple App Store editorial team for Featured (3 mnd før A3)</span>
+                    <span class="task-meta">2027-04-15</span>
+                  </div>
+                </div>
+                <div class="task-detail" id="detail-apple-featured-pitch" style="display: none;">
+                  <div class="detail-section"><h4>Plan reference</h4><p class="plan-ref-text">Phase 3 §6.1.D Apple Featured-pitch</p></div>
+                </div>
+              </li><li class="task-item" id="task-li-press-pre-a3" onclick="toggleTask('press-pre-a3')" style="cursor: pointer;">
+                <div class="task-row">
+                  <span class="task-arrow" id="arrow-press-pre-a3"></span>
+                  <div class="task-text">
+                    <span class="task-title">PR-push to TechCrunch, The Verge, MacStories, ArsTechnica (pre-A3)</span>
+                    <span class="task-meta">2027-05-01</span>
+                  </div>
+                </div>
+                <div class="task-detail" id="detail-press-pre-a3" style="display: none;">
+                  <div class="detail-section"><h4>Plan reference</h4><p class="plan-ref-text">Phase 3 §6.1.C</p></div>
+                </div>
+              </li></ul>
         </div>
         <div class="task-col">
           <h3 style="color: #FC3D21;">Blocked · 1</h3>
-          <ul class="task-list"><li><span class="task-title">X (Twitter) API access for auto-tweet cron</span><span class="task-meta">X API requires application + approval (typically 5-7 days)</span></li></ul>
+          <ul class="task-list"><li class="task-item" id="task-li-x-api-access" onclick="toggleTask('x-api-access')" style="cursor: pointer;">
+                <div class="task-row">
+                  <span class="task-arrow" id="arrow-x-api-access"></span>
+                  <div class="task-text">
+                    <span class="task-title">X (Twitter) API access for auto-tweet cron</span>
+                    <span class="task-meta">X API requires application + approval (typically 5-7 days)</span>
+                  </div>
+                </div>
+                <div class="task-detail" id="detail-x-api-access" style="display: none;">
+                  <p class="empty">No additional detail yet. Ask the agent to add notes or subtasks for this task.</p>
+                </div>
+              </li></ul>
         </div>
         <div class="task-col">
           <h3 style="color: #2CE771;">Completed · 13</h3>
-          <ul class="task-list"><li><span class="task-title">Choose email platform (Master must-do #1)</span><span class="task-meta">2026-05-02</span></li><li><span class="task-title">Decide blueprint poster launch date (Master must-do #3)</span><span class="task-meta">2026-05-07</span></li><li><span class="task-title">Blueprint poster live in shop (Master must-do #3)</span><span class="task-meta">2026-05-07</span></li><li><span class="task-title">Blueprint launch push-text drafted (Master must-do #4)</span><span class="task-meta">2026-05-07</span></li><li><span class="task-title">Server-driven merch system (no App Store updates needed)</span><span class="task-meta">2026-05-07</span></li><li><span class="task-title">Push notifications working with Time Sensitive entitlement</span><span class="task-meta">2026-05-10</span></li><li><span class="task-title">ntfy real-time purchase alerts (initial + renewals + refunds)</span><span class="task-meta">2026-05-11</span></li><li><span class="task-title">Weekly article automation (draft + publish + push)</span><span class="task-meta">2026-05-13</span></li><li><span class="task-title">Migrated newsletter from Beehiiv to Kit (10K free)</span><span class="task-meta">2026-05-14</span></li><li><span class="task-title">In-app email capture modal in v2.3.0 (Master must-do #2)</span><span class="task-meta">2026-05-14</span></li><li><span class="task-title">Auto-publish weekly newsletter via Kit API</span><span class="task-meta">2026-05-14</span></li><li><span class="task-title">App Store Connect API integration</span><span class="task-meta">2026-05-14</span></li><li><span class="task-title">Self-updating dashboard at /dashboard/</span><span class="task-meta">2026-05-14</span></li></ul>
+          <ul class="task-list"><li class="task-item" id="task-li-email-platform-chosen" onclick="toggleTask('email-platform-chosen')" style="cursor: pointer;">
+                <div class="task-row">
+                  <span class="task-arrow" id="arrow-email-platform-chosen"></span>
+                  <div class="task-text">
+                    <span class="task-title">Choose email platform (Master must-do #1)</span>
+                    <span class="task-meta">2026-05-02</span>
+                  </div>
+                </div>
+                <div class="task-detail" id="detail-email-platform-chosen" style="display: none;">
+                  <div class="detail-section"><h4>Plan reference</h4><p class="plan-ref-text">Must-do #1 — first set up Beehiiv, then migrated to Kit on May 14</p></div>
+                </div>
+              </li><li class="task-item" id="task-li-blueprint-launch-date" onclick="toggleTask('blueprint-launch-date')" style="cursor: pointer;">
+                <div class="task-row">
+                  <span class="task-arrow" id="arrow-blueprint-launch-date"></span>
+                  <div class="task-text">
+                    <span class="task-title">Decide blueprint poster launch date (Master must-do #3)</span>
+                    <span class="task-meta">2026-05-07</span>
+                  </div>
+                </div>
+                <div class="task-detail" id="detail-blueprint-launch-date" style="display: none;">
+                  <div class="detail-section"><h4>Plan reference</h4><p class="plan-ref-text">Must-do #3 — launched via server-driven merch</p></div>
+                </div>
+              </li><li class="task-item" id="task-li-blueprint-poster-live" onclick="toggleTask('blueprint-poster-live')" style="cursor: pointer;">
+                <div class="task-row">
+                  <span class="task-arrow" id="arrow-blueprint-poster-live"></span>
+                  <div class="task-text">
+                    <span class="task-title">Blueprint poster live in shop (Master must-do #3)</span>
+                    <span class="task-meta">2026-05-07</span>
+                  </div>
+                </div>
+                <div class="task-detail" id="detail-blueprint-poster-live" style="display: none;">
+                  <div class="detail-section"><h4>Plan reference</h4><p class="plan-ref-text">Must-do #3 + Phase 1 Quick win #1</p></div>
+                </div>
+              </li><li class="task-item" id="task-li-blueprint-launch-push" onclick="toggleTask('blueprint-launch-push')" style="cursor: pointer;">
+                <div class="task-row">
+                  <span class="task-arrow" id="arrow-blueprint-launch-push"></span>
+                  <div class="task-text">
+                    <span class="task-title">Blueprint launch push-text drafted (Master must-do #4)</span>
+                    <span class="task-meta">2026-05-07</span>
+                  </div>
+                </div>
+                <div class="task-detail" id="detail-blueprint-launch-push" style="display: none;">
+                  <div class="detail-section"><h4>Plan reference</h4><p class="plan-ref-text">Must-do #4 — push not sent separately since blueprint launched as part of v2.2.0 store refresh; tagged for explicit dedicated push later</p></div>
+                </div>
+              </li><li class="task-item" id="task-li-merch-server-driven" onclick="toggleTask('merch-server-driven')" style="cursor: pointer;">
+                <div class="task-row">
+                  <span class="task-arrow" id="arrow-merch-server-driven"></span>
+                  <div class="task-text">
+                    <span class="task-title">Server-driven merch system (no App Store updates needed)</span>
+                    <span class="task-meta">2026-05-07</span>
+                  </div>
+                </div>
+                <div class="task-detail" id="detail-merch-server-driven" style="display: none;">
+                  <div class="detail-section"><h4>Plan reference</h4><p class="plan-ref-text">Structural improvement — enables faster merch experiments</p></div>
+                </div>
+              </li><li class="task-item" id="task-li-fcm-push-working" onclick="toggleTask('fcm-push-working')" style="cursor: pointer;">
+                <div class="task-row">
+                  <span class="task-arrow" id="arrow-fcm-push-working"></span>
+                  <div class="task-text">
+                    <span class="task-title">Push notifications working with Time Sensitive entitlement</span>
+                    <span class="task-meta">2026-05-10</span>
+                  </div>
+                </div>
+                <div class="task-detail" id="detail-fcm-push-working" style="display: none;">
+                  <div class="detail-section"><h4>Plan reference</h4><p class="plan-ref-text">Phase 1 — 'Push-segmentet free er en uutnyttet konverterings-motor'</p></div>
+                </div>
+              </li><li class="task-item" id="task-li-ntfy-purchase-alerts" onclick="toggleTask('ntfy-purchase-alerts')" style="cursor: pointer;">
+                <div class="task-row">
+                  <span class="task-arrow" id="arrow-ntfy-purchase-alerts"></span>
+                  <div class="task-text">
+                    <span class="task-title">ntfy real-time purchase alerts (initial + renewals + refunds)</span>
+                    <span class="task-meta">2026-05-11</span>
+                  </div>
+                </div>
+                <div class="task-detail" id="detail-ntfy-purchase-alerts" style="display: none;">
+                  <div class="detail-section"><h4>Plan reference</h4><p class="plan-ref-text">Internal infra — supports monitoring all 5 phases</p></div>
+                </div>
+              </li><li class="task-item" id="task-li-weekly-article-automation" onclick="toggleTask('weekly-article-automation')" style="cursor: pointer;">
+                <div class="task-row">
+                  <span class="task-arrow" id="arrow-weekly-article-automation"></span>
+                  <div class="task-text">
+                    <span class="task-title">Weekly article automation (draft + publish + push)</span>
+                    <span class="task-meta">2026-05-13</span>
+                  </div>
+                </div>
+                <div class="task-detail" id="detail-weekly-article-automation" style="display: none;">
+                  <div class="detail-section"><h4>Plan reference</h4><p class="plan-ref-text">Phase 1 §4.2.B — 'Innholds-motor: bygg arkivet før du trenger det'</p></div>
+                </div>
+              </li><li class="task-item" id="task-li-email-platform-migrated-kit" onclick="toggleTask('email-platform-migrated-kit')" style="cursor: pointer;">
+                <div class="task-row">
+                  <span class="task-arrow" id="arrow-email-platform-migrated-kit"></span>
+                  <div class="task-text">
+                    <span class="task-title">Migrated newsletter from Beehiiv to Kit (10K free)</span>
+                    <span class="task-meta">2026-05-14</span>
+                  </div>
+                </div>
+                <div class="task-detail" id="detail-email-platform-migrated-kit" style="display: none;">
+                  <div class="detail-section"><h4>Plan reference</h4><p class="plan-ref-text">Must-do #1 — chose better free-tier option</p></div>
+                </div>
+              </li><li class="task-item" id="task-li-email-capture-modal" onclick="toggleTask('email-capture-modal')" style="cursor: pointer;">
+                <div class="task-row">
+                  <span class="task-arrow" id="arrow-email-capture-modal"></span>
+                  <div class="task-text">
+                    <span class="task-title">In-app email capture modal in v2.3.0 (Master must-do #2)</span>
+                    <span class="task-meta">2026-05-14</span>
+                  </div>
+                </div>
+                <div class="task-detail" id="detail-email-capture-modal" style="display: none;">
+                  <div class="detail-section"><h4>Plan reference</h4><p class="plan-ref-text">Must-do #2 — directly addresses 'dyreste enkeltfeil' (no email list)</p></div>
+                </div>
+              </li><li class="task-item" id="task-li-weekly-newsletter-auto" onclick="toggleTask('weekly-newsletter-auto')" style="cursor: pointer;">
+                <div class="task-row">
+                  <span class="task-arrow" id="arrow-weekly-newsletter-auto"></span>
+                  <div class="task-text">
+                    <span class="task-title">Auto-publish weekly newsletter via Kit API</span>
+                    <span class="task-meta">2026-05-14</span>
+                  </div>
+                </div>
+                <div class="task-detail" id="detail-weekly-newsletter-auto" style="display: none;">
+                  <div class="detail-section"><h4>Plan reference</h4><p class="plan-ref-text">Phase 1 §4.2.A — 'E-post-listen — bygg den fra dag én'</p></div>
+                </div>
+              </li><li class="task-item" id="task-li-app-store-connect-api" onclick="toggleTask('app-store-connect-api')" style="cursor: pointer;">
+                <div class="task-row">
+                  <span class="task-arrow" id="arrow-app-store-connect-api"></span>
+                  <div class="task-text">
+                    <span class="task-title">App Store Connect API integration</span>
+                    <span class="task-meta">2026-05-14</span>
+                  </div>
+                </div>
+                <div class="task-detail" id="detail-app-store-connect-api" style="display: none;">
+                  <div class="detail-section"><h4>Plan reference</h4><p class="plan-ref-text">Internal infra — required for honest KPI tracking against Phase 1 goals</p></div>
+                </div>
+              </li><li class="task-item" id="task-li-dashboard-live" onclick="toggleTask('dashboard-live')" style="cursor: pointer;">
+                <div class="task-row">
+                  <span class="task-arrow" id="arrow-dashboard-live"></span>
+                  <div class="task-text">
+                    <span class="task-title">Self-updating dashboard at /dashboard/</span>
+                    <span class="task-meta">2026-05-14</span>
+                  </div>
+                </div>
+                <div class="task-detail" id="detail-dashboard-live" style="display: none;">
+                  <div class="detail-section"><h4>Plan reference</h4><p class="plan-ref-text">Internal infra — eliminates manual stat-collection friction</p></div>
+                </div>
+              </li></ul>
         </div>
       </div>
     </section>
     
 
-  <footer>
+  <script>
+  function toggleTask(tid) {
+    var d = document.getElementById('detail-' + tid);
+    var a = document.getElementById('arrow-' + tid);
+    if (d.style.display === 'none' || !d.style.display) {
+      d.style.display = 'block';
+      if (a) a.classList.add('expanded');
+    } else {
+      d.style.display = 'none';
+      if (a) a.classList.remove('expanded');
+    }
+  }
+</script>
+<footer>
     Auto-generated 4× daily (08:00, 12:00, 16:00, 20:00 CEST).<br/>
     Sources: App Store Connect API · Google Analytics 4 · Kit API · Firebase Cloud Messaging · Local push log
   </footer>
