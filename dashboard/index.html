@@ -53,12 +53,30 @@
     letter-spacing: 0.5px; }
   td { padding: 10px 14px; border-top: 1px solid #1A1F3A;
     color: #FFFFFF; }
-  .chart { display: flex; align-items: flex-end; gap: 4px; height: 140px;
+  .chart-wrap { display: flex; gap: 8px; align-items: stretch; }
+  .y-axis { display: flex; flex-direction: column; justify-content: space-between;
+    width: 40px; height: 160px; padding: 6px 0; }
+  .y-label { font-size: 10px; color: #6B7280;
+    text-align: right; line-height: 1; }
+  .chart { flex: 1; display: flex; align-items: flex-end; gap: 4px; height: 160px;
     background: #0A0F29; padding: 12px; border-radius: 8px;
-    border: 1px solid #1A1F3A; }
+    border: 1px solid #1A1F3A; position: relative; }
   .bar { flex: 1; background: #4CC9F0; border-radius: 2px 2px 0 0;
     min-height: 2px; opacity: 0.85; }
   .bar:hover { opacity: 1; }
+  .goal-line { position: absolute; left: 12px; right: 12px; height: 1px;
+    border-top: 1px dashed #F8C537; opacity: 0.85; }
+  .goal-label { position: absolute; right: 0; top: -8px;
+    background: #F8C537; color: #050514;
+    font-size: 10px; padding: 2px 6px; border-radius: 3px;
+    font-weight: 700; letter-spacing: 0.3px; }
+  .chart-x { display: flex; justify-content: space-between;
+    padding-left: 48px; margin-top: 6px; font-size: 10px;
+    color: #6B7280; letter-spacing: 0.3px; }
+  .x-mid { flex: 1; text-align: center; }
+  .trend-badge { font-size: 10px; padding: 3px 8px; color: #050514;
+    border-radius: 4px; font-weight: 700; letter-spacing: 0.5px;
+    text-transform: uppercase; }
   .task-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 16px; }
   .task-col { background: #0A0F29; border: 1px solid #1A1F3A;
@@ -82,7 +100,7 @@
 <div class="wrap">
   <header>
     <h1><span class="accent-bar"></span>ARTEMIS · DASHBOARD</h1>
-    <div class="updated">Updated 2026-05-14 15:01 CEST</div>
+    <div class="updated">Updated 2026-05-14 15:03 CEST</div>
   </header>
 
   <div class="kpi-row">
@@ -128,14 +146,34 @@
         <div class="metric"><div class="metric-num" style="color: #A8B3CF;">0</div><div class="metric-label">App updates</div></div>
         <div class="metric"><div class="metric-num" style="color: #2CE771;">0</div><div class="metric-label">Subscription txns</div></div>
       </div>
-      <div class="meta">Latest sales report: None</div>
+      <div class="meta">Latest sales report: 2026-05-12</div>
     </section>
     
   
     <section class="section">
-      <h2>Daily Active Users <span class="badge">GA4</span></h2>
-      <div class="chart"><div class="bar" style="height: 90.33189033189034%;" title="04-14: 626 users"></div><div class="bar" style="height: 79.36507936507937%;" title="04-15: 550 users"></div><div class="bar" style="height: 100.0%;" title="04-16: 693 users"></div><div class="bar" style="height: 91.05339105339105%;" title="04-17: 631 users"></div><div class="bar" style="height: 64.64646464646465%;" title="04-18: 448 users"></div><div class="bar" style="height: 49.35064935064935%;" title="04-19: 342 users"></div><div class="bar" style="height: 43.14574314574315%;" title="04-20: 299 users"></div><div class="bar" style="height: 43.867243867243864%;" title="04-21: 304 users"></div><div class="bar" style="height: 33.18903318903319%;" title="04-22: 230 users"></div><div class="bar" style="height: 30.158730158730158%;" title="04-23: 209 users"></div><div class="bar" style="height: 32.61183261183261%;" title="04-24: 226 users"></div><div class="bar" style="height: 26.695526695526695%;" title="04-25: 185 users"></div><div class="bar" style="height: 25.685425685425685%;" title="04-26: 178 users"></div><div class="bar" style="height: 33.76623376623377%;" title="04-27: 234 users"></div><div class="bar" style="height: 22.366522366522368%;" title="04-28: 155 users"></div><div class="bar" style="height: 20.057720057720058%;" title="04-29: 139 users"></div><div class="bar" style="height: 19.047619047619047%;" title="04-30: 132 users"></div><div class="bar" style="height: 21.06782106782107%;" title="05-01: 146 users"></div><div class="bar" style="height: 18.326118326118326%;" title="05-02: 127 users"></div><div class="bar" style="height: 22.7994227994228%;" title="05-03: 158 users"></div><div class="bar" style="height: 22.7994227994228%;" title="05-04: 158 users"></div><div class="bar" style="height: 22.655122655122657%;" title="05-05: 157 users"></div><div class="bar" style="height: 25.82972582972583%;" title="05-06: 179 users"></div><div class="bar" style="height: 56.85425685425686%;" title="05-07: 394 users"></div><div class="bar" style="height: 50.505050505050505%;" title="05-08: 350 users"></div><div class="bar" style="height: 40.115440115440116%;" title="05-09: 278 users"></div><div class="bar" style="height: 39.682539682539684%;" title="05-10: 275 users"></div><div class="bar" style="height: 38.38383838383838%;" title="05-11: 266 users"></div><div class="bar" style="height: 41.269841269841265%;" title="05-12: 286 users"></div><div class="bar" style="height: 55.12265512265512%;" title="05-13: 382 users"></div></div>
-      <div class="meta">Last 30 days · Active users per day</div>
+      <h2>Daily Active Users <span class="badge">GA4</span> <span class="trend-badge" style="background: #2CE771;">213% of goal</span></h2>
+      
+        <div class="metric-row" style="margin-bottom: 14px;">
+          <div class="metric"><div class="metric-num">291</div><div class="metric-label">30-day avg</div></div>
+          <div class="metric"><div class="metric-num" style="color: #2CE771;">319</div><div class="metric-label">7-day avg</div></div>
+          <div class="metric"><div class="metric-num">382</div><div class="metric-label">Latest day</div></div>
+          <div class="metric"><div class="metric-num" style="color: #A8B3CF;">150</div><div class="metric-label">Goal (Aug 31)</div></div>
+        </div>
+        <div class="chart-wrap">
+          <div class="y-axis"><div class="y-label">762</div><div class="y-label">572</div><div class="y-label">381</div><div class="y-label">191</div><div class="y-label">0</div></div>
+          <div class="chart">
+            <div class="goal-line" style="bottom: 19.67729240456513%;" title="DAU goal: 150">
+              <span class="goal-label">Goal: 150</span>
+            </div>
+            <div class="bar" style="height: 82.11990030171847%;" title="04-14: 626 users"></div><div class="bar" style="height: 72.15007215007215%;" title="04-15: 550 users"></div><div class="bar" style="height: 90.9090909090909%;" title="04-16: 693 users"></div><div class="bar" style="height: 82.77581004853731%;" title="04-17: 631 users"></div><div class="bar" style="height: 58.76951331496786%;" title="04-18: 448 users"></div><div class="bar" style="height: 44.8642266824085%;" title="04-19: 342 users"></div><div class="bar" style="height: 39.223402859766495%;" title="04-20: 299 users"></div><div class="bar" style="height: 39.87931260658533%;" title="04-21: 304 users"></div><div class="bar" style="height: 30.17184835366653%;" title="04-22: 230 users"></div><div class="bar" style="height: 27.417027417027413%;" title="04-23: 209 users"></div><div class="bar" style="height: 29.647120556211465%;" title="04-24: 226 users"></div><div class="bar" style="height: 24.268660632296992%;" title="04-25: 185 users"></div><div class="bar" style="height: 23.35038698675062%;" title="04-26: 178 users"></div><div class="bar" style="height: 30.6965761511216%;" title="04-27: 234 users"></div><div class="bar" style="height: 20.333202151383965%;" title="04-28: 155 users"></div><div class="bar" style="height: 18.234290961563687%;" title="04-29: 139 users"></div><div class="bar" style="height: 17.316017316017316%;" title="04-30: 132 users"></div><div class="bar" style="height: 19.152564607110058%;" title="05-01: 146 users"></div><div class="bar" style="height: 16.660107569198477%;" title="05-02: 127 users"></div><div class="bar" style="height: 20.726747999475272%;" title="05-03: 158 users"></div><div class="bar" style="height: 20.726747999475272%;" title="05-04: 158 users"></div><div class="bar" style="height: 20.5955660501115%;" title="05-05: 157 users"></div><div class="bar" style="height: 23.48156893611439%;" title="05-06: 179 users"></div><div class="bar" style="height: 51.685688049324405%;" title="05-07: 394 users"></div><div class="bar" style="height: 45.913682277318635%;" title="05-08: 350 users"></div><div class="bar" style="height: 36.468581923127374%;" title="05-09: 278 users"></div><div class="bar" style="height: 36.075036075036074%;" title="05-10: 275 users"></div><div class="bar" style="height: 34.89439853076217%;" title="05-11: 266 users"></div><div class="bar" style="height: 37.51803751803752%;" title="05-12: 286 users"></div><div class="bar" style="height: 50.11150465695919%;" title="05-13: 382 users"></div>
+          </div>
+        </div>
+        <div class="chart-x">
+          <span>04-14</span>
+          <span class="x-mid">Last 30 days</span>
+          <span>05-13</span>
+        </div>
+        
     </section>
     
   
