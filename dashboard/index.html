@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Artemis Tracker · Dashboard</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #050514; color: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, "Inter", "Helvetica Neue", sans-serif;
+    font-size: 15px; line-height: 1.5; }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 24px; }
+  header { display: flex; align-items: center; justify-content: space-between;
+    padding-bottom: 24px; border-bottom: 1px solid #1A1F3A; margin-bottom: 32px; }
+  header h1 { font-size: 22px; letter-spacing: 1.5px; text-transform: uppercase; }
+  header .updated { font-size: 12px; color: #6B7280; }
+  .accent-bar { display: inline-block; width: 4px; height: 22px; background: #4CC9F0;
+    margin-right: 12px; vertical-align: middle; border-radius: 2px; }
+  .section { margin-bottom: 40px; }
+  .section h2 { font-size: 17px; margin-bottom: 16px; color: #FFFFFF;
+    display: flex; align-items: center; gap: 10px; }
+  .section h3 { font-size: 13px; margin: 16px 0 8px 0; font-weight: 700;
+    letter-spacing: 0.5px; text-transform: uppercase; }
+  .badge { font-size: 10px; padding: 3px 8px; background: #2196CC;
+    color: #050514; border-radius: 4px; font-weight: 700; letter-spacing: 0.5px;
+    text-transform: uppercase; }
+  .kpi-row { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 16px; }
+  .card { background: #0A0F29; border: 1px solid #1A1F3A;
+    border-radius: 12px; padding: 18px; }
+  .card-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.8px;
+    color: #A8B3CF; margin-bottom: 8px; }
+  .card-value { font-size: 28px; font-weight: 700; color: #FFFFFF; }
+  .card-target { font-size: 14px; font-weight: 400; color: #6B7280; }
+  .card-meta { font-size: 11px; color: #6B7280; margin-top: 4px; }
+  .card-row { background: #0A0F29; padding: 14px; border-radius: 8px;
+    border: 1px solid #1A1F3A; }
+  .progress { height: 4px; background: #1A1F3A; border-radius: 2px;
+    margin: 10px 0 6px 0; overflow: hidden; }
+  .progress-fill { height: 100%; border-radius: 2px; transition: width 0.3s; }
+  .metric-row { display: flex; gap: 16px; flex-wrap: wrap; }
+  .metric { flex: 1; min-width: 140px; background: #0A0F29;
+    border: 1px solid #1A1F3A; border-radius: 10px; padding: 14px; }
+  .metric-num { font-size: 24px; font-weight: 700; color: #4CC9F0; }
+  .metric-label { font-size: 11px; color: #A8B3CF;
+    text-transform: uppercase; letter-spacing: 0.5px; margin-top: 4px; }
+  .meta { font-size: 11px; color: #6B7280; margin-top: 8px;
+    letter-spacing: 0.3px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px;
+    background: #0A0F29; border-radius: 8px; overflow: hidden; }
+  th { text-align: left; padding: 10px 14px; background: #1A1F3A;
+    color: #A8B3CF; font-size: 11px; text-transform: uppercase;
+    letter-spacing: 0.5px; }
+  td { padding: 10px 14px; border-top: 1px solid #1A1F3A;
+    color: #FFFFFF; }
+  .chart { display: flex; align-items: flex-end; gap: 4px; height: 140px;
+    background: #0A0F29; padding: 12px; border-radius: 8px;
+    border: 1px solid #1A1F3A; }
+  .bar { flex: 1; background: #4CC9F0; border-radius: 2px 2px 0 0;
+    min-height: 2px; opacity: 0.85; }
+  .bar:hover { opacity: 1; }
+  .task-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px; }
+  .task-col { background: #0A0F29; border: 1px solid #1A1F3A;
+    border-radius: 10px; padding: 14px; }
+  .task-list { list-style: none; margin-top: 8px; }
+  .task-list li { padding: 8px 0; border-top: 1px solid #1A1F3A;
+    font-size: 13px; }
+  .task-list li:first-child { border-top: none; }
+  .task-title { display: block; }
+  .task-meta { display: block; font-size: 11px; color: #6B7280;
+    margin-top: 2px; }
+  .empty { color: #6B7280; font-style: italic; }
+  footer { margin-top: 60px; padding-top: 24px; border-top: 1px solid #1A1F3A;
+    font-size: 11px; color: #6B7280; }
+  @media (max-width: 600px) {
+    .metric, .card { min-width: 100%; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1><span class="accent-bar"></span>ARTEMIS · DASHBOARD</h1>
+    <div class="updated">Updated 2026-05-14 14:53 CEST</div>
+  </header>
+
+  <div class="kpi-row">
+        <div class="card" style="flex: 1; min-width: 200px;">
+          <div class="card-label">Newsletter subs</div>
+          <div class="card-value">8 <span class="card-target">/ 1 000</span></div>
+          <div class="progress"><div class="progress-fill" style="width: 1%; background: #FC3D21;"></div></div>
+          <div class="card-meta">1% · Goal: Aug 31, 2026</div>
+        </div>
+        
+        <div class="card" style="flex: 1; min-width: 200px;">
+          <div class="card-label">Articles</div>
+          <div class="card-value">5 <span class="card-target">/ 20</span></div>
+          <div class="progress"><div class="progress-fill" style="width: 25%; background: #FC3D21;"></div></div>
+          <div class="card-meta">25% · Goal: Aug 31, 2026</div>
+        </div>
+        
+        <div class="card" style="flex: 1; min-width: 200px;">
+          <div class="card-label">New downloads (30d)</div>
+          <div class="card-value">158 <span class="card-target">/ 2 000</span></div>
+          <div class="progress"><div class="progress-fill" style="width: 8%; background: #FC3D21;"></div></div>
+          <div class="card-meta">8% · Monthly pace</div>
+        </div>
+        </div>
+
+  
+    <section class="section">
+      <h2>App Store Activity <span class="badge">Apple data</span></h2>
+      <h3>New downloads (first-time installs)</h3>
+      <div class="metric-row">
+        <div class="metric"><div class="metric-num">6</div><div class="metric-label">Yesterday</div></div>
+        <div class="metric"><div class="metric-num">28</div><div class="metric-label">Last 7 days</div></div>
+        <div class="metric"><div class="metric-num">158</div><div class="metric-label">Last 30 days</div></div>
+      </div>
+      <h3>Re-downloads (returning users)</h3>
+      <div class="metric-row">
+        <div class="metric"><div class="metric-num" style="color: #F8C537;">27</div><div class="metric-label">Yesterday</div></div>
+        <div class="metric"><div class="metric-num" style="color: #F8C537;">238</div><div class="metric-label">Last 7 days</div></div>
+        <div class="metric"><div class="metric-num" style="color: #F8C537;">908</div><div class="metric-label">Last 30 days</div></div>
+      </div>
+      <h3>Other activity (30d)</h3>
+      <div class="metric-row">
+        <div class="metric"><div class="metric-num" style="color: #A8B3CF;">54 435</div><div class="metric-label">App updates</div></div>
+        <div class="metric"><div class="metric-num" style="color: #2CE771;">6</div><div class="metric-label">Subscription txns</div></div>
+      </div>
+      <div class="meta">Latest sales report: 2026-05-12</div>
+    </section>
+    
+  
+    <section class="section">
+      <h2>Daily Active Users <span class="badge">GA4</span></h2>
+      <div class="chart"><div class="bar" style="height: 90.33189033189034%;" title="04-14: 626 users"></div><div class="bar" style="height: 79.36507936507937%;" title="04-15: 550 users"></div><div class="bar" style="height: 100.0%;" title="04-16: 693 users"></div><div class="bar" style="height: 91.05339105339105%;" title="04-17: 631 users"></div><div class="bar" style="height: 64.64646464646465%;" title="04-18: 448 users"></div><div class="bar" style="height: 49.35064935064935%;" title="04-19: 342 users"></div><div class="bar" style="height: 43.14574314574315%;" title="04-20: 299 users"></div><div class="bar" style="height: 43.867243867243864%;" title="04-21: 304 users"></div><div class="bar" style="height: 33.18903318903319%;" title="04-22: 230 users"></div><div class="bar" style="height: 30.158730158730158%;" title="04-23: 209 users"></div><div class="bar" style="height: 32.61183261183261%;" title="04-24: 226 users"></div><div class="bar" style="height: 26.695526695526695%;" title="04-25: 185 users"></div><div class="bar" style="height: 25.685425685425685%;" title="04-26: 178 users"></div><div class="bar" style="height: 33.76623376623377%;" title="04-27: 234 users"></div><div class="bar" style="height: 22.366522366522368%;" title="04-28: 155 users"></div><div class="bar" style="height: 20.057720057720058%;" title="04-29: 139 users"></div><div class="bar" style="height: 19.047619047619047%;" title="04-30: 132 users"></div><div class="bar" style="height: 21.06782106782107%;" title="05-01: 146 users"></div><div class="bar" style="height: 18.326118326118326%;" title="05-02: 127 users"></div><div class="bar" style="height: 22.7994227994228%;" title="05-03: 158 users"></div><div class="bar" style="height: 22.7994227994228%;" title="05-04: 158 users"></div><div class="bar" style="height: 22.655122655122657%;" title="05-05: 157 users"></div><div class="bar" style="height: 25.82972582972583%;" title="05-06: 179 users"></div><div class="bar" style="height: 56.85425685425686%;" title="05-07: 394 users"></div><div class="bar" style="height: 50.505050505050505%;" title="05-08: 350 users"></div><div class="bar" style="height: 40.115440115440116%;" title="05-09: 278 users"></div><div class="bar" style="height: 39.682539682539684%;" title="05-10: 275 users"></div><div class="bar" style="height: 38.38383838383838%;" title="05-11: 266 users"></div><div class="bar" style="height: 41.269841269841265%;" title="05-12: 286 users"></div><div class="bar" style="height: 55.12265512265512%;" title="05-13: 382 users"></div></div>
+      <div class="meta">Last 30 days · Active users per day</div>
+    </section>
+    
+  
+    <section class="section">
+      <h2>Push Notifications <span class="badge">GA4 · 30d</span></h2>
+      <div class="metric-row">
+        <div class="metric"><div class="metric-num">379</div><div class="metric-label">Opens</div></div>
+        <div class="metric"><div class="metric-num">287</div><div class="metric-label">Unique users</div></div>
+        <div class="metric"><div class="metric-num">339</div><div class="metric-label">Foreground</div></div>
+        <div class="metric"><div class="metric-num">27</div><div class="metric-label">Toggled settings</div></div>
+      </div>
+    </section>
+    
+  
+    <section class="section">
+      <h2>Newsletter <span class="badge">Kit</span></h2>
+      <div class="metric-row">
+        <div class="metric"><div class="metric-num">8</div><div class="metric-label">Total subs</div></div>
+        <div class="metric"><div class="metric-num">+8</div><div class="metric-label">7-day growth</div></div>
+      </div>
+      <h3>Latest broadcast</h3>
+      
+        <div class="card-row">
+          <div><strong>NASA just changed the Artemis III plan. Here's what matters.</strong></div>
+          <div class="meta">Sent: May 14, 14:10 · 7 recipients · None opens</div>
+        </div>
+        
+    </section>
+    
+  
+    <section class="section">
+      <h2>Recent Push Campaigns</h2>
+      <table>
+        <thead><tr><th>Date</th><th>Title</th><th>Opens</th><th>Users</th></tr></thead>
+        <tbody>
+        <tr>
+          <td>2026-05-13</td>
+          <td>Artemis II heat shield: what we learned</td>
+          <td style="text-align:right;">—</td>
+          <td style="text-align:right;">—</td>
+        </tr>
+        
+        <tr>
+          <td>2026-05-07</td>
+          <td>Artemis III is quietly slipping</td>
+          <td style="text-align:right;">108</td>
+          <td style="text-align:right;">107</td>
+        </tr>
+        
+        <tr>
+          <td>2026-04-27</td>
+          <td>Why all four Artemis II astronauts cried on day 6</td>
+          <td style="text-align:right;">104</td>
+          <td style="text-align:right;">85</td>
+        </tr>
+        </tbody>
+      </table>
+    </section>
+    
+  
+    <section class="section">
+      <h2>Top Countries (30d downloads)</h2>
+      <table>
+        <thead><tr><th>Country</th><th style="text-align:right;">Downloads</th></tr></thead>
+        <tbody><tr><td>US</td><td style="text-align:right;">65</td></tr><tr><td>GB</td><td style="text-align:right;">21</td></tr><tr><td>IT</td><td style="text-align:right;">11</td></tr><tr><td>CA</td><td style="text-align:right;">7</td></tr><tr><td>NO</td><td style="text-align:right;">7</td></tr><tr><td>AU</td><td style="text-align:right;">6</td></tr><tr><td>DE</td><td style="text-align:right;">5</td></tr><tr><td>NL</td><td style="text-align:right;">4</td></tr><tr><td>CH</td><td style="text-align:right;">4</td></tr><tr><td>BR</td><td style="text-align:right;">4</td></tr></tbody>
+      </table>
+    </section>
+    
+  
+    <section class="section">
+      <h2>Tasks</h2>
+      <div class="task-grid">
+        <div class="task-col">
+          <h3 style="color: #F8C537;">In progress · 2</h3>
+          <ul class="task-list"><li><span class="task-title">Ship v2.3.0 to App Store</span><span class="task-meta">2026-05-20</span></li><li><span class="task-title">Set up @ArtemisTracker on X / Threads</span><span class="task-meta">2026-05-25</span></li></ul>
+        </div>
+        <div class="task-col">
+          <h3 style="color: #4CC9F0;">Upcoming · 5</h3>
+          <ul class="task-list"><li><span class="task-title">Android Play Store ASO refresh</span><span class="task-meta">2026-06-01</span></li><li><span class="task-title">Localize Android listing (ES, PT)</span><span class="task-meta">2026-06-15</span></li><li><span class="task-title">Launch mission patch series</span><span class="task-meta">2026-07-01</span></li><li><span class="task-title">Pitch indie-dev story to TechCrunch/MacStories</span><span class="task-meta">2026-07-15</span></li><li><span class="task-title">Yearly → $24.99 (pre Artemis III)</span><span class="task-meta">2027-03-01</span></li></ul>
+        </div>
+        <div class="task-col">
+          <h3 style="color: #FC3D21;">Blocked · 1</h3>
+          <ul class="task-list"><li><span class="task-title">X API access (waiting 5-7 days)</span><span class="task-meta">Awaiting application approval</span></li></ul>
+        </div>
+        <div class="task-col">
+          <h3 style="color: #2CE771;">Completed · 9</h3>
+          <ul class="task-list"><li><span class="task-title">Server-driven merch system</span><span class="task-meta">2026-05-07</span></li><li><span class="task-title">Blueprint poster live in shop</span><span class="task-meta">2026-05-07</span></li><li><span class="task-title">Push notifications working</span><span class="task-meta">2026-05-07</span></li><li><span class="task-title">Beehiiv newsletter set up</span><span class="task-meta">2026-05-02</span></li><li><span class="task-title">ntfy real-time purchase alerts</span><span class="task-meta">2026-05-11</span></li><li><span class="task-title">Weekly article cron + automation</span><span class="task-meta">2026-05-13</span></li><li><span class="task-title">Migrated newsletter to Kit</span><span class="task-meta">2026-05-14</span></li><li><span class="task-title">In-app email capture modal</span><span class="task-meta">2026-05-14</span></li><li><span class="task-title">App Store Connect API integration</span><span class="task-meta">2026-05-14</span></li></ul>
+        </div>
+      </div>
+    </section>
+    
+
+  <footer>
+    Auto-generated 4× daily (08:00, 12:00, 16:00, 20:00 CEST).<br/>
+    Sources: App Store Connect API · Google Analytics 4 · Kit API · Firebase Cloud Messaging · Local push log
+  </footer>
+</div>
+</body>
+</html>
