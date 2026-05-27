@@ -1,6 +1,17 @@
 {
   "updates": [
     {
+      "id": "moon-base-construction-begins-2026",
+      "title": "NASA's Moon Base goes from PowerPoint to procurement: three landers, 2026, south pole",
+      "subtitle": "Tuesday's news conference turned the Moon Base from vision into a contract schedule. The first three missions launch this year.",
+      "date": "2026-05-27T06:42:57Z",
+      "mission": "artemis3",
+      "premium": false,
+      "hero_image": "https://grandmasterjc.github.io/artemis2-config/updates/images/moon-base-construction-begins-2026.jpg",
+      "summary": "NASA held its first dedicated Moon Base news conference Tuesday afternoon at agency headquarters in Washington. Administrator Jared Isaacman, science chief Dr. Lori Glaze, and Moon Base program exe...",
+      "author": "Joachim Gresslien"
+    },
+    {
       "id": "artemis-iii-leo-docking-spacer",
       "title": "Artemis III is now a docking-heavy Earth-orbit mission \u2014 and NASA just filled in key details",
       "subtitle": "A closer look at the new spacer, the LEO architecture, and what NASA still has to decide before crews start training.",
