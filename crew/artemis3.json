@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "mission_id": "artemis3",
+  "updated_at": "2026-05-30T08:50:00Z",
+  "announced": false,
+  "reveal_event": {
+    "date": "2026-06-09T15:00:00Z",
+    "location": "Johnson Space Center, Houston",
+    "live_stream_url": "https://plus.nasa.gov/scheduled-events/",
+    "press_release_url": "https://www.nasa.gov/news-release/nasa-to-announce-artemis-iii-crew-provide-mission-progress-update/"
+  },
+  "pre_reveal_copy": {
+    "headline": "Crew reveal: June 9",
+    "subhead": "NASA names the Artemis III astronauts on Tuesday at Johnson Space Center.",
+    "candidates_label": "SPECULATED CANDIDATES",
+    "candidates_disclaimer": "These are community-speculated candidates based on public information. Official crew announcement pending."
+  },
+  "speculated_candidates": [
+    { "name": "Anne McClain", "bio": "NASA Astronaut, Army Colonel, ISS Expedition 58/59" },
+    { "name": "Matthew Dominick", "bio": "NASA Astronaut, Navy Captain, ISS Crew-8 Commander" },
+    { "name": "Andre Douglas", "bio": "NASA Astronaut, Navy Officer, PhD Engineering" },
+    { "name": "Matthias Maurer", "bio": "ESA Astronaut, Materials Scientist, ISS Crew-3" },
+    { "name": "Nick Hague", "bio": "NASA Astronaut, Air Force Colonel, ISS Expedition 59/60" },
+    { "name": "Jessica Watkins", "bio": "NASA Astronaut, Geologist PhD, ISS Crew-4" }
+  ],
+  "crew": []
+}
