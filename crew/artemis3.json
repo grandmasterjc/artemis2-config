@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "mission_id": "artemis3",
-  "updated_at": "2026-05-30T09:20:00Z",
-  "announced": true,
+  "updated_at": "2026-05-30T08:50:00Z",
+  "announced": false,
   "reveal_event": {
     "date": "2026-06-09T15:00:00Z",
     "location": "Johnson Space Center, Houston",
@@ -23,117 +23,5 @@
     { "name": "Nick Hague", "bio": "NASA Astronaut, Air Force Colonel, ISS Expedition 59/60" },
     { "name": "Jessica Watkins", "bio": "NASA Astronaut, Geologist PhD, ISS Crew-4" }
   ],
-  "crew": [
-    {
-      "id": "anne-mcclain",
-      "name": "Anne C. McClain",
-      "role": "Commander",
-      "agency": "NASA",
-      "country": "USA",
-      "country_flag": "🇺🇸",
-      "image_url": "https://grandmasterjc.github.io/artemis2-config/crew/images/anne-mcclain.jpg",
-      "image_url_fallback": "https://images-assets.nasa.gov/image/NHQ202009160006/NHQ202009160006~medium.jpg",
-      "short_bio": "U.S. Army Colonel, Apache helicopter pilot, veteran of ISS Expedition 58/59.",
-      "bio_paragraphs": [
-        "Anne McClain is a U.S. Army Colonel and NASA astronaut selected in the 2013 class. She holds master's degrees in aerospace engineering and international relations, and flew over 800 combat hours in Iraq as an Apache helicopter pilot before joining the astronaut corps.",
-        "She launched to the International Space Station as part of Expedition 58/59 in December 2018, logging 204 days in orbit and performing two spacewalks. She returned to space in 2025 as commander of SpaceX Crew-10.",
-        "McClain becomes the first woman to command a lunar landing mission and the first woman to walk on the Moon."
-      ],
-      "career_highlights": [
-        "U.S. Army Colonel, AH-64 Apache pilot",
-        "Over 800 hours in combat operations",
-        "ISS Expedition 58/59 flight engineer (2018-2019)",
-        "Commander, SpaceX Crew-10 (2025)",
-        "Selected for NASA Astronaut Group 21 (2013)"
-      ],
-      "previous_missions": [
-        "ISS Expedition 58/59 (2018-2019) — 204 days",
-        "SpaceX Crew-10 / ISS Expedition 72/73 (2025)"
-      ],
-      "nasa_bio_url": "https://www.nasa.gov/people/anne-c-mcclain/",
-      "social": { "x": "AstroAnnimal", "instagram": "astro_annimal" }
-    },
-    {
-      "id": "matthew-dominick",
-      "name": "Matthew Dominick",
-      "role": "Pilot",
-      "agency": "NASA",
-      "country": "USA",
-      "country_flag": "🇺🇸",
-      "image_url": "https://grandmasterjc.github.io/artemis2-config/crew/images/matthew-dominick.jpg",
-      "image_url_fallback": "https://images-assets.nasa.gov/image/NHQ202009160008/NHQ202009160008~medium.jpg",
-      "short_bio": "U.S. Navy Captain and test pilot, commanded SpaceX Crew-8.",
-      "bio_paragraphs": [
-        "Matthew Dominick is a U.S. Navy Captain and graduate of the U.S. Naval Test Pilot School. He holds a master's degree in systems engineering and accumulated over 1,600 flight hours in 28 aircraft types before being selected as an astronaut in 2017.",
-        "He commanded SpaceX Crew-8 in 2024, becoming widely known for his striking long-exposure photography of Earth from the International Space Station during his 235-day mission.",
-        "Dominick brings deep test pilot expertise to the lunar lander integration phase of Artemis III."
-      ],
-      "career_highlights": [
-        "U.S. Navy Captain, F/A-18 Super Hornet pilot",
-        "Graduate, U.S. Naval Test Pilot School",
-        "Commander, SpaceX Crew-8 (2024)",
-        "235 days aboard the ISS",
-        "Selected for NASA Astronaut Group 22 (2017)"
-      ],
-      "previous_missions": [
-        "SpaceX Crew-8 / ISS Expedition 70/71 (2024) — 235 days"
-      ],
-      "nasa_bio_url": "https://www.nasa.gov/people/matthew-dominick/",
-      "social": { "x": "dominickmatthew", "instagram": "dominickmatthew" }
-    },
-    {
-      "id": "jessica-watkins",
-      "name": "Jessica Watkins",
-      "role": "Mission Specialist (Lunar)",
-      "agency": "NASA",
-      "country": "USA",
-      "country_flag": "🇺🇸",
-      "image_url": "https://grandmasterjc.github.io/artemis2-config/crew/images/jessica-watkins.jpg",
-      "image_url_fallback": "https://images-assets.nasa.gov/image/NHQ202009150003/NHQ202009150003~medium.jpg",
-      "short_bio": "Geologist with a doctorate in planetary science, first Black woman on a long-duration ISS mission.",
-      "bio_paragraphs": [
-        "Jessica Watkins holds a Ph.D. in geology from UCLA, with research focused on Martian landslides and surface processes. She worked on the Mars Curiosity rover science team before being selected as an astronaut in 2017.",
-        "She flew on SpaceX Crew-4 in 2022, becoming the first Black woman to complete a long-duration mission aboard the International Space Station, spending 170 days in orbit.",
-        "Her planetary geology background makes her a natural fit for the surface science objectives of the Artemis III lunar south pole landing."
-      ],
-      "career_highlights": [
-        "Ph.D. Geology, University of California Los Angeles",
-        "Mars Curiosity rover science team",
-        "SpaceX Crew-4 / ISS Expedition 67 (2022) — 170 days",
-        "First Black woman on a long-duration ISS mission",
-        "Selected for NASA Astronaut Group 22 (2017)"
-      ],
-      "previous_missions": [
-        "SpaceX Crew-4 / ISS Expedition 67 (2022) — 170 days"
-      ],
-      "nasa_bio_url": "https://www.nasa.gov/people/jessica-watkins/",
-      "social": { "x": "astro_watkins", "instagram": "astro_watkins" }
-    },
-    {
-      "id": "andre-douglas",
-      "name": "Andre Douglas",
-      "role": "Mission Specialist (CSA Partner Seat)",
-      "agency": "NASA",
-      "country": "USA",
-      "country_flag": "🇺🇸",
-      "image_url": "https://grandmasterjc.github.io/artemis2-config/crew/images/andre-douglas.jpg",
-      "image_url_fallback": "https://images-assets.nasa.gov/image/jsc2024e013682_alt/jsc2024e013682_alt~medium.jpg",
-      "short_bio": "Naval architect and former Coast Guard officer, member of NASA's 2021 astronaut class.",
-      "bio_paragraphs": [
-        "Andre Douglas served as a U.S. Coast Guard officer and naval architect before becoming a senior engineer at the Johns Hopkins Applied Physics Laboratory, where he worked on space missions including planetary defense and lunar exploration concepts.",
-        "He holds master's degrees in mechanical engineering, naval architecture, and electrical engineering, plus a doctorate in systems engineering from George Washington University.",
-        "Selected in NASA's 2021 astronaut class, Douglas brings hands-on spacecraft systems engineering expertise to the lunar surface phase."
-      ],
-      "career_highlights": [
-        "U.S. Coast Guard officer",
-        "Naval architect and salvage engineer",
-        "Johns Hopkins Applied Physics Laboratory engineer",
-        "D.Sc. Systems Engineering, George Washington University",
-        "Selected for NASA Astronaut Group 23 (2021)"
-      ],
-      "previous_missions": [],
-      "nasa_bio_url": "https://www.nasa.gov/people/nasa-astronaut-andre-douglas/",
-      "social": { "x": null, "instagram": null }
-    }
-  ]
+  "crew": []
 }
