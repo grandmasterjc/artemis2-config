@@ -11,7 +11,7 @@
       "confirmed": true
     },
     "splashdown": {
-      "date": "2026-04-11T00:07:00Z",
+      "date": "2026-04-11T00:07:27Z",
       "location": "Pacific Ocean, off the coast of San Diego",
       "confirmed": true
     },
@@ -78,7 +78,7 @@
       "id": "splashdown",
       "name": "Splashdown",
       "short": "SPLASHDOWN",
-      "starts_at": "2026-04-11T00:07:00Z",
+      "starts_at": "2026-04-11T00:07:27Z",
       "icon": "water.waves",
       "color": "#06D6A0"
     }
@@ -137,7 +137,7 @@
   "arow_poll_interval_seconds": 10,
   "message": "Mission complete.",
   "launch_time_utc": "2026-04-01T22:35:12Z",
-  "splashdown_date": "2026-04-11T00:07:00Z",
+  "splashdown_date": "2026-04-11T00:07:27Z",
   "mission_complete": true,
   "splashdown_confirmed": true,
   "sale_active": false,
