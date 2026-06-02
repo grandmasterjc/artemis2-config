@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "comment": "Remote-controlled top banners. Update this file and apps pick up changes within 5 minutes (no app update needed). Set 'enabled': false to hide a banner without removing it.",
+  "banners": [
+    {
+      "id": "a3-crew-reveal-2026",
+      "enabled": true,
+      "style": "countdown",
+      "title": "Artemis III Crew Reveal",
+      "body": "NASA announces the lunar landing crew live from Johnson Space Center.",
+      "countdown_to": "2026-06-09T15:00:00Z",
+      "cta_label": "View countdown",
+      "cta_action": "artemis://a3/crew",
+      "start": "2026-05-01T00:00:00Z",
+      "end": "2026-06-09T16:00:00Z",
+      "priority": 100,
+      "dismissible": false,
+      "auto_hide_when": {
+        "crew_announced": true
+      }
+    }
+  ]
+}
