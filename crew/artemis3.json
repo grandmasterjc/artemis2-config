@@ -1,27 +1,51 @@
 {
   "schema_version": 1,
   "mission_id": "artemis3",
-  "updated_at": "2026-05-30T08:50:00Z",
-  "announced": false,
+  "updated_at": "2026-06-09T17:38:00Z",
+  "announced": true,
   "reveal_event": {
-    "date": "2026-06-09T15:00:00Z",
+    "date": "2026-06-09T15:30:00Z",
     "location": "Johnson Space Center, Houston",
     "live_stream_url": "https://plus.nasa.gov/scheduled-events/",
     "press_release_url": "https://www.nasa.gov/news-release/nasa-to-announce-artemis-iii-crew-provide-mission-progress-update/"
   },
-  "pre_reveal_copy": {
-    "headline": "Crew reveal: June 9",
-    "subhead": "NASA names the Artemis III astronauts on Tuesday at Johnson Space Center.",
-    "candidates_label": "SPECULATED CANDIDATES",
-    "candidates_disclaimer": "These are community-speculated candidates based on public information. Official crew announcement pending."
-  },
-  "speculated_candidates": [
-    { "name": "Anne McClain", "bio": "NASA Astronaut, Army Colonel, ISS Expedition 58/59" },
-    { "name": "Matthew Dominick", "bio": "NASA Astronaut, Navy Captain, ISS Crew-8 Commander" },
-    { "name": "Andre Douglas", "bio": "NASA Astronaut, Navy Officer, PhD Engineering" },
-    { "name": "Matthias Maurer", "bio": "ESA Astronaut, Materials Scientist, ISS Crew-3" },
-    { "name": "Nick Hague", "bio": "NASA Astronaut, Air Force Colonel, ISS Expedition 59/60" },
-    { "name": "Jessica Watkins", "bio": "NASA Astronaut, Geologist PhD, ISS Crew-4" }
+  "crew": [
+    {
+      "name": "Randy Bresnik",
+      "role": "Commander",
+      "agency": "NASA",
+      "country": "USA",
+      "bio": "NASA Astronaut, Marine Colonel, former commander of ISS Expedition 53. Test pilot background."
+    },
+    {
+      "name": "Luca Parmitano",
+      "role": "Pilot",
+      "agency": "ESA",
+      "country": "Italy",
+      "bio": "ESA Astronaut, Italian Air Force Colonel, former commander of ISS Expedition 61. First European assigned to a crewed Artemis mission."
+    },
+    {
+      "name": "Frank Rubio",
+      "role": "Mission Specialist",
+      "agency": "NASA",
+      "country": "USA",
+      "bio": "NASA Astronaut, Army medical doctor. Holds U.S. single-spaceflight record after 371 days on the ISS (Soyuz MS-22 / MS-23, 2022–2023)."
+    },
+    {
+      "name": "Andre Douglas",
+      "role": "Mission Specialist",
+      "agency": "NASA",
+      "country": "USA",
+      "bio": "NASA Astronaut from the 2021 class. Coast Guard officer and engineer. First spaceflight."
+    }
   ],
-  "crew": []
+  "backup": [
+    {
+      "name": "Bob Hines",
+      "role": "Backup",
+      "agency": "NASA",
+      "country": "USA",
+      "bio": "NASA Astronaut, Air Force Colonel, ISS Crew-4."
+    }
+  ]
 }
