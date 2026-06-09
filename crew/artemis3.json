@@ -24,8 +24,8 @@
       "agency": "NASA",
       "country": "United States",
       "country_flag": "🇺🇸",
-      "image_url": "https://images-assets.nasa.gov/image/iss053e036139/iss053e036139~orig.jpg",
-      "image_url_fallback": "https://www.nasa.gov/wp-content/uploads/2026/06/artemis-iii-crew.jpg",
+      "image_url": "https://raw.githubusercontent.com/grandmasterjc/artemis2-config/main/crew/images/bresnik.jpg",
+      "image_url_fallback": "https://images-assets.nasa.gov/image/iss053e036139/iss053e036139~orig.jpg",
       "short_bio": "Marine Colonel and test pilot. Former commander of ISS Expedition 53.",
       "bio_paragraphs": [
         "Randy Bresnik is a retired U.S. Marine Corps Colonel and a NASA astronaut selected in 2004. He flew on STS-129 in 2009 and commanded Expedition 53 on the International Space Station in 2017, logging four spacewalks.",
@@ -37,7 +37,10 @@
         "Four EVAs totaling over 32 hours",
         "U.S. Naval Test Pilot School graduate"
       ],
-      "previous_missions": ["STS-129", "Soyuz MS-05 / Expedition 52/53"],
+      "previous_missions": [
+        "STS-129",
+        "Soyuz MS-05 / Expedition 52/53"
+      ],
       "nasa_bio_url": "https://www.nasa.gov/people/randolph-j-bresnik/",
       "social": {
         "x": "AstroKomrade",
@@ -64,7 +67,10 @@
         "First European to command the ISS for ESA",
         "Six EVAs"
       ],
-      "previous_missions": ["Soyuz TMA-09M / Expedition 36/37", "Soyuz MS-13 / Expedition 60/61"],
+      "previous_missions": [
+        "Soyuz TMA-09M / Expedition 36/37",
+        "Soyuz MS-13 / Expedition 60/61"
+      ],
       "nasa_bio_url": "https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/Astronauts/Luca_Parmitano",
       "social": {
         "x": "astro_luca",
@@ -91,7 +97,9 @@
         "Black Hawk helicopter pilot, Army Special Operations",
         "Family medicine and aerospace medicine board-certified"
       ],
-      "previous_missions": ["Soyuz MS-22 / MS-23 / Expedition 68/69"],
+      "previous_missions": [
+        "Soyuz MS-22 / MS-23 / Expedition 68/69"
+      ],
       "nasa_bio_url": "https://www.nasa.gov/people/frank-rubio/",
       "social": {
         "x": "Astro_Rubio",
