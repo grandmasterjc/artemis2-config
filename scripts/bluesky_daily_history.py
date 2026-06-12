@@ -14,13 +14,12 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 import requests
+from _creds import load_bluesky
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 STATE_DIR = REPO_ROOT / "state"
 HISTORY = STATE_DIR / "spaceflight_history.json"
 LOG = STATE_DIR / "bluesky_daily_log.txt"
-WORKSPACE = Path("/home/user/workspace")
-BLUESKY_CFG = WORKSPACE / "bluesky_config.json"
 
 
 def log(line: str):
@@ -77,8 +76,8 @@ def main():
         text = text[:297] + "..."
 
     try:
-        cfg = json.loads(BLUESKY_CFG.read_text())
-        session = login(cfg["handle"], cfg["app_password"])
+        cfg = load_bluesky()
+        session = login(cfg["handle"], cfg["password"])
         result = create_post(session, text)
         log(f"posted | date={today} | year={year} | uri={result['uri']}")
         print(result["uri"])

@@ -34,17 +34,12 @@ SCOPES = ["https://www.googleapis.com/auth/firebase.messaging"]
 REPO_ROOT = Path(__file__).resolve().parent.parent
 STATE_DIR = REPO_ROOT / "state"
 PUSH_HISTORY = STATE_DIR / "push_history.csv"
-WORKSPACE = Path("/home/user/workspace")
+
+from _creds import get_firebase_service_account_path
 
 
 def find_service_account():
-    matches = sorted(glob.glob(str(WORKSPACE / "artemis-tracker-*-firebase-adminsdk-*.json")))
-    if not matches:
-        raise FileNotFoundError(
-            "No Firebase service account JSON found in /home/user/workspace/. "
-            "Re-upload from Firebase Console → Project Settings → Service accounts."
-        )
-    return matches[0]
+    return str(get_firebase_service_account_path())
 
 
 def get_access_token(sa_path):

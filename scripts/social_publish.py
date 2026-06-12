@@ -29,6 +29,8 @@ import requests
 REPO_ROOT = Path(__file__).resolve().parent.parent
 STATE_DIR = REPO_ROOT / "state"
 LOG = STATE_DIR / "social_post_history.csv"
+from _creds import load_bluesky, load_mastodon
+
 WORKSPACE = Path("/home/user/workspace")
 
 BLUESKY_CFG = WORKSPACE / "bluesky_config.json"
@@ -103,8 +105,8 @@ def bluesky_create_post(session: dict, text: str, *, reply=None, embed=None) -> 
 
 
 def post_to_bluesky(title: str, subtitle: str, body: str, article_url: str, hero_url: str) -> tuple[str, str]:
-    cfg = json.loads(BLUESKY_CFG.read_text())
-    session = bluesky_login(cfg["handle"], cfg["app_password"])
+    cfg = load_bluesky()
+    session = bluesky_login(cfg["handle"], cfg["password"])
 
     img_bytes = requests.get(hero_url, timeout=30).content
     blob = bluesky_upload_image(session, img_bytes)
@@ -164,8 +166,9 @@ def mastodon_post(base_url: str, token: str, status: str, *, media_ids=None, in_
 
 
 def post_to_mastodon(title: str, subtitle: str, body: str, article_url: str, hero_url: str) -> tuple[str, str]:
-    cfg = json.loads(MASTODON_CFG.read_text())
-    base_url = cfg["base_url"].rstrip("/")
+    cfg = load_mastodon()
+    base_url = cfg.get("base_url") or f"https://{cfg['instance']}"
+    base_url = base_url.rstrip("/")
     token = cfg["access_token"]
 
     img_bytes = requests.get(hero_url, timeout=30).content

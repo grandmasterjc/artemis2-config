@@ -1,0 +1,40 @@
+name: Threads token refresh
+
+on:
+  schedule:
+    # 1st of each month at 07:00 UTC (09:00 CEST)
+    - cron: "0 7 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Refresh Threads token
+        env:
+          THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
+        run: |
+          if [ -z "$THREADS_ACCESS_TOKEN" ]; then
+            echo "::warning::THREADS_ACCESS_TOKEN secret not set, skipping"
+            exit 0
+          fi
+          response=$(curl -sS -G "https://graph.threads.net/refresh_access_token" \
+            --data-urlencode "grant_type=th_refresh_token" \
+            --data-urlencode "access_token=$THREADS_ACCESS_TOKEN")
+          echo "Response: $response"
+          new_token=$(echo "$response" | python3 -c "import json,sys; print(json.load(sys.stdin).get('access_token',''))")
+          if [ -z "$new_token" ]; then
+            echo "::error::Token refresh failed. Manual regeneration required at developers.facebook.com → Artemis Tracker app → Threads API Settings"
+            exit 1
+          fi
+          echo "::notice::Token refreshed successfully. UPDATE the THREADS_ACCESS_TOKEN secret manually with the new value."
+          # We can't write to secrets from a workflow — surface the new token only in logs (encrypted).
+          # Mask it from logs except for the last 6 chars so we know it changed
+          echo "::add-mask::$new_token"
+          echo "New token (last 6 chars): ${new_token: -6}"

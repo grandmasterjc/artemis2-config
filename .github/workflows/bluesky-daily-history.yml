@@ -1,0 +1,42 @@
+name: Bluesky daily history
+
+on:
+  schedule:
+    # Daily at 05:00 UTC (07:00 CEST)
+    - cron: "0 5 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Post (or silently skip)
+        env:
+          BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
+          BLUESKY_PASSWORD: ${{ secrets.BLUESKY_PASSWORD }}
+        run: python scripts/bluesky_daily_history.py
+
+      - name: Commit log if changed
+        run: |
+          git config user.email "joachim.gresslien@gmail.com"
+          git config user.name "Joachim Gresslien"
+          git add state/bluesky_daily_log.txt
+          if git diff --staged --quiet; then
+            echo "No changes"
+          else
+            git commit -m "log: bluesky daily history"
+            git push origin main
+          fi

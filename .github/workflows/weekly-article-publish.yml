@@ -1,0 +1,63 @@
+name: Weekly article publish
+
+# Manually triggered after you approve the draft. The draft itself is now
+# generated in Perplexity (which has access to search and AI tooling)
+# and committed by you to drafts/{article_id}/ in this repo before running this.
+
+on:
+  workflow_dispatch:
+    inputs:
+      article_id:
+        description: "Article id (kebab-case, matches drafts/{id}/)"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: scripts/requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Validate draft exists
+        run: |
+          if [ ! -f "drafts/${{ inputs.article_id }}/article_draft.md" ]; then
+            echo "::error::drafts/${{ inputs.article_id }}/article_draft.md not found. Commit the draft first."
+            exit 1
+          fi
+          if [ ! -f "drafts/${{ inputs.article_id }}/hero.jpg" ]; then
+            echo "::error::drafts/${{ inputs.article_id }}/hero.jpg not found"
+            exit 1
+          fi
+
+      - name: Publish article
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS_JSON: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_JSON }}
+          FIREBASE_SERVICE_ACCOUNT_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_JSON }}
+          KIT_API_KEY: ${{ secrets.KIT_API_KEY }}
+          BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
+          BLUESKY_PASSWORD: ${{ secrets.BLUESKY_PASSWORD }}
+          MASTODON_INSTANCE: ${{ secrets.MASTODON_INSTANCE }}
+          MASTODON_ACCESS_TOKEN: ${{ secrets.MASTODON_ACCESS_TOKEN }}
+          ARTICLE_ID: ${{ inputs.article_id }}
+        run: python scripts/weekly_publish.py "$ARTICLE_ID"
+
+      - name: Commit and push
+        run: |
+          git config user.email "joachim.gresslien@gmail.com"
+          git config user.name "Joachim Gresslien"
+          git add updates/ state/push_history.csv state/social_post_history.csv
+          git commit -m "Publish weekly article: ${{ inputs.article_id }}"
+          git push origin main

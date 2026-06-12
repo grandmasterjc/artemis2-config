@@ -25,6 +25,8 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 STATE_DIR = REPO_ROOT / "state"
 POSTED_URLS = STATE_DIR / "bluesky_posted_urls.log"
 LOG = STATE_DIR / "bluesky_news_log.txt"
+from _creds import load_bluesky
+
 WORKSPACE = Path("/home/user/workspace")
 CANDIDATE = Path("/tmp/bluesky_candidate.json")
 BLUESKY_CFG = WORKSPACE / "bluesky_config.json"
@@ -135,8 +137,8 @@ def main():
     embed = fetch_link_card(url)
 
     try:
-        cfg = json.loads(BLUESKY_CFG.read_text())
-        session = login(cfg["handle"], cfg["app_password"])
+        cfg = load_bluesky()
+        session = login(cfg["handle"], cfg["password"])
         result = create_post(session, text, embed)
         mark_posted(url)
         log(f"posted | uri={result['uri']} | url={url}")

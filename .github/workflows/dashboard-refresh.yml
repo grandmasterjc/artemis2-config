@@ -1,0 +1,48 @@
+name: Dashboard refresh
+
+on:
+  schedule:
+    # Daily at 05:00 UTC (07:00 CEST / 06:00 CET)
+    - cron: "0 5 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: scripts/requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Refresh dashboard
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS_JSON: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_JSON }}
+          GOOGLE_ANALYTICS_PROPERTY_ID: ${{ secrets.GOOGLE_ANALYTICS_PROPERTY_ID }}
+          KIT_API_KEY: ${{ secrets.KIT_API_KEY }}
+        run: python scripts/dashboard_refresh.py
+
+      - name: Copy rendered HTML
+        run: cp /tmp/dashboard.html dashboard/index.html
+
+      - name: Commit and push if changed
+        run: |
+          git config user.email "joachim.gresslien@gmail.com"
+          git config user.name "Joachim Gresslien"
+          git add dashboard/index.html state/dashboard_refresh_log.txt
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Dashboard refresh: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            git push origin main
+          fi

@@ -11,13 +11,14 @@ Returns a single dict that dashboard_render.py turns into HTML.
 from __future__ import annotations
 import csv
 import json
+import os
 from pathlib import Path
 from datetime import datetime, timezone
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 STATE_DIR = REPO_ROOT / "state"
 PUSH_HISTORY = STATE_DIR / "push_history.csv"
-WORKSPACE = Path("/home/user/workspace")
+WORKSPACE = Path(os.environ.get("ARTEMIS_WORKSPACE", "/home/user/workspace"))
 
 
 def _load_json(path: Path, default):
