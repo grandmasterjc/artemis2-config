@@ -1,0 +1,5 @@
+2026-06-13T06:05:08.010734+00:00 | dashboard_refresh start
+2026-06-13T06:05:09.452541+00:00 | ga4 ok | 28d_active=5201 latest={'date': '2026-06-12', 'active': 130, 'new': 40, 'views': 158, 'sessions': 150}
+2026-06-13T06:05:10.285425+00:00 | kit ok | active_subscribers=32
+2026-06-13T06:05:10.316006+00:00 | render ok | html_bytes=20
+2026-06-13T06:05:10.316093+00:00 | dashboard_refresh done
