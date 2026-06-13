@@ -520,7 +520,7 @@
         "active": 54
       }
     ],
-    "fetched_at": "2026-06-13T06:48:32.699720+00:00"
+    "fetched_at": "2026-06-13T06:50:17.988838+00:00"
   },
   "kit": {
     "status": "ok",
@@ -588,7 +588,7 @@
         "public": false
       }
     ],
-    "fetched_at": "2026-06-13T06:48:33.962622+00:00"
+    "fetched_at": "2026-06-13T06:50:18.960580+00:00"
   },
   "asc": {
     "status": "ok",
@@ -687,7 +687,7 @@
       "5": 6
     },
     "rating_count_recent": 50,
-    "fetched_at": "2026-06-13T06:48:35.102761+00:00"
+    "fetched_at": "2026-06-13T06:50:20.033961+00:00"
   },
   "bluesky": {
     "status": "ok",
@@ -698,21 +698,29 @@
     "posts_7d": 3,
     "likes_7d": 0,
     "reposts_7d": 0,
-    "fetched_at": "2026-06-13T06:48:35.832881+00:00"
+    "fetched_at": "2026-06-13T06:50:21.295977+00:00"
   },
   "mastodon": {
-    "status": "error",
-    "error": "HTTP 403"
+    "status": "ok",
+    "instance": "spacey.space",
+    "username": "artemistracker",
+    "followers": 0,
+    "following": 4,
+    "posts_total": 31,
+    "posts_7d": 0,
+    "favs_7d": 0,
+    "boosts_7d": 0,
+    "fetched_at": "2026-06-13T06:50:22.020721+00:00"
   },
   "threads": {
     "status": "blocked",
     "reason": "Meta developer verification not completed \u2014 publishing and metrics disabled",
-    "fetched_at": "2026-06-13T06:48:36.602727+00:00"
+    "fetched_at": "2026-06-13T06:50:22.020748+00:00"
   },
   "instagram": {
     "status": "blocked",
     "reason": "Needs Business/Creator account linked to Facebook page + instagram_content_publish approval",
-    "fetched_at": "2026-06-13T06:48:36.602747+00:00"
+    "fetched_at": "2026-06-13T06:50:22.020752+00:00"
   },
   "push": {
     "status": "ok",
@@ -727,7 +735,7 @@
         "message_id": "projects/artemis-tracker-665d8/messages/5771117710239470194"
       }
     ],
-    "fetched_at": "2026-06-13T06:48:36.603157+00:00"
+    "fetched_at": "2026-06-13T06:50:22.020962+00:00"
   },
   "roadmap": {
     "status": "ok",
@@ -815,7 +823,7 @@
         "note": "durable across sandbox resets"
       }
     ],
-    "fetched_at": "2026-06-13T06:48:36.603459+00:00"
+    "fetched_at": "2026-06-13T06:50:22.021280+00:00"
   },
   "targets": {
     "status": "ok",
@@ -909,5 +917,5 @@
       "implied_subs": 5200
     }
   },
-  "generated_at": "2026-06-13T06:48:36.603471+00:00"
+  "generated_at": "2026-06-13T06:50:22.021292+00:00"
 }
