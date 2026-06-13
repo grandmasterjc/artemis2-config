@@ -363,7 +363,7 @@ def section_socials(data) -> str:
     <div class='social-stats'>
       <div><span class='lbl'>Followers</span> <span class='val'>{fmt_int(src.get('followers'))}</span></div>
       <div><span class='lbl'>Posts 7d</span> <span class='val'>{fmt_int(src.get('posts_7d'))}</span></div>
-      <div><span class='lbl'>Engagement 7d</span> <span class='val'>{fmt_int((src.get('likes_7d') or src.get('favs_7d') or 0) + (src.get('reposts_7d') or src.get('boosts_7d') or 0))}</span></div>
+      <div><span class='lbl'>Engagement 7d</span> <span class='val'>{fmt_int((src.get('likes_7d') or src.get('favs_7d') or 0) + (src.get('reposts_7d') or src.get('boosts_7d') or 0) + (src.get('comments_7d') or 0))}</span></div>
     </div>
   </div>"""
         if st == "blocked":

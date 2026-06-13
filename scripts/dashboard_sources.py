@@ -531,11 +531,58 @@ def fetch_threads() -> dict:
 
 
 def fetch_instagram() -> dict:
-    return {
-        "status": "blocked",
-        "reason": "Needs Business/Creator account linked to Facebook page + instagram_content_publish approval",
-        "fetched_at": _now_iso(),
-    }
+    token = os.environ.get("INSTAGRAM_ACCESS_TOKEN")
+    user_id = os.environ.get("INSTAGRAM_USER_ID")
+    if not (token and user_id):
+        return {"status": "skipped", "reason": "Instagram credentials missing"}
+    try:
+        base = "https://graph.instagram.com"
+        # Account-level fields
+        me = _http_get(
+            f"{base}/{user_id}?fields=id,username,account_type,followers_count,follows_count,media_count&access_token={token}"
+        )
+        followers = me.get("followers_count", 0)
+        following = me.get("follows_count", 0)
+        media_total = me.get("media_count", 0)
+
+        # Recent media (last 25) for 7-day engagement
+        posts_7d = 0
+        likes_7d = 0
+        comments_7d = 0
+        try:
+            media = _http_get(
+                f"{base}/{user_id}/media?fields=id,timestamp,like_count,comments_count&limit=25&access_token={token}"
+            )
+            cutoff = datetime.now(timezone.utc) - timedelta(days=7)
+            for m in media.get("data", []):
+                try:
+                    pdt = datetime.fromisoformat(m["timestamp"].replace("Z", "+00:00"))
+                    if pdt < cutoff:
+                        continue
+                except Exception:
+                    continue
+                posts_7d += 1
+                likes_7d += m.get("like_count", 0)
+                comments_7d += m.get("comments_count", 0)
+        except Exception:
+            pass
+
+        return {
+            "status": "ok",
+            "username": me.get("username"),
+            "account_type": me.get("account_type"),
+            "followers": followers,
+            "following": following,
+            "posts_total": media_total,
+            "posts_7d": posts_7d,
+            "likes_7d": likes_7d,
+            "comments_7d": comments_7d,
+            "fetched_at": _now_iso(),
+        }
+    except urllib.error.HTTPError as e:
+        return {"status": "error", "error": f"HTTP {e.code}"}
+    except Exception as e:
+        return {"status": "error", "error": f"{type(e).__name__}: {e}"}
 
 
 # ---------- Push notification stats ----------
