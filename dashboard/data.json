@@ -520,7 +520,7 @@
         "active": 54
       }
     ],
-    "fetched_at": "2026-06-13T06:50:17.988838+00:00"
+    "fetched_at": "2026-06-13T06:58:14.709583+00:00"
   },
   "kit": {
     "status": "ok",
@@ -588,7 +588,7 @@
         "public": false
       }
     ],
-    "fetched_at": "2026-06-13T06:50:18.960580+00:00"
+    "fetched_at": "2026-06-13T06:58:15.822470+00:00"
   },
   "asc": {
     "status": "ok",
@@ -631,7 +631,7 @@
       {
         "rating": 1,
         "title": "Don\u2019t waste your time",
-        "body": "This App is garbage. From beginning to end nothing was correct.  The timing, the miles everything was off always    absolute garbage. Don\u2019t waste your time.  I spent the extra money so I could get spa",
+        "body": "This App is garbage. From beginning to end nothing was correct.  The timing, the miles everything was off always    absolute garbage. Don\u2019t waste your time.  I spent the extra money so I could get space weather. Space weather half the time wouldn\u2019t update and I get an error message.",
         "reviewer": "Soberjoey",
         "territory": "USA",
         "created": "2026-04-10T18:18:00-07:00"
@@ -647,7 +647,7 @@
       {
         "rating": 1,
         "title": "Terrible delay",
-        "body": "This app was delayed by more than 19 minutes. Watching the news was 10/15 minutes faster than when I would get a notification from the app. Parachutes deployed notification was so delayed , the astron",
+        "body": "This app was delayed by more than 19 minutes. Watching the news was 10/15 minutes faster than when I would get a notification from the app. Parachutes deployed notification was so delayed , the astronauts were IRL already getting out of the capsule.",
         "reviewer": "thisis so dumb and theft",
         "territory": "USA",
         "created": "2026-04-10T17:24:29-07:00"
@@ -655,7 +655,7 @@
       {
         "rating": 1,
         "title": "Really out of sync data",
-        "body": "Got notifications for certain events happening during the mission way after it actually happened. We\u2019re talking 20/30 mins after each milestone. And data shown in app was always different to that of N",
+        "body": "Got notifications for certain events happening during the mission way after it actually happened. We\u2019re talking 20/30 mins after each milestone. And data shown in app was always different to that of NASA so not sure what\u2019s going on there. Really annoying",
         "reviewer": "jayden_437",
         "territory": "GBR",
         "created": "2026-04-10T17:20:24-07:00"
@@ -663,7 +663,7 @@
       {
         "rating": 5,
         "title": "this is a beautiful app",
-        "body": "I truly am grateful to have ran across this beautiful app, totally worth the full price because of all the future missions. I love how it has live tracking down to miles and speed to a chance to see a",
+        "body": "I truly am grateful to have ran across this beautiful app, totally worth the full price because of all the future missions. I love how it has live tracking down to miles and speed to a chance to see a live stream via youtube all from the same screen. Thank you for making this beautiful app! \ud83c\udf16\ud83d\ude80\ud83c\uddfa\ud83c\uddf8",
         "reviewer": "milkywaychristian",
         "territory": "USA",
         "created": "2026-04-10T10:14:09-07:00"
@@ -671,12 +671,13 @@
       {
         "rating": 1,
         "title": "Mission Lagged",
-        "body": "The app worked for the first few hours of the mission and then automatically started counting down to the Artemis 3 mission so nothing was updating. Each stage said in 1 year rather than in a few days",
+        "body": "The app worked for the first few hours of the mission and then automatically started counting down to the Artemis 3 mission so nothing was updating. Each stage said in 1 year rather than in a few days or hours . Today , on the day of landing it is working again. Disappointing",
         "reviewer": "Wikaik",
         "territory": "IRL",
         "created": "2026-04-10T05:07:30-07:00"
       }
     ],
+    "new_this_run": 75,
     "reviews_count_recent": 50,
     "avg_rating_recent": 2.2,
     "rating_distribution_recent": {
@@ -687,7 +688,57 @@
       "5": 6
     },
     "rating_count_recent": 50,
-    "fetched_at": "2026-06-13T06:50:20.033961+00:00"
+    "stats_30d": {
+      "count": 0,
+      "avg": null,
+      "share_4plus": null,
+      "dist": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 0
+      }
+    },
+    "stats_90d": {
+      "count": 75,
+      "avg": 2.24,
+      "share_4plus": 22.7,
+      "dist": {
+        "1": 34,
+        "2": 16,
+        "3": 8,
+        "4": 7,
+        "5": 10
+      }
+    },
+    "stats_all_time": {
+      "count": 75,
+      "avg": 2.24,
+      "share_4plus": 22.7,
+      "dist": {
+        "1": 34,
+        "2": 16,
+        "3": 8,
+        "4": 7,
+        "5": 10
+      }
+    },
+    "monthly": [
+      {
+        "month": "2026-03",
+        "count": 2,
+        "avg": 2.5,
+        "share_4plus": 50.0
+      },
+      {
+        "month": "2026-04",
+        "count": 73,
+        "avg": 2.23,
+        "share_4plus": 21.9
+      }
+    ],
+    "fetched_at": "2026-06-13T06:58:16.591552+00:00"
   },
   "bluesky": {
     "status": "ok",
@@ -698,7 +749,7 @@
     "posts_7d": 3,
     "likes_7d": 0,
     "reposts_7d": 0,
-    "fetched_at": "2026-06-13T06:50:21.295977+00:00"
+    "fetched_at": "2026-06-13T06:58:17.808979+00:00"
   },
   "mastodon": {
     "status": "ok",
@@ -707,20 +758,20 @@
     "followers": 0,
     "following": 4,
     "posts_total": 31,
-    "posts_7d": 0,
+    "posts_7d": 3,
     "favs_7d": 0,
     "boosts_7d": 0,
-    "fetched_at": "2026-06-13T06:50:22.020721+00:00"
+    "fetched_at": "2026-06-13T06:58:19.161719+00:00"
   },
   "threads": {
     "status": "blocked",
     "reason": "Meta developer verification not completed \u2014 publishing and metrics disabled",
-    "fetched_at": "2026-06-13T06:50:22.020748+00:00"
+    "fetched_at": "2026-06-13T06:58:19.161775+00:00"
   },
   "instagram": {
     "status": "blocked",
     "reason": "Needs Business/Creator account linked to Facebook page + instagram_content_publish approval",
-    "fetched_at": "2026-06-13T06:50:22.020752+00:00"
+    "fetched_at": "2026-06-13T06:58:19.161780+00:00"
   },
   "push": {
     "status": "ok",
@@ -735,7 +786,7 @@
         "message_id": "projects/artemis-tracker-665d8/messages/5771117710239470194"
       }
     ],
-    "fetched_at": "2026-06-13T06:50:22.020962+00:00"
+    "fetched_at": "2026-06-13T06:58:19.161980+00:00"
   },
   "roadmap": {
     "status": "ok",
@@ -823,7 +874,7 @@
         "note": "durable across sandbox resets"
       }
     ],
-    "fetched_at": "2026-06-13T06:50:22.021280+00:00"
+    "fetched_at": "2026-06-13T06:58:19.162269+00:00"
   },
   "targets": {
     "status": "ok",
@@ -917,5 +968,5 @@
       "implied_subs": 5200
     }
   },
-  "generated_at": "2026-06-13T06:50:22.021292+00:00"
+  "generated_at": "2026-06-13T06:58:19.162297+00:00"
 }

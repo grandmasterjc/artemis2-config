@@ -59,3 +59,17 @@
 2026-06-13T06:50:22.023210+00:00 | wrote data.json (22200 bytes)
 2026-06-13T06:50:22.032015+00:00 | wrote index.html (28549 bytes)
 2026-06-13T06:50:22.032090+00:00 | dashboard_refresh 2.0 done
+2026-06-13T06:58:13.133123+00:00 | dashboard_refresh 2.0 start
+2026-06-13T06:58:19.162332+00:00 |   ga4: ok | latest=130 28d=5201
+2026-06-13T06:58:19.162405+00:00 |   kit: ok | active=32
+2026-06-13T06:58:19.162459+00:00 |   asc: ok | reviews=50 avg=2.2
+2026-06-13T06:58:19.162515+00:00 |   bluesky: ok | followers=5
+2026-06-13T06:58:19.162559+00:00 |   mastodon: ok | followers=0
+2026-06-13T06:58:19.162604+00:00 |   threads: blocked | Meta developer verification not completed — publishing and metrics disabled
+2026-06-13T06:58:19.162644+00:00 |   instagram: blocked | Needs Business/Creator account linked to Facebook page + instagram_content_publish approval
+2026-06-13T06:58:19.162681+00:00 |   push: ok
+2026-06-13T06:58:19.162711+00:00 |   roadmap: ok
+2026-06-13T06:58:19.162739+00:00 |   targets: ok
+2026-06-13T06:58:19.163936+00:00 | wrote data.json (23479 bytes)
+2026-06-13T06:58:19.173438+00:00 | wrote index.html (33034 bytes)
+2026-06-13T06:58:19.173501+00:00 | dashboard_refresh 2.0 done
