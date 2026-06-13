@@ -1,30 +1,373 @@
 <!doctype html>
-<html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Artemis Tracker — Dashboard</title>
-<style>
-body { margin:0; background:#0b1020; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; color:#e6e9f5; }
-.wrap { max-width:980px; margin:0 auto; padding:32px 24px; }
-h1 { color:#fff; }
-h2 { color:#fff; margin-top:36px; border-bottom:1px solid #2a3050; padding-bottom:6px; }
-.grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:16px; margin:20px 0; }
-.card { background:#161c34; border-radius:10px; padding:16px; }
-.card .label { color:#9aa3c0; font-size:13px; text-transform:uppercase; letter-spacing:0.5px; }
-.card .value { color:#fff; font-size:28px; font-weight:600; margin-top:6px; }
-table { width:100%; border-collapse:collapse; margin-top:12px; font-size:14px; }
-th, td { padding:8px 10px; text-align:left; border-bottom:1px solid #2a3050; }
-th { color:#9aa3c0; font-weight:500; }
-.foot { color:#7c84a0; margin-top:32px; font-size:13px; }
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <meta name='robots' content='noindex'>
+  <title>Artemis Tracker — Dashboard</title>
+  <style>
+:root {
+  --bg: #0b1220;
+  --bg-card: #121a2c;
+  --bg-card-2: #182241;
+  --line: #1f2735;
+  --text: #e6ecf5;
+  --muted: #8a99b3;
+  --accent: #5fb3ff;
+  --accent-2: #f5b942;
+  --ok: #4ade80;
+  --warn: #fbbf24;
+  --err: #f87171;
+  --skipped: #6b7280;
+}
+* { box-sizing: border-box; }
+html, body { background: var(--bg); color: var(--text); margin: 0; padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 14px; line-height: 1.5; }
+a { color: var(--accent); text-decoration: none; }
+main { max-width: 1100px; margin: 0 auto; padding: 24px 20px 80px; }
+header.page { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 24px; }
+header.page h1 { font-size: 22px; margin: 0; letter-spacing: 0.2px; }
+header.page .gen { color: var(--muted); font-size: 12px; }
+h2 { font-size: 16px; letter-spacing: 0.3px; margin: 0 0 12px; color: var(--text); }
+section { background: var(--bg-card); border: 1px solid var(--line); border-radius: 10px;
+  padding: 18px; margin-bottom: 18px; }
+.empty { color: var(--muted); font-style: normal; padding: 6px 0; }
+.empty.err { color: var(--err); }
+
+/* North Star */
+.north-star { background: linear-gradient(135deg, #182241 0%, #121a2c 100%); }
+.ns-head { display:flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px; }
+.ns-label { color: var(--muted); text-transform: uppercase; letter-spacing: 1.2px; font-size: 11px; }
+.ns-target { color: var(--accent-2); font-size: 13px; }
+.ns-row { display: grid; grid-template-columns: 180px 1fr 180px; gap: 24px; align-items: center; }
+.ns-current .ns-value { font-size: 44px; font-weight: 600; line-height: 1; color: var(--text); }
+.ns-current .ns-sub { color: var(--muted); font-size: 12px; margin-top: 6px; }
+.ns-bar { position: relative; height: 14px; background: #0b1220; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.ns-bar-fill { height: 100%; background: linear-gradient(90deg, #5fb3ff, #4ade80); }
+.ns-progress-meta { display: flex; justify-content: space-between; color: var(--muted); font-size: 12px; margin-top: 6px; }
+.ns-gap { color: var(--accent-2); }
+.ns-gap.ok { color: var(--ok); }
+.ns-aux { display: flex; flex-direction: column; gap: 6px; font-size: 13px; }
+.ns-aux .lbl { color: var(--muted); margin-right: 8px; }
+.ns-aux .val { color: var(--text); font-weight: 500; }
+
+/* KPI grid */
+.kpi-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+.kpi { background: var(--bg-card-2); border: 1px solid var(--line); border-radius: 8px; padding: 12px; }
+.kpi-label { color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0.8px; }
+.kpi-value { font-size: 24px; font-weight: 600; margin-top: 4px; }
+.kpi-target { color: var(--muted); font-size: 11px; margin-top: 2px; }
+.kpi-bar { height: 4px; background: #0b1220; border-radius: 4px; margin-top: 8px; overflow: hidden; }
+.kpi-bar-fill { height: 100%; background: var(--accent); }
+.kpi-pct { color: var(--muted); font-size: 10px; margin-top: 4px; }
+
+/* Chart */
+.chart-section svg { width: 100%; height: auto; display: block; }
+
+/* Tables */
+.tbl { width: 100%; border-collapse: collapse; font-size: 13px; }
+.tbl th, .tbl td { padding: 8px 10px; border-bottom: 1px solid var(--line); text-align: left; }
+.tbl th { color: var(--muted); font-weight: 500; text-transform: uppercase; font-size: 10px; letter-spacing: 0.8px; }
+
+.kit-stats { display: flex; gap: 24px; margin-bottom: 14px; }
+.kit-stats .lbl { color: var(--muted); font-size: 11px; }
+.kit-stats .val { font-size: 18px; margin-left: 6px; }
+
+/* Socials */
+.social-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+.social-card { background: var(--bg-card-2); border: 1px solid var(--line); border-radius: 8px; padding: 14px; }
+.social-card.blocked, .social-card.skipped { opacity: 0.6; }
+.social-card.err { border-color: rgba(248, 113, 113, 0.4); }
+.social-name { font-weight: 600; }
+.social-handle { color: var(--muted); font-size: 12px; margin-bottom: 8px; }
+.social-blocked { color: var(--warn); font-size: 12px; }
+.social-reason { color: var(--muted); font-size: 11px; margin-top: 4px; }
+.social-stats { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px; margin-top: 8px; }
+.social-stats .lbl { color: var(--muted); font-size: 10px; display: block; }
+.social-stats .val { font-weight: 600; }
+
+/* App Store */
+.asc-summary { display: grid; grid-template-columns: 120px 1fr; gap: 20px; margin-bottom: 16px; }
+.asc-avg-val { font-size: 36px; font-weight: 600; }
+.asc-avg-lbl { color: var(--muted); font-size: 11px; }
+.dist-row { display: grid; grid-template-columns: 30px 1fr 40px; align-items: center; gap: 8px; margin-bottom: 4px; font-size: 12px; }
+.star { color: var(--accent-2); }
+.dist-bar { height: 6px; background: #0b1220; border-radius: 4px; overflow: hidden; }
+.dist-fill { height: 100%; background: var(--accent-2); }
+.dist-count { text-align: right; color: var(--muted); }
+.review { padding: 10px 0; border-bottom: 1px solid var(--line); }
+.review:last-child { border-bottom: none; }
+.review-head { display: flex; justify-content: space-between; font-size: 12px; }
+.review-stars { color: var(--accent-2); }
+.review-meta { color: var(--muted); }
+.review-title { font-weight: 600; margin-top: 4px; }
+.review-body { color: var(--muted); font-size: 13px; margin-top: 2px; }
+
+/* Roadmap */
+.roadmap-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+.rm-col { background: var(--bg-card-2); border: 1px solid var(--line); border-radius: 8px; padding: 12px; }
+.rm-col h3 { margin: 0 0 10px; font-size: 13px; display: flex; justify-content: space-between; }
+.rm-count { color: var(--muted); font-weight: normal; }
+.rm-col ul { margin: 0; padding: 0; list-style: none; }
+.rm-col li { padding: 6px 0; border-bottom: 1px solid var(--line); font-size: 13px; }
+.rm-col li:last-child { border-bottom: none; }
+.rm-title { display: block; }
+.rm-note { display: block; color: var(--muted); font-size: 11px; margin-top: 2px; }
+.rm-in_progress h3 { color: var(--accent); }
+.rm-upcoming h3 { color: var(--text); }
+.rm-blocked h3 { color: var(--warn); }
+.rm-completed h3 { color: var(--ok); }
+
+/* Countries */
+.ctry-row { display: grid; grid-template-columns: 130px 1fr 60px; align-items: center; gap: 10px; margin-bottom: 4px; font-size: 13px; }
+.ctry-bar { height: 6px; background: #0b1220; border-radius: 4px; overflow: hidden; }
+.ctry-fill { height: 100%; background: var(--accent); }
+.ctry-val { text-align: right; color: var(--muted); }
+
+/* Health chips */
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { font-size: 11px; padding: 4px 10px; border-radius: 12px; border: 1px solid var(--line); background: var(--bg-card-2); }
+.chip-ok { color: var(--ok); border-color: rgba(74, 222, 128, 0.3); }
+.chip-error { color: var(--err); border-color: rgba(248, 113, 113, 0.3); }
+.chip-blocked { color: var(--warn); border-color: rgba(251, 191, 36, 0.3); }
+.chip-skipped { color: var(--skipped); }
 </style>
-</head><body><div class="wrap">
-<h1>Artemis Tracker — Dashboard</h1>
-<p style="color:#9aa3c0">Generated 2026-06-13T06:05:10.311629+00:00</p>
+</head>
+<body>
+<main>
+  <header class='page'>
+    <h1>Artemis Tracker — Dashboard</h1>
+    <div class='gen'>Generated 2026-06-13T06:40:27.414364+00:00</div>
+  </header>
 
-<h2>Overview</h2>
-<div class="grid"><div class="card"><div class="label">Daily Active (latest)</div><div class="value">130</div></div><div class="card"><div class="label">Total Notif Opens (30d)</div><div class="value">—</div></div><div class="card"><div class="label">Notif Open Users (30d)</div><div class="value">—</div></div><div class="card"><div class="label">Notif Foreground (30d)</div><div class="value">—</div></div><div class="card"><div class="label">Kit Subscribers</div><div class="value">32</div></div><div class="card"><div class="label">App Installs (lifetime)</div><div class="value">—</div></div><div class="card"><div class="label">Pushes Sent (total)</div><div class="value">1</div></div></div>
-
-<h2>Recent push notifications</h2>
-<table><thead><tr><th>Sent (UTC)</th><th>Title</th><th>Article</th></tr></thead><tbody><tr><td>2026-06-09 17:23</td><td>Artemis III crew: Bresnik commands, Parmitano flies as pilot</td><td>artemis-iii-crew-named-june-9</td></tr></tbody></table>
-
-<div class="foot">Auto-refreshed daily from GA4, Kit and App Store Connect.</div>
-</div></body></html>
+  
+<section class='north-star'>
+  <div class='ns-head'>
+    <div class='ns-label'>North Star</div>
+    <div class='ns-target'>500 DAU by 2026-08-31</div>
+  </div>
+  <div class='ns-row'>
+    <div class='ns-current'>
+      <div class='ns-value'>130</div>
+      <div class='ns-sub'>DAU on 2026-06-12</div>
+    </div>
+    <div class='ns-progress-wrap'>
+      <div class='ns-bar'>
+        <div class='ns-bar-fill' style='width:26.0%'></div>
+        <div class='ns-bar-target' title='Target 500'></div>
+      </div>
+      <div class='ns-progress-meta'>
+        <span>26% of target</span>
+        <span class='ns-gap'>370 to goal</span>
+      </div>
+    </div>
+    <div class='ns-aux'>
+      <div><span class='lbl'>7d avg</span> <span class='val'>187</span></div>
+      <div><span class='lbl'>28d avg</span> <span class='val'>185</span></div>
+    </div>
+  </div>
+</section>
+  
+<section class='kpis'>
+  <h2>Supporting KPIs</h2>
+  <div class='kpi-grid'>
+    
+  <div class='kpi'>
+    <div class='kpi-label'>DAU (latest)</div>
+    <div class='kpi-value'>130</div>
+    <div class='kpi-target'>target 500</div>
+    <div class='kpi-bar'><div class='kpi-bar-fill' style='width:26.0%'></div></div>
+    <div class='kpi-pct'>26% of goal</div>
+  </div>
+  <div class='kpi'>
+    <div class='kpi-label'>28-day active users</div>
+    <div class='kpi-value'>5 201</div>
+    <div class='kpi-target'>target 12 000</div>
+    <div class='kpi-bar'><div class='kpi-bar-fill' style='width:43.3%'></div></div>
+    <div class='kpi-pct'>43% of goal</div>
+  </div>
+  <div class='kpi'>
+    <div class='kpi-label'>Newsletter subs (Kit)</div>
+    <div class='kpi-value'>32</div>
+    <div class='kpi-target'>target 250</div>
+    <div class='kpi-bar'><div class='kpi-bar-fill' style='width:12.8%'></div></div>
+    <div class='kpi-pct'>13% of goal</div>
+  </div>
+  <div class='kpi'>
+    <div class='kpi-label'>Artemis Plus subs</div>
+    <div class='kpi-value'>—</div>
+    <div class='kpi-target'>target 250</div>
+    <div class='kpi-bar'><div class='kpi-bar-fill' style='width:0%'></div></div>
+    <div class='kpi-pct'></div>
+  </div>
+  <div class='kpi'>
+    <div class='kpi-label'>Monthly churn (Plus)</div>
+    <div class='kpi-value'>—</div>
+    <div class='kpi-target'>target ≤6%</div>
+    <div class='kpi-bar'><div class='kpi-bar-fill' style='width:0%'></div></div>
+    <div class='kpi-pct'></div>
+  </div>
+  <div class='kpi'>
+    <div class='kpi-label'>Push opt-in (iOS)</div>
+    <div class='kpi-value'>—</div>
+    <div class='kpi-target'>target 35%</div>
+    <div class='kpi-bar'><div class='kpi-bar-fill' style='width:0%'></div></div>
+    <div class='kpi-pct'></div>
+  </div>
+  <div class='kpi'>
+    <div class='kpi-label'>Push open rate (30d)</div>
+    <div class='kpi-value'>—</div>
+    <div class='kpi-target'>target 25%</div>
+    <div class='kpi-bar'><div class='kpi-bar-fill' style='width:0%'></div></div>
+    <div class='kpi-pct'></div>
+  </div>
+  <div class='kpi'>
+    <div class='kpi-label'>New installs / 30d</div>
+    <div class='kpi-value'>—</div>
+    <div class='kpi-target'>target 3 000</div>
+    <div class='kpi-bar'><div class='kpi-bar-fill' style='width:0%'></div></div>
+    <div class='kpi-pct'></div>
+  </div>
+  <div class='kpi'>
+    <div class='kpi-label'>App Store rating (avg)</div>
+    <div class='kpi-value'>2.20</div>
+    <div class='kpi-target'>target 4.6</div>
+    <div class='kpi-bar'><div class='kpi-bar-fill' style='width:47.8%'></div></div>
+    <div class='kpi-pct'>48% of goal</div>
+  </div>
+  <div class='kpi'>
+    <div class='kpi-label'>4★+ reviews count</div>
+    <div class='kpi-value'>11</div>
+    <div class='kpi-target'>target 100</div>
+    <div class='kpi-bar'><div class='kpi-bar-fill' style='width:11.0%'></div></div>
+    <div class='kpi-pct'>11% of goal</div>
+  </div>
+  <div class='kpi'>
+    <div class='kpi-label'>Bluesky followers</div>
+    <div class='kpi-value'>—</div>
+    <div class='kpi-target'>target 750</div>
+    <div class='kpi-bar'><div class='kpi-bar-fill' style='width:0%'></div></div>
+    <div class='kpi-pct'></div>
+  </div>
+  <div class='kpi'>
+    <div class='kpi-label'>Mastodon followers</div>
+    <div class='kpi-value'>—</div>
+    <div class='kpi-target'>target 300</div>
+    <div class='kpi-bar'><div class='kpi-bar-fill' style='width:0%'></div></div>
+    <div class='kpi-pct'></div>
+  </div>
+  </div>
+</section>
+  
+<section class='chart-section'>
+  <h2>DAU — last 90 days</h2>
+  <svg viewBox='0 0 920 280' xmlns='http://www.w3.org/2000/svg' role='img' aria-label='Daily active users chart'>
+    <line x1='50' y1='250.0' x2='904' y2='250.0' stroke='#1f2735' stroke-width='1'/><text x='44' y='253.0' fill='#8a99b3' font-size='10' text-anchor='end'>0</text><line x1='50' y1='191.5' x2='904' y2='191.5' stroke='#1f2735' stroke-width='1'/><text x='44' y='194.5' fill='#8a99b3' font-size='10' text-anchor='end'>629</text><line x1='50' y1='133.0' x2='904' y2='133.0' stroke='#1f2735' stroke-width='1'/><text x='44' y='136.0' fill='#8a99b3' font-size='10' text-anchor='end'>1 259</text><line x1='50' y1='74.5' x2='904' y2='74.5' stroke='#1f2735' stroke-width='1'/><text x='44' y='77.5' fill='#8a99b3' font-size='10' text-anchor='end'>1 889</text><line x1='50' y1='16.0' x2='904' y2='16.0' stroke='#1f2735' stroke-width='1'/><text x='44' y='19.0' fill='#8a99b3' font-size='10' text-anchor='end'>2 519</text>
+    <polygon points='50.0,250.0 50.0,249.9 63.1,244.4 76.3,60.8 89.4,37.3 102.6,183.4 115.7,188.8 128.8,191.8 142.0,198.9 155.1,185.6 168.2,191.4 181.4,208.4 194.5,218.2 207.7,222.2 220.8,221.8 233.9,228.6 247.1,230.6 260.2,229.0 273.4,232.8 286.5,233.5 299.6,228.3 312.8,235.6 325.9,237.1 339.0,237.7 352.2,236.4 365.3,238.2 378.5,235.3 391.6,235.3 404.7,235.4 417.9,233.4 431.0,213.4 444.2,217.5 457.3,224.2 470.4,224.5 483.6,225.3 496.7,223.4 509.8,214.2 523.0,227.3 536.1,228.1 549.3,231.8 562.4,232.8 575.5,231.7 588.7,233.6 601.8,221.1 615.0,231.0 628.1,233.9 641.2,235.1 654.4,236.3 667.5,236.3 680.6,238.0 693.8,215.0 706.9,234.2 720.1,235.0 733.2,237.1 746.3,234.4 759.5,235.5 772.6,236.7 785.8,226.6 798.9,234.6 812.0,237.8 825.2,237.7 838.3,238.7 851.4,237.7 864.6,216.3 877.7,224.7 890.9,235.3 904.0,237.9 904.0,250.0' fill='rgba(95,179,255,0.12)' />
+    <polyline points='50.0,249.9 63.1,244.4 76.3,60.8 89.4,37.3 102.6,183.4 115.7,188.8 128.8,191.8 142.0,198.9 155.1,185.6 168.2,191.4 181.4,208.4 194.5,218.2 207.7,222.2 220.8,221.8 233.9,228.6 247.1,230.6 260.2,229.0 273.4,232.8 286.5,233.5 299.6,228.3 312.8,235.6 325.9,237.1 339.0,237.7 352.2,236.4 365.3,238.2 378.5,235.3 391.6,235.3 404.7,235.4 417.9,233.4 431.0,213.4 444.2,217.5 457.3,224.2 470.4,224.5 483.6,225.3 496.7,223.4 509.8,214.2 523.0,227.3 536.1,228.1 549.3,231.8 562.4,232.8 575.5,231.7 588.7,233.6 601.8,221.1 615.0,231.0 628.1,233.9 641.2,235.1 654.4,236.3 667.5,236.3 680.6,238.0 693.8,215.0 706.9,234.2 720.1,235.0 733.2,237.1 746.3,234.4 759.5,235.5 772.6,236.7 785.8,226.6 798.9,234.6 812.0,237.8 825.2,237.7 838.3,238.7 851.4,237.7 864.6,216.3 877.7,224.7 890.9,235.3 904.0,237.9' fill='none' stroke='#5fb3ff' stroke-width='2'/>
+    <line x1='50' y1='203.6' x2='904' y2='203.6' stroke='#f5b942' stroke-width='1.5' stroke-dasharray='5,4' />
+    <text x='900' y='197.6' fill='#f5b942' font-size='11' text-anchor='end'>Target 500 by 2026-08-31</text>
+    <circle cx='904.0' cy='237.9' r='4' fill='#5fb3ff' stroke='#0b1220' stroke-width='2'/>
+    <text x='50.0' y='272' fill='#8a99b3' font-size='10' text-anchor='middle'>04-08</text><text x='483.6' y='272' fill='#8a99b3' font-size='10' text-anchor='middle'>05-11</text><text x='904.0' y='272' fill='#8a99b3' font-size='10' text-anchor='middle'>06-12</text>
+  </svg>
+</section>
+  
+<section>
+  <h2>Top countries (30d active users)</h2>
+  <div class='ctry-list'><div class='ctry-row'><span class='ctry-name'>United States</span><div class='ctry-bar'><div class='ctry-fill' style='width:50.4%'></div></div><span class='ctry-val'>1 337</span></div><div class='ctry-row'><span class='ctry-name'>United Kingdom</span><div class='ctry-bar'><div class='ctry-fill' style='width:16.9%'></div></div><span class='ctry-val'>449</span></div><div class='ctry-row'><span class='ctry-name'>Canada</span><div class='ctry-bar'><div class='ctry-fill' style='width:8.5%'></div></div><span class='ctry-val'>225</span></div><div class='ctry-row'><span class='ctry-name'>Germany</span><div class='ctry-bar'><div class='ctry-fill' style='width:7.9%'></div></div><span class='ctry-val'>209</span></div><div class='ctry-row'><span class='ctry-name'>Italy</span><div class='ctry-bar'><div class='ctry-fill' style='width:3.2%'></div></div><span class='ctry-val'>85</span></div><div class='ctry-row'><span class='ctry-name'>Australia</span><div class='ctry-bar'><div class='ctry-fill' style='width:3.2%'></div></div><span class='ctry-val'>84</span></div><div class='ctry-row'><span class='ctry-name'>Netherlands</span><div class='ctry-bar'><div class='ctry-fill' style='width:3.0%'></div></div><span class='ctry-val'>79</span></div><div class='ctry-row'><span class='ctry-name'>Spain</span><div class='ctry-bar'><div class='ctry-fill' style='width:2.5%'></div></div><span class='ctry-val'>67</span></div><div class='ctry-row'><span class='ctry-name'>Indonesia</span><div class='ctry-bar'><div class='ctry-fill' style='width:2.3%'></div></div><span class='ctry-val'>62</span></div><div class='ctry-row'><span class='ctry-name'>France</span><div class='ctry-bar'><div class='ctry-fill' style='width:2.0%'></div></div><span class='ctry-val'>54</span></div></div>
+</section>
+  
+<section>
+  <h2>Newsletter</h2>
+  <div class='kit-stats'>
+    <div><span class='lbl'>Active</span> <span class='val'>32</span></div>
+    <div><span class='lbl'>Inactive</span> <span class='val'>5</span></div>
+  </div>
+  <table class='tbl'><thead><tr><th>Date</th><th>Subject</th><th>Audience</th></tr></thead><tbody><tr><td>2026-06-09</td><td>Artemis III crew: Bresnik commands, Parmitano flies as pilot</td><td>public</td></tr><tr><td>2026-06-07</td><td>Week Ahead: Artemis III crew reveal on Tuesday</td><td>public</td></tr><tr><td>2026-06-03</td><td>Artemis III: four astronauts named June 9</td><td>public</td></tr><tr><td>2026-05-31</td><td>Week ahead: Artemis 3 crew reveal, and the fallout from New Glenn</td><td>public</td></tr><tr><td>2026-05-31</td><td>Week ahead: Artemis 3 crew reveal, and the fallout from New Glenn</td><td>subs only</td></tr><tr><td>2026-05-27</td><td>Moon Base: NASA names the first three landers, all flying in 2026</td><td>public</td></tr><tr><td>2026-05-24</td><td>What to watch this week: NASA finally tells us what the Moon Base will be</td><td>public</td></tr><tr><td>2026-05-20</td><td>Artemis III: new LEO mission details</td><td>public</td></tr><tr><td>2026-05-14</td><td>NASA just changed the Artemis III plan. Here&#x27;s what matters.</td><td>public</td></tr><tr><td>2026-05-14</td><td>Domain test — artemistracker.app</td><td>subs only</td></tr></tbody></table>
+</section>
+  
+<section>
+  <h2>Social channels</h2>
+  <div class='social-grid'>
+    
+  <div class='social-card err'>
+    <div class='social-name'>Bluesky</div>
+    <div class='social-blocked'>Error</div>
+    <div class='social-reason'>HTTP 401</div>
+  </div>
+    
+  <div class='social-card err'>
+    <div class='social-name'>Mastodon</div>
+    <div class='social-blocked'>Error</div>
+    <div class='social-reason'>HTTP 403</div>
+  </div>
+    
+  <div class='social-card blocked'>
+    <div class='social-name'>Threads</div>
+    <div class='social-blocked'>Blocked</div>
+    <div class='social-reason'>Meta developer verification not completed — publishing and metrics disabled</div>
+  </div>
+    
+  <div class='social-card blocked'>
+    <div class='social-name'>Instagram</div>
+    <div class='social-blocked'>Blocked</div>
+    <div class='social-reason'>Needs Business/Creator account linked to Facebook page + instagram_content_publish approval</div>
+  </div>
+  </div>
+</section>
+  
+<section>
+  <h2>App Store reviews (recent 50)</h2>
+  <div class='asc-summary'>
+    <div class='asc-avg'>
+      <div class='asc-avg-val'>2.20</div>
+      <div class='asc-avg-lbl'>avg recent</div>
+    </div>
+    <div class='asc-dist'><div class='dist-row'><span class='star'>5★</span><div class='dist-bar'><div class='dist-fill' style='width:12.0%'></div></div><span class='dist-count'>6</span></div><div class='dist-row'><span class='star'>4★</span><div class='dist-bar'><div class='dist-fill' style='width:10.0%'></div></div><span class='dist-count'>5</span></div><div class='dist-row'><span class='star'>3★</span><div class='dist-bar'><div class='dist-fill' style='width:8.0%'></div></div><span class='dist-count'>4</span></div><div class='dist-row'><span class='star'>2★</span><div class='dist-bar'><div class='dist-fill' style='width:26.0%'></div></div><span class='dist-count'>13</span></div><div class='dist-row'><span class='star'>1★</span><div class='dist-bar'><div class='dist-fill' style='width:44.0%'></div></div><span class='dist-count'>22</span></div></div>
+  </div>
+  <div class='reviews'><div class='review'><div class='review-head'><span class='review-stars'>★☆☆☆☆</span><span class='review-meta'>Leo PHB · GBR · 2026-04-21</span></div><div class='review-title'>Full of bugs</div><div class='review-body'>This app was useless during the Artemis 2 mission, the mission tracker data was just plain wrong.</div></div><div class='review'><div class='review-head'><span class='review-stars'>★★★★☆</span><span class='review-meta'>Fastlunch_1 · AUS · 2026-04-11</span></div><div class='review-title'>Making it up</div><div class='review-body'>This app was a bit slow to update but the info was of good detail.</div></div><div class='review'><div class='review-head'><span class='review-stars'>★★★☆☆</span><span class='review-meta'>Sophiedog6 · USA · 2026-04-11</span></div><div class='review-title'>Click still running?</div><div class='review-body'>It landed. I think you can turn off the flight duration clock now.</div></div><div class='review'><div class='review-head'><span class='review-stars'>★★★☆☆</span><span class='review-meta'>iROWI · CHE · 2026-04-11</span></div><div class='review-title'>Version 2.0.4(2)</div><div class='review-body'>Nach dem Splashdown ist das Tracking immer noch aktiv, Artemis immer noch weit von der Erde entfernt, 10.65 km/s!</div></div><div class='review'><div class='review-head'><span class='review-stars'>★☆☆☆☆</span><span class='review-meta'>Soberjoey · USA · 2026-04-10</span></div><div class='review-title'>Don’t waste your time</div><div class='review-body'>This App is garbage. From beginning to end nothing was correct.  The timing, the miles everything was off always    absolute garbage. Don’t waste your time.  I spent the extra money so I could get spa</div></div><div class='review'><div class='review-head'><span class='review-stars'>★☆☆☆☆</span><span class='review-meta'>Paytisa · CAN · 2026-04-10</span></div><div class='review-title'>Very inaccurate</div><div class='review-body'>The app was extremely inaccurate the entire Artemis 2 mission and I feel
+Like I blew 5$ down the drain</div></div><div class='review'><div class='review-head'><span class='review-stars'>★☆☆☆☆</span><span class='review-meta'>thisis so dumb and theft · USA · 2026-04-10</span></div><div class='review-title'>Terrible delay</div><div class='review-body'>This app was delayed by more than 19 minutes. Watching the news was 10/15 minutes faster than when I would get a notification from the app. Parachutes deployed notification was so delayed , the astron</div></div><div class='review'><div class='review-head'><span class='review-stars'>★☆☆☆☆</span><span class='review-meta'>jayden_437 · GBR · 2026-04-10</span></div><div class='review-title'>Really out of sync data</div><div class='review-body'>Got notifications for certain events happening during the mission way after it actually happened. We’re talking 20/30 mins after each milestone. And data shown in app was always different to that of N</div></div></div>
+</section>
+  
+<section>
+  <h2>Recent push campaigns</h2>
+  <table class='tbl'>
+    <thead><tr><th>Sent</th><th>Title</th><th>Platform</th><th>Sent</th></tr></thead>
+    <tbody><tr><td></td><td>Artemis III crew: Bresnik commands, Parmitano flies as pilot</td><td></td><td></td></tr></tbody>
+  </table>
+</section>
+  
+<section>
+  <h2>Roadmap</h2>
+  <div class='roadmap-grid'>
+    
+  <div class='rm-col rm-in_progress'>
+    <h3>In progress <span class='rm-count'>2</span></h3>
+    <ul><li><span class='rm-title'>App Store 2.3.1 (Crew + minor fixes)</span><span class='rm-note'>metadata ready, awaiting submission</span></li><li><span class='rm-title'>Dashboard 2.0 rebuild</span><span class='rm-note'>this rebuild, KPIs + roadmap + social</span></li></ul>
+  </div>
+    
+  <div class='rm-col rm-upcoming'>
+    <h3>Upcoming <span class='rm-count'>5</span></h3>
+    <ul><li><span class='rm-title'>App Store Connect API integration</span><span class='rm-note'>downloads, ratings, reviews into dashboard</span></li><li><span class='rm-title'>Bluesky/Mastodon social metrics</span><span class='rm-note'>followers, posts, engagement</span></li><li><span class='rm-title'>Android paywall parity</span><span class='rm-note'>pricing tiers + Play Billing</span></li><li><span class='rm-title'>Play Console listing refresh</span><span class='rm-note'>screenshots + description</span></li><li><span class='rm-title'>Web landing page</span><span class='rm-note'>marketing site for newsletter signup</span></li></ul>
+  </div>
+    
+  <div class='rm-col rm-blocked'>
+    <h3>Blocked <span class='rm-count'>2</span></h3>
+    <ul><li><span class='rm-title'>Threads publishing</span><span class='rm-note'>Meta developer verification not completed</span></li><li><span class='rm-title'>Instagram publishing</span><span class='rm-note'>needs Business/Creator account linked to Facebook page</span></li></ul>
+  </div>
+    
+  <div class='rm-col rm-completed'>
+    <h3>Completed <span class='rm-count'>10</span></h3>
+    <ul><li><span class='rm-title'>GitHub Actions cron migration</span><span class='rm-note'>all daily jobs moved off ephemeral sandbox</span></li><li><span class='rm-title'>Artemis III crew announcement bundle</span><span class='rm-note'>article + push + Kit + social on June 9</span></li><li><span class='rm-title'>Bresnik EVA portrait update</span><span class='rm-note'>new image deployed via remote crew JSON</span></li><li><span class='rm-title'>Remote banner system</span><span class='rm-note'>banners/active.json drives in-app top banner</span></li><li><span class='rm-title'>Artemis III LEO docking spacer article</span><span class='rm-note'>published May 20</span></li><li><span class='rm-title'>Moon Base construction-begins article</span><span class='rm-note'>published May 27</span></li><li><span class='rm-title'>Artemis II heat shield verdict article</span><span class='rm-note'>published May 13</span></li><li><span class='rm-title'>Crew schema fix</span><span class='rm-note'>Artemis3CrewMember fields align with iOS app</span></li><li><span class='rm-title'>Android review prompt parity</span><span class='rm-note'>sentiment sheet + in-app review on Android</span></li><li><span class='rm-title'>Dashboard refresh credentials moved to GitHub Secrets</span><span class='rm-note'>durable across sandbox resets</span></li></ul>
+  </div>
+  </div>
+</section>
+  
+<section class='health'>
+  <h2>Source status</h2>
+  <div class='chips'><span class='chip chip-ok' title='2026-06-13T06:40:23.648901+00:00'>GA4 · ok</span><span class='chip chip-ok' title='2026-06-13T06:40:25.076454+00:00'>Kit · ok</span><span class='chip chip-ok' title='2026-06-13T06:40:26.327164+00:00'>App Store Connect · ok</span><span class='chip chip-error' title='HTTP 401'>Bluesky · error</span><span class='chip chip-error' title='HTTP 403'>Mastodon · error</span><span class='chip chip-blocked' title='Meta developer verification not completed — publishing and metrics disabled'>Threads · blocked</span><span class='chip chip-blocked' title='Needs Business/Creator account linked to Facebook page + instagram_content_publish approval'>Instagram · blocked</span><span class='chip chip-ok' title='2026-06-13T06:40:27.414050+00:00'>Push history · ok</span><span class='chip chip-ok' title='2026-06-13T06:40:27.414353+00:00'>Roadmap · ok</span></div>
+</section>
+</main>
+</body>
+</html>

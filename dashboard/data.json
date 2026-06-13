@@ -1,0 +1,906 @@
+{
+  "ga4": {
+    "status": "ok",
+    "daily_users": [
+      {
+        "date": "2026-04-08",
+        "active": 1,
+        "new": 1,
+        "views": 0,
+        "sessions": 1
+      },
+      {
+        "date": "2026-04-09",
+        "active": 60,
+        "new": 59,
+        "views": 151,
+        "sessions": 65
+      },
+      {
+        "date": "2026-04-10",
+        "active": 2037,
+        "new": 2010,
+        "views": 7236,
+        "sessions": 3457
+      },
+      {
+        "date": "2026-04-11",
+        "active": 2290,
+        "new": 1326,
+        "views": 6605,
+        "sessions": 3205
+      },
+      {
+        "date": "2026-04-12",
+        "active": 717,
+        "new": 384,
+        "views": 1355,
+        "sessions": 816
+      },
+      {
+        "date": "2026-04-13",
+        "active": 659,
+        "new": 478,
+        "views": 781,
+        "sessions": 499
+      },
+      {
+        "date": "2026-04-14",
+        "active": 626,
+        "new": 441,
+        "views": 593,
+        "sessions": 425
+      },
+      {
+        "date": "2026-04-15",
+        "active": 550,
+        "new": 370,
+        "views": 556,
+        "sessions": 408
+      },
+      {
+        "date": "2026-04-16",
+        "active": 693,
+        "new": 348,
+        "views": 849,
+        "sessions": 580
+      },
+      {
+        "date": "2026-04-17",
+        "active": 631,
+        "new": 365,
+        "views": 818,
+        "sessions": 564
+      },
+      {
+        "date": "2026-04-18",
+        "active": 448,
+        "new": 235,
+        "views": 571,
+        "sessions": 420
+      },
+      {
+        "date": "2026-04-19",
+        "active": 342,
+        "new": 195,
+        "views": 421,
+        "sessions": 318
+      },
+      {
+        "date": "2026-04-20",
+        "active": 299,
+        "new": 174,
+        "views": 389,
+        "sessions": 281
+      },
+      {
+        "date": "2026-04-21",
+        "active": 304,
+        "new": 148,
+        "views": 376,
+        "sessions": 285
+      },
+      {
+        "date": "2026-04-22",
+        "active": 230,
+        "new": 110,
+        "views": 290,
+        "sessions": 224
+      },
+      {
+        "date": "2026-04-23",
+        "active": 209,
+        "new": 107,
+        "views": 293,
+        "sessions": 206
+      },
+      {
+        "date": "2026-04-24",
+        "active": 226,
+        "new": 107,
+        "views": 256,
+        "sessions": 218
+      },
+      {
+        "date": "2026-04-25",
+        "active": 185,
+        "new": 92,
+        "views": 210,
+        "sessions": 172
+      },
+      {
+        "date": "2026-04-26",
+        "active": 178,
+        "new": 78,
+        "views": 198,
+        "sessions": 184
+      },
+      {
+        "date": "2026-04-27",
+        "active": 234,
+        "new": 72,
+        "views": 279,
+        "sessions": 251
+      },
+      {
+        "date": "2026-04-28",
+        "active": 155,
+        "new": 53,
+        "views": 188,
+        "sessions": 163
+      },
+      {
+        "date": "2026-04-29",
+        "active": 139,
+        "new": 62,
+        "views": 152,
+        "sessions": 146
+      },
+      {
+        "date": "2026-04-30",
+        "active": 132,
+        "new": 57,
+        "views": 167,
+        "sessions": 147
+      },
+      {
+        "date": "2026-05-01",
+        "active": 146,
+        "new": 72,
+        "views": 216,
+        "sessions": 172
+      },
+      {
+        "date": "2026-05-02",
+        "active": 127,
+        "new": 51,
+        "views": 151,
+        "sessions": 150
+      },
+      {
+        "date": "2026-05-03",
+        "active": 158,
+        "new": 92,
+        "views": 206,
+        "sessions": 173
+      },
+      {
+        "date": "2026-05-04",
+        "active": 158,
+        "new": 89,
+        "views": 262,
+        "sessions": 177
+      },
+      {
+        "date": "2026-05-05",
+        "active": 157,
+        "new": 90,
+        "views": 208,
+        "sessions": 177
+      },
+      {
+        "date": "2026-05-06",
+        "active": 179,
+        "new": 107,
+        "views": 248,
+        "sessions": 200
+      },
+      {
+        "date": "2026-05-07",
+        "active": 394,
+        "new": 118,
+        "views": 706,
+        "sessions": 481
+      },
+      {
+        "date": "2026-05-08",
+        "active": 350,
+        "new": 113,
+        "views": 521,
+        "sessions": 416
+      },
+      {
+        "date": "2026-05-09",
+        "active": 278,
+        "new": 132,
+        "views": 405,
+        "sessions": 322
+      },
+      {
+        "date": "2026-05-10",
+        "active": 275,
+        "new": 138,
+        "views": 376,
+        "sessions": 303
+      },
+      {
+        "date": "2026-05-11",
+        "active": 266,
+        "new": 144,
+        "views": 329,
+        "sessions": 285
+      },
+      {
+        "date": "2026-05-12",
+        "active": 286,
+        "new": 124,
+        "views": 373,
+        "sessions": 312
+      },
+      {
+        "date": "2026-05-13",
+        "active": 385,
+        "new": 113,
+        "views": 525,
+        "sessions": 443
+      },
+      {
+        "date": "2026-05-14",
+        "active": 244,
+        "new": 84,
+        "views": 351,
+        "sessions": 297
+      },
+      {
+        "date": "2026-05-15",
+        "active": 236,
+        "new": 101,
+        "views": 286,
+        "sessions": 256
+      },
+      {
+        "date": "2026-05-16",
+        "active": 196,
+        "new": 91,
+        "views": 268,
+        "sessions": 229
+      },
+      {
+        "date": "2026-05-17",
+        "active": 185,
+        "new": 78,
+        "views": 223,
+        "sessions": 213
+      },
+      {
+        "date": "2026-05-18",
+        "active": 197,
+        "new": 81,
+        "views": 260,
+        "sessions": 231
+      },
+      {
+        "date": "2026-05-19",
+        "active": 177,
+        "new": 62,
+        "views": 230,
+        "sessions": 201
+      },
+      {
+        "date": "2026-05-20",
+        "active": 311,
+        "new": 72,
+        "views": 428,
+        "sessions": 343
+      },
+      {
+        "date": "2026-05-21",
+        "active": 205,
+        "new": 69,
+        "views": 270,
+        "sessions": 234
+      },
+      {
+        "date": "2026-05-22",
+        "active": 173,
+        "new": 58,
+        "views": 232,
+        "sessions": 191
+      },
+      {
+        "date": "2026-05-23",
+        "active": 160,
+        "new": 64,
+        "views": 210,
+        "sessions": 181
+      },
+      {
+        "date": "2026-05-24",
+        "active": 147,
+        "new": 47,
+        "views": 174,
+        "sessions": 160
+      },
+      {
+        "date": "2026-05-25",
+        "active": 148,
+        "new": 53,
+        "views": 191,
+        "sessions": 170
+      },
+      {
+        "date": "2026-05-26",
+        "active": 129,
+        "new": 54,
+        "views": 158,
+        "sessions": 143
+      },
+      {
+        "date": "2026-05-27",
+        "active": 377,
+        "new": 64,
+        "views": 484,
+        "sessions": 426
+      },
+      {
+        "date": "2026-05-28",
+        "active": 170,
+        "new": 66,
+        "views": 240,
+        "sessions": 203
+      },
+      {
+        "date": "2026-05-29",
+        "active": 162,
+        "new": 62,
+        "views": 210,
+        "sessions": 183
+      },
+      {
+        "date": "2026-05-30",
+        "active": 139,
+        "new": 48,
+        "views": 178,
+        "sessions": 157
+      },
+      {
+        "date": "2026-05-31",
+        "active": 168,
+        "new": 64,
+        "views": 228,
+        "sessions": 192
+      },
+      {
+        "date": "2026-06-01",
+        "active": 156,
+        "new": 59,
+        "views": 222,
+        "sessions": 181
+      },
+      {
+        "date": "2026-06-02",
+        "active": 143,
+        "new": 44,
+        "views": 201,
+        "sessions": 163
+      },
+      {
+        "date": "2026-06-03",
+        "active": 252,
+        "new": 42,
+        "views": 316,
+        "sessions": 283
+      },
+      {
+        "date": "2026-06-04",
+        "active": 166,
+        "new": 65,
+        "views": 207,
+        "sessions": 191
+      },
+      {
+        "date": "2026-06-05",
+        "active": 131,
+        "new": 49,
+        "views": 181,
+        "sessions": 158
+      },
+      {
+        "date": "2026-06-06",
+        "active": 132,
+        "new": 53,
+        "views": 171,
+        "sessions": 151
+      },
+      {
+        "date": "2026-06-07",
+        "active": 122,
+        "new": 50,
+        "views": 153,
+        "sessions": 131
+      },
+      {
+        "date": "2026-06-08",
+        "active": 132,
+        "new": 41,
+        "views": 173,
+        "sessions": 147
+      },
+      {
+        "date": "2026-06-09",
+        "active": 363,
+        "new": 71,
+        "views": 497,
+        "sessions": 428
+      },
+      {
+        "date": "2026-06-10",
+        "active": 272,
+        "new": 61,
+        "views": 387,
+        "sessions": 320
+      },
+      {
+        "date": "2026-06-11",
+        "active": 158,
+        "new": 32,
+        "views": 216,
+        "sessions": 185
+      },
+      {
+        "date": "2026-06-12",
+        "active": 130,
+        "new": 40,
+        "views": 158,
+        "sessions": 150
+      }
+    ],
+    "latest": {
+      "date": "2026-06-12",
+      "active": 130,
+      "new": 40,
+      "views": 158,
+      "sessions": 150
+    },
+    "total_active_28d": 5201,
+    "total_new_28d": 1640,
+    "total_sessions_28d": 5945,
+    "total_views_28d": 6866,
+    "avg_dau_7d": 187.0,
+    "avg_dau_28d": 185.8,
+    "top_countries_30d": [
+      {
+        "country": "United States",
+        "active": 1337
+      },
+      {
+        "country": "United Kingdom",
+        "active": 449
+      },
+      {
+        "country": "Canada",
+        "active": 225
+      },
+      {
+        "country": "Germany",
+        "active": 209
+      },
+      {
+        "country": "Italy",
+        "active": 85
+      },
+      {
+        "country": "Australia",
+        "active": 84
+      },
+      {
+        "country": "Netherlands",
+        "active": 79
+      },
+      {
+        "country": "Spain",
+        "active": 67
+      },
+      {
+        "country": "Indonesia",
+        "active": 62
+      },
+      {
+        "country": "France",
+        "active": 54
+      }
+    ],
+    "fetched_at": "2026-06-13T06:40:23.648901+00:00"
+  },
+  "kit": {
+    "status": "ok",
+    "active_subscribers": 32,
+    "inactive_subscribers": 5,
+    "recent_broadcasts": [
+      {
+        "id": 24495529,
+        "subject": "Artemis III crew: Bresnik commands, Parmitano flies as pilot",
+        "send_at": "2026-06-09T17:39:04Z",
+        "public": true
+      },
+      {
+        "id": 24465388,
+        "subject": "Week Ahead: Artemis III crew reveal on Tuesday",
+        "send_at": "2026-06-07T21:18:38Z",
+        "public": true
+      },
+      {
+        "id": 24410996,
+        "subject": "Artemis III: four astronauts named June 9",
+        "send_at": "2026-06-03T19:30:00Z",
+        "public": true
+      },
+      {
+        "id": 24356787,
+        "subject": "Week ahead: Artemis 3 crew reveal, and the fallout from New Glenn",
+        "send_at": "2026-05-31T07:20:00Z",
+        "public": true
+      },
+      {
+        "id": 24332641,
+        "subject": "Week ahead: Artemis 3 crew reveal, and the fallout from New Glenn",
+        "send_at": "2026-05-31T07:00:00Z",
+        "public": false
+      },
+      {
+        "id": 24300304,
+        "subject": "Moon Base: NASA names the first three landers, all flying in 2026",
+        "send_at": "2026-05-27T06:47:34Z",
+        "public": true
+      },
+      {
+        "id": 24253337,
+        "subject": "What to watch this week: NASA finally tells us what the Moon Base will be",
+        "send_at": "2026-05-24T07:00:00Z",
+        "public": true
+      },
+      {
+        "id": 24210125,
+        "subject": "Artemis III: new LEO mission details",
+        "send_at": "2026-05-20T19:30:00Z",
+        "public": true
+      },
+      {
+        "id": 24125271,
+        "subject": "NASA just changed the Artemis III plan. Here's what matters.",
+        "send_at": "2026-05-14T14:16:15Z",
+        "public": true
+      },
+      {
+        "id": 24125197,
+        "subject": "Domain test \u2014 artemistracker.app",
+        "send_at": "2026-05-14T14:13:57Z",
+        "public": false
+      }
+    ],
+    "fetched_at": "2026-06-13T06:40:25.076454+00:00"
+  },
+  "asc": {
+    "status": "ok",
+    "app_id": "6761183798",
+    "app_name": "Artemis Mission Tracker",
+    "bundle_id": "no.bitfactory.artemisii.tracker",
+    "reviews_recent": [
+      {
+        "rating": 1,
+        "title": "Full of bugs",
+        "body": "This app was useless during the Artemis 2 mission, the mission tracker data was just plain wrong.",
+        "reviewer": "Leo PHB",
+        "territory": "GBR",
+        "created": "2026-04-21T18:57:47-07:00"
+      },
+      {
+        "rating": 4,
+        "title": "Making it up",
+        "body": "This app was a bit slow to update but the info was of good detail.",
+        "reviewer": "Fastlunch_1",
+        "territory": "AUS",
+        "created": "2026-04-11T13:53:03-07:00"
+      },
+      {
+        "rating": 3,
+        "title": "Click still running?",
+        "body": "It landed. I think you can turn off the flight duration clock now.",
+        "reviewer": "Sophiedog6",
+        "territory": "USA",
+        "created": "2026-04-11T08:24:56-07:00"
+      },
+      {
+        "rating": 3,
+        "title": "Version 2.0.4(2)",
+        "body": "Nach dem Splashdown ist das Tracking immer noch aktiv, Artemis immer noch weit von der Erde entfernt, 10.65 km/s!",
+        "reviewer": "iROWI",
+        "territory": "CHE",
+        "created": "2026-04-11T00:56:47-07:00"
+      },
+      {
+        "rating": 1,
+        "title": "Don\u2019t waste your time",
+        "body": "This App is garbage. From beginning to end nothing was correct.  The timing, the miles everything was off always    absolute garbage. Don\u2019t waste your time.  I spent the extra money so I could get spa",
+        "reviewer": "Soberjoey",
+        "territory": "USA",
+        "created": "2026-04-10T18:18:00-07:00"
+      },
+      {
+        "rating": 1,
+        "title": "Very inaccurate",
+        "body": "The app was extremely inaccurate the entire Artemis 2 mission and I feel\nLike I blew 5$ down the drain",
+        "reviewer": "Paytisa",
+        "territory": "CAN",
+        "created": "2026-04-10T17:52:32-07:00"
+      },
+      {
+        "rating": 1,
+        "title": "Terrible delay",
+        "body": "This app was delayed by more than 19 minutes. Watching the news was 10/15 minutes faster than when I would get a notification from the app. Parachutes deployed notification was so delayed , the astron",
+        "reviewer": "thisis so dumb and theft",
+        "territory": "USA",
+        "created": "2026-04-10T17:24:29-07:00"
+      },
+      {
+        "rating": 1,
+        "title": "Really out of sync data",
+        "body": "Got notifications for certain events happening during the mission way after it actually happened. We\u2019re talking 20/30 mins after each milestone. And data shown in app was always different to that of N",
+        "reviewer": "jayden_437",
+        "territory": "GBR",
+        "created": "2026-04-10T17:20:24-07:00"
+      },
+      {
+        "rating": 5,
+        "title": "this is a beautiful app",
+        "body": "I truly am grateful to have ran across this beautiful app, totally worth the full price because of all the future missions. I love how it has live tracking down to miles and speed to a chance to see a",
+        "reviewer": "milkywaychristian",
+        "territory": "USA",
+        "created": "2026-04-10T10:14:09-07:00"
+      },
+      {
+        "rating": 1,
+        "title": "Mission Lagged",
+        "body": "The app worked for the first few hours of the mission and then automatically started counting down to the Artemis 3 mission so nothing was updating. Each stage said in 1 year rather than in a few days",
+        "reviewer": "Wikaik",
+        "territory": "IRL",
+        "created": "2026-04-10T05:07:30-07:00"
+      }
+    ],
+    "reviews_count_recent": 50,
+    "avg_rating_recent": 2.2,
+    "rating_distribution_recent": {
+      "1": 22,
+      "2": 13,
+      "3": 4,
+      "4": 5,
+      "5": 6
+    },
+    "rating_count_recent": 50,
+    "fetched_at": "2026-06-13T06:40:26.327164+00:00"
+  },
+  "bluesky": {
+    "status": "error",
+    "error": "HTTP 401"
+  },
+  "mastodon": {
+    "status": "error",
+    "error": "HTTP 403"
+  },
+  "threads": {
+    "status": "blocked",
+    "reason": "Meta developer verification not completed \u2014 publishing and metrics disabled",
+    "fetched_at": "2026-06-13T06:40:27.413612+00:00"
+  },
+  "instagram": {
+    "status": "blocked",
+    "reason": "Needs Business/Creator account linked to Facebook page + instagram_content_publish approval",
+    "fetched_at": "2026-06-13T06:40:27.413633+00:00"
+  },
+  "push": {
+    "status": "ok",
+    "total_pushes": 1,
+    "recent": [
+      {
+        "timestamp_utc": "2026-06-09T17:23:18.056515+00:00",
+        "title": "Artemis III crew: Bresnik commands, Parmitano flies as pilot",
+        "body": "NASA named the four astronauts for the 2027 docking rehearsal in low Earth orbit. The landing slips to Artemis IV.",
+        "article_id": "artemis-iii-crew-named-june-9",
+        "topic": "all",
+        "message_id": "projects/artemis-tracker-665d8/messages/5771117710239470194"
+      }
+    ],
+    "fetched_at": "2026-06-13T06:40:27.414050+00:00"
+  },
+  "roadmap": {
+    "status": "ok",
+    "in_progress": [
+      {
+        "title": "App Store 2.3.1 (Crew + minor fixes)",
+        "note": "metadata ready, awaiting submission"
+      },
+      {
+        "title": "Dashboard 2.0 rebuild",
+        "note": "this rebuild, KPIs + roadmap + social"
+      }
+    ],
+    "upcoming": [
+      {
+        "title": "App Store Connect API integration",
+        "note": "downloads, ratings, reviews into dashboard"
+      },
+      {
+        "title": "Bluesky/Mastodon social metrics",
+        "note": "followers, posts, engagement"
+      },
+      {
+        "title": "Android paywall parity",
+        "note": "pricing tiers + Play Billing"
+      },
+      {
+        "title": "Play Console listing refresh",
+        "note": "screenshots + description"
+      },
+      {
+        "title": "Web landing page",
+        "note": "marketing site for newsletter signup"
+      }
+    ],
+    "blocked": [
+      {
+        "title": "Threads publishing",
+        "note": "Meta developer verification not completed"
+      },
+      {
+        "title": "Instagram publishing",
+        "note": "needs Business/Creator account linked to Facebook page"
+      }
+    ],
+    "completed": [
+      {
+        "title": "GitHub Actions cron migration",
+        "note": "all daily jobs moved off ephemeral sandbox"
+      },
+      {
+        "title": "Artemis III crew announcement bundle",
+        "note": "article + push + Kit + social on June 9"
+      },
+      {
+        "title": "Bresnik EVA portrait update",
+        "note": "new image deployed via remote crew JSON"
+      },
+      {
+        "title": "Remote banner system",
+        "note": "banners/active.json drives in-app top banner"
+      },
+      {
+        "title": "Artemis III LEO docking spacer article",
+        "note": "published May 20"
+      },
+      {
+        "title": "Moon Base construction-begins article",
+        "note": "published May 27"
+      },
+      {
+        "title": "Artemis II heat shield verdict article",
+        "note": "published May 13"
+      },
+      {
+        "title": "Crew schema fix",
+        "note": "Artemis3CrewMember fields align with iOS app"
+      },
+      {
+        "title": "Android review prompt parity",
+        "note": "sentiment sheet + in-app review on Android"
+      },
+      {
+        "title": "Dashboard refresh credentials moved to GitHub Secrets",
+        "note": "durable across sandbox resets"
+      }
+    ],
+    "fetched_at": "2026-06-13T06:40:27.414353+00:00"
+  },
+  "targets": {
+    "status": "ok",
+    "north_star": {
+      "metric": "DAU (latest day)",
+      "current_label": "DAU (latest)",
+      "target": 500,
+      "target_date": "2026-08-31"
+    },
+    "supporting": [
+      {
+        "key": "dau_latest",
+        "label": "DAU (latest)",
+        "target": 500,
+        "format": "int"
+      },
+      {
+        "key": "active_28d",
+        "label": "28-day active users",
+        "target": 12000,
+        "format": "int"
+      },
+      {
+        "key": "kit_subscribers",
+        "label": "Newsletter subs (Kit)",
+        "target": 250,
+        "format": "int"
+      },
+      {
+        "key": "plus_subscribers",
+        "label": "Artemis Plus subs",
+        "target": 250,
+        "format": "int"
+      },
+      {
+        "key": "monthly_churn",
+        "label": "Monthly churn (Plus)",
+        "target": 6,
+        "format": "pct_lower"
+      },
+      {
+        "key": "push_opt_in",
+        "label": "Push opt-in (iOS)",
+        "target": 35,
+        "format": "pct"
+      },
+      {
+        "key": "push_open_rate",
+        "label": "Push open rate (30d)",
+        "target": 25,
+        "format": "pct"
+      },
+      {
+        "key": "new_installs_30d",
+        "label": "New installs / 30d",
+        "target": 3000,
+        "format": "int"
+      },
+      {
+        "key": "avg_rating",
+        "label": "App Store rating (avg)",
+        "target": 4.6,
+        "format": "float"
+      },
+      {
+        "key": "reviews_4plus",
+        "label": "4\u2605+ reviews count",
+        "target": 100,
+        "format": "int"
+      },
+      {
+        "key": "bluesky_followers",
+        "label": "Bluesky followers",
+        "target": 750,
+        "format": "int"
+      },
+      {
+        "key": "mastodon_followers",
+        "label": "Mastodon followers",
+        "target": 300,
+        "format": "int"
+      }
+    ],
+    "installed_base": {
+      "ios": 50000,
+      "android": 2000,
+      "total": 52000
+    },
+    "monetization_long_term": {
+      "share_of_installed_base": 0.1,
+      "implied_subs": 5200
+    }
+  },
+  "generated_at": "2026-06-13T06:40:27.414364+00:00"
+}
