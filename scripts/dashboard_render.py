@@ -1,101 +1,743 @@
 #!/usr/bin/env python3
-"""Render the Artemis Tracker dashboard HTML.
+"""
+Dashboard 2.0 renderer for Artemis Tracker.
 
-Writes /tmp/dashboard.html, ready to be copied into dashboard/index.html
-in the repo.
+Reads data from dashboard_sources.fetch_all() (which calls all sources fresh,
+or you can pass a cached JSON file via --data PATH).
+
+Produces a single static HTML file at dashboard/index.html with:
+  - North Star KPI (DAU vs 500 by Aug 31, 2026)
+  - Supporting KPI cards with goal lines
+  - DAU chart 90d with target line
+  - Newsletter (Kit) section
+  - Social cards (Bluesky, Mastodon, Threads/Instagram blocked notice)
+  - App Store reviews section
+  - Roadmap section (in_progress, upcoming, blocked, completed)
+  - Push history table
+  - Top countries
+  - Health / source-status footer
+
+Design: nøkternt, dark theme, no clickbait. Inline CSS + minimal SVG charts —
+no external JS or fonts so it loads even offline.
 """
 from __future__ import annotations
+
+import argparse
+import html
+import json
 import sys
-from pathlib import Path
 from datetime import datetime, timezone
+from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parent))
-from dashboard_data import collect_all
+REPO_ROOT = Path(__file__).resolve().parent.parent
+DASHBOARD_DIR = REPO_ROOT / "dashboard"
+DATA_CACHE = DASHBOARD_DIR / "data.json"
 
-OUT = Path("/tmp/dashboard.html")
-
-CSS = """
-body { margin:0; background:#0b1020; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; color:#e6e9f5; }
-.wrap { max-width:980px; margin:0 auto; padding:32px 24px; }
-h1 { color:#fff; }
-h2 { color:#fff; margin-top:36px; border-bottom:1px solid #2a3050; padding-bottom:6px; }
-.grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:16px; margin:20px 0; }
-.card { background:#161c34; border-radius:10px; padding:16px; }
-.card .label { color:#9aa3c0; font-size:13px; text-transform:uppercase; letter-spacing:0.5px; }
-.card .value { color:#fff; font-size:28px; font-weight:600; margin-top:6px; }
-table { width:100%; border-collapse:collapse; margin-top:12px; font-size:14px; }
-th, td { padding:8px 10px; text-align:left; border-bottom:1px solid #2a3050; }
-th { color:#9aa3c0; font-weight:500; }
-.foot { color:#7c84a0; margin-top:32px; font-size:13px; }
-"""
+# Make sources importable
+sys.path.insert(0, str(REPO_ROOT / "scripts"))
 
 
-def _safe(d: dict, *keys, default=""):
-    cur = d
-    for k in keys:
-        if not isinstance(cur, dict):
-            return default
-        cur = cur.get(k)
-        if cur is None:
-            return default
-    return cur
+def esc(s) -> str:
+    if s is None:
+        return ""
+    return html.escape(str(s), quote=True)
 
 
-def render(data: dict) -> str:
+def fmt_int(n) -> str:
+    try:
+        return f"{int(n):,}".replace(",", "\u202f")
+    except Exception:
+        return str(n) if n is not None else "—"
+
+
+def fmt_pct(n, digits=1) -> str:
+    try:
+        return f"{float(n):.{digits}f}%"
+    except Exception:
+        return "—"
+
+
+def fmt_float(n, digits=2) -> str:
+    try:
+        return f"{float(n):.{digits}f}"
+    except Exception:
+        return "—"
+
+
+def progress_pct(current, target) -> float | None:
+    """Returns 0-100 percent of target achieved. None if not computable."""
+    try:
+        c = float(current)
+        t = float(target)
+        if t == 0:
+            return None
+        return max(0.0, min(100.0, 100.0 * c / t))
+    except Exception:
+        return None
+
+
+# ---------- Sections ----------
+def section_north_star(data) -> str:
+    ga4 = data.get("ga4", {})
+    targets = data.get("targets", {})
+    ns = targets.get("north_star", {})
+    target = ns.get("target", 500)
+    target_date = ns.get("target_date", "2026-08-31")
+
+    latest = ga4.get("latest") or {}
+    dau = latest.get("active")
+    dau_date = latest.get("date", "—")
+    avg7 = ga4.get("avg_dau_7d")
+    avg28 = ga4.get("avg_dau_28d")
+
+    pct = progress_pct(dau, target)
+    pct_str = f"{pct:.0f}%" if pct is not None else "—"
+    bar_w = f"{pct:.1f}%" if pct is not None else "0%"
+
+    gap = ""
+    try:
+        if dau is not None:
+            d = int(target) - int(dau)
+            if d > 0:
+                gap = f"<span class='ns-gap'>{fmt_int(d)} to goal</span>"
+            else:
+                gap = "<span class='ns-gap ok'>Goal reached</span>"
+    except Exception:
+        pass
+
+    return f"""
+<section class='north-star'>
+  <div class='ns-head'>
+    <div class='ns-label'>North Star</div>
+    <div class='ns-target'>{fmt_int(target)} DAU by {esc(target_date)}</div>
+  </div>
+  <div class='ns-row'>
+    <div class='ns-current'>
+      <div class='ns-value'>{fmt_int(dau)}</div>
+      <div class='ns-sub'>DAU on {esc(dau_date)}</div>
+    </div>
+    <div class='ns-progress-wrap'>
+      <div class='ns-bar'>
+        <div class='ns-bar-fill' style='width:{bar_w}'></div>
+        <div class='ns-bar-target' title='Target {fmt_int(target)}'></div>
+      </div>
+      <div class='ns-progress-meta'>
+        <span>{pct_str} of target</span>
+        {gap}
+      </div>
+    </div>
+    <div class='ns-aux'>
+      <div><span class='lbl'>7d avg</span> <span class='val'>{fmt_int(avg7)}</span></div>
+      <div><span class='lbl'>28d avg</span> <span class='val'>{fmt_int(avg28)}</span></div>
+    </div>
+  </div>
+</section>"""
+
+
+def _kpi_card(label, current_raw, target, fmt) -> str:
+    if fmt == "int":
+        cur_str = fmt_int(current_raw)
+        tgt_str = fmt_int(target)
+    elif fmt == "pct":
+        cur_str = fmt_pct(current_raw, 1) if current_raw is not None else "—"
+        tgt_str = fmt_pct(target, 0)
+    elif fmt == "pct_lower":
+        # lower is better (churn)
+        cur_str = fmt_pct(current_raw, 1) if current_raw is not None else "—"
+        tgt_str = "≤" + fmt_pct(target, 0)
+    elif fmt == "float":
+        cur_str = fmt_float(current_raw, 2) if current_raw is not None else "—"
+        tgt_str = fmt_float(target, 1)
+    else:
+        cur_str = str(current_raw) if current_raw is not None else "—"
+        tgt_str = str(target)
+
+    pct = progress_pct(current_raw, target) if fmt != "pct_lower" else None
+    if fmt == "pct_lower" and current_raw is not None and target:
+        # invert: if current <= target -> 100%, else scale down
+        try:
+            c = float(current_raw)
+            t = float(target)
+            pct = 100.0 if c <= t else max(0.0, 100.0 - (c - t) * 5)
+        except Exception:
+            pct = None
+
+    bar_w = f"{pct:.1f}%" if pct is not None else "0%"
+    pct_label = f"{pct:.0f}% of goal" if pct is not None else ""
+
+    return f"""
+  <div class='kpi'>
+    <div class='kpi-label'>{esc(label)}</div>
+    <div class='kpi-value'>{cur_str}</div>
+    <div class='kpi-target'>target {tgt_str}</div>
+    <div class='kpi-bar'><div class='kpi-bar-fill' style='width:{bar_w}'></div></div>
+    <div class='kpi-pct'>{pct_label}</div>
+  </div>"""
+
+
+def section_kpis(data) -> str:
     ga4 = data.get("ga4", {})
     kit = data.get("kit", {})
     asc = data.get("asc", {})
+    bluesky = data.get("bluesky", {})
+    mastodon = data.get("mastodon", {})
+    targets = data.get("targets", {})
 
-    active_users = _safe(ga4, "daily_users")
-    last_day_active = active_users[-1]["active"] if isinstance(active_users, list) and active_users else "—"
+    latest = ga4.get("latest") or {}
+    values = {
+        "dau_latest": latest.get("active"),
+        "active_28d": ga4.get("total_active_28d"),
+        "kit_subscribers": kit.get("active_subscribers"),
+        "plus_subscribers": None,
+        "monthly_churn": None,
+        "push_opt_in": None,
+        "push_open_rate": None,
+        "new_installs_30d": None,
+        "avg_rating": asc.get("avg_rating_recent"),
+        "reviews_4plus": _count_4plus(asc),
+        "bluesky_followers": bluesky.get("followers"),
+        "mastodon_followers": mastodon.get("followers"),
+    }
 
-    cards = [
-        ("Daily Active (latest)", last_day_active),
-        ("Total Notif Opens (30d)", ga4.get("total_notification_open", "—")),
-        ("Notif Open Users (30d)", ga4.get("total_notification_open_users", "—")),
-        ("Notif Foreground (30d)", ga4.get("total_notification_foreground", "—")),
-        ("Kit Subscribers", kit.get("active_subscribers", "—")),
-        ("App Installs (lifetime)", asc.get("units_lifetime", "—")),
-        ("Pushes Sent (total)", data.get("push_total", 0)),
-    ]
-    cards_html = "".join(
-        f'<div class="card"><div class="label">{label}</div><div class="value">{value}</div></div>'
-        for label, value in cards
+    cards = []
+    for s in targets.get("supporting", []):
+        key = s["key"]
+        cards.append(_kpi_card(s["label"], values.get(key), s["target"], s.get("format", "int")))
+
+    return f"""
+<section class='kpis'>
+  <h2>Supporting KPIs</h2>
+  <div class='kpi-grid'>
+    {''.join(cards)}
+  </div>
+</section>"""
+
+
+def _count_4plus(asc) -> int | None:
+    if asc.get("status") != "ok":
+        return None
+    dist = asc.get("rating_distribution_recent", {})
+    try:
+        return int(dist.get(4, 0)) + int(dist.get(5, 0))
+    except Exception:
+        return None
+
+
+def section_dau_chart(data) -> str:
+    ga4 = data.get("ga4", {})
+    rows = ga4.get("daily_users", [])
+    if not rows:
+        return "<section class='chart-section'><h2>DAU — last 90 days</h2><div class='empty'>No GA4 data available.</div></section>"
+
+    target = data.get("targets", {}).get("north_star", {}).get("target", 500)
+    target_date = data.get("targets", {}).get("north_star", {}).get("target_date", "2026-08-31")
+
+    # SVG dims
+    W, H = 920, 280
+    PAD_L, PAD_R, PAD_T, PAD_B = 50, 16, 16, 30
+    inner_w = W - PAD_L - PAD_R
+    inner_h = H - PAD_T - PAD_B
+
+    n = len(rows)
+    vals = [r["active"] for r in rows]
+    y_max = max(max(vals) * 1.1, target * 1.1, 50)
+
+    def x_at(i):
+        return PAD_L + (i / max(n - 1, 1)) * inner_w
+
+    def y_at(v):
+        return PAD_T + inner_h - (v / y_max) * inner_h
+
+    # Polyline points
+    pts = " ".join(f"{x_at(i):.1f},{y_at(v):.1f}" for i, v in enumerate(vals))
+
+    # Area under line
+    area_pts = (
+        f"{PAD_L:.1f},{(PAD_T + inner_h):.1f} "
+        + pts
+        + f" {x_at(n - 1):.1f},{(PAD_T + inner_h):.1f}"
     )
 
-    rows = data.get("push_history", [])
-    table_html = ""
-    if rows:
-        table_html = "<table><thead><tr><th>Sent (UTC)</th><th>Title</th><th>Article</th></tr></thead><tbody>"
-        for r in reversed(rows):
-            ts = r.get("timestamp_utc", "")[:16].replace("T", " ")
-            table_html += f"<tr><td>{ts}</td><td>{r.get('title','')}</td><td>{r.get('article_id','')}</td></tr>"
-        table_html += "</tbody></table>"
+    # Target line
+    target_y = y_at(target)
+    target_line = (
+        f"<line x1='{PAD_L}' y1='{target_y:.1f}' x2='{W - PAD_R}' y2='{target_y:.1f}' "
+        f"stroke='#f5b942' stroke-width='1.5' stroke-dasharray='5,4' />"
+    )
+    target_text = (
+        f"<text x='{W - PAD_R - 4}' y='{target_y - 6:.1f}' fill='#f5b942' "
+        f"font-size='11' text-anchor='end'>Target {fmt_int(target)} by {esc(target_date)}</text>"
+    )
 
+    # Y-axis ticks
+    y_ticks = []
+    for frac in [0, 0.25, 0.5, 0.75, 1.0]:
+        v = y_max * frac
+        y = y_at(v)
+        y_ticks.append(
+            f"<line x1='{PAD_L}' y1='{y:.1f}' x2='{W - PAD_R}' y2='{y:.1f}' stroke='#1f2735' stroke-width='1'/>"
+            f"<text x='{PAD_L - 6}' y='{y + 3:.1f}' fill='#8a99b3' font-size='10' text-anchor='end'>{fmt_int(int(v))}</text>"
+        )
+
+    # X-axis tick labels (first, mid, last)
+    x_ticks = []
+    for i in [0, n // 2, n - 1]:
+        if 0 <= i < n:
+            x = x_at(i)
+            label = rows[i]["date"][5:]  # MM-DD
+            x_ticks.append(
+                f"<text x='{x:.1f}' y='{H - 8}' fill='#8a99b3' font-size='10' text-anchor='middle'>{label}</text>"
+            )
+
+    latest_val = rows[-1]["active"]
+    latest_x = x_at(n - 1)
+    latest_y = y_at(latest_val)
+    latest_dot = (
+        f"<circle cx='{latest_x:.1f}' cy='{latest_y:.1f}' r='4' fill='#5fb3ff' stroke='#0b1220' stroke-width='2'/>"
+    )
+
+    return f"""
+<section class='chart-section'>
+  <h2>DAU — last 90 days</h2>
+  <svg viewBox='0 0 {W} {H}' xmlns='http://www.w3.org/2000/svg' role='img' aria-label='Daily active users chart'>
+    {''.join(y_ticks)}
+    <polygon points='{area_pts}' fill='rgba(95,179,255,0.12)' />
+    <polyline points='{pts}' fill='none' stroke='#5fb3ff' stroke-width='2'/>
+    {target_line}
+    {target_text}
+    {latest_dot}
+    {''.join(x_ticks)}
+  </svg>
+</section>"""
+
+
+def section_newsletter(data) -> str:
+    kit = data.get("kit", {})
+    if kit.get("status") == "skipped":
+        return f"<section><h2>Newsletter (Kit)</h2><div class='empty'>Skipped — {esc(kit.get('reason'))}</div></section>"
+    if kit.get("status") == "error":
+        return f"<section><h2>Newsletter (Kit)</h2><div class='empty err'>Error: {esc(kit.get('error'))}</div></section>"
+
+    active = kit.get("active_subscribers", 0)
+    inactive = kit.get("inactive_subscribers", 0)
+    broadcasts = kit.get("recent_broadcasts", [])
+
+    rows = []
+    for b in broadcasts[:10]:
+        sent = b.get("send_at") or "—"
+        if sent and sent != "—":
+            sent = sent[:10]
+        rows.append(
+            f"<tr><td>{esc(sent)}</td><td>{esc(b.get('subject', ''))}</td>"
+            f"<td>{'public' if b.get('public') else 'subs only'}</td></tr>"
+        )
+    table = (
+        f"<table class='tbl'><thead><tr><th>Date</th><th>Subject</th><th>Audience</th></tr></thead>"
+        f"<tbody>{''.join(rows) or '<tr><td colspan=3 class=empty>No broadcasts yet</td></tr>'}</tbody></table>"
+    )
+
+    return f"""
+<section>
+  <h2>Newsletter</h2>
+  <div class='kit-stats'>
+    <div><span class='lbl'>Active</span> <span class='val'>{fmt_int(active)}</span></div>
+    <div><span class='lbl'>Inactive</span> <span class='val'>{fmt_int(inactive)}</span></div>
+  </div>
+  {table}
+</section>"""
+
+
+def section_socials(data) -> str:
+    bs = data.get("bluesky", {})
+    md = data.get("mastodon", {})
+    th = data.get("threads", {})
+    ig = data.get("instagram", {})
+
+    def card(name, src):
+        st = src.get("status")
+        if st == "ok":
+            return f"""
+  <div class='social-card'>
+    <div class='social-name'>{esc(name)}</div>
+    <div class='social-handle'>{esc(src.get('handle') or src.get('username') or '')}</div>
+    <div class='social-stats'>
+      <div><span class='lbl'>Followers</span> <span class='val'>{fmt_int(src.get('followers'))}</span></div>
+      <div><span class='lbl'>Posts 7d</span> <span class='val'>{fmt_int(src.get('posts_7d'))}</span></div>
+      <div><span class='lbl'>Engagement 7d</span> <span class='val'>{fmt_int((src.get('likes_7d') or src.get('favs_7d') or 0) + (src.get('reposts_7d') or src.get('boosts_7d') or 0))}</span></div>
+    </div>
+  </div>"""
+        if st == "blocked":
+            return f"""
+  <div class='social-card blocked'>
+    <div class='social-name'>{esc(name)}</div>
+    <div class='social-blocked'>Blocked</div>
+    <div class='social-reason'>{esc(src.get('reason', ''))}</div>
+  </div>"""
+        if st == "error":
+            return f"""
+  <div class='social-card err'>
+    <div class='social-name'>{esc(name)}</div>
+    <div class='social-blocked'>Error</div>
+    <div class='social-reason'>{esc(src.get('error', ''))}</div>
+  </div>"""
+        return f"""
+  <div class='social-card skipped'>
+    <div class='social-name'>{esc(name)}</div>
+    <div class='social-blocked'>Skipped</div>
+    <div class='social-reason'>{esc(src.get('reason', ''))}</div>
+  </div>"""
+
+    return f"""
+<section>
+  <h2>Social channels</h2>
+  <div class='social-grid'>
+    {card('Bluesky', bs)}
+    {card('Mastodon', md)}
+    {card('Threads', th)}
+    {card('Instagram', ig)}
+  </div>
+</section>"""
+
+
+def section_app_store(data) -> str:
+    asc = data.get("asc", {})
+    if asc.get("status") != "ok":
+        reason = asc.get("reason") or asc.get("error") or "no data"
+        return f"<section><h2>App Store reviews</h2><div class='empty'>Not available — {esc(reason)}</div></section>"
+
+    reviews = asc.get("reviews_recent", [])
+    avg = asc.get("avg_rating_recent")
+    dist = asc.get("rating_distribution_recent", {})
+    total_recent = asc.get("rating_count_recent", 0)
+
+    # Distribution bars
+    dist_html = []
+    for star in [5, 4, 3, 2, 1]:
+        count = dist.get(star, 0) if isinstance(dist, dict) else 0
+        # JSON serialised may have stringified keys
+        if count == 0 and isinstance(dist, dict):
+            count = dist.get(str(star), 0)
+        pct = (count / total_recent * 100) if total_recent else 0
+        dist_html.append(
+            f"<div class='dist-row'><span class='star'>{star}★</span>"
+            f"<div class='dist-bar'><div class='dist-fill' style='width:{pct:.1f}%'></div></div>"
+            f"<span class='dist-count'>{count}</span></div>"
+        )
+
+    rev_html = []
+    for r in reviews[:8]:
+        stars = "★" * int(r.get("rating", 0)) + "☆" * (5 - int(r.get("rating", 0)))
+        created = (r.get("created") or "")[:10]
+        rev_html.append(
+            f"<div class='review'>"
+            f"<div class='review-head'><span class='review-stars'>{stars}</span>"
+            f"<span class='review-meta'>{esc(r.get('reviewer'))} · {esc(r.get('territory'))} · {esc(created)}</span></div>"
+            f"<div class='review-title'>{esc(r.get('title'))}</div>"
+            f"<div class='review-body'>{esc(r.get('body'))}</div>"
+            f"</div>"
+        )
+
+    return f"""
+<section>
+  <h2>App Store reviews (recent {total_recent})</h2>
+  <div class='asc-summary'>
+    <div class='asc-avg'>
+      <div class='asc-avg-val'>{fmt_float(avg, 2)}</div>
+      <div class='asc-avg-lbl'>avg recent</div>
+    </div>
+    <div class='asc-dist'>{''.join(dist_html)}</div>
+  </div>
+  <div class='reviews'>{''.join(rev_html) or '<div class=empty>No reviews returned.</div>'}</div>
+</section>"""
+
+
+def section_roadmap(data) -> str:
+    rm = data.get("roadmap", {})
+    if rm.get("status") != "ok":
+        return f"<section><h2>Roadmap</h2><div class='empty'>{esc(rm.get('reason', 'No roadmap data'))}</div></section>"
+
+    def col(name, label, items):
+        rows = [
+            f"<li><span class='rm-title'>{esc(it['title'])}</span>"
+            + (f"<span class='rm-note'>{esc(it['note'])}</span>" if it.get('note') else "")
+            + "</li>"
+            for it in items
+        ]
+        return f"""
+  <div class='rm-col rm-{name}'>
+    <h3>{esc(label)} <span class='rm-count'>{len(items)}</span></h3>
+    <ul>{''.join(rows) or '<li class=empty>None</li>'}</ul>
+  </div>"""
+
+    return f"""
+<section>
+  <h2>Roadmap</h2>
+  <div class='roadmap-grid'>
+    {col('in_progress', 'In progress', rm.get('in_progress', []))}
+    {col('upcoming', 'Upcoming', rm.get('upcoming', []))}
+    {col('blocked', 'Blocked', rm.get('blocked', []))}
+    {col('completed', 'Completed', rm.get('completed', []))}
+  </div>
+</section>"""
+
+
+def section_countries(data) -> str:
+    ga4 = data.get("ga4", {})
+    countries = ga4.get("top_countries_30d", [])
+    if not countries:
+        return ""
+    total = sum(c["active"] for c in countries) or 1
+    rows = []
+    for c in countries:
+        pct = c["active"] / total * 100
+        rows.append(
+            f"<div class='ctry-row'>"
+            f"<span class='ctry-name'>{esc(c['country'] or '—')}</span>"
+            f"<div class='ctry-bar'><div class='ctry-fill' style='width:{pct:.1f}%'></div></div>"
+            f"<span class='ctry-val'>{fmt_int(c['active'])}</span>"
+            f"</div>"
+        )
+    return f"""
+<section>
+  <h2>Top countries (30d active users)</h2>
+  <div class='ctry-list'>{''.join(rows)}</div>
+</section>"""
+
+
+def section_push(data) -> str:
+    push = data.get("push", {})
+    if push.get("status") != "ok":
+        return ""
+    rows = push.get("recent", [])
+    if not rows:
+        return ""
+    tr_html = []
+    for r in rows[:10]:
+        tr_html.append(
+            f"<tr><td>{esc((r.get('sent_at') or '')[:16])}</td>"
+            f"<td>{esc(r.get('title', ''))}</td>"
+            f"<td>{esc(r.get('platform', ''))}</td>"
+            f"<td>{esc(r.get('sent_count', ''))}</td></tr>"
+        )
+    return f"""
+<section>
+  <h2>Recent push campaigns</h2>
+  <table class='tbl'>
+    <thead><tr><th>Sent</th><th>Title</th><th>Platform</th><th>Sent</th></tr></thead>
+    <tbody>{''.join(tr_html)}</tbody>
+  </table>
+</section>"""
+
+
+def section_health(data) -> str:
+    sources = [
+        ("GA4", data.get("ga4", {})),
+        ("Kit", data.get("kit", {})),
+        ("App Store Connect", data.get("asc", {})),
+        ("Bluesky", data.get("bluesky", {})),
+        ("Mastodon", data.get("mastodon", {})),
+        ("Threads", data.get("threads", {})),
+        ("Instagram", data.get("instagram", {})),
+        ("Push history", data.get("push", {})),
+        ("Roadmap", data.get("roadmap", {})),
+    ]
+    chips = []
+    for name, src in sources:
+        st = src.get("status", "unknown")
+        chips.append(
+            f"<span class='chip chip-{esc(st)}' title='{esc(src.get('reason') or src.get('error') or src.get('fetched_at') or '')}'>"
+            f"{esc(name)} · {esc(st)}</span>"
+        )
+    return f"""
+<section class='health'>
+  <h2>Source status</h2>
+  <div class='chips'>{''.join(chips)}</div>
+</section>"""
+
+
+# ---------- Page template ----------
+CSS = """
+:root {
+  --bg: #0b1220;
+  --bg-card: #121a2c;
+  --bg-card-2: #182241;
+  --line: #1f2735;
+  --text: #e6ecf5;
+  --muted: #8a99b3;
+  --accent: #5fb3ff;
+  --accent-2: #f5b942;
+  --ok: #4ade80;
+  --warn: #fbbf24;
+  --err: #f87171;
+  --skipped: #6b7280;
+}
+* { box-sizing: border-box; }
+html, body { background: var(--bg); color: var(--text); margin: 0; padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 14px; line-height: 1.5; }
+a { color: var(--accent); text-decoration: none; }
+main { max-width: 1100px; margin: 0 auto; padding: 24px 20px 80px; }
+header.page { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 24px; }
+header.page h1 { font-size: 22px; margin: 0; letter-spacing: 0.2px; }
+header.page .gen { color: var(--muted); font-size: 12px; }
+h2 { font-size: 16px; letter-spacing: 0.3px; margin: 0 0 12px; color: var(--text); }
+section { background: var(--bg-card); border: 1px solid var(--line); border-radius: 10px;
+  padding: 18px; margin-bottom: 18px; }
+.empty { color: var(--muted); font-style: normal; padding: 6px 0; }
+.empty.err { color: var(--err); }
+
+/* North Star */
+.north-star { background: linear-gradient(135deg, #182241 0%, #121a2c 100%); }
+.ns-head { display:flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px; }
+.ns-label { color: var(--muted); text-transform: uppercase; letter-spacing: 1.2px; font-size: 11px; }
+.ns-target { color: var(--accent-2); font-size: 13px; }
+.ns-row { display: grid; grid-template-columns: 180px 1fr 180px; gap: 24px; align-items: center; }
+.ns-current .ns-value { font-size: 44px; font-weight: 600; line-height: 1; color: var(--text); }
+.ns-current .ns-sub { color: var(--muted); font-size: 12px; margin-top: 6px; }
+.ns-bar { position: relative; height: 14px; background: #0b1220; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.ns-bar-fill { height: 100%; background: linear-gradient(90deg, #5fb3ff, #4ade80); }
+.ns-progress-meta { display: flex; justify-content: space-between; color: var(--muted); font-size: 12px; margin-top: 6px; }
+.ns-gap { color: var(--accent-2); }
+.ns-gap.ok { color: var(--ok); }
+.ns-aux { display: flex; flex-direction: column; gap: 6px; font-size: 13px; }
+.ns-aux .lbl { color: var(--muted); margin-right: 8px; }
+.ns-aux .val { color: var(--text); font-weight: 500; }
+
+/* KPI grid */
+.kpi-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+.kpi { background: var(--bg-card-2); border: 1px solid var(--line); border-radius: 8px; padding: 12px; }
+.kpi-label { color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0.8px; }
+.kpi-value { font-size: 24px; font-weight: 600; margin-top: 4px; }
+.kpi-target { color: var(--muted); font-size: 11px; margin-top: 2px; }
+.kpi-bar { height: 4px; background: #0b1220; border-radius: 4px; margin-top: 8px; overflow: hidden; }
+.kpi-bar-fill { height: 100%; background: var(--accent); }
+.kpi-pct { color: var(--muted); font-size: 10px; margin-top: 4px; }
+
+/* Chart */
+.chart-section svg { width: 100%; height: auto; display: block; }
+
+/* Tables */
+.tbl { width: 100%; border-collapse: collapse; font-size: 13px; }
+.tbl th, .tbl td { padding: 8px 10px; border-bottom: 1px solid var(--line); text-align: left; }
+.tbl th { color: var(--muted); font-weight: 500; text-transform: uppercase; font-size: 10px; letter-spacing: 0.8px; }
+
+.kit-stats { display: flex; gap: 24px; margin-bottom: 14px; }
+.kit-stats .lbl { color: var(--muted); font-size: 11px; }
+.kit-stats .val { font-size: 18px; margin-left: 6px; }
+
+/* Socials */
+.social-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+.social-card { background: var(--bg-card-2); border: 1px solid var(--line); border-radius: 8px; padding: 14px; }
+.social-card.blocked, .social-card.skipped { opacity: 0.6; }
+.social-card.err { border-color: rgba(248, 113, 113, 0.4); }
+.social-name { font-weight: 600; }
+.social-handle { color: var(--muted); font-size: 12px; margin-bottom: 8px; }
+.social-blocked { color: var(--warn); font-size: 12px; }
+.social-reason { color: var(--muted); font-size: 11px; margin-top: 4px; }
+.social-stats { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px; margin-top: 8px; }
+.social-stats .lbl { color: var(--muted); font-size: 10px; display: block; }
+.social-stats .val { font-weight: 600; }
+
+/* App Store */
+.asc-summary { display: grid; grid-template-columns: 120px 1fr; gap: 20px; margin-bottom: 16px; }
+.asc-avg-val { font-size: 36px; font-weight: 600; }
+.asc-avg-lbl { color: var(--muted); font-size: 11px; }
+.dist-row { display: grid; grid-template-columns: 30px 1fr 40px; align-items: center; gap: 8px; margin-bottom: 4px; font-size: 12px; }
+.star { color: var(--accent-2); }
+.dist-bar { height: 6px; background: #0b1220; border-radius: 4px; overflow: hidden; }
+.dist-fill { height: 100%; background: var(--accent-2); }
+.dist-count { text-align: right; color: var(--muted); }
+.review { padding: 10px 0; border-bottom: 1px solid var(--line); }
+.review:last-child { border-bottom: none; }
+.review-head { display: flex; justify-content: space-between; font-size: 12px; }
+.review-stars { color: var(--accent-2); }
+.review-meta { color: var(--muted); }
+.review-title { font-weight: 600; margin-top: 4px; }
+.review-body { color: var(--muted); font-size: 13px; margin-top: 2px; }
+
+/* Roadmap */
+.roadmap-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+.rm-col { background: var(--bg-card-2); border: 1px solid var(--line); border-radius: 8px; padding: 12px; }
+.rm-col h3 { margin: 0 0 10px; font-size: 13px; display: flex; justify-content: space-between; }
+.rm-count { color: var(--muted); font-weight: normal; }
+.rm-col ul { margin: 0; padding: 0; list-style: none; }
+.rm-col li { padding: 6px 0; border-bottom: 1px solid var(--line); font-size: 13px; }
+.rm-col li:last-child { border-bottom: none; }
+.rm-title { display: block; }
+.rm-note { display: block; color: var(--muted); font-size: 11px; margin-top: 2px; }
+.rm-in_progress h3 { color: var(--accent); }
+.rm-upcoming h3 { color: var(--text); }
+.rm-blocked h3 { color: var(--warn); }
+.rm-completed h3 { color: var(--ok); }
+
+/* Countries */
+.ctry-row { display: grid; grid-template-columns: 130px 1fr 60px; align-items: center; gap: 10px; margin-bottom: 4px; font-size: 13px; }
+.ctry-bar { height: 6px; background: #0b1220; border-radius: 4px; overflow: hidden; }
+.ctry-fill { height: 100%; background: var(--accent); }
+.ctry-val { text-align: right; color: var(--muted); }
+
+/* Health chips */
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { font-size: 11px; padding: 4px 10px; border-radius: 12px; border: 1px solid var(--line); background: var(--bg-card-2); }
+.chip-ok { color: var(--ok); border-color: rgba(74, 222, 128, 0.3); }
+.chip-error { color: var(--err); border-color: rgba(248, 113, 113, 0.3); }
+.chip-blocked { color: var(--warn); border-color: rgba(251, 191, 36, 0.3); }
+.chip-skipped { color: var(--skipped); }
+"""
+
+
+def render_page(data) -> str:
+    gen = data.get("generated_at") or datetime.now(timezone.utc).isoformat()
     return f"""<!doctype html>
-<html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Artemis Tracker — Dashboard</title>
-<style>{CSS}</style>
-</head><body><div class="wrap">
-<h1>Artemis Tracker — Dashboard</h1>
-<p style="color:#9aa3c0">Generated {data.get('generated_at','')}</p>
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <meta name='robots' content='noindex'>
+  <title>Artemis Tracker — Dashboard</title>
+  <style>{CSS}</style>
+</head>
+<body>
+<main>
+  <header class='page'>
+    <h1>Artemis Tracker — Dashboard</h1>
+    <div class='gen'>Generated {esc(gen)}</div>
+  </header>
 
-<h2>Overview</h2>
-<div class="grid">{cards_html}</div>
-
-<h2>Recent push notifications</h2>
-{table_html or '<p style="color:#9aa3c0">No push history yet.</p>'}
-
-<div class="foot">Auto-refreshed daily from GA4, Kit and App Store Connect.</div>
-</div></body></html>
+  {section_north_star(data)}
+  {section_kpis(data)}
+  {section_dau_chart(data)}
+  {section_countries(data)}
+  {section_newsletter(data)}
+  {section_socials(data)}
+  {section_app_store(data)}
+  {section_push(data)}
+  {section_roadmap(data)}
+  {section_health(data)}
+</main>
+</body>
+</html>
 """
 
 
 def main():
-    data = collect_all()
-    OUT.write_text(render(data), encoding="utf-8")
-    print(str(OUT))
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--data", help="Optional JSON file with pre-fetched data")
+    ap.add_argument("--out", default=str(DASHBOARD_DIR / "index.html"))
+    args = ap.parse_args()
+
+    if args.data and Path(args.data).exists():
+        data = json.loads(Path(args.data).read_text())
+    else:
+        import dashboard_sources
+        data = dashboard_sources.fetch_all()
+
+    DASHBOARD_DIR.mkdir(parents=True, exist_ok=True)
+    DATA_CACHE.write_text(json.dumps(data, indent=2, default=str))
+    html_out = render_page(data)
+    Path(args.out).write_text(html_out)
+    print(f"wrote {args.out} ({len(html_out)} bytes)", file=sys.stderr)
+    print(f"wrote {DATA_CACHE} ({DATA_CACHE.stat().st_size} bytes)", file=sys.stderr)
 
 
 if __name__ == "__main__":

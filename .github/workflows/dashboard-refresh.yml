@@ -30,16 +30,21 @@ jobs:
           GOOGLE_APPLICATION_CREDENTIALS_JSON: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_JSON }}
           GOOGLE_ANALYTICS_PROPERTY_ID: ${{ secrets.GOOGLE_ANALYTICS_PROPERTY_ID }}
           KIT_API_KEY: ${{ secrets.KIT_API_KEY }}
+          APP_STORE_CONNECT_KEY_ID: ${{ secrets.APP_STORE_CONNECT_KEY_ID }}
+          APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
+          APP_STORE_CONNECT_PRIVATE_KEY: ${{ secrets.APP_STORE_CONNECT_PRIVATE_KEY }}
+          BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
+          BLUESKY_PASSWORD: ${{ secrets.BLUESKY_PASSWORD }}
+          MASTODON_INSTANCE: ${{ secrets.MASTODON_INSTANCE }}
+          MASTODON_ACCESS_TOKEN: ${{ secrets.MASTODON_ACCESS_TOKEN }}
+          FIREBASE_SERVICE_ACCOUNT_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_JSON }}
         run: python scripts/dashboard_refresh.py
-
-      - name: Copy rendered HTML
-        run: cp /tmp/dashboard.html dashboard/index.html
 
       - name: Commit and push if changed
         run: |
           git config user.email "joachim.gresslien@gmail.com"
           git config user.name "Joachim Gresslien"
-          git add dashboard/index.html state/dashboard_refresh_log.txt
+          git add dashboard/index.html dashboard/data.json state/dashboard_refresh_log.txt
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
