@@ -17,3 +17,17 @@
 2026-06-13T06:40:27.416174+00:00 | wrote data.json (21804 bytes)
 2026-06-13T06:40:27.425048+00:00 | wrote index.html (28009 bytes)
 2026-06-13T06:40:27.425105+00:00 | dashboard_refresh 2.0 done
+2026-06-13T06:46:31.948880+00:00 | dashboard_refresh 2.0 start
+2026-06-13T06:46:36.784272+00:00 |   ga4: ok | latest=130 28d=5201
+2026-06-13T06:46:36.784349+00:00 |   kit: ok | active=32
+2026-06-13T06:46:36.784412+00:00 |   asc: ok | reviews=50 avg=2.2
+2026-06-13T06:46:36.784463+00:00 |   bluesky: ok | followers=5
+2026-06-13T06:46:36.784509+00:00 |   mastodon: error | HTTP 403
+2026-06-13T06:46:36.784575+00:00 |   threads: blocked | Meta developer verification not completed — publishing and metrics disabled
+2026-06-13T06:46:36.784636+00:00 |   instagram: blocked | Needs Business/Creator account linked to Facebook page + instagram_content_publish approval
+2026-06-13T06:46:36.784689+00:00 |   push: ok
+2026-06-13T06:46:36.784732+00:00 |   roadmap: ok
+2026-06-13T06:46:36.784773+00:00 |   targets: ok
+2026-06-13T06:46:36.786143+00:00 | wrote data.json (21988 bytes)
+2026-06-13T06:46:36.794823+00:00 | wrote index.html (28281 bytes)
+2026-06-13T06:46:36.794880+00:00 | dashboard_refresh 2.0 done

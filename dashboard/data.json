@@ -520,7 +520,7 @@
         "active": 54
       }
     ],
-    "fetched_at": "2026-06-13T06:40:23.648901+00:00"
+    "fetched_at": "2026-06-13T06:46:33.643040+00:00"
   },
   "kit": {
     "status": "ok",
@@ -588,7 +588,7 @@
         "public": false
       }
     ],
-    "fetched_at": "2026-06-13T06:40:25.076454+00:00"
+    "fetched_at": "2026-06-13T06:46:34.519509+00:00"
   },
   "asc": {
     "status": "ok",
@@ -687,11 +687,18 @@
       "5": 6
     },
     "rating_count_recent": 50,
-    "fetched_at": "2026-06-13T06:40:26.327164+00:00"
+    "fetched_at": "2026-06-13T06:46:35.602591+00:00"
   },
   "bluesky": {
-    "status": "error",
-    "error": "HTTP 401"
+    "status": "ok",
+    "handle": "artemistracker.app",
+    "followers": 5,
+    "following": 7,
+    "posts_total": 31,
+    "posts_7d": 3,
+    "likes_7d": 0,
+    "reposts_7d": 0,
+    "fetched_at": "2026-06-13T06:46:36.138048+00:00"
   },
   "mastodon": {
     "status": "error",
@@ -700,12 +707,12 @@
   "threads": {
     "status": "blocked",
     "reason": "Meta developer verification not completed \u2014 publishing and metrics disabled",
-    "fetched_at": "2026-06-13T06:40:27.413612+00:00"
+    "fetched_at": "2026-06-13T06:46:36.783505+00:00"
   },
   "instagram": {
     "status": "blocked",
     "reason": "Needs Business/Creator account linked to Facebook page + instagram_content_publish approval",
-    "fetched_at": "2026-06-13T06:40:27.413633+00:00"
+    "fetched_at": "2026-06-13T06:46:36.783526+00:00"
   },
   "push": {
     "status": "ok",
@@ -720,7 +727,7 @@
         "message_id": "projects/artemis-tracker-665d8/messages/5771117710239470194"
       }
     ],
-    "fetched_at": "2026-06-13T06:40:27.414050+00:00"
+    "fetched_at": "2026-06-13T06:46:36.783912+00:00"
   },
   "roadmap": {
     "status": "ok",
@@ -808,7 +815,7 @@
         "note": "durable across sandbox resets"
       }
     ],
-    "fetched_at": "2026-06-13T06:40:27.414353+00:00"
+    "fetched_at": "2026-06-13T06:46:36.784227+00:00"
   },
   "targets": {
     "status": "ok",
@@ -902,5 +909,5 @@
       "implied_subs": 5200
     }
   },
-  "generated_at": "2026-06-13T06:40:27.414364+00:00"
+  "generated_at": "2026-06-13T06:46:36.784241+00:00"
 }
