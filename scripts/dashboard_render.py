@@ -406,27 +406,104 @@ def section_app_store(data) -> str:
         return f"<section><h2>App Store reviews</h2><div class='empty'>Not available — {esc(reason)}</div></section>"
 
     reviews = asc.get("reviews_recent", [])
-    avg = asc.get("avg_rating_recent")
-    dist = asc.get("rating_distribution_recent", {})
-    total_recent = asc.get("rating_count_recent", 0)
+    stats_30d = asc.get("stats_30d", {})
+    stats_90d = asc.get("stats_90d", {})
+    stats_all = asc.get("stats_all_time", {})
+    monthly = asc.get("monthly", [])
+    new_run = asc.get("new_this_run", 0)
 
-    # Distribution bars
-    dist_html = []
-    for star in [5, 4, 3, 2, 1]:
-        count = dist.get(star, 0) if isinstance(dist, dict) else 0
-        # JSON serialised may have stringified keys
-        if count == 0 and isinstance(dist, dict):
-            count = dist.get(str(star), 0)
-        pct = (count / total_recent * 100) if total_recent else 0
-        dist_html.append(
-            f"<div class='dist-row'><span class='star'>{star}★</span>"
-            f"<div class='dist-bar'><div class='dist-fill' style='width:{pct:.1f}%'></div></div>"
-            f"<span class='dist-count'>{count}</span></div>"
+    def _card(label, s):
+        avg = s.get("avg")
+        cnt = s.get("count", 0)
+        share = s.get("share_4plus")
+        return f"""
+  <div class='asc-stat-card'>
+    <div class='asc-stat-label'>{esc(label)}</div>
+    <div class='asc-stat-row'>
+      <div class='asc-stat-main'>
+        <div class='asc-stat-val'>{fmt_float(avg, 2) if avg is not None else '—'}</div>
+        <div class='asc-stat-sub'>avg · {fmt_int(cnt)} reviews</div>
+      </div>
+      <div class='asc-stat-side'>
+        <div class='asc-stat-share'>{fmt_pct(share, 0) if share is not None else '—'}</div>
+        <div class='asc-stat-sub'>4★ or 5★</div>
+      </div>
+    </div>
+  </div>"""
+
+    stat_cards = (
+        _card("Last 30 days", stats_30d)
+        + _card("Last 90 days", stats_90d)
+        + _card("All-time tracked", stats_all)
+    )
+
+    chart_html = ""
+    if monthly:
+        W, H = 920, 200
+        PAD_L, PAD_R, PAD_T, PAD_B = 50, 16, 16, 30
+        inner_w = W - PAD_L - PAD_R
+        inner_h = H - PAD_T - PAD_B
+        n = len(monthly)
+
+        def x_at(i):
+            return PAD_L + (i / max(n - 1, 1)) * inner_w
+
+        def y_avg(v):
+            return PAD_T + inner_h - ((v - 1) / 4) * inner_h
+
+        def y_share(v):
+            return PAD_T + inner_h - (v / 100) * inner_h
+
+        avg_pts = " ".join(f"{x_at(i):.1f},{y_avg(m['avg']):.1f}" for i, m in enumerate(monthly))
+        share_pts = " ".join(f"{x_at(i):.1f},{y_share(m['share_4plus']):.1f}" for i, m in enumerate(monthly))
+
+        y_ticks = []
+        for v in [1, 2, 3, 4, 5]:
+            y = y_avg(v)
+            y_ticks.append(
+                f"<line x1='{PAD_L}' y1='{y:.1f}' x2='{W - PAD_R}' y2='{y:.1f}' stroke='#1f2735' stroke-width='1'/>"
+                f"<text x='{PAD_L - 6}' y='{y + 3:.1f}' fill='#8a99b3' font-size='10' text-anchor='end'>{v}★</text>"
+            )
+
+        x_labels = []
+        for i, m in enumerate(monthly):
+            if n <= 6 or i % max(1, n // 6) == 0 or i == n - 1:
+                x = x_at(i)
+                x_labels.append(
+                    f"<text x='{x:.1f}' y='{H - 8}' fill='#8a99b3' font-size='10' text-anchor='middle'>{esc(m['month'][2:])}</text>"
+                )
+
+        avg_dots = "".join(
+            f"<circle cx='{x_at(i):.1f}' cy='{y_avg(m['avg']):.1f}' r='3' fill='#5fb3ff'>"
+            f"<title>{esc(m['month'])} — avg {m['avg']} · {m['count']} reviews</title></circle>"
+            for i, m in enumerate(monthly)
+        )
+        share_dots = "".join(
+            f"<circle cx='{x_at(i):.1f}' cy='{y_share(m['share_4plus']):.1f}' r='3' fill='#4ade80'>"
+            f"<title>{esc(m['month'])} — {m['share_4plus']}% 4★+</title></circle>"
+            for i, m in enumerate(monthly)
         )
 
+        chart_html = f"""
+  <div class='asc-trend'>
+    <div class='asc-trend-head'>
+      <span class='asc-legend'><span class='legend-dot' style='background:#5fb3ff'></span>Average rating</span>
+      <span class='asc-legend'><span class='legend-dot' style='background:#4ade80'></span>Share 4★+</span>
+    </div>
+    <svg viewBox='0 0 {W} {H}' xmlns='http://www.w3.org/2000/svg' role='img'>
+      {''.join(y_ticks)}
+      <polyline points='{avg_pts}' fill='none' stroke='#5fb3ff' stroke-width='2'/>
+      <polyline points='{share_pts}' fill='none' stroke='#4ade80' stroke-width='2' stroke-dasharray='4,4'/>
+      {avg_dots}
+      {share_dots}
+      {''.join(x_labels)}
+    </svg>
+  </div>"""
+
     rev_html = []
-    for r in reviews[:8]:
-        stars = "★" * int(r.get("rating", 0)) + "☆" * (5 - int(r.get("rating", 0)))
+    for r in reviews[:10]:
+        rating = int(r.get("rating", 0))
+        stars = "★" * rating + "☆" * (5 - rating)
         created = (r.get("created") or "")[:10]
         rev_html.append(
             f"<div class='review'>"
@@ -437,16 +514,16 @@ def section_app_store(data) -> str:
             f"</div>"
         )
 
+    new_badge = f"<span class='asc-new-badge'>+{new_run} new</span>" if new_run else ""
+
     return f"""
 <section>
-  <h2>App Store reviews (recent {total_recent})</h2>
-  <div class='asc-summary'>
-    <div class='asc-avg'>
-      <div class='asc-avg-val'>{fmt_float(avg, 2)}</div>
-      <div class='asc-avg-lbl'>avg recent</div>
-    </div>
-    <div class='asc-dist'>{''.join(dist_html)}</div>
+  <h2>App Store reviews {new_badge}</h2>
+  <div class='asc-stat-grid'>
+    {stat_cards}
   </div>
+  {chart_html}
+  <h3 class='asc-recent-h'>10 most recent</h3>
   <div class='reviews'>{''.join(rev_html) or '<div class=empty>No reviews returned.</div>'}</div>
 </section>"""
 
@@ -639,14 +716,21 @@ section { background: var(--bg-card); border: 1px solid var(--line); border-radi
 .social-stats .val { font-weight: 600; }
 
 /* App Store */
-.asc-summary { display: grid; grid-template-columns: 120px 1fr; gap: 20px; margin-bottom: 16px; }
-.asc-avg-val { font-size: 36px; font-weight: 600; }
-.asc-avg-lbl { color: var(--muted); font-size: 11px; }
-.dist-row { display: grid; grid-template-columns: 30px 1fr 40px; align-items: center; gap: 8px; margin-bottom: 4px; font-size: 12px; }
-.star { color: var(--accent-2); }
-.dist-bar { height: 6px; background: #0b1220; border-radius: 4px; overflow: hidden; }
-.dist-fill { height: 100%; background: var(--accent-2); }
-.dist-count { text-align: right; color: var(--muted); }
+.asc-stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-bottom: 16px; }
+.asc-stat-card { background: var(--bg-card-2); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; }
+.asc-stat-label { color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 6px; }
+.asc-stat-row { display: flex; justify-content: space-between; align-items: flex-end; }
+.asc-stat-val { font-size: 28px; font-weight: 600; line-height: 1; }
+.asc-stat-share { font-size: 22px; font-weight: 600; color: var(--ok); line-height: 1; }
+.asc-stat-sub { color: var(--muted); font-size: 11px; margin-top: 3px; }
+.asc-stat-side { text-align: right; }
+.asc-new-badge { background: var(--accent); color: #0b1220; border-radius: 10px; padding: 2px 10px; font-size: 11px; font-weight: 600; margin-left: 8px; vertical-align: middle; }
+.asc-trend { margin: 12px 0 18px; }
+.asc-trend-head { display: flex; gap: 16px; color: var(--muted); font-size: 11px; margin-bottom: 4px; }
+.asc-legend { display: inline-flex; align-items: center; gap: 6px; }
+.legend-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+.asc-trend svg { width: 100%; height: auto; display: block; }
+.asc-recent-h { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.8px; margin: 14px 0 4px; }
 .review { padding: 10px 0; border-bottom: 1px solid var(--line); }
 .review:last-child { border-bottom: none; }
 .review-head { display: flex; justify-content: space-between; font-size: 12px; }

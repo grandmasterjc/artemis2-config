@@ -232,52 +232,159 @@ def fetch_app_store_connect() -> dict:
         app_name = artemis_app["attributes"].get("name")
         bundle_id = artemis_app["attributes"].get("bundleId")
 
-        # Customer reviews
-        reviews_url = (
+        # Customer reviews — paginate to fetch up to 200
+        reviews = []
+        next_url = (
             f"https://api.appstoreconnect.apple.com/v1/apps/{app_id}/customerReviews"
-            "?limit=50&sort=-createdDate"
+            "?limit=200&sort=-createdDate"
         )
-        try:
-            reviews_data = _http_get(reviews_url, headers)
-            reviews_raw = reviews_data.get("data", [])
-            reviews = []
-            rating_sum = 0
-            rating_count = 0
-            for r in reviews_raw:
+        pages = 0
+        while next_url and pages < 4:
+            try:
+                page = _http_get(next_url, headers)
+            except Exception:
+                break
+            for r in page.get("data", []):
                 attr = r.get("attributes", {})
-                rating = attr.get("rating", 0)
-                rating_sum += rating
-                rating_count += 1
                 reviews.append({
-                    "rating": rating,
-                    "title": attr.get("title", "")[:120],
-                    "body": attr.get("body", "")[:200],
-                    "reviewer": attr.get("reviewerNickname", ""),
-                    "territory": attr.get("territory", ""),
-                    "created": attr.get("createdDate", ""),
+                    "id": r.get("id"),
+                    "rating": int(attr.get("rating", 0)),
+                    "title": (attr.get("title", "") or "")[:200],
+                    "body": (attr.get("body", "") or "")[:400],
+                    "reviewer": attr.get("reviewerNickname", "") or "",
+                    "territory": attr.get("territory", "") or "",
+                    "created": attr.get("createdDate", "") or "",
                 })
-            avg_rating = round(rating_sum / rating_count, 2) if rating_count else None
-            # Distribution
+            next_url = page.get("links", {}).get("next")
+            pages += 1
+
+        # Merge with persistent history CSV — dedup by review id
+        hist_path = REPO_ROOT / "state" / "asc_reviews_history.csv"
+        history = {}
+        if hist_path.exists():
+            try:
+                import csv as _csv
+                with hist_path.open() as f:
+                    for row in _csv.DictReader(f):
+                        if row.get("id"):
+                            history[row["id"]] = row
+            except Exception:
+                history = {}
+
+        new_count = 0
+        for r in reviews:
+            if r["id"] and r["id"] not in history:
+                history[r["id"]] = {
+                    "id": r["id"],
+                    "rating": str(r["rating"]),
+                    "created": r["created"],
+                    "territory": r["territory"],
+                    "reviewer": r["reviewer"],
+                    "title": r["title"],
+                    "body": r["body"],
+                }
+                new_count += 1
+
+        # Write back history
+        try:
+            import csv as _csv
+            hist_path.parent.mkdir(parents=True, exist_ok=True)
+            with hist_path.open("w", newline="") as f:
+                w = _csv.DictWriter(
+                    f,
+                    fieldnames=["id", "rating", "created", "territory", "reviewer", "title", "body"],
+                )
+                w.writeheader()
+                for row in sorted(history.values(), key=lambda x: x.get("created", ""), reverse=True):
+                    w.writerow(row)
+        except Exception:
+            pass
+
+        # Compute rolling stats from full history
+        now = datetime.now(timezone.utc)
+        all_reviews = list(history.values())
+
+        def _parse_dt(s):
+            try:
+                return datetime.fromisoformat(s.replace("Z", "+00:00"))
+            except Exception:
+                return None
+
+        def _stats(items):
+            ratings = [int(r["rating"]) for r in items if r.get("rating")]
+            if not ratings:
+                return {"count": 0, "avg": None, "share_4plus": None,
+                        "dist": {1: 0, 2: 0, 3: 0, 4: 0, 5: 0}}
             dist = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0}
-            for r in reviews:
-                if r["rating"] in dist:
-                    dist[r["rating"]] += 1
-        except Exception as e:
-            reviews = []
-            avg_rating = None
-            dist = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0}
-            rating_count = 0
+            for r in ratings:
+                if r in dist:
+                    dist[r] += 1
+            avg = round(sum(ratings) / len(ratings), 2)
+            share = round(100 * (dist[4] + dist[5]) / len(ratings), 1)
+            return {"count": len(ratings), "avg": avg, "share_4plus": share, "dist": dist}
+
+        cutoff_30d = now - timedelta(days=30)
+        cutoff_90d = now - timedelta(days=90)
+        last_30d = [r for r in all_reviews if (_parse_dt(r.get("created", "")) or now) >= cutoff_30d]
+        last_90d = [r for r in all_reviews if (_parse_dt(r.get("created", "")) or now) >= cutoff_90d]
+        recent_50 = sorted(all_reviews, key=lambda x: x.get("created", ""), reverse=True)[:50]
+
+        # Monthly trend (last 12 months)
+        from collections import defaultdict
+        by_month_ratings = defaultdict(list)
+        for r in all_reviews:
+            dt = _parse_dt(r.get("created", ""))
+            if dt is None:
+                continue
+            key = dt.strftime("%Y-%m")
+            by_month_ratings[key].append(int(r["rating"]))
+        monthly = []
+        for key in sorted(by_month_ratings.keys())[-12:]:
+            ratings = by_month_ratings[key]
+            avg = round(sum(ratings) / len(ratings), 2)
+            share = round(100 * sum(1 for r in ratings if r >= 4) / len(ratings), 1)
+            monthly.append({
+                "month": key,
+                "count": len(ratings),
+                "avg": avg,
+                "share_4plus": share,
+            })
+
+        newest_10 = sorted(all_reviews, key=lambda x: x.get("created", ""), reverse=True)[:10]
+        reviews_recent_out = [
+            {
+                "rating": int(r["rating"]),
+                "title": r.get("title", ""),
+                "body": r.get("body", ""),
+                "reviewer": r.get("reviewer", ""),
+                "territory": r.get("territory", ""),
+                "created": r.get("created", ""),
+            }
+            for r in newest_10
+        ]
+
+        stats_30d = _stats(last_30d)
+        stats_90d = _stats(last_90d)
+        stats_all = _stats(all_reviews)
+        stats_recent50 = _stats(recent_50)
 
         return {
             "status": "ok",
             "app_id": app_id,
             "app_name": app_name,
             "bundle_id": bundle_id,
-            "reviews_recent": reviews[:10],
-            "reviews_count_recent": len(reviews),
-            "avg_rating_recent": avg_rating,
-            "rating_distribution_recent": dist,
-            "rating_count_recent": rating_count,
+            "reviews_recent": reviews_recent_out,
+            "new_this_run": new_count,
+            # legacy keys for renderer back-compat (recent-50)
+            "reviews_count_recent": stats_recent50["count"],
+            "avg_rating_recent": stats_recent50["avg"],
+            "rating_distribution_recent": stats_recent50["dist"],
+            "rating_count_recent": stats_recent50["count"],
+            # rolling stats
+            "stats_30d": stats_30d,
+            "stats_90d": stats_90d,
+            "stats_all_time": stats_all,
+            "monthly": monthly,
             "fetched_at": _now_iso(),
         }
     except urllib.error.HTTPError as e:
