@@ -372,25 +372,29 @@ def fetch_mastodon() -> dict:
         following = me.get("following_count", 0)
         statuses_total = me.get("statuses_count", 0)
 
-        # Recent statuses (last 40)
-        statuses = _http_get(
-            f"{base}/api/v1/accounts/{acc_id}/statuses?limit=40&exclude_replies=true",
-            headers,
-        )
-        cutoff = datetime.now(timezone.utc) - timedelta(days=7)
+        # Recent statuses (last 40) — soft-fail if scope is missing
         posts_7d = 0
         favs_7d = 0
         boosts_7d = 0
-        for s in statuses:
-            try:
-                pdt = datetime.fromisoformat(s["created_at"].replace("Z", "+00:00"))
-                if pdt < cutoff:
+        try:
+            statuses = _http_get(
+                f"{base}/api/v1/accounts/{acc_id}/statuses?limit=40&exclude_replies=true",
+                headers,
+            )
+            cutoff = datetime.now(timezone.utc) - timedelta(days=7)
+            for s in statuses:
+                try:
+                    pdt = datetime.fromisoformat(s["created_at"].replace("Z", "+00:00"))
+                    if pdt < cutoff:
+                        continue
+                except Exception:
                     continue
-            except Exception:
-                continue
-            posts_7d += 1
-            favs_7d += s.get("favourites_count", 0)
-            boosts_7d += s.get("reblogs_count", 0)
+                posts_7d += 1
+                favs_7d += s.get("favourites_count", 0)
+                boosts_7d += s.get("reblogs_count", 0)
+        except Exception:
+            # Scope missing or instance restricted — keep followers data, lose engagement
+            pass
 
         return {
             "status": "ok",
