@@ -524,8 +524,8 @@ def fetch_mastodon() -> dict:
 # ---------- Threads / Instagram — placeholder ----------
 def fetch_threads() -> dict:
     return {
-        "status": "blocked",
-        "reason": "Meta developer verification not completed — publishing and metrics disabled",
+        "status": "skipped",
+        "reason": "Threads account deactivated by Meta — channel dropped",
         "fetched_at": _now_iso(),
     }
 
