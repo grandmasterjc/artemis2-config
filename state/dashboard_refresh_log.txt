@@ -87,3 +87,17 @@
 2026-06-13T08:27:44.567088+00:00 | wrote data.json (23478 bytes)
 2026-06-13T08:27:44.576541+00:00 | wrote index.html (32992 bytes)
 2026-06-13T08:27:44.576597+00:00 | dashboard_refresh 2.0 done
+2026-06-13T16:02:51.811466+00:00 | dashboard_refresh 2.0 start
+2026-06-13T16:03:09.518034+00:00 |   ga4: ok | latest=135 28d=5207
+2026-06-13T16:03:09.518113+00:00 |   kit: ok | active=32
+2026-06-13T16:03:09.518176+00:00 |   asc: ok | reviews=50 avg=2.2
+2026-06-13T16:03:09.518235+00:00 |   bluesky: ok | followers=5
+2026-06-13T16:03:09.518316+00:00 |   mastodon: ok | followers=0
+2026-06-13T16:03:09.518375+00:00 |   threads: blocked | Meta developer verification not completed — publishing and metrics disabled
+2026-06-13T16:03:09.518433+00:00 |   instagram: ok
+2026-06-13T16:03:09.518478+00:00 |   push: ok
+2026-06-13T16:03:09.518509+00:00 |   roadmap: ok
+2026-06-13T16:03:09.518539+00:00 |   targets: ok
+2026-06-13T16:03:09.519744+00:00 | wrote data.json (23552 bytes)
+2026-06-13T16:03:09.529356+00:00 | wrote index.html (33074 bytes)
+2026-06-13T16:03:09.529424+00:00 | dashboard_refresh 2.0 done

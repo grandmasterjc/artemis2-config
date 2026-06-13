@@ -452,36 +452,36 @@
       },
       {
         "date": "2026-06-11",
-        "active": 158,
+        "active": 159,
         "new": 32,
-        "views": 216,
-        "sessions": 185
+        "views": 217,
+        "sessions": 186
       },
       {
         "date": "2026-06-12",
-        "active": 130,
-        "new": 40,
-        "views": 159,
-        "sessions": 150
+        "active": 135,
+        "new": 42,
+        "views": 167,
+        "sessions": 155
       }
     ],
     "latest": {
       "date": "2026-06-12",
-      "active": 130,
-      "new": 40,
-      "views": 159,
-      "sessions": 150
+      "active": 135,
+      "new": 42,
+      "views": 167,
+      "sessions": 155
     },
-    "total_active_28d": 5201,
-    "total_new_28d": 1640,
-    "total_sessions_28d": 5945,
-    "total_views_28d": 6867,
-    "avg_dau_7d": 187.0,
-    "avg_dau_28d": 185.8,
+    "total_active_28d": 5207,
+    "total_new_28d": 1642,
+    "total_sessions_28d": 5951,
+    "total_views_28d": 6876,
+    "avg_dau_7d": 187.9,
+    "avg_dau_28d": 186.0,
     "top_countries_30d": [
       {
         "country": "United States",
-        "active": 1337
+        "active": 1338
       },
       {
         "country": "United Kingdom",
@@ -520,7 +520,7 @@
         "active": 54
       }
     ],
-    "fetched_at": "2026-06-13T08:27:40.535582+00:00"
+    "fetched_at": "2026-06-13T16:02:53.567517+00:00"
   },
   "kit": {
     "status": "ok",
@@ -588,7 +588,7 @@
         "public": false
       }
     ],
-    "fetched_at": "2026-06-13T08:27:41.336377+00:00"
+    "fetched_at": "2026-06-13T16:02:54.609996+00:00"
   },
   "asc": {
     "status": "ok",
@@ -738,7 +738,7 @@
         "share_4plus": 21.9
       }
     ],
-    "fetched_at": "2026-06-13T08:27:42.482735+00:00"
+    "fetched_at": "2026-06-13T16:03:06.721501+00:00"
   },
   "bluesky": {
     "status": "ok",
@@ -749,7 +749,7 @@
     "posts_7d": 3,
     "likes_7d": 0,
     "reposts_7d": 0,
-    "fetched_at": "2026-06-13T08:27:43.487930+00:00"
+    "fetched_at": "2026-06-13T16:03:07.475462+00:00"
   },
   "mastodon": {
     "status": "ok",
@@ -761,17 +761,24 @@
     "posts_7d": 3,
     "favs_7d": 0,
     "boosts_7d": 0,
-    "fetched_at": "2026-06-13T08:27:44.564790+00:00"
+    "fetched_at": "2026-06-13T16:03:08.508327+00:00"
   },
   "threads": {
     "status": "blocked",
     "reason": "Meta developer verification not completed \u2014 publishing and metrics disabled",
-    "fetched_at": "2026-06-13T08:27:44.564844+00:00"
+    "fetched_at": "2026-06-13T16:03:08.508384+00:00"
   },
   "instagram": {
-    "status": "blocked",
-    "reason": "Needs Business/Creator account linked to Facebook page + instagram_content_publish approval",
-    "fetched_at": "2026-06-13T08:27:44.564848+00:00"
+    "status": "ok",
+    "username": "artemistracker",
+    "account_type": "BUSINESS",
+    "followers": 1,
+    "following": 1,
+    "posts_total": 0,
+    "posts_7d": 0,
+    "likes_7d": 0,
+    "comments_7d": 0,
+    "fetched_at": "2026-06-13T16:03:09.517494+00:00"
   },
   "push": {
     "status": "ok",
@@ -786,7 +793,7 @@
         "message_id": "projects/artemis-tracker-665d8/messages/5771117710239470194"
       }
     ],
-    "fetched_at": "2026-06-13T08:27:44.565040+00:00"
+    "fetched_at": "2026-06-13T16:03:09.517692+00:00"
   },
   "roadmap": {
     "status": "ok",
@@ -874,7 +881,7 @@
         "note": "durable across sandbox resets"
       }
     ],
-    "fetched_at": "2026-06-13T08:27:44.565350+00:00"
+    "fetched_at": "2026-06-13T16:03:09.517988+00:00"
   },
   "targets": {
     "status": "ok",
@@ -968,5 +975,5 @@
       "implied_subs": 5200
     }
   },
-  "generated_at": "2026-06-13T08:27:44.565362+00:00"
+  "generated_at": "2026-06-13T16:03:09.518000+00:00"
 }
