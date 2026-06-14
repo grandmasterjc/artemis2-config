@@ -101,3 +101,17 @@
 2026-06-13T16:03:09.519744+00:00 | wrote data.json (23552 bytes)
 2026-06-13T16:03:09.529356+00:00 | wrote index.html (33074 bytes)
 2026-06-13T16:03:09.529424+00:00 | dashboard_refresh 2.0 done
+2026-06-14T08:44:54.926835+00:00 | dashboard_refresh 2.0 start
+2026-06-14T08:45:01.830075+00:00 |   ga4: ok | latest=132 28d=5143
+2026-06-14T08:45:01.830170+00:00 |   kit: ok | active=32
+2026-06-14T08:45:01.830256+00:00 |   asc: ok | reviews=50 avg=2.2
+2026-06-14T08:45:01.830323+00:00 |   bluesky: error | HTTP 502
+2026-06-14T08:45:01.830381+00:00 |   mastodon: ok | followers=0
+2026-06-14T08:45:01.830440+00:00 |   threads: skipped | Threads account deactivated by Meta — channel dropped
+2026-06-14T08:45:01.830494+00:00 |   instagram: ok
+2026-06-14T08:45:01.830552+00:00 |   push: ok
+2026-06-14T08:45:01.830593+00:00 |   roadmap: ok
+2026-06-14T08:45:01.830626+00:00 |   targets: ok
+2026-06-14T08:45:01.831768+00:00 | wrote data.json (23481 bytes)
+2026-06-14T08:45:01.840985+00:00 | wrote index.html (32782 bytes)
+2026-06-14T08:45:01.841053+00:00 | dashboard_refresh 2.0 done

@@ -462,46 +462,53 @@
         "active": 135,
         "new": 42,
         "views": 167,
-        "sessions": 155
+        "sessions": 154
+      },
+      {
+        "date": "2026-06-13",
+        "active": 132,
+        "new": 44,
+        "views": 179,
+        "sessions": 154
       }
     ],
     "latest": {
-      "date": "2026-06-12",
-      "active": 135,
-      "new": 42,
-      "views": 167,
-      "sessions": 155
+      "date": "2026-06-13",
+      "active": 132,
+      "new": 44,
+      "views": 179,
+      "sessions": 154
     },
-    "total_active_28d": 5207,
-    "total_new_28d": 1642,
-    "total_sessions_28d": 5951,
-    "total_views_28d": 6876,
+    "total_active_28d": 5143,
+    "total_new_28d": 1595,
+    "total_sessions_28d": 5875,
+    "total_views_28d": 6787,
     "avg_dau_7d": 187.9,
-    "avg_dau_28d": 186.0,
+    "avg_dau_28d": 183.7,
     "top_countries_30d": [
       {
         "country": "United States",
-        "active": 1338
+        "active": 1320
       },
       {
         "country": "United Kingdom",
-        "active": 449
+        "active": 452
       },
       {
         "country": "Canada",
-        "active": 225
+        "active": 214
       },
       {
         "country": "Germany",
-        "active": 209
-      },
-      {
-        "country": "Italy",
-        "active": 85
+        "active": 204
       },
       {
         "country": "Australia",
-        "active": 84
+        "active": 88
+      },
+      {
+        "country": "Italy",
+        "active": 88
       },
       {
         "country": "Netherlands",
@@ -509,18 +516,18 @@
       },
       {
         "country": "Spain",
-        "active": 67
+        "active": 65
       },
       {
         "country": "Indonesia",
-        "active": 62
+        "active": 60
       },
       {
         "country": "France",
-        "active": 54
+        "active": 52
       }
     ],
-    "fetched_at": "2026-06-13T16:02:53.567517+00:00"
+    "fetched_at": "2026-06-14T08:44:56.717388+00:00"
   },
   "kit": {
     "status": "ok",
@@ -588,7 +595,7 @@
         "public": false
       }
     ],
-    "fetched_at": "2026-06-13T16:02:54.609996+00:00"
+    "fetched_at": "2026-06-14T08:44:57.588246+00:00"
   },
   "asc": {
     "status": "ok",
@@ -738,18 +745,11 @@
         "share_4plus": 21.9
       }
     ],
-    "fetched_at": "2026-06-13T16:03:06.721501+00:00"
+    "fetched_at": "2026-06-14T08:44:58.524399+00:00"
   },
   "bluesky": {
-    "status": "ok",
-    "handle": "artemistracker.app",
-    "followers": 5,
-    "following": 7,
-    "posts_total": 31,
-    "posts_7d": 3,
-    "likes_7d": 0,
-    "reposts_7d": 0,
-    "fetched_at": "2026-06-13T16:03:07.475462+00:00"
+    "status": "error",
+    "error": "HTTP 502"
   },
   "mastodon": {
     "status": "ok",
@@ -761,12 +761,12 @@
     "posts_7d": 3,
     "favs_7d": 0,
     "boosts_7d": 0,
-    "fetched_at": "2026-06-13T16:03:08.508327+00:00"
+    "fetched_at": "2026-06-14T08:45:00.939577+00:00"
   },
   "threads": {
-    "status": "blocked",
-    "reason": "Meta developer verification not completed \u2014 publishing and metrics disabled",
-    "fetched_at": "2026-06-13T16:03:08.508384+00:00"
+    "status": "skipped",
+    "reason": "Threads account deactivated by Meta \u2014 channel dropped",
+    "fetched_at": "2026-06-14T08:45:00.939621+00:00"
   },
   "instagram": {
     "status": "ok",
@@ -778,7 +778,7 @@
     "posts_7d": 0,
     "likes_7d": 0,
     "comments_7d": 0,
-    "fetched_at": "2026-06-13T16:03:09.517494+00:00"
+    "fetched_at": "2026-06-14T08:45:01.829577+00:00"
   },
   "push": {
     "status": "ok",
@@ -793,7 +793,7 @@
         "message_id": "projects/artemis-tracker-665d8/messages/5771117710239470194"
       }
     ],
-    "fetched_at": "2026-06-13T16:03:09.517692+00:00"
+    "fetched_at": "2026-06-14T08:45:01.829749+00:00"
   },
   "roadmap": {
     "status": "ok",
@@ -881,7 +881,7 @@
         "note": "durable across sandbox resets"
       }
     ],
-    "fetched_at": "2026-06-13T16:03:09.517988+00:00"
+    "fetched_at": "2026-06-14T08:45:01.830035+00:00"
   },
   "targets": {
     "status": "ok",
@@ -975,5 +975,5 @@
       "implied_subs": 5200
     }
   },
-  "generated_at": "2026-06-13T16:03:09.518000+00:00"
+  "generated_at": "2026-06-14T08:45:01.830046+00:00"
 }
