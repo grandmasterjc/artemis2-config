@@ -127,11 +127,17 @@ def fetch_ga4() -> dict:
         except Exception:
             push_events_30d = {}
 
-        push_received = push_events_30d.get("notification_receive", 0)
+        # iOS Firebase reliably logs notification_open (user tapped from outside
+        # app) and notification_foreground (user was in app when push arrived).
+        # notification_receive is rarely logged. Approximate open rate as:
+        # opens / (opens + foreground) -- share of pushes user actively engaged
+        # with vs. pushes that arrived while app was already in view.
         push_opened = push_events_30d.get("notification_open", 0)
+        push_foreground = push_events_30d.get("notification_foreground", 0)
         push_open_rate = None
-        if push_received > 0:
-            push_open_rate = round(push_opened / push_received, 4)
+        denom = push_opened + push_foreground
+        if denom > 0:
+            push_open_rate = round(push_opened / denom, 4)
 
         return {
             "status": "ok",
