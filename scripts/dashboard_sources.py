@@ -17,6 +17,8 @@ Sources:
 from __future__ import annotations
 
 import base64
+import csv
+import io
 import json
 import os
 import re
@@ -24,6 +26,7 @@ import time
 import urllib.error
 import urllib.parse
 import urllib.request
+import zipfile
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
@@ -840,11 +843,270 @@ def fetch_targets() -> dict:
     }
 
 
+# =============================================================================
+# Google Play Console — subscription metrics
+# =============================================================================
+
+def _play_bucket() -> str | None:
+    return os.environ.get("GOOGLE_PLAY_REPORTS_BUCKET") or "pubsite_prod_6157935083484095024"
+
+
+def _play_package() -> str:
+    return os.environ.get("GOOGLE_PLAY_PACKAGE") or "no.bitfactory.artemisii.tracker"
+
+
+def _play_credentials():
+    """Build Google credentials from GOOGLE_PLAY_SERVICE_ACCOUNT_JSON or local file."""
+    from google.oauth2 import service_account
+
+    json_blob = os.environ.get("GOOGLE_PLAY_SERVICE_ACCOUNT_JSON")
+    if json_blob:
+        info = json.loads(json_blob)
+    else:
+        local = Path("/home/user/workspace/secrets/playconsole/service-account.json")
+        if not local.exists():
+            return None
+        info = json.loads(local.read_text())
+    scopes = ["https://www.googleapis.com/auth/devstorage.read_only"]
+    return service_account.Credentials.from_service_account_info(info, scopes=scopes)
+
+
+def _gcs_list(bucket: str, prefix: str, creds) -> list[str]:
+    """List object names in a GCS bucket with given prefix using JSON API."""
+    from google.auth.transport.requests import Request
+
+    if not creds.valid:
+        creds.refresh(Request())
+    url = f"https://storage.googleapis.com/storage/v1/b/{bucket}/o?prefix={urllib.parse.quote(prefix)}&maxResults=1000"
+    req = urllib.request.Request(url, headers={"Authorization": f"Bearer {creds.token}"})
+    with urllib.request.urlopen(req, timeout=30) as resp:
+        data = json.loads(resp.read())
+    return [item["name"] for item in data.get("items", [])]
+
+
+def _gcs_get(bucket: str, name: str, creds) -> bytes:
+    from google.auth.transport.requests import Request
+
+    if not creds.valid:
+        creds.refresh(Request())
+    url = f"https://storage.googleapis.com/storage/v1/b/{bucket}/o/{urllib.parse.quote(name, safe='')}?alt=media"
+    req = urllib.request.Request(url, headers={"Authorization": f"Bearer {creds.token}"})
+    with urllib.request.urlopen(req, timeout=60) as resp:
+        return resp.read()
+
+
+def _parse_play_subscriptions_zip(blob: bytes) -> list[dict]:
+    """Extract rows from a Play subscriptions monthly zip. CSV columns include
+    Package Name, Product ID, Country, Buyer Currency, Amount (Buyer Currency),
+    Buyer Postal Code, Event Date, Event Timestamp, Original Order Id, Order
+    Number, Event Type (e.g. New, Renewal, Cancel)."""
+    rows = []
+    with zipfile.ZipFile(io.BytesIO(blob)) as zf:
+        for member in zf.namelist():
+            if not member.endswith(".csv"):
+                continue
+            raw = zf.read(member)
+            # Play reports are utf-16 with BOM
+            try:
+                text = raw.decode("utf-16")
+            except UnicodeDecodeError:
+                text = raw.decode("utf-8", errors="replace")
+            reader = csv.DictReader(io.StringIO(text))
+            for row in reader:
+                rows.append({k.strip(): (v.strip() if v else "") for k, v in row.items()})
+    return rows
+
+
+def _parse_play_earnings_zip(blob: bytes) -> list[dict]:
+    """Extract rows from a Play earnings monthly zip. Provides merchant proceeds
+    in merchant currency. Columns include Transaction Date, Product ID,
+    Product Type, Sku Id, Buyer Country, Amount (Merchant Currency), Merchant
+    Currency, Tax Type, Refund."""
+    return _parse_play_subscriptions_zip(blob)  # same gz format
+
+
+def _months_back(n: int) -> list[str]:
+    """Return list of YYYYMM strings going n months back from today (inclusive of current)."""
+    today = datetime.now(timezone.utc).date()
+    out = []
+    for i in range(n):
+        y = today.year
+        m = today.month - i
+        while m <= 0:
+            m += 12
+            y -= 1
+        out.append(f"{y:04d}{m:02d}")
+    return out
+
+
+def fetch_play_console() -> dict:
+    """Fetch Google Play subscription + earnings metrics for Artemis Tracker.
+
+    Returns last-30-days aggregate similar to App Store Connect:
+      - total_units_30d, total_proceeds_usd_30d, new_subscribers_30d
+      - by_product, by_day, by_country, by_event_type
+    """
+    try:
+        creds = _play_credentials()
+        if creds is None:
+            return {"status": "skipped", "reason": "no Play service account credentials"}
+        bucket = _play_bucket()
+        package = _play_package()
+        if not bucket:
+            return {"status": "skipped", "reason": "no GOOGLE_PLAY_REPORTS_BUCKET"}
+
+        # Fetch last 3 months of subscription + earnings reports
+        months = _months_back(3)
+        sub_rows: list[dict] = []
+        earn_rows: list[dict] = []
+
+        for ym in months:
+            # Subscription reports
+            try:
+                names = _gcs_list(bucket, f"stats/subscriptions/subscriptions_{ym}_{package}", creds)
+                for n in names:
+                    if n.endswith(".zip"):
+                        try:
+                            blob = _gcs_get(bucket, n, creds)
+                            sub_rows.extend(_parse_play_subscriptions_zip(blob))
+                        except Exception:
+                            pass
+            except Exception:
+                pass
+
+            # Earnings (proceeds in USD typically)
+            try:
+                names = _gcs_list(bucket, f"earnings/earnings_{ym}", creds)
+                for n in names:
+                    if n.endswith(".zip"):
+                        try:
+                            blob = _gcs_get(bucket, n, creds)
+                            earn_rows.extend(_parse_play_earnings_zip(blob))
+                        except Exception:
+                            pass
+            except Exception:
+                pass
+
+        return _summarize_play(sub_rows, earn_rows, package)
+
+    except Exception as e:
+        return {"status": "error", "error": f"{type(e).__name__}: {e}"}
+
+
+def _summarize_play(sub_rows: list[dict], earn_rows: list[dict], package: str) -> dict:
+    """Aggregate Play subscription + earnings rows into 30-day dashboard view."""
+    today = datetime.now(timezone.utc).date()
+    window_start = today - timedelta(days=29)
+
+    def _row_date(row: dict) -> str | None:
+        for k in ("Event Date", "Transaction Date", "Order Charged Date"):
+            v = row.get(k)
+            if v:
+                return v[:10]
+        return None
+
+    def _in_window(row: dict) -> bool:
+        d = _row_date(row)
+        if not d:
+            return False
+        try:
+            dt = datetime.strptime(d, "%Y-%m-%d").date()
+            return window_start <= dt <= today
+        except ValueError:
+            return False
+
+    sub_window = [r for r in sub_rows if _in_window(r)]
+    earn_window = [r for r in earn_rows if _in_window(r) and (r.get("Product Type") or "").lower().startswith("subscript")]
+
+    # Filter earnings to subscriptions only (Product Type starts with "Subscription")
+    # If "Product Type" column missing, fall back to filtering by product id prefix
+    if not earn_window and earn_rows:
+        earn_window = [r for r in earn_rows if _in_window(r) and ("monthly" in (r.get("Product Id") or r.get("Sku Id") or "") or "yearly" in (r.get("Product Id") or r.get("Sku Id") or ""))]
+
+    # Aggregate by product (units = subscription events, prefer "New" + "Renewal" types)
+    by_product: dict = {}
+    by_event_type: dict = {}
+    by_country: dict = {}
+    by_day_map: dict = {}
+    new_subs = 0
+
+    for row in sub_window:
+        product_id = row.get("Product ID") or row.get("Product Id") or row.get("Sku Id") or "unknown"
+        event = row.get("Event Type") or row.get("Subscription Event Type") or "Unknown"
+        country = row.get("Buyer Country") or row.get("Country") or "??"
+        date = _row_date(row) or ""
+
+        by_event_type[event] = by_event_type.get(event, 0) + 1
+
+        # Count as "unit" if event is a billing event (New / Renewal)
+        is_billing = event in ("New", "Renewal") or "renew" in event.lower() or "purchase" in event.lower() or event == ""
+        if is_billing:
+            entry = by_product.setdefault(product_id, {"units": 0, "proceeds_usd": 0.0, "name": product_id})
+            entry["units"] += 1
+            by_country[country] = by_country.get(country, {"units": 0, "proceeds_usd": 0.0})
+            by_country[country]["units"] += 1
+            day = by_day_map.setdefault(date, {"date": date, "monthly": 0, "yearly": 0, "other": 0, "proceeds_usd": 0.0})
+            if product_id.endswith(".monthly"):
+                day["monthly"] += 1
+            elif product_id.endswith(".yearly"):
+                day["yearly"] += 1
+            else:
+                day["other"] += 1
+        if event == "New" or "new" in event.lower():
+            new_subs += 1
+
+    # Aggregate proceeds (merchant currency, treated as USD for now)
+    for row in earn_window:
+        product_id = row.get("Product ID") or row.get("Product Id") or row.get("Sku Id") or "unknown"
+        country = row.get("Buyer Country") or row.get("Country") or "??"
+        date = _row_date(row) or ""
+        amount_str = row.get("Amount (Merchant Currency)") or row.get("Merchant Proceeds") or "0"
+        try:
+            amount = float(str(amount_str).replace(",", "."))
+        except ValueError:
+            amount = 0.0
+
+        if product_id in by_product:
+            by_product[product_id]["proceeds_usd"] += amount
+        if country in by_country:
+            by_country[country]["proceeds_usd"] += amount
+        if date in by_day_map:
+            by_day_map[date]["proceeds_usd"] += amount
+
+    # Convert maps to sorted lists
+    by_day = sorted(by_day_map.values(), key=lambda d: d["date"])
+    by_country_list = sorted(
+        [{"country": k, **v} for k, v in by_country.items()],
+        key=lambda c: c["units"],
+        reverse=True,
+    )
+
+    total_units = sum(p["units"] for p in by_product.values())
+    total_proceeds = round(sum(p["proceeds_usd"] for p in by_product.values()), 2)
+
+    return {
+        "status": "ok",
+        "window_start": window_start.isoformat(),
+        "window_end": today.isoformat(),
+        "package": package,
+        "by_product": by_product,
+        "by_day": by_day,
+        "by_country": by_country_list,
+        "by_event_type": by_event_type,
+        "total_units_30d": total_units,
+        "total_proceeds_usd_30d": total_proceeds,
+        "new_subscribers_30d": new_subs,
+        "sub_rows_seen": len(sub_rows),
+        "earn_rows_seen": len(earn_rows),
+    }
+
+
 def fetch_all() -> dict:
     return {
         "ga4": fetch_ga4(),
         "kit": fetch_kit(),
         "asc": fetch_app_store_connect(),
+        "play": fetch_play_console(),
         "bluesky": fetch_bluesky(),
         "mastodon": fetch_mastodon(),
         "threads": fetch_threads(),

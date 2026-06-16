@@ -22,6 +22,9 @@ https://github.com/grandmasterjc/artemis2-config/settings/secrets/actions
 | `APP_STORE_CONNECT_ISSUER_ID` | dashboard-refresh | Issuer UUID from the same page (shared across all keys). |
 | `APP_STORE_CONNECT_PRIVATE_KEY` | dashboard-refresh | Full PEM contents of the `.p8` file (paste raw, including `-----BEGIN PRIVATE KEY-----` and `-----END PRIVATE KEY-----`). |
 | `APP_STORE_CONNECT_VENDOR_NUMBER` | dashboard-refresh | Apple vendor number from App Store Connect → Payments and Financial Reports (e.g. `85037504`). |
+| `GOOGLE_PLAY_SERVICE_ACCOUNT_JSON` | dashboard-refresh | Full JSON contents of the `play-console-reporting` service account key. The service account must be invited to Play Console with global "View app information and download bulk reports" + "View financial data" permissions. |
+| `GOOGLE_PLAY_REPORTS_BUCKET` | dashboard-refresh | Cloud Storage bucket ID from Play Console → Download reports → Financial (e.g. `pubsite_prod_6157935083484095024`, without `gs://`). |
+| `GOOGLE_PLAY_PACKAGE` | dashboard-refresh | Android package name (e.g. `no.bitfactory.artemisii.tracker`). Defaults to this if unset. |
 
 ## Step-by-step: Adding a secret
 
