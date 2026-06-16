@@ -18,6 +18,10 @@ https://github.com/grandmasterjc/artemis2-config/settings/secrets/actions
 | `GOOGLE_ANALYTICS_PROPERTY_ID` | dashboard-refresh | `531732958` |
 | `FIREBASE_SERVICE_ACCOUNT_JSON` | weekly-article-publish | Entire JSON contents of artemis-tracker-665d8 service account |
 | `THREADS_ACCESS_TOKEN` | threads-token-refresh | Optional. Long-lived Threads API token |
+| `APP_STORE_CONNECT_KEY_ID` | dashboard-refresh | App Store Connect API key ID (e.g. `UQ6P8VG963`). Generate at https://appstoreconnect.apple.com/access/integrations/api with Finance role. |
+| `APP_STORE_CONNECT_ISSUER_ID` | dashboard-refresh | Issuer UUID from the same page (shared across all keys). |
+| `APP_STORE_CONNECT_PRIVATE_KEY` | dashboard-refresh | Full PEM contents of the `.p8` file (paste raw, including `-----BEGIN PRIVATE KEY-----` and `-----END PRIVATE KEY-----`). |
+| `APP_STORE_CONNECT_VENDOR_NUMBER` | dashboard-refresh | Apple vendor number from App Store Connect → Payments and Financial Reports (e.g. `85037504`). |
 
 ## Step-by-step: Adding a secret
 

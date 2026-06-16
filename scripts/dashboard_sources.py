@@ -203,10 +203,143 @@ def _asc_jwt(key_id: str, issuer_id: str, private_key_pem: str) -> str:
     return jwt.encode(payload, private_key_pem, algorithm="ES256", headers=headers)
 
 
+def _fetch_asc_daily_sales(token: str, vendor_number: str, report_date: str) -> list[dict]:
+    """Fetch one DAILY SALES SUMMARY report. Returns list of row dicts.
+
+    Apple gates the API on vendor_number. Reports are gzipped TSV with a 1-2 day lag.
+    Returns [] on missing data (404), API error, or empty response.
+    """
+    import gzip
+    url = (
+        "https://api.appstoreconnect.apple.com/v1/salesReports"
+        f"?filter%5Bfrequency%5D=DAILY"
+        f"&filter%5BreportType%5D=SALES"
+        f"&filter%5BreportSubType%5D=SUMMARY"
+        f"&filter%5BvendorNumber%5D={vendor_number}"
+        f"&filter%5BreportDate%5D={report_date}"
+        f"&filter%5Bversion%5D=1_1"
+    )
+    req = urllib.request.Request(url, headers={
+        "Authorization": f"Bearer {token}",
+        "Accept": "application/a-gzip, application/json",
+    })
+    try:
+        with urllib.request.urlopen(req, timeout=30) as r:
+            raw = r.read()
+    except urllib.error.HTTPError:
+        return []
+    except Exception:
+        return []
+    try:
+        text = gzip.decompress(raw).decode("utf-8")
+    except Exception:
+        return []
+    lines = text.splitlines()
+    if len(lines) < 2:
+        return []
+    header = lines[0].split("\t")
+    out = []
+    for line in lines[1:]:
+        cells = line.split("\t")
+        if len(cells) == len(header):
+            out.append(dict(zip(header, cells)))
+    return out
+
+
+def _summarize_asc_sales(rows: list[dict], bundle_prefix: str) -> dict:
+    """Aggregate sales rows for one app (filtered by SKU prefix)."""
+    from collections import defaultdict
+    by_product = defaultdict(lambda: {"units": 0, "proceeds_usd": 0.0, "name": ""})
+    by_day_sku = defaultdict(lambda: defaultdict(int))
+    by_day_proceeds = defaultdict(float)
+    by_country = defaultdict(lambda: {"units": 0, "proceeds_usd": 0.0})
+    by_order_type = defaultdict(int)
+    new_subs = 0
+    total_units = 0
+    total_proceeds = 0.0
+
+    for row in rows:
+        sku = row.get("SKU", "")
+        if bundle_prefix not in sku:
+            continue
+        try:
+            units = int(row.get("Units", "0") or 0)
+        except ValueError:
+            units = 0
+        try:
+            proceeds_per_unit = float(row.get("Developer Proceeds", "0") or 0)
+        except ValueError:
+            proceeds_per_unit = 0.0
+        proceeds_total = units * proceeds_per_unit
+        product = by_product[sku]
+        product["units"] += units
+        product["proceeds_usd"] += proceeds_total
+        product["name"] = row.get("Title", "") or product["name"]
+
+        d = row.get("_report_date", "")
+        if d:
+            if "monthly" in sku:
+                by_day_sku[d]["monthly"] += units
+            elif "yearly" in sku:
+                by_day_sku[d]["yearly"] += units
+            else:
+                by_day_sku[d]["other"] += units
+            by_day_proceeds[d] += proceeds_total
+
+        cc = row.get("Country Code", "") or ""
+        if cc:
+            by_country[cc]["units"] += units
+            by_country[cc]["proceeds_usd"] += proceeds_total
+
+        order_type = row.get("Order Type", "").strip() or "Standard"
+        by_order_type[order_type] += units
+
+        if row.get("Subscription", "").strip() == "New":
+            new_subs += units
+
+        total_units += units
+        total_proceeds += proceeds_total
+
+    by_day_list = []
+    for d in sorted(by_day_sku.keys()):
+        by_day_list.append({
+            "date": d,
+            "monthly": by_day_sku[d].get("monthly", 0),
+            "yearly": by_day_sku[d].get("yearly", 0),
+            "other": by_day_sku[d].get("other", 0),
+            "proceeds_usd": round(by_day_proceeds[d], 2),
+        })
+
+    by_country_list = sorted(
+        [{"country": cc, "units": v["units"], "proceeds_usd": round(v["proceeds_usd"], 2)}
+         for cc, v in by_country.items()],
+        key=lambda x: -x["units"],
+    )
+
+    by_product_out = {
+        sku: {"units": v["units"], "proceeds_usd": round(v["proceeds_usd"], 2), "name": v["name"]}
+        for sku, v in by_product.items()
+    }
+
+    return {
+        "by_product": by_product_out,
+        "by_day": by_day_list,
+        "by_country": by_country_list,
+        "by_order_type": dict(by_order_type),
+        "total_units_30d": total_units,
+        "total_proceeds_usd_30d": round(total_proceeds, 2),
+        "new_subscribers_30d": new_subs,
+    }
+
+
 def fetch_app_store_connect() -> dict:
     key_id = os.environ.get("APP_STORE_CONNECT_KEY_ID")
     issuer_id = os.environ.get("APP_STORE_CONNECT_ISSUER_ID")
     private_key = os.environ.get("APP_STORE_CONNECT_PRIVATE_KEY")
+    vendor_number = os.environ.get("APP_STORE_CONNECT_VENDOR_NUMBER")
+    bundle_prefix = os.environ.get(
+        "APP_STORE_CONNECT_BUNDLE_PREFIX", "no.bitfactory.artemisii.tracker"
+    )
     if not (key_id and issuer_id and private_key):
         return {"status": "skipped", "reason": "ASC credentials missing"}
 
@@ -368,6 +501,35 @@ def fetch_app_store_connect() -> dict:
         stats_all = _stats(all_reviews)
         stats_recent50 = _stats(recent_50)
 
+        # ---- Subscription sales (last ~30 days) ----
+        # Requires Finance role on the API key AND a vendor number.
+        subs_data = {"status": "skipped", "reason": "no vendor_number"}
+        if vendor_number:
+            from datetime import date as _date, timedelta as _td
+            today = _date.today()
+            all_rows = []
+            attempted = 0
+            success_dates = []
+            # Reports lag 1-2 days; fetch d-2 through d-32.
+            for days_back in range(2, 33):
+                rd = (today - _td(days=days_back)).isoformat()
+                attempted += 1
+                rows = _fetch_asc_daily_sales(token, vendor_number, rd)
+                if rows:
+                    success_dates.append(rd)
+                    for r in rows:
+                        r["_report_date"] = rd
+                    all_rows.extend(rows)
+            summary = _summarize_asc_sales(all_rows, bundle_prefix)
+            subs_data = {
+                "status": "ok" if success_dates else "empty",
+                "window_start": min(success_dates) if success_dates else None,
+                "window_end": max(success_dates) if success_dates else None,
+                "days_with_data": len(success_dates),
+                "days_attempted": attempted,
+                **summary,
+            }
+
         return {
             "status": "ok",
             "app_id": app_id,
@@ -385,6 +547,8 @@ def fetch_app_store_connect() -> dict:
             "stats_90d": stats_90d,
             "stats_all_time": stats_all,
             "monthly": monthly,
+            # subscription / sales data
+            "subscriptions": subs_data,
             "fetched_at": _now_iso(),
         }
     except urllib.error.HTTPError as e:

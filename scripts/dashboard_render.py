@@ -528,6 +528,185 @@ def section_app_store(data) -> str:
 </section>"""
 
 
+def section_subscriptions(data) -> str:
+    asc = data.get("asc", {}) or {}
+    subs = asc.get("subscriptions", {}) or {}
+    if subs.get("status") != "ok":
+        reason = subs.get("reason") or subs.get("error") or "no data"
+        return f"<section><h2>Subscriptions — iOS</h2><div class='empty'>Not available — {esc(reason)}</div></section>"
+
+    window_start = subs.get("window_start", "")
+    window_end = subs.get("window_end", "")
+    days_with_data = subs.get("days_with_data", 0)
+    days_attempted = subs.get("days_attempted", 0)
+    total_units = subs.get("total_units_30d", 0) or 0
+    total_proceeds = subs.get("total_proceeds_usd_30d", 0.0) or 0.0
+    new_subs = subs.get("new_subscribers_30d", 0) or 0
+    by_product = subs.get("by_product", {}) or {}
+    by_day = subs.get("by_day", []) or []
+    by_country = subs.get("by_country", []) or []
+    by_order_type = subs.get("by_order_type", {}) or {}
+
+    monthly_units = 0
+    yearly_units = 0
+    monthly_proceeds = 0.0
+    yearly_proceeds = 0.0
+    for sku, info in by_product.items():
+        units = info.get("units", 0) or 0
+        proceeds = info.get("proceeds_usd", 0.0) or 0.0
+        if sku.endswith(".monthly"):
+            monthly_units += units
+            monthly_proceeds += proceeds
+        elif sku.endswith(".yearly"):
+            yearly_units += units
+            yearly_proceeds += proceeds
+
+    def _kpi(label, value, sub):
+        return f"""
+  <div class='asc-stat-card'>
+    <div class='asc-stat-label'>{esc(label)}</div>
+    <div class='asc-stat-row'>
+      <div class='asc-stat-main'>
+        <div class='asc-stat-val'>{value}</div>
+        <div class='asc-stat-sub'>{esc(sub)}</div>
+      </div>
+    </div>
+  </div>"""
+
+    kpi_cards = (
+        _kpi("Units (30d)", fmt_int(total_units), f"{days_with_data}/{days_attempted} days with data")
+        + _kpi("Proceeds (30d)", f"${fmt_float(total_proceeds, 2)}", "USD, after Apple's cut")
+        + _kpi("New subscribers (30d)", fmt_int(new_subs), "first-time conversions")
+        + _kpi("Monthly / Yearly", f"{fmt_int(monthly_units)} / {fmt_int(yearly_units)}", f"${fmt_float(monthly_proceeds, 2)} / ${fmt_float(yearly_proceeds, 2)}")
+    )
+
+    chart_html = ""
+    if by_day:
+        W, H = 920, 180
+        PAD_L, PAD_R, PAD_T, PAD_B = 40, 16, 16, 28
+        inner_w = W - PAD_L - PAD_R
+        inner_h = H - PAD_T - PAD_B
+        n = len(by_day)
+        max_units = max((d.get("monthly", 0) + d.get("yearly", 0) + d.get("other", 0)) for d in by_day) or 1
+        if max_units < 5:
+            y_max = 5
+        elif max_units < 10:
+            y_max = 10
+        else:
+            y_max = ((max_units // 5) + 1) * 5
+
+        bar_w = inner_w / n * 0.7
+        gap = inner_w / n
+
+        def y_at(v):
+            return PAD_T + inner_h - (v / y_max) * inner_h
+
+        y_ticks = []
+        for v in [0, y_max // 2, y_max]:
+            y = y_at(v)
+            y_ticks.append(
+                f"<line x1='{PAD_L}' y1='{y:.1f}' x2='{W - PAD_R}' y2='{y:.1f}' stroke='#1f2735' stroke-width='1'/>"
+                f"<text x='{PAD_L - 6}' y='{y + 3:.1f}' fill='#8a99b3' font-size='10' text-anchor='end'>{v}</text>"
+            )
+
+        bars = []
+        x_labels = []
+        for i, d in enumerate(by_day):
+            m_u = d.get("monthly", 0) or 0
+            y_u = d.get("yearly", 0) or 0
+            o_u = d.get("other", 0) or 0
+            x = PAD_L + i * gap + (gap - bar_w) / 2
+            base_y = PAD_T + inner_h
+            m_h = (m_u / y_max) * inner_h
+            y_h = (y_u / y_max) * inner_h
+            o_h = (o_u / y_max) * inner_h
+            tooltip = f"{d.get('date', '')}: M {m_u}, Y {y_u}, other {o_u}"
+            if m_u:
+                bars.append(f"<rect x='{x:.1f}' y='{base_y - m_h:.1f}' width='{bar_w:.1f}' height='{m_h:.1f}' fill='#5fb3ff'><title>{esc(tooltip)}</title></rect>")
+            if y_u:
+                bars.append(f"<rect x='{x:.1f}' y='{base_y - m_h - y_h:.1f}' width='{bar_w:.1f}' height='{y_h:.1f}' fill='#4ade80'><title>{esc(tooltip)}</title></rect>")
+            if o_u:
+                bars.append(f"<rect x='{x:.1f}' y='{base_y - m_h - y_h - o_h:.1f}' width='{bar_w:.1f}' height='{o_h:.1f}' fill='#fbbf24'><title>{esc(tooltip)}</title></rect>")
+            if n <= 10 or i % max(1, n // 8) == 0 or i == n - 1:
+                date_lbl = (d.get("date") or "")[5:]
+                x_labels.append(
+                    f"<text x='{x + bar_w / 2:.1f}' y='{H - 8}' fill='#8a99b3' font-size='10' text-anchor='middle'>{esc(date_lbl)}</text>"
+                )
+
+        chart_html = f"""
+  <div class='asc-trend'>
+    <div class='asc-trend-head'>
+      <span class='asc-legend'><span class='legend-dot' style='background:#5fb3ff'></span>Monthly</span>
+      <span class='asc-legend'><span class='legend-dot' style='background:#4ade80'></span>Yearly</span>
+      <span class='asc-legend'><span class='legend-dot' style='background:#fbbf24'></span>Other</span>
+    </div>
+    <svg viewBox='0 0 {W} {H}' xmlns='http://www.w3.org/2000/svg' role='img'>
+      {''.join(y_ticks)}
+      {''.join(bars)}
+      {''.join(x_labels)}
+    </svg>
+  </div>"""
+
+    ctry_html = ""
+    if by_country:
+        top = by_country[:10]
+        max_u = max((c.get("units", 0) for c in top), default=1) or 1
+        rows = []
+        for c in top:
+            country = c.get("country", "??")
+            units = c.get("units", 0) or 0
+            proceeds = c.get("proceeds_usd", 0.0) or 0.0
+            pct = (units / max_u) * 100
+            rows.append(
+                f"<div class='ctry-row'>"
+                f"<div>{esc(country)}</div>"
+                f"<div class='ctry-bar'><div class='ctry-fill' style='width:{pct:.0f}%'></div></div>"
+                f"<div class='ctry-val'>{fmt_int(units)} · ${fmt_float(proceeds, 2)}</div>"
+                f"</div>"
+            )
+        ctry_html = f"<h3 class='asc-recent-h'>Top countries</h3>{''.join(rows)}"
+
+    ot_html = ""
+    if by_order_type:
+        items = sorted(by_order_type.items(), key=lambda kv: kv[1], reverse=True)
+        chips = "".join(
+            f"<span class='chip'>{esc(name)} · {fmt_int(count)}</span>"
+            for name, count in items
+        )
+        ot_html = f"<h3 class='asc-recent-h'>Order types</h3><div class='chips'>{chips}</div>"
+
+    prod_html = ""
+    if by_product:
+        items = sorted(by_product.items(), key=lambda kv: kv[1].get("units", 0) or 0, reverse=True)
+        rows = []
+        for sku, info in items:
+            name = info.get("name") or sku
+            units = info.get("units", 0) or 0
+            proceeds = info.get("proceeds_usd", 0.0) or 0.0
+            rows.append(
+                f"<div class='ctry-row'>"
+                f"<div>{esc(name)}</div>"
+                f"<div style='color:var(--muted);font-size:11px'>{esc(sku)}</div>"
+                f"<div class='ctry-val'>{fmt_int(units)} · ${fmt_float(proceeds, 2)}</div>"
+                f"</div>"
+            )
+        prod_html = f"<h3 class='asc-recent-h'>By product</h3>{''.join(rows)}"
+
+    window_lbl = f"{window_start} → {window_end}" if window_start else ""
+
+    return f"""
+<section>
+  <h2>Subscriptions — iOS <span class='asc-stat-sub' style='font-weight:normal'>{esc(window_lbl)}</span></h2>
+  <div class='asc-stat-grid'>
+    {kpi_cards}
+  </div>
+  {chart_html}
+  {prod_html}
+  {ctry_html}
+  {ot_html}
+</section>"""
+
+
 def section_roadmap(data) -> str:
     rm = data.get("roadmap", {})
     if rm.get("status") != "ok":
@@ -795,6 +974,7 @@ def render_page(data) -> str:
   {section_newsletter(data)}
   {section_socials(data)}
   {section_app_store(data)}
+  {section_subscriptions(data)}
   {section_push(data)}
   {section_roadmap(data)}
   {section_health(data)}
