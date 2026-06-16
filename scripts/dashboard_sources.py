@@ -110,6 +110,29 @@ def fetch_ga4() -> dict:
         last7 = rows[-7:] if len(rows) >= 7 else rows
         latest = rows[-1] if rows else None
 
+        # Push notification event counts (30d) -- requires Firebase to GA4 export.
+        push_events_30d = {}
+        try:
+            req_p = RunReportRequest(
+                property=f"properties/{prop}",
+                date_ranges=[DateRange(start_date="30daysAgo", end_date="yesterday")],
+                dimensions=[Dimension(name="eventName")],
+                metrics=[Metric(name="eventCount")],
+            )
+            resp_p = client.run_report(req_p)
+            for r in resp_p.rows:
+                name = r.dimension_values[0].value
+                if name.startswith("notification_"):
+                    push_events_30d[name] = int(r.metric_values[0].value)
+        except Exception:
+            push_events_30d = {}
+
+        push_received = push_events_30d.get("notification_receive", 0)
+        push_opened = push_events_30d.get("notification_open", 0)
+        push_open_rate = None
+        if push_received > 0:
+            push_open_rate = round(push_opened / push_received, 4)
+
         return {
             "status": "ok",
             "daily_users": rows,  # 90 days
@@ -121,6 +144,8 @@ def fetch_ga4() -> dict:
             "avg_dau_7d": round(sum(r["active"] for r in last7) / max(len(last7), 1), 1),
             "avg_dau_28d": round(sum(r["active"] for r in last28) / max(len(last28), 1), 1),
             "top_countries_30d": countries,
+            "push_events_30d": push_events_30d,
+            "push_open_rate_30d": push_open_rate,
             "fetched_at": _now_iso(),
         }
     except Exception as e:
@@ -263,6 +288,55 @@ def _fetch_asc_subscription_status(token: str, vendor_number: str, app_apple_id:
         "https://api.appstoreconnect.apple.com/v1/salesReports"
         f"?filter%5Bfrequency%5D=DAILY"
         f"&filter%5BreportType%5D=SUBSCRIPTION"
+        f"&filter%5BreportSubType%5D=SUMMARY"
+        f"&filter%5BvendorNumber%5D={vendor_number}"
+        f"&filter%5BreportDate%5D={report_date}"
+        f"&filter%5Bversion%5D=1_3"
+    )
+    req = urllib.request.Request(url, headers={
+        "Authorization": f"Bearer {token}",
+        "Accept": "application/a-gzip, application/json",
+    })
+    try:
+        with urllib.request.urlopen(req, timeout=30) as r:
+            raw = r.read()
+    except urllib.error.HTTPError:
+        return []
+    except Exception:
+        return []
+    try:
+        text = gzip.decompress(raw).decode("utf-8")
+    except Exception:
+        return []
+    lines = text.splitlines()
+    if len(lines) < 2:
+        return []
+    header = lines[0].split("\t")
+    out = []
+    for line in lines[1:]:
+        cells = line.split("\t")
+        if len(cells) == len(header):
+            row = dict(zip(header, cells))
+            if app_apple_id and row.get("App Apple ID", "").strip() != app_apple_id:
+                continue
+            out.append(row)
+    return out
+
+
+def _fetch_asc_subscription_event(token: str, vendor_number: str, app_apple_id: str, report_date: str) -> list[dict]:
+    """Fetch one DAILY SUBSCRIPTION_EVENT report.
+
+    Each row is a subscription event on that day with columns including
+    Event, Subscription Apple ID, Subscription Name, Standard Subscription Duration,
+    Customer Price, Country Code, App Apple ID, Days Before Canceling,
+    Cancellation Reason. Event values include: Subscribe, Cancel, Refund,
+    Renew, Renewal, Reactivate, etc.
+    """
+    import gzip
+    url = (
+        "https://api.appstoreconnect.apple.com/v1/salesReports"
+        f"?filter%5Bfrequency%5D=DAILY"
+        f"&filter%5BreportType%5D=SUBSCRIPTION_EVENT"
         f"&filter%5BreportSubType%5D=SUMMARY"
         f"&filter%5BvendorNumber%5D={vendor_number}"
         f"&filter%5BreportDate%5D={report_date}"
@@ -707,6 +781,31 @@ def fetch_app_store_connect() -> dict:
                     active_breakdown["as_of"] = rd
                     break
 
+            # Subscription events (SUBSCRIPTION_EVENT report) -- last 30 days
+            from collections import Counter as _Counter
+            event_counts = _Counter()
+            event_days = 0
+            for days_back in range(2, 33):
+                rd = (today - _td(days=days_back)).isoformat()
+                ev_rows = _fetch_asc_subscription_event(token, vendor_number, str(app_id) if app_id else "", rd)
+                if ev_rows:
+                    event_days += 1
+                    for r in ev_rows:
+                        ev = (r.get("Event", "") or "").strip()
+                        try:
+                            q = int(r.get("Quantity", "1") or 1)
+                        except ValueError:
+                            q = 1
+                        if ev:
+                            event_counts[ev] += q
+
+            # Monthly churn = Cancel events over 30 days / active subscribers
+            cancel_events_30d = sum(v for k, v in event_counts.items() if "cancel" in k.lower())
+            refund_events_30d = sum(v for k, v in event_counts.items() if "refund" in k.lower())
+            monthly_churn = None
+            if active_count and active_count > 0:
+                monthly_churn = round(cancel_events_30d / active_count, 4)
+
             subs_data = {
                 "status": "ok" if success_dates else "empty",
                 "window_start": min(success_dates) if success_dates else None,
@@ -715,6 +814,11 @@ def fetch_app_store_connect() -> dict:
                 "days_attempted": attempted,
                 "active_subscribers": active_count,
                 "active_breakdown": active_breakdown,
+                "events_30d": dict(event_counts),
+                "event_days_with_data": event_days,
+                "cancel_events_30d": cancel_events_30d,
+                "refund_events_30d": refund_events_30d,
+                "monthly_churn": monthly_churn,
                 **summary,
             }
 

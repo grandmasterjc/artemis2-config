@@ -205,14 +205,24 @@ def section_kpis(data) -> str:
     ios_installs = ios_subs.get("new_installs_30d") if ios_subs.get("status") == "ok" else None
     new_installs_total = ios_installs  # iOS only for now
 
+    # Monthly churn = ASC cancel events over 30 days / active subscribers
+    # Computed in dashboard_sources from SUBSCRIPTION_EVENT report (decimal).
+    # KPI cards expect percentage values, so multiply by 100.
+    ios_churn_raw = ios_subs.get("monthly_churn") if ios_subs.get("status") == "ok" else None
+    ios_churn = round(ios_churn_raw * 100, 2) if ios_churn_raw is not None else None
+
+    # Push open rate (30d) from GA4 Firebase notification events (decimal -> pct)
+    push_open_rate_raw = ga4.get("push_open_rate_30d") if ga4.get("status") == "ok" else None
+    push_open_rate = round(push_open_rate_raw * 100, 2) if push_open_rate_raw is not None else None
+
     values = {
         "dau_latest": latest.get("active"),
         "active_28d": ga4.get("total_active_28d"),
         "kit_subscribers": kit.get("active_subscribers"),
         "plus_subscribers": plus_total,
-        "monthly_churn": None,
+        "monthly_churn": ios_churn,
         "push_opt_in": None,
-        "push_open_rate": None,
+        "push_open_rate": push_open_rate,
         "new_installs_30d": new_installs_total,
         "avg_rating": asc.get("avg_rating_recent"),
         "reviews_4plus": _count_4plus(asc),
