@@ -299,26 +299,65 @@ def _fetch_asc_subscription_status(token: str, vendor_number: str, app_apple_id:
 
 
 def _summarize_asc_subscription_status(rows: list[dict]) -> dict:
-    """Aggregate active subscriber counts. Each row represents a (sku, country, offer)
-    bucket on a given day; we sum the active-subscription columns across all rows
-    for the most recent report date."""
+    """Aggregate active subscriber counts and compute ARR/MRR.
+
+    Each row represents a (sku, country, offer) bucket on a given day. We sum
+    the active-subscription columns across all rows. ARR is computed using
+    each row's Customer Price + duration + Apple's proceeds factor (85% under
+    Small Business Program; override with APPLE_PROCEEDS_FACTOR env var).
+    Free-trial subscriptions count toward active_total but contribute zero ARR.
+    Prices in non-USD currencies are converted with static FX rates (override
+    via FX_RATES env var as JSON like {"EUR":1.07,"GBP":1.26}).
+    """
     if not rows:
-        return {"active_total": 0, "by_product": {}, "by_country": []}
+        return {"active_total": 0, "by_product": {}, "by_country": [], "arr_usd": 0.0, "mrr_usd": 0.0}
+
+    try:
+        proceeds_factor = float(os.environ.get("APPLE_PROCEEDS_FACTOR", "0.85"))
+    except ValueError:
+        proceeds_factor = 0.85
+
+    default_fx = {
+        "USD": 1.0, "EUR": 1.07, "GBP": 1.26, "CAD": 0.73, "AUD": 0.66,
+        "NOK": 0.094, "SEK": 0.094, "DKK": 0.144, "CHF": 1.13, "JPY": 0.0064,
+        "INR": 0.012, "BRL": 0.18, "MXN": 0.054, "PLN": 0.25, "CZK": 0.043,
+        "TRY": 0.029, "ZAR": 0.054, "CNY": 0.14, "KRW": 0.00072, "SGD": 0.74,
+        "HKD": 0.128, "NZD": 0.60, "RUB": 0.011, "ILS": 0.27, "AED": 0.272,
+    }
+    try:
+        fx_override = json.loads(os.environ.get("FX_RATES", "{}"))
+        default_fx.update(fx_override)
+    except (json.JSONDecodeError, TypeError):
+        pass
+
     by_product: dict = {}
     by_country: dict = {}
     active_total = 0
+    arr_usd = 0.0
+
+    cols = [
+        "Active Standard Price Subscriptions",
+        "Active Free Trial Introductory Offer Subscriptions",
+        "Active Pay Up Front Introductory Offer Subscriptions",
+        "Active Pay As You Go Introductory Offer Subscriptions",
+        "Active Promotional Offer Subscriptions",
+        "Active Win-Back Offer Subscriptions",
+    ]
+
     for r in rows:
         sku = (r.get("Subscription Name") or r.get("Subscription Apple ID") or "unknown").strip()
         country = (r.get("Country Code") or "??").strip()
-        # Sum active subscriber columns. Different report versions name them slightly differently.
-        cols = [
-            "Active Standard Price Subscriptions",
-            "Active Free Trial Introductory Offer Subscriptions",
-            "Active Pay Up Front Introductory Offer Subscriptions",
-            "Active Pay As You Go Introductory Offer Subscriptions",
-            "Active Promotional Offer Subscriptions",
-            "Active Win-Back Offer Subscriptions",
-        ]
+        duration = (r.get("Standard Subscription Duration") or "").strip().lower()
+
+        try:
+            paying = int(r.get("Active Standard Price Subscriptions", "0") or 0)
+            paying += int(r.get("Active Promotional Offer Subscriptions", "0") or 0)
+            paying += int(r.get("Active Win-Back Offer Subscriptions", "0") or 0)
+            paying += int(r.get("Active Pay Up Front Introductory Offer Subscriptions", "0") or 0)
+            paying += int(r.get("Active Pay As You Go Introductory Offer Subscriptions", "0") or 0)
+        except ValueError:
+            paying = 0
+
         row_total = 0
         for col in cols:
             v = r.get(col, "0")
@@ -329,14 +368,38 @@ def _summarize_asc_subscription_status(rows: list[dict]) -> dict:
         if row_total <= 0:
             continue
         active_total += row_total
-        p = by_product.setdefault(sku, 0)
-        by_product[sku] = p + row_total
-        c = by_country.setdefault(country, 0)
-        by_country[country] = c + row_total
+        by_product[sku] = by_product.get(sku, 0) + row_total
+        by_country[country] = by_country.get(country, 0) + row_total
+
+        try:
+            price = float(r.get("Customer Price", "0") or 0)
+        except ValueError:
+            price = 0.0
+        currency = (r.get("Customer Currency") or "USD").strip()
+        price_usd = price * default_fx.get(currency, 1.0)
+
+        if "year" in duration:
+            annual_per_sub = price_usd
+        elif "6 month" in duration:
+            annual_per_sub = price_usd * 2
+        elif "3 month" in duration:
+            annual_per_sub = price_usd * 4
+        elif "month" in duration:
+            annual_per_sub = price_usd * 12
+        elif "week" in duration:
+            annual_per_sub = price_usd * 52
+        else:
+            annual_per_sub = price_usd * 12
+
+        arr_usd += paying * annual_per_sub * proceeds_factor
+
     return {
         "active_total": active_total,
         "by_product": by_product,
         "by_country": sorted([{"country": k, "active": v} for k, v in by_country.items()], key=lambda x: x["active"], reverse=True),
+        "arr_usd": round(arr_usd, 2),
+        "mrr_usd": round(arr_usd / 12, 2),
+        "proceeds_factor": proceeds_factor,
     }
 
 

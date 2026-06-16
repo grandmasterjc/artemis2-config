@@ -765,8 +765,20 @@ def section_subscriptions(data) -> str:
     </div>
   </div>"""
 
+    active_breakdown = subs.get("active_breakdown", {}) or {}
+    active_total = active_breakdown.get("active_total")
+    arr_usd = active_breakdown.get("arr_usd")
+    mrr_usd = active_breakdown.get("mrr_usd")
+    proceeds_factor = active_breakdown.get("proceeds_factor", 0.85)
+    arr_sub = f"MRR ~${fmt_float(mrr_usd or 0, 2)} · after Apple {int(round((1 - proceeds_factor) * 100))}% cut" if arr_usd is not None else "no data"
+    arr_val = f"${fmt_float(arr_usd or 0, 2)}" if arr_usd is not None else "—"
+    active_sub = "currently paying + free trial" if active_total is not None else ""
+    active_val = fmt_int(active_total) if active_total is not None else "—"
+
     kpi_cards = (
-        _kpi("Units (30d)", fmt_int(total_units), f"{days_with_data}/{days_attempted} days with data")
+        _kpi("Active subscribers", active_val, active_sub)
+        + _kpi("Estimated ARR", arr_val, arr_sub)
+        + _kpi("Units (30d)", fmt_int(total_units), f"{days_with_data}/{days_attempted} days with data")
         + _kpi("Proceeds (30d)", f"${fmt_float(total_proceeds, 2)}", "USD, after Apple's cut")
         + _kpi("New subscribers (30d)", fmt_int(new_subs), "first-time conversions")
         + _kpi("Monthly / Yearly", f"{fmt_int(monthly_units)} / {fmt_int(yearly_units)}", f"${fmt_float(monthly_proceeds, 2)} / ${fmt_float(yearly_proceeds, 2)}")
