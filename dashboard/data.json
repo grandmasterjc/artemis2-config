@@ -547,8 +547,8 @@
       "notification_toggled": 13,
       "notification_receive": 2
     },
-    "push_open_rate_30d": 355.5,
-    "fetched_at": "2026-06-16T19:54:29.514793+00:00"
+    "push_open_rate_30d": 0.6487,
+    "fetched_at": "2026-06-16T19:56:53.140521+00:00"
   },
   "kit": {
     "status": "ok",
@@ -616,7 +616,7 @@
         "public": false
       }
     ],
-    "fetched_at": "2026-06-16T19:54:30.957410+00:00"
+    "fetched_at": "2026-06-16T19:56:53.963553+00:00"
   },
   "asc": {
     "status": "ok",
@@ -913,7 +913,7 @@
       "new_subscribers_30d": 13,
       "new_installs_30d": 94
     },
-    "fetched_at": "2026-06-16T19:55:09.263044+00:00"
+    "fetched_at": "2026-06-16T19:57:37.887816+00:00"
   },
   "play": {
     "status": "ok",
@@ -939,7 +939,7 @@
     "posts_7d": 0,
     "likes_7d": 0,
     "reposts_7d": 0,
-    "fetched_at": "2026-06-16T19:55:11.556578+00:00"
+    "fetched_at": "2026-06-16T19:57:39.360334+00:00"
   },
   "mastodon": {
     "status": "ok",
@@ -951,12 +951,12 @@
     "posts_7d": 0,
     "favs_7d": 0,
     "boosts_7d": 0,
-    "fetched_at": "2026-06-16T19:55:12.937364+00:00"
+    "fetched_at": "2026-06-16T19:57:40.427597+00:00"
   },
   "threads": {
     "status": "skipped",
     "reason": "Threads account deactivated by Meta \u2014 channel dropped",
-    "fetched_at": "2026-06-16T19:55:12.937425+00:00"
+    "fetched_at": "2026-06-16T19:57:40.427650+00:00"
   },
   "instagram": {
     "status": "ok",
@@ -968,7 +968,7 @@
     "posts_7d": 0,
     "likes_7d": 0,
     "comments_7d": 0,
-    "fetched_at": "2026-06-16T19:55:13.847896+00:00"
+    "fetched_at": "2026-06-16T19:57:42.604442+00:00"
   },
   "push": {
     "status": "ok",
@@ -983,7 +983,7 @@
         "message_id": "projects/artemis-tracker-665d8/messages/5771117710239470194"
       }
     ],
-    "fetched_at": "2026-06-16T19:55:13.848075+00:00"
+    "fetched_at": "2026-06-16T19:57:42.604642+00:00"
   },
   "roadmap": {
     "status": "ok",
@@ -1071,7 +1071,7 @@
         "note": "durable across sandbox resets"
       }
     ],
-    "fetched_at": "2026-06-16T19:55:13.848384+00:00"
+    "fetched_at": "2026-06-16T19:57:42.604941+00:00"
   },
   "targets": {
     "status": "ok",
@@ -1165,5 +1165,5 @@
       "implied_subs": 5200
     }
   },
-  "generated_at": "2026-06-16T19:55:13.848396+00:00"
+  "generated_at": "2026-06-16T19:57:42.604953+00:00"
 }
