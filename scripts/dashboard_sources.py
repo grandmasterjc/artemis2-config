@@ -412,11 +412,26 @@ def _summarize_asc_sales(rows: list[dict], bundle_prefix: str) -> dict:
     by_country = defaultdict(lambda: {"units": 0, "proceeds_usd": 0.0})
     by_order_type = defaultdict(int)
     new_subs = 0
+    new_installs = 0
     total_units = 0
     total_proceeds = 0.0
 
+    # First-time download Product Type Identifiers across platforms:
+    # 1, 1F = iPhone first download (free/paid)
+    # 1T = Apple TV, 1E = Mac, F1 = iPad, FI = Universal, 1EP = Mac iOS-ported
+    install_type_codes = {"1", "1F", "1T", "1E", "F1", "FI", "1EP"}
+
     for row in rows:
         sku = row.get("SKU", "")
+        ptype = (row.get("Product Type Identifier", "") or "").strip()
+        try:
+            row_units = int(row.get("Units", "0") or 0)
+        except ValueError:
+            row_units = 0
+        # Installs: SKU is the app SKU (e.g. 'artemisii-tracker-v1'),
+        # not the subscription product id.
+        if ptype in install_type_codes and "artemisii-tracker" in sku.lower():
+            new_installs += row_units
         if bundle_prefix not in sku:
             continue
         try:
@@ -486,6 +501,7 @@ def _summarize_asc_sales(rows: list[dict], bundle_prefix: str) -> dict:
         "total_units_30d": total_units,
         "total_proceeds_usd_30d": round(total_proceeds, 2),
         "new_subscribers_30d": new_subs,
+        "new_installs_30d": new_installs,
     }
 
 

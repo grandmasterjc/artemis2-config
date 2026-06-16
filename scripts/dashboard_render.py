@@ -200,6 +200,11 @@ def section_kpis(data) -> str:
     if ios_active is not None or play_active is not None:
         plus_total = (ios_active or 0) + (play_active or 0)
 
+    # New installs / 30d: iOS first-time downloads from ASC SALES report
+    # (Product Type Identifier 1F/1/F1/FI/1E etc.). Play installs not yet wired.
+    ios_installs = ios_subs.get("new_installs_30d") if ios_subs.get("status") == "ok" else None
+    new_installs_total = ios_installs  # iOS only for now
+
     values = {
         "dau_latest": latest.get("active"),
         "active_28d": ga4.get("total_active_28d"),
@@ -208,7 +213,7 @@ def section_kpis(data) -> str:
         "monthly_churn": None,
         "push_opt_in": None,
         "push_open_rate": None,
-        "new_installs_30d": None,
+        "new_installs_30d": new_installs_total,
         "avg_rating": asc.get("avg_rating_recent"),
         "reviews_4plus": _count_4plus(asc),
         "bluesky_followers": bluesky.get("followers"),
