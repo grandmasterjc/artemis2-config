@@ -184,11 +184,27 @@ def section_kpis(data) -> str:
     targets = data.get("targets", {})
 
     latest = ga4.get("latest") or {}
+
+    # Plus subscribers = currently active subscribers across iOS + Android
+    play = data.get("play", {}) or {}
+    ios_subs = (asc.get("subscriptions") or {}) if isinstance(asc, dict) else {}
+    ios_active = ios_subs.get("active_subscribers") if ios_subs.get("status") == "ok" else None
+    # Play: we don't have an active-count report yet, fall back to estimated active = new - cancellations in 30d
+    play_new = play.get("new_subscribers_30d") if play.get("status") == "ok" else None
+    play_events = (play.get("by_event_type") or {}) if play.get("status") == "ok" else {}
+    play_cancels = sum(v for k, v in play_events.items() if "cancel" in k.lower())
+    play_active = None
+    if play_new is not None:
+        play_active = max(0, (play_new or 0) - (play_cancels or 0))
+    plus_total = None
+    if ios_active is not None or play_active is not None:
+        plus_total = (ios_active or 0) + (play_active or 0)
+
     values = {
         "dau_latest": latest.get("active"),
         "active_28d": ga4.get("total_active_28d"),
         "kit_subscribers": kit.get("active_subscribers"),
-        "plus_subscribers": None,
+        "plus_subscribers": plus_total,
         "monthly_churn": None,
         "push_opt_in": None,
         "push_open_rate": None,

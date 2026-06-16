@@ -249,6 +249,97 @@ def _fetch_asc_daily_sales(token: str, vendor_number: str, report_date: str) -> 
     return out
 
 
+def _fetch_asc_subscription_status(token: str, vendor_number: str, app_apple_id: str, report_date: str) -> list[dict]:
+    """Fetch one DAILY SUBSCRIPTION status report. Returns active subscriber counts per SKU.
+
+    Returns rows with columns including App Apple ID, Subscription Name,
+    Subscription Apple ID, Standard Subscription Duration, Customer Price,
+    Customer Currency, Country Code, Promotional Offer Name, Promotional Offer ID,
+    Subscription Offer Type, Subscription Offer Duration, Active Standard Price
+    Subscriptions, Active Free Trial Introductory Offer Subscriptions, etc.
+    """
+    import gzip
+    url = (
+        "https://api.appstoreconnect.apple.com/v1/salesReports"
+        f"?filter%5Bfrequency%5D=DAILY"
+        f"&filter%5BreportType%5D=SUBSCRIPTION"
+        f"&filter%5BreportSubType%5D=SUMMARY"
+        f"&filter%5BvendorNumber%5D={vendor_number}"
+        f"&filter%5BreportDate%5D={report_date}"
+        f"&filter%5Bversion%5D=1_3"
+    )
+    req = urllib.request.Request(url, headers={
+        "Authorization": f"Bearer {token}",
+        "Accept": "application/a-gzip, application/json",
+    })
+    try:
+        with urllib.request.urlopen(req, timeout=30) as r:
+            raw = r.read()
+    except urllib.error.HTTPError:
+        return []
+    except Exception:
+        return []
+    try:
+        text = gzip.decompress(raw).decode("utf-8")
+    except Exception:
+        return []
+    lines = text.splitlines()
+    if len(lines) < 2:
+        return []
+    header = lines[0].split("\t")
+    out = []
+    for line in lines[1:]:
+        cells = line.split("\t")
+        if len(cells) == len(header):
+            row = dict(zip(header, cells))
+            if app_apple_id and row.get("App Apple ID", "").strip() != app_apple_id:
+                continue
+            out.append(row)
+    return out
+
+
+def _summarize_asc_subscription_status(rows: list[dict]) -> dict:
+    """Aggregate active subscriber counts. Each row represents a (sku, country, offer)
+    bucket on a given day; we sum the active-subscription columns across all rows
+    for the most recent report date."""
+    if not rows:
+        return {"active_total": 0, "by_product": {}, "by_country": []}
+    by_product: dict = {}
+    by_country: dict = {}
+    active_total = 0
+    for r in rows:
+        sku = (r.get("Subscription Name") or r.get("Subscription Apple ID") or "unknown").strip()
+        country = (r.get("Country Code") or "??").strip()
+        # Sum active subscriber columns. Different report versions name them slightly differently.
+        cols = [
+            "Active Standard Price Subscriptions",
+            "Active Free Trial Introductory Offer Subscriptions",
+            "Active Pay Up Front Introductory Offer Subscriptions",
+            "Active Pay As You Go Introductory Offer Subscriptions",
+            "Active Promotional Offer Subscriptions",
+            "Active Win-Back Offer Subscriptions",
+        ]
+        row_total = 0
+        for col in cols:
+            v = r.get(col, "0")
+            try:
+                row_total += int(v) if v else 0
+            except ValueError:
+                pass
+        if row_total <= 0:
+            continue
+        active_total += row_total
+        p = by_product.setdefault(sku, 0)
+        by_product[sku] = p + row_total
+        c = by_country.setdefault(country, 0)
+        by_country[country] = c + row_total
+    return {
+        "active_total": active_total,
+        "by_product": by_product,
+        "by_country": sorted([{"country": k, "active": v} for k, v in by_country.items()], key=lambda x: x["active"], reverse=True),
+    }
+
+
 def _summarize_asc_sales(rows: list[dict], bundle_prefix: str) -> dict:
     """Aggregate sales rows for one app (filtered by SKU prefix)."""
     from collections import defaultdict
@@ -524,12 +615,27 @@ def fetch_app_store_connect() -> dict:
                         r["_report_date"] = rd
                     all_rows.extend(rows)
             summary = _summarize_asc_sales(all_rows, bundle_prefix)
+
+            # Active subscribers (SUBSCRIPTION status report) -- separate from event-based sales
+            active_count = None
+            active_breakdown = None
+            for days_back in range(2, 10):
+                rd = (today - _td(days=days_back)).isoformat()
+                status_rows = _fetch_asc_subscription_status(token, vendor_number, str(app_id) if app_id else "", rd)
+                if status_rows:
+                    active_breakdown = _summarize_asc_subscription_status(status_rows)
+                    active_count = active_breakdown["active_total"]
+                    active_breakdown["as_of"] = rd
+                    break
+
             subs_data = {
                 "status": "ok" if success_dates else "empty",
                 "window_start": min(success_dates) if success_dates else None,
                 "window_end": max(success_dates) if success_dates else None,
                 "days_with_data": len(success_dates),
                 "days_attempted": attempted,
+                "active_subscribers": active_count,
+                "active_breakdown": active_breakdown,
                 **summary,
             }
 
