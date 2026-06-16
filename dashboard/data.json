@@ -473,45 +473,52 @@
       },
       {
         "date": "2026-06-14",
-        "active": 175,
-        "new": 69,
+        "active": 176,
+        "new": 70,
         "views": 230,
-        "sessions": 196
+        "sessions": 197
+      },
+      {
+        "date": "2026-06-15",
+        "active": 172,
+        "new": 76,
+        "views": 287,
+        "sessions": 212
       }
     ],
     "latest": {
-      "date": "2026-06-14",
-      "active": 175,
-      "new": 69,
-      "views": 230,
-      "sessions": 196
+      "date": "2026-06-15",
+      "active": 172,
+      "new": 76,
+      "views": 287,
+      "sessions": 212
     },
-    "total_active_28d": 5133,
-    "total_new_28d": 1586,
-    "total_sessions_28d": 5858,
-    "total_views_28d": 6795,
-    "avg_dau_7d": 195.4,
-    "avg_dau_28d": 183.3,
+    "total_active_28d": 5109,
+    "total_new_28d": 1582,
+    "total_sessions_28d": 5840,
+    "total_views_28d": 6822,
+    "avg_dau_7d": 201.3,
+    "avg_dau_28d": 182.5,
     "top_countries_30d": [
       {
         "country": "United States",
-        "active": 1307
+        "active": 1306
       },
       {
         "country": "United Kingdom",
-        "active": 447
+        "active": 437
       },
       {
         "country": "Canada",
-        "active": 208
-      },
-      {
-        "country": "Germany",
         "active": 203
       },
       {
+        "country": "Germany",
+        "active": 201
+      },
+      {
         "country": "Australia",
-        "active": 87
+        "active": 86
       },
       {
         "country": "Italy",
@@ -522,19 +529,19 @@
         "active": 76
       },
       {
-        "country": "Spain",
-        "active": 69
+        "country": "Norway",
+        "active": 73
       },
       {
-        "country": "Norway",
-        "active": 61
+        "country": "Spain",
+        "active": 68
       },
       {
         "country": "Indonesia",
-        "active": 55
+        "active": 54
       }
     ],
-    "fetched_at": "2026-06-15T11:19:23.662046+00:00"
+    "fetched_at": "2026-06-16T10:16:03.384187+00:00"
   },
   "kit": {
     "status": "ok",
@@ -602,7 +609,7 @@
         "public": false
       }
     ],
-    "fetched_at": "2026-06-15T11:19:25.530397+00:00"
+    "fetched_at": "2026-06-16T10:16:04.355797+00:00"
   },
   "asc": {
     "status": "ok",
@@ -752,7 +759,7 @@
         "share_4plus": 21.9
       }
     ],
-    "fetched_at": "2026-06-15T11:19:26.580643+00:00"
+    "fetched_at": "2026-06-16T10:16:05.192328+00:00"
   },
   "bluesky": {
     "status": "ok",
@@ -763,7 +770,7 @@
     "posts_7d": 3,
     "likes_7d": 0,
     "reposts_7d": 0,
-    "fetched_at": "2026-06-15T11:19:27.149636+00:00"
+    "fetched_at": "2026-06-16T10:16:06.062920+00:00"
   },
   "mastodon": {
     "status": "ok",
@@ -775,12 +782,12 @@
     "posts_7d": 3,
     "favs_7d": 0,
     "boosts_7d": 0,
-    "fetched_at": "2026-06-15T11:19:28.185092+00:00"
+    "fetched_at": "2026-06-16T10:16:07.172385+00:00"
   },
   "threads": {
     "status": "skipped",
     "reason": "Threads account deactivated by Meta \u2014 channel dropped",
-    "fetched_at": "2026-06-15T11:19:28.185141+00:00"
+    "fetched_at": "2026-06-16T10:16:07.172436+00:00"
   },
   "instagram": {
     "status": "ok",
@@ -792,7 +799,7 @@
     "posts_7d": 0,
     "likes_7d": 0,
     "comments_7d": 0,
-    "fetched_at": "2026-06-15T11:19:28.751419+00:00"
+    "fetched_at": "2026-06-16T10:16:07.943979+00:00"
   },
   "push": {
     "status": "ok",
@@ -807,7 +814,7 @@
         "message_id": "projects/artemis-tracker-665d8/messages/5771117710239470194"
       }
     ],
-    "fetched_at": "2026-06-15T11:19:28.751610+00:00"
+    "fetched_at": "2026-06-16T10:16:07.944151+00:00"
   },
   "roadmap": {
     "status": "ok",
@@ -895,7 +902,7 @@
         "note": "durable across sandbox resets"
       }
     ],
-    "fetched_at": "2026-06-15T11:19:28.751917+00:00"
+    "fetched_at": "2026-06-16T10:16:07.944458+00:00"
   },
   "targets": {
     "status": "ok",
@@ -989,5 +996,5 @@
       "implied_subs": 5200
     }
   },
-  "generated_at": "2026-06-15T11:19:28.751928+00:00"
+  "generated_at": "2026-06-16T10:16:07.944469+00:00"
 }
