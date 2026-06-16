@@ -541,7 +541,7 @@
         "active": 54
       }
     ],
-    "fetched_at": "2026-06-16T18:42:47.275124+00:00"
+    "fetched_at": "2026-06-16T19:31:14.197228+00:00"
   },
   "kit": {
     "status": "ok",
@@ -609,7 +609,7 @@
         "public": false
       }
     ],
-    "fetched_at": "2026-06-16T18:42:48.502016+00:00"
+    "fetched_at": "2026-06-16T19:31:15.336382+00:00"
   },
   "asc": {
     "status": "ok",
@@ -877,7 +877,22 @@
       "total_proceeds_usd_30d": 78.17,
       "new_subscribers_30d": 13
     },
-    "fetched_at": "2026-06-16T18:43:09.960824+00:00"
+    "fetched_at": "2026-06-16T19:31:40.159198+00:00"
+  },
+  "play": {
+    "status": "ok",
+    "window_start": "2026-05-18",
+    "window_end": "2026-06-16",
+    "package": "no.bitfactory.artemisii.tracker",
+    "by_product": {},
+    "by_day": [],
+    "by_country": [],
+    "by_event_type": {},
+    "total_units_30d": 0,
+    "total_proceeds_usd_30d": 0,
+    "new_subscribers_30d": 0,
+    "sub_rows_seen": 0,
+    "earn_rows_seen": 0
   },
   "bluesky": {
     "status": "ok",
@@ -888,7 +903,7 @@
     "posts_7d": 0,
     "likes_7d": 0,
     "reposts_7d": 0,
-    "fetched_at": "2026-06-16T18:43:10.940586+00:00"
+    "fetched_at": "2026-06-16T19:31:41.507327+00:00"
   },
   "mastodon": {
     "status": "ok",
@@ -900,12 +915,12 @@
     "posts_7d": 0,
     "favs_7d": 0,
     "boosts_7d": 0,
-    "fetched_at": "2026-06-16T18:43:12.058291+00:00"
+    "fetched_at": "2026-06-16T19:31:42.571003+00:00"
   },
   "threads": {
     "status": "skipped",
     "reason": "Threads account deactivated by Meta \u2014 channel dropped",
-    "fetched_at": "2026-06-16T18:43:12.058344+00:00"
+    "fetched_at": "2026-06-16T19:31:42.571055+00:00"
   },
   "instagram": {
     "status": "ok",
@@ -917,7 +932,7 @@
     "posts_7d": 0,
     "likes_7d": 0,
     "comments_7d": 0,
-    "fetched_at": "2026-06-16T18:43:12.410474+00:00"
+    "fetched_at": "2026-06-16T19:31:43.264693+00:00"
   },
   "push": {
     "status": "ok",
@@ -932,7 +947,7 @@
         "message_id": "projects/artemis-tracker-665d8/messages/5771117710239470194"
       }
     ],
-    "fetched_at": "2026-06-16T18:43:12.410669+00:00"
+    "fetched_at": "2026-06-16T19:31:43.264986+00:00"
   },
   "roadmap": {
     "status": "ok",
@@ -1020,7 +1035,7 @@
         "note": "durable across sandbox resets"
       }
     ],
-    "fetched_at": "2026-06-16T18:43:12.410996+00:00"
+    "fetched_at": "2026-06-16T19:31:43.265408+00:00"
   },
   "targets": {
     "status": "ok",
@@ -1114,5 +1129,5 @@
       "implied_subs": 5200
     }
   },
-  "generated_at": "2026-06-16T18:43:12.411008+00:00"
+  "generated_at": "2026-06-16T19:31:43.265422+00:00"
 }
