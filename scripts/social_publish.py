@@ -29,7 +29,7 @@ import requests
 REPO_ROOT = Path(__file__).resolve().parent.parent
 STATE_DIR = REPO_ROOT / "state"
 LOG = STATE_DIR / "social_post_history.csv"
-from _creds import load_bluesky, load_mastodon
+from _creds import load_bluesky, load_mastodon, load_threads
 
 WORKSPACE = Path("/home/user/workspace")
 
@@ -189,6 +189,85 @@ def post_to_mastodon(title: str, subtitle: str, body: str, article_url: str, her
     return head["url"], head["url"]
 
 
+# ---------- Threads ----------
+
+THREADS_API = "https://graph.threads.net/v1.0"
+
+
+def threads_create_container(user_id: str, token: str, *, text: str, media_type: str = "TEXT",
+                             image_url: str | None = None, reply_to_id: str | None = None) -> str:
+    payload = {
+        "media_type": media_type,
+        "text": text,
+        "access_token": token,
+    }
+    if media_type == "IMAGE" and image_url:
+        payload["image_url"] = image_url
+    if reply_to_id:
+        payload["reply_to_id"] = reply_to_id
+    r = requests.post(f"{THREADS_API}/{user_id}/threads", data=payload, timeout=30)
+    r.raise_for_status()
+    return r.json()["id"]
+
+
+def threads_publish(user_id: str, token: str, creation_id: str) -> str:
+    r = requests.post(
+        f"{THREADS_API}/{user_id}/threads_publish",
+        data={"creation_id": creation_id, "access_token": token},
+        timeout=30,
+    )
+    r.raise_for_status()
+    return r.json()["id"]
+
+
+def threads_permalink(token: str, post_id: str) -> str:
+    try:
+        r = requests.get(
+            f"{THREADS_API}/{post_id}",
+            params={"fields": "permalink", "access_token": token},
+            timeout=30,
+        )
+        if r.status_code != 200:
+            return ""
+        return r.json().get("permalink", "")
+    except Exception:
+        return ""
+
+
+def post_to_threads(title: str, subtitle: str, body: str, article_url: str, hero_url: str) -> tuple[str, str]:
+    cfg = load_threads()
+    user_id = cfg["user_id"]
+    token = cfg["access_token"]
+
+    head_text = (title + (("\n\n" + subtitle) if subtitle else ""))[:480]
+
+    head_container = threads_create_container(
+        user_id, token, text=head_text, media_type="IMAGE", image_url=hero_url
+    )
+    time.sleep(8)
+    head_id = threads_publish(user_id, token, head_container)
+
+    second = first_sentences(body, 2)
+    if second:
+        reply_container = threads_create_container(
+            user_id, token, text=second[:480], media_type="TEXT", reply_to_id=head_id
+        )
+        time.sleep(2)
+        threads_publish(user_id, token, reply_container)
+
+    cta_container = threads_create_container(
+        user_id, token,
+        text=f"Read the full piece in the app: {article_url}"[:480],
+        media_type="TEXT",
+        reply_to_id=head_id,
+    )
+    time.sleep(2)
+    threads_publish(user_id, token, cta_container)
+
+    permalink = threads_permalink(token, head_id) or f"threads:{head_id}"
+    return head_id, permalink
+
+
 # ---------- main ----------
 
 def log_run(article_id: str, result: dict):
@@ -197,16 +276,24 @@ def log_run(article_id: str, result: dict):
     with LOG.open("a", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
         if new:
-            w.writerow(["timestamp_utc", "article_id", "bluesky_ok", "mastodon_ok", "bluesky_uri", "mastodon_uri", "bluesky_error", "mastodon_error"])
+            w.writerow([
+                "timestamp_utc", "article_id",
+                "bluesky_ok", "mastodon_ok", "threads_ok",
+                "bluesky_uri", "mastodon_uri", "threads_uri",
+                "bluesky_error", "mastodon_error", "threads_error",
+            ])
         w.writerow([
             datetime.now(timezone.utc).isoformat(),
             article_id,
-            result["bluesky_ok"],
-            result["mastodon_ok"],
+            result.get("bluesky_ok", False),
+            result.get("mastodon_ok", False),
+            result.get("threads_ok", False),
             result.get("bluesky_uri", ""),
             result.get("mastodon_uri", ""),
+            result.get("threads_uri", ""),
             result.get("bluesky_error", ""),
             result.get("mastodon_error", ""),
+            result.get("threads_error", ""),
         ])
 
 
@@ -222,7 +309,7 @@ def main():
     subtitle = fm.get("subtitle", "")
     article_url = f"https://artemistracker.app/u/{article_id}"
 
-    result = {"bluesky_ok": False, "mastodon_ok": False}
+    result = {"bluesky_ok": False, "mastodon_ok": False, "threads_ok": False}
 
     try:
         uri, perma = post_to_bluesky(title, subtitle, body, article_url, hero_url)
@@ -237,6 +324,13 @@ def main():
         result["mastodon_uri"] = uri
     except Exception as e:
         result["mastodon_error"] = f"{type(e).__name__}: {e}"
+
+    try:
+        post_id, perma = post_to_threads(title, subtitle, body, article_url, hero_url)
+        result["threads_ok"] = True
+        result["threads_uri"] = perma or post_id
+    except Exception as e:
+        result["threads_error"] = f"{type(e).__name__}: {e}"
 
     log_run(article_id, result)
     print(json.dumps(result, indent=2))

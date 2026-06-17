@@ -48,6 +48,8 @@ jobs:
           BLUESKY_PASSWORD: ${{ secrets.BLUESKY_PASSWORD }}
           MASTODON_INSTANCE: ${{ secrets.MASTODON_INSTANCE }}
           MASTODON_ACCESS_TOKEN: ${{ secrets.MASTODON_ACCESS_TOKEN }}
+          THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
+          THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
         run: |
           HERO_URL="https://grandmasterjc.github.io/artemis2-config/updates/images/${{ inputs.article_id }}.jpg"
           python scripts/social_publish.py "${{ steps.locate.outputs.md }}" "$HERO_URL"
