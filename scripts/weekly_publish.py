@@ -160,7 +160,23 @@ def post_social(article_id: str) -> tuple[str, str]:
          str(draft_md), hero_url],
         cwd=str(REPO_ROOT),
     ).decode().strip()
-    result = json.loads(out.splitlines()[-1])
+    # social_publish.py emits json.dumps(result, indent=2) -- a multi-line
+    # JSON object. Parse the whole stdout, not just the last line.
+    try:
+        result = json.loads(out)
+    except json.JSONDecodeError:
+        # Fall back to extracting the JSON object from stdout in case there
+        # were any preceding log lines.
+        start = out.find("{")
+        end = out.rfind("}")
+        if start == -1 or end == -1:
+            print(f"warning: could not parse social_publish output: {out!r}")
+            return "", ""
+        result = json.loads(out[start:end + 1])
+    if not result.get("bluesky_ok"):
+        print(f"warning: bluesky failed: {result.get('bluesky_error', '')}")
+    if not result.get("mastodon_ok"):
+        print(f"warning: mastodon failed: {result.get('mastodon_error', '')}")
     return result.get("bluesky_uri", ""), result.get("mastodon_uri", "")
 
 

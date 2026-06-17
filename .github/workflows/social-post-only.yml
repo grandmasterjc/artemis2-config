@@ -1,0 +1,63 @@
+name: Social post only (manual)
+
+# Manually post a draft to Bluesky + Mastodon without going through the full
+# weekly_publish flow. Use this to recover after a partial workflow failure
+# where the article was published but social posts did not go out.
+
+on:
+  workflow_dispatch:
+    inputs:
+      article_id:
+        description: "Article id (matches drafts/{id}/ OR updates/articles/{id}.md)"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Locate article markdown
+        id: locate
+        run: |
+          ID="${{ inputs.article_id }}"
+          if [ -f "drafts/$ID/article_draft.md" ]; then
+            echo "md=drafts/$ID/article_draft.md" >> "$GITHUB_OUTPUT"
+          elif [ -f "updates/articles/$ID.md" ]; then
+            echo "md=updates/articles/$ID.md" >> "$GITHUB_OUTPUT"
+          else
+            echo "::error::Could not find article markdown for $ID"
+            exit 1
+          fi
+
+      - name: Post to social
+        env:
+          BLUESKY_HANDLE: ${{ secrets.BLUESKY_HANDLE }}
+          BLUESKY_PASSWORD: ${{ secrets.BLUESKY_PASSWORD }}
+          MASTODON_INSTANCE: ${{ secrets.MASTODON_INSTANCE }}
+          MASTODON_ACCESS_TOKEN: ${{ secrets.MASTODON_ACCESS_TOKEN }}
+        run: |
+          HERO_URL="https://grandmasterjc.github.io/artemis2-config/updates/images/${{ inputs.article_id }}.jpg"
+          python scripts/social_publish.py "${{ steps.locate.outputs.md }}" "$HERO_URL"
+
+      - name: Commit social log
+        run: |
+          git config user.email "joachim.gresslien@gmail.com"
+          git config user.name "Joachim Gresslien"
+          if [ -n "$(git status --porcelain state/)" ]; then
+            git add state/
+            git commit -m "log: social posts for ${{ inputs.article_id }}"
+            git push origin main
+          fi
