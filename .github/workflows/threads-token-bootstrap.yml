@@ -1,0 +1,90 @@
+name: Threads token bootstrap (short → long)
+
+# One-time conversion of a short-lived Threads access token to long-lived (60 days)
+# and lookup of THREADS_USER_ID.
+#
+# Setup:
+#   1. Add THREADS_ACCESS_TOKEN secret = short-lived token from Meta Developer
+#   2. Add THREADS_APP_SECRET secret = App Secret from Meta Developer → Settings → Basic
+#   3. Run this workflow manually
+#   4. Download the 'threads-token' artifact from the run page
+#   5. Open the txt file, copy LONG_TOKEN value into THREADS_ACCESS_TOKEN secret
+#   6. Add THREADS_USER_ID secret from the same file
+#   7. Delete this workflow file (one-time use)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  bootstrap:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Exchange and fetch user ID
+        env:
+          SHORT_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
+          APP_SECRET: ${{ secrets.THREADS_APP_SECRET }}
+        run: |
+          set -e
+          if [ -z "$SHORT_TOKEN" ]; then
+            echo "::error::THREADS_ACCESS_TOKEN secret not set"
+            exit 1
+          fi
+          if [ -z "$APP_SECRET" ]; then
+            echo "::error::THREADS_APP_SECRET secret not set"
+            exit 1
+          fi
+
+          echo "Exchanging short-lived token for long-lived..."
+          response=$(curl -sS -G "https://graph.threads.net/access_token" \
+            --data-urlencode "grant_type=th_exchange_token" \
+            --data-urlencode "client_secret=$APP_SECRET" \
+            --data-urlencode "access_token=$SHORT_TOKEN")
+
+          long_token=$(echo "$response" | python3 -c "import json,sys; print(json.load(sys.stdin).get('access_token',''))")
+          expires_in=$(echo "$response" | python3 -c "import json,sys; print(json.load(sys.stdin).get('expires_in',0))")
+
+          if [ -z "$long_token" ]; then
+            echo "::error::Exchange failed. Response:"
+            echo "$response"
+            exit 1
+          fi
+
+          days=$((expires_in / 86400))
+          echo "Long-lived token obtained. Valid for ~$days days."
+
+          echo "Fetching user ID..."
+          me=$(curl -sS "https://graph.threads.net/v1.0/me?fields=id,username&access_token=$long_token")
+          user_id=$(echo "$me" | python3 -c "import json,sys; print(json.load(sys.stdin).get('id',''))")
+          username=$(echo "$me" | python3 -c "import json,sys; print(json.load(sys.stdin).get('username',''))")
+
+          if [ -z "$user_id" ]; then
+            echo "::error::Could not fetch user ID. Response: $me"
+            exit 1
+          fi
+
+          mkdir -p /tmp/out
+          cat > /tmp/out/threads-credentials.txt <<EOF
+          # Threads credentials — copy these into GitHub secrets, then DELETE this file
+          # Generated: $(date -u +"%Y-%m-%d %H:%M:%S UTC")
+          # Token valid for: ~$days days
+
+          THREADS_USER_ID=$user_id
+          THREADS_USERNAME=$username
+
+          THREADS_ACCESS_TOKEN=$long_token
+          EOF
+
+          echo "Username: $username"
+          echo "User ID:  $user_id"
+          echo "Token written to artifact (not visible in logs)"
+
+      - name: Upload credentials as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: threads-token
+          path: /tmp/out/threads-credentials.txt
+          retention-days: 1
