@@ -1,0 +1,22 @@
+name: Mastodon verify (manual)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Check scopes
+        env:
+          MASTODON_INSTANCE: ${{ secrets.MASTODON_INSTANCE }}
+          MASTODON_ACCESS_TOKEN: ${{ secrets.MASTODON_ACCESS_TOKEN }}
+        run: |
+          curl -sS -o /tmp/app.json -w "HTTP %{http_code}\n" \
+            -H "Authorization: Bearer $MASTODON_ACCESS_TOKEN" \
+            "https://${MASTODON_INSTANCE}/api/v1/apps/verify_credentials"
+          python3 -c "import json; d=json.load(open('/tmp/app.json')); print('scopes:', d.get('scopes')); print('name:', d.get('name'))"
