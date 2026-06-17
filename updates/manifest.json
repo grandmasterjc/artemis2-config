@@ -1,6 +1,17 @@
 {
   "updates": [
     {
+      "id": "blue-moon-decoupling-june-17",
+      "title": "NASA is shopping for a new ride for Blue Moon",
+      "subtitle": "After the May 28 pad explosion at Cape Canaveral, NASA wants Blue Origin's lunar landers off New Glenn \u2014 and onto a rocket that can actually fly this year.",
+      "date": "2026-06-17T13:35:32Z",
+      "mission": "artemis3",
+      "premium": false,
+      "hero_image": "https://grandmasterjc.github.io/artemis2-config/updates/images/blue-moon-decoupling-june-17.jpg",
+      "summary": "After the May 28 pad explosion at Cape Canaveral, NASA wants Blue Origin's lunar landers off New Glenn \u2014 and onto a rocket that can actually fly this year.",
+      "author": "Joachim Gresslien"
+    },
+    {
       "id": "artemis-iii-crew-named-june-9",
       "title": "Artemis III crew named: Bresnik commands, Parmitano is first European",
       "subtitle": "Four astronauts assigned to the 2027 docking rehearsal that has to clear the path for the 2028 landing.",
