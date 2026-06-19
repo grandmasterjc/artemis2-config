@@ -983,13 +983,90 @@ def fetch_mastodon() -> dict:
         return {"status": "error", "error": f"{type(e).__name__}: {e}"}
 
 
-# ---------- Threads / Instagram — placeholder ----------
+# ---------- Threads ----------
 def fetch_threads() -> dict:
-    return {
-        "status": "skipped",
-        "reason": "Threads account deactivated by Meta — channel dropped",
-        "fetched_at": _now_iso(),
-    }
+    token = os.environ.get("THREADS_ACCESS_TOKEN")
+    user_id = os.environ.get("THREADS_USER_ID")
+    if not (token and user_id):
+        return {"status": "skipped", "reason": "Threads credentials missing"}
+    try:
+        base = "https://graph.threads.net/v1.0"
+        # Account-level fields
+        me = _http_get(
+            f"{base}/{user_id}?fields=id,username,threads_profile_picture_url&access_token={token}"
+        )
+        username = me.get("username", "")
+
+        # Followers via insights (requires threads_manage_insights scope)
+        followers = None
+        try:
+            insights = _http_get(
+                f"{base}/{user_id}/threads_insights?metric=followers_count&access_token={token}"
+            )
+            for m in insights.get("data", []):
+                if m.get("name") == "followers_count":
+                    followers = m.get("total_value", {}).get("value")
+                    break
+        except Exception:
+            pass
+
+        # Recent threads (last 25) for 7-day engagement
+        posts_7d = 0
+        likes_7d = 0
+        replies_7d = 0
+        reposts_7d = 0
+        try:
+            threads = _http_get(
+                f"{base}/{user_id}/threads?fields=id,timestamp&limit=25&access_token={token}"
+            )
+            cutoff = datetime.now(timezone.utc) - timedelta(days=7)
+            for t in threads.get("data", []):
+                try:
+                    pdt = datetime.fromisoformat(t["timestamp"].replace("Z", "+00:00"))
+                    if pdt < cutoff:
+                        continue
+                except Exception:
+                    continue
+                posts_7d += 1
+                # Per-thread insights
+                try:
+                    ins = _http_get(
+                        f"{base}/{t['id']}/insights?metric=likes,replies,reposts&access_token={token}"
+                    )
+                    for m in ins.get("data", []):
+                        name = m.get("name")
+                        val = m.get("values", [{}])[0].get("value", 0) if m.get("values") else m.get("total_value", {}).get("value", 0)
+                        if name == "likes":
+                            likes_7d += val or 0
+                        elif name == "replies":
+                            replies_7d += val or 0
+                        elif name == "reposts":
+                            reposts_7d += val or 0
+                except Exception:
+                    pass
+        except Exception:
+            pass
+
+        return {
+            "status": "ok",
+            "handle": f"@{username}" if username else "",
+            "username": username,
+            "followers": followers,
+            "posts_7d": posts_7d,
+            "likes_7d": likes_7d,
+            "comments_7d": replies_7d,
+            "reposts_7d": reposts_7d,
+            "fetched_at": _now_iso(),
+        }
+    except urllib.error.HTTPError as e:
+        body = ""
+        try:
+            body = e.read().decode("utf-8", errors="replace")[:200]
+        except Exception:
+            pass
+        return {"status": "error", "error": f"HTTP {e.code}: {body}"}
+    except Exception as e:
+        return {"status": "error", "error": f"{type(e).__name__}: {e}"}
 
 
 def fetch_instagram() -> dict:
@@ -1031,6 +1108,7 @@ def fetch_instagram() -> dict:
 
         return {
             "status": "ok",
+            "handle": f"@{me.get('username')}" if me.get("username") else "",
             "username": me.get("username"),
             "account_type": me.get("account_type"),
             "followers": followers,
@@ -1042,7 +1120,12 @@ def fetch_instagram() -> dict:
             "fetched_at": _now_iso(),
         }
     except urllib.error.HTTPError as e:
-        return {"status": "error", "error": f"HTTP {e.code}"}
+        body = ""
+        try:
+            body = e.read().decode("utf-8", errors="replace")[:200]
+        except Exception:
+            pass
+        return {"status": "error", "error": f"HTTP {e.code}: {body}"}
     except Exception as e:
         return {"status": "error", "error": f"{type(e).__name__}: {e}"}
 
