@@ -1,0 +1,49 @@
+name: Backfill subscribers history
+
+on:
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "Days to backfill"
+        required: false
+        default: "90"
+
+permissions:
+  contents: write
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: scripts/requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Run backfill
+        env:
+          KIT_API_KEY: ${{ secrets.KIT_API_KEY }}
+          APP_STORE_CONNECT_KEY_ID: ${{ secrets.APP_STORE_CONNECT_KEY_ID }}
+          APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
+          APP_STORE_CONNECT_PRIVATE_KEY: ${{ secrets.APP_STORE_CONNECT_PRIVATE_KEY }}
+          APP_STORE_CONNECT_VENDOR_NUMBER: ${{ secrets.APP_STORE_CONNECT_VENDOR_NUMBER }}
+        run: python scripts/backfill_subscribers.py --days ${{ github.event.inputs.days }}
+
+      - name: Commit and push if changed
+        run: |
+          git config user.email 'joachim.gresslien@gmail.com'
+          git config user.name 'Joachim Gresslien'
+          git add state/subscribers_history.csv
+          if ! git diff --cached --quiet; then
+            git commit -m "backfill: subscribers_history.csv (${{ github.event.inputs.days }} days)"
+            git push origin main
+          else
+            echo "No changes."
+          fi
