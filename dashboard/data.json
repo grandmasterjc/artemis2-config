@@ -490,7 +490,7 @@
         "active": 121,
         "new": 42,
         "views": 178,
-        "sessions": 145
+        "sessions": 146
       },
       {
         "date": "2026-06-17",
@@ -516,7 +516,7 @@
     },
     "total_active_28d": 4984,
     "total_new_28d": 1503,
-    "total_sessions_28d": 5720,
+    "total_sessions_28d": 5721,
     "total_views_28d": 6682,
     "avg_dau_7d": 169.0,
     "avg_dau_28d": 178.0,
@@ -570,7 +570,7 @@
       "notification_dismiss": 2
     },
     "push_open_rate_30d": 0.6783,
-    "fetched_at": "2026-06-19T09:48:03.109843+00:00"
+    "fetched_at": "2026-06-19T16:11:52.267260+00:00"
   },
   "kit": {
     "status": "ok",
@@ -638,7 +638,7 @@
         "public": true
       }
     ],
-    "fetched_at": "2026-06-19T09:48:04.574647+00:00"
+    "fetched_at": "2026-06-19T16:11:53.605246+00:00"
   },
   "asc": {
     "status": "ok",
@@ -962,7 +962,7 @@
       "new_subscribers_30d": 16,
       "new_installs_30d": 99
     },
-    "fetched_at": "2026-06-19T09:48:49.171175+00:00"
+    "fetched_at": "2026-06-19T16:12:42.775591+00:00"
   },
   "play": {
     "status": "ok",
@@ -988,7 +988,7 @@
     "posts_7d": 6,
     "likes_7d": 0,
     "reposts_7d": 0,
-    "fetched_at": "2026-06-19T09:48:51.188148+00:00"
+    "fetched_at": "2026-06-19T16:12:44.407538+00:00"
   },
   "mastodon": {
     "status": "ok",
@@ -1000,12 +1000,12 @@
     "posts_7d": 3,
     "favs_7d": 0,
     "boosts_7d": 0,
-    "fetched_at": "2026-06-19T09:48:52.445426+00:00"
+    "fetched_at": "2026-06-19T16:12:45.524415+00:00"
   },
   "threads": {
     "status": "skipped",
     "reason": "Threads account deactivated by Meta \u2014 channel dropped",
-    "fetched_at": "2026-06-19T09:48:52.445484+00:00"
+    "fetched_at": "2026-06-19T16:12:45.524477+00:00"
   },
   "instagram": {
     "status": "error",
@@ -1024,7 +1024,7 @@
         "message_id": "projects/artemis-tracker-665d8/messages/5771117710239470194"
       }
     ],
-    "fetched_at": "2026-06-19T09:48:52.640485+00:00"
+    "fetched_at": "2026-06-19T16:12:45.744107+00:00"
   },
   "roadmap": {
     "status": "ok",
@@ -1112,7 +1112,7 @@
         "note": "durable across sandbox resets"
       }
     ],
-    "fetched_at": "2026-06-19T09:48:52.640799+00:00"
+    "fetched_at": "2026-06-19T16:12:45.744441+00:00"
   },
   "targets": {
     "status": "ok",
@@ -1206,5 +1206,5 @@
       "implied_subs": 5200
     }
   },
-  "generated_at": "2026-06-19T09:48:52.640810+00:00"
+  "generated_at": "2026-06-19T16:12:45.744455+00:00"
 }
