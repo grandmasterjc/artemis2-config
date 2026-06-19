@@ -71,6 +71,17 @@ def main():
             extra = f" | {reason[:120]}"
         log(f"  {key}: {st}{extra}")
 
+    # Append today's snapshot to subscribers_history.csv (best-effort)
+    try:
+        import subscriber_history
+        row = subscriber_history.append_snapshot(data)
+        if row:
+            log(f"subscriber_history: appended date={row['date']} kit={row['kit_active']} plus={row['plus_active']} total={row['total']}")
+        else:
+            log("subscriber_history: skipped (no kit or plus data)")
+    except Exception as e:
+        log(f"subscriber_history: error {type(e).__name__}: {e}")
+
     # Render
     DASHBOARD_DIR.mkdir(parents=True, exist_ok=True)
     data_path = DASHBOARD_DIR / "data.json"

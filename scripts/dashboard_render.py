@@ -342,6 +342,122 @@ def section_dau_chart(data) -> str:
 </section>"""
 
 
+def section_subscribers_chart(data) -> str:
+    """Accumulated subscribers over time: total + Kit + Plus lines.
+
+    Reads from state/subscribers_history.csv via subscriber_history.load_history().
+    Shows empty state with helpful message if <2 data points exist yet.
+    """
+    try:
+        import subscriber_history
+        rows = subscriber_history.load_history(limit_days=180)
+    except Exception as e:
+        return f"<section class='chart-section'><h2>Subscribers over time</h2><div class='empty err'>Error loading history: {esc(str(e))}</div></section>"
+
+    if len(rows) < 2:
+        n = len(rows)
+        msg = (
+            f"Tracking started — {n} snapshot{'s' if n != 1 else ''} so far. "
+            "Chart will appear once at least 2 days of data are logged."
+        )
+        return f"<section class='chart-section'><h2>Subscribers over time</h2><div class='empty'>{esc(msg)}</div></section>"
+
+    # SVG dims — match DAU chart
+    W, H = 920, 280
+    PAD_L, PAD_R, PAD_T, PAD_B = 50, 16, 16, 30
+    inner_w = W - PAD_L - PAD_R
+    inner_h = H - PAD_T - PAD_B
+
+    n = len(rows)
+    totals = [r["total"] or 0 for r in rows]
+    kits = [r["kit_active"] for r in rows]
+    plus = [r["plus_active"] for r in rows]
+
+    y_max = max(max(totals) * 1.15, 10)
+
+    def x_at(i):
+        return PAD_L + (i / max(n - 1, 1)) * inner_w
+
+    def y_at(v):
+        return PAD_T + inner_h - (v / y_max) * inner_h
+
+    def polyline(vals, color, width=2, dash=None):
+        # Skip None values: build segments
+        segs = []
+        cur = []
+        for i, v in enumerate(vals):
+            if v is None:
+                if len(cur) >= 2:
+                    segs.append(cur)
+                cur = []
+            else:
+                cur.append(f"{x_at(i):.1f},{y_at(v):.1f}")
+        if len(cur) >= 2:
+            segs.append(cur)
+        dash_attr = f" stroke-dasharray='{dash}'" if dash else ""
+        return "".join(
+            f"<polyline points='{' '.join(s)}' fill='none' stroke='{color}' stroke-width='{width}'{dash_attr}/>"
+            for s in segs
+        )
+
+    # Area under total line
+    total_pts = " ".join(f"{x_at(i):.1f},{y_at(v):.1f}" for i, v in enumerate(totals))
+    area_pts = (
+        f"{PAD_L:.1f},{(PAD_T + inner_h):.1f} "
+        + total_pts
+        + f" {x_at(n - 1):.1f},{(PAD_T + inner_h):.1f}"
+    )
+
+    # Y-axis ticks
+    y_ticks = []
+    for frac in [0, 0.25, 0.5, 0.75, 1.0]:
+        v = y_max * frac
+        y = y_at(v)
+        y_ticks.append(
+            f"<line x1='{PAD_L}' y1='{y:.1f}' x2='{W - PAD_R}' y2='{y:.1f}' stroke='#1f2735' stroke-width='1'/>"
+            f"<text x='{PAD_L - 6}' y='{y + 3:.1f}' fill='#8a99b3' font-size='10' text-anchor='end'>{fmt_int(int(v))}</text>"
+        )
+
+    # X-axis tick labels (first, mid, last)
+    x_ticks = []
+    for i in [0, n // 2, n - 1]:
+        if 0 <= i < n:
+            x = x_at(i)
+            label = rows[i]["date"][5:]  # MM-DD
+            x_ticks.append(
+                f"<text x='{x:.1f}' y='{H - 8}' fill='#8a99b3' font-size='10' text-anchor='middle'>{label}</text>"
+            )
+
+    # Latest values
+    latest = rows[-1]
+    latest_total = latest["total"] or 0
+    latest_kit = latest["kit_active"]
+    latest_plus = latest["plus_active"]
+
+    # Legend
+    legend = (
+        "<div class='legend' style='display:flex;gap:18px;flex-wrap:wrap;font-size:12px;color:#8a99b3;margin-top:8px;'>"
+        f"<span><span style='display:inline-block;width:10px;height:10px;background:#5fb3ff;border-radius:2px;vertical-align:middle;margin-right:6px;'></span>Total ({fmt_int(latest_total)})</span>"
+        f"<span><span style='display:inline-block;width:10px;height:10px;background:#f5b942;border-radius:2px;vertical-align:middle;margin-right:6px;'></span>Newsletter ({fmt_int(latest_kit) if latest_kit is not None else '—'})</span>"
+        f"<span><span style='display:inline-block;width:10px;height:10px;background:#7dd3a0;border-radius:2px;vertical-align:middle;margin-right:6px;'></span>Plus ({fmt_int(latest_plus) if latest_plus is not None else '—'})</span>"
+        "</div>"
+    )
+
+    return f"""
+<section class='chart-section'>
+  <h2>Subscribers over time — last {n} days</h2>
+  <svg viewBox='0 0 {W} {H}' xmlns='http://www.w3.org/2000/svg' role='img' aria-label='Accumulated subscribers chart'>
+    {''.join(y_ticks)}
+    <polygon points='{area_pts}' fill='rgba(95,179,255,0.10)' />
+    {polyline(totals, '#5fb3ff', width=2)}
+    {polyline(kits, '#f5b942', width=1.5, dash='4,3')}
+    {polyline(plus, '#7dd3a0', width=1.5, dash='4,3')}
+    {''.join(x_ticks)}
+  </svg>
+  {legend}
+</section>"""
+
+
 def section_newsletter(data) -> str:
     kit = data.get("kit", {})
     if kit.get("status") == "skipped":
@@ -1189,6 +1305,7 @@ def render_page(data) -> str:
   {section_north_star(data)}
   {section_kpis(data)}
   {section_dau_chart(data)}
+  {section_subscribers_chart(data)}
   {section_countries(data)}
   {section_newsletter(data)}
   {section_socials(data)}
