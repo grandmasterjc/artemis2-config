@@ -1,0 +1,41 @@
+name: Week Ahead publish
+
+on:
+  workflow_dispatch:
+    inputs:
+      draft_path:
+        description: "Path to draft markdown in repo (e.g. drafts/week-ahead/2026-06-22.md)"
+        required: true
+      send_at:
+        description: "ISO UTC timestamp (empty = tonight 18 CEST default)"
+        required: false
+        default: ""
+      send_now:
+        description: "Send immediately (overrides send_at)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Publish to Kit
+        env:
+          KIT_API_KEY: ${{ secrets.KIT_API_KEY }}
+        run: |
+          ARGS="--draft ${{ github.event.inputs.draft_path }}"
+          if [ "${{ github.event.inputs.send_now }}" = "true" ]; then
+            ARGS="$ARGS --now"
+          elif [ -n "${{ github.event.inputs.send_at }}" ]; then
+            ARGS="$ARGS --at ${{ github.event.inputs.send_at }}"
+          fi
+          python scripts/publish_week_ahead.py $ARGS
