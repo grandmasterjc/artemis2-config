@@ -1,6 +1,17 @@
 {
   "updates": [
     {
+      "id": "spacex-ipo-artemis-math-june-24",
+      "title": "SpaceX is finally public \u2014 and the Artemis math just got a lot louder",
+      "subtitle": "An $85 billion IPO, a $20 billion bond two weeks later, and a $4 billion lunar lander contract that suddenly looks like a rounding error",
+      "date": "2026-06-24T15:52:16Z",
+      "mission": "artemis3",
+      "premium": true,
+      "hero_image": "https://grandmasterjc.github.io/artemis2-config/updates/images/spacex-ipo-artemis-math-june-24.jpg",
+      "summary": "An $85 billion IPO, a $20 billion bond two weeks later, and a $4 billion lunar lander contract that suddenly looks like a rounding error",
+      "author": "Joachim Gresslien"
+    },
+    {
       "id": "blue-moon-decoupling-june-17",
       "title": "NASA is shopping for a new ride for Blue Moon",
       "subtitle": "After the May 28 pad explosion at Cape Canaveral, NASA wants Blue Origin's lunar landers off New Glenn \u2014 and onto a rocket that can actually fly this year.",
