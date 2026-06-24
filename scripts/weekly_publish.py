@@ -266,11 +266,12 @@ def phase_prepare(article_id: str) -> None:
     update_manifest(meta, article_id)
 
     STATE.mkdir(exist_ok=True)
+    # default=str handles datetime.date from YAML frontmatter (e.g. date: 2026-06-24)
     PENDING_FILE.write_text(json.dumps({
         "article_id": article_id,
         "meta": meta,
         "body": body,
-    }), encoding="utf-8")
+    }, default=str), encoding="utf-8")
     print(f"prepare: wrote {PENDING_FILE.name} - ready for commit + push")
 
 
