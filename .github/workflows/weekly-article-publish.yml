@@ -18,7 +18,7 @@ permissions:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
 
@@ -42,7 +42,29 @@ jobs:
             exit 1
           fi
 
-      - name: Publish article
+      # Phase 1: stage assets + manifest. No push notification yet.
+      - name: Prepare article (stage assets + manifest)
+        env:
+          ARTICLE_ID: ${{ inputs.article_id }}
+        run: python scripts/weekly_publish.py "$ARTICLE_ID" --phase=prepare
+
+      # Commit + push the article so GitHub Pages can serve it.
+      # We commit BEFORE the announce phase so the poll-loop has something
+      # to wait for. The .pending_publish.json file is committed too so
+      # phase_announce can pick up the parsed body without re-reading the draft.
+      - name: Commit and push article
+        run: |
+          git config user.email "joachim.gresslien@gmail.com"
+          git config user.name "Joachim Gresslien"
+          git add updates/ state/.pending_publish.json
+          git commit -m "Publish weekly article: ${{ inputs.article_id }}"
+          git push origin main
+
+      # Phase 2: wait for GitHub Pages, then send push / newsletter / social.
+      # wait_for_pages polls https://grandmasterjc.github.io/.../manifest.json
+      # until the new entry is live before send_push runs, so users who tap
+      # the notification always land on a live article.
+      - name: Announce article (push + newsletter + social)
         env:
           GOOGLE_APPLICATION_CREDENTIALS_JSON: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_JSON }}
           FIREBASE_SERVICE_ACCOUNT_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_JSON }}
@@ -54,12 +76,11 @@ jobs:
           THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
           THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
           ARTICLE_ID: ${{ inputs.article_id }}
-        run: python scripts/weekly_publish.py "$ARTICLE_ID"
+        run: python scripts/weekly_publish.py "$ARTICLE_ID" --phase=announce
 
-      - name: Commit and push
+      # Commit the post-announce side effects (history files, cleaned pending).
+      - name: Commit publish history
         run: |
-          git config user.email "joachim.gresslien@gmail.com"
-          git config user.name "Joachim Gresslien"
-          git add updates/ state/push_history.csv state/social_post_history.csv
-          git commit -m "Publish weekly article: ${{ inputs.article_id }}"
-          git push origin main
+          git add state/push_history.csv state/social_post_history.csv state/publish_history.txt state/.pending_publish.json || true
+          git diff --cached --quiet || git commit -m "Log publish: ${{ inputs.article_id }}"
+          git push origin main || true

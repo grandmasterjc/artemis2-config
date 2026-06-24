@@ -6,19 +6,26 @@ Reads a draft from drafts/{article_id}/article_draft.md (+ hero.jpg), then:
 1. Copies hero to updates/images/{article_id}.jpg
 2. Writes article body to updates/articles/{article_id}.md
 3. Inserts new entry at top of updates/manifest.json
-4. Sends FCM push
-5. Schedules Kit newsletter for tonight 21:30 CEST
-6. Posts thread to Bluesky + Mastodon
-7. Appends to state/publish_history.txt
+4. (workflow commits + pushes here)
+5. Polls GitHub Pages until the new article is live
+6. Sends FCM push
+7. Schedules Kit newsletter for tonight 21:30 CEST
+8. Posts thread to Bluesky + Mastodon
+9. Appends to state/publish_history.txt
 
-All commits + push happen in the workflow after this script returns.
+Phases (so the workflow can commit between them):
+  --phase=prepare  steps 1-3, then exit (workflow commits + pushes)
+  --phase=announce steps 5-9 (poll Pages, then push/newsletter/social)
+  --phase=full     legacy single-pass, kept for local testing only
 """
 from __future__ import annotations
 
+import argparse
 import json
 import shutil
 import subprocess
 import sys
+import time
 import urllib.request
 import urllib.parse
 from datetime import datetime, timezone, timedelta
@@ -35,6 +42,9 @@ IMAGES = UPDATES / "images"
 MANIFEST = UPDATES / "manifest.json"
 STATE = REPO_ROOT / "state"
 PUBLISH_LOG = STATE / "publish_history.txt"
+PENDING_FILE = STATE / ".pending_publish.json"
+
+PAGES_MANIFEST_URL = "https://grandmasterjc.github.io/artemis2-config/updates/manifest.json"
 
 from _creds import load_kit
 
@@ -83,6 +93,55 @@ def update_manifest(meta: dict, article_id: str):
     data["updates"].insert(0, entry)
     MANIFEST.write_text(json.dumps(data, indent=2))
     print(f"manifest: inserted {article_id} at top")
+
+
+def wait_for_pages(article_id: str, timeout_s: int = 600, interval_s: int = 15) -> None:
+    """Poll GitHub Pages until the new manifest entry is served.
+
+    GitHub Pages deploys typically land within 30-90 s after a push,
+    but can take longer. We keep the push notification blocked until
+    the article is actually visible to the app, otherwise users would
+    tap the push and see a 'not found' state.
+    """
+    deadline = time.time() + timeout_s
+    attempt = 0
+    article_url = (
+        f"https://grandmasterjc.github.io/artemis2-config/updates/articles/{article_id}.md"
+    )
+    while time.time() < deadline:
+        attempt += 1
+        try:
+            req = urllib.request.Request(
+                PAGES_MANIFEST_URL,
+                headers={"Cache-Control": "no-cache", "Pragma": "no-cache"},
+            )
+            with urllib.request.urlopen(req, timeout=10) as resp:
+                payload = json.loads(resp.read().decode("utf-8"))
+            ids = [u.get("id") for u in payload.get("updates", [])]
+            if article_id in ids:
+                try:
+                    with urllib.request.urlopen(article_url, timeout=10) as r:
+                        if r.status == 200:
+                            print(
+                                f"pages: manifest + body live for {article_id} "
+                                f"(attempt {attempt})"
+                            )
+                            return
+                except Exception as e:  # noqa: BLE001
+                    print(f"pages: manifest live but body not ready: {e}")
+            else:
+                top = ids[0] if ids else "empty"
+                print(
+                    f"pages: attempt {attempt} - {article_id} not in manifest yet "
+                    f"(top: {top})"
+                )
+        except Exception as e:  # noqa: BLE001
+            print(f"pages: attempt {attempt} fetch error: {e}")
+        time.sleep(interval_s)
+    raise SystemExit(
+        f"Timed out after {timeout_s}s waiting for Pages to serve {article_id}. "
+        "Aborting push so users don't tap a dead link."
+    )
 
 
 def send_push(push_title: str, push_body: str, article_id: str):
@@ -197,12 +256,8 @@ def log_publish(meta: dict, article_id: str, push_id: str, kit_id: str,
         f.write(line + "\n")
 
 
-def main():
-    if len(sys.argv) < 2:
-        sys.exit("Usage: weekly_publish.py <article_id>")
-    article_id = sys.argv[1]
-
-    print(f"=== Publishing {article_id} ===")
+def phase_prepare(article_id: str) -> None:
+    print(f"=== Phase: prepare ({article_id}) ===")
     meta, body, hero = parse_draft(article_id)
     print(f"Title: {meta['title']}")
     print(f"Premium: {meta.get('premium', False)}")
@@ -210,17 +265,70 @@ def main():
     copy_assets(article_id, body, hero)
     update_manifest(meta, article_id)
 
+    STATE.mkdir(exist_ok=True)
+    PENDING_FILE.write_text(json.dumps({
+        "article_id": article_id,
+        "meta": meta,
+        "body": body,
+    }), encoding="utf-8")
+    print(f"prepare: wrote {PENDING_FILE.name} - ready for commit + push")
+
+
+def phase_announce(article_id: str) -> None:
+    print(f"=== Phase: announce ({article_id}) ===")
+    if PENDING_FILE.exists():
+        pending = json.loads(PENDING_FILE.read_text(encoding="utf-8"))
+        if pending.get("article_id") != article_id:
+            raise SystemExit(
+                f"Pending file is for {pending.get('article_id')}, not {article_id}"
+            )
+        meta = pending["meta"]
+        body = pending["body"]
+    else:
+        meta, body, _hero = parse_draft(article_id)
+
+    wait_for_pages(article_id)
+
     push_id = send_push(meta["push_title"], meta["push_body"], article_id)
     kit_id = schedule_kit_newsletter(meta, body, article_id)
     bsky_uri, mastodon_uri = post_social(article_id)
 
     log_publish(meta, article_id, push_id, kit_id, bsky_uri, mastodon_uri)
 
-    print("=== Publish complete ===")
+    try:
+        PENDING_FILE.unlink()
+    except FileNotFoundError:
+        pass
+
+    print("=== Announce complete ===")
     print(f"Push: {push_id}")
     print(f"Kit broadcast: {kit_id}")
     print(f"Bluesky: {bsky_uri}")
     print(f"Mastodon: {mastodon_uri}")
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("article_id")
+    parser.add_argument(
+        "--phase",
+        choices=["prepare", "announce", "full"],
+        default="full",
+        help=(
+            "prepare = stage assets + manifest then exit (workflow commits next); "
+            "announce = poll Pages then push/newsletter/social; "
+            "full = both back-to-back (local testing only)."
+        ),
+    )
+    args = parser.parse_args()
+
+    if args.phase == "prepare":
+        phase_prepare(args.article_id)
+    elif args.phase == "announce":
+        phase_announce(args.article_id)
+    else:
+        phase_prepare(args.article_id)
+        phase_announce(args.article_id)
 
 
 if __name__ == "__main__":
