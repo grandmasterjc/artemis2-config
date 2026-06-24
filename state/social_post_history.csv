@@ -1,3 +1,4 @@
 timestamp_utc,article_id,bluesky_ok,mastodon_ok,bluesky_uri,mastodon_uri,bluesky_error,mastodon_error
 2026-06-09T17:24:14.009066+00:00,artemis-iii-crew-named-june-9,True,True,at://did:plc:6c6v3wfajktjiw2dnig3e4gs/app.bsky.feed.post/3mnupmk23ij2x,https://spacey.space/@artemistracker/116721310296973165,,
 2026-06-17T14:51:58.896789+00:00,blue-moon-decoupling-june-17,True,False,at://did:plc:6c6v3wfajktjiw2dnig3e4gs/app.bsky.feed.post/3moikts77vi2y,,,HTTPError: 403 Client Error: Forbidden for url: https://spacey.space/api/v2/media
+2026-06-24T15:58:48.551996+00:00,spacex-ipo-artemis-math-june-24,True,True,False,at://did:plc:6c6v3wfajktjiw2dnig3e4gs/app.bsky.feed.post/3mp2bslefzr2p,https://spacey.space/@artemistracker/116805906892274584,,,,HTTPError: 500 Server Error: Internal Server Error for url: https://graph.threads.net/v1.0/36375786045399335/threads_publish
