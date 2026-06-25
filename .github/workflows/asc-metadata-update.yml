@@ -1,0 +1,48 @@
+name: ASC metadata update
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "Mode"
+        type: choice
+        options:
+          - show-current
+          - dry-run
+          - apply
+        default: show-current
+
+permissions:
+  contents: read
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Run ASC metadata script
+        env:
+          APP_STORE_CONNECT_KEY_ID: ${{ secrets.APP_STORE_CONNECT_KEY_ID }}
+          APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
+          APP_STORE_CONNECT_PRIVATE_KEY: ${{ secrets.APP_STORE_CONNECT_PRIVATE_KEY }}
+        run: |
+          case "${{ inputs.mode }}" in
+            show-current)
+              python scripts/update_asc_metadata.py --show-current
+              ;;
+            dry-run)
+              python scripts/update_asc_metadata.py --dry-run
+              ;;
+            apply)
+              python scripts/update_asc_metadata.py
+              ;;
+          esac
