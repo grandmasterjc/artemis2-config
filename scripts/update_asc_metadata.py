@@ -184,7 +184,7 @@ def list_all_versions(token: str, app_id: str, limit: int = 10) -> list[dict]:
         token,
         "GET",
         f"/apps/{app_id}/appStoreVersions",
-        params={"limit": limit, "sort": "-createdDate"},
+        params={"limit": limit},
     )
     return data.get("data", [])
 
