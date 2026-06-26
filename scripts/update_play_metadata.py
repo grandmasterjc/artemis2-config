@@ -168,7 +168,7 @@ def show_current(token: str, package: str) -> None:
             print(f"  title: {l.get('title')}")
             print(f"  shortDescription: {l.get('shortDescription')}")
             full = l.get("fullDescription") or ""
-            print(f"  fullDescription (first 400): {full[:400]}")
+            print(f"  fullDescription:\n{full}")
         # Show production track release notes
         for track_name in ("production", "internal"):
             try:
@@ -180,7 +180,7 @@ def show_current(token: str, package: str) -> None:
                     print(f"  name: {r.get('name')}")
                     print(f"  status: {r.get('status')}")
                     for note in r.get("releaseNotes", []):
-                        print(f"  [{note['language']}] {note['text'][:200]}")
+                        print(f"  [{note['language']}]\n{note['text']}")
             except Exception as e:
                 print(f"  (track {track_name}: {e})")
     finally:
