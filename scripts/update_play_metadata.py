@@ -197,6 +197,14 @@ def main() -> int:
     )
     args = parser.parse_args()
 
+    if args.show_current and not METADATA_FILE.exists():
+        # Allow show-current without metadata file; use default package
+        package = os.environ.get("GOOGLE_PLAY_PACKAGE", "no.bitfactory.artemisii.tracker")
+        token = get_access_token()
+        print(f"Authenticated. Package: {package}")
+        show_current(token, package)
+        return 0
+
     if not METADATA_FILE.exists():
         print(f"ERROR: {METADATA_FILE} not found")
         return 1
