@@ -84,8 +84,10 @@ def create_edit(token: str, package: str) -> str:
     return data["id"]
 
 
-def commit_edit(token: str, package: str, edit_id: str) -> dict:
-    return play_request(token, "POST", f"/applications/{package}/edits/{edit_id}:commit")
+def commit_edit(token: str, package: str, edit_id: str, changes_not_sent_for_review: bool = True) -> dict:
+    path = f"/applications/{package}/edits/{edit_id}:commit"
+    params = {"changesNotSentForReview": "true"} if changes_not_sent_for_review else None
+    return play_request(token, "POST", path, params=params)
 
 
 def delete_edit(token: str, package: str, edit_id: str) -> None:
