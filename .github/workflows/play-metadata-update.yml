@@ -1,0 +1,55 @@
+name: Play metadata update
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "Mode"
+        type: choice
+        options:
+          - show-current
+          - dry-run
+          - apply
+        default: show-current
+      track:
+        description: "Release notes track"
+        type: choice
+        options:
+          - production
+          - internal
+          - alpha
+          - beta
+        default: production
+
+permissions:
+  contents: read
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install google-auth google-api-python-client
+
+      - name: Run Play metadata script
+        env:
+          GOOGLE_PLAY_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_PLAY_SERVICE_ACCOUNT_JSON }}
+        run: |
+          case "${{ inputs.mode }}" in
+            show-current)
+              python scripts/update_play_metadata.py --show-current --track "${{ inputs.track }}"
+              ;;
+            dry-run)
+              python scripts/update_play_metadata.py --dry-run --track "${{ inputs.track }}"
+              ;;
+            apply)
+              python scripts/update_play_metadata.py --track "${{ inputs.track }}"
+              ;;
+          esac
