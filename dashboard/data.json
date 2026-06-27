@@ -536,63 +536,70 @@
       },
       {
         "date": "2026-06-23",
-        "active": 110,
+        "active": 111,
         "new": 41,
-        "views": 159,
-        "sessions": 140
+        "views": 160,
+        "sessions": 141
       },
       {
         "date": "2026-06-24",
         "active": 223,
         "new": 28,
         "views": 303,
-        "sessions": 256
+        "sessions": 259
       },
       {
         "date": "2026-06-25",
-        "active": 128,
+        "active": 140,
+        "new": 42,
+        "views": 166,
+        "sessions": 160
+      },
+      {
+        "date": "2026-06-26",
+        "active": 147,
         "new": 34,
-        "views": 144,
-        "sessions": 147
+        "views": 179,
+        "sessions": 168
       }
     ],
     "latest": {
-      "date": "2026-06-25",
-      "active": 128,
+      "date": "2026-06-26",
+      "active": 147,
       "new": 34,
-      "views": 144,
-      "sessions": 147
+      "views": 179,
+      "sessions": 168
     },
-    "total_active_28d": 4734,
-    "total_new_28d": 1359,
-    "total_sessions_28d": 5467,
-    "total_views_28d": 6399,
-    "avg_dau_7d": 150.6,
-    "avg_dau_28d": 169.1,
+    "total_active_28d": 4732,
+    "total_new_28d": 1339,
+    "total_sessions_28d": 5469,
+    "total_views_28d": 6391,
+    "avg_dau_7d": 150.3,
+    "avg_dau_28d": 169.0,
     "top_countries_30d": [
       {
         "country": "United States",
-        "active": 1217
+        "active": 1171
       },
       {
         "country": "United Kingdom",
-        "active": 406
+        "active": 388
       },
       {
         "country": "Germany",
-        "active": 195
+        "active": 191
       },
       {
         "country": "Canada",
-        "active": 190
+        "active": 186
       },
       {
         "country": "Italy",
-        "active": 89
+        "active": 90
       },
       {
         "country": "Australia",
-        "active": 81
+        "active": 77
       },
       {
         "country": "Norway",
@@ -604,22 +611,22 @@
       },
       {
         "country": "Netherlands",
-        "active": 66
+        "active": 68
       },
       {
-        "country": "Indonesia",
-        "active": 48
+        "country": "France",
+        "active": 45
       }
     ],
     "push_events_30d": {
-      "notification_open": 783,
+      "notification_open": 592,
       "notification_foreground": 401,
-      "notification_receive": 356,
-      "notification_dismiss": 31,
-      "notification_toggled": 6
+      "notification_receive": 361,
+      "notification_dismiss": 32,
+      "notification_toggled": 5
     },
-    "push_open_rate_30d": 0.6613,
-    "fetched_at": "2026-06-26T08:33:52.318090+00:00"
+    "push_open_rate_30d": 0.5962,
+    "fetched_at": "2026-06-27T07:53:00.672636+00:00"
   },
   "kit": {
     "status": "ok",
@@ -687,7 +694,7 @@
         "public": true
       }
     ],
-    "fetched_at": "2026-06-26T08:33:53.421267+00:00"
+    "fetched_at": "2026-06-27T07:53:01.741381+00:00"
   },
   "asc": {
     "status": "ok",
@@ -845,8 +852,8 @@
     ],
     "subscriptions": {
       "status": "ok",
-      "window_start": "2026-05-25",
-      "window_end": "2026-06-24",
+      "window_start": "2026-05-26",
+      "window_end": "2026-06-25",
       "days_with_data": 31,
       "days_attempted": 31,
       "active_subscribers": 40,
@@ -862,31 +869,32 @@
             "active": 40
           }
         ],
-        "arr_usd": 402.26,
-        "mrr_usd": 33.52,
+        "arr_usd": 419.25,
+        "mrr_usd": 34.94,
         "proceeds_factor": 0.85,
-        "as_of": "2026-06-24"
+        "as_of": "2026-06-25"
       },
       "events_30d": {
-        "Paid Subscription from Introductory Offer": 11,
+        "Paid Subscription from Introductory Offer": 12,
+        "Canceled from Billing Retry": 1,
         "Start Introductory Offer": 18,
         "Cancel": 3,
         "Grace Period from Introductory Offer": 2
       },
-      "event_days_with_data": 16,
-      "cancel_events_30d": 3,
+      "event_days_with_data": 17,
+      "cancel_events_30d": 4,
       "refund_events_30d": 0,
-      "monthly_churn": 0.075,
+      "monthly_churn": 0.1,
       "by_product": {
+        "no.bitfactory.artemisii.tracker.yearly": {
+          "units": 22,
+          "proceeds_usd": 179.94,
+          "name": "Artemis+ Yearly"
+        },
         "no.bitfactory.artemisii.tracker.monthly": {
           "units": 11,
           "proceeds_usd": 6.78,
           "name": "Artemis+ Monthly"
-        },
-        "no.bitfactory.artemisii.tracker.yearly": {
-          "units": 21,
-          "proceeds_usd": 162.95,
-          "name": "Artemis+ Yearly"
         }
       },
       "by_day": [
@@ -1022,13 +1030,20 @@
           "yearly": 0,
           "other": 0,
           "proceeds_usd": 3.39
+        },
+        {
+          "date": "2026-06-25",
+          "monthly": 0,
+          "yearly": 1,
+          "other": 0,
+          "proceeds_usd": 16.99
         }
       ],
       "by_country": [
         {
           "country": "US",
-          "units": 20,
-          "proceeds_usd": 74.74
+          "units": 21,
+          "proceeds_usd": 91.73
         },
         {
           "country": "GB",
@@ -1057,20 +1072,20 @@
         }
       ],
       "by_order_type": {
-        "Standard": 11,
+        "Standard": 12,
         "Free Trial Intro Offer": 21
       },
-      "total_units_30d": 32,
-      "total_proceeds_usd_30d": 169.73,
+      "total_units_30d": 33,
+      "total_proceeds_usd_30d": 186.72,
       "new_subscribers_30d": 21,
-      "new_installs_30d": 103
+      "new_installs_30d": 99
     },
-    "fetched_at": "2026-06-26T08:34:40.521361+00:00"
+    "fetched_at": "2026-06-27T07:53:48.730814+00:00"
   },
   "play": {
     "status": "ok",
-    "window_start": "2026-05-28",
-    "window_end": "2026-06-26",
+    "window_start": "2026-05-29",
+    "window_end": "2026-06-27",
     "package": "no.bitfactory.artemisii.tracker",
     "by_product": {},
     "by_day": [],
@@ -1091,7 +1106,7 @@
     "posts_7d": 3,
     "likes_7d": 0,
     "reposts_7d": 0,
-    "fetched_at": "2026-06-26T08:34:42.137661+00:00"
+    "fetched_at": "2026-06-27T07:53:50.063786+00:00"
   },
   "mastodon": {
     "status": "ok",
@@ -1103,7 +1118,7 @@
     "posts_7d": 3,
     "favs_7d": 0,
     "boosts_7d": 0,
-    "fetched_at": "2026-06-26T08:34:43.420746+00:00"
+    "fetched_at": "2026-06-27T07:53:51.237717+00:00"
   },
   "threads": {
     "status": "ok",
@@ -1114,11 +1129,11 @@
     "likes_7d": 0,
     "comments_7d": 1,
     "reposts_7d": 0,
-    "fetched_at": "2026-06-26T08:34:44.568646+00:00"
+    "fetched_at": "2026-06-27T07:53:52.095690+00:00"
   },
   "instagram": {
     "status": "error",
-    "error": "HTTP 400: {\"error\":{\"message\":\"Unsupported request - method type: get\",\"type\":\"IGApiException\",\"code\":100,\"fbtrace_id\":\"AIcOIyujILH2PCWttiILsei\"}}"
+    "error": "HTTP 400: {\"error\":{\"message\":\"Unsupported request - method type: get\",\"type\":\"IGApiException\",\"code\":100,\"fbtrace_id\":\"AXIVvmOrgCkzORcMZrF62ry\"}}"
   },
   "push": {
     "status": "ok",
@@ -1141,7 +1156,7 @@
         "message_id": "projects/artemis-tracker-665d8/messages/8257484629796171635"
       }
     ],
-    "fetched_at": "2026-06-26T08:34:44.843179+00:00"
+    "fetched_at": "2026-06-27T07:53:52.392950+00:00"
   },
   "roadmap": {
     "status": "ok",
@@ -1229,7 +1244,7 @@
         "note": "durable across sandbox resets"
       }
     ],
-    "fetched_at": "2026-06-26T08:34:44.843473+00:00"
+    "fetched_at": "2026-06-27T07:53:52.393276+00:00"
   },
   "targets": {
     "status": "ok",
@@ -1323,5 +1338,5 @@
       "implied_subs": 5200
     }
   },
-  "generated_at": "2026-06-26T08:34:44.843486+00:00"
+  "generated_at": "2026-06-27T07:53:52.393287+00:00"
 }
