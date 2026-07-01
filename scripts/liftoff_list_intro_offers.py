@@ -29,13 +29,18 @@ def main():
     print(f"Total: {len(resp['data'])}")
     for off in resp["data"]:
         a = off["attributes"]
-        r = off["relationships"]
-        terr = r.get("territory", {}).get("data", {}).get("id", "?")
-        pp = r.get("subscriptionPricePoint", {}).get("data", {}).get("id", "?")
+        r = off.get("relationships") or {}
+        terr_rel = r.get("territory") or {}
+        terr = (terr_rel.get("data") or {}).get("id", "?")
+        pp_rel = r.get("subscriptionPricePoint") or {}
+        pp = (pp_rel.get("data") or {}).get("id", "?")
         print(f"  id={off['id']} territory={terr} start={a.get('startDate')} "
               f"end={a.get('endDate')} mode={a.get('offerMode')} "
               f"duration={a.get('duration')} periods={a.get('numberOfPeriods')} "
               f"pp={pp}")
+    print("\nRaw first offer:")
+    if resp["data"]:
+        print(json.dumps(resp["data"][0], indent=2))
 
     # Show USA-specific price from included
     print("\nUSA offer price detail:")
