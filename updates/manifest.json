@@ -1,6 +1,17 @@
 {
   "updates": [
     {
+      "id": "moonbase-clps-cadence-july-1",
+      "title": "NASA just bought four more Moon deliveries \u2014 and the payload list reveals what it's worried about",
+      "subtitle": "The newest CLPS awards are not glamorous. They are a repeatable safety-and-infrastructure package aimed at making south-pole landings routine.",
+      "date": "2026-07-01T21:09:11Z",
+      "mission": "moonbase",
+      "premium": false,
+      "hero_image": "https://grandmasterjc.github.io/artemis2-config/updates/images/moonbase-clps-cadence-july-1.jpg",
+      "summary": "The newest CLPS awards are not glamorous. They are a repeatable safety-and-infrastructure package aimed at making south-pole landings routine.",
+      "author": "Joachim Gresslien"
+    },
+    {
       "id": "spacex-ipo-artemis-math-june-24",
       "title": "SpaceX is finally public \u2014 and the Artemis math just got a lot louder",
       "subtitle": "An $85 billion IPO, a $20 billion bond two weeks later, and a $4 billion lunar lander contract that suddenly looks like a rounding error",
