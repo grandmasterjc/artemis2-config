@@ -20,8 +20,18 @@ Logic:
 We upload as a single "subscription price changes" batch using PATCH with append semantics.
 """
 from __future__ import annotations
-import argparse, json, os, sys, time, urllib.error, urllib.request
+import argparse, base64, json, os, sys, time, urllib.error, urllib.request
 import jwt
+
+
+def decode_pp_territory(pp_id: str) -> str | None:
+    """Extract territory code from subscriptionPricePoint id (base64 JSON)."""
+    try:
+        s = pp_id + "=" * (-len(pp_id) % 4)
+        payload = json.loads(base64.b64decode(s))
+        return payload.get("t")
+    except Exception:
+        return None
 
 ASC_BASE = "https://api.appstoreconnect.apple.com/v1"
 SUB_ID = "6776393232"  # Liftoff Yearly
@@ -102,11 +112,17 @@ def main():
     all_price_points = [target_pp] + [e for e in equals if e["id"] != target_pp["id"]]
     print(f"  Total price points to apply: {len(all_price_points)}")
 
+    # Territory is embedded in the base64-encoded price point ID
+    pp_to_terr = {}
+    for pp in all_price_points:
+        pp_to_terr[pp["id"]] = decode_pp_territory(pp["id"])
+
     if args.dry_run:
         print("\nDRY RUN — showing first 5 territories:")
         for pp in all_price_points[:5]:
-            terr = pp["relationships"]["territory"]["data"]["id"]
+            terr = pp_to_terr[pp["id"]]
             print(f"    {terr}: pp={pp['id']} price=${price(pp)}")
+        print(f"\nTotal to apply: {len(all_price_points)}")
         return
 
     # 3. Create subscription price schedule for each territory
@@ -115,7 +131,11 @@ def main():
     ok = 0
     fail = 0
     for pp in all_price_points:
-        terr = pp["relationships"]["territory"]["data"]["id"]
+        terr = pp_to_terr[pp["id"]]
+        if not terr:
+            fail += 1
+            print(f"  FAIL: no territory resolved for pp {pp['id']}", file=sys.stderr)
+            continue
         body = {
             "data": {
                 "type": "subscriptionPrices",
