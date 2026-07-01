@@ -136,14 +136,14 @@ def main():
             fail += 1
             print(f"  FAIL: no territory resolved for pp {pp['id']}", file=sys.stderr)
             continue
+        attrs = {
+            "startDate": args.start,
+            "preserveCurrentPrice": preserve,
+        }
         body = {
             "data": {
                 "type": "subscriptionPrices",
-                "attributes": {
-                    "startDate": args.start,
-                    "endDate": args.end,
-                    "preserveCurrentPrice": preserve,
-                },
+                "attributes": attrs,
                 "relationships": {
                     "subscription": {
                         "data": {"type": "subscriptions", "id": SUB_ID}
