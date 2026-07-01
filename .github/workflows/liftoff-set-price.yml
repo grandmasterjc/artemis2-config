@@ -1,0 +1,40 @@
+name: Liftoff set yearly price
+on:
+  workflow_dispatch:
+    inputs:
+      usd:
+        description: 'Target USD price (e.g. 7.49 or 24.99)'
+        required: true
+      start:
+        description: 'Start date YYYY-MM-DD'
+        required: true
+      end:
+        description: 'End date YYYY-MM-DD (optional, blank for permanent)'
+        required: false
+      dry_run:
+        description: 'Dry run only?'
+        required: false
+        default: 'false'
+
+jobs:
+  set-price:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install PyJWT cryptography
+      - env:
+          APP_STORE_CONNECT_KEY_ID: ${{ secrets.ASC_LIFTOFF_KEY_ID }}
+          APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.ASC_LIFTOFF_ISSUER_ID }}
+          APP_STORE_CONNECT_PRIVATE_KEY: ${{ secrets.ASC_LIFTOFF_PRIVATE_KEY }}
+        run: |
+          ARGS="--usd ${{ inputs.usd }} --start ${{ inputs.start }}"
+          if [ -n "${{ inputs.end }}" ]; then
+            ARGS="$ARGS --end ${{ inputs.end }}"
+          fi
+          if [ "${{ inputs.dry_run }}" = "true" ]; then
+            ARGS="$ARGS --dry-run"
+          fi
+          python scripts/liftoff_set_yearly_price.py $ARGS
