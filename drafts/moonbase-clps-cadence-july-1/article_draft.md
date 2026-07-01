@@ -83,12 +83,4 @@ NASA also says it plans to solicit proposals for landers to deliver a power and 
 
 Where this leaves us is straightforward: NASA is paying for repetition and operational learning, and it is doing it with instruments that look boring until you realize they are the scaffolding for human-scale surface operations.
 
-## Editor's note: Liftoff is live
-
-If this piece made you want to actually track every launch — not just Artemis — I built an app for that. Liftoff covers SpaceX, NASA, ESA, JAXA, ISRO and the rest on iPhone and iPad, with real-time countdowns and push notifications for the launches you care about.
-
-For Artemis Briefing readers: 70 percent off the yearly plan through July 31 — that is $7.49 for the first year instead of $24.99. Redeem via the App Store link below.
-
-[Download Liftoff on the App Store →](https://apps.apple.com/app/id6776392285)
-
 Want the next briefing in your inbox? [Subscribe to the Artemis Briefing](https://artemis-briefing.kit.com) — Wednesday deep-dives plus a short Sunday Week Ahead.
