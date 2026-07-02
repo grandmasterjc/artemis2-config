@@ -578,60 +578,67 @@
       },
       {
         "date": "2026-06-29",
-        "active": 116,
-        "new": 28,
-        "views": 151,
-        "sessions": 132
+        "active": 117,
+        "new": 29,
+        "views": 153,
+        "sessions": 133
       },
       {
         "date": "2026-06-30",
-        "active": 99,
-        "new": 31,
-        "views": 129,
-        "sessions": 117
+        "active": 107,
+        "new": 35,
+        "views": 142,
+        "sessions": 124
+      },
+      {
+        "date": "2026-07-01",
+        "active": 188,
+        "new": 38,
+        "views": 240,
+        "sessions": 226
       }
     ],
     "latest": {
-      "date": "2026-06-30",
-      "active": 99,
-      "new": 31,
-      "views": 129,
-      "sessions": 117
+      "date": "2026-07-01",
+      "active": 188,
+      "new": 38,
+      "views": 240,
+      "sessions": 226
     },
-    "total_active_28d": 4596,
-    "total_new_28d": 1269,
-    "total_sessions_28d": 5317,
-    "total_views_28d": 6216,
-    "avg_dau_7d": 140.0,
-    "avg_dau_28d": 164.1,
+    "total_active_28d": 4541,
+    "total_new_28d": 1270,
+    "total_sessions_28d": 5268,
+    "total_views_28d": 6155,
+    "avg_dau_7d": 136.3,
+    "avg_dau_28d": 162.2,
     "top_countries_30d": [
       {
         "country": "United States",
-        "active": 1156
+        "active": 1159
       },
       {
         "country": "United Kingdom",
-        "active": 375
-      },
-      {
-        "country": "Germany",
-        "active": 183
+        "active": 377
       },
       {
         "country": "Canada",
+        "active": 191
+      },
+      {
+        "country": "Germany",
         "active": 182
       },
       {
         "country": "Italy",
-        "active": 89
+        "active": 90
       },
       {
         "country": "Australia",
-        "active": 80
+        "active": 79
       },
       {
         "country": "Spain",
-        "active": 73
+        "active": 75
       },
       {
         "country": "Netherlands",
@@ -639,28 +646,34 @@
       },
       {
         "country": "Norway",
-        "active": 58
+        "active": 57
       },
       {
-        "country": "(not set)",
-        "active": 47
+        "country": "France",
+        "active": 46
       }
     ],
     "push_events_30d": {
-      "notification_open": 592,
-      "notification_foreground": 402,
-      "notification_receive": 366,
-      "notification_dismiss": 33,
-      "notification_toggled": 6
+      "notification_receive": 766,
+      "notification_open": 652,
+      "notification_foreground": 403,
+      "notification_dismiss": 46,
+      "notification_toggled": 7
     },
-    "push_open_rate_30d": 0.5956,
-    "fetched_at": "2026-07-01T08:52:10.622187+00:00"
+    "push_open_rate_30d": 0.618,
+    "fetched_at": "2026-07-02T08:15:56.130838+00:00"
   },
   "kit": {
     "status": "ok",
     "active_subscribers": 33,
     "inactive_subscribers": 4,
     "recent_broadcasts": [
+      {
+        "id": 24813153,
+        "subject": "Four new Moon deliveries: what NASA's $600M payload list reveals",
+        "send_at": "2026-07-01T21:19:59Z",
+        "public": true
+      },
       {
         "id": 24758363,
         "subject": "The Week Ahead \u2014 June 29\u2013July 5: Stacking week at KSC, Ship 40 ticks off single-engine, OIG counts $5.9B in canceled hardware",
@@ -714,15 +727,9 @@
         "subject": "Week ahead: Artemis 3 crew reveal, and the fallout from New Glenn",
         "send_at": "2026-05-31T07:00:00Z",
         "public": false
-      },
-      {
-        "id": 24300304,
-        "subject": "Moon Base: NASA names the first three landers, all flying in 2026",
-        "send_at": "2026-05-27T06:47:34Z",
-        "public": true
       }
     ],
-    "fetched_at": "2026-07-01T08:52:11.590970+00:00"
+    "fetched_at": "2026-07-02T08:15:57.818054+00:00"
   },
   "asc": {
     "status": "ok",
@@ -835,15 +842,15 @@
       }
     },
     "stats_90d": {
-      "count": 71,
-      "avg": 2.24,
-      "share_4plus": 23.9,
+      "count": 60,
+      "avg": 2.22,
+      "share_4plus": 23.3,
       "dist": {
-        "1": 33,
-        "2": 16,
-        "3": 5,
-        "4": 6,
-        "5": 11
+        "1": 28,
+        "2": 14,
+        "3": 4,
+        "4": 5,
+        "5": 9
       }
     },
     "stats_all_time": {
@@ -880,40 +887,40 @@
     ],
     "subscriptions": {
       "status": "ok",
-      "window_start": "2026-05-30",
-      "window_end": "2026-06-29",
+      "window_start": "2026-05-31",
+      "window_end": "2026-06-30",
       "days_with_data": 31,
       "days_attempted": 31,
-      "active_subscribers": 40,
+      "active_subscribers": 39,
       "active_breakdown": {
-        "active_total": 40,
+        "active_total": 39,
         "by_product": {
           "Artemis+ Yearly": 36,
-          "Artemis+ Monthly": 4
+          "Artemis+ Monthly": 3
         },
         "by_country": [
           {
             "country": "??",
-            "active": 40
+            "active": 39
           }
         ],
-        "arr_usd": 453.23,
-        "mrr_usd": 37.77,
+        "arr_usd": 490.39,
+        "mrr_usd": 40.87,
         "proceeds_factor": 0.85,
-        "as_of": "2026-06-29"
+        "as_of": "2026-06-30"
       },
       "events_30d": {
-        "Paid Subscription from Introductory Offer": 14,
+        "Paid Subscription from Introductory Offer": 15,
+        "Grace Period from Introductory Offer": 3,
         "Billing Retry from Grace Period": 1,
         "Canceled from Billing Retry": 1,
         "Start Introductory Offer": 18,
-        "Cancel": 3,
-        "Grace Period from Introductory Offer": 2
+        "Cancel": 3
       },
-      "event_days_with_data": 20,
+      "event_days_with_data": 21,
       "cancel_events_30d": 4,
       "refund_events_30d": 0,
-      "monthly_churn": 0.1,
+      "monthly_churn": 0.1026,
       "by_product": {
         "no.bitfactory.artemisii.tracker.monthly": {
           "units": 12,
@@ -1128,14 +1135,14 @@
       "total_units_30d": 36,
       "total_proceeds_usd_30d": 224.94,
       "new_subscribers_30d": 21,
-      "new_installs_30d": 98
+      "new_installs_30d": 93
     },
-    "fetched_at": "2026-07-01T08:52:59.565528+00:00"
+    "fetched_at": "2026-07-02T08:16:34.659901+00:00"
   },
   "play": {
     "status": "ok",
-    "window_start": "2026-06-02",
-    "window_end": "2026-07-01",
+    "window_start": "2026-06-03",
+    "window_end": "2026-07-02",
     "package": "no.bitfactory.artemisii.tracker",
     "by_product": {},
     "by_day": [],
@@ -1152,11 +1159,11 @@
     "handle": "artemistracker.app",
     "followers": 6,
     "following": 7,
-    "posts_total": 40,
+    "posts_total": 43,
     "posts_7d": 3,
     "likes_7d": 0,
     "reposts_7d": 0,
-    "fetched_at": "2026-07-01T08:53:00.959375+00:00"
+    "fetched_at": "2026-07-02T08:16:37.220177+00:00"
   },
   "mastodon": {
     "status": "ok",
@@ -1164,11 +1171,11 @@
     "username": "artemistracker",
     "followers": 0,
     "following": 4,
-    "posts_total": 37,
+    "posts_total": 40,
     "posts_7d": 3,
-    "favs_7d": 0,
+    "favs_7d": 1,
     "boosts_7d": 0,
-    "fetched_at": "2026-07-01T08:53:02.139846+00:00"
+    "fetched_at": "2026-07-02T08:16:38.837943+00:00"
   },
   "threads": {
     "status": "ok",
@@ -1177,17 +1184,17 @@
     "followers": 0,
     "posts_7d": 1,
     "likes_7d": 0,
-    "comments_7d": 1,
+    "comments_7d": 2,
     "reposts_7d": 0,
-    "fetched_at": "2026-07-01T08:53:03.408711+00:00"
+    "fetched_at": "2026-07-02T08:16:40.370459+00:00"
   },
   "instagram": {
     "status": "error",
-    "error": "HTTP 400: {\"error\":{\"message\":\"Unsupported request - method type: get\",\"type\":\"IGApiException\",\"code\":100,\"fbtrace_id\":\"ArRw4Kw0XErp3GXx14-dHu1\"}}"
+    "error": "HTTP 400: {\"error\":{\"message\":\"Unsupported request - method type: get\",\"type\":\"IGApiException\",\"code\":100,\"fbtrace_id\":\"A5iowmyxlNQlweTteypZROM\"}}"
   },
   "push": {
     "status": "ok",
-    "total_pushes": 2,
+    "total_pushes": 3,
     "recent": [
       {
         "timestamp_utc": "2026-06-09T17:23:18.056515+00:00",
@@ -1204,9 +1211,17 @@
         "article_id": "spacex-ipo-artemis-math-june-24",
         "topic": "all",
         "message_id": "projects/artemis-tracker-665d8/messages/8257484629796171635"
+      },
+      {
+        "timestamp_utc": "2026-07-01T21:09:59.688915+00:00",
+        "title": "Four new Moon deliveries: what NASA's $600M payload list reveals",
+        "body": "The latest CLPS awards are a quiet bet on dust, navigation, and radiation \u2014 the unglamorous essentials of a Moon Base.",
+        "article_id": "moonbase-clps-cadence-july-1",
+        "topic": "all",
+        "message_id": "projects/artemis-tracker-665d8/messages/4205465144693666715"
       }
     ],
-    "fetched_at": "2026-07-01T08:53:03.732434+00:00"
+    "fetched_at": "2026-07-02T08:16:40.909949+00:00"
   },
   "roadmap": {
     "status": "ok",
@@ -1294,7 +1309,7 @@
         "note": "durable across sandbox resets"
       }
     ],
-    "fetched_at": "2026-07-01T08:53:03.732724+00:00"
+    "fetched_at": "2026-07-02T08:16:40.910248+00:00"
   },
   "targets": {
     "status": "ok",
@@ -1388,5 +1403,5 @@
       "implied_subs": 5200
     }
   },
-  "generated_at": "2026-07-01T08:53:03.732736+00:00"
+  "generated_at": "2026-07-02T08:16:40.910260+00:00"
 }
