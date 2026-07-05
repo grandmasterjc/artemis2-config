@@ -524,3 +524,18 @@
 2026-07-04T07:52:26.489850+00:00 | wrote data.json (33591 bytes)
 2026-07-04T07:52:26.503414+00:00 | wrote index.html (49673 bytes)
 2026-07-04T07:52:26.503480+00:00 | dashboard_refresh 2.0 done
+2026-07-05T08:06:14.024955+00:00 | dashboard_refresh 2.0 start
+2026-07-05T08:07:10.952184+00:00 |   ga4: ok | latest=106 28d=4458
+2026-07-05T08:07:10.952272+00:00 |   kit: ok | active=33
+2026-07-05T08:07:10.952338+00:00 |   asc: ok | reviews=50 avg=2.2
+2026-07-05T08:07:10.952390+00:00 |   bluesky: ok | followers=6
+2026-07-05T08:07:10.952447+00:00 |   mastodon: ok | followers=1
+2026-07-05T08:07:10.952494+00:00 |   threads: ok
+2026-07-05T08:07:10.952545+00:00 |   instagram: error | HTTP 400: {"error":{"message":"Unsupported request - method type: get","type":"IGApiException","code":100,"fbtrace_id":"
+2026-07-05T08:07:10.952598+00:00 |   push: ok
+2026-07-05T08:07:10.952644+00:00 |   roadmap: ok
+2026-07-05T08:07:10.952693+00:00 |   targets: ok
+2026-07-05T08:07:10.954665+00:00 | subscriber_history: appended date=2026-07-05 kit=33 plus=40 total=73
+2026-07-05T08:07:10.956238+00:00 | wrote data.json (33727 bytes)
+2026-07-05T08:07:10.970400+00:00 | wrote index.html (49699 bytes)
+2026-07-05T08:07:10.970459+00:00 | dashboard_refresh 2.0 done

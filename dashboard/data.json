@@ -606,37 +606,44 @@
       },
       {
         "date": "2026-07-03",
-        "active": 75,
+        "active": 77,
         "new": 20,
-        "views": 108,
-        "sessions": 89
+        "views": 112,
+        "sessions": 91
+      },
+      {
+        "date": "2026-07-04",
+        "active": 106,
+        "new": 29,
+        "views": 143,
+        "sessions": 127
       }
     ],
     "latest": {
-      "date": "2026-07-03",
-      "active": 75,
-      "new": 20,
-      "views": 108,
-      "sessions": 89
+      "date": "2026-07-04",
+      "active": 106,
+      "new": 29,
+      "views": 143,
+      "sessions": 127
     },
-    "total_active_28d": 4482,
-    "total_new_28d": 1205,
-    "total_sessions_28d": 5199,
-    "total_views_28d": 6144,
-    "avg_dau_7d": 128.4,
-    "avg_dau_28d": 160.1,
+    "total_active_28d": 4458,
+    "total_new_28d": 1181,
+    "total_sessions_28d": 5177,
+    "total_views_28d": 6120,
+    "avg_dau_7d": 124.6,
+    "avg_dau_28d": 159.2,
     "top_countries_30d": [
       {
         "country": "United States",
-        "active": 1139
+        "active": 1129
       },
       {
         "country": "United Kingdom",
-        "active": 355
+        "active": 350
       },
       {
         "country": "Canada",
-        "active": 181
+        "active": 183
       },
       {
         "country": "Germany",
@@ -644,7 +651,7 @@
       },
       {
         "country": "Italy",
-        "active": 89
+        "active": 86
       },
       {
         "country": "Australia",
@@ -652,11 +659,11 @@
       },
       {
         "country": "Spain",
-        "active": 72
+        "active": 73
       },
       {
         "country": "Netherlands",
-        "active": 62
+        "active": 61
       },
       {
         "country": "Norway",
@@ -664,18 +671,18 @@
       },
       {
         "country": "France",
-        "active": 49
+        "active": 51
       }
     ],
     "push_events_30d": {
-      "notification_receive": 825,
-      "notification_open": 548,
-      "notification_foreground": 372,
-      "notification_dismiss": 66,
+      "notification_receive": 826,
+      "notification_open": 531,
+      "notification_foreground": 338,
+      "notification_dismiss": 67,
       "notification_toggled": 7
     },
-    "push_open_rate_30d": 0.5957,
-    "fetched_at": "2026-07-04T07:51:41.144280+00:00"
+    "push_open_rate_30d": 0.611,
+    "fetched_at": "2026-07-05T08:06:16.589658+00:00"
   },
   "kit": {
     "status": "ok",
@@ -743,7 +750,7 @@
         "public": false
       }
     ],
-    "fetched_at": "2026-07-04T07:51:42.393211+00:00"
+    "fetched_at": "2026-07-05T08:06:17.940639+00:00"
   },
   "asc": {
     "status": "ok",
@@ -856,13 +863,13 @@
       }
     },
     "stats_90d": {
-      "count": 36,
-      "avg": 2.19,
-      "share_4plus": 22.2,
+      "count": 32,
+      "avg": 2.25,
+      "share_4plus": 25.0,
       "dist": {
-        "1": 17,
-        "2": 8,
-        "3": 3,
+        "1": 15,
+        "2": 7,
+        "3": 2,
         "4": 3,
         "5": 5
       }
@@ -901,8 +908,8 @@
     ],
     "subscriptions": {
       "status": "ok",
-      "window_start": "2026-06-02",
-      "window_end": "2026-07-02",
+      "window_start": "2026-06-03",
+      "window_end": "2026-07-03",
       "days_with_data": 31,
       "days_attempted": 31,
       "active_subscribers": 40,
@@ -921,7 +928,7 @@
         "arr_usd": 490.39,
         "mrr_usd": 40.87,
         "proceeds_factor": 0.85,
-        "as_of": "2026-07-02"
+        "as_of": "2026-07-03"
       },
       "events_30d": {
         "Billing Retry from Grace Period": 2,
@@ -1142,14 +1149,14 @@
       "total_units_30d": 34,
       "total_proceeds_usd_30d": 224.94,
       "new_subscribers_30d": 19,
-      "new_installs_30d": 93
+      "new_installs_30d": 91
     },
-    "fetched_at": "2026-07-04T07:52:19.896647+00:00"
+    "fetched_at": "2026-07-05T08:07:05.537958+00:00"
   },
   "play": {
     "status": "ok",
-    "window_start": "2026-06-05",
-    "window_end": "2026-07-04",
+    "window_start": "2026-06-06",
+    "window_end": "2026-07-05",
     "package": "no.bitfactory.artemisii.tracker",
     "by_product": {},
     "by_day": [],
@@ -1170,7 +1177,7 @@
     "posts_7d": 3,
     "likes_7d": 0,
     "reposts_7d": 0,
-    "fetched_at": "2026-07-04T07:52:22.489750+00:00"
+    "fetched_at": "2026-07-05T08:07:07.505416+00:00"
   },
   "mastodon": {
     "status": "ok",
@@ -1182,7 +1189,7 @@
     "posts_7d": 3,
     "favs_7d": 1,
     "boosts_7d": 0,
-    "fetched_at": "2026-07-04T07:52:24.094980+00:00"
+    "fetched_at": "2026-07-05T08:07:08.775770+00:00"
   },
   "threads": {
     "status": "ok",
@@ -1193,11 +1200,11 @@
     "likes_7d": 0,
     "comments_7d": 2,
     "reposts_7d": 0,
-    "fetched_at": "2026-07-04T07:52:25.929289+00:00"
+    "fetched_at": "2026-07-05T08:07:10.541888+00:00"
   },
   "instagram": {
     "status": "error",
-    "error": "HTTP 400: {\"error\":{\"message\":\"Unsupported request - method type: get\",\"type\":\"IGApiException\",\"code\":100,\"fbtrace_id\":\"AuvyTIEi_mAKZHEZMhwclGA\"}}"
+    "error": "HTTP 400: {\"error\":{\"message\":\"Unsupported request - method type: get\",\"type\":\"IGApiException\",\"code\":100,\"fbtrace_id\":\"ASfowInzQGQ65PrOx8AjnER\"}}"
   },
   "push": {
     "status": "ok",
@@ -1228,7 +1235,7 @@
         "message_id": "projects/artemis-tracker-665d8/messages/4205465144693666715"
       }
     ],
-    "fetched_at": "2026-07-04T07:52:26.485527+00:00"
+    "fetched_at": "2026-07-05T08:07:10.951831+00:00"
   },
   "roadmap": {
     "status": "ok",
@@ -1316,7 +1323,7 @@
         "note": "durable across sandbox resets"
       }
     ],
-    "fetched_at": "2026-07-04T07:52:26.485818+00:00"
+    "fetched_at": "2026-07-05T08:07:10.952138+00:00"
   },
   "targets": {
     "status": "ok",
@@ -1410,5 +1417,5 @@
       "implied_subs": 5200
     }
   },
-  "generated_at": "2026-07-04T07:52:26.485830+00:00"
+  "generated_at": "2026-07-05T08:07:10.952151+00:00"
 }
