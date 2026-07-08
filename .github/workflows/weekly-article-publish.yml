@@ -94,6 +94,11 @@ jobs:
       - name: Commit publish history
         if: ${{ inputs.phase == 'all' || inputs.phase == 'announce' }}
         run: |
+          # Set identity here too: in phase=announce runs the "Commit and
+          # push article" step (which used to configure git) is skipped,
+          # which otherwise fails this commit with "empty ident name".
+          git config user.email "joachim.gresslien@gmail.com"
+          git config user.name "Joachim Gresslien"
           git add state/push_history.csv state/social_post_history.csv state/publish_history.txt state/.pending_publish.json || true
           git diff --cached --quiet || git commit -m "Log publish: ${{ inputs.article_id }}"
           git push origin main || true
