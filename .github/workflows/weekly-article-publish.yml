@@ -11,6 +11,15 @@ on:
         description: "Article id (kebab-case, matches drafts/{id}/)"
         required: true
         type: string
+      phase:
+        description: "all = publish + announce in one run; prepare = make the article live on GitHub Pages WITHOUT sending push/newsletter/social; announce = send push/newsletter/social for an already-published article. Use prepare then announce to verify the article is visible before notifying users."
+        required: false
+        default: "all"
+        type: choice
+        options:
+          - all
+          - prepare
+          - announce
 
 permissions:
   contents: write
@@ -44,6 +53,7 @@ jobs:
 
       # Phase 1: stage assets + manifest. No push notification yet.
       - name: Prepare article (stage assets + manifest)
+        if: ${{ inputs.phase == 'all' || inputs.phase == 'prepare' }}
         env:
           ARTICLE_ID: ${{ inputs.article_id }}
         run: python scripts/weekly_publish.py "$ARTICLE_ID" --phase=prepare
@@ -53,6 +63,7 @@ jobs:
       # to wait for. The .pending_publish.json file is committed too so
       # phase_announce can pick up the parsed body without re-reading the draft.
       - name: Commit and push article
+        if: ${{ inputs.phase == 'all' || inputs.phase == 'prepare' }}
         run: |
           git config user.email "joachim.gresslien@gmail.com"
           git config user.name "Joachim Gresslien"
@@ -65,6 +76,7 @@ jobs:
       # until the new entry is live before send_push runs, so users who tap
       # the notification always land on a live article.
       - name: Announce article (push + newsletter + social)
+        if: ${{ inputs.phase == 'all' || inputs.phase == 'announce' }}
         env:
           GOOGLE_APPLICATION_CREDENTIALS_JSON: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_JSON }}
           FIREBASE_SERVICE_ACCOUNT_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_JSON }}
@@ -80,6 +92,7 @@ jobs:
 
       # Commit the post-announce side effects (history files, cleaned pending).
       - name: Commit publish history
+        if: ${{ inputs.phase == 'all' || inputs.phase == 'announce' }}
         run: |
           git add state/push_history.csv state/social_post_history.csv state/publish_history.txt state/.pending_publish.json || true
           git diff --cached --quiet || git commit -m "Log publish: ${{ inputs.article_id }}"
