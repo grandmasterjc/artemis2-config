@@ -1,6 +1,17 @@
 {
   "updates": [
     {
+      "id": "moon-base-1-endurance-july-8",
+      "title": "NASA's first Moon Base landing has a lander that's ready \u2014 and a launch pad that isn't",
+      "subtitle": "Endurance keeps passing its tests. The rocket meant to fly it blew up on the pad two days after the mission was announced.",
+      "date": "2026-07-08T20:20:19Z",
+      "mission": "moonbase",
+      "premium": false,
+      "hero_image": "https://grandmasterjc.github.io/artemis2-config/updates/images/moon-base-1-endurance-july-8.jpg",
+      "summary": "Endurance keeps passing its tests. The rocket meant to fly it blew up on the pad two days after the mission was announced.",
+      "author": "Joachim Gresslien"
+    },
+    {
       "id": "moonbase-clps-cadence-july-1",
       "title": "NASA just bought four more Moon deliveries \u2014 and the payload list reveals what it's worried about",
       "subtitle": "The newest CLPS awards are not glamorous. They are a repeatable safety-and-infrastructure package aimed at making south-pole landings routine.",
