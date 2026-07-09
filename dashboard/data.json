@@ -3,13 +3,6 @@
     "status": "ok",
     "daily_users": [
       {
-        "date": "2026-04-09",
-        "active": 60,
-        "new": 59,
-        "views": 151,
-        "sessions": 65
-      },
-      {
         "date": "2026-04-10",
         "active": 2037,
         "new": 2010,
@@ -613,43 +606,50 @@
       },
       {
         "date": "2026-07-05",
-        "active": 110,
+        "active": 111,
         "new": 34,
         "views": 140,
         "sessions": 121
       },
       {
         "date": "2026-07-06",
-        "active": 94,
+        "active": 95,
         "new": 34,
         "views": 116,
         "sessions": 107
       },
       {
         "date": "2026-07-07",
-        "active": 72,
-        "new": 19,
-        "views": 78,
-        "sessions": 83
+        "active": 80,
+        "new": 25,
+        "views": 97,
+        "sessions": 91
+      },
+      {
+        "date": "2026-07-08",
+        "active": 218,
+        "new": 30,
+        "views": 258,
+        "sessions": 247
       }
     ],
     "latest": {
-      "date": "2026-07-07",
-      "active": 72,
-      "new": 19,
-      "views": 78,
-      "sessions": 83
+      "date": "2026-07-08",
+      "active": 218,
+      "new": 30,
+      "views": 258,
+      "sessions": 247
     },
-    "total_active_28d": 4119,
-    "total_new_28d": 1106,
-    "total_sessions_28d": 4785,
-    "total_views_28d": 5632,
-    "avg_dau_7d": 115.9,
-    "avg_dau_28d": 147.1,
+    "total_active_28d": 4075,
+    "total_new_28d": 1081,
+    "total_sessions_28d": 4720,
+    "total_views_28d": 5522,
+    "avg_dau_7d": 119.7,
+    "avg_dau_28d": 145.5,
     "top_countries_30d": [
       {
         "country": "United States",
-        "active": 1112
+        "active": 1128
       },
       {
         "country": "United Kingdom",
@@ -657,52 +657,58 @@
       },
       {
         "country": "Canada",
-        "active": 184
+        "active": 186
       },
       {
         "country": "Germany",
-        "active": 177
+        "active": 178
       },
       {
         "country": "Italy",
-        "active": 78
+        "active": 77
       },
       {
         "country": "Australia",
-        "active": 72
+        "active": 75
       },
       {
         "country": "Spain",
-        "active": 71
+        "active": 74
       },
       {
         "country": "Netherlands",
-        "active": 60
+        "active": 62
       },
       {
         "country": "Norway",
-        "active": 55
+        "active": 54
       },
       {
         "country": "France",
-        "active": 53
+        "active": 51
       }
     ],
     "push_events_30d": {
-      "notification_receive": 827,
-      "notification_open": 521,
-      "notification_foreground": 268,
-      "notification_dismiss": 69,
+      "notification_receive": 1255,
+      "notification_open": 640,
+      "notification_foreground": 253,
+      "notification_dismiss": 86,
       "notification_toggled": 7
     },
-    "push_open_rate_30d": 0.6603,
-    "fetched_at": "2026-07-08T07:34:35.997934+00:00"
+    "push_open_rate_30d": 0.7167,
+    "fetched_at": "2026-07-09T08:38:32.406868+00:00"
   },
   "kit": {
     "status": "ok",
     "active_subscribers": 33,
     "inactive_subscribers": 4,
     "recent_broadcasts": [
+      {
+        "id": 24911944,
+        "subject": "The first Moon Base landing hit a launch-pad problem",
+        "send_at": "2026-07-08T20:37:23Z",
+        "public": true
+      },
       {
         "id": 24813153,
         "subject": "Four new Moon deliveries: what NASA's $600M payload list reveals",
@@ -756,25 +762,19 @@
         "subject": "Week ahead: Artemis 3 crew reveal, and the fallout from New Glenn",
         "send_at": "2026-05-31T07:20:00Z",
         "public": true
-      },
-      {
-        "id": 24332641,
-        "subject": "Week ahead: Artemis 3 crew reveal, and the fallout from New Glenn",
-        "send_at": "2026-05-31T07:00:00Z",
-        "public": false
       }
     ],
-    "fetched_at": "2026-07-08T07:34:37.609848+00:00"
+    "fetched_at": "2026-07-09T08:38:33.967529+00:00"
   },
   "asc": {
     "status": "error",
     "error": "HTTP 403",
-    "body": "{\n  \"errors\" : [ {\n    \"id\" : \"VEQU6JG7JH23JEJJQ2SADZSMF4\",\n    \"status\" : \"403\",\n    \"code\" : \"FORBIDDEN.REQUIRED_AGREEMENTS_MISSING_OR_EXPIRED\",\n    \"title\" : \"A required agreement is missing or has expired.\",\n    \"detail\" : \"This request requires an in-effect agreement that has not been signed or"
+    "body": "{\n  \"errors\" : [ {\n    \"id\" : \"XAOGT4IB7W6UUOGYPRQUYEFXWY\",\n    \"status\" : \"403\",\n    \"code\" : \"FORBIDDEN.REQUIRED_AGREEMENTS_MISSING_OR_EXPIRED\",\n    \"title\" : \"A required agreement is missing or has expired.\",\n    \"detail\" : \"This request requires an in-effect agreement that has not been signed or"
   },
   "play": {
     "status": "ok",
-    "window_start": "2026-06-09",
-    "window_end": "2026-07-08",
+    "window_start": "2026-06-10",
+    "window_end": "2026-07-09",
     "package": "no.bitfactory.artemisii.tracker",
     "by_product": {},
     "by_day": [],
@@ -789,13 +789,13 @@
   "bluesky": {
     "status": "ok",
     "handle": "artemistracker.app",
-    "followers": 6,
+    "followers": 7,
     "following": 12,
-    "posts_total": 43,
+    "posts_total": 46,
     "posts_7d": 3,
     "likes_7d": 0,
     "reposts_7d": 0,
-    "fetched_at": "2026-07-08T07:34:40.541768+00:00"
+    "fetched_at": "2026-07-09T08:38:36.636227+00:00"
   },
   "mastodon": {
     "status": "ok",
@@ -803,11 +803,11 @@
     "username": "artemistracker",
     "followers": 1,
     "following": 4,
-    "posts_total": 40,
+    "posts_total": 43,
     "posts_7d": 3,
-    "favs_7d": 1,
+    "favs_7d": 0,
     "boosts_7d": 0,
-    "fetched_at": "2026-07-08T07:34:42.177426+00:00"
+    "fetched_at": "2026-07-09T08:38:37.906033+00:00"
   },
   "threads": {
     "status": "ok",
@@ -815,18 +815,18 @@
     "username": "artemistracker.app",
     "followers": 0,
     "posts_7d": 1,
-    "likes_7d": 0,
+    "likes_7d": 3,
     "comments_7d": 2,
-    "reposts_7d": 0,
-    "fetched_at": "2026-07-08T07:34:43.842258+00:00"
+    "reposts_7d": 2,
+    "fetched_at": "2026-07-09T08:38:39.470072+00:00"
   },
   "instagram": {
     "status": "error",
-    "error": "HTTP 400: {\"error\":{\"message\":\"Unsupported request - method type: get\",\"type\":\"IGApiException\",\"code\":100,\"fbtrace_id\":\"Ag3ewAzEjWBt35zaYIiuKKg\"}}"
+    "error": "HTTP 400: {\"error\":{\"message\":\"Unsupported request - method type: get\",\"type\":\"IGApiException\",\"code\":100,\"fbtrace_id\":\"AnJw_XMqvwK_Jkm6YKmnvn9\"}}"
   },
   "push": {
     "status": "ok",
-    "total_pushes": 3,
+    "total_pushes": 4,
     "recent": [
       {
         "timestamp_utc": "2026-06-09T17:23:18.056515+00:00",
@@ -851,9 +851,17 @@
         "article_id": "moonbase-clps-cadence-july-1",
         "topic": "all",
         "message_id": "projects/artemis-tracker-665d8/messages/4205465144693666715"
+      },
+      {
+        "timestamp_utc": "2026-07-08T20:28:07.000000+00:00",
+        "title": "The first Moon Base landing hit a launch-pad problem",
+        "body": "NASA's Endurance lander is passing its tests, but the rocket meant to fly it exploded on the pad. Here's what that does to the timeline.",
+        "article_id": "moon-base-1-endurance-july-8",
+        "topic": "all",
+        "message_id": "projects/artemis-tracker-665d8/messages/2065362934325299659"
       }
     ],
-    "fetched_at": "2026-07-08T07:34:44.202996+00:00"
+    "fetched_at": "2026-07-09T08:38:39.939690+00:00"
   },
   "roadmap": {
     "status": "ok",
@@ -941,7 +949,7 @@
         "note": "durable across sandbox resets"
       }
     ],
-    "fetched_at": "2026-07-08T07:34:44.203294+00:00"
+    "fetched_at": "2026-07-09T08:38:39.940017+00:00"
   },
   "targets": {
     "status": "ok",
@@ -1035,5 +1043,5 @@
       "implied_subs": 5200
     }
   },
-  "generated_at": "2026-07-08T07:34:44.203306+00:00"
+  "generated_at": "2026-07-09T08:38:39.940029+00:00"
 }
