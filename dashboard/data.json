@@ -3,13 +3,6 @@
     "status": "ok",
     "daily_users": [
       {
-        "date": "2026-04-10",
-        "active": 2037,
-        "new": 2010,
-        "views": 7236,
-        "sessions": 3457
-      },
-      {
         "date": "2026-04-11",
         "active": 2290,
         "new": 1326,
@@ -615,69 +608,76 @@
         "date": "2026-07-06",
         "active": 95,
         "new": 34,
-        "views": 116,
+        "views": 117,
         "sessions": 107
       },
       {
         "date": "2026-07-07",
         "active": 80,
         "new": 25,
-        "views": 97,
+        "views": 99,
         "sessions": 91
       },
       {
         "date": "2026-07-08",
-        "active": 218,
+        "active": 219,
         "new": 30,
-        "views": 258,
+        "views": 260,
         "sessions": 247
+      },
+      {
+        "date": "2026-07-09",
+        "active": 161,
+        "new": 40,
+        "views": 260,
+        "sessions": 179
       }
     ],
     "latest": {
-      "date": "2026-07-08",
-      "active": 218,
-      "new": 30,
-      "views": 258,
-      "sessions": 247
+      "date": "2026-07-09",
+      "active": 161,
+      "new": 40,
+      "views": 260,
+      "sessions": 179
     },
-    "total_active_28d": 4075,
-    "total_new_28d": 1081,
-    "total_sessions_28d": 4720,
-    "total_views_28d": 5522,
-    "avg_dau_7d": 119.7,
-    "avg_dau_28d": 145.5,
+    "total_active_28d": 4078,
+    "total_new_28d": 1089,
+    "total_sessions_28d": 4713,
+    "total_views_28d": 5570,
+    "avg_dau_7d": 121.6,
+    "avg_dau_28d": 145.6,
     "top_countries_30d": [
       {
         "country": "United States",
-        "active": 1128
+        "active": 1093
       },
       {
         "country": "United Kingdom",
-        "active": 358
+        "active": 343
       },
       {
         "country": "Canada",
-        "active": 186
+        "active": 185
       },
       {
         "country": "Germany",
-        "active": 178
-      },
-      {
-        "country": "Italy",
-        "active": 77
+        "active": 170
       },
       {
         "country": "Australia",
         "active": 75
       },
       {
+        "country": "Italy",
+        "active": 75
+      },
+      {
         "country": "Spain",
-        "active": 74
+        "active": 72
       },
       {
         "country": "Netherlands",
-        "active": 62
+        "active": 60
       },
       {
         "country": "Norway",
@@ -685,18 +685,18 @@
       },
       {
         "country": "France",
-        "active": 51
+        "active": 52
       }
     ],
     "push_events_30d": {
-      "notification_receive": 1255,
-      "notification_open": 640,
-      "notification_foreground": 253,
-      "notification_dismiss": 86,
-      "notification_toggled": 7
+      "notification_receive": 1286,
+      "notification_open": 532,
+      "notification_foreground": 131,
+      "notification_dismiss": 105,
+      "notification_toggled": 10
     },
-    "push_open_rate_30d": 0.7167,
-    "fetched_at": "2026-07-09T08:38:32.406868+00:00"
+    "push_open_rate_30d": 0.8024,
+    "fetched_at": "2026-07-10T08:27:46.324464+00:00"
   },
   "kit": {
     "status": "ok",
@@ -764,17 +764,17 @@
         "public": true
       }
     ],
-    "fetched_at": "2026-07-09T08:38:33.967529+00:00"
+    "fetched_at": "2026-07-10T08:27:47.266254+00:00"
   },
   "asc": {
     "status": "error",
     "error": "HTTP 403",
-    "body": "{\n  \"errors\" : [ {\n    \"id\" : \"XAOGT4IB7W6UUOGYPRQUYEFXWY\",\n    \"status\" : \"403\",\n    \"code\" : \"FORBIDDEN.REQUIRED_AGREEMENTS_MISSING_OR_EXPIRED\",\n    \"title\" : \"A required agreement is missing or has expired.\",\n    \"detail\" : \"This request requires an in-effect agreement that has not been signed or"
+    "body": "{\n  \"errors\" : [ {\n    \"id\" : \"YNG2HOT2Y35BHD2FQ2IOEYT2MA\",\n    \"status\" : \"403\",\n    \"code\" : \"FORBIDDEN.REQUIRED_AGREEMENTS_MISSING_OR_EXPIRED\",\n    \"title\" : \"A required agreement is missing or has expired.\",\n    \"detail\" : \"This request requires an in-effect agreement that has not been signed or"
   },
   "play": {
     "status": "ok",
-    "window_start": "2026-06-10",
-    "window_end": "2026-07-09",
+    "window_start": "2026-06-11",
+    "window_end": "2026-07-10",
     "package": "no.bitfactory.artemisii.tracker",
     "by_product": {},
     "by_day": [],
@@ -795,7 +795,7 @@
     "posts_7d": 3,
     "likes_7d": 0,
     "reposts_7d": 0,
-    "fetched_at": "2026-07-09T08:38:36.636227+00:00"
+    "fetched_at": "2026-07-10T08:27:49.287219+00:00"
   },
   "mastodon": {
     "status": "ok",
@@ -807,22 +807,22 @@
     "posts_7d": 3,
     "favs_7d": 0,
     "boosts_7d": 0,
-    "fetched_at": "2026-07-09T08:38:37.906033+00:00"
+    "fetched_at": "2026-07-10T08:27:50.545085+00:00"
   },
   "threads": {
     "status": "ok",
     "handle": "@artemistracker.app",
     "username": "artemistracker.app",
-    "followers": 0,
+    "followers": 1,
     "posts_7d": 1,
     "likes_7d": 3,
     "comments_7d": 2,
     "reposts_7d": 2,
-    "fetched_at": "2026-07-09T08:38:39.470072+00:00"
+    "fetched_at": "2026-07-10T08:27:51.894666+00:00"
   },
   "instagram": {
     "status": "error",
-    "error": "HTTP 400: {\"error\":{\"message\":\"Unsupported request - method type: get\",\"type\":\"IGApiException\",\"code\":100,\"fbtrace_id\":\"AnJw_XMqvwK_Jkm6YKmnvn9\"}}"
+    "error": "HTTP 400: {\"error\":{\"message\":\"Unsupported request - method type: get\",\"type\":\"IGApiException\",\"code\":100,\"fbtrace_id\":\"AoH_9ayFMF_O6nNHKCtW7A3\"}}"
   },
   "push": {
     "status": "ok",
@@ -861,7 +861,7 @@
         "message_id": "projects/artemis-tracker-665d8/messages/2065362934325299659"
       }
     ],
-    "fetched_at": "2026-07-09T08:38:39.939690+00:00"
+    "fetched_at": "2026-07-10T08:27:52.236026+00:00"
   },
   "roadmap": {
     "status": "ok",
@@ -949,7 +949,7 @@
         "note": "durable across sandbox resets"
       }
     ],
-    "fetched_at": "2026-07-09T08:38:39.940017+00:00"
+    "fetched_at": "2026-07-10T08:27:52.236335+00:00"
   },
   "targets": {
     "status": "ok",
@@ -1043,5 +1043,5 @@
       "implied_subs": 5200
     }
   },
-  "generated_at": "2026-07-09T08:38:39.940029+00:00"
+  "generated_at": "2026-07-10T08:27:52.236347+00:00"
 }
