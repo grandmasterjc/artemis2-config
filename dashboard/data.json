@@ -3,13 +3,6 @@
     "status": "ok",
     "daily_users": [
       {
-        "date": "2026-04-13",
-        "active": 659,
-        "new": 478,
-        "views": 781,
-        "sessions": 499
-      },
-      {
         "date": "2026-04-14",
         "active": 626,
         "new": 441,
@@ -627,33 +620,40 @@
       },
       {
         "date": "2026-07-11",
-        "active": 88,
-        "new": 28,
-        "views": 104,
-        "sessions": 93
+        "active": 92,
+        "new": 31,
+        "views": 109,
+        "sessions": 98
+      },
+      {
+        "date": "2026-07-12",
+        "active": 104,
+        "new": 21,
+        "views": 121,
+        "sessions": 109
       }
     ],
     "latest": {
-      "date": "2026-07-11",
-      "active": 88,
-      "new": 28,
-      "views": 104,
-      "sessions": 93
+      "date": "2026-07-12",
+      "active": 104,
+      "new": 21,
+      "views": 121,
+      "sessions": 109
     },
-    "total_active_28d": 3995,
-    "total_new_28d": 1052,
-    "total_sessions_28d": 4607,
-    "total_views_28d": 5453,
-    "avg_dau_7d": 121.4,
-    "avg_dau_28d": 142.7,
+    "total_active_28d": 3927,
+    "total_new_28d": 1006,
+    "total_sessions_28d": 4524,
+    "total_views_28d": 5349,
+    "avg_dau_7d": 121.0,
+    "avg_dau_28d": 140.2,
     "top_countries_30d": [
       {
         "country": "United States",
-        "active": 1064
+        "active": 1051
       },
       {
         "country": "United Kingdom",
-        "active": 325
+        "active": 321
       },
       {
         "country": "Canada",
@@ -661,15 +661,15 @@
       },
       {
         "country": "Germany",
-        "active": 166
+        "active": 171
       },
       {
         "country": "Italy",
-        "active": 74
+        "active": 76
       },
       {
         "country": "Australia",
-        "active": 71
+        "active": 73
       },
       {
         "country": "Spain",
@@ -677,26 +677,26 @@
       },
       {
         "country": "Norway",
-        "active": 54
+        "active": 55
       },
       {
         "country": "Netherlands",
-        "active": 51
+        "active": 50
       },
       {
         "country": "France",
-        "active": 48
+        "active": 46
       }
     ],
     "push_events_30d": {
-      "notification_receive": 1292,
-      "notification_open": 521,
+      "notification_receive": 1296,
+      "notification_open": 522,
       "notification_dismiss": 112,
-      "notification_foreground": 65,
+      "notification_foreground": 53,
       "notification_toggled": 9
     },
-    "push_open_rate_30d": 0.8891,
-    "fetched_at": "2026-07-12T07:31:50.134615+00:00"
+    "push_open_rate_30d": 0.9078,
+    "fetched_at": "2026-07-13T08:21:07.852041+00:00"
   },
   "kit": {
     "status": "ok",
@@ -764,17 +764,385 @@
         "public": true
       }
     ],
-    "fetched_at": "2026-07-12T07:31:51.046065+00:00"
+    "fetched_at": "2026-07-13T08:21:08.902541+00:00"
   },
   "asc": {
-    "status": "error",
-    "error": "HTTP 403",
-    "body": "{\n  \"errors\" : [ {\n    \"id\" : \"TFUYKPMWNH3AKCICBNR3AOGZ7U\",\n    \"status\" : \"403\",\n    \"code\" : \"FORBIDDEN.REQUIRED_AGREEMENTS_MISSING_OR_EXPIRED\",\n    \"title\" : \"A required agreement is missing or has expired.\",\n    \"detail\" : \"This request requires an in-effect agreement that has not been signed or"
+    "status": "ok",
+    "app_id": "6761183798",
+    "app_name": "Artemis Mission Tracker",
+    "bundle_id": "no.bitfactory.artemisii.tracker",
+    "reviews_recent": [
+      {
+        "rating": 5,
+        "title": "Nice!",
+        "body": "Good UI. Lots of features. The paid version is well worth it and I look forward to using it for future Artemis missions.",
+        "reviewer": "bentley9988",
+        "territory": "USA",
+        "created": "2026-06-21T13:03:06-07:00"
+      },
+      {
+        "rating": 1,
+        "title": "Full of bugs",
+        "body": "This app was useless during the Artemis 2 mission, the mission tracker data was just plain wrong.",
+        "reviewer": "Leo PHB",
+        "territory": "GBR",
+        "created": "2026-04-21T18:57:47-07:00"
+      },
+      {
+        "rating": 4,
+        "title": "Making it up",
+        "body": "This app was a bit slow to update but the info was of good detail.",
+        "reviewer": "Fastlunch_1",
+        "territory": "AUS",
+        "created": "2026-04-11T13:53:03-07:00"
+      },
+      {
+        "rating": 3,
+        "title": "Click still running?",
+        "body": "It landed. I think you can turn off the flight duration clock now.",
+        "reviewer": "Sophiedog6",
+        "territory": "USA",
+        "created": "2026-04-11T08:24:56-07:00"
+      },
+      {
+        "rating": 3,
+        "title": "Version 2.0.4(2)",
+        "body": "Nach dem Splashdown ist das Tracking immer noch aktiv, Artemis immer noch weit von der Erde entfernt, 10.65 km/s!",
+        "reviewer": "iROWI",
+        "territory": "CHE",
+        "created": "2026-04-11T00:56:47-07:00"
+      },
+      {
+        "rating": 1,
+        "title": "Don\u2019t waste your time",
+        "body": "This App is garbage. From beginning to end nothing was correct.  The timing, the miles everything was off always    absolute garbage. Don\u2019t waste your time.  I spent the extra money so I could get space weather. Space weather half the time wouldn\u2019t update and I get an error message.",
+        "reviewer": "Soberjoey",
+        "territory": "USA",
+        "created": "2026-04-10T18:18:00-07:00"
+      },
+      {
+        "rating": 1,
+        "title": "Very inaccurate",
+        "body": "The app was extremely inaccurate the entire Artemis 2 mission and I feel\nLike I blew 5$ down the drain",
+        "reviewer": "Paytisa",
+        "territory": "CAN",
+        "created": "2026-04-10T17:52:32-07:00"
+      },
+      {
+        "rating": 1,
+        "title": "Terrible delay",
+        "body": "This app was delayed by more than 19 minutes. Watching the news was 10/15 minutes faster than when I would get a notification from the app. Parachutes deployed notification was so delayed , the astronauts were IRL already getting out of the capsule.",
+        "reviewer": "thisis so dumb and theft",
+        "territory": "USA",
+        "created": "2026-04-10T17:24:29-07:00"
+      },
+      {
+        "rating": 1,
+        "title": "Really out of sync data",
+        "body": "Got notifications for certain events happening during the mission way after it actually happened. We\u2019re talking 20/30 mins after each milestone. And data shown in app was always different to that of NASA so not sure what\u2019s going on there. Really annoying",
+        "reviewer": "jayden_437",
+        "territory": "GBR",
+        "created": "2026-04-10T17:20:24-07:00"
+      },
+      {
+        "rating": 5,
+        "title": "this is a beautiful app",
+        "body": "I truly am grateful to have ran across this beautiful app, totally worth the full price because of all the future missions. I love how it has live tracking down to miles and speed to a chance to see a live stream via youtube all from the same screen. Thank you for making this beautiful app! \ud83c\udf16\ud83d\ude80\ud83c\uddfa\ud83c\uddf8",
+        "reviewer": "milkywaychristian",
+        "territory": "USA",
+        "created": "2026-04-10T10:14:09-07:00"
+      }
+    ],
+    "new_this_run": 0,
+    "reviews_count_recent": 50,
+    "avg_rating_recent": 2.2,
+    "rating_distribution_recent": {
+      "1": 22,
+      "2": 13,
+      "3": 4,
+      "4": 5,
+      "5": 6
+    },
+    "rating_count_recent": 50,
+    "stats_30d": {
+      "count": 1,
+      "avg": 5.0,
+      "share_4plus": 100.0,
+      "dist": {
+        "1": 0,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 1
+      }
+    },
+    "stats_90d": {
+      "count": 2,
+      "avg": 3.0,
+      "share_4plus": 50.0,
+      "dist": {
+        "1": 1,
+        "2": 0,
+        "3": 0,
+        "4": 0,
+        "5": 1
+      }
+    },
+    "stats_all_time": {
+      "count": 76,
+      "avg": 2.28,
+      "share_4plus": 23.7,
+      "dist": {
+        "1": 34,
+        "2": 16,
+        "3": 8,
+        "4": 7,
+        "5": 11
+      }
+    },
+    "monthly": [
+      {
+        "month": "2026-03",
+        "count": 2,
+        "avg": 2.5,
+        "share_4plus": 50.0
+      },
+      {
+        "month": "2026-04",
+        "count": 73,
+        "avg": 2.23,
+        "share_4plus": 21.9
+      },
+      {
+        "month": "2026-06",
+        "count": 1,
+        "avg": 5.0,
+        "share_4plus": 100.0
+      }
+    ],
+    "subscriptions": {
+      "status": "ok",
+      "window_start": "2026-06-11",
+      "window_end": "2026-07-11",
+      "days_with_data": 31,
+      "days_attempted": 31,
+      "active_subscribers": 42,
+      "active_breakdown": {
+        "active_total": 42,
+        "by_product": {
+          "Artemis+ Yearly": 36,
+          "Artemis+ Monthly": 6
+        },
+        "by_country": [
+          {
+            "country": "??",
+            "active": 42
+          }
+        ],
+        "arr_usd": 571.78,
+        "mrr_usd": 47.65,
+        "proceeds_factor": 0.85,
+        "as_of": "2026-07-11"
+      },
+      "events_30d": {
+        "Paid Subscription from Introductory Offer": 11,
+        "Start Introductory Offer": 12,
+        "Canceled from Billing Retry": 2,
+        "Renewals from Grace Period": 1,
+        "Billing Retry from Grace Period": 2,
+        "Grace Period from Introductory Offer": 2,
+        "Cancel": 3
+      },
+      "event_days_with_data": 20,
+      "cancel_events_30d": 5,
+      "refund_events_30d": 0,
+      "monthly_churn": 0.119,
+      "by_product": {
+        "no.bitfactory.artemisii.tracker.monthly": {
+          "units": 12,
+          "proceeds_usd": 17.8,
+          "name": "Artemis+ Monthly"
+        },
+        "no.bitfactory.artemisii.tracker.yearly": {
+          "units": 12,
+          "proceeds_usd": 135.75,
+          "name": "Artemis+ Yearly"
+        }
+      },
+      "by_day": [
+        {
+          "date": "2026-06-12",
+          "monthly": 1,
+          "yearly": 0,
+          "other": 0,
+          "proceeds_usd": 0.0
+        },
+        {
+          "date": "2026-06-14",
+          "monthly": 1,
+          "yearly": 0,
+          "other": 0,
+          "proceeds_usd": 0.0
+        },
+        {
+          "date": "2026-06-15",
+          "monthly": 0,
+          "yearly": 1,
+          "other": 0,
+          "proceeds_usd": 21.24
+        },
+        {
+          "date": "2026-06-16",
+          "monthly": 0,
+          "yearly": 2,
+          "other": 0,
+          "proceeds_usd": 0.0
+        },
+        {
+          "date": "2026-06-17",
+          "monthly": 1,
+          "yearly": 1,
+          "other": 0,
+          "proceeds_usd": 16.99
+        },
+        {
+          "date": "2026-06-18",
+          "monthly": 0,
+          "yearly": 1,
+          "other": 0,
+          "proceeds_usd": 0.0
+        },
+        {
+          "date": "2026-06-19",
+          "monthly": 1,
+          "yearly": 0,
+          "other": 0,
+          "proceeds_usd": 3.39
+        },
+        {
+          "date": "2026-06-20",
+          "monthly": 0,
+          "yearly": 1,
+          "other": 0,
+          "proceeds_usd": 0.0
+        },
+        {
+          "date": "2026-06-21",
+          "monthly": 0,
+          "yearly": 1,
+          "other": 0,
+          "proceeds_usd": 0.0
+        },
+        {
+          "date": "2026-06-22",
+          "monthly": 0,
+          "yearly": 1,
+          "other": 0,
+          "proceeds_usd": 16.99
+        },
+        {
+          "date": "2026-06-23",
+          "monthly": 2,
+          "yearly": 1,
+          "other": 0,
+          "proceeds_usd": 29.56
+        },
+        {
+          "date": "2026-06-24",
+          "monthly": 1,
+          "yearly": 0,
+          "other": 0,
+          "proceeds_usd": 3.39
+        },
+        {
+          "date": "2026-06-25",
+          "monthly": 0,
+          "yearly": 1,
+          "other": 0,
+          "proceeds_usd": 16.99
+        },
+        {
+          "date": "2026-06-27",
+          "monthly": 0,
+          "yearly": 1,
+          "other": 0,
+          "proceeds_usd": 16.99
+        },
+        {
+          "date": "2026-06-28",
+          "monthly": 0,
+          "yearly": 1,
+          "other": 0,
+          "proceeds_usd": 16.99
+        },
+        {
+          "date": "2026-06-29",
+          "monthly": 1,
+          "yearly": 0,
+          "other": 0,
+          "proceeds_usd": 4.24
+        },
+        {
+          "date": "2026-07-02",
+          "monthly": 1,
+          "yearly": 0,
+          "other": 0,
+          "proceeds_usd": 0.0
+        },
+        {
+          "date": "2026-07-04",
+          "monthly": 1,
+          "yearly": 0,
+          "other": 0,
+          "proceeds_usd": 3.39
+        },
+        {
+          "date": "2026-07-08",
+          "monthly": 1,
+          "yearly": 0,
+          "other": 0,
+          "proceeds_usd": 0.0
+        },
+        {
+          "date": "2026-07-09",
+          "monthly": 1,
+          "yearly": 0,
+          "other": 0,
+          "proceeds_usd": 3.39
+        }
+      ],
+      "by_country": [
+        {
+          "country": "US",
+          "units": 19,
+          "proceeds_usd": 98.51
+        },
+        {
+          "country": "CA",
+          "units": 3,
+          "proceeds_usd": 25.48
+        },
+        {
+          "country": "NZ",
+          "units": 2,
+          "proceeds_usd": 29.56
+        }
+      ],
+      "by_order_type": {
+        "Standard": 12,
+        "Free Trial Intro Offer": 12
+      },
+      "total_units_30d": 24,
+      "total_proceeds_usd_30d": 153.55,
+      "new_subscribers_30d": 12,
+      "new_installs_30d": 75
+    },
+    "fetched_at": "2026-07-13T08:21:56.685029+00:00"
   },
   "play": {
     "status": "ok",
-    "window_start": "2026-06-13",
-    "window_end": "2026-07-12",
+    "window_start": "2026-06-14",
+    "window_end": "2026-07-13",
     "package": "no.bitfactory.artemisii.tracker",
     "by_product": {},
     "by_day": [],
@@ -789,13 +1157,13 @@
   "bluesky": {
     "status": "ok",
     "handle": "artemistracker.app",
-    "followers": 7,
+    "followers": 8,
     "following": 12,
     "posts_total": 46,
     "posts_7d": 3,
     "likes_7d": 0,
     "reposts_7d": 0,
-    "fetched_at": "2026-07-12T07:31:53.827224+00:00"
+    "fetched_at": "2026-07-13T08:21:58.642785+00:00"
   },
   "mastodon": {
     "status": "ok",
@@ -807,7 +1175,7 @@
     "posts_7d": 3,
     "favs_7d": 0,
     "boosts_7d": 0,
-    "fetched_at": "2026-07-12T07:31:55.116544+00:00"
+    "fetched_at": "2026-07-13T08:21:59.717928+00:00"
   },
   "threads": {
     "status": "ok",
@@ -818,11 +1186,11 @@
     "likes_7d": 3,
     "comments_7d": 2,
     "reposts_7d": 2,
-    "fetched_at": "2026-07-12T07:31:56.275151+00:00"
+    "fetched_at": "2026-07-13T08:22:01.264367+00:00"
   },
   "instagram": {
     "status": "error",
-    "error": "HTTP 400: {\"error\":{\"message\":\"Unsupported request - method type: get\",\"type\":\"IGApiException\",\"code\":100,\"fbtrace_id\":\"AVhjMHn2_Du0pkCNPT-I5Pc\"}}"
+    "error": "HTTP 400: {\"error\":{\"message\":\"Unsupported request - method type: get\",\"type\":\"IGApiException\",\"code\":100,\"fbtrace_id\":\"AynK33-pyzDaHcOrALz4lzo\"}}"
   },
   "push": {
     "status": "ok",
@@ -861,7 +1229,7 @@
         "message_id": "projects/artemis-tracker-665d8/messages/2065362934325299659"
       }
     ],
-    "fetched_at": "2026-07-12T07:31:56.516196+00:00"
+    "fetched_at": "2026-07-13T08:22:02.011584+00:00"
   },
   "roadmap": {
     "status": "ok",
@@ -949,7 +1317,7 @@
         "note": "durable across sandbox resets"
       }
     ],
-    "fetched_at": "2026-07-12T07:31:56.516485+00:00"
+    "fetched_at": "2026-07-13T08:22:02.011898+00:00"
   },
   "targets": {
     "status": "ok",
@@ -1043,5 +1411,5 @@
       "implied_subs": 5200
     }
   },
-  "generated_at": "2026-07-12T07:31:56.516498+00:00"
+  "generated_at": "2026-07-13T08:22:02.011911+00:00"
 }
