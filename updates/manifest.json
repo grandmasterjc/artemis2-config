@@ -1,6 +1,17 @@
 {
   "updates": [
     {
+      "id": "artemis3-heat-shield-stacks-july-15",
+      "title": "Artemis III is stacking up at Kennedy \u2014 and the heat shield is the part to watch",
+      "subtitle": "Boosters went up on July 11 and Orion's heat shield just went on. The shield was redesigned to fix the flaw that scarred Artemis I.",
+      "date": "2026-07-15T15:46:23Z",
+      "mission": "artemis3",
+      "premium": false,
+      "hero_image": "https://grandmasterjc.github.io/artemis2-config/updates/images/artemis3-heat-shield-stacks-july-15.jpg",
+      "summary": "Boosters went up on July 11 and Orion's heat shield just went on. The shield was redesigned to fix the flaw that scarred Artemis I.",
+      "author": "Joachim Gresslien"
+    },
+    {
       "id": "moon-base-1-endurance-july-8",
       "title": "NASA's first Moon Base landing has a lander that's ready \u2014 and a launch pad that isn't",
       "subtitle": "Endurance keeps passing its tests. The rocket meant to fly it blew up on the pad two days after the mission was announced.",
