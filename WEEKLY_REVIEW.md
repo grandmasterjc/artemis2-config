@@ -70,5 +70,9 @@ Two-phase, so the article is verified visible before anyone is notified:
 4. On the owner's go-ahead, run the same workflow with `phase=announce`
    (FCM push + Kit newsletter + Bluesky/Mastodon/Threads).
 
+After publishing: check how the previous week's social posts performed and
+append learnings to `SOCIAL_PLAYBOOK.md` (metrics how-to at the bottom of
+that file). Threads must be read manually by the owner — ask for the numbers.
+
 Communication: Norwegian for owner comms, English for content. For yes/no
 questions, answer yes/no.
