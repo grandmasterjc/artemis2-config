@@ -107,6 +107,36 @@
       '</div>';
   }
 
+  // For premium articles: keep the hook (everything before the first "---"
+  // divider, capped at 3 paragraphs) and drop the rest.
+  function teaserOf(md) {
+    var blocks = md.split(/\n\s*\n/);
+    var out = [], count = 0;
+    for (var i = 0; i < blocks.length; i++) {
+      var t = blocks[i].trim();
+      if (/^---+$/.test(t)) break;
+      out.push(blocks[i]);
+      if (t) count++;
+      if (count >= 3) break;
+    }
+    return out.join('\n\n');
+  }
+
+  function paywallHTML() {
+    return '<div class="paywall">' +
+      '<div class="paywall-fade"></div>' +
+      '<div class="paywall-card">' +
+      '<div class="paywall-kicker">ARTEMIS PLUS</div>' +
+      '<h2>Keep reading in the app</h2>' +
+      '<p>This is a premium briefing for Artemis Plus members. Unlock it — and every deep-dive — in the Artemis Tracker app.</p>' +
+      '<div class="paywall-btns">' +
+      '<a class="btn-cta" href="https://apps.apple.com/app/id6761183798">App Store</a>' +
+      '<a class="btn-cta" href="https://play.google.com/store/apps/details?id=no.bitfactory.artemisii">Google Play</a>' +
+      '</div>' +
+      '<p class="paywall-note">Already a member? Open this article in the app where you subscribed.</p>' +
+      '</div></div>';
+  }
+
   function showArticle(meta, body) {
     document.title = meta.title + ' — Artemis Tracker';
     var d = new Date(meta.date);
@@ -119,7 +149,12 @@
     if (meta.subtitle) html += '<div class="standfirst">' + esc(meta.subtitle) + '</div>';
     html += '<div class="meta">' + esc(dateStr) + (meta.author ? ' · ' + esc(meta.author) : '') + '</div>';
     if (meta.hero_image) html += '<img class="hero" src="' + esc(meta.hero_image) + '" alt="">';
-    html += '<div class="article-body">' + renderMarkdown(body) + '</div>';
+    if (meta.premium) {
+      html += '<div class="article-body">' + renderMarkdown(teaserOf(body)) + '</div>';
+      html += paywallHTML();
+    } else {
+      html += '<div class="article-body">' + renderMarkdown(body) + '</div>';
+    }
     html += '</article>';
     content.innerHTML = html;
   }

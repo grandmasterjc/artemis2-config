@@ -120,6 +120,8 @@
       var makeCard = function (u) {
         var a = el('a', 'card clickable news-card');
         a.href = BASE + 'u/' + encodeURIComponent(u.id);
+        a.style.position = 'relative';
+        if (u.premium) a.appendChild(el('span', 'plus-badge', 'PLUS'));
         var img = el('img', 'thumb');
         img.loading = 'lazy';
         img.alt = '';

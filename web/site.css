@@ -390,6 +390,26 @@ main[data-screen].visible { display: block; }
 .article-body img { border-radius: var(--r-tile); border: 1px solid var(--border-1); margin: 8px 0 18px; }
 .article-body hr { border: none; border-top: 1px solid var(--border-1); margin: 26px 0; }
 .article-body blockquote { margin: 0 0 18px; padding: 12px 18px; border-left: 3px solid var(--cyan-border); background: var(--surface-1); border-radius: 0 var(--r-tile) var(--r-tile) 0; color: var(--fg-2); }
+/* Premium paywall on /u/ pages */
+.paywall { position: relative; margin-top: -90px; }
+.paywall-fade { height: 120px; background: linear-gradient(180deg, rgba(5,8,20,0) 0%, var(--bg-0) 90%); }
+.paywall-card {
+  background: var(--surface-1); border: 1px solid var(--amber-border); border-radius: var(--r-card);
+  padding: 28px; text-align: center;
+}
+.paywall-kicker { font-family: var(--font-mono); font-weight: 700; font-size: 12px; letter-spacing: 0.2em; color: var(--amber); }
+.paywall-card h2 { font-weight: 800; font-size: 24px; margin: 10px 0 8px; }
+.paywall-card p { font-size: 15px; line-height: 1.5; color: var(--fg-2); margin: 0 0 18px; }
+.paywall-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 14px; }
+.paywall-note { font-size: 13px !important; color: var(--fg-3) !important; margin-bottom: 0 !important; }
+
+.plus-badge {
+  position: absolute; top: 10px; left: 10px; z-index: 1;
+  font-family: var(--font-mono); font-weight: 700; font-size: 10px; letter-spacing: 0.12em;
+  color: var(--amber); border: 1px solid var(--amber-border); background: rgba(5,8,20,0.7);
+  border-radius: 999px; padding: 4px 10px;
+}
+
 .notfound { text-align: center; padding: 100px 20px; }
 .notfound .code { font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.2em; color: var(--fg-3); }
 .notfound h1 { font-weight: 800; font-size: 40px; margin: 12px 0; }
