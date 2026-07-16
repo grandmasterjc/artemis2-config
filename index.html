@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Artemis Tracker — follow the Artemis program</title>
+<meta name="description" content="artemistracker.app — follow the Artemis program. Mission status, tracking, crew, timeline, media and updates for Artemis II and beyond.">
+<meta property="og:title" content="Artemis Tracker">
+<meta property="og:description" content="Follow the Artemis program — mission status, tracking, crew and updates.">
+<meta property="og:image" content="https://grandmasterjc.github.io/artemis2-config/updates/images/a2_earthrise.jpg">
+<link rel="icon" type="image/webp" href="web/assets/app-icon.webp">
+<link rel="apple-touch-icon" href="web/assets/app-icon.webp">
+<link rel="stylesheet" href="web/site.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="brand">
+    <img src="web/assets/app-icon.webp" alt="Artemis Tracker">
+    <span class="brand-name">ARTEMIS<span class="accent"> TRACKER</span></span>
+  </div>
+  <nav class="site-nav">
+    <a data-tab="mission" href="#" class="active">Mission</a>
+    <a data-tab="tracking" href="#tracking">Tracking</a>
+    <a data-tab="media" href="#media">Media</a>
+    <a data-tab="timeline" href="#timeline">Timeline</a>
+    <a data-tab="crew" href="#crew">Crew</a>
+    <a data-tab="missions" href="#missions">Missions</a>
+    <a data-tab="gear" href="#gear">Gear</a>
+  </nav>
+  <div class="header-right">
+    <a class="btn-cta" data-store="ios" href="https://apps.apple.com/app/id6761183798">Get the app</a>
+  </div>
+</header>
+
+<!-- ══ Mission ══════════════════════════════════════════════════ -->
+<main data-screen="mission" class="visible">
+  <section class="hero">
+    <img class="hero-img" src="updates/images/a2_earthrise.jpg" alt="Earth seen from Orion during Artemis II">
+    <div class="hero-protect"></div>
+    <div class="hero-content">
+      <div>
+        <div class="kicker">ARTEMIS PROGRAM · MISSION 2 OF 5</div>
+        <h1>ARTEMIS II</h1>
+        <div class="hero-sub">Mission Complete</div>
+      </div>
+      <div class="met">
+        <div class="met-label">MISSION ELAPSED TIME</div>
+        <div class="met-row">
+          <div class="met-sign">T+</div>
+          <div class="met-digits">
+            <div><div class="digit-box" data-t2="days">09</div><div class="digit-label">DAYS</div></div>
+            <div><div class="digit-box" data-t2="hrs">01</div><div class="digit-label">HRS</div></div>
+            <div><div class="digit-box" data-t2="min">32</div><div class="digit-label">MIN</div></div>
+            <div><div class="digit-box" data-t2="sec">15</div><div class="digit-label">SEC</div></div>
+          </div>
+        </div>
+        <div class="met-caption" id="met-caption">Launched April 1, 2026 • 22:35 UTC · LC-39B, Kennedy Space Center</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container mission-grid">
+    <div class="col">
+      <div class="banner-complete">
+        <span class="check">✓</span>
+        <div>
+          <div class="banner-title">MISSION COMPLETE</div>
+          <div class="banner-body">Artemis II splashed down safely in the Pacific Ocean on April 10, 2026 at 8:07 PM EDT. All four crew members recovered in good health.</div>
+        </div>
+      </div>
+
+      <div class="card phase-card">
+        <div class="phase-head">
+          <div>
+            <div class="phase-label">CURRENT PHASE</div>
+            <div class="phase-name">Splashdown</div>
+          </div>
+          <span class="pill"><span class="dot"></span>COMPLETED</span>
+        </div>
+        <div class="phase-desc">Orion splashed down in the Pacific Ocean off San Diego. USS San Diego and recovery teams retrieved the crew. Mission elapsed time: ~9 days.</div>
+        <div class="progress-head">
+          <span class="lbl">MISSION PROGRESS</span>
+          <span class="val">Splashdown</span>
+        </div>
+        <div class="segbar">
+          <span class="done"></span><span class="done"></span><span class="done"></span><span class="done"></span>
+          <span class="done"></span><span class="done"></span><span class="done"></span><span class="current"></span>
+        </div>
+      </div>
+
+      <div class="section-row">
+        <span class="section-label">LATEST UPDATES</span>
+        <a class="more" data-tab="media" href="#media">See all ›</a>
+      </div>
+      <div class="news-grid" id="news-home"></div>
+    </div>
+
+    <div class="col-side">
+      <div class="card stat-tri">
+        <div><div class="stat-val">—</div><div class="stat-lbl">DISTANCE</div></div>
+        <div><div class="stat-val">—</div><div class="stat-lbl">VELOCITY</div></div>
+        <div><div class="stat-val" style="font-size:14px;text-transform:uppercase;">Splashdown</div><div class="stat-lbl">PHASE</div></div>
+      </div>
+
+      <a class="weather-strip" data-tab="tracking" href="#tracking" style="background: var(--amber-dim); border-color: var(--amber-border);">
+        <span class="icon" data-sw="accent" style="color: var(--amber);">☀</span>
+        <div>
+          <div class="weather-title" data-sw="title accent" style="color: var(--amber);"><span data-sw="title">SPACE WEATHER: ELEVATED RISK</span></div>
+          <div class="weather-detail" data-sw="detail">Kp: 0 · CMEs: 31 · Peak Flare: M-class</div>
+        </div>
+        <span class="chev">›</span>
+      </a>
+
+      <div class="card crew-mini">
+        <div class="crew-mini-head">
+          <span class="section-label">CREW</span>
+          <a class="more" data-tab="crew" href="#crew" style="margin-left:auto;font-weight:600;font-size:14px;">All crew ›</a>
+        </div>
+        <div class="crew-mini-grid">
+          <div class="crew-chip">
+            <div class="avatar-ring"><img loading="lazy" src="https://images-assets.nasa.gov/image/jsc2025e004074/jsc2025e004074~medium.jpg" alt="Reid Wiseman"></div>
+            <div class="nm">Wiseman</div><div class="role">CDR</div>
+          </div>
+          <div class="crew-chip">
+            <div class="avatar-ring"><img loading="lazy" src="https://images-assets.nasa.gov/image/NHQ202009150002/NHQ202009150002~medium.jpg" alt="Victor Glover"></div>
+            <div class="nm">Glover</div><div class="role">PLT</div>
+          </div>
+          <div class="crew-chip">
+            <div class="avatar-ring"><img loading="lazy" src="https://images-assets.nasa.gov/image/NHQ202009160004/NHQ202009160004~medium.jpg" alt="Christina Koch"></div>
+            <div class="nm">Koch</div><div class="role">MS</div>
+          </div>
+          <div class="crew-chip">
+            <div class="avatar-ring intl"><img loading="lazy" src="https://images-assets.nasa.gov/image/jsc2025e004073/jsc2025e004073~medium.jpg" alt="Jeremy Hansen"></div>
+            <div class="nm">Hansen</div><div class="role intl">MS</div>
+          </div>
+        </div>
+      </div>
+
+      <a class="card clickable next-card" data-tab="missions" href="#missions">
+        <div>
+          <div class="next-title">Next: Artemis III</div>
+          <div class="next-sub">T− <span data-t3="days">—</span> days · Launch date TBD</div>
+        </div>
+        <span class="chev">›</span>
+      </a>
+    </div>
+  </div>
+</main>
+
+<!-- ══ Tracking ═════════════════════════════════════════════════ -->
+<main data-screen="tracking">
+  <div class="container page">
+    <div class="page-head">
+      <h1>Tracking</h1>
+      <div class="sub">Orion position, telemetry and space weather</div>
+    </div>
+    <div class="tracking-grid">
+      <div class="col">
+        <div class="card trajectory-card">
+          <div class="trajectory-canvas-wrap"><canvas id="trajectory-canvas"></canvas></div>
+          <div class="stat-quad">
+            <div><div class="stat-val mono">—</div><div class="stat-lbl">DISTANCE FROM EARTH</div></div>
+            <div><div class="stat-val mono">—</div><div class="stat-lbl">VELOCITY</div></div>
+            <div><div class="stat-val mono" data-t2="short">9d 01h</div><div class="stat-lbl">MISSION ELAPSED</div></div>
+            <div><div class="stat-val mono" style="font-size:16px;text-transform:uppercase;">Splashdown</div><div class="stat-lbl">PHASE</div></div>
+          </div>
+        </div>
+        <div class="data-note">Live telemetry unavailable — mission complete. Data source: NASA Open APIs.</div>
+      </div>
+      <div class="col-side">
+        <div class="weather-card" style="background: var(--amber-dim); border-color: var(--amber-border);">
+          <div class="weather-card-head">
+            <span class="icon" data-sw="accent" style="color: var(--amber); font-size:20px;">☀</span>
+            <div class="t" data-sw="accent" style="color: var(--amber);"><span data-sw="title">SPACE WEATHER: ELEVATED RISK</span></div>
+          </div>
+          <div class="weather-tiles">
+            <div><div class="v" data-sw="kp">0</div><div class="l">KP INDEX</div></div>
+            <div><div class="v">31</div><div class="l">CMES (30D)</div></div>
+            <div><div class="v">M</div><div class="l">PEAK FLARE</div></div>
+          </div>
+          <div class="weather-copy">Solar flares, coronal mass ejections and geomagnetic activity monitored via NOAA SWPC. Elevated flare activity can affect deep-space communications.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- ══ Media ════════════════════════════════════════════════════ -->
+<main data-screen="media">
+  <div class="container page">
+    <div class="page-head">
+      <h1>Media</h1>
+      <div class="sub">Photos and video from Artemis II</div>
+    </div>
+    <div class="media-grid">
+      <div class="card media-card"><img loading="lazy" src="updates/images/a2_launch.jpg" alt="Earth seen from Orion after departure"><div class="cap">Home, seen from Orion <span class="dt">· Apr 2, 2026</span></div></div>
+      <div class="card media-card"><img loading="lazy" src="updates/images/a2_earthrise.jpg" alt="Earth over the lunar horizon"><div class="cap">Earth over the lunar horizon <span class="dt">· Apr 5, 2026</span></div></div>
+      <div class="card media-card"><img loading="lazy" src="updates/images/a2_far_side.jpg" alt="Lunar far side seen during flyby"><div class="cap">Far side flyby <span class="dt">· Apr 5, 2026</span></div></div>
+      <div class="card media-card"><img loading="lazy" src="updates/images/a2_crew_observing.jpg" alt="The Moon approaching, seen from Orion"><div class="cap">The Moon, approaching <span class="dt">· Apr 4, 2026</span></div></div>
+      <div class="card media-card"><img loading="lazy" src="updates/images/a2_lunar_limb.jpg" alt="The lunar limb from Orion"><div class="cap">The lunar limb <span class="dt">· Apr 5, 2026</span></div></div>
+      <div class="card media-card"><img loading="lazy" src="updates/images/a2_hertzsprung.jpg" alt="Hertzsprung basin on the lunar far side"><div class="cap">Hertzsprung basin <span class="dt">· Apr 5, 2026</span></div></div>
+      <div class="card media-card"><img loading="lazy" src="updates/images/a2_orion_moon.jpg" alt="Orion with the Moon"><div class="cap">Orion at the Moon <span class="dt">· Apr 6, 2026</span></div></div>
+      <div class="card media-card"><img loading="lazy" src="updates/images/a2_glover_window.jpg" alt="Victor Glover at Orion's window"><div class="cap">Glover at the window <span class="dt">· Apr 7, 2026</span></div></div>
+      <div class="card media-card"><img loading="lazy" src="updates/images/a2_eclipse.jpg" alt="Eclipse seen from Orion"><div class="cap">Earth eclipses the Sun <span class="dt">· Apr 8, 2026</span></div></div>
+    </div>
+    <div class="section-row"><span class="section-label">LATEST UPDATES</span></div>
+    <div class="news-grid" id="news-all"></div>
+  </div>
+</main>
+
+<!-- ══ Timeline ═════════════════════════════════════════════════ -->
+<main data-screen="timeline">
+  <div class="timeline-page page">
+    <div class="page-head">
+      <h1>Timeline</h1>
+      <div class="sub">Artemis II mission phases</div>
+    </div>
+    <div>
+      <div class="tl-item">
+        <div class="tl-rail"><span class="tl-dot done"></span><span class="tl-line"></span></div>
+        <div class="tl-body">
+          <div class="tl-head"><span class="tl-name">Launch</span><span class="tl-time">T+0</span><span class="tl-status done">COMPLETE</span></div>
+          <div class="tl-desc">SLS Block 1 lifts off from Launch Complex 39B at Kennedy Space Center carrying Orion and its four-person crew.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-rail"><span class="tl-dot done"></span><span class="tl-line"></span></div>
+        <div class="tl-body">
+          <div class="tl-head"><span class="tl-name">Ascent</span><span class="tl-time">T+8m</span><span class="tl-status done">COMPLETE</span></div>
+          <div class="tl-desc">Solid boosters separate, core stage cutoff, and the ICPS places Orion in a high Earth orbit for systems checkout.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-rail"><span class="tl-dot done"></span><span class="tl-line"></span></div>
+        <div class="tl-body">
+          <div class="tl-head"><span class="tl-name">TLI Burn</span><span class="tl-time">T+2h</span><span class="tl-status done">COMPLETE</span></div>
+          <div class="tl-desc">The trans-lunar injection burn sends Orion out of Earth orbit onto a free-return trajectory toward the Moon.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-rail"><span class="tl-dot done"></span><span class="tl-line"></span></div>
+        <div class="tl-body">
+          <div class="tl-head"><span class="tl-name">Outbound</span><span class="tl-time">T+1d</span><span class="tl-status done">COMPLETE</span></div>
+          <div class="tl-desc">Orion coasts outbound for roughly four days. The crew checks life support, navigation, and manual handling.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-rail"><span class="tl-dot done"></span><span class="tl-line"></span></div>
+        <div class="tl-body">
+          <div class="tl-head"><span class="tl-name">Lunar Flyby</span><span class="tl-time">T+4d 12h</span><span class="tl-status done">COMPLETE</span></div>
+          <div class="tl-desc">Orion sweeps around the far side of the Moon — the farthest humans have traveled from Earth.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-rail"><span class="tl-dot done"></span><span class="tl-line"></span></div>
+        <div class="tl-body">
+          <div class="tl-head"><span class="tl-name">Return Transit</span><span class="tl-time">T+6d</span><span class="tl-status done">COMPLETE</span></div>
+          <div class="tl-desc">On the free-return trajectory, Orion falls back toward Earth over roughly four days.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-rail"><span class="tl-dot done"></span><span class="tl-line"></span></div>
+        <div class="tl-body">
+          <div class="tl-head"><span class="tl-name">Entry</span><span class="tl-time">T+8d 22h</span><span class="tl-status done">COMPLETE</span></div>
+          <div class="tl-desc">Orion separates from its service module and enters the atmosphere at ~40,000 km/h behind its heat shield.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-rail"><span class="tl-dot active"></span></div>
+        <div class="tl-body">
+          <div class="tl-head"><span class="tl-name active">Splashdown</span><span class="tl-time">T+9d</span><span class="tl-status done">COMPLETE</span></div>
+          <div class="tl-desc">Orion splashes down in the Pacific Ocean off San Diego. USS San Diego and recovery teams retrieve the crew. Mission elapsed time: ~9 days.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- ══ Crew ═════════════════════════════════════════════════════ -->
+<main data-screen="crew">
+  <div class="container page">
+    <div class="page-head">
+      <h1>Crew</h1>
+      <div class="sub">Artemis II — the first crew to the Moon since 1972</div>
+    </div>
+    <div class="crew-grid">
+      <div class="card crew-card">
+        <div class="portrait"><img loading="lazy" src="https://images-assets.nasa.gov/image/jsc2025e004074/jsc2025e004074~medium.jpg" alt="Reid Wiseman"></div>
+        <div class="nm">Reid Wiseman</div>
+        <div class="role">CDR · COMMANDER</div>
+        <div class="bio">NASA astronaut, U.S. Navy captain. Second spaceflight.</div>
+      </div>
+      <div class="card crew-card">
+        <div class="portrait"><img loading="lazy" src="https://images-assets.nasa.gov/image/NHQ202009150002/NHQ202009150002~medium.jpg" alt="Victor Glover"></div>
+        <div class="nm">Victor Glover</div>
+        <div class="role">PLT · PILOT</div>
+        <div class="bio">First person of color on a lunar mission. U.S. Navy captain.</div>
+      </div>
+      <div class="card crew-card">
+        <div class="portrait"><img loading="lazy" src="https://images-assets.nasa.gov/image/NHQ202009160004/NHQ202009160004~medium.jpg" alt="Christina Koch"></div>
+        <div class="nm">Christina Koch</div>
+        <div class="role">MS · MISSION SPECIALIST</div>
+        <div class="bio">First woman on a lunar mission. Record holder for longest single spaceflight by a woman.</div>
+      </div>
+      <div class="card crew-card">
+        <div class="portrait intl"><img loading="lazy" src="https://images-assets.nasa.gov/image/jsc2025e004073/jsc2025e004073~medium.jpg" alt="Jeremy Hansen"></div>
+        <div class="nm">Jeremy Hansen</div>
+        <div class="role intl">MS · MISSION SPECIALIST</div>
+        <div class="bio">CSA astronaut — first Canadian beyond Earth orbit.</div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- ══ Missions ═════════════════════════════════════════════════ -->
+<main data-screen="missions">
+  <div class="missions-page page">
+    <div class="program-head">
+      <img src="web/assets/app-icon.webp" alt="">
+      <div style="flex:1;">
+        <div class="program-title">ARTEMIS PROGRAM</div>
+        <div class="program-sub">Humanity's return to the Moon</div>
+      </div>
+      <span class="count-pill">5 MISSIONS</span>
+    </div>
+
+    <div class="rule-row next"><span class="mark">→</span><span class="txt">NEXT</span><span class="line"></span></div>
+    <div class="card mission-feature">
+      <div class="visual">
+        <img loading="lazy" src="updates/images/orion_hls_docking.jpg" alt="Artemis III — Orion and lander rendezvous">
+        <div class="protect"></div>
+        <span class="badge-tr amber">◷ 2027</span>
+        <div class="titles">
+          <div class="t">ARTEMIS III</div>
+          <div class="s">Lander Rendezvous &amp; Spacesuit Validation</div>
+        </div>
+      </div>
+      <div class="meta">
+        <div class="mission-meta-row">
+          <span class="pill"><span class="dot"></span>LAUNCH DATE TBD</span>
+          <span class="mission-countdown">Working date: 30 Jun 2027 · T− <span data-t3="full">—</span></span>
+        </div>
+        <div class="mission-stats">
+          <div><span class="l">DURATION</span><span class="v">TBD</span></div>
+          <div><span class="l">CREW</span><span class="v">4 Astronauts</span></div>
+          <div><span class="l">VEHICLE</span><span class="v">SLS Block 1</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rule-row completed"><span class="mark">✓</span><span class="txt">JUST COMPLETED</span><span class="line"></span></div>
+    <a class="card clickable mission-feature" data-tab="mission" href="#" style="display:block;">
+      <div class="visual" style="height:180px;">
+        <img loading="lazy" src="updates/images/a2_launch.jpg" alt="Artemis II launch">
+        <div class="protect"></div>
+        <span class="badge-tr green"><span class="dot"></span>COMPLETED</span>
+        <div class="titles">
+          <div class="t" style="font-size:26px;">ARTEMIS II</div>
+          <div class="s" style="font-size:14px;">Crewed Lunar Flyby · 10 days · April 2026</div>
+        </div>
+      </div>
+    </a>
+
+    <div class="col" style="gap:12px; margin-top:8px;">
+      <div class="card mission-row">
+        <div style="flex:1;">
+          <div class="t">ARTEMIS I</div>
+          <div class="s">Uncrewed Test Flight · 25 days · Nov–Dec 2022</div>
+        </div>
+        <span class="status-pill green"><span class="dot"></span>COMPLETED</span>
+      </div>
+      <div class="card mission-row">
+        <div style="flex:1;">
+          <div class="t">ARTEMIS IV</div>
+          <div class="s">Gateway Assembly &amp; Lunar Landing · NET 2028</div>
+        </div>
+        <span class="status-pill">PLANNED</span>
+      </div>
+      <div class="card mission-row">
+        <div style="flex:1;">
+          <div class="t">ARTEMIS V</div>
+          <div class="s">Gateway Logistics &amp; Surface Operations · NET 2030</div>
+        </div>
+        <span class="status-pill">PLANNED</span>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- ══ Gear ═════════════════════════════════════════════════════ -->
+<main data-screen="gear">
+  <div class="container page">
+    <div class="gear-banner">
+      <div style="flex:1;">
+        <div class="t">MISSION GEAR</div>
+        <div class="s">Posters, tees, hoodies, prints</div>
+      </div>
+      <a class="btn-cta" id="gear-banner-cta" href="https://artemisiitracker.creator-spring.com" target="_blank" rel="noopener">Shop all</a>
+    </div>
+    <div class="gear-grid" id="gear-grid"></div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container inner">
+    <img src="web/assets/app-icon.webp" alt="">
+    <span class="nm">ARTEMIS<span class="accent"> TRACKER</span></span>
+    <span class="legal">DATA: NASA OPEN APIS · NOAA SWPC · NOT AFFILIATED WITH NASA</span>
+    <div class="links">
+      <a data-store="ios" href="https://apps.apple.com/app/id6761183798">iOS app</a>
+      <a data-store="android" href="https://play.google.com/store/apps/details?id=no.bitfactory.artemisii">Android app</a>
+      <a href="privacy-policy.html">Privacy</a>
+    </div>
+  </div>
+</footer>
+
+<script src="web/site.js"></script>
+</body>
+</html>

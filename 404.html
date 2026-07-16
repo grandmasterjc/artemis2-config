@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Artemis Tracker</title>
+<script>
+  // Site root: '/' on the custom domain, '/artemis2-config/' on
+  // grandmasterjc.github.io project pages. Set <base> before any
+  // relative URL resolves so assets load on deep links like /u/{id}.
+  (function () {
+    var BASE = location.hostname.endsWith('github.io') ? '/artemis2-config/' : '/';
+    window.SITE_BASE = BASE;
+    document.write('<base href="' + BASE + '">');
+  })();
+</script>
+<link rel="icon" type="image/webp" href="web/assets/app-icon.webp">
+<link rel="stylesheet" href="web/site.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a class="brand" href="." style="color:inherit;">
+    <img src="web/assets/app-icon.webp" alt="Artemis Tracker">
+    <span class="brand-name">ARTEMIS<span class="accent"> TRACKER</span></span>
+  </a>
+  <div class="header-right">
+    <a class="btn-cta" href="https://apps.apple.com/app/id6761183798">Get the app</a>
+  </div>
+</header>
+
+<div id="content">
+  <div class="notfound">
+    <div class="code">LOADING…</div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container inner">
+    <img src="web/assets/app-icon.webp" alt="">
+    <span class="nm">ARTEMIS<span class="accent"> TRACKER</span></span>
+    <span class="legal">DATA: NASA OPEN APIS · NOAA SWPC · NOT AFFILIATED WITH NASA</span>
+    <div class="links">
+      <a href=".">Home</a>
+      <a href="privacy-policy.html">Privacy</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+  var BASE = window.SITE_BASE;
+  var content = document.getElementById('content');
+
+  function esc(s) {
+    return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
+  // Minimal markdown renderer for article bodies: ## headings, bullet
+  // lists, images, links, hr, bold, paragraphs. Everything is escaped
+  // first; only the markup this renderer emits is injected.
+  function renderMarkdown(md) {
+    var lines = md.split(/\r?\n/);
+    var out = [];
+    var para = [];
+    var list = null;
+
+    function inline(s) {
+      s = esc(s);
+      s = s.replace(/!\[([^\]]*)\]\((https?:[^)\s]+)\)/g, '<img src="$2" alt="$1" loading="lazy">');
+      s = s.replace(/\[([^\]]+)\]\((https?:[^)\s]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+      s = s.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+      return s;
+    }
+    function flushPara() {
+      if (para.length) { out.push('<p>' + inline(para.join(' ')) + '</p>'); para = []; }
+    }
+    function flushList() {
+      if (list) { out.push('<ul>' + list.map(function (li) { return '<li>' + inline(li) + '</li>'; }).join('') + '</ul>'); list = null; }
+    }
+
+    lines.forEach(function (line) {
+      var t = line.trim();
+      if (!t) { flushPara(); flushList(); return; }
+      var h = t.match(/^(#{2,4})\s+(.*)$/);
+      if (h) { flushPara(); flushList(); out.push('<h2>' + inline(h[2]) + '</h2>'); return; }
+      if (/^---+$/.test(t)) { flushPara(); flushList(); out.push('<hr>'); return; }
+      var li = t.match(/^[-*]\s+(.*)$/);
+      if (li) { flushPara(); if (!list) list = []; list.push(li[1]); return; }
+      if (/^>\s?/.test(t)) { flushPara(); flushList(); out.push('<blockquote>' + inline(t.replace(/^>\s?/, '')) + '</blockquote>'); return; }
+      flushList();
+      para.push(t);
+    });
+    flushPara(); flushList();
+    return out.join('\n');
+  }
+
+  function showNotFound() {
+    document.title = 'Page not found — Artemis Tracker';
+    content.innerHTML =
+      '<div class="notfound">' +
+      '<div class="code">404</div>' +
+      '<h1>Page not found</h1>' +
+      '<p style="color:var(--fg-2);">The page you are looking for does not exist.</p>' +
+      '<p><a href="' + BASE + '">← Back to Artemis Tracker</a></p>' +
+      '</div>';
+  }
+
+  function showArticle(meta, body) {
+    document.title = meta.title + ' — Artemis Tracker';
+    var d = new Date(meta.date);
+    var dateStr = d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+    var html = '<article class="article-page">';
+    var missionNames = { artemis1: 'ARTEMIS I', artemis2: 'ARTEMIS II', artemis3: 'ARTEMIS III', 'artemis-ii': 'ARTEMIS II', moonbase: 'MOON BASE', program: 'ARTEMIS PROGRAM' };
+    var kicker = missionNames[(meta.mission || '').toLowerCase()] || (meta.mission || 'ARTEMIS').toUpperCase();
+    html += '<div class="kicker">' + esc(kicker) + ' · WEEKLY BRIEFING</div>';
+    html += '<h1 class="title">' + esc(meta.title) + '</h1>';
+    if (meta.subtitle) html += '<div class="standfirst">' + esc(meta.subtitle) + '</div>';
+    html += '<div class="meta">' + esc(dateStr) + (meta.author ? ' · ' + esc(meta.author) : '') + '</div>';
+    if (meta.hero_image) html += '<img class="hero" src="' + esc(meta.hero_image) + '" alt="">';
+    html += '<div class="article-body">' + renderMarkdown(body) + '</div>';
+    html += '</article>';
+    content.innerHTML = html;
+  }
+
+  // Path forms: /u/{id} (custom domain) or /artemis2-config/u/{id} (github.io)
+  var m = location.pathname.match(/\/u\/([A-Za-z0-9-]+)\/?$/);
+  if (!m) { showNotFound(); return; }
+  var id = m[1];
+
+  Promise.all([
+    fetch(BASE + 'updates/manifest.json').then(function (r) { return r.json(); }),
+    fetch(BASE + 'updates/articles/' + id + '.md').then(function (r) {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.text();
+    })
+  ]).then(function (res) {
+    var meta = (res[0].updates || []).find(function (u) { return u.id === id; }) || { title: id, date: new Date().toISOString() };
+    showArticle(meta, res[1]);
+  }).catch(showNotFound);
+})();
+</script>
+</body>
+</html>
