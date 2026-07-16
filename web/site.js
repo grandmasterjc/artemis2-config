@@ -340,6 +340,13 @@
         e.preventDefault();
         showTab(t);
         if (t === 'tracking') requestAnimationFrame(drawTrajectory);
+        var scrollTo = a.getAttribute('data-scroll');
+        if (scrollTo) {
+          requestAnimationFrame(function () {
+            var target = document.getElementById(scrollTo);
+            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          });
+        }
       });
     });
     window.addEventListener('popstate', function () { showTab(currentTabFromHash(), false); });
