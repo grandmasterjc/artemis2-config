@@ -133,11 +133,73 @@
       '<a class="btn-cta" href="https://apps.apple.com/app/id6761183798">App Store</a>' +
       '<a class="btn-cta" href="https://play.google.com/store/apps/details?id=no.bitfactory.artemisii">Google Play</a>' +
       '</div>' +
-      '<p class="paywall-note">Already a member? Open this article in the app where you subscribed.</p>' +
+      '<p class="paywall-note">Already a member? Open the app and tap "Read premium on the web" in Settings to unlock this browser.</p>' +
       '</div></div>';
   }
 
-  function showArticle(meta, body) {
+  // ── Artemis Plus web unlock ────────────────────────────────────
+  // The app opens api.artemistracker.app/web-unlock, which verifies the
+  // subscription with RevenueCat and redirects here (/unlock#t=...).
+  // The token is kept in localStorage and re-verified against the worker
+  // (cached for a day) before premium bodies are rendered in full.
+  var API = 'https://api.artemistracker.app';
+
+  function getToken() {
+    try { return localStorage.getItem('plus_token') || ''; } catch (e) { return ''; }
+  }
+
+  function verifyPlus() {
+    var tok = getToken();
+    if (!tok) return Promise.resolve(false);
+    try {
+      var cache = JSON.parse(localStorage.getItem('plus_ok') || 'null');
+      if (cache && cache.tok === tok && Date.now() - cache.ts < 86400000) {
+        return Promise.resolve(!!cache.valid);
+      }
+    } catch (e) { /* fall through to network check */ }
+    return fetch(API + '/web-verify?token=' + encodeURIComponent(tok))
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        var valid = !!d.valid;
+        try { localStorage.setItem('plus_ok', JSON.stringify({ tok: tok, ts: Date.now(), valid: valid })); } catch (e) {}
+        return valid;
+      })
+      .catch(function () { return false; });
+  }
+
+  function showUnlockPage() {
+    var t = (location.hash.match(/[#&]t=([^&]+)/) || [])[1] || '';
+    var html;
+    if (t && t !== 'denied') {
+      try {
+        localStorage.setItem('plus_token', t);
+        localStorage.removeItem('plus_ok');
+      } catch (e) {}
+      document.title = 'Web access unlocked — Artemis Tracker';
+      html = '<div class="notfound">' +
+        '<div class="code" style="color:var(--green);">ARTEMIS PLUS</div>' +
+        '<h1>Web access unlocked</h1>' +
+        '<p style="color:var(--fg-2);">Premium briefings now open in full in this browser. The unlock lasts 30 days — renew it from the app any time.</p>' +
+        '<p><a href="' + BASE + '">← Go to Artemis Tracker</a></p></div>';
+    } else if (t === 'denied') {
+      document.title = 'No active subscription — Artemis Tracker';
+      html = '<div class="notfound">' +
+        '<div class="code" style="color:var(--amber);">ARTEMIS PLUS</div>' +
+        '<h1>No active subscription found</h1>' +
+        '<p style="color:var(--fg-2);">We could not find an active Artemis Plus subscription for this app. If you just subscribed, wait a minute and tap the button in the app again.</p>' +
+        '<p><a href="' + BASE + '">← Go to Artemis Tracker</a></p></div>';
+    } else {
+      document.title = 'Unlock web access — Artemis Tracker';
+      html = '<div class="notfound">' +
+        '<div class="code">ARTEMIS PLUS</div>' +
+        '<h1>Unlock web access</h1>' +
+        '<p style="color:var(--fg-2);">Open the Artemis Tracker app and tap "Read premium on the web" in Settings to unlock this browser.</p>' +
+        '<p><a href="' + BASE + '">← Go to Artemis Tracker</a></p></div>';
+    }
+    content.innerHTML = html;
+  }
+
+  function showArticle(meta, body, plusOk) {
     document.title = meta.title + ' — Artemis Tracker';
     var d = new Date(meta.date);
     var dateStr = d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
@@ -149,7 +211,7 @@
     if (meta.subtitle) html += '<div class="standfirst">' + esc(meta.subtitle) + '</div>';
     html += '<div class="meta">' + esc(dateStr) + (meta.author ? ' · ' + esc(meta.author) : '') + '</div>';
     if (meta.hero_image) html += '<img class="hero" src="' + esc(meta.hero_image) + '" alt="">';
-    if (meta.premium) {
+    if (meta.premium && !plusOk) {
       html += '<div class="article-body">' + renderMarkdown(teaserOf(body)) + '</div>';
       html += paywallHTML();
     } else {
@@ -158,6 +220,8 @@
     html += '</article>';
     content.innerHTML = html;
   }
+
+  if (/\/unlock\/?$/.test(location.pathname)) { showUnlockPage(); return; }
 
   // Path forms: /u/{id} (custom domain) or /artemis2-config/u/{id} (github.io)
   var m = location.pathname.match(/\/u\/([A-Za-z0-9-]+)\/?$/);
@@ -169,10 +233,11 @@
     fetch(BASE + 'updates/articles/' + id + '.md').then(function (r) {
       if (!r.ok) throw new Error('HTTP ' + r.status);
       return r.text();
-    })
+    }),
+    verifyPlus()
   ]).then(function (res) {
     var meta = (res[0].updates || []).find(function (u) { return u.id === id; }) || { title: id, date: new Date().toISOString() };
-    showArticle(meta, res[1]);
+    showArticle(meta, res[1], res[2]);
   }).catch(showNotFound);
 })();
 </script>
