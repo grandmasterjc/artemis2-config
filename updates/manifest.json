@@ -1,6 +1,17 @@
 {
   "updates": [
     {
+      "id": "starship-flight-13-pad-abort-july-17",
+      "title": "Starship stopped itself on the pad \u2014 and the Moon lander's schedule felt it",
+      "subtitle": "Four engines failed to light and the rocket shut down at ignition. The abort worked exactly as designed. The calendar is the part that hurts.",
+      "date": "2026-07-17T12:24:33Z",
+      "mission": "artemis3",
+      "premium": false,
+      "hero_image": "https://grandmasterjc.github.io/artemis2-config/updates/images/starship-flight-13-pad-abort-july-17.jpg",
+      "summary": "Four engines failed to light and the rocket shut down at ignition. The abort worked exactly as designed. The calendar is the part that hurts.",
+      "author": "Joachim Gresslien"
+    },
+    {
       "id": "artemis3-heat-shield-stacks-july-15",
       "title": "Artemis III is stacking up at Kennedy \u2014 and the heat shield is the part to watch",
       "subtitle": "Boosters went up on July 11 and Orion's heat shield just went on. The shield was redesigned to fix the flaw that scarred Artemis I.",
