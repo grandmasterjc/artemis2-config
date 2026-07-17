@@ -25,8 +25,14 @@ ends with a recommendation and waits for the owner's decision.
 
 - 800–1200 words in the body (Wednesday article), excluding frontmatter.
 - 4–8 `##` headings.
-- First 4 paragraphs are a free hook; ends with a "what to watch next" or
-  "where this leaves us" section.
+- First 4 paragraphs are a free hook; ends with a forward-looking closing
+  section (upcoming milestones, what to watch).
+- Headings must be concrete and specific to the story ("Two Raptors now,
+  two bigger tests later"), never generic scaffold headings. The owner
+  flags these as AI-sounding — banned examples: "Where this leaves us",
+  "What to watch next", "What this means", "The bottom line", "What
+  happened", "Why it matters". A good test: could the heading be moved to
+  a different article unchanged? If yes, rewrite it.
 - Required inline CTA after paragraph 3:
   `Get the next briefing in your inbox. [Subscribe free →](https://artemis-briefing.kit.com)`
   (paraphrase acceptable; keep the link and the "Subscribe" phrasing).

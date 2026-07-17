@@ -24,7 +24,7 @@ Get the next briefing in your inbox. [Subscribe free →](https://artemis-briefi
 
 For anyone following Artemis, this is more than a scrubbed Starlink launch. The vehicle that stopped itself on Thursday is the same vehicle family NASA is counting on to land astronauts on the Moon.
 
-## What was supposed to happen
+## Twenty satellites and a heat-shield inspection
 
 Flight 13 is the second flight of Starship Version 3, the upgraded variant SpaceX is using to push the megarocket toward operational status. The plan mirrors Flight 12 from May 22: send Super Heavy back for a controlled splashdown in the Gulf, and fly Ship most of the way around the world to a targeted splashdown off Western Australia.
 
@@ -40,7 +40,7 @@ There is a reasonable reading of Thursday in which the system did exactly what i
 
 The comparison a few hundred kilometers east makes the point. When Blue Origin's New Glenn failed on the pad in May, it took the vehicle, the transporter-erector and much of Launch Complex 36A with it, and the rebuild now stretches toward the end of the year. Starship's version of a bad day on the pad, this week at least, costs two engines and a few days.
 
-## Why Artemis is watching the calendar
+## The lander is waiting on a launch rate
 
 The catch is that the Artemis schedule does not need Starship to be safe on the pad. It needs Starship to be fast.
 
@@ -50,7 +50,7 @@ That architecture is a cadence bet. Refueling a single lunar lander takes a seri
 
 One pad abort does not move 2028. But V3 has now flown once in May and stood down once in July, and the year is half over. The margin the program was supposed to build up this summer is being spent on the ground.
 
-## Where this leaves us
+## Two Raptors now, two bigger tests later
 
 The near-term steps are concrete. Watch for the two replaced Raptors and a new launch attempt early next week; then whether Super Heavy finally sticks its Gulf splashdown and Ship repeats its Australia arrival; then, later this year, the long-duration flight and the propellant-transfer demonstration that Artemis IV actually depends on. If those two happen in 2026, Thursday's abort will be a footnote. If they slip into 2027, it will look like part of a pattern.
 
