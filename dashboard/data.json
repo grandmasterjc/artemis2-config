@@ -3,13 +3,6 @@
     "status": "ok",
     "daily_users": [
       {
-        "date": "2026-04-18",
-        "active": 448,
-        "new": 235,
-        "views": 571,
-        "sessions": 420
-      },
-      {
         "date": "2026-04-19",
         "active": 342,
         "new": 195,
@@ -620,60 +613,67 @@
       },
       {
         "date": "2026-07-15",
-        "active": 214,
+        "active": 216,
         "new": 23,
-        "views": 257,
-        "sessions": 231
+        "views": 259,
+        "sessions": 232
       },
       {
         "date": "2026-07-16",
-        "active": 112,
+        "active": 118,
+        "new": 31,
+        "views": 163,
+        "sessions": 129
+      },
+      {
+        "date": "2026-07-17",
+        "active": 222,
         "new": 29,
-        "views": 148,
-        "sessions": 121
+        "views": 271,
+        "sessions": 257
       }
     ],
     "latest": {
-      "date": "2026-07-16",
-      "active": 112,
+      "date": "2026-07-17",
+      "active": 222,
       "new": 29,
-      "views": 148,
-      "sessions": 121
+      "views": 271,
+      "sessions": 257
     },
-    "total_active_28d": 3725,
-    "total_new_28d": 925,
-    "total_sessions_28d": 4246,
-    "total_views_28d": 4970,
-    "avg_dau_7d": 118.4,
-    "avg_dau_28d": 133.0,
+    "total_active_28d": 3793,
+    "total_new_28d": 922,
+    "total_sessions_28d": 4326,
+    "total_views_28d": 5029,
+    "avg_dau_7d": 137.7,
+    "avg_dau_28d": 135.5,
     "top_countries_30d": [
       {
         "country": "United States",
-        "active": 1058
+        "active": 1052
       },
       {
         "country": "United Kingdom",
-        "active": 320
+        "active": 308
       },
       {
         "country": "Canada",
-        "active": 168
+        "active": 174
       },
       {
         "country": "Germany",
-        "active": 168
-      },
-      {
-        "country": "Australia",
-        "active": 73
+        "active": 169
       },
       {
         "country": "Italy",
-        "active": 72
+        "active": 73
+      },
+      {
+        "country": "Australia",
+        "active": 70
       },
       {
         "country": "Spain",
-        "active": 61
+        "active": 58
       },
       {
         "country": "Netherlands",
@@ -681,28 +681,34 @@
       },
       {
         "country": "France",
-        "active": 44
+        "active": 47
       },
       {
         "country": "Indonesia",
-        "active": 43
+        "active": 42
       }
     ],
     "push_events_30d": {
-      "notification_receive": 1733,
-      "notification_open": 640,
-      "notification_dismiss": 151,
-      "notification_foreground": 36,
+      "notification_receive": 2083,
+      "notification_open": 638,
+      "notification_dismiss": 176,
+      "notification_foreground": 28,
       "notification_toggled": 7
     },
-    "push_open_rate_30d": 0.9467,
-    "fetched_at": "2026-07-17T07:22:20.918887+00:00"
+    "push_open_rate_30d": 0.958,
+    "fetched_at": "2026-07-18T07:02:08.704972+00:00"
   },
   "kit": {
     "status": "ok",
-    "active_subscribers": 33,
+    "active_subscribers": 34,
     "inactive_subscribers": 6,
     "recent_broadcasts": [
+      {
+        "id": 25036424,
+        "subject": "Starship aborted at ignition \u2014 what it means for Artemis",
+        "send_at": "2026-07-17T19:30:00Z",
+        "public": true
+      },
       {
         "id": 25007754,
         "subject": "Artemis III is coming together \u2014 watch the heat shield",
@@ -756,15 +762,9 @@
         "subject": "Week Ahead: Artemis III crew reveal on Tuesday",
         "send_at": "2026-06-07T21:18:38Z",
         "public": true
-      },
-      {
-        "id": 24410996,
-        "subject": "Artemis III: four astronauts named June 9",
-        "send_at": "2026-06-03T19:30:00Z",
-        "public": true
       }
     ],
-    "fetched_at": "2026-07-17T07:22:21.923623+00:00"
+    "fetched_at": "2026-07-18T07:02:09.930099+00:00"
   },
   "asc": {
     "status": "ok",
@@ -922,61 +922,54 @@
     ],
     "subscriptions": {
       "status": "ok",
-      "window_start": "2026-06-15",
-      "window_end": "2026-07-15",
+      "window_start": "2026-06-16",
+      "window_end": "2026-07-16",
       "days_with_data": 31,
       "days_attempted": 31,
-      "active_subscribers": 43,
+      "active_subscribers": 44,
       "active_breakdown": {
-        "active_total": 43,
+        "active_total": 44,
         "by_product": {
           "Artemis+ Yearly": 36,
-          "Artemis+ Monthly": 7
+          "Artemis+ Monthly": 8
         },
         "by_country": [
           {
             "country": "??",
-            "active": 43
+            "active": 44
           }
         ],
         "arr_usd": 612.48,
         "mrr_usd": 51.04,
         "proceeds_factor": 0.85,
-        "as_of": "2026-07-15"
+        "as_of": "2026-07-16"
       },
       "events_30d": {
+        "Start Introductory Offer": 12,
         "Paid Subscription from Introductory Offer": 12,
-        "Start Introductory Offer": 11,
         "Canceled from Billing Retry": 2,
         "Renewals from Grace Period": 1,
         "Billing Retry from Grace Period": 2,
         "Grace Period from Introductory Offer": 2,
         "Cancel": 3
       },
-      "event_days_with_data": 20,
+      "event_days_with_data": 21,
       "cancel_events_30d": 5,
       "refund_events_30d": 0,
-      "monthly_churn": 0.1163,
+      "monthly_churn": 0.1136,
       "by_product": {
         "no.bitfactory.artemisii.tracker.monthly": {
-          "units": 12,
+          "units": 13,
           "proceeds_usd": 21.19,
           "name": "Artemis+ Monthly"
         },
         "no.bitfactory.artemisii.tracker.yearly": {
-          "units": 12,
-          "proceeds_usd": 135.75,
+          "units": 11,
+          "proceeds_usd": 114.51,
           "name": "Artemis+ Yearly"
         }
       },
       "by_day": [
-        {
-          "date": "2026-06-15",
-          "monthly": 0,
-          "yearly": 1,
-          "other": 0,
-          "proceeds_usd": 21.24
-        },
         {
           "date": "2026-06-16",
           "monthly": 0,
@@ -1109,18 +1102,25 @@
           "yearly": 0,
           "other": 0,
           "proceeds_usd": 3.39
+        },
+        {
+          "date": "2026-07-16",
+          "monthly": 1,
+          "yearly": 0,
+          "other": 0,
+          "proceeds_usd": 0.0
         }
       ],
       "by_country": [
         {
           "country": "US",
-          "units": 18,
+          "units": 19,
           "proceeds_usd": 101.9
         },
         {
           "country": "CA",
-          "units": 3,
-          "proceeds_usd": 25.48
+          "units": 2,
+          "proceeds_usd": 4.24
         },
         {
           "country": "NZ",
@@ -1134,20 +1134,20 @@
         }
       ],
       "by_order_type": {
-        "Standard": 13,
-        "Free Trial Intro Offer": 11
+        "Free Trial Intro Offer": 12,
+        "Standard": 12
       },
       "total_units_30d": 24,
-      "total_proceeds_usd_30d": 156.94,
-      "new_subscribers_30d": 11,
-      "new_installs_30d": 82
+      "total_proceeds_usd_30d": 135.7,
+      "new_subscribers_30d": 12,
+      "new_installs_30d": 79
     },
-    "fetched_at": "2026-07-17T07:23:11.208893+00:00"
+    "fetched_at": "2026-07-18T07:02:54.784847+00:00"
   },
   "play": {
     "status": "ok",
-    "window_start": "2026-06-18",
-    "window_end": "2026-07-17",
+    "window_start": "2026-06-19",
+    "window_end": "2026-07-18",
     "package": "no.bitfactory.artemisii.tracker",
     "by_product": {},
     "by_day": [],
@@ -1164,11 +1164,11 @@
     "handle": "artemistracker.app",
     "followers": 8,
     "following": 12,
-    "posts_total": 49,
-    "posts_7d": 3,
+    "posts_total": 52,
+    "posts_7d": 6,
     "likes_7d": 0,
     "reposts_7d": 0,
-    "fetched_at": "2026-07-17T07:23:13.981097+00:00"
+    "fetched_at": "2026-07-18T07:02:56.893524+00:00"
   },
   "mastodon": {
     "status": "ok",
@@ -1176,30 +1176,30 @@
     "username": "artemistracker",
     "followers": 1,
     "following": 4,
-    "posts_total": 46,
-    "posts_7d": 3,
+    "posts_total": 49,
+    "posts_7d": 6,
     "favs_7d": 0,
     "boosts_7d": 0,
-    "fetched_at": "2026-07-17T07:23:15.130170+00:00"
+    "fetched_at": "2026-07-18T07:02:58.290603+00:00"
   },
   "threads": {
     "status": "ok",
     "handle": "@artemistracker.app",
     "username": "artemistracker.app",
-    "followers": 4,
-    "posts_7d": 1,
-    "likes_7d": 47,
-    "comments_7d": 2,
-    "reposts_7d": 5,
-    "fetched_at": "2026-07-17T07:23:15.959104+00:00"
+    "followers": 5,
+    "posts_7d": 2,
+    "likes_7d": 58,
+    "comments_7d": 5,
+    "reposts_7d": 7,
+    "fetched_at": "2026-07-18T07:02:59.611035+00:00"
   },
   "instagram": {
     "status": "error",
-    "error": "HTTP 400: {\"error\":{\"message\":\"Unsupported request - method type: get\",\"type\":\"IGApiException\",\"code\":100,\"fbtrace_id\":\"Aa9WQ9XphvPfZOaKLsv1Xzp\"}}"
+    "error": "HTTP 400: {\"error\":{\"message\":\"Unsupported request - method type: get\",\"type\":\"IGApiException\",\"code\":100,\"fbtrace_id\":\"ARlUM9ZQQ4zPkOXklkIn7TD\"}}"
   },
   "push": {
     "status": "ok",
-    "total_pushes": 5,
+    "total_pushes": 6,
     "recent": [
       {
         "timestamp_utc": "2026-06-09T17:23:18.056515+00:00",
@@ -1240,9 +1240,17 @@
         "article_id": "artemis3-heat-shield-stacks-july-15",
         "topic": "all",
         "message_id": "projects/artemis-tracker-665d8/messages/1555303700348964690"
+      },
+      {
+        "timestamp_utc": "2026-07-17T12:25:37.903611+00:00",
+        "title": "Starship aborted at ignition \u2014 what it means for Artemis",
+        "body": "Four Raptors failed to light and the rocket stopped itself on the pad. Here is what the abort means for the lander NASA is waiting on.",
+        "article_id": "starship-flight-13-pad-abort-july-17",
+        "topic": "all",
+        "message_id": "projects/artemis-tracker-665d8/messages/7936849194364298594"
       }
     ],
-    "fetched_at": "2026-07-17T07:23:16.210368+00:00"
+    "fetched_at": "2026-07-18T07:03:00.254288+00:00"
   },
   "roadmap": {
     "status": "ok",
@@ -1330,7 +1338,7 @@
         "note": "durable across sandbox resets"
       }
     ],
-    "fetched_at": "2026-07-17T07:23:16.210690+00:00"
+    "fetched_at": "2026-07-18T07:03:00.254588+00:00"
   },
   "targets": {
     "status": "ok",
@@ -1424,5 +1432,5 @@
       "implied_subs": 5200
     }
   },
-  "generated_at": "2026-07-17T07:23:16.210703+00:00"
+  "generated_at": "2026-07-18T07:03:00.254599+00:00"
 }
