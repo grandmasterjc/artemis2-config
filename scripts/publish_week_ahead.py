@@ -107,7 +107,11 @@ def main():
     # Schedule timing
     send_at_utc: datetime | None
     if args.now:
-        send_at_utc = None  # send immediately
+        # Kit treats a broadcast without send_at as a DRAFT and never sends
+        # it (this bit us on 2026-07-20, broadcast 25068196). "Send now"
+        # therefore schedules for one minute out instead of omitting the
+        # field.
+        send_at_utc = datetime.now(timezone.utc) + timedelta(minutes=1)
     elif args.at:
         send_at_utc = datetime.fromisoformat(args.at.replace("Z", "+00:00")).astimezone(timezone.utc)
     else:
