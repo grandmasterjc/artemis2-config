@@ -1,1 +1,240 @@
-{}
+{
+  "07-24": [
+    {
+      "year": 1969,
+      "event": "Apollo 11 splashes down in the Pacific. Armstrong, Aldrin and Collins come home from the first Moon landing after eight days in space.",
+      "source_url": "https://www.nasa.gov/mission/apollo-11/"
+    }
+  ],
+  "07-25": [
+    {
+      "year": 1984,
+      "event": "Svetlana Savitskaya becomes the first woman to walk in space, spending 3 hours 35 minutes outside the Salyut 7 station.",
+      "source_url": "https://en.wikipedia.org/wiki/Svetlana_Savitskaya"
+    }
+  ],
+  "07-26": [
+    {
+      "year": 1971,
+      "event": "Apollo 15 launches from Kennedy Space Center — the first mission to carry a lunar roving vehicle.",
+      "source_url": "https://www.nasa.gov/mission/apollo-15/"
+    }
+  ],
+  "07-28": [
+    {
+      "year": 1973,
+      "event": "Skylab 3 launches, beginning a 59-day stay aboard America's first space station.",
+      "source_url": "https://en.wikipedia.org/wiki/Skylab_3"
+    }
+  ],
+  "07-29": [
+    {
+      "year": 1958,
+      "event": "President Eisenhower signs the National Aeronautics and Space Act, creating NASA.",
+      "source_url": "https://www.nasa.gov/history/"
+    }
+  ],
+  "07-30": [
+    {
+      "year": 1971,
+      "event": "Apollo 15's Falcon lands at Hadley Rille, opening the first of the extended J-class science missions on the Moon.",
+      "source_url": "https://www.nasa.gov/mission/apollo-15/"
+    }
+  ],
+  "07-31": [
+    {
+      "year": 1971,
+      "event": "David Scott and James Irwin take the first drive on another world, covering 10 km in the Apollo 15 lunar rover.",
+      "source_url": "https://www.nasa.gov/mission/apollo-15/"
+    }
+  ],
+  "08-02": [
+    {
+      "year": 1971,
+      "event": "Apollo 15's David Scott drops a hammer and a falcon feather on the Moon — both hit the ground together, just as Galileo predicted.",
+      "source_url": "https://moon.nasa.gov/resources/331/the-apollo-15-hammer-feather-drop/"
+    }
+  ],
+  "08-03": [
+    {
+      "year": 2004,
+      "event": "MESSENGER launches on a seven-year journey to become the first spacecraft to orbit Mercury.",
+      "source_url": "https://en.wikipedia.org/wiki/MESSENGER"
+    }
+  ],
+  "08-04": [
+    {
+      "year": 2007,
+      "event": "Phoenix launches toward the Martian arctic, where it will confirm water ice just below the surface.",
+      "source_url": "https://en.wikipedia.org/wiki/Phoenix_(spacecraft)"
+    }
+  ],
+  "08-05": [
+    {
+      "year": 2011,
+      "event": "Juno launches toward Jupiter. Five years later it enters polar orbit around the largest planet in the solar system.",
+      "source_url": "https://en.wikipedia.org/wiki/Juno_(spacecraft)"
+    }
+  ],
+  "08-06": [
+    {
+      "year": 2012,
+      "event": "Curiosity lands in Gale Crater after the 'seven minutes of terror' sky-crane descent — the largest rover ever sent to Mars at the time.",
+      "source_url": "https://mars.nasa.gov/msl/home/"
+    }
+  ],
+  "08-07": [
+    {
+      "year": 1959,
+      "event": "Explorer 6 launches and returns the first photograph of Earth taken from orbit.",
+      "source_url": "https://en.wikipedia.org/wiki/Explorer_6"
+    }
+  ],
+  "08-09": [
+    {
+      "year": 1976,
+      "event": "Luna 24 launches — the Soviet Union's last Moon mission, and the last robotic lunar sample return for 44 years.",
+      "source_url": "https://en.wikipedia.org/wiki/Luna_24"
+    }
+  ],
+  "08-10": [
+    {
+      "year": 1990,
+      "event": "Magellan arrives at Venus and begins mapping 98 percent of the planet's surface with radar.",
+      "source_url": "https://en.wikipedia.org/wiki/Magellan_(spacecraft)"
+    }
+  ],
+  "08-11": [
+    {
+      "year": 1962,
+      "event": "Vostok 3 launches with Andriyan Nikolayev. A day later Vostok 4 follows — the first time two crewed spacecraft fly in orbit at once.",
+      "source_url": "https://en.wikipedia.org/wiki/Vostok_3"
+    }
+  ],
+  "08-12": [
+    {
+      "year": 2018,
+      "event": "Parker Solar Probe launches, on its way to fly through the Sun's corona and become the fastest spacecraft ever built.",
+      "source_url": "https://en.wikipedia.org/wiki/Parker_Solar_Probe"
+    }
+  ],
+  "08-17": [
+    {
+      "year": 1970,
+      "event": "Venera 7 launches. In December it becomes the first spacecraft to land on another planet and transmit from the surface of Venus.",
+      "source_url": "https://en.wikipedia.org/wiki/Venera_7"
+    }
+  ],
+  "08-19": [
+    {
+      "year": 1960,
+      "event": "Sputnik 5 carries the dogs Belka and Strelka to orbit — the first living creatures recovered safely from space.",
+      "source_url": "https://en.wikipedia.org/wiki/Korabl-Sputnik_2"
+    }
+  ],
+  "08-20": [
+    {
+      "year": 1977,
+      "event": "Voyager 2 launches. Forty-nine years later it is still transmitting, from beyond the edge of the heliosphere.",
+      "source_url": "https://voyager.jpl.nasa.gov/"
+    }
+  ],
+  "08-21": [
+    {
+      "year": 1965,
+      "event": "Gemini 5 launches on the first week-long American spaceflight, proving crews could endure a trip to the Moon and back.",
+      "source_url": "https://en.wikipedia.org/wiki/Gemini_5"
+    }
+  ],
+  "08-23": [
+    {
+      "year": 1966,
+      "event": "Lunar Orbiter 1 takes the first photograph of Earth as seen from the Moon.",
+      "source_url": "https://en.wikipedia.org/wiki/Lunar_Orbiter_1"
+    }
+  ],
+  "08-25": [
+    {
+      "year": 2012,
+      "event": "Voyager 1 crosses into interstellar space — the first human-made object to leave the heliosphere.",
+      "source_url": "https://voyager.jpl.nasa.gov/"
+    }
+  ],
+  "08-30": [
+    {
+      "year": 1983,
+      "event": "STS-8 launches with Guion Bluford, the first African American in space, aboard Challenger's first night launch.",
+      "source_url": "https://en.wikipedia.org/wiki/STS-8"
+    }
+  ],
+  "09-03": [
+    {
+      "year": 1976,
+      "event": "Viking 2 lands on Utopia Planitia, joining Viking 1 for the first sustained robotic science campaign on Mars.",
+      "source_url": "https://en.wikipedia.org/wiki/Viking_2"
+    }
+  ],
+  "09-05": [
+    {
+      "year": 1977,
+      "event": "Voyager 1 launches — sixteen days after its twin, but on a faster path that will carry it farther than any spacecraft in history.",
+      "source_url": "https://voyager.jpl.nasa.gov/"
+    }
+  ],
+  "09-08": [
+    {
+      "year": 2016,
+      "event": "OSIRIS-REx launches toward asteroid Bennu, beginning America's first asteroid sample return mission.",
+      "source_url": "https://en.wikipedia.org/wiki/OSIRIS-REx"
+    }
+  ],
+  "09-12": [
+    {
+      "year": 1962,
+      "event": "President Kennedy at Rice University: 'We choose to go to the Moon in this decade and do the other things, not because they are easy, but because they are hard.'",
+      "source_url": "https://www.jfklibrary.org/learn/about-jfk/historic-speeches/address-at-rice-university-on-the-nations-space-effort"
+    }
+  ],
+  "09-15": [
+    {
+      "year": 2017,
+      "event": "Cassini ends 13 years at Saturn with a deliberate plunge into the planet's atmosphere, transmitting to the last second.",
+      "source_url": "https://solarsystem.nasa.gov/missions/cassini/overview/"
+    }
+  ],
+  "09-21": [
+    {
+      "year": 2003,
+      "event": "Galileo is deliberately flown into Jupiter after 14 years, protecting the possibly habitable moon Europa from contamination.",
+      "source_url": "https://en.wikipedia.org/wiki/Galileo_(spacecraft)"
+    }
+  ],
+  "09-26": [
+    {
+      "year": 2022,
+      "event": "DART slams into the asteroid moon Dimorphos at 22,000 km/h — the first deliberate test of planetary defense, and it worked.",
+      "source_url": "https://en.wikipedia.org/wiki/Double_Asteroid_Redirection_Test"
+    }
+  ],
+  "09-28": [
+    {
+      "year": 2008,
+      "event": "SpaceX's Falcon 1 reaches orbit on its fourth attempt — the first privately developed liquid-fueled rocket to do so.",
+      "source_url": "https://en.wikipedia.org/wiki/Falcon_1"
+    }
+  ],
+  "09-29": [
+    {
+      "year": 1988,
+      "event": "Discovery launches on STS-26, returning the shuttle to flight 32 months after the Challenger accident.",
+      "source_url": "https://en.wikipedia.org/wiki/STS-26"
+    }
+  ],
+  "09-30": [
+    {
+      "year": 2016,
+      "event": "Rosetta ends its mission with a controlled descent onto comet 67P, joining the Philae lander it delivered two years earlier.",
+      "source_url": "https://en.wikipedia.org/wiki/Rosetta_(spacecraft)"
+    }
+  ]
+}
