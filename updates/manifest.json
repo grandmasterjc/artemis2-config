@@ -1,6 +1,17 @@
 {
   "updates": [
     {
+      "id": "starship-flight-13-flies-tonight-july-23",
+      "title": "Starship tries again tonight \u2014 the window opens at 22:45 UTC",
+      "subtitle": "Two Raptors swapped, one week lost. Third attempt for the flight carrying the first Starlink V3 satellites and a heat-shield camera experiment.",
+      "date": "2026-07-23T11:11:27Z",
+      "mission": "artemis3",
+      "premium": false,
+      "hero_image": "https://grandmasterjc.github.io/artemis2-config/updates/images/starship-flight-13-flies-tonight-july-23.jpg",
+      "summary": "Two Raptors swapped, one week lost. Third attempt for the flight carrying the first Starlink V3 satellites and a heat-shield camera experiment.",
+      "author": "Joachim Gresslien"
+    },
+    {
       "id": "starship-flight-13-pad-abort-july-17",
       "title": "Starship stopped itself on the pad \u2014 and the Moon lander's schedule felt it",
       "subtitle": "Four engines failed to light and the rocket shut down at ignition. The abort worked exactly as designed. The calendar is the part that hurts.",
