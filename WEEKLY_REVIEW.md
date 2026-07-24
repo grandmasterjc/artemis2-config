@@ -46,7 +46,14 @@ ends with a recommendation and waits for the owner's decision.
   text paragraph between the image and the next `## heading`. It must use a full
   absolute URL beginning `https://grandmasterjc.github.io/artemis2-config/updates/images/`
   and reference a file that already exists in `updates/images/`.
-- Hero via frontmatter `hero_image: hero.jpg`, 1200×675.
+- Hero via frontmatter `hero_image: hero.jpg`, 1200×675, high quality
+  (source at 1920px+ and downscale; never upscale a small image).
+- Every article gets a DISTINCT hero: never reuse an image used as hero in
+  any of the last ~10 articles (check `updates/images/` and recent
+  manifest entries), even when covering the same running story. The owner
+  flagged the same pad photo appearing three times in a row. Prefer fresh
+  imagery from the actual event (SpaceX/NASA photos, webcast stills);
+  vary the visual angle between installments of a story.
 - Frontmatter: any value containing `:` is double-quoted; `push_title` quoted.
 
 ## Editorial judgment
