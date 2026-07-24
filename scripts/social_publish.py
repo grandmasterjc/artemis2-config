@@ -211,13 +211,26 @@ def threads_create_container(user_id: str, token: str, *, text: str, media_type:
 
 
 def threads_publish(user_id: str, token: str, creation_id: str) -> str:
-    r = requests.post(
-        f"{THREADS_API}/{user_id}/threads_publish",
-        data={"creation_id": creation_id, "access_token": token},
-        timeout=30,
-    )
-    r.raise_for_status()
-    return r.json()["id"]
+    # threads_publish intermittently returns 500 even when the container is
+    # fine (hit us 2026-06-24, 07-08 and 07-24, killing the post each time).
+    # Retry with backoff; a container stays publishable for 24h so waiting
+    # out a transient server error is always the right call.
+    last_error: Exception | None = None
+    for attempt, delay in enumerate((0, 15, 45, 90), start=1):
+        if delay:
+            time.sleep(delay)
+        r = requests.post(
+            f"{THREADS_API}/{user_id}/threads_publish",
+            data={"creation_id": creation_id, "access_token": token},
+            timeout=30,
+        )
+        if r.status_code < 500:
+            r.raise_for_status()
+            return r.json()["id"]
+        last_error = requests.HTTPError(
+            f"{r.status_code} Server Error after {attempt} attempt(s) for url: {r.url}"
+        )
+    raise last_error
 
 
 def threads_permalink(token: str, post_id: str) -> str:
@@ -298,11 +311,22 @@ def log_run(article_id: str, result: dict):
 
 
 def main():
-    if len(sys.argv) < 3:
-        print("Usage: social_publish.py <article_draft.md> <hero_image_url>", file=sys.stderr)
+    # Optional: --channels=threads (comma-separated subset of
+    # bluesky,mastodon,threads). Used to recover a single failed channel
+    # without duplicating posts on the ones that succeeded.
+    args = [a for a in sys.argv[1:] if not a.startswith("--channels=")]
+    channels = {"bluesky", "mastodon", "threads"}
+    explicit_channels = False
+    for a in sys.argv[1:]:
+        if a.startswith("--channels="):
+            channels = {c.strip() for c in a.split("=", 1)[1].split(",") if c.strip()}
+            explicit_channels = True
+
+    if len(args) < 2:
+        print("Usage: social_publish.py <article_draft.md> <hero_image_url> [--channels=bluesky,mastodon,threads]", file=sys.stderr)
         sys.exit(2)
-    md_path = Path(sys.argv[1])
-    hero_url = sys.argv[2]
+    md_path = Path(args[0])
+    hero_url = args[1]
     fm, body = parse_frontmatter(md_path)
     article_id = fm.get("id", md_path.stem)
     title = fm.get("title", "")
@@ -311,29 +335,46 @@ def main():
 
     result = {"bluesky_ok": False, "mastodon_ok": False, "threads_ok": False}
 
-    try:
-        uri, perma = post_to_bluesky(title, subtitle, body, article_url, hero_url)
-        result["bluesky_ok"] = True
-        result["bluesky_uri"] = uri
-    except Exception as e:
-        result["bluesky_error"] = f"{type(e).__name__}: {e}"
+    if "bluesky" in channels:
+        try:
+            uri, perma = post_to_bluesky(title, subtitle, body, article_url, hero_url)
+            result["bluesky_ok"] = True
+            result["bluesky_uri"] = uri
+        except Exception as e:
+            result["bluesky_error"] = f"{type(e).__name__}: {e}"
 
-    try:
-        uri, perma = post_to_mastodon(title, subtitle, body, article_url, hero_url)
-        result["mastodon_ok"] = True
-        result["mastodon_uri"] = uri
-    except Exception as e:
-        result["mastodon_error"] = f"{type(e).__name__}: {e}"
+    if "mastodon" in channels:
+        try:
+            uri, perma = post_to_mastodon(title, subtitle, body, article_url, hero_url)
+            result["mastodon_ok"] = True
+            result["mastodon_uri"] = uri
+        except Exception as e:
+            result["mastodon_error"] = f"{type(e).__name__}: {e}"
 
+    if "threads" not in channels:
+        pass
+    else:
+        _post_threads(result, title, subtitle, body, article_url, hero_url)
+
+    log_run(article_id, result)
+    print(json.dumps(result, indent=2))
+    # In recovery mode (--channels given): fail the step loudly when a
+    # requested channel produced no post. Full runs keep exit 0 because
+    # weekly_publish.py invokes this mid-announce via check_output and must
+    # finish its own logging even when one channel fails.
+    failed = [c for c in channels if not result.get(f"{c}_ok")]
+    if failed and explicit_channels:
+        print(f"FAILED channels: {', '.join(sorted(failed))}", file=sys.stderr)
+        sys.exit(1)
+
+
+def _post_threads(result, title, subtitle, body, article_url, hero_url):
     try:
         post_id, perma = post_to_threads(title, subtitle, body, article_url, hero_url)
         result["threads_ok"] = True
         result["threads_uri"] = perma or post_id
     except Exception as e:
         result["threads_error"] = f"{type(e).__name__}: {e}"
-
-    log_run(article_id, result)
-    print(json.dumps(result, indent=2))
 
 
 if __name__ == "__main__":

@@ -11,6 +11,11 @@ on:
         description: "Article id (matches drafts/{id}/ OR updates/articles/{id}.md)"
         required: true
         type: string
+      channels:
+        description: "Comma-separated channels to post to (subset of bluesky,mastodon,threads). Use a single channel to recover a partial failure without duplicating the others."
+        required: false
+        default: "bluesky,mastodon,threads"
+        type: string
 
 permissions:
   contents: write
@@ -52,7 +57,7 @@ jobs:
           THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
         run: |
           HERO_URL="https://grandmasterjc.github.io/artemis2-config/updates/images/${{ inputs.article_id }}.jpg"
-          python scripts/social_publish.py "${{ steps.locate.outputs.md }}" "$HERO_URL"
+          python scripts/social_publish.py "${{ steps.locate.outputs.md }}" "$HERO_URL" "--channels=${{ inputs.channels }}"
 
       - name: Commit social log
         run: |
