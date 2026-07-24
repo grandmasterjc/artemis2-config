@@ -2,29 +2,29 @@
   "updates": [
     {
       "id": "starship-flight-13-weather-slip-july-24",
-      "title": "Starship slipped a day for a camera shot \u2014 new window tonight at 22:45 UTC",
+      "title": "Starship slipped a day for a camera shot — new window tonight at 22:45 UTC",
       "subtitle": "Thursday's weather would have ruined the ground imagery of the heat shield during ascent. SpaceX chose to wait for clear skies.",
       "date": "2026-07-24T01:53:20Z",
       "mission": "artemis3",
       "premium": false,
-      "hero_image": "https://grandmasterjc.github.io/artemis2-config/updates/images/starship-flight-13-weather-slip-july-24.jpg",
+      "hero_image": "https://grandmasterjc.github.io/artemis2-config/updates/images/starship-flight-13-weather-slip-july-24-v2.jpg",
       "summary": "Thursday's weather would have ruined the ground imagery of the heat shield during ascent. SpaceX chose to wait for clear skies.",
       "author": "Joachim Gresslien"
     },
     {
       "id": "starship-flight-13-flies-tonight-july-23",
-      "title": "Starship tries again tonight \u2014 the window opens at 22:45 UTC",
+      "title": "Starship tries again tonight — the window opens at 22:45 UTC",
       "subtitle": "Two Raptors swapped, one week lost. Third attempt for the flight carrying the first Starlink V3 satellites and a heat-shield camera experiment.",
       "date": "2026-07-23T11:11:27Z",
       "mission": "artemis3",
       "premium": false,
-      "hero_image": "https://grandmasterjc.github.io/artemis2-config/updates/images/starship-flight-13-flies-tonight-july-23.jpg",
+      "hero_image": "https://grandmasterjc.github.io/artemis2-config/updates/images/starship-flight-13-flies-tonight-july-23-v2.jpg",
       "summary": "Two Raptors swapped, one week lost. Third attempt for the flight carrying the first Starlink V3 satellites and a heat-shield camera experiment.",
       "author": "Joachim Gresslien"
     },
     {
       "id": "starship-flight-13-pad-abort-july-17",
-      "title": "Starship stopped itself on the pad \u2014 and the Moon lander's schedule felt it",
+      "title": "Starship stopped itself on the pad — and the Moon lander's schedule felt it",
       "subtitle": "Four engines failed to light and the rocket shut down at ignition. The abort worked exactly as designed. The calendar is the part that hurts.",
       "date": "2026-07-17T12:24:33Z",
       "mission": "artemis3",
@@ -35,7 +35,7 @@
     },
     {
       "id": "artemis3-heat-shield-stacks-july-15",
-      "title": "Artemis III is stacking up at Kennedy \u2014 and the heat shield is the part to watch",
+      "title": "Artemis III is stacking up at Kennedy — and the heat shield is the part to watch",
       "subtitle": "Boosters went up on July 11 and Orion's heat shield just went on. The shield was redesigned to fix the flaw that scarred Artemis I.",
       "date": "2026-07-15T15:46:23Z",
       "mission": "artemis3",
@@ -46,7 +46,7 @@
     },
     {
       "id": "moon-base-1-endurance-july-8",
-      "title": "NASA's first Moon Base landing has a lander that's ready \u2014 and a launch pad that isn't",
+      "title": "NASA's first Moon Base landing has a lander that's ready — and a launch pad that isn't",
       "subtitle": "Endurance keeps passing its tests. The rocket meant to fly it blew up on the pad two days after the mission was announced.",
       "date": "2026-07-08T20:20:19Z",
       "mission": "moonbase",
@@ -57,7 +57,7 @@
     },
     {
       "id": "moonbase-clps-cadence-july-1",
-      "title": "NASA just bought four more Moon deliveries \u2014 and the payload list reveals what it's worried about",
+      "title": "NASA just bought four more Moon deliveries — and the payload list reveals what it's worried about",
       "subtitle": "The newest CLPS awards are not glamorous. They are a repeatable safety-and-infrastructure package aimed at making south-pole landings routine.",
       "date": "2026-07-01T21:09:11Z",
       "mission": "moonbase",
@@ -68,7 +68,7 @@
     },
     {
       "id": "spacex-ipo-artemis-math-june-24",
-      "title": "SpaceX is finally public \u2014 and the Artemis math just got a lot louder",
+      "title": "SpaceX is finally public — and the Artemis math just got a lot louder",
       "subtitle": "An $85 billion IPO, a $20 billion bond two weeks later, and a $4 billion lunar lander contract that suddenly looks like a rounding error",
       "date": "2026-06-24T15:52:16Z",
       "mission": "artemis3",
@@ -80,12 +80,12 @@
     {
       "id": "blue-moon-decoupling-june-17",
       "title": "NASA is shopping for a new ride for Blue Moon",
-      "subtitle": "After the May 28 pad explosion at Cape Canaveral, NASA wants Blue Origin's lunar landers off New Glenn \u2014 and onto a rocket that can actually fly this year.",
+      "subtitle": "After the May 28 pad explosion at Cape Canaveral, NASA wants Blue Origin's lunar landers off New Glenn — and onto a rocket that can actually fly this year.",
       "date": "2026-06-17T13:35:32Z",
       "mission": "artemis3",
       "premium": false,
       "hero_image": "https://grandmasterjc.github.io/artemis2-config/updates/images/blue-moon-decoupling-june-17.jpg",
-      "summary": "After the May 28 pad explosion at Cape Canaveral, NASA wants Blue Origin's lunar landers off New Glenn \u2014 and onto a rocket that can actually fly this year.",
+      "summary": "After the May 28 pad explosion at Cape Canaveral, NASA wants Blue Origin's lunar landers off New Glenn — and onto a rocket that can actually fly this year.",
       "author": "Joachim Gresslien"
     },
     {
@@ -107,7 +107,7 @@
       "mission": "artemis3",
       "premium": true,
       "hero_image": "https://grandmasterjc.github.io/artemis2-config/updates/images/artemis-iii-crew-reveal-june-9.jpg",
-      "summary": "NASA names the Artemis III astronauts on June 9. The mid\u20112027 mission they are assigned to is not the lunar-landing profile originally planned.",
+      "summary": "NASA names the Artemis III astronauts on June 9. The mid‑2027 mission they are assigned to is not the lunar-landing profile originally planned.",
       "author": "Joachim Gresslien"
     },
     {
@@ -123,7 +123,7 @@
     },
     {
       "id": "artemis-iii-leo-docking-spacer",
-      "title": "Artemis III is now a docking-heavy Earth-orbit mission \u2014 and NASA just filled in key details",
+      "title": "Artemis III is now a docking-heavy Earth-orbit mission — and NASA just filled in key details",
       "subtitle": "A closer look at the new spacer, the LEO architecture, and what NASA still has to decide before crews start training.",
       "date": "2026-05-20T16:39:53Z",
       "mission": "artemis3",
@@ -135,12 +135,12 @@
     {
       "id": "artemis2-heatshield-verdict",
       "title": "Reid Wiseman Needed to Hug an Engineer",
-      "subtitle": "Artemis II\u2019s heat shield came back cleaner than Artemis I \u2014 and NASA still has work to do before Artemis III.",
+      "subtitle": "Artemis II’s heat shield came back cleaner than Artemis I — and NASA still has work to do before Artemis III.",
       "date": "2026-05-13T16:33:05Z",
       "mission": "artemis2",
       "premium": false,
       "hero_image": "https://grandmasterjc.github.io/artemis2-config/updates/images/artemis2-heatshield-verdict.jpg",
-      "summary": "Artemis II\u2019s post-flight heat shield imagery suggests NASA\u2019s re-entry changes worked \u2014 but the hardest validation work for Artemis III is still ahead.",
+      "summary": "Artemis II’s post-flight heat shield imagery suggests NASA’s re-entry changes worked — but the hardest validation work for Artemis III is still ahead.",
       "author": "Joachim Gresslien"
     },
     {
@@ -151,13 +151,13 @@
       "mission": "artemis3",
       "premium": true,
       "hero_image": "https://grandmasterjc.github.io/artemis2-config/updates/images/orion_hls_docking.jpg",
-      "summary": "NASA still hasn't named a crew, an orbit, or a duration for Artemis III \u2014 and the launch date is quietly drifting toward late 2027. Here's why a modest slip removes one of the two planned 2028 lunar landings.",
+      "summary": "NASA still hasn't named a crew, an orbit, or a duration for Artemis III — and the launch date is quietly drifting toward late 2027. Here's why a modest slip removes one of the two planned 2028 lunar landings.",
       "author": "Joachim Gresslien"
     },
     {
       "id": "artemis2-mission-recap",
       "title": "Artemis II: Everything That Floated Past the Moon",
-      "subtitle": "Iconic photographs, an hour-long eclipse, an emotional crater dedication \u2014 and one small plush toy carrying 5.6 million names. The full story.",
+      "subtitle": "Iconic photographs, an hour-long eclipse, an emotional crater dedication — and one small plush toy carrying 5.6 million names. The full story.",
       "date": "2026-04-27T17:00:00Z",
       "mission": "artemis2",
       "premium": false,
@@ -168,7 +168,7 @@
     {
       "id": "artemis2-what-we-learned",
       "title": "6 Things NASA Just Figured Out About Going to the Moon",
-      "subtitle": "The post-flight data from Artemis II is in \u2014 and some of the findings surprised even the engineers who designed the hardware.",
+      "subtitle": "The post-flight data from Artemis II is in — and some of the findings surprised even the engineers who designed the hardware.",
       "date": "2026-04-24T12:00:00Z",
       "mission": "artemis2",
       "premium": true,
@@ -184,7 +184,7 @@
       "mission": "artemis3",
       "premium": false,
       "hero_image": "https://grandmasterjc.github.io/artemis2-config/updates/images/axemu_2024_milan.jpg",
-      "summary": "For the first time ever, NASA astronauts will walk on the Moon in a privately-built spacesuit \u2014 co-designed by Italian fashion house Prada.",
+      "summary": "For the first time ever, NASA astronauts will walk on the Moon in a privately-built spacesuit — co-designed by Italian fashion house Prada.",
       "author": "Joachim Gresslien"
     },
     {
