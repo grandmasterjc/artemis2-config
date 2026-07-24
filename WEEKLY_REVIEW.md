@@ -53,7 +53,12 @@ ends with a recommendation and waits for the owner's decision.
   manifest entries), even when covering the same running story. The owner
   flagged the same pad photo appearing three times in a row. Prefer fresh
   imagery from the actual event (SpaceX/NASA photos, webcast stills);
-  vary the visual angle between installments of a story.
+  vary the visual angle between installments of a story. The image must
+  also MATCH the story's state — no liftoff photos on pre-launch pieces.
+- Swapping an already-published image: always publish under a NEW
+  filename (e.g. `{id}-v2.jpg`) and update the manifest's `hero_image` —
+  replacing bytes at the same URL leaves app clients showing their
+  cached copy of the old image indefinitely.
 - Frontmatter: any value containing `:` is double-quoted; `push_title` quoted.
 
 ## Editorial judgment
