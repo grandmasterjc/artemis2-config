@@ -20,6 +20,11 @@ on:
           - all
           - prepare
           - announce
+      newsletter_now:
+        description: "Send the Kit newsletter immediately instead of tonight 21:30 CEST. Use for time-sensitive news; leave off for the weekly deep-dive."
+        required: false
+        default: false
+        type: boolean
 
 permissions:
   contents: write
@@ -88,7 +93,12 @@ jobs:
           THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
           THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
           ARTICLE_ID: ${{ inputs.article_id }}
-        run: python scripts/weekly_publish.py "$ARTICLE_ID" --phase=announce
+        run: |
+          ARGS="--phase=announce"
+          if [ "${{ inputs.newsletter_now }}" = "true" ]; then
+            ARGS="$ARGS --newsletter-now"
+          fi
+          python scripts/weekly_publish.py "$ARTICLE_ID" $ARGS
 
       # Commit the post-announce side effects (history files, cleaned pending).
       - name: Commit publish history

@@ -154,7 +154,8 @@ def send_push(push_title: str, push_body: str, article_id: str):
     return out
 
 
-def schedule_kit_newsletter(meta: dict, body: str, article_id: str) -> str:
+def schedule_kit_newsletter(meta: dict, body: str, article_id: str,
+                            send_now: bool = False) -> str:
     sys.path.insert(0, str(SCRIPTS))
     from kit_template import build_newsletter_html
 
@@ -182,13 +183,19 @@ def schedule_kit_newsletter(meta: dict, body: str, article_id: str) -> str:
         include_week_ahead_cta=True,
     )
 
-    # Schedule for tonight 21:30 CEST
+    # Default: tonight 21:30 CEST (evening reading for the weekly deep-dive).
+    # send_now: one minute out, for time-sensitive news pieces. Kit treats a
+    # broadcast without send_at as a draft that never sends, so "now" must
+    # still be an explicit near-future timestamp.
     now = datetime.now(timezone.utc)
-    cest_offset = timedelta(hours=2)  # CEST is UTC+2 in summer
-    today_2130_cest = (now + cest_offset).replace(hour=21, minute=30, second=0, microsecond=0)
-    send_at_utc = today_2130_cest - cest_offset
-    if send_at_utc < now + timedelta(minutes=5):
-        send_at_utc = now + timedelta(minutes=10)
+    if send_now:
+        send_at_utc = now + timedelta(minutes=1)
+    else:
+        cest_offset = timedelta(hours=2)  # CEST is UTC+2 in summer
+        today_2130_cest = (now + cest_offset).replace(hour=21, minute=30, second=0, microsecond=0)
+        send_at_utc = today_2130_cest - cest_offset
+        if send_at_utc < now + timedelta(minutes=5):
+            send_at_utc = now + timedelta(minutes=10)
 
     payload = {
         "subject": meta["push_title"],
@@ -275,7 +282,7 @@ def phase_prepare(article_id: str) -> None:
     print(f"prepare: wrote {PENDING_FILE.name} - ready for commit + push")
 
 
-def phase_announce(article_id: str) -> None:
+def phase_announce(article_id: str, newsletter_now: bool = False) -> None:
     print(f"=== Phase: announce ({article_id}) ===")
     if PENDING_FILE.exists():
         pending = json.loads(PENDING_FILE.read_text(encoding="utf-8"))
@@ -291,7 +298,7 @@ def phase_announce(article_id: str) -> None:
     wait_for_pages(article_id)
 
     push_id = send_push(meta["push_title"], meta["push_body"], article_id)
-    kit_id = schedule_kit_newsletter(meta, body, article_id)
+    kit_id = schedule_kit_newsletter(meta, body, article_id, send_now=newsletter_now)
     bsky_uri, mastodon_uri = post_social(article_id)
 
     log_publish(meta, article_id, push_id, kit_id, bsky_uri, mastodon_uri)
@@ -312,6 +319,11 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("article_id")
     parser.add_argument(
+        "--newsletter-now",
+        action="store_true",
+        help="Send the Kit newsletter about a minute from now instead of tonight 21:30 CEST",
+    )
+    parser.add_argument(
         "--phase",
         choices=["prepare", "announce", "full"],
         default="full",
@@ -326,10 +338,10 @@ def main():
     if args.phase == "prepare":
         phase_prepare(args.article_id)
     elif args.phase == "announce":
-        phase_announce(args.article_id)
+        phase_announce(args.article_id, newsletter_now=args.newsletter_now)
     else:
         phase_prepare(args.article_id)
-        phase_announce(args.article_id)
+        phase_announce(args.article_id, newsletter_now=args.newsletter_now)
 
 
 if __name__ == "__main__":
