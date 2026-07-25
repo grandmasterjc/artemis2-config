@@ -40,6 +40,10 @@ ends with a recommendation and waits for the owner's decision.
   "Subscribe" phrasing, framed as the free email edition.
 - No markdown tables (use bullet lists).
 - No italic markers (`*text*` / `_text_`) anywhere; no bold inside quotes.
+- No em-dashes (—) in titles, subtitles or body prose. The owner flags
+  them as an AI tell. Rewrite with commas, colons or separate sentences.
+  Exception: verbatim product names ("Liftoff — Rocket & Space Launch")
+  and verbatim quotes.
 - Quotes: plain text with quotation marks; the owner prefers no inline source
   citations like "(NASA, date)" in the body — attribute in prose or omit.
 - At most one inline image, mid-article (never at the top), with at least one

@@ -1,12 +1,12 @@
 ---
 id: starship-flight-13-results-july-25
-title: "Starship finally flew — and came home floating"
-subtitle: Third try was the one. Twenty Starlink V3s deployed, and the first Ship ever to survive its own splashdown. NASA's Moon lander just had its best day — and is still a long checklist away from Artemis IV.
+title: "Starship finally flew, and came home floating"
+subtitle: Third try was the one. Twenty Starlink V3s deployed, and the first Ship ever to survive its own splashdown. NASA's Moon lander just had its best day, but it is still a long checklist away from Artemis IV.
 date: 2026-07-25
 mission: artemis3
 premium: false
 hero_image: hero.jpg
-push_title: "Starship flew — and survived its splashdown"
+push_title: "Starship flew, and survived its splashdown"
 push_body: 20 Starlink V3s deployed, the relight worked, and Ship is floating intact in the Indian Ocean. The booster had a rougher evening.
 ---
 
