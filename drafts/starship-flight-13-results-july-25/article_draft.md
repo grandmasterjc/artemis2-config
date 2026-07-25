@@ -1,7 +1,7 @@
 ---
 id: starship-flight-13-results-july-25
 title: "Starship finally flew — and came home floating"
-subtitle: Third try was the one. Twenty Starlink V3s out the door, a rough booster landing, and the first Ship ever to survive its own splashdown.
+subtitle: Third try was the one. Twenty Starlink V3s deployed, and the first Ship ever to survive its own splashdown. NASA's Moon lander just had its best day — and is still a long checklist away from Artemis IV.
 date: 2026-07-25
 mission: artemis3
 premium: false
@@ -14,7 +14,7 @@ At 22:51 UTC on Friday, on the third attempt in nine days, Starship Flight 13 le
 
 "That is a first," SpaceX's Dan Huot said on the webcast, as a drone circled the bobbing stainless-steel hull. "That is the softest splashdown we have ever had with Starship in the Indian Ocean."
 
-By the standards of a program that measures progress in what survives, Flight 13 was the best Starship flight yet. Not a clean sweep, though. The booster's evening ended considerably harder than planned, and the item that matters most to Artemis is still unticked. Here is the scorecard.
+By the standards of a program that measures progress in what survives, Flight 13 was the best Starship flight yet. It needed to be. This is the vehicle NASA is counting on to land the Artemis IV crew on the Moon in 2028, and until Friday its 2026 record consisted of one crash, one pad abort and a weather scrub. So yes, a very good night. It still leaves the lander program short of the thing Artemis actually requires, and the gap is bigger than the celebration suggests. Here is the scorecard, including the part that should worry NASA.
 
 ---
 
