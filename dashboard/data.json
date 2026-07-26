@@ -3,13 +3,6 @@
     "status": "ok",
     "daily_users": [
       {
-        "date": "2026-04-26",
-        "active": 178,
-        "new": 78,
-        "views": 198,
-        "sessions": 184
-      },
-      {
         "date": "2026-04-27",
         "active": 234,
         "new": 72,
@@ -613,59 +606,66 @@
       },
       {
         "date": "2026-07-22",
-        "active": 96,
+        "active": 97,
         "new": 37,
-        "views": 133,
-        "sessions": 108
+        "views": 134,
+        "sessions": 109
       },
       {
         "date": "2026-07-23",
-        "active": 232,
+        "active": 233,
         "new": 21,
-        "views": 288,
-        "sessions": 269
+        "views": 289,
+        "sessions": 271
       },
       {
         "date": "2026-07-24",
-        "active": 242,
-        "new": 29,
-        "views": 296,
-        "sessions": 275
+        "active": 256,
+        "new": 31,
+        "views": 326,
+        "sessions": 288
+      },
+      {
+        "date": "2026-07-25",
+        "active": 227,
+        "new": 36,
+        "views": 272,
+        "sessions": 254
       }
     ],
     "latest": {
-      "date": "2026-07-24",
-      "active": 242,
-      "new": 29,
-      "views": 296,
-      "sessions": 275
+      "date": "2026-07-25",
+      "active": 227,
+      "new": 36,
+      "views": 272,
+      "sessions": 254
     },
-    "total_active_28d": 3686,
-    "total_new_28d": 826,
-    "total_sessions_28d": 4175,
-    "total_views_28d": 4832,
-    "avg_dau_7d": 132.6,
-    "avg_dau_28d": 131.6,
+    "total_active_28d": 3794,
+    "total_new_28d": 816,
+    "total_sessions_28d": 4289,
+    "total_views_28d": 4945,
+    "avg_dau_7d": 151.4,
+    "avg_dau_28d": 135.5,
     "top_countries_30d": [
       {
         "country": "United States",
-        "active": 1031
+        "active": 1042
       },
       {
         "country": "United Kingdom",
-        "active": 305
+        "active": 302
       },
       {
         "country": "Canada",
-        "active": 166
+        "active": 162
       },
       {
         "country": "Germany",
-        "active": 160
+        "active": 159
       },
       {
         "country": "Australia",
-        "active": 62
+        "active": 68
       },
       {
         "country": "Italy",
@@ -673,15 +673,15 @@
       },
       {
         "country": "Spain",
-        "active": 53
+        "active": 54
       },
       {
         "country": "Netherlands",
-        "active": 48
+        "active": 49
       },
       {
         "country": "France",
-        "active": 46
+        "active": 47
       },
       {
         "country": "Brazil",
@@ -689,20 +689,26 @@
       }
     ],
     "push_events_30d": {
-      "notification_receive": 2568,
-      "notification_open": 819,
-      "notification_dismiss": 221,
+      "notification_receive": 2950,
+      "notification_open": 934,
+      "notification_dismiss": 250,
       "notification_foreground": 14,
       "notification_toggled": 11
     },
-    "push_open_rate_30d": 0.9832,
-    "fetched_at": "2026-07-25T07:22:44.820082+00:00"
+    "push_open_rate_30d": 0.9852,
+    "fetched_at": "2026-07-26T07:40:19.410451+00:00"
   },
   "kit": {
     "status": "ok",
     "active_subscribers": 36,
-    "inactive_subscribers": 6,
+    "inactive_subscribers": 8,
     "recent_broadcasts": [
+      {
+        "id": 25150551,
+        "subject": "Starship flew, and survived its splashdown",
+        "send_at": "2026-07-25T19:30:00Z",
+        "public": true
+      },
       {
         "id": 25134098,
         "subject": "Starship slipped to tonight \u2014 22:45 UTC",
@@ -756,15 +762,9 @@
         "subject": "The Week Ahead \u2014 June 29\u2013July 5: Stacking week at KSC, Ship 40 ticks off single-engine, OIG counts $5.9B in canceled hardware",
         "send_at": null,
         "public": true
-      },
-      {
-        "id": 24705686,
-        "subject": "SpaceX is public: what it changes for Artemis",
-        "send_at": "2026-06-24T19:30:00Z",
-        "public": true
       }
     ],
-    "fetched_at": "2026-07-25T07:22:46.435440+00:00"
+    "fetched_at": "2026-07-26T07:40:20.232739+00:00"
   },
   "asc": {
     "status": "ok",
@@ -922,62 +922,56 @@
     ],
     "subscriptions": {
       "status": "ok",
-      "window_start": "2026-06-23",
-      "window_end": "2026-07-23",
+      "window_start": "2026-06-24",
+      "window_end": "2026-07-24",
       "days_with_data": 31,
       "days_attempted": 31,
-      "active_subscribers": 46,
+      "active_subscribers": 45,
       "active_breakdown": {
-        "active_total": 46,
+        "active_total": 45,
         "by_product": {
           "Artemis+ Yearly": 36,
-          "Artemis+ Monthly": 10
+          "Artemis+ Monthly": 9
         },
         "by_country": [
           {
             "country": "??",
-            "active": 46
+            "active": 45
           }
         ],
         "arr_usd": 653.18,
         "mrr_usd": 54.43,
         "proceeds_factor": 0.85,
-        "as_of": "2026-07-23"
+        "as_of": "2026-07-24"
       },
       "events_30d": {
-        "Start Introductory Offer": 9,
-        "Paid Subscription from Introductory Offer": 10,
+        "Renew": 1,
+        "Grace Period from Introductory Offer": 2,
+        "Start Introductory Offer": 7,
+        "Paid Subscription from Introductory Offer": 8,
         "Cancel": 2,
         "Renewal from Billing Retry": 1,
         "Canceled from Billing Retry": 2,
         "Renewals from Grace Period": 1,
-        "Billing Retry from Grace Period": 2,
-        "Grace Period from Introductory Offer": 1
+        "Billing Retry from Grace Period": 2
       },
       "event_days_with_data": 20,
       "cancel_events_30d": 4,
       "refund_events_30d": 0,
-      "monthly_churn": 0.087,
+      "monthly_churn": 0.0889,
       "by_product": {
         "no.bitfactory.artemisii.tracker.monthly": {
-          "units": 16,
-          "proceeds_usd": 24.58,
+          "units": 15,
+          "proceeds_usd": 27.97,
           "name": "Artemis+ Monthly"
         },
         "no.bitfactory.artemisii.tracker.yearly": {
-          "units": 4,
-          "proceeds_usd": 80.53,
+          "units": 3,
+          "proceeds_usd": 50.97,
           "name": "Artemis+ Yearly"
         }
       },
       "by_day": [
-        {
-          "date": "2026-06-23",
-          "monthly": 2,
-          "yearly": 1,
-          "other": 0,
-          "proceeds_usd": 29.56
-        },
         {
           "date": "2026-06-24",
           "monthly": 1,
@@ -1089,17 +1083,24 @@
           "yearly": 0,
           "other": 0,
           "proceeds_usd": 0.0
+        },
+        {
+          "date": "2026-07-24",
+          "monthly": 1,
+          "yearly": 0,
+          "other": 0,
+          "proceeds_usd": 3.39
         }
       ],
       "by_country": [
         {
           "country": "US",
           "units": 13,
-          "proceeds_usd": 71.31
+          "proceeds_usd": 74.7
         },
         {
           "country": "CA",
-          "units": 3,
+          "units": 2,
           "proceeds_usd": 4.24
         },
         {
@@ -1116,28 +1117,23 @@
           "country": "GB",
           "units": 1,
           "proceeds_usd": 0.0
-        },
-        {
-          "country": "NZ",
-          "units": 1,
-          "proceeds_usd": 29.56
         }
       ],
       "by_order_type": {
-        "Free Trial Intro Offer": 9,
-        "Standard": 11
+        "Standard": 11,
+        "Free Trial Intro Offer": 7
       },
-      "total_units_30d": 20,
-      "total_proceeds_usd_30d": 105.11,
-      "new_subscribers_30d": 9,
-      "new_installs_30d": 75
+      "total_units_30d": 18,
+      "total_proceeds_usd_30d": 78.94,
+      "new_subscribers_30d": 7,
+      "new_installs_30d": 78
     },
-    "fetched_at": "2026-07-25T07:23:22.498006+00:00"
+    "fetched_at": "2026-07-26T07:41:04.781977+00:00"
   },
   "play": {
     "status": "ok",
-    "window_start": "2026-06-26",
-    "window_end": "2026-07-25",
+    "window_start": "2026-06-27",
+    "window_end": "2026-07-26",
     "package": "no.bitfactory.artemisii.tracker",
     "by_product": {},
     "by_day": [],
@@ -1154,11 +1150,11 @@
     "handle": "artemistracker.app",
     "followers": 8,
     "following": 12,
-    "posts_total": 60,
-    "posts_7d": 8,
+    "posts_total": 64,
+    "posts_7d": 12,
     "likes_7d": 0,
     "reposts_7d": 0,
-    "fetched_at": "2026-07-25T07:23:24.825458+00:00"
+    "fetched_at": "2026-07-26T07:41:06.541233+00:00"
   },
   "mastodon": {
     "status": "ok",
@@ -1166,30 +1162,30 @@
     "username": "artemistracker",
     "followers": 1,
     "following": 4,
-    "posts_total": 55,
-    "posts_7d": 6,
+    "posts_total": 58,
+    "posts_7d": 9,
     "favs_7d": 0,
     "boosts_7d": 0,
-    "fetched_at": "2026-07-25T07:23:26.336156+00:00"
+    "fetched_at": "2026-07-26T07:41:07.813266+00:00"
   },
   "threads": {
     "status": "ok",
     "handle": "@artemistracker.app",
     "username": "artemistracker.app",
     "followers": 9,
-    "posts_7d": 4,
-    "likes_7d": 23,
-    "comments_7d": 6,
+    "posts_7d": 5,
+    "likes_7d": 26,
+    "comments_7d": 8,
     "reposts_7d": 1,
-    "fetched_at": "2026-07-25T07:23:31.472759+00:00"
+    "fetched_at": "2026-07-26T07:41:09.247971+00:00"
   },
   "instagram": {
     "status": "error",
-    "error": "HTTP 400: {\"error\":{\"message\":\"Unsupported request - method type: get\",\"type\":\"IGApiException\",\"code\":100,\"fbtrace_id\":\"AYVvPIVJ8JWV8VHSW8BjsWj\"}}"
+    "error": "HTTP 400: {\"error\":{\"message\":\"Unsupported request - method type: get\",\"type\":\"IGApiException\",\"code\":100,\"fbtrace_id\":\"AjbnI9-PYwKTaLoNegu9rsn\"}}"
   },
   "push": {
     "status": "ok",
-    "total_pushes": 8,
+    "total_pushes": 9,
     "recent": [
       {
         "timestamp_utc": "2026-06-09T17:23:18.056515+00:00",
@@ -1254,9 +1250,17 @@
         "article_id": "starship-flight-13-weather-slip-july-24",
         "topic": "all",
         "message_id": "projects/artemis-tracker-665d8/messages/2135067885422316271"
+      },
+      {
+        "timestamp_utc": "2026-07-25T07:52:40.632547+00:00",
+        "title": "Starship flew, and survived its splashdown",
+        "body": "20 Starlink V3s deployed, the relight worked, and Ship is floating intact in the Indian Ocean. The booster had a rougher evening.",
+        "article_id": "starship-flight-13-results-july-25",
+        "topic": "all",
+        "message_id": "projects/artemis-tracker-665d8/messages/3342206782958857508"
       }
     ],
-    "fetched_at": "2026-07-25T07:23:32.965082+00:00"
+    "fetched_at": "2026-07-26T07:41:09.667937+00:00"
   },
   "roadmap": {
     "status": "ok",
@@ -1344,7 +1348,7 @@
         "note": "durable across sandbox resets"
       }
     ],
-    "fetched_at": "2026-07-25T07:23:32.965401+00:00"
+    "fetched_at": "2026-07-26T07:41:09.668255+00:00"
   },
   "targets": {
     "status": "ok",
@@ -1438,5 +1442,5 @@
       "implied_subs": 5200
     }
   },
-  "generated_at": "2026-07-25T07:23:32.965414+00:00"
+  "generated_at": "2026-07-26T07:41:09.668268+00:00"
 }
