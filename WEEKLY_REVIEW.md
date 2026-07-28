@@ -23,29 +23,14 @@ ends with a recommendation and waits for the owner's decision.
 
 ## Rule compliance (mechanical)
 
-- 800–1200 words in the body (Wednesday article), excluding frontmatter.
-- 4–8 `##` headings.
-- First 4 paragraphs are a free hook; ends with a forward-looking closing
-  section (upcoming milestones, what to watch).
-- Headings must be concrete and specific to the story ("Two Raptors now,
-  two bigger tests later"), never generic scaffold headings. The owner
-  flags these as AI-sounding — banned examples: "Where this leaves us",
-  "What to watch next", "What this means", "The bottom line", "What
-  happened", "Why it matters". A good test: could the heading be moved to
-  a different article unchanged? If yes, rewrite it.
-- Required inline CTA after paragraph 3:
-  `Get the next briefing in your inbox. [Subscribe free →](https://artemis-briefing.kit.com)`
-  (paraphrase acceptable; keep the link and the "Subscribe" phrasing).
-- Required footer CTA linking to `https://artemis-briefing.kit.com` with
-  "Subscribe" phrasing, framed as the free email edition.
-- No markdown tables (use bullet lists).
-- No italic markers (`*text*` / `_text_`) anywhere; no bold inside quotes.
-- No em-dashes (—) in titles, subtitles or body prose. The owner flags
-  them as an AI tell. Rewrite with commas, colons or separate sentences.
-  Exception: verbatim product names ("Liftoff — Rocket & Space Launch")
-  and verbatim quotes.
-- Quotes: plain text with quotation marks; the owner prefers no inline source
-  citations like "(NASA, date)" in the body — attribute in prose or omit.
+Writing rules live in `ARTICLE_STYLE.md`, which is the authority on voice,
+structure, language, attribution, anti-tells, CTA copy and length. Read it
+before reviewing a draft and run its §8 pre-publish checklist. Where this
+file and the spec disagree, the spec wins. Its appendix explains how the
+headline and dek map onto the draft's frontmatter.
+
+Rules the spec does not cover, still enforced here:
+
 - At most one inline image, mid-article (never at the top), with at least one
   text paragraph between the image and the next `## heading`. It must use a full
   absolute URL beginning `https://grandmasterjc.github.io/artemis2-config/updates/images/`
@@ -95,6 +80,27 @@ Two-phase, so the article is verified visible before anyone is notified:
 After publishing: check how the previous week's social posts performed and
 append learnings to `SOCIAL_PLAYBOOK.md` (metrics how-to at the bottom of
 that file). Threads must be read manually by the owner — ask for the numbers.
+
+## Editing an article after publication
+
+The live body at `updates/articles/{id}.md` must never be produced by
+copying the draft. It carries no frontmatter, because GitHub Pages runs
+Jekyll and any file with frontmatter is converted to HTML, which makes the
+`.md` URL the apps fetch return 404. This took an article offline for about
+20 minutes on 2026-07-28.
+
+An edit to a published article means three files, or the app shows a
+mismatch: the draft, `updates/articles/{id}.md` (body prose only), and the
+`title` / `subtitle` / `summary` fields for that article in
+`updates/manifest.json`.
+
+Verification after any publish or edit MUST check content, not just the
+HTTP status code. Fetch the article URL and grep for a phrase that only
+exists in the new text. A 404 page can return quickly enough to look like
+a healthy response in a status-only check.
+
+Push notifications, social posts and a scheduled Kit newsletter cannot be
+recalled once announce has run. Finish text edits during the prepare phase.
 
 Communication: Norwegian for owner comms, English for content. For yes/no
 questions, answer yes/no.
