@@ -1,6 +1,17 @@
 {
   "updates": [
     {
+      "id": "starship-crew-objection-july-28",
+      "title": "Too heavy, too complicated, too risky: the case against a crewed Starship",
+      "subtitle": "Can Starship really carry people? Life support means mass, mass means propellant, and propellant means still more propellant. We go through the design, sorting the myths from the real obstacles.",
+      "date": "2026-07-28T09:43:03Z",
+      "mission": "artemis3",
+      "premium": false,
+      "hero_image": "https://grandmasterjc.github.io/artemis2-config/updates/images/starship-crew-objection-july-28.jpg",
+      "summary": "Can Starship really carry people? Life support means mass, mass means propellant, and propellant means still more propellant. We go through the design, sorting the myths from the real obstacles.",
+      "author": "Joachim Gresslien"
+    },
+    {
       "id": "starship-flight-13-results-july-25",
       "title": "Starship finally flew, and came home floating",
       "subtitle": "Third try was the one. Twenty Starlink V3s deployed, and the first Ship ever to survive its own splashdown. NASA's Moon lander just had its best day, but it is still a long checklist away from Artemis IV.",
