@@ -38,9 +38,9 @@ So HLS is best understood as a lunar elevator with a habitat bolted on, operatin
 
 ## The engines that worry people are off before touchdown
 
-The throttle objection is factually correct and lands in the wrong place. Raptor throttles down to roughly 40 percent, and a cluster of engines that deep-throttled would be a nervous way to touch down on a surface nobody has surveyed at that resolution.
+There is a sharper version of the engine worry, and it deserves a straight answer. Raptor throttles down to roughly 40 percent of full thrust and no further. Engines that cannot be dialled down below that are hard to hold steady at low speed, and a cluster of them settling onto ground nobody has surveyed at boulder resolution would be a nervous way to land.
 
-Which is why HLS does not do it. Terminal descent runs on high-thrust methane and oxygen thrusters mounted mid-body, well above the surface, with the Raptors shut down before the vehicle gets close. The main reason is dust: a Raptor plume at touchdown would excavate the regolith and throw debris outward at velocities that damage anything nearby, including the lander. The design solves the plume problem and the fine-control problem in the same move.
+All of that is accurate. It also describes something HLS never does. Terminal descent runs on high-thrust methane and oxygen thrusters mounted mid-body, well above the surface, with the Raptors shut down before the vehicle gets close. The main reason is dust: a Raptor plume at touchdown would excavate the regolith and throw debris outward at velocities that damage anything nearby, including the lander. The design solves the plume problem and the fine-control problem in the same move.
 
 None of which makes the landing easy. HLS stands roughly seven times taller than the Apollo lunar module, and it has to set down on unsurveyed south-polar ground full of slopes and boulders. A tall vehicle with a high centre of mass tipping over is a real failure mode, and one reason NASA wants an uncrewed landing first.
 
