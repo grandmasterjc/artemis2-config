@@ -22,9 +22,9 @@ Get the next briefing in your inbox. [Subscribe free →](https://artemis-briefi
 
 ---
 
-They involve a tanker manifest that runs into double digits, propellant that evaporates while it waits, a demonstration flight that will not resemble the real thing, and a lift nobody will have ridden before four astronauts do. NASA's inspector general put all of it in writing in March. Start with what the vehicle is actually supposed to do.
+NASA's inspector general put those in writing in March, and they involve tanker manifests, evaporating propellant and untested hardware. Start with what the vehicle is actually supposed to do.
 
-## What the Artemis Starship actually does
+## Nobody was ever going to ride it home
 
 The lander variant, Starship HLS, launches with nobody aboard. It parks in Earth orbit, gets filled by a series of tanker flights, then flies to lunar orbit empty of crew.
 
@@ -32,23 +32,27 @@ The astronauts travel separately, launched on SLS inside Orion. The two vehicles
 
 ![Orion and the Starship lander docked in lunar orbit](https://grandmasterjc.github.io/artemis2-config/updates/images/orion_hls_docking.jpg)
 
-Under the revised architecture NASA and SpaceX have been working on for Artemis IV, the two even dock in Earth orbit and travel out together, with Starship doing the push toward the Moon. The docking arrangements shift. What does not shift is which spacecraft has a heat shield and which one does not.
+Under the revised Artemis IV architecture the two even dock in Earth orbit and travel out together. The docking arrangements shift. What does not shift is which spacecraft has a heat shield and which one does not.
 
-So HLS is best understood as a lunar elevator with a habitat bolted on. It operates entirely between lunar orbit and the surface, in vacuum, at one sixth of Earth's gravity. Life support has to keep four people alive for a matter of days, not the closed-loop plant that runs for years on a space station.
+So HLS is best understood as a lunar elevator with a habitat bolted on, operating entirely between lunar orbit and the surface, in vacuum, at one sixth of Earth's gravity. Life support has to keep four people alive for days, not the closed-loop plant that runs for years on a space station.
 
-## The final descent does not use the big engines
+## The engines that worry people are off before touchdown
 
 The throttle objection is factually correct and lands in the wrong place. Raptor throttles down to roughly 40 percent, and a cluster of engines that deep-throttled would be a nervous way to touch down on a surface nobody has surveyed at that resolution.
 
 Which is why HLS does not do it. Terminal descent runs on high-thrust methane and oxygen thrusters mounted mid-body, well above the surface, with the Raptors shut down before the vehicle gets close. The main reason is dust: a Raptor plume at touchdown would excavate the regolith and throw debris outward at velocities that damage anything nearby, including the lander. The design solves the plume problem and the fine-control problem in the same move.
 
-None of which makes the landing easy. HLS stands roughly seven times taller than the Apollo lunar module, on unprepared ground, near a south-polar terrain of slopes and shadowed craters. A tall vehicle with a high centre of mass setting down on a boulder or a slope is a real failure mode, and it is one of the reasons NASA wants an uncrewed demonstration landing first.
+None of which makes the landing easy. HLS stands roughly seven times taller than the Apollo lunar module, and it has to set down on unsurveyed south-polar ground full of slopes and boulders. A tall vehicle with a high centre of mass tipping over is a real failure mode, and one reason NASA wants an uncrewed landing first.
 
-## The mass penalty is not a hidden flaw, it is the entire architecture
+## The mass spiral is real, and it is why the plan looks like this
 
-The rocket-equation intuition in that comment thread is sound. Every extra kilogram of dry mass demands propellant to move it, and that propellant has mass of its own. This is precisely why HLS is not launched full.
+The rocket-equation intuition behind the objection is sound. Every extra kilogram of dry mass demands propellant to move it, and that propellant has mass of its own. Add a crew cabin and its life support and the number at the bottom of the sum grows faster than the number at the top.
 
-Instead SpaceX intends to refuel it in orbit, which turns the mass problem into a logistics problem. NASA and the Government Accountability Office have put the number of tanker flights per lunar mission somewhere between eight and sixteen, with some estimates running higher still. SpaceX has suggested it could be fewer. Nobody knows, because it has never been done.
+SpaceX did not find a way around that. It designed around it. HLS is not launched full, which is the whole reason the architecture exists in the form it does, and it is where the argument stops being a myth and starts being a schedule problem.
+
+## Sixteen tankers and a clock that never stops
+
+Refuelling in orbit turns the mass problem into a logistics problem. NASA and the Government Accountability Office have put the number of tanker flights per lunar mission somewhere between eight and sixteen, with some estimates running higher still. SpaceX has suggested it could be fewer. Nobody knows, because it has never been done.
 
 Then there is the clock. Liquid methane and liquid oxygen boil off in orbit, so the tankers cannot be spread out at leisure; they have to fly in quick succession, which puts a launch cadence requirement on top of everything else. Even at SpaceX's stated goal of a six-day turnaround, staging the propellant for one Moon mission runs into months. And the ship-to-ship propellant transfer demonstration that underpins all of it has already slipped a year, from March 2025 to March 2026.
 
@@ -58,19 +62,25 @@ The March report was blunt: the lander will not be ready for a 2027 landing. Thr
 
 The uncrewed demonstration flight will not be representative of the crewed vehicle. It carries no life support, no crew airlock and, on Starship, no elevator.
 
-That elevator matters more than it sounds. Astronauts have to descend roughly 115 feet from the hatch to the surface, and under the current plan the hardware will never have been tested in the lunar environment before crew rides it.
+That elevator matters more than it sounds. Astronauts have to descend roughly 115 feet from the hatch to the surface, and under the current plan nobody will have ridden it in the lunar environment before four of them do.
 
-And NASA and SpaceX have not settled how much manual control the crew gets during descent. NASA's human-rating rules expect astronauts to be able to take over from the automated system. That argument is still open.
+NASA and SpaceX have also not settled how much manual control the crew gets during descent, and NASA's human-rating rules expect astronauts to be able to take over from the automated system.
 
 To which add the plainest number of all: thirteen flights, three years, and not one completed orbit yet.
+
+## Which parts of the case survive
+
+Sorted, the argument comes apart into three pieces that do not travel together.
+
+The heaviest claim, that astronauts can never come home in a Starship, is aimed at a flight that appears nowhere in the Artemis manifest. The engine-control claim describes a landing method HLS does not use. Both are answered by the design rather than by optimism.
+
+The mass claim is correct, and it is the one that matters. It simply does not end where the sceptics put the full stop. It ends at a tanker manifest, a boiloff clock and a list of hardware NASA's own auditors say is not ready, which is a harder problem than a heavy spacecraft and the only one of the three with no answer on paper yet.
 
 ## The four tests that would settle this
 
 Watch for these, in roughly this order: a ship-to-ship propellant transfer, a full orbit with a controlled return, a Ship caught by the launch tower, and an uncrewed landing on the Moon. Each one converts an argument into data.
 
 Friday's flight moved the first of them closer. Starship reached space, relit a Raptor where it needed to, deployed its payload and survived the water intact, which is the first time engineers have had hardware to examine rather than telemetry to interpret. That is progress on the questions that actually decide this.
-
-The sceptics in the comments have the schedule roughly right and the vehicle wrong. NASA's auditors doubt 2027 too. They just doubt it for reasons involving tanker manifests, boiloff rates and an untested elevator, rather than astronauts trying to fly a Starship home.
 
 If you want to follow the flights that answer these questions as they happen, that is what our companion app Liftoff is built for. Live countdowns, real-time status and one-tap access to the official webcasts for every launch worldwide, free on the App Store: [Liftoff — Rocket & Space Launch](https://apps.apple.com/no/app/liftoff-rocket-space-launch/id6776392285).
 
