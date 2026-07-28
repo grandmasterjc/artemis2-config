@@ -11,9 +11,60 @@ Six weekly-article posts published since June 9.
 
 | Channel | Followers | Engagement across all posts | Notes |
 | --- | --- | --- | --- |
-| Threads | n/a (manual) | Good — July 15 post got notably strong response (owner observation) | Best-performing channel despite STRATEGY.md listing it as blocked; it has been posting successfully since July 1 |
+| Threads | n/a (manual) | Best channel by far. Peak so far: 3,000 views / 50 likes / 35 comments on the July 28 debate post | Publishing has worked since July 1, so STRATEGY.md listing it as Meta-blocked is outdated |
 | Bluesky | 8 | 0 likes, 0 reposts | The "2 replies" on every post are the bot's own thread (link + first paragraph) |
 | Mastodon (spacey.space) | 1 | 1 favourite total | Effectively no audience yet |
+
+## Best post so far: 2026-07-28, the crewed-Starship debate
+
+Threads, measured 8 hours after posting: **3,000 views, 50 likes, 35 comments,
+2 reposts.** By a wide margin the best result the account has had. Worth
+studying rather than admiring, because most of it is reproducible.
+
+Post text was the article's headline and dek verbatim, hero image attached,
+first reply carrying the article's opening line, article link in the second
+reply.
+
+### Why it worked
+
+1. **It entered an argument instead of reporting an event.** Every previous
+   post announced something that had happened. This one took a position in a
+   dispute the audience was already having. People comment to disagree, far
+   more than they comment to acknowledge news.
+2. **The source material was a comment thread.** The article came from an
+   actual argument the owner found under someone else's post. That means the
+   audience for it was already assembled and already worked up. This is a
+   repeatable research method, not a lucky find.
+3. **The headline states a contested claim, not a summary.** "Too heavy, too
+   complicated, too risky: the case against a crewed Starship" reads as a
+   position someone can push back on. Whose position it is stays slightly
+   open, which pulls people in to correct it.
+4. **The dek asks a direct question.** "Can Starship really carry people?" A
+   question invites an answer, and an answer is a comment.
+5. **The post does not resolve the argument.** The correction lives in the
+   article. Anyone who wants to settle it in the feed has to write something.
+6. **Timing.** Posted while Starship attention was still high after Flight 13.
+
+### The recipe
+
+- Mine comment sections, forums and replies for what people are actually
+  arguing about in the Artemis and Starship space. Look for a claim that is
+  confidently repeated and partly wrong.
+- Write the article as a straight fact-check of that claim, with the
+  correction earned through evidence rather than asserted in the first line.
+- Headline the contested claim. Do not headline the verdict.
+- Put a direct question in the dek.
+- Let the post text be headline plus dek, with the plainest statement of the
+  argument as the first reply.
+- Post while the underlying news is still warm.
+
+### Honest caveat
+
+Comment volume on a debate post is partly people arguing without reading. It
+is real reach and real algorithmic lift, but it is not proof of readership.
+The conversion signal to watch is app installs and newsletter signups in the
+days after, not the comment count. Check both before concluding this format
+converts as well as it engages.
 
 ## What we learned
 

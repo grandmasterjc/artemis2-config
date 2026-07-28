@@ -57,6 +57,11 @@ Rules the spec does not cover, still enforced here:
   or stale hook? The owner has rejected stale angles before — flag it.
 - Originality and value: does it say something concrete and non-obvious, or is
   it a generic recap? Prefer curiosity via concrete facts.
+- Contested beats newsworthy. The best-performing piece so far was a
+  fact-check of an argument people were already having in comment threads,
+  not a report of an event. When choosing between two current angles, prefer
+  the one readers disagree about. `SOCIAL_PLAYBOOK.md` has the recipe and the
+  numbers.
 - Accuracy: are the key claims verifiable against primary sources? Read the
   sources where possible rather than trusting search snippets.
 - Tone: nøkternt, no clickbait, no exclamation points, no emoji.
