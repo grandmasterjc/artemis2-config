@@ -1,21 +1,21 @@
-# Artemis Briefing — Article Style Spec
+# Artemis Briefing: Article Style Spec
 
 Spec for generating long-form articles for the Artemis Briefing newsletter and app. Written to be consumed by Claude Code: reference it from `CLAUDE.md` or include it directly in the generation prompt. Rules marked MUST are hard requirements; SHOULD rules may be broken with good reason.
 
 ## 1. Voice
 
-Write like a staff writer at Space.com: a human science journalist producing a news feature. Knowledgeable, factual, engaged but never breathless. The reader should feel informed by a reporter, not persuaded by an essayist. Explanatory journalism, not opinion writing — when the article makes an argument, route it through evidence and attribution rather than rhetoric.
+Write like a staff writer at Space.com: a human science journalist producing a news feature. Knowledgeable, factual, engaged but never breathless. The reader should feel informed by a reporter, not persuaded by an essayist. Explanatory journalism, not opinion writing. When the article makes an argument, route it through evidence and attribution rather than rhetoric.
 
 ## 2. Structure (in this order)
 
-1. **Headline** — H1, sentence case, a concrete claim rather than a teaser. Good: "Starship won't fly astronauts home from the moon — and it was never supposed to." Bad: "The Starship myth everyone keeps repeating."
-2. **Dek** — 1–2 italic sentences under the headline stating the stakes.
-3. **Lede** — opens on a news hook (a recent flight, report, or announcement).
-4. **Nut graf** — within the first 3–4 paragraphs, state why this matters and what the article will show, with at least one named source.
+1. **Headline**: H1, sentence case, a concrete claim rather than a teaser. Good: "Starship won't fly astronauts home from the moon, and it was never supposed to." Bad: "The Starship myth everyone keeps repeating."
+2. **Dek**: 1–2 italic sentences under the headline stating the stakes.
+3. **Lede**: opens on a news hook (a recent flight, report, or announcement).
+4. **Nut graf**: within the first 3–4 paragraphs, state why this matters and what the article will show, with at least one named source.
 5. **CTA 1** (see §6).
-6. **Body** — 4–6 sections under H2 subheads.
+6. **Body**: 4–6 sections under H2 subheads.
 7. **"What to watch" section** near the end: concrete upcoming milestones.
-8. **Conclusion** — circles back to the lede in 1–2 paragraphs. No aphorism, no grand final line.
+8. **Conclusion**: circles back to the lede in 1–2 paragraphs. No aphorism, no grand final line.
 9. **CTA 2 and CTA 3** (see §6).
 
 Subheads MUST be descriptive of the section's content ("How the Artemis landing plan actually works"), never punchlines or mini-theses ("Nobody was ever going to ride it home").
@@ -44,9 +44,12 @@ These patterns read as machine-generated. Caps are per article.
 - MUST NOT use aphoristic one-line closers ("Each one converts an argument into data.").
 - MUST NOT use "It's not X. It's Y." / "The interesting part isn't A. It's B." constructions.
 - MUST NOT include meta-commentary that sorts the piece into parts ("the argument comes apart into three pieces").
-- Max 1 sentence-fragment run for effect ("Too heavy, too complicated, too risky.") — acceptable only when voicing someone else's argument.
+- Max 1 sentence-fragment run for effect ("Too heavy, too complicated, too risky."), acceptable only when voicing someone else's argument.
 - Max 2 tricolons (three parallel items in a row) in the whole article.
-- Max 6 em dashes total.
+- MUST NOT use em dashes (—) anywhere in the headline, dek or body. Rewrite
+  with a comma, a colon, parentheses or a separate sentence. The only
+  exception is a proper name that contains one, such as the App Store title
+  "Liftoff — Rocket & Space Launch".
 - Vary rhythm: mix long explanatory sentences with short ones; paragraphs of 1–4 sentences; no two consecutive paragraphs opening with the same word.
 - Avoid stock AI vocabulary: delve, landscape, testament to, boasts, crucial (max once), "it's worth noting," "in conclusion," "at the end of the day."
 
@@ -59,19 +62,19 @@ Reference pair from a published edit:
 
 Three CTAs per article, nowhere else, wording fixed except links:
 
-**CTA 1** — after the nut graf, before the first H2, on its own line in bold:
+**CTA 1**: after the nut graf, before the first H2, on its own line in bold:
 
 > **Get the next briefing in your inbox. [Subscribe free →](URL)**
 
-**CTA 2** — final section, first closing paragraph:
+**CTA 2**: final section, first closing paragraph:
 
 > If you want to follow the flights that answer these questions as they happen, that is what our companion app Liftoff is built for. Live countdowns, real-time status and one-tap access to the official webcasts for every launch worldwide, free on the App Store: [Liftoff — Rocket & Space Launch](URL).
 
 The first sentence of CTA 2 MAY be adapted to the article's topic; the rest is fixed.
 
-**CTA 3** — last paragraph of the article:
+**CTA 3**: last paragraph of the article:
 
-> Want more than the weekly briefing? The free email edition adds a short "Week Ahead" every Sunday — launch windows and milestones to watch, exclusive to email. [Subscribe to the Artemis Briefing →](URL)
+> Want more than the weekly briefing? The free email edition adds a short "Week Ahead" every Sunday, launch windows and milestones to watch, exclusive to email. [Subscribe to the Artemis Briefing →](URL)
 
 ## 7. Length and formatting
 
@@ -88,7 +91,7 @@ Run before output is considered done:
 - [ ] Every non-obvious claim attributed; zero fabricated quotes
 - [ ] All three CTAs present, correct copy, correct placement, no extras
 - [ ] Subheads descriptive, not punchlines
-- [ ] Anti-tell caps respected (§5): fragments ≤1, tricolons ≤2, em dashes ≤6
+- [ ] Anti-tell caps respected (§5): fragments ≤1, tricolons ≤2, zero em dashes
 - [ ] Banned-vocabulary scan clean
 - [ ] Units doubled, acronyms expanded, American spelling
 - [ ] Word count within 900–1,300
