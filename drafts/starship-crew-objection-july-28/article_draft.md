@@ -1,13 +1,13 @@
 ---
 id: starship-crew-objection-july-28
-title: "Sixteen tankers, a boiloff clock, and an elevator nobody has tested"
-subtitle: What actually stands between Starship and astronauts on the Moon, according to NASA's own auditors. It is not the part everyone argues about.
+title: "Too heavy, too complicated, too risky: the case against a crewed Starship"
+subtitle: The same argument follows every test flight. Held up against the actual Artemis flight plan, and against NASA's own list of risks, some of it survives and some of it does not.
 date: 2026-07-28
 mission: artemis3
 premium: false
 hero_image: hero.jpg
-push_title: "What really stands between Starship and the Moon"
-push_body: Up to 16 tanker flights, propellant boiling off on a clock, and an elevator that will never be tested before crew rides it.
+push_title: "The case against a crewed Starship"
+push_body: Too heavy, too complicated, too risky. We held the argument up against the Artemis flight plan and NASA's own list of risks.
 ---
 
 Every Starship test flight is followed by the same argument, and last week's was no exception. It goes roughly like this: humans are never coming back in that vehicle. Add life support and you add tons. Tons demand propellant, propellant demands more propellant, and now you need a stack of engines to relight perfectly at the end of it. Too heavy, too complicated, too risky.
