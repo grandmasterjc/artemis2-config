@@ -36,9 +36,11 @@ Under the revised Artemis IV architecture the two even dock in Earth orbit and t
 
 So HLS is best understood as a lunar elevator with a habitat bolted on, operating entirely between lunar orbit and the surface, in vacuum, at one sixth of Earth's gravity. Life support has to keep four people alive for days, not the closed-loop plant that runs for years on a space station.
 
+Take the Earth return out of the argument, then, and one part of it still stands: the vehicle does have to put itself down softly on the Moon, twice per mission, with people aboard.
+
 ## The engines that worry people are off before touchdown
 
-There is a sharper version of the engine worry, and it deserves a straight answer. Raptor throttles down to roughly 40 percent of full thrust and no further. Engines that cannot be dialled down below that are hard to hold steady at low speed, and a cluster of them settling onto ground nobody has surveyed at boulder resolution would be a nervous way to land.
+That is where the sharper version of the engine worry belongs, and it deserves a straight answer. Raptor throttles down to roughly 40 percent of full thrust and no further. Engines that cannot be dialled down below that are hard to hold steady at low speed, and a cluster of them settling onto ground nobody has surveyed at boulder resolution would be a nervous way to land.
 
 All of that is accurate. It also describes something HLS never does. Terminal descent runs on high-thrust methane and oxygen thrusters mounted mid-body, well above the surface, with the Raptors shut down before the vehicle gets close. The main reason is dust: a Raptor plume at touchdown would excavate the regolith and throw debris outward at velocities that damage anything nearby, including the lander. The design solves the plume problem and the fine-control problem in the same move.
 
