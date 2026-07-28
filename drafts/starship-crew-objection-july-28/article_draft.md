@@ -1,20 +1,20 @@
 ---
 id: starship-crew-objection-july-28
-title: "Nobody is riding Starship home, and that was never the plan"
-subtitle: The most common objection to putting astronauts on Starship aims at a flight it will never make. The genuine obstacles are quieter, and harder.
+title: "Sixteen tankers, a boiloff clock, and an elevator nobody has tested"
+subtitle: What actually stands between Starship and astronauts on the Moon, according to NASA's own auditors. It is not the part everyone argues about.
 date: 2026-07-28
 mission: artemis3
 premium: false
 hero_image: hero.jpg
-push_title: "The Starship objection that misses the target"
-push_body: No Artemis crew will ever ride Starship back to Earth. That is by design. The real problems sit elsewhere, and NASA's auditors have listed them.
+push_title: "What really stands between Starship and the Moon"
+push_body: Up to 16 tanker flights, propellant boiling off on a clock, and an elevator that will never be tested before crew rides it.
 ---
 
 Every Starship test flight is followed by the same argument, and last week's was no exception. It goes roughly like this: humans are never coming back in that vehicle. Add life support and you add tons. Tons demand propellant, propellant demands more propellant, and now you need a stack of engines to relight perfectly at the end of it. Too heavy, too complicated, too risky.
 
 As reasoning about spaceflight goes, it is better than most. The mass spiral is real, engine relights are genuinely hard, and healthy suspicion has a good track record in this business.
 
-It is also aimed at a mission nobody has scheduled. The Starship that NASA hired to land Artemis astronauts never touches Earth again after it launches. It has no heat shield, no atmospheric flight profile, and no landing legs meant for a runway or a tower. Astronauts coming home inside a Starship is not a risky plan. It is not the plan at all.
+It also rests on an assumption about the Artemis flight plan that is worth checking, and we will get to that. But the assumption is not the interesting part. The interesting part is that the risks keeping NASA's own auditors awake are different ones entirely, and in several cases worse.
 
 ---
 
@@ -22,7 +22,7 @@ Get the next briefing in your inbox. [Subscribe free →](https://artemis-briefi
 
 ---
 
-That does not let the vehicle off the hook. There is a long list of reasons Starship might not put boots on the Moon this decade, and NASA's own inspector general has published most of it. The list simply looks nothing like the argument in the comments.
+They involve a tanker manifest that runs into double digits, propellant that evaporates while it waits, a demonstration flight that will not resemble the real thing, and a lift nobody will have ridden before four astronauts do. NASA's inspector general put all of it in writing in March. Start with what the vehicle is actually supposed to do.
 
 ## What the Artemis Starship actually does
 
