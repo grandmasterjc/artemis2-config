@@ -1,13 +1,13 @@
 ---
 id: starship-crew-objection-july-28
 title: "Too heavy, too complicated, too risky: the case against a crewed Starship"
-subtitle: The same argument follows every test flight. Held up against the actual Artemis flight plan, and against NASA's own list of risks, some of it survives and some of it does not.
+subtitle: Can Starship really carry people? Life support means mass, mass means propellant, and propellant means still more propellant. We go through the design, sorting the myths from the real obstacles.
 date: 2026-07-28
 mission: artemis3
 premium: false
 hero_image: hero.jpg
 push_title: "The case against a crewed Starship"
-push_body: Too heavy, too complicated, too risky. We held the argument up against the Artemis flight plan and NASA's own list of risks.
+push_body: Can Starship really carry people? Life support means mass, mass means propellant. We sort the myths from the obstacles NASA is actually tracking.
 ---
 
 Every Starship test flight is followed by the same argument, and last week's was no exception. It goes roughly like this: humans are never coming back in that vehicle. Add life support and you add tons. Tons demand propellant, propellant demands more propellant, and now you need a stack of engines to relight perfectly at the end of it. Too heavy, too complicated, too risky.
