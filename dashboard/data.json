@@ -3,13 +3,6 @@
     "status": "ok",
     "daily_users": [
       {
-        "date": "2026-04-29",
-        "active": 139,
-        "new": 62,
-        "views": 152,
-        "sessions": 146
-      },
-      {
         "date": "2026-04-30",
         "active": 132,
         "new": 57,
@@ -613,96 +606,109 @@
       },
       {
         "date": "2026-07-25",
-        "active": 229,
+        "active": 230,
         "new": 36,
-        "views": 278,
+        "views": 279,
         "sessions": 256
       },
       {
         "date": "2026-07-26",
-        "active": 122,
+        "active": 123,
         "new": 28,
-        "views": 163,
-        "sessions": 141
+        "views": 169,
+        "sessions": 142
       },
       {
         "date": "2026-07-27",
-        "active": 92,
-        "new": 22,
-        "views": 128,
-        "sessions": 111
+        "active": 102,
+        "new": 24,
+        "views": 147,
+        "sessions": 120
+      },
+      {
+        "date": "2026-07-28",
+        "active": 181,
+        "new": 32,
+        "views": 242,
+        "sessions": 201
       }
     ],
     "latest": {
-      "date": "2026-07-27",
-      "active": 92,
-      "new": 22,
-      "views": 128,
-      "sessions": 111
+      "date": "2026-07-28",
+      "active": 181,
+      "new": 32,
+      "views": 242,
+      "sessions": 201
     },
-    "total_active_28d": 3779,
-    "total_new_28d": 805,
-    "total_sessions_28d": 4280,
-    "total_views_28d": 4937,
-    "avg_dau_7d": 158.6,
-    "avg_dau_28d": 135.0,
+    "total_active_28d": 3865,
+    "total_new_28d": 804,
+    "total_sessions_28d": 4368,
+    "total_views_28d": 5063,
+    "avg_dau_7d": 174.7,
+    "avg_dau_28d": 138.0,
     "top_countries_30d": [
       {
         "country": "United States",
-        "active": 1034
+        "active": 1040
       },
       {
         "country": "United Kingdom",
-        "active": 298
+        "active": 301
       },
       {
         "country": "Canada",
-        "active": 164
+        "active": 168
       },
       {
         "country": "Germany",
-        "active": 156
+        "active": 159
       },
       {
         "country": "Australia",
-        "active": 69
+        "active": 68
       },
       {
         "country": "Italy",
-        "active": 53
+        "active": 54
       },
       {
         "country": "Netherlands",
-        "active": 50
+        "active": 52
       },
       {
         "country": "France",
-        "active": 47
+        "active": 48
       },
       {
         "country": "Spain",
-        "active": 47
+        "active": 44
       },
       {
-        "country": "Poland",
-        "active": 28
+        "country": "Brazil",
+        "active": 29
       }
     ],
     "push_events_30d": {
-      "notification_receive": 2956,
-      "notification_open": 938,
-      "notification_dismiss": 256,
-      "notification_foreground": 14,
+      "notification_receive": 3323,
+      "notification_open": 1017,
+      "notification_dismiss": 291,
+      "notification_foreground": 16,
       "notification_toggled": 11
     },
-    "push_open_rate_30d": 0.9853,
-    "fetched_at": "2026-07-28T07:42:39.254079+00:00"
+    "push_open_rate_30d": 0.9845,
+    "fetched_at": "2026-07-29T07:47:56.223143+00:00"
   },
   "kit": {
     "status": "ok",
     "active_subscribers": 36,
-    "inactive_subscribers": 10,
+    "inactive_subscribers": 11,
     "recent_broadcasts": [
+      {
+        "id": 25188784,
+        "subject": "The case against a crewed Starship",
+        "send_at": "2026-07-28T19:30:00Z",
+        "public": true
+      },
       {
         "id": 25150551,
         "subject": "Starship flew, and survived its splashdown",
@@ -756,15 +762,9 @@
         "subject": "Four new Moon deliveries: what NASA's $600M payload list reveals",
         "send_at": "2026-07-01T21:19:59Z",
         "public": true
-      },
-      {
-        "id": 24758363,
-        "subject": "The Week Ahead \u2014 June 29\u2013July 5: Stacking week at KSC, Ship 40 ticks off single-engine, OIG counts $5.9B in canceled hardware",
-        "send_at": null,
-        "public": true
       }
     ],
-    "fetched_at": "2026-07-28T07:42:40.260753+00:00"
+    "fetched_at": "2026-07-29T07:47:57.102467+00:00"
   },
   "asc": {
     "status": "ok",
@@ -922,46 +922,46 @@
     ],
     "subscriptions": {
       "status": "ok",
-      "window_start": "2026-06-26",
-      "window_end": "2026-07-26",
+      "window_start": "2026-06-27",
+      "window_end": "2026-07-27",
       "days_with_data": 31,
       "days_attempted": 31,
-      "active_subscribers": 45,
+      "active_subscribers": 46,
       "active_breakdown": {
-        "active_total": 45,
+        "active_total": 46,
         "by_product": {
-          "Artemis+ Yearly": 36,
-          "Artemis+ Monthly": 9
+          "Artemis+ Monthly": 10,
+          "Artemis+ Yearly": 36
         },
         "by_country": [
           {
             "country": "??",
-            "active": 45
+            "active": 46
           }
         ],
         "arr_usd": 653.18,
         "mrr_usd": 54.43,
         "proceeds_factor": 0.85,
-        "as_of": "2026-07-26"
+        "as_of": "2026-07-27"
       },
       "events_30d": {
+        "Start Introductory Offer": 8,
         "Renew": 1,
         "Grace Period from Introductory Offer": 2,
-        "Start Introductory Offer": 7,
         "Paid Subscription from Introductory Offer": 6,
         "Cancel": 2,
         "Renewal from Billing Retry": 1,
         "Canceled from Billing Retry": 1,
         "Renewals from Grace Period": 1,
-        "Billing Retry from Grace Period": 2
+        "Billing Retry from Grace Period": 1
       },
       "event_days_with_data": 18,
       "cancel_events_30d": 3,
       "refund_events_30d": 0,
-      "monthly_churn": 0.0667,
+      "monthly_churn": 0.0652,
       "by_product": {
         "no.bitfactory.artemisii.tracker.monthly": {
-          "units": 14,
+          "units": 15,
           "proceeds_usd": 24.58,
           "name": "Artemis+ Monthly"
         },
@@ -1076,6 +1076,13 @@
           "yearly": 0,
           "other": 0,
           "proceeds_usd": 3.39
+        },
+        {
+          "date": "2026-07-27",
+          "monthly": 1,
+          "yearly": 0,
+          "other": 0,
+          "proceeds_usd": 0.0
         }
       ],
       "by_country": [
@@ -1086,7 +1093,7 @@
         },
         {
           "country": "CA",
-          "units": 2,
+          "units": 3,
           "proceeds_usd": 4.24
         },
         {
@@ -1106,20 +1113,20 @@
         }
       ],
       "by_order_type": {
-        "Standard": 9,
-        "Free Trial Intro Offer": 7
+        "Free Trial Intro Offer": 8,
+        "Standard": 9
       },
-      "total_units_30d": 16,
+      "total_units_30d": 17,
       "total_proceeds_usd_30d": 58.56,
-      "new_subscribers_30d": 7,
-      "new_installs_30d": 74
+      "new_subscribers_30d": 8,
+      "new_installs_30d": 70
     },
-    "fetched_at": "2026-07-28T07:43:30.520860+00:00"
+    "fetched_at": "2026-07-29T07:48:47.999030+00:00"
   },
   "play": {
     "status": "ok",
-    "window_start": "2026-06-29",
-    "window_end": "2026-07-28",
+    "window_start": "2026-06-30",
+    "window_end": "2026-07-29",
     "package": "no.bitfactory.artemisii.tracker",
     "by_product": {},
     "by_day": [],
@@ -1136,11 +1143,11 @@
     "handle": "artemistracker.app",
     "followers": 8,
     "following": 12,
-    "posts_total": 65,
-    "posts_7d": 13,
+    "posts_total": 69,
+    "posts_7d": 17,
     "likes_7d": 0,
     "reposts_7d": 0,
-    "fetched_at": "2026-07-28T07:43:32.515489+00:00"
+    "fetched_at": "2026-07-29T07:48:49.334806+00:00"
   },
   "mastodon": {
     "status": "ok",
@@ -1148,30 +1155,30 @@
     "username": "artemistracker",
     "followers": 1,
     "following": 4,
-    "posts_total": 58,
-    "posts_7d": 9,
+    "posts_total": 61,
+    "posts_7d": 12,
     "favs_7d": 0,
     "boosts_7d": 0,
-    "fetched_at": "2026-07-28T07:43:33.628803+00:00"
+    "fetched_at": "2026-07-29T07:48:50.549075+00:00"
   },
   "threads": {
     "status": "ok",
     "handle": "@artemistracker.app",
     "username": "artemistracker.app",
-    "followers": 9,
-    "posts_7d": 5,
-    "likes_7d": 26,
-    "comments_7d": 8,
-    "reposts_7d": 1,
-    "fetched_at": "2026-07-28T07:43:35.527623+00:00"
+    "followers": 17,
+    "posts_7d": 6,
+    "likes_7d": 117,
+    "comments_7d": 61,
+    "reposts_7d": 5,
+    "fetched_at": "2026-07-29T07:48:52.404874+00:00"
   },
   "instagram": {
     "status": "error",
-    "error": "HTTP 400: {\"error\":{\"message\":\"Unsupported request - method type: get\",\"type\":\"IGApiException\",\"code\":100,\"fbtrace_id\":\"AJCFqPg6zGbJoKs5jqeXXbi\"}}"
+    "error": "HTTP 400: {\"error\":{\"message\":\"Unsupported request - method type: get\",\"type\":\"IGApiException\",\"code\":100,\"fbtrace_id\":\"AKN0fpkn6H7tKgFqw6L6vDi\"}}"
   },
   "push": {
     "status": "ok",
-    "total_pushes": 9,
+    "total_pushes": 10,
     "recent": [
       {
         "timestamp_utc": "2026-06-09T17:23:18.056515+00:00",
@@ -1244,9 +1251,17 @@
         "article_id": "starship-flight-13-results-july-25",
         "topic": "all",
         "message_id": "projects/artemis-tracker-665d8/messages/3342206782958857508"
+      },
+      {
+        "timestamp_utc": "2026-07-28T09:44:48.739941+00:00",
+        "title": "The case against a crewed Starship",
+        "body": "Can Starship really carry people? Life support means mass, mass means propellant. We sort the myths from the obstacles NASA is actually tracking.",
+        "article_id": "starship-crew-objection-july-28",
+        "topic": "all",
+        "message_id": "projects/artemis-tracker-665d8/messages/7200674829871470364"
       }
     ],
-    "fetched_at": "2026-07-28T07:43:35.899493+00:00"
+    "fetched_at": "2026-07-29T07:48:52.653471+00:00"
   },
   "roadmap": {
     "status": "ok",
@@ -1334,7 +1349,7 @@
         "note": "durable across sandbox resets"
       }
     ],
-    "fetched_at": "2026-07-28T07:43:35.899805+00:00"
+    "fetched_at": "2026-07-29T07:48:52.653774+00:00"
   },
   "targets": {
     "status": "ok",
@@ -1428,5 +1443,5 @@
       "implied_subs": 5200
     }
   },
-  "generated_at": "2026-07-28T07:43:35.899817+00:00"
+  "generated_at": "2026-07-29T07:48:52.653785+00:00"
 }
