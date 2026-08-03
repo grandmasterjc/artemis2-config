@@ -41,7 +41,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 2
+          fetch-depth: 0
 
       - uses: actions/setup-python@v5
         with:
@@ -61,8 +61,14 @@ jobs:
             exit 0
           fi
 
-          # Push: take the last week-ahead draft touched by this push.
-          DRAFT=$(git diff --name-only HEAD^ HEAD -- 'drafts/week-ahead/*.md' | tail -n 1)
+          # Push: take the last week-ahead draft touched anywhere in this
+          # push, not just the tip commit, so a multi-commit push still works.
+          BEFORE="${{ github.event.before }}"
+          if [ -z "$BEFORE" ] || [ "$BEFORE" = "0000000000000000000000000000000000000000" ] \
+             || ! git cat-file -e "$BEFORE^{commit}" 2>/dev/null; then
+            BEFORE="HEAD^"
+          fi
+          DRAFT=$(git diff --name-only "$BEFORE" HEAD -- 'drafts/week-ahead/*.md' | tail -n 1)
           if [ -z "$DRAFT" ]; then
             echo "No week-ahead draft in this push."
             echo "send=false" >> "$GITHUB_OUTPUT"
