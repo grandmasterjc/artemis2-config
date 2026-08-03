@@ -1,5 +1,17 @@
 name: Week Ahead publish
 
+# Two ways in:
+#
+# 1. workflow_dispatch, as before. Full manual control over timing.
+# 2. push to drafts/week-ahead/*.md. This is the path the Sunday routine
+#    uses, because sessions fired by a routine have no GitHub Actions tool
+#    and no Kit credentials, so pushing the draft is the only lever they
+#    have. Two guards keep this from firing by accident:
+#      - the draft frontmatter must contain `autosend: true`
+#      - the draft must not already appear in state/week_ahead_sent.txt
+#    A draft without the flag is committed and ignored, which is what
+#    manual drafts and work in progress should do.
+
 on:
   workflow_dispatch:
     inputs:
@@ -14,9 +26,13 @@ on:
         description: "Send immediately (overrides send_at)"
         type: boolean
         default: false
+  push:
+    branches: [main]
+    paths:
+      - "drafts/week-ahead/*.md"
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   publish:
@@ -24,18 +40,72 @@ jobs:
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
+      - name: Resolve draft and decide whether to send
+        id: resolve
+        env:
+          EVENT: ${{ github.event_name }}
+          DISPATCH_PATH: ${{ github.event.inputs.draft_path }}
+        run: |
+          set -euo pipefail
+          if [ "$EVENT" = "workflow_dispatch" ]; then
+            # Manual runs always send. The operator asked for it.
+            echo "draft=$DISPATCH_PATH" >> "$GITHUB_OUTPUT"
+            echo "send=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          # Push: take the last week-ahead draft touched by this push.
+          DRAFT=$(git diff --name-only HEAD^ HEAD -- 'drafts/week-ahead/*.md' | tail -n 1)
+          if [ -z "$DRAFT" ]; then
+            echo "No week-ahead draft in this push."
+            echo "send=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          echo "draft=$DRAFT" >> "$GITHUB_OUTPUT"
+
+          if ! head -n 20 "$DRAFT" | grep -qE '^autosend:[[:space:]]*true[[:space:]]*$'; then
+            echo "::notice::$DRAFT has no 'autosend: true' in frontmatter, leaving it as a draft."
+            echo "send=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          if [ -f state/week_ahead_sent.txt ] && grep -Fxq "$DRAFT" state/week_ahead_sent.txt; then
+            echo "::notice::$DRAFT was already sent, skipping."
+            echo "send=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          echo "send=true" >> "$GITHUB_OUTPUT"
+
       - name: Publish to Kit
+        if: steps.resolve.outputs.send == 'true'
         env:
           KIT_API_KEY: ${{ secrets.KIT_API_KEY }}
         run: |
-          ARGS="--draft ${{ github.event.inputs.draft_path }}"
-          if [ "${{ github.event.inputs.send_now }}" = "true" ]; then
-            ARGS="$ARGS --now"
-          elif [ -n "${{ github.event.inputs.send_at }}" ]; then
-            ARGS="$ARGS --at ${{ github.event.inputs.send_at }}"
+          ARGS="--draft ${{ steps.resolve.outputs.draft }}"
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            if [ "${{ github.event.inputs.send_now }}" = "true" ]; then
+              ARGS="$ARGS --now"
+            elif [ -n "${{ github.event.inputs.send_at }}" ]; then
+              ARGS="$ARGS --at ${{ github.event.inputs.send_at }}"
+            fi
           fi
           python scripts/publish_week_ahead.py $ARGS
+
+      - name: Record the send
+        if: steps.resolve.outputs.send == 'true' && github.event_name == 'push'
+        run: |
+          mkdir -p state
+          echo "${{ steps.resolve.outputs.draft }}" >> state/week_ahead_sent.txt
+          git config user.email "joachim.gresslien@gmail.com"
+          git config user.name "Joachim Gresslien"
+          git add state/week_ahead_sent.txt
+          git commit -m "log: week ahead sent for ${{ steps.resolve.outputs.draft }}"
+          git push
