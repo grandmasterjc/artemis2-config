@@ -333,11 +333,15 @@ def main():
     subtitle = fm.get("subtitle", "")
     article_url = f"https://artemistracker.app/u/{article_id}"
 
+    def tagged(channel: str) -> str:
+        """Per-channel source tag, so analytics can tell the channels apart."""
+        return f"{article_url}?ref={channel}"
+
     result = {"bluesky_ok": False, "mastodon_ok": False, "threads_ok": False}
 
     if "bluesky" in channels:
         try:
-            uri, perma = post_to_bluesky(title, subtitle, body, article_url, hero_url)
+            uri, perma = post_to_bluesky(title, subtitle, body, tagged("bluesky"), hero_url)
             result["bluesky_ok"] = True
             result["bluesky_uri"] = uri
         except Exception as e:
@@ -345,7 +349,7 @@ def main():
 
     if "mastodon" in channels:
         try:
-            uri, perma = post_to_mastodon(title, subtitle, body, article_url, hero_url)
+            uri, perma = post_to_mastodon(title, subtitle, body, tagged("mastodon"), hero_url)
             result["mastodon_ok"] = True
             result["mastodon_uri"] = uri
         except Exception as e:
@@ -354,7 +358,7 @@ def main():
     if "threads" not in channels:
         pass
     else:
-        _post_threads(result, title, subtitle, body, article_url, hero_url)
+        _post_threads(result, title, subtitle, body, tagged("threads"), hero_url)
 
     log_run(article_id, result)
     print(json.dumps(result, indent=2))

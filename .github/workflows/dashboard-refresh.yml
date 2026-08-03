@@ -54,7 +54,7 @@ jobs:
         run: |
           git config user.email "joachim.gresslien@gmail.com"
           git config user.name "Joachim Gresslien"
-          git add dashboard/index.html dashboard/data.json state/dashboard_refresh_log.txt state/asc_reviews_history.csv
+          git add dashboard/index.html dashboard/data.json state/dashboard_refresh_log.txt state/asc_reviews_history.csv state/subscribers_history.csv
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else

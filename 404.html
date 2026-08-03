@@ -241,5 +241,20 @@
   }).catch(showNotFound);
 })();
 </script>
+
+<!-- Cloudflare Web Analytics. Cookie-less, so no consent banner is needed.
+     Paste the site token from Cloudflare > Analytics & Logs > Web Analytics
+     in place of PASTE_CF_TOKEN_HERE. Until then the beacon does not load. -->
+<script>
+(function () {
+  var token = "PASTE_CF_TOKEN_HERE";
+  if (!/^[0-9a-f]{32}$/.test(token)) return;
+  var s = document.createElement("script");
+  s.defer = true;
+  s.src = "https://static.cloudflareinsights.com/beacon.min.js";
+  s.setAttribute("data-cf-beacon", JSON.stringify({ token: token }));
+  document.head.appendChild(s);
+})();
+</script>
 </body>
 </html>
