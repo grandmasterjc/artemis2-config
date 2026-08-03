@@ -58,6 +58,53 @@ reply.
   argument as the first reply.
 - Post while the underlying news is still warm.
 
+### Follow-up 2026-08-03: the engagement did not convert
+
+The caveat below turned out to be the whole story. Subscriber counts from the
+dashboard log, comparing the days before and after each publication:
+
+| Publication | Newsletter | Artemis+ | Total |
+| --- | --- | --- | --- |
+| Jul 15, heat shield article | +0 | +1 | +1 |
+| Jul 17, pad abort | +1 | +2 | +3 |
+| Jul 23 to 25, Flight 13 coverage | +2 | +1 | +3 |
+| **Jul 28, the debate post (3,000 views)** | **+0** | **+0** | **+0** |
+
+The post with by far the most reach produced no measurable signups. The
+straight news coverage, with a fraction of the engagement, converted every
+time.
+
+Read this as a signal, not a law. The numbers are tiny, one day is missing
+from the series (Jul 24), and subscriptions cannot be attributed to a
+specific source with the instrumentation that exists. But the pattern is
+consistent across three news posts and one debate post, and it points at
+something plausible: an argument attracts people who want to argue, while a
+launch report attracts people who want to be told when the next one is.
+
+What this does not mean is that the format was a mistake. Reach compounds,
+followers gained today convert later, and the account needs an audience
+before it can convert one. It does mean the format should not replace news
+coverage, and that claiming it "works" on comment count alone was premature.
+
+### What we cannot measure, and should fix
+
+There is no analytics on artemistracker.app at all. No GA4 tag, no beacon,
+nothing. So the question "how many actually read the article" has no answer
+and will not have one until something is installed. Cloudflare Web Analytics
+is the obvious candidate: free, cookie-less, no consent banner needed, and
+the domain is already on Cloudflare for the unlock worker.
+
+Social posts link to `artemistracker.app/u/{id}` with no source parameter, so
+even with analytics the channels could not be told apart. Adding `?ref=threads`
+and so on to the links in `social_publish.py` costs nothing and should happen
+at the same time.
+
+`state/subscribers_history.csv` in the repo has been frozen since 2026-06-17,
+even though `dashboard_refresh` logs a fresh row every morning. The daily
+numbers used in the table above had to be scraped back out of
+`state/dashboard_refresh_log.txt`. The refresh writes the row somewhere the
+commit step does not pick up. Worth fixing, because the log is not a database.
+
 ### Honest caveat
 
 Comment volume on a debate post is partly people arguing without reading. It
