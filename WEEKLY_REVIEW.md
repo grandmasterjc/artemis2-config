@@ -1,25 +1,35 @@
-# Weekly draft review (Wednesdays)
+# Weekly article (Wednesdays)
 
-The Wednesday cron (`4c5bb4d0`) generates a fresh weekly-article draft in
-`drafts/{article_id}/` (an `article_draft.md` plus a `hero.jpg`) and commits it
-to `main`. This document is the checklist an agent session runs each Wednesday
-to read that draft and decide whether it is worth publishing as-is, editing, or
-replacing with a fresher angle. Nothing here publishes anything — the review
-ends with a recommendation and waits for the owner's decision.
+The Wednesday routine researches, writes and commits the week's article draft
+to `drafts/{article_id}/`, then presents it to the owner and waits. Nothing
+here publishes anything. An earlier design had a separate cron generating the
+draft for a reviewer to check; that cron is gone, and the routine now does
+both jobs.
+
+Writing rules are in `ARTICLE_STYLE.md`. This file covers angle selection,
+images, publishing procedure and editing after publication.
 
 ## Procedure
 
-1. Pull the latest `main` of `grandmasterjc/artemis2-config`.
-2. Find the newest draft: the folder in `drafts/` dated today, or the most
-   recent draft whose `id` is not already in `state/publish_history.txt`.
-   Ignore `drafts/week-ahead/`.
-3. Read the draft in full.
-4. Check it against both the rule compliance list and the editorial judgment
-   list below.
-5. Report a concise assessment to the owner (in Norwegian): any rule issues,
-   whether the angle is genuinely current for this week, and a clear
-   recommendation — publish as-is, edit (list the specific edits), or write a
-   fresher angle (propose one or two). Do NOT publish, push, or send anything.
+1. Pull the latest `main` of `grandmasterjc/artemis2-config`. Read
+   `ARTICLE_STYLE.md` in full before writing anything.
+2. Check `state/publish_history.txt` and `drafts/` so you neither repeat a
+   recent angle nor duplicate a draft someone already wrote this week. If a
+   draft for this week already exists, review it instead of writing a new
+   one, and say so.
+3. Research the week's angle with web searches, applying the editorial
+   judgment list below. Verify key claims against primary sources.
+4. Write `drafts/{article_id}/article_draft.md` plus a `hero.jpg`, following
+   the spec and the image rules here. Run the spec's §8 pre-publish
+   checklist against your own draft.
+5. Commit and push the draft to `main`. Pushing a draft folder does not
+   publish anything; only `weekly-article-publish.yml` does.
+6. Report to the owner in Norwegian: the angle and why it is this week's
+   story, a link to the draft on GitHub, anything you were unsure about, and
+   a question asking whether to publish. Do NOT run the publish workflow.
+
+If any step fails, say so to the owner immediately and explain what broke.
+Never end a run silently.
 
 ## Rule compliance (mechanical)
 
