@@ -24,6 +24,22 @@ go-ahead. Publishing is two-phase: `phase=prepare` makes the article live and
 verifiable, `phase=announce` sends the push notification, newsletter and
 social posts. Announce cannot be undone.
 
+## Week Ahead (Sunday newsletter)
+
+Written by the Sunday routine into `drafts/week-ahead/YYYY-MM-DD.md`.
+Sending is triggered by the push itself, not by running a workflow, because
+routine-fired sessions have neither the GitHub Actions tool nor the Kit
+credentials.
+
+A draft is sent only if its frontmatter carries `autosend: true` and its path
+is not already in `state/week_ahead_sent.txt`. Without the flag it stays a
+draft, which is the right default for anything written by hand or still in
+progress. The workflow schedules the Kit broadcast for 18:00 CEST the same
+day, leaving a window to intervene, and appends the path to the sent log.
+
+`weekly-article-publish.yml` is unaffected. The Wednesday article still
+publishes in two explicit phases and still requires the owner's go-ahead.
+
 ## Social
 
 `SOCIAL_PLAYBOOK.md` holds channel performance notes and how to re-run the
