@@ -62,9 +62,9 @@ Rules the spec does not cover, still enforced here:
 
 ## Editorial judgment
 
-- Currency: run a few web searches for this week's Artemis / Moon / launch
-  news. Is the draft's angle genuinely current, or has the cron reused an old
-  or stale hook? The owner has rejected stale angles before — flag it.
+- Currency: run a few web searches for this week's Artemis, Moon and launch
+  news before settling on an angle. The owner has rejected stale angles
+  before, so a hook that was fresh last week is not good enough.
 - Originality and value: does it say something concrete and non-obvious, or is
   it a generic recap? Prefer curiosity via concrete facts.
 - Contested beats newsworthy. The best-performing piece so far was a
@@ -83,8 +83,8 @@ Rules the spec does not cover, still enforced here:
 
 Two-phase, so the article is verified visible before anyone is notified:
 
-1. Bring the approved draft onto current `main` (add only the draft folder;
-   never overwrite the cron/dashboard history).
+1. Make sure the approved draft is on current `main` (add only the draft
+   folder; never overwrite the dashboard or log history).
 2. Run `weekly-article-publish.yml` with `phase=prepare` (makes it live on
    GitHub Pages, no push).
 3. Verify the manifest entry, body `.md`, hero and inline image are all live
