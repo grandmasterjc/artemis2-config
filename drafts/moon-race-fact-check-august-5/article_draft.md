@@ -1,13 +1,13 @@
 ---
 id: moon-race-fact-check-august-5
-title: "NASA's own schedule still beats China to the moon, and its administrator isn't celebrating"
-subtitle: "A February restructuring pushed NASA's crewed lunar landing to Artemis 4 in 2028, nominally two years ahead of China's own target. The agency's own administrator has spent the months since arguing that lead barely exists."
+title: "Is NASA really losing the moon race to China?"
+subtitle: "SpaceX says Starship flies again this month. Government auditors say the moon lander is more than a year late. Both arguments landed within two weeks of each other, so we lined the two countries' own dates up side by side."
 date: 2026-08-05
 mission: artemis3
 premium: true
 hero_image: hero.jpg
 push_title: "Is NASA really losing the moon race?"
-push_body: "SpaceX says it will fly again this month. NASA's own target still beats China by two years. Its administrator keeps warning the number cannot be trusted."
+push_body: "Starship flies again this month, the auditors say the lander is a year late, and both countries have published a date. We lined them up."
 ---
 
 On SpaceX's first earnings call since going public, on August 4, Elon Musk said the company intends to fly Starship again before the month is out, carry its first operational Starlink V3 satellites to orbit, and try to catch the returning upper stage with the launch tower. All three would be firsts. All three came with a caveat: "assuming we receive regulatory approval to do so," and a date he called tentative ([SpaceNews, Aug. 4, 2026](https://spacenews.com/spacex-to-begin-starship-orbital-flights/)).
