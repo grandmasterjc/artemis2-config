@@ -2,14 +2,26 @@
   "store_url": "https://artemisiitracker.creator-spring.com",
   "banner": {
     "title": "MISSION GEAR",
-    "subtitle": "Posters, tees, hoodies, prints",
+    "subtitle": "Return to the Moon 2026 collection",
     "cta_label": "SHOP",
     "cta_url": "https://artemisiitracker.creator-spring.com"
   },
   "categories": [
-    { "id": "posters", "title": "Posters", "order": 1 },
-    { "id": "apparel", "title": "Apparel", "order": 2 },
-    { "id": "accessories", "title": "Accessories", "order": 3 }
+    {
+      "id": "posters",
+      "title": "Posters",
+      "order": 1
+    },
+    {
+      "id": "apparel",
+      "title": "Apparel",
+      "order": 2
+    },
+    {
+      "id": "accessories",
+      "title": "Accessories",
+      "order": 3
+    }
   ],
   "products": [
     {
@@ -33,11 +45,11 @@
     {
       "id": "hoodie-return-2026",
       "title": "Hoodie",
-      "subtitle": "Return to the Moon 2026",
+      "subtitle": "S-5XL · 599 kr",
       "price_usd": null,
       "image_url": null,
       "image_asset": "merch_hoodie_black",
-      "url": "https://artemisiitracker.creator-spring.com/listing/get-return-to-the-moon-2026?product=377&variation=100069",
+      "url": "https://www.etsy.com/no-en/listing/4549662267/return-to-the-moon-2026-hoodie",
       "category": "apparel",
       "badge": null,
       "badge_color": null,
@@ -51,11 +63,11 @@
     {
       "id": "tee-w-return-2026",
       "title": "Women's Tee",
-      "subtitle": "Return to the Moon 2026",
+      "subtitle": "S-3XL · 399 kr",
       "price_usd": null,
       "image_url": null,
       "image_asset": "merch_tshirt_w",
-      "url": "https://artemisiitracker.creator-spring.com/listing/new-return-to-the-moon-2026?product=87&variation=2325",
+      "url": "https://www.etsy.com/no-en/listing/4549673636/return-to-the-moon-2026-womens-tee",
       "category": "apparel",
       "badge": null,
       "badge_color": null,
@@ -69,11 +81,11 @@
     {
       "id": "tee-m-return-2026",
       "title": "Men's Tee",
-      "subtitle": "Return to the Moon 2026",
+      "subtitle": "S-3XL · 399 kr",
       "price_usd": null,
       "image_url": null,
       "image_asset": "merch_tshirt_black",
-      "url": "https://artemisiitracker.creator-spring.com/listing/new-return-to-the-moon-2026?product=389&variation=100029",
+      "url": "https://www.etsy.com/no-en/listing/4549671748/return-to-the-moon-2026",
       "category": "apparel",
       "badge": null,
       "badge_color": null,
@@ -87,11 +99,11 @@
     {
       "id": "mug-return-2026",
       "title": "Mug",
-      "subtitle": "Return to the Moon 2026",
+      "subtitle": "Ceramic black · 249 kr",
       "price_usd": null,
       "image_url": null,
       "image_asset": "merch_mug",
-      "url": "https://artemisiitracker.creator-spring.com/listing/new-return-to-the-moon-2026?product=1566&variation=104946",
+      "url": "https://www.etsy.com/no-en/listing/4549665301/return-to-the-moon-2026-mug",
       "category": "accessories",
       "badge": null,
       "badge_color": null,
