@@ -418,11 +418,13 @@
 <script src="web/site.js"></script>
 
 <!-- Cloudflare Web Analytics. Cookie-less, so no consent banner is needed.
-     Paste the site token from Cloudflare > Analytics & Logs > Web Analytics
-     in place of PASTE_CF_TOKEN_HERE. Until then the beacon does not load. -->
+     The site is served by GitHub Pages and is not proxied through Cloudflare,
+     so automatic injection cannot work; the token is installed by hand here.
+     Replace it from Cloudflare > Analytics & Logs > Web Analytics if the site
+     is ever recreated. The guard below keeps a malformed token inert. -->
 <script>
 (function () {
-  var token = "PASTE_CF_TOKEN_HERE";
+  var token = "a763e623740e4f3ba46cceea38c10a51";
   if (!/^[0-9a-f]{32}$/.test(token)) return;
   var s = document.createElement("script");
   s.defer = true;
