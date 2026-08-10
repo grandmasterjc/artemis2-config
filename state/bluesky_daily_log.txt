@@ -56,3 +56,4 @@
 2026-08-07T06:04:46.595070+00:00 | posted | date=08-07 | year=1959 | uri=at://did:plc:6c6v3wfajktjiw2dnig3e4gs/app.bsky.feed.post/3mshv635jbi2t
 2026-08-08T05:35:46.853622+00:00 | skipped | date=08-08 | reason=no_entry
 2026-08-09T05:41:14.639767+00:00 | posted | date=08-09 | year=1976 | uri=at://did:plc:6c6v3wfajktjiw2dnig3e4gs/app.bsky.feed.post/3msmurtjiw42p
+2026-08-10T06:06:25.199316+00:00 | posted | date=08-10 | year=1990 | uri=at://did:plc:6c6v3wfajktjiw2dnig3e4gs/app.bsky.feed.post/3mspgnrliig22
