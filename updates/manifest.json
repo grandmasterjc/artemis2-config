@@ -1,6 +1,17 @@
 {
   "updates": [
     {
+      "id": "halo-moon-base-reuse-august-12",
+      "title": "The 'ready-to-fly' hardware behind NASA's new Moon Base missions comes from a module that never flew",
+      "subtitle": "Three new lunar demo missions inherit technology from a $1.9 billion space station module that NASA's own review board gave zero percent odds of finishing on schedule, before the agency killed the contract.",
+      "date": "2026-08-12T13:33:00Z",
+      "mission": "moonbase",
+      "premium": false,
+      "hero_image": "https://grandmasterjc.github.io/artemis2-config/updates/images/halo-moon-base-reuse-august-12.jpg",
+      "summary": "Three new lunar demo missions inherit technology from a $1.9 billion space station module that NASA's own review board gave zero percent odds of finishing on schedule, before the agency killed the con",
+      "author": "Joachim Gresslien"
+    },
+    {
       "id": "moon-race-fact-check-august-5",
       "title": "Is NASA really losing the moon race to China?",
       "subtitle": "SpaceX says Starship flies again this month. Government auditors say the moon lander is more than a year late. Both arguments landed within two weeks of each other, so we lined the two countries' own dates up side by side.",
