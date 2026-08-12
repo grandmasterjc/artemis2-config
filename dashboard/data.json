@@ -3,13 +3,6 @@
     "status": "ok",
     "daily_users": [
       {
-        "date": "2026-05-13",
-        "active": 385,
-        "new": 113,
-        "views": 525,
-        "sessions": 443
-      },
-      {
         "date": "2026-05-14",
         "active": 244,
         "new": 84,
@@ -616,7 +609,7 @@
         "active": 92,
         "new": 18,
         "views": 112,
-        "sessions": 107
+        "sessions": 106
       },
       {
         "date": "2026-08-09",
@@ -627,144 +620,90 @@
       },
       {
         "date": "2026-08-10",
-        "active": 64,
-        "new": 8,
-        "views": 76,
-        "sessions": 75
+        "active": 67,
+        "new": 9,
+        "views": 82,
+        "sessions": 79
+      },
+      {
+        "date": "2026-08-11",
+        "active": 81,
+        "new": 27,
+        "views": 102,
+        "sessions": 89
       }
     ],
     "latest": {
-      "date": "2026-08-10",
-      "active": 64,
-      "new": 8,
-      "views": 76,
-      "sessions": 75
+      "date": "2026-08-11",
+      "active": 81,
+      "new": 27,
+      "views": 102,
+      "sessions": 89
     },
-    "total_active_28d": 3593,
-    "total_new_28d": 727,
-    "total_sessions_28d": 4046,
-    "total_views_28d": 4679,
+    "total_active_28d": 3573,
+    "total_new_28d": 723,
+    "total_sessions_28d": 4018,
+    "total_views_28d": 4655,
     "avg_dau_7d": 110.7,
-    "avg_dau_28d": 128.3,
+    "avg_dau_28d": 127.6,
     "top_countries_30d": [
       {
         "country": "United States",
-        "active": 980
+        "active": 982
       },
       {
         "country": "United Kingdom",
-        "active": 290
+        "active": 291
       },
       {
         "country": "Canada",
-        "active": 147
+        "active": 144
       },
       {
         "country": "Germany",
-        "active": 142
+        "active": 143
       },
       {
         "country": "Australia",
-        "active": 69
+        "active": 68
       },
       {
         "country": "Netherlands",
-        "active": 51
-      },
-      {
-        "country": "Italy",
         "active": 49
       },
       {
+        "country": "Italy",
+        "active": 48
+      },
+      {
         "country": "Spain",
-        "active": 44
+        "active": 46
       },
       {
         "country": "France",
-        "active": 41
+        "active": 42
       },
       {
         "country": "Brazil",
-        "active": 32
+        "active": 33
       }
     ],
     "push_events_30d": {
-      "notification_receive": 2770,
-      "notification_open": 897,
-      "notification_dismiss": 267,
+      "notification_receive": 2769,
+      "notification_open": 894,
+      "notification_dismiss": 268,
       "notification_foreground": 8,
       "notification_toggled": 6
     },
-    "push_open_rate_30d": 0.9912,
-    "fetched_at": "2026-08-11T05:56:57.481570+00:00"
+    "push_open_rate_30d": 0.9911,
+    "fetched_at": "2026-08-12T06:19:22.750644+00:00"
   },
   "kit": {
     "status": "ok",
     "active_subscribers": 36,
     "inactive_subscribers": 11,
-    "recent_broadcasts": [
-      {
-        "id": 25361365,
-        "subject": "The Week Ahead, Aug 10\u201316: New Glenn's valve, Starship's tower catch, and Orion becomes one spacecraft",
-        "send_at": "2026-08-09T16:00:00Z",
-        "public": true
-      },
-      {
-        "id": 25313847,
-        "subject": "Is NASA really losing the moon race?",
-        "send_at": "2026-08-05T19:30:00Z",
-        "public": true
-      },
-      {
-        "id": 25274687,
-        "subject": "The Week Ahead, Aug 3\u20139: Engines for Artemis 3, Starship's orbital attempt takes shape, and Blue Origin races the calendar",
-        "send_at": "2026-08-03T11:16:17Z",
-        "public": true
-      },
-      {
-        "id": 25188784,
-        "subject": "The case against a crewed Starship",
-        "send_at": "2026-07-28T19:30:00Z",
-        "public": true
-      },
-      {
-        "id": 25150551,
-        "subject": "Starship flew, and survived its splashdown",
-        "send_at": "2026-07-25T19:30:00Z",
-        "public": true
-      },
-      {
-        "id": 25134098,
-        "subject": "Starship slipped to tonight \u2014 22:45 UTC",
-        "send_at": "2026-07-24T19:30:00Z",
-        "public": true
-      },
-      {
-        "id": 25122143,
-        "subject": "Starship flies tonight \u2014 window opens 22:45 UTC",
-        "send_at": "2026-07-23T19:30:00Z",
-        "public": true
-      },
-      {
-        "id": 25069408,
-        "subject": "The Week Ahead \u2014 July 20\u201326: Starship tries again, a robot mechanic launches, and the Artemis III stack keeps rising",
-        "send_at": "2026-07-20T10:03:16Z",
-        "public": true
-      },
-      {
-        "id": 25068196,
-        "subject": "The Week Ahead \u2014 July 20\u201326: Starship tries again, a robot mechanic launches, and the Artemis III stack keeps rising",
-        "send_at": null,
-        "public": true
-      },
-      {
-        "id": 25036424,
-        "subject": "Starship aborted at ignition \u2014 what it means for Artemis",
-        "send_at": "2026-07-17T19:30:00Z",
-        "public": true
-      }
-    ],
-    "fetched_at": "2026-08-11T05:56:59.044919+00:00"
+    "recent_broadcasts": [],
+    "fetched_at": "2026-08-12T06:19:24.472363+00:00"
   },
   "asc": {
     "status": "ok",
@@ -922,8 +861,8 @@
     ],
     "subscriptions": {
       "status": "ok",
-      "window_start": "2026-07-10",
-      "window_end": "2026-08-09",
+      "window_start": "2026-07-11",
+      "window_end": "2026-08-10",
       "days_with_data": 31,
       "days_attempted": 31,
       "active_subscribers": 45,
@@ -942,7 +881,7 @@
         "arr_usd": 665.14,
         "mrr_usd": 55.43,
         "proceeds_factor": 0.85,
-        "as_of": "2026-08-09"
+        "as_of": "2026-08-10"
       },
       "events_30d": {
         "Renew": 2,
@@ -1101,14 +1040,14 @@
       "total_units_30d": 17,
       "total_proceeds_usd_30d": 46.67,
       "new_subscribers_30d": 9,
-      "new_installs_30d": 74
+      "new_installs_30d": 77
     },
-    "fetched_at": "2026-08-11T05:57:35.146821+00:00"
+    "fetched_at": "2026-08-12T06:20:02.966935+00:00"
   },
   "play": {
     "status": "ok",
-    "window_start": "2026-07-13",
-    "window_end": "2026-08-11",
+    "window_start": "2026-07-14",
+    "window_end": "2026-08-12",
     "package": "no.bitfactory.artemisii.tracker",
     "by_product": {},
     "by_day": [],
@@ -1125,11 +1064,11 @@
     "handle": "artemistracker.app",
     "followers": 9,
     "following": 12,
-    "posts_total": 83,
+    "posts_total": 84,
     "posts_7d": 10,
     "likes_7d": 0,
     "reposts_7d": 0,
-    "fetched_at": "2026-08-11T05:57:37.685114+00:00"
+    "fetched_at": "2026-08-12T06:20:05.104631+00:00"
   },
   "mastodon": {
     "status": "ok",
@@ -1141,7 +1080,7 @@
     "posts_7d": 3,
     "favs_7d": 0,
     "boosts_7d": 0,
-    "fetched_at": "2026-08-11T05:57:39.310781+00:00"
+    "fetched_at": "2026-08-12T06:20:06.683761+00:00"
   },
   "threads": {
     "status": "ok",
@@ -1152,11 +1091,11 @@
     "likes_7d": 2,
     "comments_7d": 2,
     "reposts_7d": 0,
-    "fetched_at": "2026-08-11T05:57:40.994125+00:00"
+    "fetched_at": "2026-08-12T06:20:08.221783+00:00"
   },
   "instagram": {
     "status": "error",
-    "error": "HTTP 400: {\"error\":{\"message\":\"Unsupported request - method type: get\",\"type\":\"IGApiException\",\"code\":100,\"fbtrace_id\":\"AMpKypBubL-nSS4TKzpzzn8\"}}"
+    "error": "HTTP 400: {\"error\":{\"message\":\"Unsupported request - method type: get\",\"type\":\"IGApiException\",\"code\":100,\"fbtrace_id\":\"Al0b1efGDXWerUbD_APJbh_\"}}"
   },
   "push": {
     "status": "ok",
@@ -1243,7 +1182,7 @@
         "message_id": "projects/artemis-tracker-665d8/messages/7200674829871470364"
       }
     ],
-    "fetched_at": "2026-08-11T05:57:41.494230+00:00"
+    "fetched_at": "2026-08-12T06:20:08.684786+00:00"
   },
   "roadmap": {
     "status": "ok",
@@ -1331,7 +1270,7 @@
         "note": "durable across sandbox resets"
       }
     ],
-    "fetched_at": "2026-08-11T05:57:41.494482+00:00"
+    "fetched_at": "2026-08-12T06:20:08.685040+00:00"
   },
   "targets": {
     "status": "ok",
@@ -1425,5 +1364,5 @@
       "implied_subs": 5200
     }
   },
-  "generated_at": "2026-08-11T05:57:41.494491+00:00"
+  "generated_at": "2026-08-12T06:20:08.685049+00:00"
 }
