@@ -40,6 +40,8 @@ That fix has not flown yet. Neither has a Blue Moon lander: the uncrewed Mark 1,
 
 ![NASA illustration of Orion docked with a Starship human landing system. On Artemis 3 the docking happens in low Earth orbit, and the crew stays aboard Orion.](https://grandmasterjc.github.io/artemis2-config/updates/images/orion_hls_docking.jpg)
 
+Both test articles, Blue Moon's and Starship's, have to fly and dock successfully before Orion can complete the rehearsal Isaacman is counting on.
+
 ## Where Starship stands
 
 SpaceX's side of the mission has a different gap. Starship has flown 13 times over three years and has never completed an orbit. Every flight so far, including July's Flight 13, has been suborbital by design. Flight 14, targeted for late August, would be the first attempt at orbital insertion and the first attempt to catch a returning ship with the launch tower.
