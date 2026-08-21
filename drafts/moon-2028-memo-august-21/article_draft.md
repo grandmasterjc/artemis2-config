@@ -1,13 +1,13 @@
 ---
 id: moon-2028-memo-august-21
 title: "Did Trump just order a moon landing for 2028?"
-subtitle: "The memorandum he signed on Thursday was reported around the world as a directive to put Americans back on the lunar surface within two years. It never mentions 2028, and it sets no landing date at all. So what did he actually sign, and is anyone still landing in 2028?"
+subtitle: "Reported around the world as a directive to put Americans back on the lunar surface within two years, the memorandum he signed on Thursday never mentions 2028, and sets no landing date at all. So what did Trump actually sign, and is anyone still landing in 2028?"
 date: 2026-08-21
 mission: artemis3
 premium: false
 hero_image: hero.jpg
 push_title: "Did Trump order a 2028 moon landing?"
-push_body: "The memorandum signed Thursday was reported as a directive to land Americans on the moon by 2028. It never mentions 2028, and NASA's own schedule moved the landing to Artemis 4."
+push_body: "The memorandum never mentions 2028, and NASA has already moved the landing to Artemis 4."
 ---
 
 President Trump signed a national security presidential memorandum on Thursday titled "The National Space Transportation Policy." Much of the coverage that followed described it as an order to return Americans to the moon by 2028.
