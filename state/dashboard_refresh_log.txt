@@ -1214,3 +1214,18 @@
 2026-08-20T05:37:17.058304+00:00 | wrote data.json (36350 bytes)
 2026-08-20T05:37:17.072156+00:00 | wrote index.html (50567 bytes)
 2026-08-20T05:37:17.072213+00:00 | dashboard_refresh 2.0 done
+2026-08-21T05:37:52.876931+00:00 | dashboard_refresh 2.0 start
+2026-08-21T05:38:45.462573+00:00 |   ga4: ok | latest=61 28d=3157
+2026-08-21T05:38:45.462664+00:00 |   kit: ok | active=36
+2026-08-21T05:38:45.462739+00:00 |   asc: ok | reviews=50 avg=2.2
+2026-08-21T05:38:45.462807+00:00 |   bluesky: ok | followers=11
+2026-08-21T05:38:45.462869+00:00 |   mastodon: ok | followers=1
+2026-08-21T05:38:45.462934+00:00 |   threads: ok
+2026-08-21T05:38:45.462998+00:00 |   instagram: error | HTTP 400: {"error":{"message":"Error validating access token: Session has expired on Wednesday, 12-Aug-26 08:57:14 PDT. 
+2026-08-21T05:38:45.463066+00:00 |   push: ok
+2026-08-21T05:38:45.463127+00:00 |   roadmap: ok
+2026-08-21T05:38:45.463187+00:00 |   targets: ok
+2026-08-21T05:38:45.465255+00:00 | subscriber_history: appended date=2026-08-21 kit=36 plus=49 total=85
+2026-08-21T05:38:45.466797+00:00 | wrote data.json (36349 bytes)
+2026-08-21T05:38:45.480843+00:00 | wrote index.html (50613 bytes)
+2026-08-21T05:38:45.480900+00:00 | dashboard_refresh 2.0 done
