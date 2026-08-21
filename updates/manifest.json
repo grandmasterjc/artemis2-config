@@ -1,6 +1,17 @@
 {
   "updates": [
     {
+      "id": "moon-2028-memo-august-21",
+      "title": "Did Trump just order a moon landing for 2028?",
+      "subtitle": "Reported around the world as a directive to put Americans back on the lunar surface within two years, the memorandum he signed on Thursday never mentions 2028, and sets no landing date at all. So what did Trump actually sign, and is anyone still landing in 2028?",
+      "date": "2026-08-21T17:14:09Z",
+      "mission": "artemis3",
+      "premium": false,
+      "hero_image": "https://grandmasterjc.github.io/artemis2-config/updates/images/moon-2028-memo-august-21.jpg",
+      "summary": "Reported around the world as a directive to put Americans back on the lunar surface within two years, the memorandum he signed on Thursday never mentions 2028, and sets no landing date at all. So what",
+      "author": "Joachim Gresslien"
+    },
+    {
       "id": "halo-moon-base-reuse-august-12",
       "title": "The 'ready-to-fly' hardware behind NASA's new Moon Base missions comes from a module that never flew",
       "subtitle": "Three new lunar demo missions inherit technology from a $1.9 billion space station module that NASA's own review board gave zero percent odds of finishing on schedule, before the agency killed the contract.",
