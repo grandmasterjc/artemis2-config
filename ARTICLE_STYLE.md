@@ -14,11 +14,11 @@ Write like a staff writer at Space.com: a human science journalist producing a n
 4. **Nut graf**: within the first 3–4 paragraphs, state why this matters and what the article will show, with at least one named source.
 5. **CTA 1** (see §6).
 6. **Body**: 4–6 sections under H2 subheads.
-7. **"What to watch" section** near the end: concrete upcoming milestones.
+7. **A forward-looking section** near the end: concrete upcoming milestones. The section is required; the wording of its heading is not, and SHOULD vary between articles ("Five milestones to watch", "Dates already on the calendar"). Reusing the literal heading "What to watch" every week is a house tic worth breaking.
 8. **Conclusion**: circles back to the lede in 1–2 paragraphs. No aphorism, no grand final line.
 9. **CTA 2 and CTA 3** (see §6).
 
-Subheads MUST be descriptive of the section's content ("How the Artemis landing plan actually works"), never punchlines or mini-theses ("Nobody was ever going to ride it home").
+Subheads MUST be descriptive of the section's content ("How the Artemis landing plan actually works"), never punchlines or mini-theses ("Nobody was ever going to ride it home"). They MUST also vary in grammatical form across the article; see the subhead rule in §5.
 
 ## 3. Language
 
@@ -50,6 +50,23 @@ These patterns read as machine-generated. Caps are per article.
   with a comma, a colon, parentheses or a separate sentence. The only
   exception is a proper name that contains one, such as the App Store title
   "Liftoff — Rocket & Space Launch".
+- Subheads MUST vary in grammatical form. At most ONE H2 per article may
+  open with an interrogative stem (What, Why, How, Where); the rest must be
+  concrete noun phrases or plain declaratives. A stack of "What X actually
+  says / Why Y still matters / What to watch" is one of the strongest
+  machine-written tells in this format, and it survives every other check in
+  this spec because each subhead is individually fine. Judge the list as a
+  list, not line by line.
+  - Good, from published editions: "Five engines where thirteen should have
+    been", "The Ship that lived to float", "The Artemis line item", "The
+    rocket equation is why the plan looks like this", "Two landers, one
+    broken pad".
+  - Bad, from a rejected draft: "What the memorandum actually orders", "What
+    NASA's schedule actually says", "Why a transportation policy still
+    matters", "What has to happen for 2028 to hold", "What to watch".
+  - A subhead MUST NOT restate its own section's opening sentence. If the
+    first line reads "Three things have to go right," the subhead is not
+    "Three things that have to go right."
 - Vary rhythm: mix long explanatory sentences with short ones; paragraphs of 1–4 sentences; no two consecutive paragraphs opening with the same word.
 - Avoid stock AI vocabulary: delve, landscape, testament to, boasts, crucial (max once), "it's worth noting," "in conclusion," "at the end of the day."
 
@@ -91,6 +108,7 @@ Run before output is considered done:
 - [ ] Every non-obvious claim attributed; zero fabricated quotes
 - [ ] All three CTAs present, correct copy, correct placement, no extras
 - [ ] Subheads descriptive, not punchlines
+- [ ] Subheads read as a list: ≤1 interrogative stem, forms varied, none restating its own opening line
 - [ ] Anti-tell caps respected (§5): fragments ≤1, tricolons ≤2, zero em dashes
 - [ ] Banned-vocabulary scan clean
 - [ ] Units doubled, acronyms expanded, American spelling

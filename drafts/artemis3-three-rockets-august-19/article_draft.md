@@ -22,7 +22,7 @@ That is a real schedule with real hardware behind it. It also covers about a thi
 
 ---
 
-## What Artemis 3 turned into
+## Three launches where there used to be one
 
 On February 27, Isaacman announced that Artemis 3 would no longer attempt a crewed lunar landing. Instead it becomes a crewed test flight in low Earth orbit, where Orion practices the rendezvous and docking that Artemis 4 will have to perform at the moon, a landing currently set for no earlier than 2028. His reasoning at the time was straightforward. "What helps us get to the moon?" he said. "Well, for sure, rendezvous and docking with one or ideally both landers, that gives you an opportunity to do some integrated testing of a vehicle that we are going to depend upon the following year to take those astronauts down to the surface of the moon." He also put it more bluntly: "We've got to get back to basics."
 
@@ -30,7 +30,7 @@ The profile that emerged from that decision, as described by Spaceflight Now, ru
 
 Taking the landing out reduced the mission's ambition. It did not reduce the number of vehicles that have to work.
 
-## Where New Glenn stands
+## New Glenn is grounded on a valve
 
 New Glenn has flown three times with mixed results. The maiden flight in January 2025 reached orbit but lost its booster on landing, and a second flight that November went cleanly. On April 19 this year the rocket landed its booster on the recovery ship Jacklyn, a first for Blue Origin, then put its satellite in the wrong orbit.
 
@@ -42,19 +42,19 @@ That fix has not flown yet. Neither has a Blue Moon lander: the uncrewed Mark 1,
 
 Both test articles, Blue Moon's and Starship's, have to fly and dock successfully before Orion can complete the rehearsal Isaacman is counting on.
 
-## Where Starship stands
+## Starship has never reached orbit
 
 SpaceX's side of the mission has a different gap. Starship has flown 13 times over three years and has never completed an orbit. Every flight so far, including July's Flight 13, has been suborbital by design. Flight 14, targeted for late August, would be the first attempt at orbital insertion and the first attempt to catch a returning ship with the launch tower.
 
 Isaacman named his own condition for confidence in SpaceX's contribution: the company needs to be launching Starship "every couple of weeks before the end of the year." That is far faster than the program has managed. Flight 12 flew on May 22 and Flight 13 on July 24, a gap of about nine weeks, and Flight 13 itself took three attempts across nine days after a pad abort and a weather slip. A two-week cadence would mean roughly quadrupling the current rate, on an orbital profile the vehicle has not flown before.
 
-## How this compares with Apollo 9
+## Apollo 9 did this on a single Saturn V
 
 Apollo 9 is the model Isaacman has reached for, and the comparison is apt in intent. In March 1969 a crew flew the command module and the lunar module together in Earth orbit, rehearsing the rendezvous and docking that Apollo 11 would perform at the moon that July. It was the step that made the landing credible.
 
-Where the parallel thins out is the logistics. Apollo 9 was one launch. A single Saturn V carried both spacecraft, and once it cleared the pad every vehicle the mission depended on was already in orbit together. Artemis 3 spreads the same rehearsal across three launches run by NASA and two commercial companies, and both companies are still working through failures on the ground. Every additional launch is another schedule that has to hold and another vehicle that has to be ready in the same window. Isaacman's confidence rests on NASA managing its own component down to the hour, which the agency may well do, and on two companies hitting dates that neither has hit recently.
+Where the parallel thins out is the logistics. Apollo 9 was one launch. A single Saturn V carried both spacecraft, and once it cleared the pad every vehicle the mission depended on was already in orbit together. Artemis 3 spreads the same rehearsal across three launches run by NASA and two commercial companies, and both companies are still working through failures on the ground. Isaacman's confidence rests on NASA managing its own component down to the hour, which the agency may well do, and on two companies hitting dates that neither has hit recently.
 
-## What to watch
+## Five milestones to watch
 
 Flight 14, still expected late this month, is the nearest test, and the question is not only whether Starship reaches orbit but how quickly SpaceX turns the pad around afterward, since cadence is the part Isaacman put a number on. Next is New Glenn's return to flight, promised before year's end, which has to happen before any Blue Moon hardware reaches orbit. Then comes the November wet dress rehearsal, which will show whether the SLS and Orion side is holding its schedule. Watch also for NASA to name an actual target date for Artemis 3 rather than "next year," and for either company to say when its test article will be ready.
 

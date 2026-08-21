@@ -22,7 +22,7 @@ That 2028 goal is real, though it was signed eight months earlier. Executive Ord
 
 ---
 
-## What the memorandum actually orders
+## Six agencies on a deadline, and one line about the moon
 
 Thursday's document replaces a national space transportation policy that had stood since 2013. It instructs the government to "favor commercial space transportation services for meeting United States Government needs" and to see that federal payloads fly on vehicles built in the United States.
 
@@ -30,7 +30,7 @@ Most of its substance is deadlines assigned to named officials. The Secretary of
 
 The lunar surface appears once in an operational sense. Section 6(c) directs the NASA administrator to "develop a lunar logistics architecture that facilitates commercial transportation to and from the lunar surface." That is an instruction about moving cargo, and it sits beside parallel language on robotic and eventually human access to Mars. No crewed landing date appears anywhere in the text.
 
-## What NASA's schedule actually says
+## February took the landing off Artemis 3
 
 Here is where the 2028 date meets the program. On February 27 this year, Administrator Jared Isaacman restructured Artemis 3, removing the landing from it entirely. The mission became a crewed rendezvous and docking test in low Earth orbit, where Orion practices meeting the landers rather than riding one to the surface. "We've got to get back to basics," Isaacman said at the time.
 
@@ -38,7 +38,7 @@ That decision moved the first crewed landing since 1972 to Artemis 4, which NASA
 
 Asked at Kennedy Space Center on August 14 whether Artemis 3 would fly next year, Isaacman said he was "extremely confident" that it would. He was pointing at real hardware when he said it, with the Space Launch System (SLS) rocket going vertical in the Vehicle Assembly Building and Orion's crew and service modules joined on July 30. That flight, as it now stands, does not go to the moon.
 
-## Why a transportation policy still matters for the moon
+## One landing still needs a refueling campaign
 
 Nothing in Thursday's memorandum changes those dates. It does aim at the thing that governs them, which is how often American rockets can fly.
 
@@ -48,13 +48,13 @@ Artemis is unusually exposed to that number. As restructured, Artemis 3 needs th
 
 For scale, the Federal Aviation Administration licensed 195 launches in fiscal 2025, the highest annual total in United States history. A single lunar landing could absorb somewhere between 5 and 8 percent of a record American launch year, on top of everything else trying to get off the ground.
 
-## What has to happen for 2028 to hold
+## The order the pieces have to arrive in
 
 Three things have to go right, in roughly this order. Starship has to reach orbit, which it has not done in 13 flights, and then fly often enough to run a refueling campaign. Isaacman has named his own condition for that, saying he wants SpaceX launching Starship every couple of weeks before the end of the year. Blue Origin has to return New Glenn to flight after the first stage exploded during a static fire test on May 28, a failure the company has traced to the main oxygen valve on a BE-4 engine.
 
 Then Artemis 3 has to fly its rehearsal in 2027 and prove the docking works, because that is the point of restructuring it. Only after all of that does Artemis 4 carry anyone to the surface.
 
-## What to watch
+## Dates already on the calendar
 
 The memorandum's deadlines produce checkable dates. Identification of a federal reentry site falls due around November 18, and the export policy updates around December 18. The range scheduling criteria and the list of additional launch sites are both due around February 16, 2027.
 
