@@ -1,8 +1,8 @@
 ---
-id: starbase-louisiana-august-26
-title: "SpaceX is building a $100 billion spaceport for the flight rate a moon landing needs, and it opens after the landing"
+id: starbase-louisiana-august-28
+title: "SpaceX's $100 billion spaceport opens after the moon landing it would serve"
 subtitle: "Starbase Louisiana would give Starship 10 pads and its own propellant plant, which is close to what one Artemis landing actually requires. So why is the first launch from it scheduled for 2029?"
-date: 2026-08-26
+date: 2026-08-28
 mission: artemis3
 premium: false
 hero_image: hero.jpg
@@ -22,7 +22,7 @@ For anyone following Artemis, the interesting number is not the $100 billion. It
 
 ---
 
-## Why a launch site is an Artemis problem in the first place
+## Why a launch site is an Artemis problem at all
 
 Starship does not fly to the moon on the propellant it launches with. The architecture NASA bought requires a depot placed in Earth orbit, then a series of tanker Starships that fill it, and only then a fueled lander that departs for the surface. Public estimates of how many tanker flights that takes range from 10 to 16 for a single landing, and the number is not settled because the demonstration that would establish it has not flown.
 
@@ -54,11 +54,15 @@ The economics came with a spread rather than a figure. The state cited 3,000 per
 
 A three-fold disagreement about headcount on the day of the announcement matters mostly because the $100 billion sits in the same category. It is a figure released jointly by a company and a governor at an economic development event, covering a build-out that runs past 2029, and nothing in the announcement breaks it into committed spending.
 
-## What to watch
+## What is still undecided
 
-Starship Flight 14 is scheduled no earlier than August 28, two days from now, and would be the vehicle's first attempt to reach orbit. Watch next for a date on the propellant transfer demonstration, which is the number that would turn the tanker-flight estimate into a real requirement and tell you how much of Louisiana's capacity Artemis actually needs. Watch the FAA rulemaking, because whether the categorical exclusion survives determines how much environmental review the site gets before ground is broken in 2027. And watch whether NASA says anything at all about Starbase Louisiana, because so far the agency whose landing schedule depends on Starship cadence has not commented on the largest piece of Starship infrastructure ever proposed.
+The propellant transfer demonstration has no confirmed date. It is the test that would turn the tanker estimate into a requirement, because once it flies, how much pad capacity a landing consumes stops being arithmetic and becomes a measurement. Nothing about Louisiana's capacity can be sized against Artemis until then.
 
-The announcement on August 25 was, on its own terms, exactly what it looked like: the biggest private launch complex anyone has planned, in a state that wants it, from a company that can now raise the money. What it is not is a fix for the 2028 landing. On the dates both parties published this week, the pads that would fly a dozen tankers per moon mission are scheduled to open the year after the moon mission.
+Starship's own schedule has meanwhile done what it usually does. Flight 14, the first attempt to reach orbit, was filed with the Federal Communications Commission for late August, then pushed after Isaacman said publicly he expected early September, and trackers now point at the end of that month. It had not flown as of this writing.
+
+The regulatory question is the one with a deadline attached. Whether the FAA's proposed exclusion survives will decide how much environmental review Pecan Island gets before ground breaks in 2027, and the conservation groups have already filed against it. NASA has not commented on Starbase Louisiana at all, though its landing schedule depends on the cadence the site is meant to supply.
+
+On its own terms, the August 25 announcement was exactly what it looked like: the biggest private launch complex anyone has planned, in a state that wants it, from a company that can now raise the money. What it is not is a fix for the 2028 landing. On the dates both parties published, the pads that would fly a dozen tankers per moon mission open the year after the moon mission.
 
 If you want to follow the flights that will show whether any of this cadence is real, that is what our companion app Liftoff is built for. Live countdowns, real-time status and one-tap access to the official webcasts for every launch worldwide, free on the App Store: [Liftoff — Rocket & Space Launch](https://apps.apple.com/no/app/liftoff-rocket-space-launch/id6776392285).
 

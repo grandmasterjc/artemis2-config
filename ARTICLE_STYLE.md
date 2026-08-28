@@ -14,7 +14,7 @@ Write like a staff writer at Space.com: a human science journalist producing a n
 4. **Nut graf**: within the first 3–4 paragraphs, state why this matters and what the article will show, with at least one named source.
 5. **CTA 1** (see §6).
 6. **Body**: 4–6 sections under H2 subheads.
-7. **A forward-looking section** near the end: concrete upcoming milestones. The section is required; the wording of its heading is not, and SHOULD vary between articles ("Five milestones to watch", "Dates already on the calendar"). Reusing the literal heading "What to watch" every week is a house tic worth breaking.
+7. **A forward-looking section** near the end: the concrete milestones that would settle the question the article raised. The section is OPTIONAL. Include it only when there are genuinely pending, datable events; if there are not, leave it out rather than manufacturing one. When included, write it as ordinary prose under a descriptive heading, and NEVER as a run of "Watch for X. Watch Y. And watch whether Z." sentences. Do not use the literal heading "What to watch". The owner has said the section reads as forced, and the imperative rhythm is what makes it read that way.
 8. **Conclusion**: circles back to the lede in 1–2 paragraphs. No aphorism, no grand final line.
 9. **CTA 2 and CTA 3** (see §6).
 
@@ -107,7 +107,8 @@ Run before output is considered done:
 - [ ] Every date checked against today's date; no stale "upcoming" events
 - [ ] Every non-obvious claim attributed; zero fabricated quotes
 - [ ] All three CTAs present, correct copy, correct placement, no extras
-- [ ] Subheads descriptive, not punchlines
+- [ ] Subheads descriptive, not punchlines; no "What to watch" heading and no
+      run of "Watch for..." sentences anywhere
 - [ ] Subheads read as a list: ≤1 interrogative stem, forms varied, none restating its own opening line
 - [ ] Anti-tell caps respected (§5): fragments ≤1, tricolons ≤2, zero em dashes
 - [ ] Banned-vocabulary scan clean
