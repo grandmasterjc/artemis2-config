@@ -1,6 +1,17 @@
 {
   "updates": [
     {
+      "id": "starbase-louisiana-august-30",
+      "title": "SpaceX's $100 billion spaceport opens after the moon landing it would serve",
+      "subtitle": "Starbase Louisiana would give Starship 10 pads and its own propellant plant, which is close to what one Artemis landing actually requires. So why is the first launch from it scheduled for 2029?",
+      "date": "2026-08-30T05:51:12Z",
+      "mission": "artemis3",
+      "premium": false,
+      "hero_image": "https://grandmasterjc.github.io/artemis2-config/updates/images/starbase-louisiana-august-30.jpg",
+      "summary": "Starbase Louisiana would give Starship 10 pads and its own propellant plant, which is close to what one Artemis landing actually requires. So why is the first launch from it scheduled for 2029?",
+      "author": "Joachim Gresslien"
+    },
+    {
       "id": "moon-2028-memo-august-21",
       "title": "Did Trump just order a moon landing for 2028?",
       "subtitle": "Reported around the world as a directive to put Americans back on the lunar surface within two years, the memorandum he signed on Thursday never mentions 2028, and sets no landing date at all. So what did Trump actually sign, and is anyone still landing in 2028?",
