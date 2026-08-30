@@ -50,17 +50,28 @@ These patterns read as machine-generated. Caps are per article.
   with a comma, a colon, parentheses or a separate sentence. The only
   exception is a proper name that contains one, such as the App Store title
   "Liftoff — Rocket & Space Launch".
-- Subheads MUST vary in grammatical form. At most ONE H2 per article may
-  open with an interrogative stem (What, Why, How, Where); the rest must be
-  concrete noun phrases or plain declaratives. A stack of "What X actually
-  says / Why Y still matters / What to watch" is one of the strongest
-  machine-written tells in this format, and it survives every other check in
-  this spec because each subhead is individually fine. Judge the list as a
-  list, not line by line.
-  - Good, from published editions: "Five engines where thirteen should have
-    been", "The Ship that lived to float", "The Artemis line item", "The
-    rocket equation is why the plan looks like this", "Two landers, one
-    broken pad".
+- Subheads MUST be short noun phrases, normally two to five words, and MUST
+  NOT open with an interrogative stem (What, Why, How, When, Where, Who).
+  Zero per article, not one. A stack of "What X actually says / Why Y still
+  matters / What to watch" is one of the strongest machine-written tells in
+  this format, and it survives every other check in this spec because each
+  subhead is individually fine. Judge the list as a list, not line by line.
+  - This is the house style because it is Space.com's, which §1 tells you to
+    write like. Their subheads on a September 2026 Chang'e-7 feature, in
+    order: "Pockets of water ice", "Back-to-back duties", "Variety of
+    instruments", "Compact lunar camera", "Moon-based vantage point". On an
+    Artemis 2 feature: "Mission milestones", "Crew qualifications". Note what
+    they do NOT do: no questions, no verbs, no full clauses, nothing that
+    summarizes the section's argument. They name the topic and get out of the
+    way. Short news pieces there carry no subheads at all, which is also
+    allowed here when the article is genuinely short.
+  - Label the topic, not the argument. "The cadence problem" not "Why a
+    launch site is an Artemis problem". "The 2029 gap" not "How 2029 compares
+    with the Artemis calendar". "Two different job numbers" not "The jobs
+    numbers do not agree with each other".
+  - Good, from published editions: "The cadence problem", "The 2029 gap",
+    "The Artemis line item", "The Ship that lived to float", "Two landers,
+    one broken pad", "Still undecided".
   - Bad, from a rejected draft: "What the memorandum actually orders", "What
     NASA's schedule actually says", "Why a transportation policy still
     matters", "What has to happen for 2028 to hold", "What to watch".
@@ -109,7 +120,10 @@ Run before output is considered done:
 - [ ] All three CTAs present, correct copy, correct placement, no extras
 - [ ] Subheads descriptive, not punchlines; no "What to watch" heading and no
       run of "Watch for..." sentences anywhere
-- [ ] Subheads read as a list: ≤1 interrogative stem, forms varied, none restating its own opening line
+- [ ] Subheads read as a list: ZERO interrogative stems, two to five words
+      each, noun phrases, none restating its own opening line. Verify
+      mechanically, do not eyeball it:
+      `grep -c -E '^## (What|Why|How|When|Where|Who)\b' FILE` must print 0
 - [ ] Anti-tell caps respected (§5): fragments ≤1, tricolons ≤2, zero em dashes
 - [ ] Banned-vocabulary scan clean
 - [ ] Units doubled, acronyms expanded, American spelling

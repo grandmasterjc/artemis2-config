@@ -22,7 +22,7 @@ For anyone following Artemis, the interesting number is not the $100 billion. It
 
 ---
 
-## Why a launch site is an Artemis problem at all
+## The cadence problem
 
 Starship does not fly to the moon on the propellant it launches with. The architecture NASA bought requires a depot placed in Earth orbit, then a series of tanker Starships that fill it, and only then a fueled lander that departs for the surface. Public estimates of how many tanker flights that takes range from 10 to 16 for a single landing, and the number is not settled because the demonstration that would establish it has not flown.
 
@@ -30,7 +30,7 @@ That demonstration is the ship-to-ship propellant transfer test. NASA's Office o
 
 This is the gap Starbase Louisiana is built to close. Ten pads with dedicated propellant farms, fed by methane made on site, is a plausible way to fly the tanker cadence that one lunar landing consumes. Starbase Texas was not designed for that volume, which is a large part of why the company spent seven years looking for somewhere else.
 
-## How 2029 compares with the Artemis calendar
+## The 2029 gap
 
 Line the dates up. Artemis 3 flies next year as a low Earth orbit rehearsal, after NASA restructured it out of the landing business in February. The crewed landing moved to Artemis 4, no earlier than 2028. Construction at Pecan Island begins in 2027, and nothing launches from it before 2029.
 
@@ -38,7 +38,7 @@ On those dates, the spaceport built for lunar launch cadence opens at least a ye
 
 But the timing does say something about how SpaceX reads its own Artemis obligations. A company that expected to be flying a dozen tanker missions per landing in 2028 would not schedule the facility for that cadence to open in 2029. Either the landing is expected to happen with the pads that already exist, or the landing is not expected in 2028.
 
-## What the site would be built on
+## The marsh and the rule change
 
 The location is not empty ground. Three conservation groups, the Louisiana Wildlife Federation, the National Wildlife Federation and the Pontchartrain Conservancy, filed comments describing the area as "136,000 acres of coastal marsh in Vermilion Parish, among the most productive wildlife habitat on the continent." The marshes, they wrote, "shelter species of extreme conservation concern including the whooping crane," a bird reintroduced to Louisiana only in 2011, and "support wintering populations of ducks and geese numbering in the millions."
 
@@ -48,13 +48,13 @@ Running underneath the local fight is a federal one. The Federal Aviation Admini
 
 SpaceX says it has worked with the Louisiana Department of Wildlife and Fisheries to address potential impacts to wildlife and fisheries habitat, and that any unavoidable wetland damage will be fully mitigated by the company.
 
-## The jobs numbers do not agree with each other
+## Two different job numbers
 
 The economics came with a spread rather than a figure. The state cited 3,000 permanent jobs. Musk, in a video played at the announcement, promised "north of 10,000 really exciting jobs to Louisiana." Shotwell's number was closer to Musk's. Vermilion Parish is to receive $25 million a year, growing over time, which the state estimated at roughly $820 million across 25 years.
 
 A three-fold disagreement about headcount on the day of the announcement matters mostly because the $100 billion sits in the same category. It is a figure released jointly by a company and a governor at an economic development event, covering a build-out that runs past 2029, and nothing in the announcement breaks it into committed spending.
 
-## What is still undecided
+## Still undecided
 
 The propellant transfer demonstration has no confirmed date. It is the test that would turn the tanker estimate into a requirement, because once it flies, how much pad capacity a landing consumes stops being arithmetic and becomes a measurement. Nothing about Louisiana's capacity can be sized against Artemis until then.
 
