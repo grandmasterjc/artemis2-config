@@ -1,8 +1,8 @@
 ---
-id: starbase-louisiana-august-28
+id: starbase-louisiana-august-30
 title: "SpaceX's $100 billion spaceport opens after the moon landing it would serve"
 subtitle: "Starbase Louisiana would give Starship 10 pads and its own propellant plant, which is close to what one Artemis landing actually requires. So why is the first launch from it scheduled for 2029?"
-date: 2026-08-28
+date: 2026-08-30
 mission: artemis3
 premium: false
 hero_image: hero.jpg
