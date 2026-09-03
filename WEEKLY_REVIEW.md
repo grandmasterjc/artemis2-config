@@ -24,12 +24,42 @@ images, publishing procedure and editing after publication.
    checklist against your own draft.
 5. Commit and push the draft to `main`. Pushing a draft folder does not
    publish anything; only `weekly-article-publish.yml` does.
-6. Report to the owner in Norwegian: the angle and why it is this week's
-   story, a link to the draft on GitHub, anything you were unsure about, and
-   a question asking whether to publish. Do NOT run the publish workflow.
+6. VERIFY the push actually landed on `main`, then report to the owner in
+   Norwegian: the angle and why it is this week's story, a link to the draft
+   on GitHub, the verification result, anything you were unsure about, and a
+   question asking whether to publish. Do NOT run the publish workflow.
 
 If any step fails, say so to the owner immediately and explain what broke.
 Never end a run silently.
+
+### Verify delivery, do not assume it
+
+A routine-fired session's environment can be configured with an outcome
+branch. When it is, an ordinary `git push` may go to that branch instead of
+`main`, and nothing fails: the run is green, the commit exists, a draft pull
+request may even be opened, and the draft is still nowhere the workflow or
+the owner will find it.
+
+This happened on Wednesday 2 September 2026. The routine fired at 07:15 UTC,
+ran for 13 minutes, reported SUCCEEDED, and wrote a good article. It went to
+`claude/eloquent-hawking-lwld4y` as draft PR #3. The owner spent a week
+believing no article had been written.
+
+After pushing, run:
+
+    git fetch origin main
+    git cat-file -e origin/main:drafts/{article_id}/article_draft.md && echo ON_MAIN
+
+If that does not print `ON_MAIN`, the draft is NOT delivered. Say so to the
+owner in plain words, and give the branch name and pull request link so the
+draft can be brought over. Never report success because the commands exited
+zero. A green run is not a delivered draft.
+
+The same rule has bitten this project three other ways: a Kit broadcast
+without `send_at` is silently saved as a draft and never sends; an empty
+`state/spaceflight_history.json` logged 41 clean "skipped" runs; and Threads
+posts lost to HTTP 500s were recorded as complete. Check the artifact, not
+the exit code.
 
 ## Rule compliance (mechanical)
 
