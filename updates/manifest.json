@@ -1,6 +1,17 @@
 {
   "updates": [
     {
+      "id": "artemis-suit-schedule-gap-september-2",
+      "title": "The rocket for NASA's next moon landing is ahead of schedule. The spacesuit is not.",
+      "subtitle": "Technicians began bolting shuttle-flown engines into the Artemis 3 rocket this week, comfortably on pace. The suit astronauts would need to actually walk on the moon has a schedule of its own, and NASA's inspector general does not believe it.",
+      "date": "2026-09-03T20:57:11Z",
+      "mission": "artemis3",
+      "premium": false,
+      "hero_image": "https://grandmasterjc.github.io/artemis2-config/updates/images/artemis-suit-schedule-gap-september-2.jpg",
+      "summary": "Technicians began bolting shuttle-flown engines into the Artemis 3 rocket this week, comfortably on pace. The suit astronauts would need to actually walk on the moon has a schedule of its own, and NAS",
+      "author": "Joachim Gresslien"
+    },
+    {
       "id": "starbase-louisiana-august-30",
       "title": "SpaceX's $100 billion spaceport opens after the moon landing it would serve",
       "subtitle": "Starbase Louisiana would give Starship 10 pads and its own propellant plant, which is close to what one Artemis landing actually requires. So why is the first launch from it scheduled for 2029?",
