@@ -1,6 +1,17 @@
 {
   "updates": [
     {
+      "id": "artemis3-lander-rehearsal-september-10",
+      "title": "Artemis 3 astronauts won't enter Starship, even if Orion docks with it",
+      "subtitle": "Can a moon-lander rehearsal prove enough if the crew never goes inside? The two commercial spacecraft in the mission plan will undergo different tests, with different implications for a lunar landing.",
+      "date": "2026-09-10T19:16:10Z",
+      "mission": "artemis3",
+      "premium": false,
+      "hero_image": "https://grandmasterjc.github.io/artemis2-config/updates/images/artemis3-lander-rehearsal-september-10.jpg",
+      "summary": "Can a moon-lander rehearsal prove enough if the crew never goes inside? The two commercial spacecraft in the mission plan will undergo different tests, with different implications for a lunar landing.",
+      "author": "Joachim Gresslien"
+    },
+    {
       "id": "artemis-suit-schedule-gap-september-2",
       "title": "The rocket for NASA's next moon landing is ahead of schedule. The spacesuit is not.",
       "subtitle": "Technicians began bolting shuttle-flown engines into the Artemis 3 rocket this week, comfortably on pace. The suit astronauts would need to actually walk on the moon has a schedule of its own, and NASA's inspector general does not believe it.",
