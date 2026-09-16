@@ -78,8 +78,55 @@ These patterns read as machine-generated. Caps are per article.
   - A subhead MUST NOT restate its own section's opening sentence. If the
     first line reads "Three things have to go right," the subhead is not
     "Three things that have to go right."
-- Vary rhythm: mix long explanatory sentences with short ones; paragraphs of 1–4 sentences; no two consecutive paragraphs opening with the same word.
+- MUST NOT use "not just X, but Y" or "it's not about X, it's about Y". The
+  construction inflates a claim by rejecting a smaller one first. It is one of
+  the most recognised machine tells in circulation.
+- MUST NOT attribute anything to unnamed authorities: "experts say",
+  "observers note", "critics argue", "industry sources". Name the source or
+  cut the claim. §4 already requires this; it is repeated here because the
+  phrasing arrives on its own.
+- MUST NOT inflate significance: "marks a pivotal moment", "stands as a
+  testament", "underscores the importance", "plays a vital role", "enduring
+  legacy". Report what happened and let the reader judge its size.
+- MUST NOT dress up verbs: "serves as", "acts as a", "is designed to",
+  "plays a role in". Use the plain verb.
+- MUST NOT add caveats the reader already holds: "it is important to note",
+  "it should be noted", "readers should remember".
+- MUST NOT pad with empty analysis, a sentence that sounds evaluative but
+  adds no evidence ("That difference has practical consequences.").
+- Prefer the concrete noun to the abstraction: "profitability" over "making
+  money", "a 14-month slip" over "schedule challenges".
 - Avoid stock AI vocabulary: delve, landscape, testament to, boasts, crucial (max once), "it's worth noting," "in conclusion," "at the end of the day."
+
+### Rhythm, and why it is measured
+
+Detection research converges on burstiness: humans vary sentence and
+paragraph length sharply, machines hold a steady beat. Journalists asked to
+name the tell repeatedly give the same one, "three or more consecutive
+paragraphs of exactly the same length."
+
+Measured across the 26 published editions of this newsletter, our sentences
+are fine and our paragraphs are not. Sentence length varies at a coefficient
+of variation of 0.61 on average, with 19 percent of sentences under 10 words,
+which is a human range. Paragraph length is where we drift: the September 10
+edition came in at 0.27, August 30 at 0.24, August 5 at 0.25. Older editions
+ran 0.53 to 0.59. The output has become steadier as the format settled, and
+steady is the thing that reads as machine-made.
+
+So, as hard rules:
+
+- Paragraph lengths MUST vary, coefficient of variation at or above 0.35.
+- NEVER three consecutive paragraphs within 10 percent of the same length.
+- Sentence length CV at or above 0.45, with at least one sentence in 10 under
+  10 words.
+- Hedge density at or below 1.2 per 100 words. Counting although, though,
+  while, however, arguably, somewhat, relatively, likely, may, might, could,
+  appears, seems, suggests, tends to, not necessarily. A paragraph that ends
+  on a qualifying clause taking back half of what it just established is the
+  single most common way this cap gets blown. State the finding, then state
+  its limit in a separate sentence.
+
+`scripts/style_check.py` computes all four. Run it; do not eyeball them.
 
 Reference pair from a published edit:
 
@@ -121,9 +168,12 @@ Run before output is considered done:
 - [ ] Subheads descriptive, not punchlines; no "What to watch" heading and no
       run of "Watch for..." sentences anywhere
 - [ ] Subheads read as a list: ZERO interrogative stems, two to five words
-      each, noun phrases, none restating its own opening line. Verify
-      mechanically, do not eyeball it:
-      `grep -c -E '^## (What|Why|How|When|Where|Who)\b' FILE` must print 0
+      each, noun phrases, none restating its own opening line
+- [ ] `python3 scripts/style_check.py FILE` exits 0. It settles word count,
+      em dashes, interrogative subheads, banned vocabulary, phantom experts,
+      "not just X but Y", dressed-up verbs, unnecessary caveats, paragraph
+      and sentence rhythm, and hedge density. A FAIL is a spec violation, not
+      a suggestion
 - [ ] Anti-tell caps respected (§5): fragments ≤1, tricolons ≤2, zero em dashes
 - [ ] Banned-vocabulary scan clean
 - [ ] Units doubled, acronyms expanded, American spelling
