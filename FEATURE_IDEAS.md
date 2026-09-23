@@ -112,8 +112,6 @@ got there, how orbiters found it, why near-constant sunlight on some ridges
 matters for power, and why the terrain makes landing harder.
 Start with: LRO, Lunar Crater Observation and Sensing Satellite (LCROSS),
 Chandrayaan results, NASA candidate landing regions.
-Overlap: `lunar-south-pole-water-race-july-3` covered competition for the
-region. This piece is the science of why it is there at all.
 
 ### 8. How to keep a moon base powered through a two-week night
 Status: open
