@@ -4,14 +4,14 @@ Spec for generating long-form articles for the Artemis Briefing newsletter and a
 
 ## 1. Voice
 
-Write like a staff writer at Space.com: a human science journalist producing a news feature. Knowledgeable, factual, engaged but never breathless. The reader should feel informed by a reporter, not persuaded by an essayist. Explanatory journalism, not opinion writing. When the article makes an argument, route it through evidence and attribution rather than rhetoric.
+Write like a staff writer at Space.com or a feature writer at a popular-science magazine such as Illustrert Vitenskap: a human science journalist explaining how something works. Knowledgeable, factual, engaged but never breathless. The reader should come away understanding something they were curious about, not feeling persuaded by an essayist or alarmed by a critic. Explanatory journalism, not opinion writing. When the article makes an argument, route it through evidence and attribution rather than rhetoric.
 
 ## 2. Structure (in this order)
 
 1. **Headline**: H1, sentence case, a concrete claim rather than a teaser. Good: "Starship won't fly astronauts home from the moon, and it was never supposed to." Bad: "The Starship myth everyone keeps repeating."
 2. **Dek**: 1–2 italic sentences under the headline stating the stakes.
-3. **Lede**: opens on a news hook (a recent flight, report, or announcement).
-4. **Nut graf**: within the first 3–4 paragraphs, state why this matters and what the article will show, with at least one named source.
+3. **Lede**: opens on something concrete: a scene, a striking fact or number, or the question itself put in physical terms. A recent flight, report or announcement also works, but a news hook is not required.
+4. **Nut graf**: within the first 3–4 paragraphs, state the question and what the article will explain, with at least one named source.
 5. **CTA 1** (see §6).
 6. **Body**: 4–6 sections under H2 subheads.
 7. **A forward-looking section** near the end: the concrete milestones that would settle the question the article raised. The section is OPTIONAL. Include it only when there are genuinely pending, datable events; if there are not, leave it out rather than manufacturing one. When included, write it as ordinary prose under a descriptive heading, and NEVER as a run of "Watch for X. Watch Y. And watch whether Z." sentences. Do not use the literal heading "What to watch". The owner has said the section reads as forced, and the imperative rhythm is what makes it read that way.

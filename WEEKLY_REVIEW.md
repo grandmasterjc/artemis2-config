@@ -17,15 +17,17 @@ images, publishing procedure and editing after publication.
    recent angle nor duplicate a draft someone already wrote this week. If a
    draft for this week already exists, review it instead of writing a new
    one, and say so.
-3. Research the week's angle with web searches, applying the editorial
-   judgment list below. Verify key claims against primary sources.
+3. Pick the topic from `FEATURE_IDEAS.md`: the highest-ranked idea with
+   status `open`, following that file's rules. Research it with web searches,
+   applying the editorial judgment list below, and verify key claims against
+   primary sources. After writing, mark the idea `used` in the same commit.
 4. Write `drafts/{article_id}/article_draft.md` plus a `hero.jpg`, following
    the spec and the image rules here. Run the spec's §8 pre-publish
    checklist against your own draft.
 5. Commit and push the draft to `main`. Pushing a draft folder does not
    publish anything; only `weekly-article-publish.yml` does.
 6. VERIFY the push actually landed on `main`, then report to the owner in
-   Norwegian: the angle and why it is this week's story, a link to the draft
+   Norwegian: the topic and why you picked it, a link to the draft
    on GitHub, the verification result, anything you were unsure about, and a
    question asking whether to publish. Do NOT run the publish workflow.
    The GitHub link to the article MUST appear in every report to the owner:
@@ -95,16 +97,22 @@ Rules the spec does not cover, still enforced here:
 
 ## Editorial judgment
 
-- Currency: run a few web searches for this week's Artemis, Moon and launch
-  news before settling on an angle. The owner has rejected stale angles
-  before, so a hook that was fresh last week is not good enough.
-- Originality and value: does it say something concrete and non-obvious, or is
-  it a generic recap? Prefer curiosity via concrete facts.
-- Contested beats newsworthy. The best-performing piece so far was a
-  fact-check of an argument people were already having in comment threads,
-  not a report of an event. When choosing between two current angles, prefer
-  the one readers disagree about. `SOCIAL_PLAYBOOK.md` has the recipe and the
-  numbers.
+- Format: the Wednesday article is an explanatory feature, written so it
+  could run in a popular-science magazine such as Illustrert Vitenskap. It
+  answers a question many readers already have (how does it work, why is it
+  done this way, what happens to the body, how far along is it) with concrete
+  numbers and clear explanation. The owner decided on 2026-09-23 to move away
+  from news angles and critical framing: do not force a topic into "is
+  NASA/SpaceX late or failing", and do not pick a story because it is
+  contested. Where risks or delays are part of the answer, explain them
+  evenly, as part of how the thing works.
+- Timeliness is optional. A current event (a launch, a test, a new study) can
+  open the article or move a lower idea up the list, but the article still
+  answers the question rather than reporting the event. Run a few web
+  searches for current news so nothing in the piece is out of date.
+- Originality and value: does it teach the reader something concrete and
+  non-obvious, or is it a generic recap? Prefer curiosity via concrete facts,
+  numbers a reader can picture, and how-it-works explanation.
 - Accuracy: are the key claims verifiable against primary sources? Read the
   sources where possible rather than trusting search snippets.
 - Tone: nøkternt, no clickbait, no exclamation points, no emoji.

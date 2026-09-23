@@ -1,8 +1,8 @@
 # Wednesday routine prompt (Ukentlig utkast-gjennomgang)
 
-Paste this into the routine's prompt field in the Routines UI. It replaces the
-previous text. The only substantive change is the LEVERANSE block, which makes
-the run verify that the draft reached `main` instead of assuming it did.
+Copy of the prompt stored in the routine. Keep the two in sync. Changed on
+2026-09-23: topics now come from FEATURE_IDEAS.md as explanatory features
+instead of contested news angles, and the report must always carry the link.
 
 ---
 
@@ -12,14 +12,18 @@ skriver noe. Den er fasiten for stemme, struktur, språk, kildebruk,
 anti-tells, CTA-tekst og lengde.
 
 Hent siste main. Sjekk state/publish_history.txt og drafts/ så du verken
-gjentar en fersk vinkel eller lager et duplikat av noe som allerede ligger
-der. Finnes det allerede et utkast for denne uken, vurder det i stedet for å
+gjentar et tema eller lager et duplikat av noe som allerede ligger der.
+Finnes det allerede et utkast for denne uken, vurder det i stedet for å
 skrive et nytt, og si fra om det.
 
-Research ukens vinkel med websøk. Bruk den redaksjonelle vurderingslista i
-WEEKLY_REVIEW.md, særlig punktet om at omstridt slår nyhetsverdig: den best
-presterende saken hittil var en faktasjekk av et argument folk allerede
-kranglet om i kommentarfelt. Verifiser nøkkelpåstander mot primærkilder.
+Artikkelen er en forklarende feature-artikkel, av typen som kunne stått på
+trykk i Illustrert Vitenskap: den besvarer et spørsmål mange lesere har, med
+konkrete tall og tydelig forklaring av hvordan ting virker. Ta temaet fra
+FEATURE_IDEAS.md: øverste idé med status open, etter reglene i den filen.
+Ikke tving temaet inn i en kritisk nyhetsvinkling («NASA/SpaceX er
+forsinket»). En aktuell hendelse kan brukes som inngang, men er ikke et krav.
+Research temaet med websøk og verifiser nøkkelpåstander mot primærkilder.
+Merk ideen som used i FEATURE_IDEAS.md i samme commit som utkastet.
 
 Skriv drafts/{article_id}/article_draft.md og en hero.jpg etter spec-en og
 bilderegelen. Kjør spec-ens §8-sjekkliste mot ditt eget utkast.
@@ -44,9 +48,10 @@ kjøring er ikke et levert utkast.
 
 Å pushe et utkast publiserer ingenting.
 
-Rapporter til meg PÅ NORSK: hvilken vinkel du valgte og hvorfor det er ukens
-sak, lenke til utkastet på GitHub, resultatet av main-verifiseringen over,
-hva du var usikker på, og spørsmål om det kan publiseres. IKKE kjør
+Rapporter til meg PÅ NORSK: hvilket tema du valgte og hvorfor, lenke til
+utkastet på GitHub, resultatet av main-verifiseringen over, hva du var
+usikker på, og spørsmål om det kan publiseres. Lenken til artikkelen SKAL stå
+både i sluttsvaret og i varselet, hver gang. IKKE kjør
 publiseringsworkflowen.
 
 Hvis noe feiler underveis MÅ du si fra til meg med en gang og forklare hva

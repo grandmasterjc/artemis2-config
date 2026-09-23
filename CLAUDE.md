@@ -7,6 +7,9 @@ reader for articles.
 
 ## Writing articles
 
+The Wednesday article is an explanatory feature. Topics come from
+`FEATURE_IDEAS.md`, a ranked idea bank the owner can reorder.
+
 `ARTICLE_STYLE.md` is the authority on how articles are written: voice,
 structure, language, attribution, anti-tells, CTA copy and length. Read it in
 full before drafting or editing any article, and run its §8 pre-publish
