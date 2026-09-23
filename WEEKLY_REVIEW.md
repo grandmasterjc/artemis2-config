@@ -28,6 +28,9 @@ images, publishing procedure and editing after publication.
    Norwegian: the angle and why it is this week's story, a link to the draft
    on GitHub, the verification result, anything you were unsure about, and a
    question asking whether to publish. Do NOT run the publish workflow.
+   The GitHub link to the article MUST appear in every report to the owner:
+   the final chat reply and any notification alike. Never leave it out of
+   either.
 
 If any step fails, say so to the owner immediately and explain what broke.
 Never end a run silently.
