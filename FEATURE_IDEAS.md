@@ -31,7 +31,7 @@ priority.
 ## The list
 
 ### 1. How a spacesuit survives the moon's temperature swings
-Status: open
+Status: used 2026-09-23 spacesuit-temperature-extremes-september-23
 Question: The lunar surface runs from well above boiling in sunlight to
 colder than anywhere on Earth in shadow. How does a suit keep a person alive
 across both, sometimes within a few steps?
