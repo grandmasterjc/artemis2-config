@@ -133,7 +133,13 @@ Two-phase, so the article is verified visible before anyone is notified:
 4. On the owner's go-ahead, run the same workflow with `phase=announce`
    (FCM push + Kit newsletter + Bluesky/Mastodon/Threads).
 
-After publishing: check how the previous week's social posts performed and
+After publishing, add at least one new idea to `FEATURE_IDEAS.md`, in the
+same format as the existing entries and placed where it belongs in the
+ranking, so the bank grows as fast as it is used. A good source is a
+question the published article raised but did not answer. Mention the new
+idea in the report to the owner.
+
+Also after publishing: check how the previous week's social posts performed and
 append learnings to `SOCIAL_PLAYBOOK.md` (metrics how-to at the bottom of
 that file). Threads must be read manually by the owner — ask for the numbers.
 

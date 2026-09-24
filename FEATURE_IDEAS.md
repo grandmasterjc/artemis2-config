@@ -24,6 +24,9 @@ priority.
 - The "Start with" sources are leads, not facts. Verify every number against
   a primary source before it goes in a draft.
 - After writing, change the status to `used YYYY-MM-DD {article_id}`.
+- After an article is published, add at least one new idea (owner's rule,
+  2026-09-24). A question the published article raised but did not answer
+  is a good source.
 - When you notice a question readers keep asking (comment threads, replies to
   our social posts, search suggestions), add it to the list with a one-line
   reason. Keep the list at 15 or more open ideas.
@@ -94,7 +97,20 @@ and lungs, and how Artemis hardware is designed against it.
 Start with: Apollo 17 crew debriefs, NASA Lunar Surface Innovation
 Consortium dust work, NASA technical reports on regolith.
 
-### 6. How you land on the moon without GPS
+### 6. Why spacesuit gloves are the hardest part of the suit
+Status: open
+Question: Why do astronauts say the gloves are the most punishing part of a
+spacewalk, and what changes for the moon?
+What the piece explains: a pressurized glove fights every finger movement,
+hand fatigue and fingernail damage from spacewalks, why gloves are custom
+fitted, the trade between insulation and dexterity, and how moon gloves must
+also grip tools and cold rocks for hours.
+Start with: NASA studies on spacewalk hand injuries and glove design, NASA
+Astronaut Glove Challenge, Axiom material on AxEMU gloves.
+Added: 2026-09-24, from `spacesuit-temperature-extremes-september-23`,
+which named gloves as a weak point without explaining them.
+
+### 7. How you land on the moon without GPS
 Status: open
 Question: How does a lander know where it is and find a safe spot to touch
 down?
@@ -104,7 +120,7 @@ what recent robotic landers (and the ones that tipped over) taught.
 Start with: NASA Safe and Precise Landing Integrated Capabilities Evolution
 (SPLICE), Intuitive Machines and Firefly mission reports.
 
-### 7. Why NASA is going to the lunar south pole
+### 8. Why NASA is going to the lunar south pole
 Status: open
 Question: Why not go back to where Apollo landed?
 What the piece explains: water ice in permanently shadowed craters, how it
@@ -113,7 +129,7 @@ matters for power, and why the terrain makes landing harder.
 Start with: LRO, Lunar Crater Observation and Sensing Satellite (LCROSS),
 Chandrayaan results, NASA candidate landing regions.
 
-### 8. How to keep a moon base powered through a two-week night
+### 9. How to keep a moon base powered through a two-week night
 Status: open
 Question: The lunar night lasts about 14 Earth days. How do you keep people
 warm and machines running?
@@ -122,7 +138,7 @@ pursuing a small fission reactor, and what "peaks of eternal light" offer.
 Start with: NASA Fission Surface Power project, Moon Base Phase One
 documents.
 
-### 9. Making oxygen and rocket fuel from moon rock
+### 10. Making oxygen and rocket fuel from moon rock
 Status: open
 Question: Can astronauts live off the land on the moon?
 What the piece explains: in-situ resource utilization (ISRU), how oxygen is
@@ -131,7 +147,7 @@ where the technology actually stands.
 Start with: NASA ISRU project pages, Moon to Mars Oxygen and Regolith
 Extraction (MOXIE) results from Mars as the nearest flown precedent.
 
-### 10. What a year in one-sixth gravity does to the human body
+### 11. What a year in one-sixth gravity does to the human body
 Status: open
 Question: We know what weightlessness does. What about partial gravity?
 What the piece explains: bone and muscle loss, fluid shifts and vision,
@@ -142,7 +158,7 @@ neuro-ocular syndrome (SANS).
 Overlap: complements idea 2; if idea 2 has run, go deeper here on gravity
 alone.
 
-### 11. Space radiation and the solar storm that fell between two Apollo flights
+### 12. Space radiation and the solar storm that fell between two Apollo flights
 Status: open
 Question: How dangerous is radiation outside Earth's magnetic field, and what
 happens if the Sun erupts during a mission?
@@ -152,7 +168,7 @@ works, and what Artemis 1's mannequins measured.
 Start with: NASA Space Radiation Analysis Group, Artemis 1 MARE results, NOAA
 Space Weather Prediction Center.
 
-### 12. What time is it on the moon
+### 13. What time is it on the moon
 Status: open
 Question: Clocks run slightly faster on the moon. Why does that matter, and
 who decides lunar time?
@@ -162,7 +178,7 @@ House direction to develop Coordinated Lunar Time.
 Start with: White House Office of Science and Technology Policy memo (April
 2024), NIST and NASA work on lunar timekeeping.
 
-### 13. Who owns the moon
+### 14. Who owns the moon
 Status: open
 Question: Can a country or a company claim land or resources on the moon?
 What the piece explains: the 1967 Outer Space Treaty, the Artemis Accords and
@@ -171,7 +187,7 @@ open questions about mining.
 Start with: United Nations Office for Outer Space Affairs, NASA Artemis
 Accords signatory list.
 
-### 14. How long it takes to get to the moon, and why the route matters
+### 15. How long it takes to get to the moon, and why the route matters
 Status: open
 Question: Apollo took three days. Why does an Artemis mission look so
 different on a map?
@@ -181,7 +197,7 @@ routes, and how Artemis 2 flew.
 Start with: NASA Artemis 2 mission overview, trajectory papers on
 near-rectilinear halo orbits.
 
-### 15. How astronauts train for the moon
+### 16. How astronauts train for the moon
 Status: open
 Question: How do you practice walking, working and doing geology on the moon
 while standing on Earth?
@@ -191,7 +207,7 @@ controllers.
 Start with: NASA Johnson Space Center training releases, Desert Research and
 Technology Studies (Desert RATS) and JETT field tests.
 
-### 16. How a moon rocket's size is set by one equation
+### 17. How a moon rocket's size is set by one equation
 Status: open
 Question: Why do moon rockets have to be so enormous?
 What the piece explains: the rocket equation in plain language, why most of a
@@ -199,7 +215,7 @@ rocket is propellant, staging, and why refueling in orbit changes the math.
 Start with: NASA educational material on the Tsiolkovsky equation, SLS and
 Starship published figures.
 
-### 17. What astronauts will actually do on the lunar surface
+### 18. What astronauts will actually do on the lunar surface
 Status: open
 Question: Once they land, what is the work?
 What the piece explains: the science goals, sample collection and the tools
@@ -208,7 +224,7 @@ by hour.
 Start with: Artemis 3 Science Definition Team report, NASA Artemis surface
 science pages.
 
-### 18. Why we can't just rebuild Apollo
+### 19. Why we can't just rebuild Apollo
 Status: open
 Question: We went to the moon in 1969. Why is it taking so long now?
 What the piece explains: what Apollo cost in today's money, the lost
