@@ -1,6 +1,17 @@
 {
   "updates": [
     {
+      "id": "spacesuit-temperature-extremes-september-23",
+      "title": "A moon suit's hardest job is getting rid of body heat, even next to craters colder than Pluto",
+      "subtitle": "The lunar surface runs from hotter than boiling water to colder than Pluto. How does one suit keep an astronaut alive across both, and why is the heat inside it the bigger problem?",
+      "date": "2026-09-24T10:37:16Z",
+      "mission": "artemis3",
+      "premium": false,
+      "hero_image": "https://grandmasterjc.github.io/artemis2-config/updates/images/spacesuit-temperature-extremes-september-23.jpg",
+      "summary": "The lunar surface runs from hotter than boiling water to colder than Pluto. How does one suit keep an astronaut alive across both, and why is the heat inside it the bigger problem?",
+      "author": "Joachim Gresslien"
+    },
+    {
       "id": "artemis3-lander-rehearsal-september-10",
       "title": "Artemis 3 astronauts won't enter Starship, even if Orion docks with it",
       "subtitle": "Can a moon-lander rehearsal prove enough if the crew never goes inside? The two commercial spacecraft in the mission plan will undergo different tests, with different implications for a lunar landing.",
