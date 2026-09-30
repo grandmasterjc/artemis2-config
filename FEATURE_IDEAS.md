@@ -48,7 +48,7 @@ Overlap: `artemis-suit-schedule-gap-september-2` covered the suit's schedule,
 not its engineering. Keep this one about how the suit works.
 
 ### 2. How NASA plans to protect astronauts' health on the moon
-Status: open
+Status: used 2026-09-30 moon-astronaut-health-hazards-september-30
 Question: What does living on the moon do to a human body, and what does
 NASA actually do about it?
 What the piece explains: NASA's Human Research Program groups the risks of
