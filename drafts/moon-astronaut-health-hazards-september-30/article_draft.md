@@ -10,7 +10,7 @@ push_title: "What does the moon do to the human body?"
 push_body: "Radiation is the hazard NASA has measured most closely, and the numbers from Orion are lower than many readers expect."
 ---
 
-Outside Earth's magnetic field, radiation comes straight through the walls of a spacecraft. It cannot be seen or felt. The astronauts who flew Artemis 2 around the moon in April wore small dosimeter badges to record it, and NASA has said it will publish its first interpretation of their health data later this year, according to reporting by the astronomy site Starlust.
+Outside Earth's magnetic field, radiation comes straight through the walls of a spacecraft. It cannot be seen or felt. The astronauts who flew Artemis 2 around the moon in April wore small dosimeter badges to record it, and NASA has said it will publish its first interpretation of their health data later this year.
 
 That mission was the first crewed flight beyond low Earth orbit in more than 50 years, and it raised a question many readers have asked since. What does going to the moon do to a human body, and what is NASA doing about it? The agency's Human Research Program answers with a framework of five hazards. This article takes them in turn, starting with the one that has the best data.
 
