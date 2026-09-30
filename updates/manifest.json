@@ -1,6 +1,17 @@
 {
   "updates": [
     {
+      "id": "starship-flight-14-orbit-artemis-september-30",
+      "title": "Starship reached orbit on its 14th flight, but the 2028 moon landing still waits on three unfinished steps",
+      "subtitle": "SpaceX's ship circled Earth for the first time on Sept. 28 with an engine out. That settles one requirement for Artemis and leaves the rest of NASA's schedule with little margin.",
+      "date": "2026-09-30T17:53:31Z",
+      "mission": "artemis3",
+      "premium": false,
+      "hero_image": "https://grandmasterjc.github.io/artemis2-config/updates/images/starship-flight-14-orbit-artemis-september-30.jpg",
+      "summary": "SpaceX's ship circled Earth for the first time on Sept. 28 with an engine out. That settles one requirement for Artemis and leaves the rest of NASA's schedule with little margin.",
+      "author": "Joachim Gresslien"
+    },
+    {
       "id": "spacesuit-temperature-extremes-september-23",
       "title": "A moon suit's hardest job is getting rid of body heat, even next to craters colder than Pluto",
       "subtitle": "The lunar surface runs from hotter than boiling water to colder than Pluto. How does one suit keep an astronaut alive across both, and why is the heat inside it the bigger problem?",
