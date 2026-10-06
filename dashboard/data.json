@@ -3,13 +3,6 @@
     "status": "ok",
     "daily_users": [
       {
-        "date": "2026-07-07",
-        "active": 80,
-        "new": 25,
-        "views": 99,
-        "sessions": 91
-      },
-      {
         "date": "2026-07-08",
         "active": 219,
         "new": 30,
@@ -631,37 +624,44 @@
         "new": 23,
         "views": 114,
         "sessions": 99
+      },
+      {
+        "date": "2026-10-05",
+        "active": 56,
+        "new": 19,
+        "views": 101,
+        "sessions": 65
       }
     ],
     "latest": {
-      "date": "2026-10-04",
-      "active": 94,
-      "new": 23,
-      "views": 114,
-      "sessions": 99
+      "date": "2026-10-05",
+      "active": 56,
+      "new": 19,
+      "views": 101,
+      "sessions": 65
     },
-    "total_active_28d": 2302,
-    "total_new_28d": 447,
-    "total_sessions_28d": 2525,
-    "total_views_28d": 2814,
-    "avg_dau_7d": 97.7,
-    "avg_dau_28d": 82.2,
+    "total_active_28d": 2279,
+    "total_new_28d": 450,
+    "total_sessions_28d": 2504,
+    "total_views_28d": 2819,
+    "avg_dau_7d": 93.9,
+    "avg_dau_28d": 81.4,
     "top_countries_30d": [
       {
         "country": "United States",
-        "active": 757
+        "active": 763
       },
       {
         "country": "United Kingdom",
-        "active": 210
+        "active": 206
       },
       {
         "country": "Canada",
-        "active": 106
+        "active": 104
       },
       {
         "country": "Germany",
-        "active": 98
+        "active": 100
       },
       {
         "country": "Spain",
@@ -672,11 +672,11 @@
         "active": 38
       },
       {
-        "country": "Netherlands",
-        "active": 34
+        "country": "Italy",
+        "active": 33
       },
       {
-        "country": "Italy",
+        "country": "Netherlands",
         "active": 33
       },
       {
@@ -685,18 +685,18 @@
       },
       {
         "country": "Mexico",
-        "active": 14
+        "active": 16
       }
     ],
     "push_events_30d": {
-      "notification_receive": 931,
-      "notification_open": 359,
-      "notification_dismiss": 140,
+      "notification_receive": 927,
+      "notification_open": 356,
+      "notification_dismiss": 134,
       "notification_toggled": 5,
       "notification_foreground": 4
     },
-    "push_open_rate_30d": 0.989,
-    "fetched_at": "2026-10-05T12:10:15.311266+00:00"
+    "push_open_rate_30d": 0.9889,
+    "fetched_at": "2026-10-06T11:53:58.321090+00:00"
   },
   "kit": {
     "status": "ok",
@@ -764,7 +764,7 @@
         "public": true
       }
     ],
-    "fetched_at": "2026-10-05T12:10:17.096492+00:00"
+    "fetched_at": "2026-10-06T11:53:59.266093+00:00"
   },
   "asc": {
     "status": "ok",
@@ -942,12 +942,12 @@
       "new_subscribers_30d": 0,
       "new_installs_30d": 0
     },
-    "fetched_at": "2026-10-05T12:10:48.187377+00:00"
+    "fetched_at": "2026-10-06T11:54:33.975481+00:00"
   },
   "play": {
     "status": "ok",
-    "window_start": "2026-09-06",
-    "window_end": "2026-10-05",
+    "window_start": "2026-09-07",
+    "window_end": "2026-10-06",
     "package": "no.bitfactory.artemisii.tracker",
     "by_product": {},
     "by_day": [],
@@ -965,10 +965,10 @@
     "followers": 12,
     "following": 12,
     "posts_total": 122,
-    "posts_7d": 5,
+    "posts_7d": 4,
     "likes_7d": 3,
     "reposts_7d": 1,
-    "fetched_at": "2026-10-05T12:10:50.823535+00:00"
+    "fetched_at": "2026-10-06T11:54:35.895987+00:00"
   },
   "mastodon": {
     "status": "ok",
@@ -980,7 +980,7 @@
     "posts_7d": 3,
     "favs_7d": 0,
     "boosts_7d": 0,
-    "fetched_at": "2026-10-05T12:10:52.690926+00:00"
+    "fetched_at": "2026-10-06T11:54:37.356845+00:00"
   },
   "threads": {
     "status": "ok",
@@ -991,11 +991,11 @@
     "likes_7d": 10,
     "comments_7d": 2,
     "reposts_7d": 0,
-    "fetched_at": "2026-10-05T12:10:55.084647+00:00"
+    "fetched_at": "2026-10-06T11:54:38.785409+00:00"
   },
   "instagram": {
     "status": "error",
-    "error": "HTTP 400: {\"error\":{\"message\":\"Error validating access token: Session has expired on Wednesday, 12-Aug-26 08:57:14 PDT. The current time is Monday, 05-Oct-26 05:10:55 PDT.\",\"type\":\"OAuthException\",\"code\":190,\"e"
+    "error": "HTTP 400: {\"error\":{\"message\":\"Error validating access token: Session has expired on Wednesday, 12-Aug-26 08:57:14 PDT. The current time is Tuesday, 06-Oct-26 04:54:38 PDT.\",\"type\":\"OAuthException\",\"code\":190,\""
   },
   "push": {
     "status": "ok",
@@ -1082,7 +1082,7 @@
         "message_id": "projects/artemis-tracker-665d8/messages/7200674829871470364"
       }
     ],
-    "fetched_at": "2026-10-05T12:10:55.330262+00:00"
+    "fetched_at": "2026-10-06T11:54:38.920752+00:00"
   },
   "roadmap": {
     "status": "ok",
@@ -1170,7 +1170,7 @@
         "note": "durable across sandbox resets"
       }
     ],
-    "fetched_at": "2026-10-05T12:10:55.330517+00:00"
+    "fetched_at": "2026-10-06T11:54:38.921070+00:00"
   },
   "targets": {
     "status": "ok",
@@ -1264,5 +1264,5 @@
       "implied_subs": 5200
     }
   },
-  "generated_at": "2026-10-05T12:10:55.330527+00:00"
+  "generated_at": "2026-10-06T11:54:38.921082+00:00"
 }
