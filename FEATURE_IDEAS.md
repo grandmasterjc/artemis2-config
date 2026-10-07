@@ -61,7 +61,7 @@ NASA radiation dosimetry from Artemis 1 (MARE, Helga and Zohar), Apollo
 medical reports.
 
 ### 3. The five biggest risks in the Artemis program
-Status: used 2026-10-07 artemis-five-biggest-risks-october-7
+Status: open
 Question: What could realistically go wrong, and how is each risk being
 handled?
 What the piece explains: an even-handed ranking with the reasoning behind
@@ -88,7 +88,7 @@ fact-check. Write this as a hardware comparison and an update on what has
 changed since August, and check that enough has changed to justify it.
 
 ### 5. Why moon dust is one of the hardest problems on the surface
-Status: open
+Status: used 2026-10-07 moon-dust-apollo-artemis-october-7
 Question: Why did Apollo astronauts call lunar dust one of their biggest
 problems, and what is different this time?
 What the piece explains: how dust forms without wind or water, why the grains
