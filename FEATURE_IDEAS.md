@@ -61,7 +61,7 @@ NASA radiation dosimetry from Artemis 1 (MARE, Helga and Zohar), Apollo
 medical reports.
 
 ### 3. The five biggest risks in the Artemis program
-Status: open
+Status: used 2026-10-07 artemis-five-biggest-risks-october-7
 Question: What could realistically go wrong, and how is each risk being
 handled?
 What the piece explains: an even-handed ranking with the reasoning behind
