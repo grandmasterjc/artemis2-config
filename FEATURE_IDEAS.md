@@ -233,6 +233,13 @@ visiting), and the safety standards of today.
 Start with: NASA history office, budget data adjusted for inflation,
 congressional records.
 
+### 20. Why a moon landing blasts its own landing site with rocks
+Status: open
+Question: A lander's engine throws dust and grains at high speed. What does that do to the lander, to hardware nearby and to the site itself?
+What the piece explains: why the lack of air sends grains out low and fast, what the Apollo landings showed (the dust that covered Surveyor 3), why a large lander such as Starship is a bigger version of the problem, and what NASA is testing to predict and reduce it, such as landing pads and plume-surface interaction experiments.
+Start with: NASA technical reports on plume-surface interaction, Gaier's Apollo dust report (NASA/TM-2005-213610), NASA Lunar Surface Innovation Consortium dust work.
+Added: 2026-10-08, from `moon-dust-apollo-artemis-october-7`, which said landings throw up the most dust but did not explain the physics.
+
 ## Used
 
 (Move entries here, or mark them in place, once an article has been written.)
