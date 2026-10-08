@@ -1,6 +1,17 @@
 {
   "updates": [
     {
+      "id": "moon-dust-apollo-artemis-october-7",
+      "title": "Moon dust wore through Apollo's suits and degraded their seals, and Artemis has only begun to test the fixes",
+      "subtitle": "The grains are glassy, sharp and electrically charged, and brushes that worked on Earth failed on the moon. Here is why the dust does what it does and how NASA plans to keep it out.",
+      "date": "2026-10-08T14:10:29Z",
+      "mission": "artemis3",
+      "premium": false,
+      "hero_image": "https://grandmasterjc.github.io/artemis2-config/updates/images/moon-dust-apollo-artemis-october-7.jpg",
+      "summary": "The grains are glassy, sharp and electrically charged, and brushes that worked on Earth failed on the moon. Here is why the dust does what it does and how NASA plans to keep it out.",
+      "author": "Joachim Gresslien"
+    },
+    {
       "id": "starship-flight-14-orbit-artemis-september-30",
       "title": "Starship reached orbit on its 14th flight, but the 2028 moon landing still waits on three unfinished steps",
       "subtitle": "SpaceX's ship circled Earth for the first time on Sept. 28 with an engine out. That settles one requirement for Artemis and leaves the rest of NASA's schedule with little margin.",

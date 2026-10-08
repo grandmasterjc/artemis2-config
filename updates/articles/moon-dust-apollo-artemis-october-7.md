@@ -1,0 +1,55 @@
+On the third and last moonwalk of Apollo 17, in December 1972, Gene Cernan spent so much time brushing dust off suits that he later called it the most difficult job of all the closeouts. He said over the radio that he was not going to do much more dusting after he left. Three minutes later: "Boy, you got dirty today. I think we're just going to have to live with it."
+
+Apollo crews tried a nylon brush, wet wipes and, later, a small vacuum cleaner. In his Apollo 17 technical debriefing, Cernan said he thought "we can overcome other physiological or physical or mechanical problems except dust." Why is moon dust so much worse than dirt on Earth, and what is different on Artemis?
+
+---
+
+**Get the next briefing in your inbox. [Subscribe free →](https://artemis-briefing.kit.com)**
+
+---
+
+## Grains without weathering
+
+Lunar soil is called regolith, and it was not made the way soil is made on Earth. According to a National Aeronautics and Space Administration (NASA) overview of the regolith, it forms only by mechanical breakup: meteoroids smashing rock, and particles from the sun and stars chipping at it. The layer is about 4 to 5 meters (13 to 16 feet) thick on the dark lava plains and 10 to 15 meters (33 to 49 feet) on the highlands.
+
+On Earth, wind and water round the edges of grains. The moon has neither. In the NASA overview's words, lunar soil grains "tend to be sharp with fresh fractured surfaces." Most typical lunar soil has a mean grain size of 45 to 100 micrometers, about the width of a human hair, and roughly 10 percent of it is finer than 10 micrometers. That finest fraction is what researchers call dust.
+
+Impacts add a second ingredient. A micrometeoroid strike melts a patch of soil, and the melt cools into glass that binds nearby fragments together. These pieces are called agglutinates. According to the overview they are full of tiny bubbles and carry specks of metallic iron only nanometers across. Broken glass makes an abrasive.
+
+## A clinging charge
+
+Sharpness explains the wear. Why the dust would not come off is a different question. NASA describes lunar dust as electrostatic, so it "clings to anything that carries a charge." A 2005 paper by T. J. Stubbs and colleagues at NASA's Goddard Space Flight Center named three linked problems: adhesion and abrasion, electric fields near the surface, and how dust moves.
+
+Dust moves differently on the moon, too. James Gaier of NASA's Glenn Research Center reviewed the mission records of all six Apollo landings. With essentially no atmosphere, he wrote, even the finest particles fly on ballistic paths and fall at the same rate. There is no lingering haze. A landing engine instead throws grains outward in a fast, low sheet. Landing and takeoff of the lunar module moved by far the most dust, more than walking or driving.
+
+## Eight hours of wear
+
+Gaier's report catalogs nine kinds of damage from Apollo, and the mechanical ones are the most concrete. Pete Conrad of Apollo 12 reported that the suits were more worn after eight hours on the surface than their training suits were after 100 hours. The outer layer had worn through to the Mylar insulation above the boot. On Apollo 16, dust scratched the gauge dials until they could not be read. Harrison Schmitt's sun shade on Apollo 17 was scratched enough that he could not see out in some directions.
+
+Seals suffered next. After Conrad's first moonwalk, his suit leaked 0.15 pounds per square inch per minute (about 1 kilopascal), and after the second, 0.25 (1.7 kilopascals). The safety limit was 0.30 (2.1 kilopascals). Gaier wrote that it is doubtful a third moonwalk could have been performed. On the same mission the environmental and gas sample seals failed because of dust, and the samples were contaminated by the time they reached Earth.
+
+Heat was a third victim. On Apollo 12, a magnetometer ran about 68 degrees Fahrenheit (38 degrees Celsius) hotter than expected because dust coated its thermal surfaces. Rover batteries on Apollo 15, 16 and 17 ran above their limits for the same reason.
+
+Ground tests had predicted that brushing would clear radiators. It did not.
+
+## Dust in the cabin
+
+The astronauts could not leave the dust outside. It rode into the lunar module on their suits and boots. Gaier reports that the Apollo 12 crew were covered in it when they undressed on the way home, and that Apollo 15's David Scott said the smell was a bit like gunpowder.
+
+Schmitt described what happened when he took off his helmet after his first moonwalk. Almost immediately he noticed what he compared to hay fever symptoms: a stuffy nose and sinuses, strong enough to affect his speech and breathing. After about two hours inside the cabin they faded, and they were milder after the next two walks. He wondered whether he had developed a mucous protection or some quick immunity. Apollo crews stayed on the surface for three days at most.
+
+## Artemis countermeasures
+
+Gaier's central finding was that ground tests consistently underestimated the dust problems, so testing has to happen on the moon itself. NASA's Electrodynamic Dust Shield flew to the surface on Firefly Aerospace's Blue Ghost Mission 1, which ended on March 16, 2025. It uses electrodynamic forces to lift and remove dust, and NASA reported that it cleared dust from glass and a thermal radiator surface. The agency lists spacesuits, boots and helmet visors among future uses.
+
+A 2020 NASA dust-mitigation briefing named the same weak points Apollo found: viewports, radiators, fabrics, mechanisms, and seals at suit interfaces. It also listed landing pads and dust-free work zones as needs, which matches Gaier's finding that landings throw up the most dust. Axiom Space, which is building the Artemis suit, describes its white outer layer as protection against dust as well as heat.
+
+The first crewed test of the suit's defenses comes when astronauts walk on the surface, which NASA plans for Artemis 4 near the south pole.
+
+## The nylon brush
+
+Gaier notes that the nylon brush Apollo carried removed coarse grains well and fine ones poorly. The fine ones were the problem. Artemis hardware is being designed with them as a requirement, and the measure of it will be a suit that returns from the surface with its seals still holding pressure.
+
+If you want to follow the flights that answer these questions as they happen, that is what our companion app Liftoff is built for. Live countdowns, real-time status and one-tap access to the official webcasts for every launch worldwide, free on the App Store: [Liftoff — Rocket & Space Launch](https://apps.apple.com/no/app/liftoff-rocket-space-launch/id6776392285).
+
+Want more than the weekly briefing? The free email edition adds a short "Week Ahead" every Sunday, launch windows and milestones to watch, exclusive to email. [Subscribe to the Artemis Briefing →](https://artemis-briefing.kit.com)
