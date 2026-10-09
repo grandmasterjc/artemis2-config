@@ -3,13 +3,6 @@
     "status": "ok",
     "daily_users": [
       {
-        "date": "2026-07-10",
-        "active": 95,
-        "new": 21,
-        "views": 123,
-        "sessions": 108
-      },
-      {
         "date": "2026-07-11",
         "active": 92,
         "new": 31,
@@ -631,37 +624,44 @@
         "new": 15,
         "views": 81,
         "sessions": 75
+      },
+      {
+        "date": "2026-10-08",
+        "active": 146,
+        "new": 15,
+        "views": 170,
+        "sessions": 161
       }
     ],
     "latest": {
-      "date": "2026-10-07",
-      "active": 66,
+      "date": "2026-10-08",
+      "active": 146,
       "new": 15,
-      "views": 81,
-      "sessions": 75
+      "views": 170,
+      "sessions": 161
     },
-    "total_active_28d": 2279,
-    "total_new_28d": 446,
-    "total_sessions_28d": 2503,
-    "total_views_28d": 2823,
-    "avg_dau_7d": 75.3,
-    "avg_dau_28d": 81.4,
+    "total_active_28d": 2228,
+    "total_new_28d": 444,
+    "total_sessions_28d": 2441,
+    "total_views_28d": 2763,
+    "avg_dau_7d": 79.0,
+    "avg_dau_28d": 79.6,
     "top_countries_30d": [
       {
         "country": "United States",
-        "active": 758
+        "active": 770
       },
       {
         "country": "United Kingdom",
-        "active": 204
+        "active": 207
       },
       {
         "country": "Canada",
-        "active": 98
+        "active": 102
       },
       {
         "country": "Germany",
-        "active": 97
+        "active": 99
       },
       {
         "country": "Australia",
@@ -669,7 +669,7 @@
       },
       {
         "country": "Spain",
-        "active": 37
+        "active": 35
       },
       {
         "country": "Italy",
@@ -677,32 +677,38 @@
       },
       {
         "country": "Netherlands",
-        "active": 32
+        "active": 33
       },
       {
         "country": "France",
-        "active": 24
+        "active": 25
       },
       {
         "country": "Mexico",
-        "active": 16
+        "active": 15
       }
     ],
     "push_events_30d": {
-      "notification_receive": 926,
-      "notification_open": 354,
-      "notification_dismiss": 132,
-      "notification_toggled": 5,
-      "notification_foreground": 4
+      "notification_receive": 1210,
+      "notification_open": 425,
+      "notification_dismiss": 162,
+      "notification_foreground": 5,
+      "notification_toggled": 5
     },
-    "push_open_rate_30d": 0.9888,
-    "fetched_at": "2026-10-08T11:53:51.903006+00:00"
+    "push_open_rate_30d": 0.9884,
+    "fetched_at": "2026-10-09T11:45:31.827329+00:00"
   },
   "kit": {
     "status": "ok",
     "active_subscribers": 37,
     "inactive_subscribers": 17,
     "recent_broadcasts": [
+      {
+        "id": 26308932,
+        "subject": "Why was moon dust Apollo's worst problem?",
+        "send_at": "2026-10-08T19:30:00Z",
+        "public": true
+      },
       {
         "id": 26230380,
         "subject": "The Week Ahead, Oct 5 to 11: Starship has reached orbit, and Artemis 3's boosters are fully stacked",
@@ -756,15 +762,9 @@
         "subject": "The Artemis rocket is on schedule. The suit may not be.",
         "send_at": "2026-09-03T21:08:57Z",
         "public": true
-      },
-      {
-        "id": 25671622,
-        "subject": "The Week Ahead, Aug 31\u2013Sep 6: NASA starts bolting engines into Artemis 3, and Starship's tower catch waits months longer",
-        "send_at": "2026-08-30T16:00:00Z",
-        "public": true
       }
     ],
-    "fetched_at": "2026-10-08T11:53:53.437335+00:00"
+    "fetched_at": "2026-10-09T11:45:32.924605+00:00"
   },
   "asc": {
     "status": "ok",
@@ -942,12 +942,12 @@
       "new_subscribers_30d": 0,
       "new_installs_30d": 0
     },
-    "fetched_at": "2026-10-08T11:54:23.601372+00:00"
+    "fetched_at": "2026-10-09T11:46:07.433389+00:00"
   },
   "play": {
     "status": "ok",
-    "window_start": "2026-09-09",
-    "window_end": "2026-10-08",
+    "window_start": "2026-09-10",
+    "window_end": "2026-10-09",
     "package": "no.bitfactory.artemisii.tracker",
     "by_product": {},
     "by_day": [],
@@ -964,11 +964,11 @@
     "handle": "artemistracker.app",
     "followers": 12,
     "following": 12,
-    "posts_total": 122,
-    "posts_7d": 0,
+    "posts_total": 125,
+    "posts_7d": 3,
     "likes_7d": 0,
     "reposts_7d": 0,
-    "fetched_at": "2026-10-08T11:54:25.786747+00:00"
+    "fetched_at": "2026-10-09T11:46:09.553500+00:00"
   },
   "mastodon": {
     "status": "ok",
@@ -976,30 +976,30 @@
     "username": "artemistracker",
     "followers": 1,
     "following": 4,
-    "posts_total": 85,
-    "posts_7d": 0,
+    "posts_total": 88,
+    "posts_7d": 3,
     "favs_7d": 0,
     "boosts_7d": 0,
-    "fetched_at": "2026-10-08T11:54:27.720888+00:00"
+    "fetched_at": "2026-10-09T11:46:11.091624+00:00"
   },
   "threads": {
     "status": "ok",
     "handle": "@artemistracker.app",
     "username": "artemistracker.app",
-    "followers": 20,
-    "posts_7d": 0,
-    "likes_7d": 0,
-    "comments_7d": 0,
+    "followers": 23,
+    "posts_7d": 1,
+    "likes_7d": 12,
+    "comments_7d": 3,
     "reposts_7d": 0,
-    "fetched_at": "2026-10-08T11:54:28.844165+00:00"
+    "fetched_at": "2026-10-09T11:46:12.586857+00:00"
   },
   "instagram": {
     "status": "error",
-    "error": "HTTP 400: {\"error\":{\"message\":\"Error validating access token: Session has expired on Wednesday, 12-Aug-26 08:57:14 PDT. The current time is Thursday, 08-Oct-26 04:54:29 PDT.\",\"type\":\"OAuthException\",\"code\":190,"
+    "error": "HTTP 400: {\"error\":{\"message\":\"Error validating access token: Session has expired on Wednesday, 12-Aug-26 08:57:14 PDT. The current time is Friday, 09-Oct-26 04:46:12 PDT.\",\"type\":\"OAuthException\",\"code\":190,\"e"
   },
   "push": {
     "status": "ok",
-    "total_pushes": 18,
+    "total_pushes": 19,
     "recent": [
       {
         "timestamp_utc": "2026-06-09T17:23:18.056515+00:00",
@@ -1082,7 +1082,7 @@
         "message_id": "projects/artemis-tracker-665d8/messages/7200674829871470364"
       }
     ],
-    "fetched_at": "2026-10-08T11:54:29.157498+00:00"
+    "fetched_at": "2026-10-09T11:46:12.797089+00:00"
   },
   "roadmap": {
     "status": "ok",
@@ -1170,7 +1170,7 @@
         "note": "durable across sandbox resets"
       }
     ],
-    "fetched_at": "2026-10-08T11:54:29.157779+00:00"
+    "fetched_at": "2026-10-09T11:46:12.797429+00:00"
   },
   "targets": {
     "status": "ok",
@@ -1264,5 +1264,5 @@
       "implied_subs": 5200
     }
   },
-  "generated_at": "2026-10-08T11:54:29.157788+00:00"
+  "generated_at": "2026-10-09T11:46:12.797442+00:00"
 }
