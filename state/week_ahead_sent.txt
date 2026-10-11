@@ -8,3 +8,4 @@ drafts/week-ahead/2026-09-13.md
 drafts/week-ahead/2026-09-20.md
 drafts/week-ahead/2026-09-27.md
 drafts/week-ahead/2026-10-04.md
+drafts/week-ahead/2026-10-11.md
