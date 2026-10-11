@@ -3,13 +3,6 @@
     "status": "ok",
     "daily_users": [
       {
-        "date": "2026-07-12",
-        "active": 104,
-        "new": 21,
-        "views": 122,
-        "sessions": 109
-      },
-      {
         "date": "2026-07-13",
         "active": 108,
         "new": 35,
@@ -627,82 +620,95 @@
       },
       {
         "date": "2026-10-09",
-        "active": 78,
+        "active": 80,
         "new": 14,
-        "views": 102,
-        "sessions": 86
+        "views": 103,
+        "sessions": 88
+      },
+      {
+        "date": "2026-10-10",
+        "active": 80,
+        "new": 12,
+        "views": 97,
+        "sessions": 89
       }
     ],
     "latest": {
-      "date": "2026-10-09",
-      "active": 78,
-      "new": 14,
-      "views": 102,
-      "sessions": 86
+      "date": "2026-10-10",
+      "active": 80,
+      "new": 12,
+      "views": 97,
+      "sessions": 89
     },
     "total_active_28d": 2212,
-    "total_new_28d": 443,
-    "total_sessions_28d": 2416,
-    "total_views_28d": 2741,
-    "avg_dau_7d": 79.0,
+    "total_new_28d": 438,
+    "total_sessions_28d": 2417,
+    "total_views_28d": 2722,
+    "avg_dau_7d": 81.9,
     "avg_dau_28d": 79.0,
     "top_countries_30d": [
       {
         "country": "United States",
-        "active": 767
+        "active": 738
       },
       {
         "country": "United Kingdom",
-        "active": 210
+        "active": 198
       },
       {
         "country": "Canada",
-        "active": 106
+        "active": 103
       },
       {
         "country": "Germany",
-        "active": 98
+        "active": 97
       },
       {
         "country": "Australia",
-        "active": 39
+        "active": 35
       },
       {
         "country": "Spain",
         "active": 34
       },
       {
-        "country": "Italy",
-        "active": 33
-      },
-      {
         "country": "Netherlands",
         "active": 33
       },
       {
-        "country": "France",
-        "active": 25
+        "country": "Italy",
+        "active": 32
       },
       {
-        "country": "Mexico",
-        "active": 16
+        "country": "France",
+        "active": 22
+      },
+      {
+        "country": "Switzerland",
+        "active": 15
       }
     ],
     "push_events_30d": {
-      "notification_receive": 1218,
-      "notification_open": 433,
-      "notification_dismiss": 175,
-      "notification_foreground": 6,
+      "notification_receive": 921,
+      "notification_open": 318,
+      "notification_dismiss": 163,
+      "notification_foreground": 5,
       "notification_toggled": 5
     },
-    "push_open_rate_30d": 0.9863,
-    "fetched_at": "2026-10-10T11:03:12.552393+00:00"
+    "push_open_rate_30d": 0.9845,
+    "fetched_at": "2026-10-11T11:20:09.343233+00:00"
   },
   "kit": {
     "status": "ok",
     "active_subscribers": 37,
     "inactive_subscribers": 17,
     "recent_broadcasts": [
+      {
+        "id": 26349211,
+        "subject": "The Week Ahead, Oct 12 to 18: A cargo Dragon heads for the ISS, and Artemis II's full science archive is public",
+        "send_at": "2026-10-11T16:00:00Z",
+        "public": true
+      },
       {
         "id": 26308932,
         "subject": "Why was moon dust Apollo's worst problem?",
@@ -756,15 +762,9 @@
         "subject": "The Week Ahead, Sep 7\u201313: A Dragon leak pulls Crew-13 off the pad, and Starship clears its last static fire before liftoff",
         "send_at": "2026-09-06T16:00:00Z",
         "public": true
-      },
-      {
-        "id": 25750911,
-        "subject": "The Artemis rocket is on schedule. The suit may not be.",
-        "send_at": "2026-09-03T21:08:57Z",
-        "public": true
       }
     ],
-    "fetched_at": "2026-10-10T11:03:13.972168+00:00"
+    "fetched_at": "2026-10-11T11:20:10.648598+00:00"
   },
   "asc": {
     "status": "ok",
@@ -942,12 +942,12 @@
       "new_subscribers_30d": 0,
       "new_installs_30d": 0
     },
-    "fetched_at": "2026-10-10T11:03:42.515093+00:00"
+    "fetched_at": "2026-10-11T11:20:48.513594+00:00"
   },
   "play": {
     "status": "ok",
-    "window_start": "2026-09-11",
-    "window_end": "2026-10-10",
+    "window_start": "2026-09-12",
+    "window_end": "2026-10-11",
     "package": "no.bitfactory.artemisii.tracker",
     "by_product": {},
     "by_day": [],
@@ -968,7 +968,7 @@
     "posts_7d": 3,
     "likes_7d": 0,
     "reposts_7d": 0,
-    "fetched_at": "2026-10-10T11:03:45.223520+00:00"
+    "fetched_at": "2026-10-11T11:20:50.862073+00:00"
   },
   "mastodon": {
     "status": "ok",
@@ -980,7 +980,7 @@
     "posts_7d": 3,
     "favs_7d": 0,
     "boosts_7d": 0,
-    "fetched_at": "2026-10-10T11:03:47.088787+00:00"
+    "fetched_at": "2026-10-11T11:20:52.097517+00:00"
   },
   "threads": {
     "status": "ok",
@@ -991,11 +991,11 @@
     "likes_7d": 14,
     "comments_7d": 5,
     "reposts_7d": 0,
-    "fetched_at": "2026-10-10T11:03:49.251959+00:00"
+    "fetched_at": "2026-10-11T11:20:53.779262+00:00"
   },
   "instagram": {
     "status": "error",
-    "error": "HTTP 400: {\"error\":{\"message\":\"Error validating access token: Session has expired on Wednesday, 12-Aug-26 08:57:14 PDT. The current time is Saturday, 10-Oct-26 04:03:49 PDT.\",\"type\":\"OAuthException\",\"code\":190,"
+    "error": "HTTP 400: {\"error\":{\"message\":\"Error validating access token: Session has expired on Wednesday, 12-Aug-26 08:57:14 PDT. The current time is Sunday, 11-Oct-26 04:20:53 PDT.\",\"type\":\"OAuthException\",\"code\":190,\"e"
   },
   "push": {
     "status": "ok",
@@ -1082,7 +1082,7 @@
         "message_id": "projects/artemis-tracker-665d8/messages/7200674829871470364"
       }
     ],
-    "fetched_at": "2026-10-10T11:03:49.717356+00:00"
+    "fetched_at": "2026-10-11T11:20:53.995078+00:00"
   },
   "roadmap": {
     "status": "ok",
@@ -1170,7 +1170,7 @@
         "note": "durable across sandbox resets"
       }
     ],
-    "fetched_at": "2026-10-10T11:03:49.717591+00:00"
+    "fetched_at": "2026-10-11T11:20:53.995326+00:00"
   },
   "targets": {
     "status": "ok",
@@ -1264,5 +1264,5 @@
       "implied_subs": 5200
     }
   },
-  "generated_at": "2026-10-10T11:03:49.717601+00:00"
+  "generated_at": "2026-10-11T11:20:53.995336+00:00"
 }
