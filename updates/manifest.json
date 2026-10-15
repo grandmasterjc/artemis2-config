@@ -1,6 +1,17 @@
 {
   "updates": [
     {
+      "id": "artemis-biggest-risks-october-14",
+      "title": "NASA accepts a 1-in-30 chance of losing an Artemis crew",
+      "subtitle": "That is the limit the inspector general reports for the program as a whole, and it says the lander is the likeliest cause of a loss. Here is how that risk and four others work, and what NASA is doing about each.",
+      "date": "2026-10-15T15:31:41Z",
+      "mission": "artemis3",
+      "premium": false,
+      "hero_image": "https://grandmasterjc.github.io/artemis2-config/updates/images/artemis-biggest-risks-october-14.jpg",
+      "summary": "That is the limit the inspector general reports for the program as a whole, and it says the lander is the likeliest cause of a loss. Here is how that risk and four others work, and what NASA is doing ",
+      "author": "Joachim Gresslien"
+    },
+    {
       "id": "moon-dust-apollo-artemis-october-7",
       "title": "Moon dust wore through Apollo's suits and degraded their seals, and Artemis has only begun to test the fixes",
       "subtitle": "The grains are glassy, sharp and electrically charged, and brushes that worked on Earth failed on the moon. Here is why the dust does what it does and how NASA plans to keep it out.",
