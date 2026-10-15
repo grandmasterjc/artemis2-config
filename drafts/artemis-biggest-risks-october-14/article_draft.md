@@ -2,7 +2,7 @@
 id: artemis-biggest-risks-october-14
 title: "NASA accepts a 1-in-30 chance of losing an Artemis crew"
 subtitle: "That is the limit the inspector general reports for the program as a whole, and it says the lander is the likeliest cause of a loss. Here is how that risk and four others work, and what NASA is doing about each."
-date: 2026-10-14
+date: 2026-10-15
 mission: artemis3
 premium: false
 hero_image: hero.jpg
