@@ -21,8 +21,30 @@ HISTORY_CSV = REPO_ROOT / "state" / "subscribers_history.csv"
 FIELDS = ["date", "kit_active", "plus_active", "ios_active", "play_active", "total"]
 
 
+def revenuecat_plus(data: dict) -> int | None:
+    """Paying subscriptions plus trials from RevenueCat, or None.
+
+    Trials are included to match what the App Store count meant before:
+    its active total counted free trials too.
+    """
+    rc = data.get("revenuecat", {}) or {}
+    if rc.get("status") != "ok":
+        return None
+    return (rc.get("active_subscriptions") or 0) + (rc.get("active_trials") or 0)
+
+
 def _compute_plus(data: dict) -> tuple[int | None, int | None, int | None]:
-    """Return (ios_active, play_active, plus_total). None if data missing."""
+    """Return (ios_active, play_active, plus_total). None if data missing.
+
+    RevenueCat is preferred: it covers iOS and Android and is unaffected by
+    the 1 Oct 2026 App Store transfer. It has no per-platform split in this
+    feed, so ios_active and play_active stay empty when it is used. The
+    App Store and Play reports remain the fallback.
+    """
+    rc_total = revenuecat_plus(data)
+    if rc_total is not None:
+        return None, None, rc_total
+
     asc = data.get("asc", {}) or {}
     play = data.get("play", {}) or {}
 

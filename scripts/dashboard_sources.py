@@ -856,6 +856,53 @@ def fetch_app_store_connect() -> dict:
         return {"status": "error", "error": f"{type(e).__name__}: {e}"}
 
 
+# ---------- RevenueCat ----------
+REVENUECAT_PROJECT_ID_DEFAULT = "projd25a15d3"
+
+
+def fetch_revenuecat() -> dict:
+    """Active subscriptions, trials and MRR across iOS and Android.
+
+    This is the dashboard's source for the Plus count. The App Store reports
+    stopped working for it when the app moved to Orbital Momentum on
+    1 Oct 2026: the new vendor's reports only include subscriptions billed
+    since the move, so yearly subscribers drop out until they renew.
+    RevenueCat counts straight through the transfer. It only knows customers
+    who have opened an app version with the RevenueCat SDK, so it reads lower
+    than the App Store did before the move.
+
+    Needs REVENUECAT_API_KEY: a v2 secret key with read access to charts and
+    metrics. REVENUECAT_PROJECT_ID overrides the project.
+    """
+    api_key = os.environ.get("REVENUECAT_API_KEY")
+    if not api_key:
+        return {"status": "skipped", "reason": "no REVENUECAT_API_KEY"}
+    project = os.environ.get("REVENUECAT_PROJECT_ID") or REVENUECAT_PROJECT_ID_DEFAULT
+    url = f"https://api.revenuecat.com/v2/projects/{project}/metrics/overview?currency=USD"
+    try:
+        d = _http_get(url, {"Authorization": f"Bearer {api_key}", "Accept": "application/json"})
+    except urllib.error.HTTPError as e:
+        body = e.read()[:300].decode("utf-8", "replace")
+        return {"status": "error", "error": f"HTTP {e.code}", "body": body}
+    except Exception as e:
+        return {"status": "error", "error": f"{type(e).__name__}: {e}"}
+
+    metrics = {m.get("id"): m.get("value") for m in d.get("metrics", []) if isinstance(m, dict)}
+    if metrics.get("active_subscriptions") is None:
+        return {"status": "error", "error": "no active_subscriptions in response"}
+    return {
+        "status": "ok",
+        "project_id": project,
+        "active_subscriptions": int(metrics["active_subscriptions"]),
+        "active_trials": int(metrics.get("active_trials") or 0),
+        "mrr_usd": metrics.get("mrr"),
+        "revenue_28d_usd": metrics.get("revenue"),
+        "new_customers_28d": metrics.get("new_customers"),
+        "active_users_28d": metrics.get("active_users"),
+        "fetched_at": _now_iso(),
+    }
+
+
 # ---------- Bluesky ----------
 def fetch_bluesky() -> dict:
     handle = os.environ.get("BLUESKY_HANDLE")
@@ -1485,6 +1532,7 @@ def fetch_all() -> dict:
         "kit": fetch_kit(),
         "asc": fetch_app_store_connect(),
         "play": fetch_play_console(),
+        "revenuecat": fetch_revenuecat(),
         "bluesky": fetch_bluesky(),
         "mastodon": fetch_mastodon(),
         "threads": fetch_threads(),
