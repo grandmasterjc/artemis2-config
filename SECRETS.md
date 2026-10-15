@@ -18,10 +18,11 @@ https://github.com/grandmasterjc/artemis2-config/settings/secrets/actions
 | `GOOGLE_ANALYTICS_PROPERTY_ID` | dashboard-refresh | `531732958` |
 | `FIREBASE_SERVICE_ACCOUNT_JSON` | weekly-article-publish | Entire JSON contents of artemis-tracker-665d8 service account |
 | `THREADS_ACCESS_TOKEN` | threads-token-refresh | Optional. Long-lived Threads API token |
-| `APP_STORE_CONNECT_KEY_ID` | dashboard-refresh | App Store Connect API key ID (e.g. `UQ6P8VG963`). Generate at https://appstoreconnect.apple.com/access/integrations/api with Finance role. |
+| `APP_STORE_CONNECT_KEY_ID` | dashboard-refresh | App Store Connect API key ID (e.g. `UQ6P8VG963`). Generate at https://appstoreconnect.apple.com/access/integrations/api with the App Manager and Finance roles (or Admin): App Manager for asc-metadata-update, Finance for the dashboard's sales and subscription reports. Used by asc-metadata-update too. |
 | `APP_STORE_CONNECT_ISSUER_ID` | dashboard-refresh | Issuer UUID from the same page (shared across all keys). |
 | `APP_STORE_CONNECT_PRIVATE_KEY` | dashboard-refresh | Full PEM contents of the `.p8` file (paste raw, including `-----BEGIN PRIVATE KEY-----` and `-----END PRIVATE KEY-----`). |
 | `APP_STORE_CONNECT_VENDOR_NUMBER` | dashboard-refresh | Apple vendor number from App Store Connect → Payments and Financial Reports (e.g. `85037504`). |
+| `REVENUECAT_API_KEY` | dashboard-refresh | RevenueCat v2 secret API key (`sk_...`) with read-only access to charts and metrics. Source of the dashboard's Plus count. RevenueCat → Project settings → API keys → New secret API key. |
 | `GOOGLE_PLAY_SERVICE_ACCOUNT_JSON` | dashboard-refresh | Full JSON contents of the `play-console-reporting` service account key. The service account must be invited to Play Console with global "View app information and download bulk reports" + "View financial data" permissions. |
 | `GOOGLE_PLAY_REPORTS_BUCKET` | dashboard-refresh | Cloud Storage bucket ID from Play Console → Download reports → Financial (e.g. `pubsite_prod_6157935083484095024`, without `gs://`). |
 | `GOOGLE_PLAY_PACKAGE` | dashboard-refresh | Android package name (e.g. `no.bitfactory.artemisii.tracker`). Defaults to this if unset. |

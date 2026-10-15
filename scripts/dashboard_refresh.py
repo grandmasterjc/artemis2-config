@@ -51,7 +51,7 @@ def main():
         sys.exit(1)
 
     # Log each source's status
-    for key in ("ga4", "kit", "asc", "bluesky", "mastodon", "threads",
+    for key in ("ga4", "kit", "asc", "revenuecat", "bluesky", "mastodon", "threads",
                 "instagram", "push", "roadmap", "targets"):
         s = data.get(key, {})
         st = s.get("status", "?")
@@ -64,6 +64,8 @@ def main():
             extra = f" | followers={s.get('followers')}"
         if key == "mastodon" and st == "ok":
             extra = f" | followers={s.get('followers')}"
+        if key == "revenuecat" and st == "ok":
+            extra = f" | active={s.get('active_subscriptions')} trials={s.get('active_trials')} mrr={s.get('mrr_usd')}"
         if key == "asc" and st == "ok":
             extra = f" | reviews={s.get('reviews_count_recent')} avg={s.get('avg_rating_recent')}"
         if st in ("error", "skipped", "blocked"):

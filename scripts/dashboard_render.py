@@ -37,6 +37,10 @@ DATA_CACHE = DASHBOARD_DIR / "data.json"
 sys.path.insert(0, str(REPO_ROOT / "scripts"))
 
 
+# Date the Plus count switched from App Store reports to RevenueCat.
+PLUS_SOURCE_SWITCH = "2026-10-01"
+
+
 def esc(s) -> str:
     if s is None:
         return ""
@@ -199,6 +203,11 @@ def section_kpis(data) -> str:
     plus_total = None
     if ios_active is not None or play_active is not None:
         plus_total = (ios_active or 0) + (play_active or 0)
+    # RevenueCat wins when available: it covers both stores and is not
+    # affected by the 1 Oct 2026 App Store transfer (see fetch_revenuecat).
+    rc = data.get("revenuecat", {}) or {}
+    if rc.get("status") == "ok":
+        plus_total = (rc.get("active_subscriptions") or 0) + (rc.get("active_trials") or 0)
 
     # New installs / 30d: iOS first-time downloads from ASC SALES report
     # (Product Type Identifier 1F/1/F1/FI/1E etc.). Play installs not yet wired.
@@ -428,6 +437,25 @@ def section_subscribers_chart(data) -> str:
                 f"<text x='{x:.1f}' y='{H - 8}' fill='#8a99b3' font-size='10' text-anchor='middle'>{label}</text>"
             )
 
+    # Mark where the Plus line switches from App Store reports to RevenueCat.
+    source_marker = ""
+    source_note = ""
+    switch_idx = next((i for i, r in enumerate(rows) if r["date"] >= PLUS_SOURCE_SWITCH), None)
+    if switch_idx is not None and switch_idx > 0:
+        x = x_at(switch_idx)
+        source_marker = (
+            f"<line x1='{x:.1f}' y1='{PAD_T}' x2='{x:.1f}' y2='{PAD_T + inner_h}' stroke='#8a99b3' stroke-width='1' stroke-dasharray='2,3'/>"
+            f"<text x='{x + 4:.1f}' y='{PAD_T + 10}' fill='#8a99b3' font-size='10'>RevenueCat</text>"
+        )
+        source_note = (
+            "<div style='font-size:11px;color:#8a99b3;margin-top:6px;'>"
+            f"Plus: App Store reports until {PLUS_SOURCE_SWITCH}, then RevenueCat (iOS and Android). "
+            "The App Store reports only cover renewals since the 1 Oct transfer to Orbital Momentum. "
+            "RevenueCat only counts subscribers who have opened an app version with RevenueCat, "
+            "so the step down at the switch is a change of source, not lost subscribers."
+            "</div>"
+        )
+
     # Latest values
     latest = rows[-1]
     latest_total = latest["total"] or 0
@@ -452,9 +480,11 @@ def section_subscribers_chart(data) -> str:
     {polyline(totals, '#5fb3ff', width=2)}
     {polyline(kits, '#f5b942', width=1.5, dash='4,3')}
     {polyline(plus, '#7dd3a0', width=1.5, dash='4,3')}
+    {source_marker}
     {''.join(x_ticks)}
   </svg>
   {legend}
+  {source_note}
 </section>"""
 
 
@@ -851,6 +881,45 @@ def section_subscriptions_play(data) -> str:
 </section>"""
 
 
+def section_revenuecat(data) -> str:
+    rc = data.get("revenuecat", {}) or {}
+    if rc.get("status") != "ok":
+        reason = rc.get("reason") or rc.get("error") or "no data"
+        return f"<section><h2>Artemis+ — RevenueCat</h2><div class='empty'>Not available — {esc(reason)}</div></section>"
+
+    def _kpi(label, value, sub):
+        return f"""
+  <div class='asc-stat-card'>
+    <div class='asc-stat-label'>{esc(label)}</div>
+    <div class='asc-stat-row'>
+      <div class='asc-stat-main'>
+        <div class='asc-stat-val'>{value}</div>
+        <div class='asc-stat-sub'>{esc(sub)}</div>
+      </div>
+    </div>
+  </div>"""
+
+    def _usd(v):
+        return f"${fmt_float(v, 2)}" if v is not None else "—"
+
+    cards = (
+        _kpi("Active subscriptions", fmt_int(rc.get("active_subscriptions")), "paying, iOS + Android")
+        + _kpi("Active trials", fmt_int(rc.get("active_trials")), "free trials running")
+        + _kpi("MRR", _usd(rc.get("mrr_usd")), "monthly recurring revenue")
+        + _kpi("Revenue (28d)", _usd(rc.get("revenue_28d_usd")), "last 28 days")
+        + _kpi("New customers (28d)", fmt_int(rc.get("new_customers_28d")), "first seen by RevenueCat")
+        + _kpi("Active users (28d)", fmt_int(rc.get("active_users_28d")), "opened the app")
+    )
+    return f"""
+<section>
+  <h2>Artemis+ — RevenueCat</h2>
+  <div class='asc-stat-grid'>
+    {cards}
+  </div>
+  <div style='font-size:11px;color:#8a99b3;margin-top:6px;'>Counts only customers who have opened an app version with RevenueCat.</div>
+</section>"""
+
+
 def section_subscriptions(data) -> str:
     asc = data.get("asc", {}) or {}
     subs = asc.get("subscriptions", {}) or {}
@@ -904,6 +973,9 @@ def section_subscriptions(data) -> str:
     arr_sub = f"MRR ~${fmt_float(mrr_usd or 0, 2)} · after Apple {int(round((1 - proceeds_factor) * 100))}% cut" if arr_usd is not None else "no data"
     arr_val = f"${fmt_float(arr_usd or 0, 2)}" if arr_usd is not None else "—"
     active_sub = "currently paying + free trial" if active_total is not None else ""
+    if active_total is not None and (active_breakdown.get("as_of") or "") >= PLUS_SOURCE_SWITCH:
+        active_sub = "renewed since the 1 Oct transfer only"
+
     active_val = fmt_int(active_total) if active_total is not None else "—"
 
     kpi_cards = (
@@ -1310,6 +1382,7 @@ def render_page(data) -> str:
   {section_newsletter(data)}
   {section_socials(data)}
   {section_app_store(data)}
+  {section_revenuecat(data)}
   {section_subscriptions(data)}
   {section_subscriptions_play(data)}
   {section_push(data)}
