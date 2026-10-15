@@ -1,13 +1,13 @@
 ---
 id: artemis-biggest-risks-october-14
-title: "Five engineering and budget risks stand between Artemis and a moon landing, and each has a plan attached"
-subtitle: "NASA's inspector general ranks the lander as the likeliest source of crew loss. Here is how the lander, refueling, heat shield, spacesuit and budget risks work, and what is being done about each."
+title: "NASA accepts a 1-in-30 chance of losing an Artemis crew"
+subtitle: "That is the limit the inspector general reports for the program as a whole, and it says the lander is the likeliest cause of a loss. Here is how that risk and four others work, and what NASA is doing about each."
 date: 2026-10-14
 mission: artemis3
 premium: false
 hero_image: hero.jpg
-push_title: "The five biggest risks in Artemis, and how each is handled"
-push_body: "Lander, refueling, heat shield, suit and budget: what the risks are, and the fix attached to each."
+push_title: "NASA accepts a 1-in-30 chance of losing an Artemis crew"
+push_body: "The limit comes from the inspector general's audit. Here are the five biggest Artemis risks and the fix attached to each."
 ---
 
 NASA sets a numerical limit on how likely it will accept losing a crew. For the Artemis missions as a whole the limit is 1 in 30. For the lunar operations alone, the landing, the stay and the launch back to orbit, it is 1 in 40. By comparison, NASA's Commercial Crew Program holds trips to the International Space Station to 1 in 500 for launch and return.
