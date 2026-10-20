@@ -6,7 +6,7 @@ In 2022, NASA awarded a $228 million contract to **Axiom Space** — a Houston-b
 
 The AxEMU is being developed for the Artemis program broadly, but the first actual lunar surface walk using it will be on **Artemis IV** (targeted early 2028) — not Artemis III.
 
-Artemis III, scheduled for mid-2027, is an orbital demonstration: a crewed docking between Orion and SpaceX's Starship HLS in low Earth orbit. No lunar landing, no surface EVA. That mission is about proving the docking architecture works before committing astronauts to a Moon landing.
+Artemis III, scheduled for mid-2027, is an orbital demonstration: Orion is to rendezvous and dock in low Earth orbit with one or both of the commercial landers, SpaceX's Starship HLS and Blue Origin's Blue Moon. No lunar landing, no surface EVA. That mission is about proving the docking architecture works before committing astronauts to a Moon landing.
 
 The AxEMU will likely have its first EVA use during Artemis IV's lunar surface stay — making it the first new American lunar suit to touch the Moon since Apollo 17 in 1972.
 
