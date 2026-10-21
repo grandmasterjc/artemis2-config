@@ -75,7 +75,7 @@ Overlap: many earlier articles touch single risks. The value here is the
 overview and the comparison between them. Tone is explanatory, not alarmist.
 
 ### 4. How far behind the United States is China, really
-Status: open
+Status: used 2026-10-21 china-us-moon-hardware-october-21
 Question: Who is actually ahead in the race back to the moon, measured in
 hardware that has flown?
 What the piece explains: a side-by-side of the two programs' rockets,
