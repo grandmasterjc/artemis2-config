@@ -10,7 +10,7 @@ push_title: "NASA flew four astronauts around the moon. What has China flown?"
 push_body: "A hardware comparison of the two moon programs: rockets, capsules and landers, and which tests have actually happened."
 ---
 
-On Feb. 11, a rocket lifted off from a new launch pad at Wenchang, on China's Hainan Island, and climbed to an altitude of 105 kilometers (65 miles). Atop it sat a prototype of Mengzhou, the capsule China plans to send to the moon. At the moment of greatest aerodynamic stress, the capsule fired its escape rocket and pulled away. The first stage turned around, relit its engines and lowered itself into the South China Sea.
+On Feb. 11, a rocket lifted off from a new launch pad at Wenchang, on China's Hainan Island. Atop it sat a prototype of Mengzhou, the capsule China plans to send to the moon. At the moment of greatest aerodynamic stress, the capsule fired its escape motor, pulled clear and came down under parachutes in the South China Sea. The first stage slowed itself, hovered a few meters above the water and splashed down nearby. The China Manned Space Agency (CMSA) called the flight a low-altitude demonstration and verification test.
 
 Two months later, NASA's Orion capsule completed a trip that Mengzhou has not yet attempted. Artemis 2 carried four astronauts 694,481 miles (1.1 million kilometers) around the moon and splashed down off San Diego on April 10. Those two events are the clearest picture of where the two lunar programs stand. What has each country actually built and flown, and what does it still have to prove?
 
@@ -32,11 +32,13 @@ Orion has flown three times: in Earth orbit in 2014, around the moon without a c
 
 Mengzhou has not reached orbit. The February flight and earlier pad abort tests proved the escape system, which matters because it is the part that saves a crew when a rocket fails. The capsule's first orbital flight, on the Long March 10A with a docking at the Tiangong space station, has no announced date. Tracking databases list it anywhere from late 2026 to early 2027.
 
-The landers are further behind on both sides, and their test records look alike. China's Lanyue, which carries two astronauts and weighs about 26 metric tons according to Xinhua's 2023 reporting, completed integrated landing and ascent tests on the ground in August 2025 at a facility in Huailai, Hebei, according to the China Manned Space Agency (CMSA). SpaceX's Starship reached orbit for the first time on Sept. 28, on its 14th flight. Neither lander has touched the moon with a crew, and neither has been flown to the moon without one.
+The landers are further behind on both sides, and their test records look alike. China's Lanyue, which carries two astronauts and weighs about 26 metric tons according to Xinhua's 2023 reporting, completed integrated landing and ascent tests on the ground in August 2025 at a facility in Huailai, Hebei, according to the CMSA. SpaceX's Starship reached orbit for the first time on Sept. 28, on its 14th flight. Neither lander has touched the moon with a crew, and neither has been flown to the moon without one.
 
 ## The flight record
 
 The record so far is short. NASA has flown its rocket and capsule together on a crewed lunar trip. China has flown its capsule's escape system and a prototype of its rocket's first stage. Neither country has landed anything of this generation on the moon.
+
+![Moon-program hardware from the United States and China, each vehicle placed at the furthest milestone it has reached as of October 2026. Sources: NASA, NASA Office of Inspector General, China Manned Space Agency, Xinhua.](https://grandmasterjc.github.io/artemis2-config/updates/images/china-us-moon-hardware-october-21-flight-record.jpg)
 
 China's robotic program is the other part of the record. Chang'e-7, a south pole orbiter and lander designed to search for water ice in Shackleton crater, was due to launch around Aug. 24. On Aug. 23 the CMSA said the probe "does not meet launch conditions" and could not fly in this year's window, citing "prudence, reliability and absolute mission success," according to Xinhua. No new date has been announced, and press reports point to 2027. That mission would have scouted the region where both countries want to land.
 
@@ -48,7 +50,7 @@ On paper the two schedules are one to two years apart. The practical gap depends
 
 ## Defining first
 
-The United States already landed 12 astronauts on the moon, so neither country is racing to be first in the old sense. NASA's goal is the first landing since Apollo 17 in 1972. China's is the first Chinese person on the surface, followed by a research station at the south pole that China and Russia plan to start building in 2031.
+The United States already landed 12 astronauts on the moon. Apollo 17 left in 1972. Neither country is racing to be first in the old sense. NASA's goal is the first landing since Apollo 17 in 1972. China's is the first Chinese person on the surface, followed by a research station at the south pole that China and Russia plan to start building in 2031.
 
 What counts as ahead therefore depends on the measure. By flown crewed hardware, NASA leads clearly. By the number of untested steps between today and a landing, the programs look closer than their calendars suggest. Each still needs an uncrewed lander demonstration and a flight that puts its own crew vehicle through a lunar mission profile.
 
