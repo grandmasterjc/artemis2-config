@@ -26,7 +26,7 @@ The landers are further behind on both sides, and their test records look alike.
 
 The record so far is short. NASA has flown its rocket and capsule together on a crewed lunar trip. China has flown its capsule's escape system and a prototype of its rocket's first stage. Neither country has landed anything of this generation on the moon.
 
-![Moon-program hardware from the United States and China, each vehicle placed at the furthest milestone it has reached as of October 2026. Sources: NASA, NASA Office of Inspector General, China Manned Space Agency, Xinhua.](https://grandmasterjc.github.io/artemis2-config/updates/images/china-us-moon-hardware-october-21-flight-record.jpg)
+![Moon-program hardware from the United States and China, each vehicle placed at the furthest milestone it has reached as of October 2026. Sources: NASA, NASA Office of Inspector General, China Manned Space Agency, Xinhua.](https://grandmasterjc.github.io/artemis2-config/updates/images/china-us-moon-hardware-october-21-flight-record-v2.jpg)
 
 China's robotic program is the other part of the record. Chang'e-7, a south pole orbiter and lander designed to search for water ice in Shackleton crater, was due to launch around Aug. 24. On Aug. 23 the CMSA said the probe "does not meet launch conditions" and could not fly in this year's window, citing "prudence, reliability and absolute mission success," according to Xinhua. No new date has been announced, and press reports point to 2027. That mission would have scouted the region where both countries want to land.
 
