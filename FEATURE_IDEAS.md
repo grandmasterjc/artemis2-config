@@ -240,6 +240,13 @@ What the piece explains: why the lack of air sends grains out low and fast, what
 Start with: NASA technical reports on plume-surface interaction, Gaier's Apollo dust report (NASA/TM-2005-213610), NASA Lunar Surface Innovation Consortium dust work.
 Added: 2026-10-08, from `moon-dust-apollo-artemis-october-7`, which said landings throw up the most dust but did not explain the physics.
 
+### 21. How a launch escape system pulls a crew away from a failing rocket
+Status: open
+Question: If a rocket fails seconds after liftoff, how does a capsule get its crew clear in time, and why is the test at maximum aerodynamic stress the hard one?
+What the piece explains: the escape motor on top of the capsule, why the abort is timed in fractions of a second, what changes between a pad abort and a test at maximum dynamic pressure (max-Q), how Orion's launch abort system and China's Mengzhou escape tower differ, and what the Artemis and Mengzhou test flights have shown so far.
+Start with: NASA Orion Launch Abort System test reports (Ascent Abort-2), China Manned Space Agency statements on the Feb. 11, 2026 Mengzhou max-Q abort test.
+Added: 2026-10-23, from `china-us-moon-hardware-october-21`, which called the Mengzhou escape test the furthest China's capsule has flown but did not explain what an escape system does.
+
 ## Used
 
 (Move entries here, or mark them in place, once an article has been written.)
