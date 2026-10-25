@@ -75,7 +75,7 @@ Overlap: many earlier articles touch single risks. The value here is the
 overview and the comparison between them. Tone is explanatory, not alarmist.
 
 ### 4. How far behind the United States is China, really
-Status: open
+Status: used 2026-10-21 china-us-moon-hardware-october-21
 Question: Who is actually ahead in the race back to the moon, measured in
 hardware that has flown?
 What the piece explains: a side-by-side of the two programs' rockets,
@@ -240,7 +240,14 @@ What the piece explains: why the lack of air sends grains out low and fast, what
 Start with: NASA technical reports on plume-surface interaction, Gaier's Apollo dust report (NASA/TM-2005-213610), NASA Lunar Surface Innovation Consortium dust work.
 Added: 2026-10-08, from `moon-dust-apollo-artemis-october-7`, which said landings throw up the most dust but did not explain the physics.
 
-### 21. Can you 3D-print a house on the moon?
+### 21. How a launch escape system pulls a crew away from a failing rocket
+Status: open
+Question: If a rocket fails seconds after liftoff, how does a capsule get its crew clear in time, and why is the test at maximum aerodynamic stress the hard one?
+What the piece explains: the escape motor on top of the capsule, why the abort is timed in fractions of a second, what changes between a pad abort and a test at maximum dynamic pressure (max-Q), how Orion's launch abort system and China's Mengzhou escape tower differ, and what the Artemis and Mengzhou test flights have shown so far.
+Start with: NASA Orion Launch Abort System test reports (Ascent Abort-2), China Manned Space Agency statements on the Feb. 11, 2026 Mengzhou max-Q abort test.
+Added: 2026-10-23, from `china-us-moon-hardware-october-21`, which called the Mengzhou escape test the furthest China's capsule has flown but did not explain what an escape system does.
+
+### 22. Can you 3D-print a house on the moon?
 Status: open
 Question: Shipping building materials from Earth costs a fortune. Can astronauts build shelters, roads and landing pads out of the moon's own soil?
 What the piece explains: why regolith is a building material at all, the main methods (sintering or melting it with lasers or microwaves, binding it into a concrete, piling it as loose shielding), what a printed wall has to stop (radiation, micrometeorites, the temperature swing between day and night), why landing pads are likely the first thing built, and where the technology actually stands. ICON's Project Olympus for NASA (a contract of $57.2 million announced in November 2022, running to 2028) is the natural case study, alongside what has been printed in vacuum chambers and with simulants.

@@ -1,6 +1,28 @@
 {
   "updates": [
     {
+      "id": "artemis-acceleration-briefing-october-25",
+      "title": "Artemis 3 will dock Orion with two commercial landers in Earth orbit, and NASA now has a plan for what comes after",
+      "subtitle": "At a briefing at Kennedy Space Center on Oct. 23, NASA laid out a 14-day test flight in 2027, a smaller Starship refueling estimate and two routes to the lunar surface in 2028.",
+      "date": "2026-10-25T11:55:17Z",
+      "mission": "artemis3",
+      "premium": false,
+      "hero_image": "https://grandmasterjc.github.io/artemis2-config/updates/images/artemis-acceleration-briefing-october-25.jpg",
+      "summary": "At a briefing at Kennedy Space Center on Oct. 23, NASA laid out a 14-day test flight in 2027, a smaller Starship refueling estimate and two routes to the lunar surface in 2028.",
+      "author": "Joachim Gresslien"
+    },
+    {
+      "id": "china-us-moon-hardware-october-21",
+      "title": "NASA has flown four astronauts around the moon. China has flown a capsule abort test.",
+      "subtitle": "Both countries say they will land people on the moon by the end of the decade. A side-by-side of the rockets, capsules and landers shows what has actually flown, and what each side still has to prove.",
+      "date": "2026-10-22T12:37:02Z",
+      "mission": "artemis3",
+      "premium": false,
+      "hero_image": "https://grandmasterjc.github.io/artemis2-config/updates/images/china-us-moon-hardware-october-21.jpg",
+      "summary": "Both countries say they will land people on the moon by the end of the decade. A side-by-side of the rockets, capsules and landers shows what has actually flown, and what each side still has to prove.",
+      "author": "Joachim Gresslien"
+    },
+    {
       "id": "artemis-biggest-risks-october-14",
       "title": "NASA accepts a 1-in-30 chance of losing an Artemis crew",
       "subtitle": "That is the limit the inspector general reports for the program as a whole, and it says the lander is the likeliest cause of a loss. Here is how that risk and four others work, and what NASA is doing about each.",

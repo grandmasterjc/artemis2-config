@@ -18,7 +18,7 @@ What was confirmed in February:
 
 - Artemis III is no longer a lunar landing. It's a low Earth orbit rendezvous test — analogous to Apollo 9 — where Orion meets the lunar landers from SpaceX and Blue Origin.
 - The first crewed lunar landing has moved to Artemis IV in early 2028.
-- A second landing is planned for Artemis V in late 2028, using Blue Origin's Blue Moon Mk2.
+- A second landing is planned for Artemis V in late 2028. NASA has not said which lander it will use.
 
 That's the official posture. Hardware is real, the architecture has been redrawn, and NASA still talks about a 10-month cadence between missions.
 
