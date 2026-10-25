@@ -661,6 +661,50 @@
       "active": true
     },
     {
+      "id": "lunar-outpost",
+      "name": "Lunar Outpost",
+      "category": "rovers",
+      "country": "United States",
+      "headquarters": "Golden, Colorado",
+      "tagline": "Builds Pegasus, one of two crewed rovers NASA ordered for Artemis",
+      "role": "Lunar Outpost is the second of the two companies NASA picked in May 2026 to build Lunar Terrain Vehicles, the rovers Artemis astronauts are to drive near the south pole. Its Pegasus rover, developed with General Motors, Goodyear and Leidos, carries two astronauts side by side and can also be driven autonomously or by remote control. NASA describes it as able to operate for up to a year and to drive at more than 9 miles per hour (about 14 kilometers per hour). NASA aims to have the rovers on the moon by 2028, delivered by Blue Origin.",
+      "status": "NASA said in May 2026 that both rover builders would spend about 18 months finishing designs, running crewed evaluations and certifying flight units. The company's first rover, MAPP, flew on Intuitive Machines' IM-2 lander in March 2025 but could not drive off after the lander came to rest on its side.",
+      "contract": "Lunar Terrain Vehicle Services task order worth $220 million (NASA, May 2026).",
+      "facts": [
+        {
+          "label": "Partners",
+          "value": "General Motors, Goodyear, Leidos"
+        },
+        {
+          "label": "Crew",
+          "value": "2 astronauts"
+        },
+        {
+          "label": "Top speed",
+          "value": "More than 9 mph (about 14 km/h)"
+        }
+      ],
+      "links": [
+        {
+          "title": "Lunar Outpost: NASA selects Lunar Outpost for crewed Lunar Terrain Vehicle",
+          "url": "https://www.lunaroutpost.com/post/nasa-selects-lunar-outpost-to-deliver-next-gen-crewed-lunar-terrain-vehicle-for-artemis-astronauts-a"
+        },
+        {
+          "title": "NASA: Update on Moon Base rovers, landers, missions",
+          "url": "https://www.nasa.gov/news-release/nasa-provides-update-on-moon-base-rovers-landers-missions/"
+        }
+      ],
+      "related_articles": [],
+      "sources": [
+        "https://www.nasa.gov/news-release/nasa-provides-update-on-moon-base-rovers-landers-missions/",
+        "https://www.lunaroutpost.com/post/nasa-selects-lunar-outpost-to-deliver-next-gen-crewed-lunar-terrain-vehicle-for-artemis-astronauts-a",
+        "https://spaceflightnow.com/2025/03/07/intuitive-machines-im-2-mission-ends-with-lander-on-its-side-on-the-moon/"
+      ],
+      "last_verified": "2026-10-25",
+      "order": 2,
+      "active": true
+    },
+    {
       "id": "thales-alenia-space",
       "name": "Thales Alenia Space",
       "category": "international",

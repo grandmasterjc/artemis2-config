@@ -106,3 +106,5 @@ The orbit and the landing partner sequence. The first time NASA publishes a targ
 The hardware for Artemis III is on track. The mission profile isn't finalized. The program office is targeting March–June 2027; the administrator is signaling mid to late 2027. That gap will close in the next few months, most likely toward the later end.
 
 It's still more than a year away, so there's time. But the answers to the open questions land between now and summer, not in the final weeks before launch. The moment any of them does, you'll see it here first.
+
+*Correction, October 25, 2026: An earlier version of this article said Artemis V would use Blue Origin's Blue Moon Mk2. That assignment dates from NASA's 2023 plan, and NASA's March 3, 2026 architecture update names no lander for Artemis V.*
