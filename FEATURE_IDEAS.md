@@ -247,6 +247,14 @@ What the piece explains: the escape motor on top of the capsule, why the abort i
 Start with: NASA Orion Launch Abort System test reports (Ascent Abort-2), China Manned Space Agency statements on the Feb. 11, 2026 Mengzhou max-Q abort test.
 Added: 2026-10-23, from `china-us-moon-hardware-october-21`, which called the Mengzhou escape test the furthest China's capsule has flown but did not explain what an escape system does.
 
+### 22. Can you 3D-print a house on the moon?
+Status: open
+Question: Shipping building materials from Earth costs a fortune. Can astronauts build shelters, roads and landing pads out of the moon's own soil?
+What the piece explains: why regolith is a building material at all, the main methods (sintering or melting it with lasers or microwaves, binding it into a concrete, piling it as loose shielding), what a printed wall has to stop (radiation, micrometeorites, the temperature swing between day and night), why landing pads are likely the first thing built, and where the technology actually stands. ICON's Project Olympus for NASA (a contract of $57.2 million announced in November 2022, running to 2028) is the natural case study, alongside what has been printed in vacuum chambers and with simulants.
+Start with: NASA's Moon to Mars Planetary Autonomous Construction Technologies (MMPACT) project, NASA's November 2022 ICON contract release, ICON's Project Olympus material, ESA lunar construction studies.
+Overlap: #20 covers why landing plumes throw debris; this piece covers how a pad would be built, so keep the plume physics to a sentence and link to it. #10 covers extracting oxygen and propellant from regolith, not building with it.
+Added: 2026-10-20, from a reader tip that pointed to ICON's Project Olympus video.
+
 ## Used
 
 (Move entries here, or mark them in place, once an article has been written.)

@@ -1,0 +1,710 @@
+{
+  "updated": "2026-10-20",
+  "categories": [
+    {
+      "id": "human_landers",
+      "title": "Crewed landers",
+      "symbol": "moon.fill",
+      "order": 1
+    },
+    {
+      "id": "rocket_capsule",
+      "title": "Rocket and capsule",
+      "symbol": "flame.fill",
+      "order": 2
+    },
+    {
+      "id": "spacesuits",
+      "title": "Spacesuits",
+      "symbol": "figure.walk",
+      "order": 3
+    },
+    {
+      "id": "rovers",
+      "title": "Rovers",
+      "symbol": "car.fill",
+      "order": 4
+    },
+    {
+      "id": "robotic_landers",
+      "title": "Robotic landers",
+      "symbol": "antenna.radiowaves.left.and.right",
+      "order": 5
+    },
+    {
+      "id": "construction",
+      "title": "Building on the moon",
+      "symbol": "hammer.fill",
+      "order": 6
+    },
+    {
+      "id": "international",
+      "title": "International partners",
+      "symbol": "globe.europe.africa.fill",
+      "order": 7
+    }
+  ],
+  "companies": [
+    {
+      "id": "spacex",
+      "name": "SpaceX",
+      "category": "human_landers",
+      "country": "United States",
+      "headquarters": "Starbase, Texas",
+      "tagline": "Builds Starship, one of two crewed lunar landers NASA is buying",
+      "role": "SpaceX is developing a lunar lander version of Starship under NASA's Human Landing System (HLS) program. On Artemis 3, a crewed test in low Earth orbit planned for 2027, Orion is to dock with a Starship Version 3 test vehicle fitted with a docking system on its nose, and astronauts will not go inside it. Before a crew can ride it to the surface, Starship has to be refueled in orbit by tanker flights and fly an uncrewed landing demonstration. NASA's March 2026 plan does not say which of its two landers will carry the first crew down on Artemis 4.",
+      "status": "Starship reached orbit for the first time on Flight 14 in September 2026, released 26 Starlink satellites and came down after about three hours instead of the planned six orbits. No transfer of propellant between two Starships had been reported as of October 2026.",
+      "contract": "Firm-fixed-price HLS contract worth $2.89 billion (April 2021), plus a contract option worth about $1.15 billion for a second crewed landing demonstration (November 2022), per NASA. NASA's inspector general reported 6 percent cost growth on the SpaceX contract in March 2026.",
+      "facts": [
+        {
+          "label": "Founded",
+          "value": "2002"
+        },
+        {
+          "label": "Artemis 3 test vehicle",
+          "value": "Starship Version 3, 171 feet (52 meters) tall"
+        },
+        {
+          "label": "First orbital flight",
+          "value": "September 28, 2026 (Flight 14)"
+        }
+      ],
+      "links": [
+        {
+          "title": "NASA: Human Landing Systems",
+          "url": "https://www.nasa.gov/reference/human-landing-systems/"
+        },
+        {
+          "title": "NASA: How the Artemis III lander test paves the way for moon landings",
+          "url": "https://www.nasa.gov/directorates/esdmd/artemis-campaign-development-division/human-landing-system-program/how-nasas-artemis-iii-lander-test-will-pave-way-for-moon-landings/"
+        },
+        {
+          "title": "SpaceX: Starship",
+          "url": "https://www.spacex.com/vehicles/starship/"
+        }
+      ],
+      "related_articles": [
+        "starship-flight-14-orbit-artemis-september-30",
+        "artemis3-lander-rehearsal-september-10",
+        "artemis3-refueling-challenge",
+        "starship-crew-objection-july-28",
+        "artemis-biggest-risks-october-14"
+      ],
+      "sources": [
+        "https://www.nasa.gov/news-release/as-artemis-moves-forward-nasa-picks-spacex-to-land-next-americans-on-moon/",
+        "https://www.nasa.gov/humans-in-space/nasa-awards-spacex-second-contract-option-for-artemis-moon-landing/",
+        "https://www.nasa.gov/directorates/esdmd/artemis-campaign-development-division/human-landing-system-program/how-nasas-artemis-iii-lander-test-will-pave-way-for-moon-landings/",
+        "https://www.nasa.gov/directorates/esdmd/nasa-strengthens-artemis-adds-mission-refines-overall-architecture/",
+        "https://oig.nasa.gov/news/artemis-lander-program-faces-schedule-delays-and-unmitigated-crew-safety-risks/",
+        "https://spaceflightnow.com/2026/09/28/starship-returns-to-earth-rocket-splashes-down-north-of-hawaii-after-three-hour-flight/"
+      ],
+      "last_verified": "2026-10-20",
+      "order": 1,
+      "active": true
+    },
+    {
+      "id": "blue-origin",
+      "name": "Blue Origin",
+      "category": "human_landers",
+      "country": "United States",
+      "headquarters": "Kent, Washington",
+      "tagline": "Builds Blue Moon landers for Artemis crews and Moon Base cargo",
+      "role": "Blue Origin holds NASA's second crewed lander contract, for its Blue Moon Mark 2. For Artemis 3 it is building a test lander based on the Mark 2 design, and up to two astronauts are expected to open its hatch and go inside while it is docked to Orion in Earth orbit. Its smaller, uncrewed Blue Moon Mark 1, named Endurance, is to fly Moon Base I, NASA's first Moon Base mission, to Shackleton Connecting Ridge near the south pole. In May 2026 NASA also hired Blue Origin to deliver the two Lunar Terrain Vehicles to the south pole region.",
+      "status": "New Glenn, the rocket both landers were designed around, has not flown since one exploded during a static fire test at Cape Canaveral on May 28, 2026, and Blue Origin aims to return it to flight by the end of 2026. NASA lists Moon Base I for January 2027 (page updated September 2026).",
+      "contract": "Firm-fixed-price HLS contract worth $3.4 billion (May 2023). Lunar Terrain Vehicle delivery task orders worth $188 million, with an option worth $280.4 million (May 2026). Both per NASA.",
+      "facts": [
+        {
+          "label": "Founded",
+          "value": "2000"
+        },
+        {
+          "label": "Moon Base I target",
+          "value": "January 2027"
+        },
+        {
+          "label": "Mark 2 training cabin",
+          "value": "Full-scale prototype at NASA Johnson since May 2026"
+        }
+      ],
+      "links": [
+        {
+          "title": "Blue Origin: Blue Moon",
+          "url": "https://www.blueorigin.com/blue-moon"
+        },
+        {
+          "title": "NASA: Moon Base, Blue Origin Blue Moon Mark 1",
+          "url": "https://www.nasa.gov/event/clps-flight-blue-origins-blue-moon-mark-1/"
+        }
+      ],
+      "related_articles": [
+        "blue-moon-decoupling-june-17",
+        "moon-base-1-endurance-july-8",
+        "artemis3-lander-rehearsal-september-10",
+        "moon-base-construction-begins-2026",
+        "artemis-iii-crew-reveal-june-9"
+      ],
+      "sources": [
+        "https://www.nasa.gov/news-release/nasa-selects-blue-origin-as-second-artemis-lunar-lander-provider/",
+        "https://www.nasa.gov/directorates/esdmd/artemis-campaign-development-division/human-landing-system-program/how-nasas-artemis-iii-lander-test-will-pave-way-for-moon-landings/",
+        "https://www.nasa.gov/news-release/nasa-provides-update-on-moon-base-rovers-landers-missions/",
+        "https://www.nasa.gov/event/clps-flight-blue-origins-blue-moon-mark-1/",
+        "https://www.nasa.gov/directorates/esdmd/artemis-campaign-development-division/human-landing-system-program/industry-moon-lander-training-cabin-lands-at-nasa-for-artemis/",
+        "https://spaceflightnow.com/2026/05/29/blue-origins-new-glenn-rocket-explodes-during-prelaunch-testing-at-cape-canaveral/",
+        "https://spacenews.com/blue-origin-seeks-to-resume-new-glenn-launches-by-years-end/"
+      ],
+      "last_verified": "2026-10-20",
+      "order": 2,
+      "active": true
+    },
+    {
+      "id": "axiom-space",
+      "name": "Axiom Space",
+      "category": "spacesuits",
+      "country": "United States",
+      "headquarters": "Houston, Texas",
+      "tagline": "Builds the AxEMU spacesuit Artemis astronauts are to wear on the moon",
+      "role": "Axiom Space designs, certifies and produces the Axiom Extravehicular Mobility Unit (AxEMU), the suit NASA plans to use for moonwalks starting with Artemis 4. It is the only remaining supplier under NASA's Exploration Extravehicular Activity Services (xEVAS) contract since NASA and Collins Aerospace agreed in 2024 to remove Collins's task orders. For Artemis 3, NASA is weighing options to check how the suit works with the commercial landers' interfaces. Axiom and Prada designed the suit's outer layer and its liquid cooling garment, which is meant for moonwalks of up to eight hours.",
+      "status": "In February 2026, NASA said Axiom had finished its own technical review and more than 850 hours of crewed pressurized testing, and had begun receiving parts for the first flight unit, with a NASA-led critical design review still ahead. In April 2026, NASA's Office of Inspector General (OIG) warned that, at historical rates of delay, the suit's demonstrations could slip to 2031.",
+      "contract": "xEVAS task order with a base value of $228.5 million, awarded September 2022 (NASA). NASA's OIG puts the xEVAS contracts at up to $3.1 billion after Collins left.",
+      "facts": [
+        {
+          "label": "Founded",
+          "value": "2016"
+        },
+        {
+          "label": "Crewed pressurized testing",
+          "value": "More than 850 hours (February 2026)"
+        },
+        {
+          "label": "Cooling garment unveiled",
+          "value": "June 2026, with Prada"
+        }
+      ],
+      "links": [
+        {
+          "title": "NASA: Moon Mission Spacesuit Nears Milestone",
+          "url": "https://www.nasa.gov/humans-in-space/nasa-moon-mission-spacesuit-nears-milestone/"
+        },
+        {
+          "title": "NASA: Commercial Spacesuit Providers",
+          "url": "https://www.nasa.gov/suits-and-rovers/commercial-spacesuit-providers/"
+        },
+        {
+          "title": "Axiom Space: Axiom and Prada unveil inner layer of lunar spacesuit",
+          "url": "https://www.axiomspace.com/release/axiom-space-prada-unveil-inner-layer-of-next-gen-lunar-spacesuit"
+        }
+      ],
+      "related_articles": [
+        "artemis3-axemu-spacesuit",
+        "artemis-suit-schedule-gap-september-2",
+        "spacesuit-temperature-extremes-september-23",
+        "artemis-biggest-risks-october-14",
+        "artemis3-schedule-slipping"
+      ],
+      "sources": [
+        "https://www.nasa.gov/news-release/nasa-taps-axiom-space-for-first-artemis-moonwalking-spacesuits/",
+        "https://www.nasa.gov/humans-in-space/nasa-moon-mission-spacesuit-nears-milestone/",
+        "https://oig.nasa.gov/audits/nasas-acquisition-of-next-generation-spacesuit-services/",
+        "https://oig.nasa.gov/news/spacesuit-development-delays-could-impact-artemis-timeline-and-iss-operations/",
+        "https://www.nasa.gov/missions/artemis/artemis-3/nasa-outlines-preliminary-artemis-iii-mission-plans/",
+        "https://www.axiomspace.com/release/axiom-space-prada-unveil-inner-layer-of-next-gen-lunar-spacesuit"
+      ],
+      "last_verified": "2026-10-20",
+      "order": 1,
+      "active": true
+    },
+    {
+      "id": "lockheed-martin",
+      "name": "Lockheed Martin",
+      "category": "rocket_capsule",
+      "country": "United States",
+      "headquarters": "Bethesda, Maryland",
+      "tagline": "Prime contractor for Orion, the Artemis crew spacecraft",
+      "role": "Lockheed Martin designs and builds Orion, the capsule that launches Artemis crews on the Space Launch System (SLS) and brings them home. Under its Orion Production and Operations Contract, NASA committed to at least six spacecraft and can order up to 12. Final assembly of each spacecraft takes place in the Neil Armstrong Operations and Checkout Building at NASA's Kennedy Space Center in Florida. On Artemis 3, Orion is to rendezvous and dock with commercial landers in low Earth orbit.",
+      "status": "Orion carried four astronauts around the moon on Artemis 2, launching April 1, 2026 and splashing down in the Pacific on April 10. The Artemis 3 crew and service modules were joined at Kennedy on July 30, 2026, ahead of a launch NASA plans for 2027.",
+      "contract": "Orion Production and Operations Contract (September 2019): minimum six and maximum 12 spacecraft, ordering through September 30, 2030, with an initial order of three spacecraft for Artemis 3 to 5 worth $2.7 billion (NASA).",
+      "facts": [
+        {
+          "label": "Artemis 2 distance",
+          "value": "694,481 miles (1.1 million kilometers)"
+        },
+        {
+          "label": "Artemis 3 modules joined",
+          "value": "July 30, 2026"
+        },
+        {
+          "label": "Spacecraft on contract",
+          "value": "6 to 12"
+        }
+      ],
+      "links": [
+        {
+          "title": "Lockheed Martin: Orion Spacecraft",
+          "url": "https://www.lockheedmartin.com/en-us/products/orion.html"
+        },
+        {
+          "title": "NASA: Orion Spacecraft",
+          "url": "https://www.nasa.gov/humans-in-space/orion-spacecraft/"
+        }
+      ],
+      "related_articles": [
+        "artemis2-heatshield-verdict",
+        "artemis3-heat-shield-stacks-july-15"
+      ],
+      "sources": [
+        "https://www.nasa.gov/news-release/nasa-commits-to-long-term-artemis-missions-with-orion-production-contract",
+        "https://www.lockheedmartin.com/en-us/products/orion.html",
+        "https://news.lockheedmartin.com/2026-04-10-Splashdown-Lockheed-Martin-Built-Orion-Spacecraft-Safely-Returns-Astronauts-to-Earth,-Completing-NASAs-Artemis-II-Mission",
+        "https://www.nasa.gov/image-article/artemis-iii-orion-crew-and-service-models-joined/",
+        "https://www.nasa.gov/blogs/missions/2026/08/27/nasa-starts-artemis-iii-engine-install-boosters-crew-training-advance/"
+      ],
+      "last_verified": "2026-10-20",
+      "order": 1,
+      "active": true
+    },
+    {
+      "id": "boeing",
+      "name": "Boeing",
+      "category": "rocket_capsule",
+      "country": "United States",
+      "headquarters": "Arlington, Virginia",
+      "tagline": "Builds the core stage of NASA's Space Launch System rocket",
+      "role": "Boeing is the prime contractor for the SLS core stage, the 212-foot (65-meter) stage that holds the rocket's liquid hydrogen and liquid oxygen and carries its four RS-25 engines. The stages are built at NASA's Michoud Assembly Facility in New Orleans, and Boeing moved engine section integration to Kennedy Space Center, which it expects to cut up to six months from each stage. Boeing was also building the Exploration Upper Stage, which NASA dropped in February 2026 when it standardized the rocket's configuration.",
+      "status": "The Artemis 3 core stage arrived at Kennedy in April 2026, and NASA reported in October 2026 that all four RS-25 engines were installed. At Michoud, the Artemis 4 core stage's liquid hydrogen tank moved into a test building in May 2026.",
+      "facts": [
+        {
+          "label": "Core stage height",
+          "value": "212 feet (65 meters)"
+        },
+        {
+          "label": "Core stage diameter",
+          "value": "27.6 feet (8.4 meters)"
+        },
+        {
+          "label": "Liquid hydrogen capacity",
+          "value": "537,000 gallons (2 million liters)"
+        }
+      ],
+      "links": [
+        {
+          "title": "NASA: SLS Core Stage",
+          "url": "https://www.nasa.gov/reference/sls-space-launch-system-core-stage"
+        },
+        {
+          "title": "Boeing: Space Launch System",
+          "url": "https://www.boeing.com/space/space-launch-system"
+        }
+      ],
+      "related_articles": [],
+      "sources": [
+        "https://www.nasa.gov/reference/sls-space-launch-system-core-stage",
+        "https://www.boeing.com/features/2026/04/boeings-moon-rocket-core-stage-delivered-to-florida",
+        "https://www.nasa.gov/blogs/missions/2026/10/13/nasa-completes-artemis-iii-booster-stacking-shares-status-update/",
+        "https://www.nasa.gov/image-article/crews-move-artemis-iv-liquid-hydrogen-tank/",
+        "https://www.nasa.gov/directorates/esdmd/nasa-strengthens-artemis-adds-mission-refines-overall-architecture/",
+        "https://www.nasa.gov/news-release/nasa-adds-mission-to-artemis-lunar-program-updates-architecture/"
+      ],
+      "last_verified": "2026-10-20",
+      "order": 2,
+      "active": true
+    },
+    {
+      "id": "northrop-grumman",
+      "name": "Northrop Grumman",
+      "category": "rocket_capsule",
+      "country": "United States",
+      "headquarters": "Falls Church, Virginia",
+      "tagline": "Builds the SLS solid rocket boosters and HALO-based lunar payloads",
+      "role": "Northrop Grumman builds the twin five-segment solid rocket boosters that produce more than 75 percent of the SLS's thrust at liftoff, as well as the abort motor for Orion's launch abort system. It was building HALO, a habitation module for the Gateway lunar station, until NASA paused Gateway in March 2026. NASA and Northrop Grumman are now reusing HALO power and avionics hardware in three Lunar Infrastructure Demo (LID) payloads for Moon Base, aimed at keeping surface systems powered through the lunar night.",
+      "status": "Technicians finished stacking the Artemis 3 boosters in the Vehicle Assembly Building at Kennedy Space Center on September 30, 2026. Neither NASA nor Northrop Grumman has given a launch date or a cost for the LID missions announced in August 2026.",
+      "contract": "Booster Production and Operations Contract worth $3.19 billion, finalized December 2021, covering boosters for nine SLS flights with work through December 31, 2031 (NASA).",
+      "facts": [
+        {
+          "label": "Share of liftoff thrust",
+          "value": "More than 75 percent"
+        },
+        {
+          "label": "Artemis 3 boosters stacked",
+          "value": "September 30, 2026"
+        },
+        {
+          "label": "Boosters built in",
+          "value": "Utah"
+        }
+      ],
+      "links": [
+        {
+          "title": "Northrop Grumman: Artemis",
+          "url": "https://www.northropgrumman.com/what-we-do/space/missions/artemis/program"
+        },
+        {
+          "title": "NASA: SLS Solid Rocket Boosters",
+          "url": "https://www.nasa.gov/reference/space-launch-system-solid-rocket-booster/"
+        }
+      ],
+      "related_articles": [
+        "halo-moon-base-reuse-august-12"
+      ],
+      "sources": [
+        "https://www.nasa.gov/blogs/missions/2026/06/04/final-artemis-iii-sls-booster-segments-en-route-to-nasa-kennedy/",
+        "https://www.nasa.gov/blogs/missions/2026/10/13/nasa-completes-artemis-iii-booster-stacking-shares-status-update/",
+        "https://www.nasa.gov/news-release/nasa-awards-artemis-contract-for-future-mega-moon-rocket-boosters/",
+        "https://www.nasa.gov/missions/moon-base/nasa-provides-updates-on-moon-base-cargo-landers-tech-demonstrations/",
+        "https://www.northropgrumman.com/what-we-do/space/missions/artemis/program",
+        "https://www.nasa.gov/news-release/nasa-unveils-initiatives-to-achieve-americas-national-space-policy/",
+        "https://spaceflightnow.com/2026/08/06/nasa-northrop-grumman-repurpose-gateway-elements-for-moon-base-demo-missions/"
+      ],
+      "last_verified": "2026-10-20",
+      "order": 3,
+      "active": true
+    },
+    {
+      "id": "airbus",
+      "name": "Airbus",
+      "category": "rocket_capsule",
+      "country": "France",
+      "headquarters": "Toulouse, France",
+      "tagline": "Builds Orion's European Service Module for ESA",
+      "role": "Airbus is the European Space Agency's (ESA) prime contractor for the European Service Module, the part of Orion that supplies propulsion, electrical power, temperature control and the crew's air and water. Each module carries 33 engines and four solar array wings that produce about 11.2 kilowatts. Final assembly takes place in Bremen, Germany, and ESA has contracted Airbus for six modules. On Artemis 3, the service module is to circularize Orion's orbit after launch.",
+      "status": "The Artemis 3 service module was joined to Orion's crew module at Kennedy Space Center on July 30, 2026, and NASA reported in October 2026 that ESA and Airbus had inspected its solar array wings. The fourth module, for Artemis 4, was delivered to Kennedy in late 2025.",
+      "contract": "ESA contract for six European Service Modules, ESM-1 to ESM-6 (Airbus). No contract value was confirmed.",
+      "facts": [
+        {
+          "label": "Built in",
+          "value": "Bremen, Germany"
+        },
+        {
+          "label": "Engines per module",
+          "value": "33"
+        },
+        {
+          "label": "Solar power",
+          "value": "About 11.2 kilowatts"
+        },
+        {
+          "label": "Modules contracted",
+          "value": "6"
+        }
+      ],
+      "links": [
+        {
+          "title": "Airbus: Orion European Service Module",
+          "url": "https://www.airbus.com/en/products-services/space/space-exploration/moon-missions/orion-european-service-module"
+        },
+        {
+          "title": "ESA: Orion",
+          "url": "https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/Orion"
+        }
+      ],
+      "related_articles": [
+        "artemis2-what-we-learned"
+      ],
+      "sources": [
+        "https://www.airbus.com/en/products-services/space/space-exploration/moon-missions/orion-european-service-module",
+        "https://www.airbus.com/en/newsroom/press-releases/2026-03-heart-of-the-mission-airbus-built-esm-to-power-historic-artemis-ii-crew-to-the-moon",
+        "https://www.nasa.gov/blogs/missions/2026/10/13/nasa-completes-artemis-iii-booster-stacking-shares-status-update/",
+        "https://www.nasa.gov/missions/artemis/artemis-3/nasa-outlines-preliminary-artemis-iii-mission-plans/",
+        "https://www.nasa.gov/image-article/artemis-iii-orion-crew-and-service-models-joined/"
+      ],
+      "last_verified": "2026-10-20",
+      "order": 4,
+      "active": true
+    },
+    {
+      "id": "intuitive-machines",
+      "name": "Intuitive Machines",
+      "category": "robotic_landers",
+      "country": "United States",
+      "headquarters": "Houston, Texas",
+      "tagline": "Flies Nova-C robotic landers that carry NASA payloads to the moon",
+      "role": "Intuitive Machines builds and flies Nova-C landers under NASA's Commercial Lunar Payload Services (CLPS) program, whose missions NASA now runs under Moon Base. Its next mission, IM-3, uses a lander named Trinity to reach Reiner Gamma, a lunar swirl, carrying NASA's Lunar Vertex investigation and payloads from ESA and the Korea Astronomy and Space Science Institute. The company's first lunar data relay satellite, Altus-1, flies with it. In June 2026 NASA awarded Intuitive Machines one more delivery for late 2028.",
+      "status": "NASA reported in August 2026 that IM-3 had finished thermal vacuum testing, with engine integration and hot fire tests to follow. NASA lists the launch for 2026, while the company's NASA contract for the mission runs through March 2027.",
+      "contract": "CLPS task order for one late-2028 delivery worth $148.3 million (NASA, June 2026).",
+      "facts": [
+        {
+          "label": "Founded",
+          "value": "2013"
+        },
+        {
+          "label": "Earlier landings",
+          "value": "IM-1 (February 2024) and IM-2 (March 2025), both tipped over"
+        },
+        {
+          "label": "IM-3 target",
+          "value": "Reiner Gamma"
+        }
+      ],
+      "links": [
+        {
+          "title": "Intuitive Machines",
+          "url": "https://www.intuitivemachines.com/"
+        },
+        {
+          "title": "NASA: Moon Base, Intuitive Machines IM-3",
+          "url": "https://www.nasa.gov/event/clps-flight-intuitive-machines-im-3"
+        }
+      ],
+      "related_articles": [
+        "moonbase-clps-cadence-july-1"
+      ],
+      "sources": [
+        "https://www.nasa.gov/news-release/nasa-provides-update-on-moon-base-rovers-landers-missions/",
+        "https://www.nasa.gov/missions/moon-base/nasa-provides-updates-on-moon-base-cargo-landers-tech-demonstrations/",
+        "https://www.nasa.gov/news-release/nasa-awards-more-moon-base-science-previews-new-opportunities/",
+        "https://www.nasa.gov/event/clps-flight-intuitive-machines-im-3",
+        "https://www.sec.gov/Archives/edgar/data/1844452/000162828026056821/lunr-20260630.htm"
+      ],
+      "last_verified": "2026-10-20",
+      "order": 1,
+      "active": true
+    },
+    {
+      "id": "firefly-aerospace",
+      "name": "Firefly Aerospace",
+      "category": "robotic_landers",
+      "country": "United States",
+      "headquarters": "Cedar Park, Texas",
+      "tagline": "Builds Blue Ghost landers and the carrier for NASA's MoonFall drones",
+      "role": "Firefly Aerospace builds the Blue Ghost robotic lander and the Elytra spacecraft that works in lunar orbit. Blue Ghost Mission 1 landed in Mare Crisium on March 2, 2025, and all 10 NASA payloads collected data. Its next lunar mission is planned to make the first American landing on the moon's far side. NASA's Jet Propulsion Laboratory (JPL) also picked Firefly to carry four MoonFall drones that will scout possible Artemis landing sites near the south pole.",
+      "status": "Firefly lists Blue Ghost Mission 2 as launching no earlier than 2027, and MoonFall is targeted for 2028. In June 2026, NASA awarded Firefly another delivery for late 2028.",
+      "contract": "CLPS task order for one late-2028 delivery worth $144.2 million (NASA, June 2026). MoonFall subcontract from NASA JPL worth $75 million (Firefly, May 2026).",
+      "facts": [
+        {
+          "label": "Founded",
+          "value": "2017"
+        },
+        {
+          "label": "Blue Ghost Mission 1 landing",
+          "value": "March 2, 2025"
+        },
+        {
+          "label": "MoonFall drones",
+          "value": "4"
+        }
+      ],
+      "links": [
+        {
+          "title": "Firefly: Blue Ghost Mission 2",
+          "url": "https://fireflyspace.com/blue-ghost-mission-2"
+        },
+        {
+          "title": "Firefly: Elytra, NASA MoonFall",
+          "url": "https://fireflyspace.com/missions/elytra-nasa-moonfall/"
+        },
+        {
+          "title": "NASA: Firefly's Blue Ghost lands on moon",
+          "url": "https://www.nasa.gov/news-release/touchdown-carrying-nasa-science-fireflys-blue-ghost-lands-on-moon/"
+        }
+      ],
+      "related_articles": [
+        "moonbase-clps-cadence-july-1"
+      ],
+      "sources": [
+        "https://www.nasa.gov/news-release/touchdown-carrying-nasa-science-fireflys-blue-ghost-lands-on-moon/",
+        "https://www.nasa.gov/news-release/nasa-science-continues-after-fireflys-first-moon-mission-concludes/",
+        "https://www.nasa.gov/news-release/nasa-provides-update-on-moon-base-rovers-landers-missions/",
+        "https://www.nasa.gov/news-release/nasa-awards-more-moon-base-science-previews-new-opportunities/",
+        "https://fireflyspace.com/blue-ghost-mission-2",
+        "https://fireflyspace.com/news/firefly-aerospace-wins-75-million-nasa-jpl-moonfall-subcontract-to-deliver-drones-to-the-moons-south-pole/"
+      ],
+      "last_verified": "2026-10-20",
+      "order": 2,
+      "active": true
+    },
+    {
+      "id": "astrobotic",
+      "name": "Astrobotic (Voyager Lunar Systems)",
+      "category": "robotic_landers",
+      "country": "United States",
+      "headquarters": "Pittsburgh, Pennsylvania",
+      "tagline": "Builds Griffin and Peregrine lunar landers, now as part of Voyager",
+      "role": "Astrobotic builds commercial lunar landers for NASA's CLPS deliveries. Its Griffin-1 lander flies Moon Base II, carrying more than 1,100 pounds (455 kilograms) of cargo to Nobile Crater near the south pole, including Astrolab's FLIP rover. In June 2026, NASA awarded it two more deliveries for late 2028, one of them a Peregrine-2 mission to the Gruithuisen Domes. Voyager Technologies completed its purchase of Astrobotic in July 2026, and the business now operates as Voyager Lunar Systems.",
+      "status": "NASA reported in October 2026 that Griffin-1 had passed vibration, acoustic and thermal vacuum tests at JPL and returned to Pittsburgh for final assembly, with launch on a SpaceX Falcon Heavy expected later in 2026. Astrobotic's first lander, Peregrine, did not reach the moon in January 2024 after a propulsion failure.",
+      "contract": "CLPS task orders for two late-2028 deliveries worth $297.9 million combined (NASA, June 2026).",
+      "facts": [
+        {
+          "label": "Parent company",
+          "value": "Voyager Technologies (since July 2026)"
+        },
+        {
+          "label": "Griffin-1 payloads",
+          "value": "10, from six countries"
+        },
+        {
+          "label": "Griffin-1 landing site",
+          "value": "Nobile Crater, near the south pole"
+        }
+      ],
+      "links": [
+        {
+          "title": "Astrobotic: Griffin lander",
+          "url": "https://www.astrobotic.com/lunar-delivery/landers/griffin-lander/"
+        },
+        {
+          "title": "NASA: JPL testing readies Voyager Technologies lander for moon mission",
+          "url": "https://www.nasa.gov/missions/moon-base/nasa-jpl-testing-readies-voyager-technologies-lander-for-moon-mission/"
+        }
+      ],
+      "related_articles": [
+        "moonbase-clps-cadence-july-1",
+        "moon-base-construction-begins-2026"
+      ],
+      "sources": [
+        "https://www.nasa.gov/missions/moon-base/nasa-jpl-testing-readies-voyager-technologies-lander-for-moon-mission/",
+        "https://www.nasa.gov/news-release/nasa-provides-update-on-moon-base-rovers-landers-missions/",
+        "https://www.nasa.gov/news-release/nasa-awards-more-moon-base-science-previews-new-opportunities/",
+        "https://www.astrobotic.com/voyager-awarded-298m-nasa-contract-under-completed-astrobotic-acquisition/",
+        "https://www.astrobotic.com/astrobotic-to-join-voyager-technologies-accelerating-americas-moon-base/"
+      ],
+      "last_verified": "2026-10-20",
+      "order": 3,
+      "active": true
+    },
+    {
+      "id": "icon",
+      "name": "ICON",
+      "category": "construction",
+      "country": "United States",
+      "headquarters": "Austin, Texas",
+      "tagline": "Develops technology to build lunar structures from moon soil",
+      "role": "ICON is developing Olympus, a construction system meant to build landing pads, roads, blast shields and habitats on the moon from local soil, under a NASA contract and with testing support from NASA's Marshall Space Flight Center. The company started the project in October 2020 with architecture firms Bjarke Ingels Group (BIG) and SEArch+. In February 2025 its Duneflow experiment, the project's first payload to fly to space, rode Blue Origin's New Shepard to study how simulated lunar soil flows in about two minutes of simulated lunar gravity.",
+      "status": "The NASA contract runs through 2028, and no flight of construction hardware to the moon has been announced. ICON created ICON Prime, a government division that includes its space work, in April 2026, and NASA's Moon Base pages, updated through September 2026, do not mention the company.",
+      "contract": "NASA Small Business Innovation Research (SBIR) Phase III contract worth $57.2 million, announced November 2022 and running through 2028 (NASA).",
+      "facts": [
+        {
+          "label": "Founded",
+          "value": "2017"
+        },
+        {
+          "label": "NASA contract",
+          "value": "$57.2 million, through 2028"
+        },
+        {
+          "label": "First space payload",
+          "value": "Duneflow, February 2025"
+        }
+      ],
+      "links": [
+        {
+          "title": "Video: 3D printing on the Moon (ICON)",
+          "url": "https://www.youtube.com/watch?v=anBl7HEo5pY"
+        },
+        {
+          "title": "ICON: Lunar surface construction system with $57.2 million NASA award",
+          "url": "https://www.iconbuild.com/newsroom/icon-to-develop-lunar-surface-construction-system-with-57-2-million-nasa-award"
+        },
+        {
+          "title": "NASA: NASA, ICON advance lunar construction technology",
+          "url": "https://www.nasa.gov/centers-and-facilities/marshall/nasa-icon-advance-lunar-construction-technology-for-moon-missions/"
+        }
+      ],
+      "related_articles": [],
+      "sources": [
+        "https://www.nasa.gov/centers-and-facilities/marshall/nasa-icon-advance-lunar-construction-technology-for-moon-missions/",
+        "https://www.iconbuild.com/newsroom/icon-to-develop-lunar-surface-construction-system-with-57-2-million-nasa-award",
+        "https://webflow.iconbuild.com/newsroom/icon-receives-funding-from-nasa-and-launches-project-olympus-to-reach-for-the-stars-with-off-world-construction-system-for-the-moon",
+        "https://www.iconbuild.com/newsroom/icons-project-duneflow-completes-successful-space-flight-with-blue-origin",
+        "https://www.iconbuild.com/newsroom/icon-launches-icon-prime-a-dedicated-government-division-focused-on-military-intelligence-and-space-applications-to-accelerate-robotic-construction-for-national-security",
+        "https://www.nasa.gov/reference/moonbase-about/"
+      ],
+      "last_verified": "2026-10-20",
+      "order": 1,
+      "active": true
+    },
+    {
+      "id": "astrolab",
+      "name": "Astrolab (Venturi Astrolab)",
+      "category": "rovers",
+      "country": "United States",
+      "headquarters": "Hawthorne, California",
+      "tagline": "Builds CLV-1, one of two crewed rovers NASA ordered for Artemis",
+      "role": "Astrolab is one of two companies NASA picked in May 2026 to build Lunar Terrain Vehicles, the rovers Artemis astronauts are to drive near the south pole. Its Crewed Lunar Vehicle (CLV-1) is adapted from its earlier FLEX design, with a maximum mass of 950 kilograms (about 2,100 pounds) and a top speed of 10 kilometers per hour (6 miles per hour) on level ground. NASA aims to have the rovers on the moon by 2028, delivered by Blue Origin. Astrolab's smaller FLIP rover, carrying five NASA payloads, is due to fly on the Griffin-1 lander.",
+      "status": "NASA said in May 2026 that both rover builders would spend about 18 months finishing designs, running crewed evaluations and certifying flight units. FLIP is set to launch on Griffin-1, which NASA expected to fly later in 2026 as of October 2026.",
+      "contract": "Lunar Terrain Vehicle Services task order worth $219 million (NASA, May 2026), under a contract with a combined potential value of up to $4.6 billion (Astrolab).",
+      "facts": [
+        {
+          "label": "Founder and CEO",
+          "value": "Jaret Matthews"
+        },
+        {
+          "label": "CLV-1 maximum mass",
+          "value": "950 kilograms (about 2,100 pounds)"
+        },
+        {
+          "label": "Teammates",
+          "value": "Axiom Space, Interlune, Odyssey Space Research"
+        }
+      ],
+      "links": [
+        {
+          "title": "Astrolab: NASA selects Astrolab to provide lunar rover",
+          "url": "https://astrolab.space/2026/05/26/nasa-selects-astrolab-to-provide-lunar-rover-for-artemis-astronauts-return-to-the-moon/"
+        },
+        {
+          "title": "NASA: Update on Moon Base rovers, landers, missions",
+          "url": "https://www.nasa.gov/news-release/nasa-provides-update-on-moon-base-rovers-landers-missions/"
+        }
+      ],
+      "related_articles": [
+        "moon-base-construction-begins-2026"
+      ],
+      "sources": [
+        "https://www.nasa.gov/news-release/nasa-provides-update-on-moon-base-rovers-landers-missions/",
+        "https://www.nasa.gov/news-release/la-nasa-ofrece-informacion-actualizada-sobre-rovers-modulos-de-alunizaje-y-misiones-de-base-lunar/",
+        "https://www.nasa.gov/moonbase-systems/",
+        "https://astrolab.space/2026/05/26/nasa-selects-astrolab-to-provide-lunar-rover-for-artemis-astronauts-return-to-the-moon/",
+        "https://www.nasa.gov/missions/moon-base/nasa-provides-updates-on-moon-base-cargo-landers-tech-demonstrations/",
+        "https://www.nasa.gov/missions/moon-base/nasa-jpl-testing-readies-voyager-technologies-lander-for-moon-mission/"
+      ],
+      "last_verified": "2026-10-20",
+      "order": 1,
+      "active": true
+    },
+    {
+      "id": "thales-alenia-space",
+      "name": "Thales Alenia Space",
+      "category": "international",
+      "country": "France",
+      "headquarters": "Cannes, France",
+      "tagline": "Leads design of Italy's lunar surface habitat for the Moon Base",
+      "role": "Thales Alenia Space, a joint venture of Thales (67 percent) and Leonardo (33 percent), is prime contractor to the Italian Space Agency (ASI) for the Multi-Purpose Habitat (MPH), a pressurized module planned as one of the first habitats on the lunar surface. NASA's March 2026 Moon Base plan lists ASI's Multi-purpose Habitats in Phase Three. The company also developed pressurized modules for Gateway, including HALO's structure for Northrop Grumman, before NASA paused Gateway that month.",
+      "status": "A NASA review board cleared the MPH's combined system definition and system requirements review in May 2026, according to ASI as reported by European Spaceflight. A preliminary design review is expected in 2027, with launch planned for 2033.",
+      "contract": "ASI contract for the two-year MPH preliminary design phase, signed July 2025 (Thales Alenia Space). No value was disclosed.",
+      "facts": [
+        {
+          "label": "Ownership",
+          "value": "Thales 67 percent, Leonardo 33 percent"
+        },
+        {
+          "label": "MPH design life",
+          "value": "At least 10 years"
+        },
+        {
+          "label": "Planned MPH launch",
+          "value": "2033"
+        }
+      ],
+      "links": [
+        {
+          "title": "Thales Alenia Space: Contract with ASI for the first human outpost on the lunar surface",
+          "url": "https://www.thalesaleniaspace.com/en/press-releases/thales-alenia-space-signs-contract-italian-space-agency-asi-develop-first-human"
+        },
+        {
+          "title": "NASA: Initiatives to achieve America's national space policy",
+          "url": "https://www.nasa.gov/news-release/nasa-unveils-initiatives-to-achieve-americas-national-space-policy/"
+        }
+      ],
+      "related_articles": [],
+      "sources": [
+        "https://www.thalesaleniaspace.com/en/press-releases/thales-alenia-space-signs-contract-italian-space-agency-asi-develop-first-human",
+        "https://www.nasa.gov/news-release/nasa-unveils-initiatives-to-achieve-americas-national-space-policy/",
+        "https://www.thalesaleniaspace.com/en/news/lunar-multi-purpose-habitat-activities-officially-underway",
+        "https://europeanspaceflight.com/italys-lunar-habitat-clears-nasa-system-requirements-review/",
+        "https://europeanspaceflight.com/italy-to-spend-over-5-billion-to-send-two-astronauts-to-the-moon/"
+      ],
+      "last_verified": "2026-10-20",
+      "order": 1,
+      "active": true
+    }
+  ]
+}
