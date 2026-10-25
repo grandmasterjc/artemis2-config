@@ -4,7 +4,7 @@ title: "Artemis 3 will dock Orion with two commercial landers in Earth orbit, an
 subtitle: "At a briefing at Kennedy Space Center on Oct. 23, NASA laid out a 14-day test flight in 2027, a smaller Starship refueling estimate and two routes to the lunar surface in 2028."
 date: 2026-10-25
 mission: artemis3
-premium: false
+premium: true
 hero_image: hero.jpg
 push_title: "NASA lays out Artemis 3: 14 days, three rockets, two landers"
 push_body: "What the Oct. 23 briefing said about the Earth-orbit test flight, the refueling count and the two routes to a 2028 landing."
