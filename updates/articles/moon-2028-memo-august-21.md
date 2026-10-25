@@ -30,7 +30,7 @@ Asked at Kennedy Space Center on August 14 whether Artemis 3 would fly next year
 
 Nothing in Thursday's memorandum changes those dates. It does aim at the thing that governs them, which is how often American rockets can fly.
 
-Artemis is unusually exposed to that number. As restructured, Artemis 3 needs three launches on three different rockets, with Orion meeting a Blue Moon test article and a Starship in low Earth orbit. The landing on Artemis 4 depends on Starship's Human Landing System (HLS), which cannot reach the moon on a single launch. It has to be fueled in orbit by a series of tanker flights, and how many is contested: the Government Accountability Office (GAO) has put it at 16 launches for one mission, while a SpaceX vice president said in 2024 that the number would be "10-ish."
+Artemis is unusually exposed to that number. As restructured, Artemis 3 needs three launches on three different rockets, with Orion meeting a Blue Moon test article and a Starship in low Earth orbit. NASA has said lander readiness will decide which of the two carries the Artemis 4 crew to the surface. If it is Starship's Human Landing System (HLS), that lander cannot reach the moon on a single launch. It has to be fueled in orbit by a series of tanker flights, and how many is contested: the Government Accountability Office (GAO) has put it at 16 launches for one mission, while a SpaceX vice president said in 2024 that the number would be "10-ish."
 
 ![Artist's rendering of SpaceX's Human Landing System on the lunar surface. Reaching this point requires an orbital refueling campaign that the Government Accountability Office estimates at 16 launches. Credit: SpaceX/NASA.](https://grandmasterjc.github.io/artemis2-config/updates/images/starship_hls_earthrise.jpg)
 
