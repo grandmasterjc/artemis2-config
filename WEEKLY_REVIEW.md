@@ -76,8 +76,11 @@ headline and dek map onto the draft's frontmatter.
 
 Rules the spec does not cover, still enforced here:
 
-- At most one inline image, mid-article (never at the top), with at least one
-  text paragraph between the image and the next `## heading`. It must use a full
+- Inline images are mid-article (never at the top), with at least one text
+  paragraph between each image and the next `## heading`. Default to one.
+  The owner allowed more (2026-10-25) when each extra image is an infographic
+  that carries data the prose cannot, such as a timeline or a comparison;
+  never add images as decoration. It must use a full
   absolute URL beginning `https://grandmasterjc.github.io/artemis2-config/updates/images/`
   and reference a file that already exists in `updates/images/`.
 - Hero via frontmatter `hero_image: hero.jpg`, 1200×675, high quality

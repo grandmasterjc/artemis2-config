@@ -50,7 +50,7 @@ None of that is measured yet. SpaceX is targeting early 2027 for its first prope
 
 For Artemis 4, the plan has changed on both sides. Under the Starship route, the lander is fueled in Earth orbit before Orion launches, then docks with Orion in high Earth orbit and fires the translunar injection burn itself, pushing both vehicles toward low lunar orbit. NASA has approved the Orion modifications for that push and says fabrication is underway. SpaceX is targeting an uncrewed lunar landing demonstration at the end of 2027 and a first crewed landing in the second half of 2028.
 
-![Artemis 4 landing routes. Starship docks with Orion in high Earth orbit and pushes it toward the moon; Blue Origin's Mark 2 lander meets Orion in an elliptical polar lunar orbit. Source: NASA briefing, Oct. 23, 2026.](https://grandmasterjc.github.io/artemis2-config/updates/images/artemis-acceleration-briefing-october-25-routes.jpg)
+![The two Artemis 4 landing routes. Source: NASA, Oct. 23, 2026.](https://grandmasterjc.github.io/artemis2-config/updates/images/artemis-acceleration-briefing-october-25-routes.jpg)
 
 Blue Origin's route sends three transfer vehicles derived from its Mark 1 lander, followed by the Mark 2, into an elliptical polar lunar orbit, where Orion's crew transfers to the lander. Blue's uncrewed Mark 1 cargo lander is due to fly next year, and the company says pad operations will restart in November, with New Glenn returning to flight soon after. Parsons said NASA has dropped the option of launching Blue's Artemis 3 lander on another rocket. NASA intends to delay choosing which company lands the first crew for as long as the data allows.
 
@@ -58,13 +58,17 @@ Blue Origin's route sends three transfer vehicles derived from its Mark 1 lander
 
 Two hardware changes serve both routes. The "sortie" version of Axiom Space's lunar suit is meant to cut mass from a little over 500 pounds (227 kilograms) to about 250 pounds (113 kilograms), with a minimum of two hours per moonwalk. Parsons said the first landing plans two such moonwalks, and the pressure garment is due this year.
 
+![Sortie suit and stretched Centaur compared with their baselines. Source: NASA, Oct. 23, 2026.](https://grandmasterjc.github.io/artemis2-config/updates/images/artemis-acceleration-briefing-october-25-suit-centaur.jpg)
+
 The second is a stretched Centaur upper stage for later SLS flights, carrying about 50 percent more propellant than the standard Centaur V and delivering 41 to 43 metric tons to the moon, according to Parsons. NASA will choose between it and the existing Interim Cryogenic Propulsion Stage around next summer.
 
 ## Milestones through 2027
 
-Parsons said Artemis 3 is about 90 days behind. Supply chain items drive the slip, and avionics for the Blue Origin test lander are the longest delay. To recover 23 days on one lander dome, NASA moved it across the country on a military C-17 cargo plane, and NASA staff are helping suppliers with welding schedules. Isaacman said the 90 days can shrink and that the figure should be read as encouraging, not alarming.
+Parsons said Artemis 3 is about 90 days behind. Supply chain items drive the slip, and avionics for the Blue Origin test lander are the longest delay. To recover 23 days on one lander dome, NASA moved it across the country on a military C-17 cargo plane. Isaacman said the 90 days can shrink and that the figure should be read as encouraging, not alarming.
 
 From here the calendar runs roughly in this order: Blue Origin's pad restart and Starship's next flight in November, the short-stack tanking test by year-end, Mark 2 test lander integration and the first Starship propellant transfer in early 2027, an Artemis 3 launch in summer 2027, and Starship's uncrewed lunar demonstration at the end of that year.
+
+![Milestones from November 2026 to 2028. Source: NASA, Oct. 23, 2026.](https://grandmasterjc.github.io/artemis2-config/updates/images/artemis-acceleration-briefing-october-25-milestones.jpg)
 
 Of everything on that calendar, the weighed core stage is the only item with a measured result so far.
 
