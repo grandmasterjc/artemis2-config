@@ -90,3 +90,5 @@ NASA's decision to outsource spacesuit development was controversial. Some argue
 Whether that model works will be proven on the surface of the Moon during Artemis IV. For now, the AxEMU is one of the few pieces of future Artemis hardware that actually appears to be on schedule.
 
 The crew selected for Artemis IV will have something remarkable to wear when they step onto the lunar regolith. The remaining question — covered in our previous update — is whether the rest of the Artemis architecture will be ready to get them there.
+
+*Correction, October 25, 2026: An earlier version of this article said Artemis III would dock Orion with SpaceX's Starship HLS only. NASA's March 3 update says the mission will test one or both commercial landers, from SpaceX and Blue Origin.*

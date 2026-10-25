@@ -49,3 +49,5 @@ None of that resolves the question the August 4 release raised on its own. HALO 
 If you want to see whether NASA follows through on Moon Base hardware like this, or any of the missions building toward Artemis, that is what our companion app Liftoff is built for. Live countdowns, real-time status and one-tap access to the official webcasts for every launch worldwide, free on the App Store: [Liftoff — Rocket & Space Launch](https://apps.apple.com/no/app/liftoff-rocket-space-launch/id6776392285).
 
 Want more than the weekly briefing? The free email edition adds a short "Week Ahead" every Sunday, launch windows and milestones to watch, exclusive to email. [Subscribe to the Artemis Briefing →](https://artemis-briefing.kit.com)
+
+*Correction, October 25, 2026: An earlier version of this article said NASA canceled the Gateway program in March. NASA's March 24 announcement said the agency intends to pause Gateway in its current form.*

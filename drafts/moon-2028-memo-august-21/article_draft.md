@@ -67,3 +67,5 @@ The date itself lives in an executive order from last December, and it survived 
 If you want to follow the flights that will decide whether 2028 holds as they happen, that is what our companion app Liftoff is built for. Live countdowns, real-time status and one-tap access to the official webcasts for every launch worldwide, free on the App Store: [Liftoff — Rocket & Space Launch](https://apps.apple.com/no/app/liftoff-rocket-space-launch/id6776392285).
 
 Want more than the weekly briefing? The free email edition adds a short "Week Ahead" every Sunday, launch windows and milestones to watch, exclusive to email. [Subscribe to the Artemis Briefing →](https://artemis-briefing.kit.com)
+
+*Correction, October 25, 2026: An earlier version of this article said the Artemis 4 landing depends on Starship. NASA's March 3 architecture update says lander readiness will decide which of the two providers lands the crew.*
