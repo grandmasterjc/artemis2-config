@@ -26,7 +26,7 @@ Rubio's record-setting ISS stay made him the most operationally tested medical d
 
 ## What's still moving
 
-The 2027 launch window is not locked. Isaacman has consistently referenced "late 2027," and the timeline depends on three pieces of hardware that are not yet flight-ready: Orion (Lockheed Martin internal completion currently January 2028, with acceleration work under way), the Starship HLS Pathfinder, and the Blue Moon Mark 2 Pathfinder. None of the landers has flown a crewed-configuration test yet.
+The 2027 launch window is not locked. Isaacman has consistently referenced "late 2027," and the timeline depends on three pieces of hardware that are not yet flight-ready: Orion, the Starship HLS Pathfinder, and the Blue Moon Mark 2 Pathfinder. None of the landers has flown a crewed-configuration test yet.
 
 The SLS for Artemis III will fly without its Exploration Upper Stage. The final booster motor segments shipped from Northrop Grumman's Utah facility on June 2, which is what allowed NASA to commit to naming a crew this week. The core stage and the segmented boosters are the long-lead items; if there are no new surprises, stacking at Kennedy could begin late this year.
 
@@ -39,3 +39,5 @@ A year and a half out from the targeted launch, naming a crew is partly a readin
 The real test is what happens in the next nine months: whether Starship V3 reaches orbit, whether Blue Moon Mark 2 hits its pathfinder milestone, and whether Orion clears its remaining qualification work without slipping past mid-2027. Tuesday gave the program four names. Whether those names fly in late 2027 will be decided by hardware, not crew selection.
 
 Want the next briefing in your inbox? [Subscribe to the Artemis Briefing](https://artemis-briefing.kit.com) — Wednesday deep-dives plus a short Sunday Week Ahead.
+
+*Correction, October 27, 2026: An earlier version of this article gave January 2028 as Lockheed Martin's internal completion date for the Artemis III Orion. We could not verify that date and have removed it.*
