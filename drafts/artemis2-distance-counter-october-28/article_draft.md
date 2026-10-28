@@ -1,6 +1,6 @@
 ---
 id: artemis2-distance-counter-october-28
-title: "'We're never going to come home': the moment Artemis 2's commander felt real fear"
+title: "Artemis 2 commander thought the crew would never get home. The number that scared him was off by 3.7 kilometers"
 subtitle: "Reid Wiseman has described watching the number climb past the figure Houston gave him. How a free-return path works, why the farthest point is a forecast and not a limit, and how the record was counted."
 date: 2026-10-28
 mission: artemis3
