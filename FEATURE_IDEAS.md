@@ -98,7 +98,7 @@ Start with: Apollo 17 crew debriefs, NASA Lunar Surface Innovation
 Consortium dust work, NASA technical reports on regolith.
 
 ### 6. Why spacesuit gloves are the hardest part of the suit
-Status: used 2026-10-28 spacesuit-gloves-october-28
+Status: used 2026-10-28 spacesuit-gloves-october-28 (draft held on main by owner's decision; to run Wednesday 2026-11-04, the next routine should review it, not rewrite it)
 Question: Why do astronauts say the gloves are the most punishing part of a
 spacewalk, and what changes for the moon?
 What the piece explains: a pressurized glove fights every finger movement,
@@ -196,6 +196,9 @@ near-rectilinear halo orbit, the fuel trade between fast and efficient
 routes, and how Artemis 2 flew.
 Start with: NASA Artemis 2 mission overview, trajectory papers on
 near-rectilinear halo orbits.
+Overlap: `artemis2-distance-counter-october-28` already explains the
+free-return path and the distance record. Keep this one on why Artemis
+uses a near-rectilinear halo orbit and the fast-versus-efficient trade.
 
 ### 16. How astronauts train for the moon
 Status: open

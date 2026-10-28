@@ -2,7 +2,7 @@
 id: spacesuit-gloves-october-28
 title: "A pressurized spacesuit glove pushes back on every movement, and the moon adds a deep freeze"
 subtitle: "Spacewalkers have lost fingernails and finished work days with sore hands for decades. Why the glove is the hardest part of the suit to get right, and what has to change for the moon."
-date: 2026-10-28
+date: 2026-11-04
 mission: artemis3
 premium: false
 hero_image: hero.jpg
