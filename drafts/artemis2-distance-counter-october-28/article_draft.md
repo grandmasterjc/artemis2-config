@@ -1,13 +1,13 @@
 ---
 id: artemis2-distance-counter-october-28
-title: "Artemis 2's distance counter passed its forecast peak by two nautical miles, and the commander felt real fear"
+title: "'We're never going to come home': the moment Artemis 2's commander felt real fear"
 subtitle: "Reid Wiseman has described watching the number climb past the figure Houston gave him. How a free-return path works, why the farthest point is a forecast and not a limit, and how the record was counted."
 date: 2026-10-28
 mission: artemis3
 premium: false
 hero_image: hero.jpg
-push_title: "Artemis 2's commander describes the moment the distance counter kept climbing"
-push_body: "A forecast of 219,667 nautical miles, a counter that read 219,669, and how a free-return path brings a capsule home."
+push_title: "Artemis 2 commander felt 'real fear' on the way around the moon"
+push_body: "The number on the display kept climbing past Houston's forecast. Here is what was actually happening."
 ---
 
 On Oct. 17, at the Starmus VIII festival in Tenerife, Artemis 2 commander Reid Wiseman told an audience about the one moment in his 10-day flight when he was afraid. Houston had given the crew a maximum distance from Earth. Wiseman was watching a counter on the Orion capsule, and it reached that figure. "I thought, 'Great, this is the farthest we will be from Earth,'" he said, according to Live Science, "and the next number I will see will be 219,666."
