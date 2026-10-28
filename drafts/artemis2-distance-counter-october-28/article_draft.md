@@ -10,9 +10,15 @@ push_title: "Artemis 2 commander felt 'real fear' on the way around the moon"
 push_body: "The number on the display kept climbing past Houston's forecast. Here is what was actually happening."
 ---
 
-On Oct. 17, at the Starmus VIII festival in Tenerife, Artemis 2 commander Reid Wiseman told an audience about the one moment in his 10-day flight when he was afraid. Houston had given the crew a maximum distance from Earth. Wiseman was watching a counter on the Orion capsule, and it reached that figure. "I thought, 'Great, this is the farthest we will be from Earth,'" he said, according to Live Science, "and the next number I will see will be 219,666."
+Orion was farther from Earth than any people had ever been.
 
-It read 219,668. About three minutes later it read 219,669. "That was the moment that I felt real fear because I thought we had just gone too far," Wiseman said. Then the number began to fall, and the crew cheered.
+It was April 6, the sixth day of Artemis 2, and the capsule was swinging around the far side of the moon. In the cabin, commander Reid Wiseman was watching a counter.
+
+Houston had told him the farthest the crew was supposed to get: 219,667 nautical miles (406,823 kilometers). The counter reached it. "I thought, 'Great, this is the farthest we will be from Earth, and the next number I will see will be 219,666,'" Wiseman later told an audience at the Starmus VIII festival in Tenerife on Oct. 17, according to Live Science.
+
+But the next number was 219,668.
+
+Three minutes later it read 219,669. "That was the moment that I felt real fear because I thought we had just gone too far," Wiseman said. Then the number began to fall, and the crew cheered.
 
 What was the counter measuring, was there really a point of no return, and how does a capsule that coasts around the moon get back? Live Science's report of the talk, NASA's flight descriptions and the Canadian Space Agency (CSA) mission pages answer most of it.
 
