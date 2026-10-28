@@ -98,7 +98,7 @@ Start with: Apollo 17 crew debriefs, NASA Lunar Surface Innovation
 Consortium dust work, NASA technical reports on regolith.
 
 ### 6. Why spacesuit gloves are the hardest part of the suit
-Status: open
+Status: used 2026-10-28 spacesuit-gloves-october-28
 Question: Why do astronauts say the gloves are the most punishing part of a
 spacewalk, and what changes for the moon?
 What the piece explains: a pressurized glove fights every finger movement,
