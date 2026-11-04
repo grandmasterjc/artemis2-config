@@ -42,7 +42,7 @@ The authors proposed a mechanism. Because glove design limits how far the MCP jo
 
 The glove on today's EMU is called Phase VI, the sixth version of a design NASA has used since the 1980s. In the 2015 NASA analysis, preliminary sensor results showed it placed less strain and shear on the hand than the earlier Series 4000 glove. The same report states the central trade-off: a glove that transmits more feel to the astronaut also transmits more force to the hand.
 
-NASA has also tried outside help. Its Astronaut Glove Challenge, run in 2007 and 2009 as part of the Centennial Challenges prize program, rewarded designs that bent easily and still held pressure. Peter Homer, an engineer from Maine, won both times, taking $250,000 in 2009. In the burst test that year, runner-up Ted Southern's glove began leaking at 17 pounds per square inch, while Homer's held to the 20 pounds per square inch maximum the rig could supply, according to news coverage of the event.
+NASA has also tried outside help. Its Astronaut Glove Challenge, run in 2007 and 2009 as part of the Centennial Challenges prize program, rewarded designs that bent easily and still held pressure. Peter Homer, an engineer from Maine, won both times, taking $250,000 in 2009. In the burst test that year, runner-up Ted Southern's glove began leaking at 17 pounds per square inch (117 kilopascals), while Homer's held to the 20 pounds per square inch (138 kilopascals) maximum the rig could supply, according to news coverage of the event.
 
 ## Cold and the south pole
 
