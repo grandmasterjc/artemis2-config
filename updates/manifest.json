@@ -1,6 +1,17 @@
 {
   "updates": [
     {
+      "id": "spacesuit-gloves-october-28",
+      "title": "A pressurized spacesuit glove pushes back on every movement, and the moon adds a deep freeze",
+      "subtitle": "Spacewalkers have lost fingernails and finished work days with sore hands for decades. Why the glove is the hardest part of the suit to get right, and what has to change for the moon.",
+      "date": "2026-11-05T17:00:33Z",
+      "mission": "artemis3",
+      "premium": false,
+      "hero_image": "https://grandmasterjc.github.io/artemis2-config/updates/images/spacesuit-gloves-october-28.jpg",
+      "summary": "Spacewalkers have lost fingernails and finished work days with sore hands for decades. Why the glove is the hardest part of the suit to get right, and what has to change for the moon.",
+      "author": "Joachim Gresslien"
+    },
+    {
       "id": "artemis-acceleration-briefing-october-25",
       "title": "Artemis 3 will dock Orion with two commercial landers in Earth orbit, and NASA now has a plan for what comes after",
       "subtitle": "At a briefing at Kennedy Space Center on Oct. 23, NASA laid out a 14-day test flight in 2027, a smaller Starship refueling estimate and two routes to the lunar surface in 2028.",
