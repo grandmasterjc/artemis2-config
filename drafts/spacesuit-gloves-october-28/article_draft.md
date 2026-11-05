@@ -54,6 +54,8 @@ The result, as reported by JPL, was that the current glove did not meet thermal 
 
 Axiom Space describes the glove on its Axiom Extravehicular Mobility Unit (AxEMU) as custom-made and built in-house, designed so astronauts can handle specialized tools for exploration and science. Gloves are also one of the few parts of the suit that have to be sized to the individual wearer, while most other components adjust to fit a range of body types.
 
+![An astronaut testing the AxEMU suit while collecting simulated lunar samples](https://grandmasterjc.github.io/artemis2-config/updates/images/axemu_progress_2024.jpg)
+
 Public detail on the glove itself is thin. Aerospace America reported in May 2026 that Axiom was preparing a qualification campaign of about a year, ending in mid-2027 if the schedule holds. No glove-specific results have been published.
 
 Back to the balloon. A moon glove still has to hold air. It also has to let a hand close around a rock hammer, hour after hour, in a place colder than anything the legacy glove was tested for.
