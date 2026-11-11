@@ -1,6 +1,17 @@
 {
   "updates": [
     {
+      "id": "moon-landing-navigation-november-11",
+      "title": "How do you land on the moon without GPS?",
+      "subtitle": "Apollo 11 needed Neil Armstrong at the window to steer clear of a boulder field, and it still landed 3 miles long. Several robotic landers have tipped over since. How does a spacecraft know where it is, and what lies below it?",
+      "date": "2026-11-11T18:27:20Z",
+      "mission": "artemis3",
+      "premium": false,
+      "hero_image": "https://grandmasterjc.github.io/artemis2-config/updates/images/moon-landing-navigation-november-11.jpg",
+      "summary": "Apollo 11 needed Neil Armstrong at the window to steer clear of a boulder field, and it still landed 3 miles long. Several robotic landers have tipped over since. How does a spacecraft know where it i",
+      "author": "Joachim Gresslien"
+    },
+    {
       "id": "spacesuit-gloves-october-28",
       "title": "A pressurized spacesuit glove pushes back on every movement, and the moon adds a deep freeze",
       "subtitle": "Spacewalkers have lost fingernails and finished work days with sore hands for decades. Why the glove is the hardest part of the suit to get right, and what has to change for the moon.",
