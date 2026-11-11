@@ -111,7 +111,7 @@ Added: 2026-09-24, from `spacesuit-temperature-extremes-september-23`,
 which named gloves as a weak point without explaining them.
 
 ### 7. How you land on the moon without GPS
-Status: open
+Status: used 2026-11-11 moon-landing-navigation-november-11
 Question: How does a lander know where it is and find a safe spot to touch
 down?
 What the piece explains: inertial navigation, terrain-relative navigation,
