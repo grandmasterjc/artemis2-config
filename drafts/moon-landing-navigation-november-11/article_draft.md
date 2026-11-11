@@ -1,13 +1,13 @@
 ---
 id: moon-landing-navigation-november-11
-title: "There is no GPS on the moon, so a lander finds its way down by matching craters to a map"
-subtitle: "Apollo 11 overshot its target by about 3 miles and needed a pilot to dodge boulders. Today's robotic landers aim for a circle about 100 meters across, reading the ground with cameras and lasers."
+title: "A moon lander has no GPS and no pilot, and it has to hit a target 100 meters wide"
+subtitle: "Apollo 11 needed Neil Armstrong at the window to steer clear of a boulder field, and it still landed 3 miles long. Several robotic landers have tipped over since. How does a spacecraft know where it is, and what lies below it?"
 date: 2026-11-11
 mission: artemis3
 premium: false
 hero_image: hero.jpg
 push_title: "How do you land on the moon without GPS?"
-push_body: "Cameras, lasers and a map stored on board. How a lander works out where it is, and how it picks a safe place to touch down."
+push_body: "Apollo 11 needed a pilot at the window and still landed 3 miles long. How do robotic landers find their own way down?"
 ---
 
 At about 600 feet (183 meters) above the moon on July 20, 1969, Neil Armstrong looked out of Eagle's window and didn't like what he saw. The computer was steering the lunar module into a field of boulders near a crater later named West. According to NASA's account of the landing, Armstrong took manual control, flew on past the rocks and set down with the fuel warning light already lit. Eagle came to rest about 3 miles (5 kilometers) beyond its planned spot.
