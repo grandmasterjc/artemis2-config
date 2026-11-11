@@ -1,6 +1,6 @@
 ---
 id: moon-landing-navigation-november-11
-title: "A moon lander has no GPS and no pilot, and it has to hit a target 100 meters wide"
+title: "How do you land on the moon without GPS?"
 subtitle: "Apollo 11 needed Neil Armstrong at the window to steer clear of a boulder field, and it still landed 3 miles long. Several robotic landers have tipped over since. How does a spacecraft know where it is, and what lies below it?"
 date: 2026-11-11
 mission: artemis3
