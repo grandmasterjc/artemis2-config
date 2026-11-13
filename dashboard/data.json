@@ -3,13 +3,6 @@
     "status": "ok",
     "daily_users": [
       {
-        "date": "2026-08-14",
-        "active": 82,
-        "new": 20,
-        "views": 106,
-        "sessions": 95
-      },
-      {
         "date": "2026-08-15",
         "active": 77,
         "new": 24,
@@ -631,29 +624,36 @@
         "new": 5,
         "views": 112,
         "sessions": 97
+      },
+      {
+        "date": "2026-11-12",
+        "active": 71,
+        "new": 8,
+        "views": 93,
+        "sessions": 75
       }
     ],
     "latest": {
-      "date": "2026-11-11",
-      "active": 86,
-      "new": 5,
-      "views": 112,
-      "sessions": 97
+      "date": "2026-11-12",
+      "active": 71,
+      "new": 8,
+      "views": 93,
+      "sessions": 75
     },
-    "total_active_28d": 1850,
-    "total_new_28d": 384,
-    "total_sessions_28d": 2059,
-    "total_views_28d": 2311,
-    "avg_dau_7d": 58.0,
-    "avg_dau_28d": 66.1,
+    "total_active_28d": 1758,
+    "total_new_28d": 379,
+    "total_sessions_28d": 1957,
+    "total_views_28d": 2220,
+    "avg_dau_7d": 60.3,
+    "avg_dau_28d": 62.8,
     "top_countries_30d": [
       {
         "country": "United States",
-        "active": 648
+        "active": 644
       },
       {
         "country": "United Kingdom",
-        "active": 199
+        "active": 201
       },
       {
         "country": "Germany",
@@ -665,38 +665,38 @@
       },
       {
         "country": "Australia",
-        "active": 50
+        "active": 49
       },
       {
         "country": "Italy",
-        "active": 39
+        "active": 38
       },
       {
         "country": "Netherlands",
-        "active": 33
+        "active": 34
       },
       {
         "country": "Spain",
-        "active": 23
+        "active": 22
       },
       {
         "country": "France",
         "active": 18
       },
       {
-        "country": "Mexico",
+        "country": "Switzerland",
         "active": 15
       }
     ],
     "push_events_30d": {
-      "notification_receive": 1089,
-      "notification_open": 280,
-      "notification_dismiss": 154,
+      "notification_receive": 1096,
+      "notification_open": 290,
+      "notification_dismiss": 164,
       "notification_foreground": 6,
-      "notification_toggled": 3
+      "notification_toggled": 6
     },
-    "push_open_rate_30d": 0.979,
-    "fetched_at": "2026-11-12T13:38:16.812507+00:00"
+    "push_open_rate_30d": 0.9797,
+    "fetched_at": "2026-11-13T12:56:47.501387+00:00"
   },
   "kit": {
     "status": "ok",
@@ -764,7 +764,7 @@
         "public": true
       }
     ],
-    "fetched_at": "2026-11-12T13:38:18.345710+00:00"
+    "fetched_at": "2026-11-13T12:56:48.390894+00:00"
   },
   "asc": {
     "status": "ok",
@@ -922,8 +922,8 @@
     ],
     "subscriptions": {
       "status": "ok",
-      "window_start": "2026-10-11",
-      "window_end": "2026-11-10",
+      "window_start": "2026-10-12",
+      "window_end": "2026-11-11",
       "days_with_data": 31,
       "days_attempted": 31,
       "active_subscribers": 12,
@@ -942,7 +942,7 @@
         "arr_usd": 442.74,
         "mrr_usd": 36.9,
         "proceeds_factor": 0.85,
-        "as_of": "2026-11-10"
+        "as_of": "2026-11-11"
       },
       "events_30d": {
         "Paid Subscription from Introductory Offer": 4,
@@ -1087,14 +1087,14 @@
       "total_units_30d": 14,
       "total_proceeds_usd_30d": 43.06,
       "new_subscribers_30d": 3,
-      "new_installs_30d": 48
+      "new_installs_30d": 47
     },
-    "fetched_at": "2026-11-12T13:38:59.263757+00:00"
+    "fetched_at": "2026-11-13T12:57:31.630699+00:00"
   },
   "play": {
     "status": "ok",
-    "window_start": "2026-10-14",
-    "window_end": "2026-11-12",
+    "window_start": "2026-10-15",
+    "window_end": "2026-11-13",
     "package": "no.bitfactory.artemisii.tracker",
     "by_product": {},
     "by_day": [],
@@ -1112,10 +1112,10 @@
     "active_subscriptions": 24,
     "active_trials": 0,
     "mrr_usd": 59,
-    "revenue_28d_usd": 83,
+    "revenue_28d_usd": 79,
     "new_customers_28d": 517,
     "active_users_28d": 1684,
-    "fetched_at": "2026-11-12T13:39:00.348180+00:00"
+    "fetched_at": "2026-11-13T12:57:32.966307+00:00"
   },
   "bluesky": {
     "status": "ok",
@@ -1126,7 +1126,7 @@
     "posts_7d": 3,
     "likes_7d": 0,
     "reposts_7d": 0,
-    "fetched_at": "2026-11-12T13:39:01.613439+00:00"
+    "fetched_at": "2026-11-13T12:57:33.707564+00:00"
   },
   "mastodon": {
     "status": "ok",
@@ -1138,7 +1138,7 @@
     "posts_7d": 3,
     "favs_7d": 0,
     "boosts_7d": 0,
-    "fetched_at": "2026-11-12T13:39:03.029487+00:00"
+    "fetched_at": "2026-11-13T12:57:34.884440+00:00"
   },
   "threads": {
     "status": "ok",
@@ -1149,11 +1149,11 @@
     "likes_7d": 9,
     "comments_7d": 2,
     "reposts_7d": 0,
-    "fetched_at": "2026-11-12T13:39:05.145992+00:00"
+    "fetched_at": "2026-11-13T12:57:35.720801+00:00"
   },
   "instagram": {
     "status": "error",
-    "error": "HTTP 400: {\"error\":{\"message\":\"Error validating access token: Session has expired on Wednesday, 12-Aug-26 08:57:14 PDT. The current time is Thursday, 12-Nov-26 05:39:05 PST.\",\"type\":\"OAuthException\",\"code\":190,"
+    "error": "HTTP 400: {\"error\":{\"message\":\"Error validating access token: Session has expired on Wednesday, 12-Aug-26 08:57:14 PDT. The current time is Friday, 13-Nov-26 04:57:35 PST.\",\"type\":\"OAuthException\",\"code\":190,\"e"
   },
   "push": {
     "status": "ok",
@@ -1240,7 +1240,7 @@
         "message_id": "projects/artemis-tracker-665d8/messages/7200674829871470364"
       }
     ],
-    "fetched_at": "2026-11-12T13:39:05.694623+00:00"
+    "fetched_at": "2026-11-13T12:57:35.985683+00:00"
   },
   "roadmap": {
     "status": "ok",
@@ -1328,7 +1328,7 @@
         "note": "durable across sandbox resets"
       }
     ],
-    "fetched_at": "2026-11-12T13:39:05.694868+00:00"
+    "fetched_at": "2026-11-13T12:57:35.986031+00:00"
   },
   "targets": {
     "status": "ok",
@@ -1422,5 +1422,5 @@
       "implied_subs": 5200
     }
   },
-  "generated_at": "2026-11-12T13:39:05.694877+00:00"
+  "generated_at": "2026-11-13T12:57:35.986044+00:00"
 }
