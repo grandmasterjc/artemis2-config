@@ -13,3 +13,4 @@ drafts/week-ahead/2026-10-18.md
 drafts/week-ahead/2026-10-25.md
 drafts/week-ahead/2026-11-01.md
 drafts/week-ahead/2026-11-08.md
+drafts/week-ahead/2026-11-15.md
