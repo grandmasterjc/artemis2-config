@@ -121,7 +121,7 @@ Start with: NASA Safe and Precise Landing Integrated Capabilities Evolution
 (SPLICE), Intuitive Machines and Firefly mission reports.
 
 ### 8. Why NASA is going to the lunar south pole
-Status: open
+Status: used 2026-11-18 lunar-south-pole-november-18
 Question: Why not go back to where Apollo landed?
 What the piece explains: water ice in permanently shadowed craters, how it
 got there, how orbiters found it, why near-constant sunlight on some ridges
