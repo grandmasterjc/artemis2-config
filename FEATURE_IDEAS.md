@@ -258,6 +258,14 @@ Start with: NASA's Moon to Mars Planetary Autonomous Construction Technologies (
 Overlap: #20 covers why landing plumes throw debris; this piece covers how a pad would be built, so keep the plume physics to a sentence and link to it. #10 covers extracting oxygen and propellant from regolith, not building with it.
 Added: 2026-10-20, from a reader tip that pointed to ICON's Project Olympus video.
 
+### 23. The biggest crater in the solar system is on the moon's far side
+Status: open
+Question: What made the South Pole-Aitken basin, and why do scientists want a piece of it so badly?
+What the piece explains: how big the basin is next to things a reader can picture, what kind of impact digs a hole that size, why its age would date the era of giant collisions in the early solar system, what China's Chang'e-6 samples from inside the basin have shown so far, and what Artemis crews at the south pole can add from its rim.
+Start with: NASA white paper "Why Artemis Will Focus on the Lunar South Polar Region" (2022), Artemis 3 Science Definition Team report, published Chang'e-6 sample results, NASA Gravity Recovery and Interior Laboratory (GRAIL) findings on the basin.
+Overlap: `lunar-south-pole-november-18` gave the basin three sentences as one reason for the landing site. This piece is about the basin itself, so keep the ice and lighting to a line.
+Added: 2026-11-21, from `lunar-south-pole-november-18`, which called the basin the largest and oldest in the solar system without explaining how it formed or how its age would be measured.
+
 ## Used
 
 (Move entries here, or mark them in place, once an article has been written.)
