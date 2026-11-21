@@ -68,7 +68,7 @@ None of this makes the pole easy. Shackleton's upper walls often slope more than
 
 Two robotic landers show the difference a few hundred miles make. India's Chandrayaan-3 landed upright on Aug. 23, 2023, at about 69 degrees south, still some 390 miles (625 kilometers) from the pole. Intuitive Machines' Athena reached Mons Mouton, far closer to the pole, on March 6, 2025, and ended up on its side. The company's chief executive, Steve Altemus, later named long shadows from the low sun among the causes.
 
-![NASA's nine candidate landing regions, with a star at the south pole. Credit: NASA.](https://grandmasterjc.github.io/artemis2-config/updates/images/lunar-south-pole-november-18-landing-regions.jpg)
+![The south pole and NASA's nine candidate landing regions. Map: NASA, annotated by Artemis Briefing.](https://grandmasterjc.github.io/artemis2-config/updates/images/lunar-south-pole-november-18-landing-regions-v2.jpg)
 
 In October 2024, NASA named nine candidate landing regions, judged on terrain, lighting, communication with Earth, science potential and launch windows. The list was drawn up when Artemis 3 was the landing mission. That landing has since moved to Artemis 4, planned for 2028.
 
