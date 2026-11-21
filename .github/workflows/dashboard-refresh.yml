@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: "stats or test"
+        description: "stats, test or topic"
         required: true
         default: "stats"
       token:
@@ -36,7 +36,7 @@ jobs:
         run: pip install -r scripts/requirements.txt
 
       - name: Push statistics (read-only)
-        if: ${{ inputs.mode != 'test' }}
+        if: ${{ inputs.mode == 'stats' }}
         env:
           GOOGLE_APPLICATION_CREDENTIALS_JSON: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_JSON }}
           GOOGLE_ANALYTICS_PROPERTY_ID: ${{ secrets.GOOGLE_ANALYTICS_PROPERTY_ID }}
@@ -50,3 +50,11 @@ jobs:
         env:
           FIREBASE_SERVICE_ACCOUNT_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_JSON }}
         run: python scripts/push_test_token.py
+
+      # Topic path to one device: a private, random topic that only this
+      # device is signed up for. Same rule for the push ID as above.
+      - name: Topic test to one device
+        if: ${{ inputs.mode == 'topic' }}
+        env:
+          FIREBASE_SERVICE_ACCOUNT_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_JSON }}
+        run: python scripts/push_test_topic.py
