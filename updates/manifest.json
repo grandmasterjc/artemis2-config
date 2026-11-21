@@ -1,6 +1,17 @@
 {
   "updates": [
     {
+      "id": "lunar-south-pole-november-18",
+      "title": "Artemis is headed for the moon's south pole because of craters the sun never reaches",
+      "subtitle": "Apollo landed six times near the lunar equator and found dry rock. A tilt of 1.5 degrees gives the south pole ice and ridges in near-constant sunlight, on some of the oldest ground on the moon.",
+      "date": "2026-11-21T06:05:39Z",
+      "mission": "artemis3",
+      "premium": false,
+      "hero_image": "https://grandmasterjc.github.io/artemis2-config/updates/images/lunar-south-pole-november-18.jpg",
+      "summary": "Apollo landed six times near the lunar equator and found dry rock. A tilt of 1.5 degrees gives the south pole ice and ridges in near-constant sunlight, on some of the oldest ground on the moon.",
+      "author": "Joachim Gresslien"
+    },
+    {
       "id": "moon-landing-navigation-november-11",
       "title": "How do you land on the moon without GPS?",
       "subtitle": "Apollo 11 needed Neil Armstrong at the window to steer clear of a boulder field, and it still landed 3 miles long. Several robotic landers have tipped over since. How does a spacecraft know where it is, and what lies below it?",
