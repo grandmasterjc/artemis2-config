@@ -32,9 +32,9 @@ The moon has no air to carry warmth in from the sunlit ground nearby, so these p
 
 ## Ice in the cold traps
 
-The idea is older than Apollo. In 1961, Kenneth Watson and colleagues proposed that water ice would persist in lunar craters that never receive sunlight, NASA's history of the search recounts. Then the Apollo samples came back dry.
+The idea is older than Apollo. In 1961, Kenneth Watson and colleagues proposed that water ice would persist in lunar craters that never receive sunlight, NASA's history of the search recounts.
 
-Orbiters revived the idea. In 1998, Lunar Prospector found the moon's largest concentrations of hydrogen in the areas never exposed to sunlight.
+Orbiters later agreed. In 1998, Lunar Prospector found the moon's largest concentrations of hydrogen in the areas never exposed to sunlight.
 
 LCROSS was the direct test. From the water in the plume, a team led by Anthony Colaprete of NASA's Ames Research Center estimated that the soil at the impact site was 5.6 percent water ice by mass, give or take 2.9 percentage points. At the central figure, a metric ton of that soil holds 56 kilograms of water, or about 15 gallons.
 
@@ -64,9 +64,13 @@ Dating the basin would show when the largest collisions of the early solar syste
 
 None of this makes the pole easy. Shackleton's upper walls often slope more than 30 degrees, according to the LROC team, and the low sun stretches the shadow of every boulder.
 
+![Athena on its side on Mons Mouton, March 6, 2025. Credit: Intuitive Machines.](https://grandmasterjc.github.io/artemis2-config/updates/images/lunar-south-pole-november-18-athena.jpg)
+
 Two robotic landers show the difference a few hundred miles make. India's Chandrayaan-3 landed upright on Aug. 23, 2023, at about 69 degrees south, still some 390 miles (625 kilometers) from the pole. Intuitive Machines' Athena reached Mons Mouton, far closer to the pole, on March 6, 2025, and ended up on its side. The company's chief executive, Steve Altemus, later named long shadows from the low sun among the causes.
 
-In October 2024, NASA named nine candidate landing regions, among them Mons Mouton and the Malapert Massif, judged on terrain, lighting, communication with Earth, science potential and launch windows. The list was drawn up when Artemis 3 was the landing mission. That landing has since moved to Artemis 4, planned for 2028.
+![NASA's nine candidate landing regions, with a star at the south pole. Credit: NASA.](https://grandmasterjc.github.io/artemis2-config/updates/images/lunar-south-pole-november-18-landing-regions.jpg)
+
+In October 2024, NASA named nine candidate landing regions, judged on terrain, lighting, communication with Earth, science potential and launch windows. The list was drawn up when Artemis 3 was the landing mission. That landing has since moved to Artemis 4, planned for 2028.
 
 ## Scouts still on Earth
 
