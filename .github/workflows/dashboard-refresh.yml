@@ -1,9 +1,20 @@
 name: Dashboard refresh
 
-# Diagnostic branch only. Runs a read-only GA4 query and prints it.
-# It commits nothing and sends nothing. Do not merge.
+# Diagnostic branch only. Do not merge.
+#   mode = stats: read-only GA4 query of push events, printed to the log.
+#   mode = test:  sends ONE test notification to the single device whose
+#                 push ID is given as "token". Nothing goes to a topic.
 on:
   workflow_dispatch:
+    inputs:
+      mode:
+        description: "stats or test"
+        required: true
+        default: "stats"
+      token:
+        description: "Push ID of the one device to test (mode = test)"
+        required: false
+        default: ""
 
 permissions:
   contents: read
@@ -24,8 +35,18 @@ jobs:
       - name: Install dependencies
         run: pip install -r scripts/requirements.txt
 
-      - name: Push diagnostics (read-only)
+      - name: Push statistics (read-only)
+        if: ${{ inputs.mode != 'test' }}
         env:
           GOOGLE_APPLICATION_CREDENTIALS_JSON: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_JSON }}
           GOOGLE_ANALYTICS_PROPERTY_ID: ${{ secrets.GOOGLE_ANALYTICS_PROPERTY_ID }}
         run: python scripts/push_diag.py
+
+      # The push ID is read from the event file inside the script. It is
+      # deliberately not passed through env or the command line, so it is
+      # never printed in this public log.
+      - name: Test notification to one device
+        if: ${{ inputs.mode == 'test' }}
+        env:
+          FIREBASE_SERVICE_ACCOUNT_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_JSON }}
+        run: python scripts/push_test_token.py
