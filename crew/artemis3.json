@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "mission_id": "artemis3",
-  "updated_at": "2026-06-09T17:42:00Z",
+  "updated_at": "2026-11-07T14:00:00Z",
   "announced": true,
   "reveal_event": {
     "date": "2026-06-09T15:30:00Z",
@@ -28,13 +28,13 @@
       "image_url_fallback": "https://images-assets.nasa.gov/image/iss053e036139/iss053e036139~orig.jpg",
       "short_bio": "Marine Colonel and test pilot. Former commander of ISS Expedition 53.",
       "bio_paragraphs": [
-        "Randy Bresnik is a retired U.S. Marine Corps Colonel and a NASA astronaut selected in 2004. He flew on STS-129 in 2009 and commanded Expedition 53 on the International Space Station in 2017, logging four spacewalks.",
-        "His test pilot background and prior command experience put him on the manual loop for Artemis III's docking architecture — the riskiest unproven element of the mission."
+        "Randy Bresnik is a retired U.S. Marine Corps Colonel and a NASA astronaut selected in 2004. He flew on STS-129 in 2009 and commanded Expedition 53 on the International Space Station in 2017, logging five spacewalks across the two flights.",
+        "As commander he leads a flight built around docking Orion with the commercial landers in Earth orbit, which no crew has tried before."
       ],
       "career_highlights": [
         "STS-129 mission specialist (Atlantis, 2009)",
         "Commander, ISS Expedition 53 (2017)",
-        "Four EVAs totaling over 32 hours",
+        "Five spacewalks totaling over 32 hours",
         "U.S. Naval Test Pilot School graduate"
       ],
       "previous_missions": [
@@ -54,11 +54,11 @@
       "agency": "ESA",
       "country": "Italy",
       "country_flag": "🇮🇹",
-      "image_url": "https://images-assets.nasa.gov/image/jsc2013e007948/jsc2013e007948~orig.jpg",
+      "image_url": "https://images-assets.nasa.gov/image/jsc2013e007948/jsc2013e007948~large.jpg",
       "image_url_fallback": "https://www.nasa.gov/wp-content/uploads/2026/06/artemis-iii-crew.jpg",
       "short_bio": "Italian Air Force Colonel and ESA astronaut. First European on a crewed Artemis mission.",
       "bio_paragraphs": [
-        "Luca Parmitano is an Italian Air Force Colonel and ESA astronaut from the 2009 class. He flew Expedition 36/37 in 2013 — including the near-drowning spacewalk that reshaped NASA's EVA suit water-leak protocols — and commanded Expedition 61 in 2019.",
+        "Luca Parmitano is an Italian Air Force Colonel and ESA astronaut from the 2009 class. He flew Expedition 36/37 in 2013, when water leaking into his helmet cut a spacewalk short and changed how NASA guards against suit leaks, and he commanded Expedition 61 in 2019.",
         "His selection as Artemis III pilot is the first time a European astronaut has been assigned to a crewed Artemis mission, and is a significant moment for ESA's role in the program."
       ],
       "career_highlights": [
@@ -84,11 +84,11 @@
       "agency": "NASA",
       "country": "United States",
       "country_flag": "🇺🇸",
-      "image_url": "https://images-assets.nasa.gov/image/NHQ202009160009/NHQ202009160009~orig.jpg",
+      "image_url": "https://images-assets.nasa.gov/image/NHQ202009160009/NHQ202009160009~large.jpg",
       "image_url_fallback": "https://www.nasa.gov/wp-content/uploads/2026/06/artemis-iii-crew.jpg",
       "short_bio": "Army medical doctor and NASA astronaut. Holds the U.S. single-spaceflight record at 371 days.",
       "bio_paragraphs": [
-        "Frank Rubio is a U.S. Army Lieutenant Colonel and family physician selected as a NASA astronaut in 2017. His first spaceflight aboard Soyuz MS-22 was extended after a coolant leak on the original return vehicle, leaving him on the ISS for 371 days — the U.S. record for a single spaceflight.",
+        "Frank Rubio is a U.S. Army Lieutenant Colonel and family physician selected as a NASA astronaut in 2017. His first spaceflight aboard Soyuz MS-22 was extended after a coolant leak on the original return vehicle, leaving him on the ISS for 371 days, the U.S. record for a single spaceflight.",
         "On Artemis III, his medical background and operational endurance make him a known quantity for mission planners working a long-duration docking rehearsal in low Earth orbit."
       ],
       "career_highlights": [
@@ -113,11 +113,11 @@
       "agency": "NASA",
       "country": "United States",
       "country_flag": "🇺🇸",
-      "image_url": "https://images-assets.nasa.gov/image/jsc2024e013660/jsc2024e013660~orig.jpg",
+      "image_url": "https://images-assets.nasa.gov/image/jsc2024e013660/jsc2024e013660~large.jpg",
       "image_url_fallback": "https://www.nasa.gov/wp-content/uploads/2026/06/artemis-iii-crew.jpg",
       "short_bio": "Coast Guard officer and engineer, 2021 NASA astronaut class. First spaceflight.",
       "bio_paragraphs": [
-        "Andre Douglas is a U.S. Coast Guard officer and engineer selected in NASA's 2021 astronaut class — the first class chosen after Artemis was the program of record. His background includes work as a senior staff member at Johns Hopkins Applied Physics Laboratory on lunar surface systems.",
+        "Andre Douglas is a U.S. Coast Guard officer and engineer selected in NASA's 2021 astronaut class, the first chosen after the Artemis program was named. His background includes work as a senior staff member at Johns Hopkins Applied Physics Laboratory on lunar surface systems.",
         "Artemis III will be his first spaceflight."
       ],
       "career_highlights": [
