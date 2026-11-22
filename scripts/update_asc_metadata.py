@@ -212,11 +212,74 @@ def show_current(token: str, app_id: str) -> None:
             print(f"  description (first 300): {desc[:300]}")
 
 
+def show_builds(token: str, app_id: str, version_string: str) -> None:
+    """Print the latest uploaded builds and the build attached to the
+    version in asc_metadata.json. Read-only."""
+    data = asc_request(
+        token,
+        "GET",
+        "/builds",
+        params={
+            "filter[app]": app_id,
+            "sort": "-uploadedDate",
+            "limit": 8,
+            "include": "preReleaseVersion",
+            "fields[builds]": "version,uploadedDate,processingState,expired,preReleaseVersion",
+            "fields[preReleaseVersions]": "version",
+        },
+    )
+    marketing = {
+        item["id"]: item.get("attributes", {}).get("version")
+        for item in data.get("included", [])
+        if item.get("type") == "preReleaseVersions"
+    }
+    builds = data.get("data", [])
+    print(f"=== {len(builds)} latest uploaded builds ===")
+    for build in builds:
+        attrs = build.get("attributes", {})
+        rel = ((build.get("relationships") or {}).get("preReleaseVersion") or {}).get("data") or {}
+        print(
+            f"{marketing.get(rel.get('id'), '?')} ({attrs.get('version')})  "
+            f"uploaded={attrs.get('uploadedDate')}  "
+            f"processing={attrs.get('processingState')}  "
+            f"expired={attrs.get('expired')}"
+        )
+
+    print(f"\n=== version {version_string} ===")
+    version = find_draft_version(token, app_id, version_string)
+    if version is None:
+        print("not created in App Store Connect")
+        return
+    print(f"state={version.get('attributes', {}).get('appStoreState')}")
+    try:
+        attached = asc_request(
+            token,
+            "GET",
+            f"/appStoreVersions/{version['id']}/build",
+            params={"fields[builds]": "version,uploadedDate,processingState"},
+        ).get("data")
+    except RuntimeError as e:
+        print(f"could not read the attached build: {str(e)[:300]}")
+        return
+    if not attached:
+        print("attached build: none")
+    else:
+        attrs = attached.get("attributes", {})
+        print(
+            f"attached build: {attrs.get('version')}  "
+            f"uploaded={attrs.get('uploadedDate')}  "
+            f"processing={attrs.get('processingState')}"
+        )
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--show-current", action="store_true",
                         help="Print recent versions and metadata, do not modify")
+    parser.add_argument("--show-builds", action="store_true",
+                        help="Print uploaded builds and the build attached to "
+                             "the version in asc_metadata.json, do not modify")
     args = parser.parse_args()
 
     if not METADATA_FILE.exists():
@@ -243,6 +306,10 @@ def main() -> int:
 
     if args.show_current:
         show_current(token, app_id)
+        return 0
+
+    if args.show_builds:
+        show_builds(token, app_id, version_string)
         return 0
 
     version = find_draft_version(token, app_id, version_string)
