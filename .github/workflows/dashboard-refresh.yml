@@ -2,13 +2,15 @@ name: Dashboard refresh
 
 # Diagnostic branch only. Do not merge.
 #   mode = stats: read-only GA4 query of push events, printed to the log.
+#   mode = updates: read-only count of app downloads and updates from
+#                 Apple's sales reports, printed to the log.
 #   mode = test:  sends ONE test notification to the single device whose
 #                 push ID is given as "token". Nothing goes to a topic.
 on:
   workflow_dispatch:
     inputs:
       mode:
-        description: "stats, test or topic"
+        description: "stats, updates, test or topic"
         required: true
         default: "stats"
       token:
@@ -41,6 +43,15 @@ jobs:
           GOOGLE_APPLICATION_CREDENTIALS_JSON: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_JSON }}
           GOOGLE_ANALYTICS_PROPERTY_ID: ${{ secrets.GOOGLE_ANALYTICS_PROPERTY_ID }}
         run: python scripts/push_diag.py
+
+      - name: Downloads and updates from Apple (read-only)
+        if: ${{ inputs.mode == 'updates' }}
+        env:
+          APP_STORE_CONNECT_KEY_ID: ${{ secrets.APP_STORE_CONNECT_KEY_ID }}
+          APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
+          APP_STORE_CONNECT_PRIVATE_KEY: ${{ secrets.APP_STORE_CONNECT_PRIVATE_KEY }}
+          APP_STORE_CONNECT_VENDOR_NUMBER: ${{ secrets.APP_STORE_CONNECT_VENDOR_NUMBER }}
+        run: python scripts/asc_updates.py
 
       # The push ID is read from the event file inside the script. It is
       # deliberately not passed through env or the command line, so it is
