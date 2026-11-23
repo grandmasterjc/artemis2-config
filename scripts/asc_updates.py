@@ -100,23 +100,6 @@ def main():
     today = date.today()
     unknown = defaultdict(int)
 
-    print("=== Per month (Apple's monthly reports) ===")
-    print(f"{'month':<9}{'first':>8}{'again':>8}{'updates':>9}  updates by version")
-    month = date(2026, 3, 1)
-    while month < date(today.year, today.month, 1):
-        label = month.strftime("%Y-%m")
-        rows, note = fetch(token, vendor, "MONTHLY", label)
-        if note:
-            print(f"{label:<9}{note}")
-        else:
-            first, again, updates, other = tally(rows)
-            for k, v in other.items():
-                unknown[k] += v
-            split = ", ".join(f"{v}: {n}" for v, n in sorted(updates.items()))
-            print(f"{label:<9}{first:>8}{again:>8}{sum(updates.values()):>9}  {split}")
-        month = date(month.year + (month.month == 12), month.month % 12 + 1, 1)
-
-    print()
     print("=== Per day, last 35 days (Apple's daily reports) ===")
     print(f"{'day':<12}{'first':>8}{'again':>8}{'updates':>9}  updates by version")
     window = defaultdict(int)
