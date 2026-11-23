@@ -1,26 +1,43 @@
 #!/usr/bin/env python3
-"""One-off, read-only diagnostic: do NEW iPhone installs get push?
+"""Read-only report: how many iPhone users open each article alert?
 
-Splits notification_open by when the user first opened the app, so we can
-see whether devices that installed after the 1 Oct 2026 team change ever
-open a push. Prints tables to the log. Writes nothing and sends nothing.
+Used to measure the effect of app 2.5.4 (released 23 Nov 2026), which
+signs phones up for alerts again after a restore from backup. Prints
+tables to the log. Writes nothing and sends nothing.
+
+Push days come from state/push_history.csv on main, so a new alert shows
+up here without changing this script.
 """
+import csv
+import io
 import json
 import os
 import sys
 from collections import defaultdict
+from datetime import datetime, timedelta
 
+import requests
 from google.oauth2 import service_account
 from google.analytics.data_v1beta import BetaAnalyticsDataClient
 from google.analytics.data_v1beta.types import (
     DateRange, Dimension, Filter, FilterExpression, Metric, RunReportRequest,
 )
 
+PUSH_LOG = "https://raw.githubusercontent.com/grandmasterjc/artemis2-config/main/state/push_history.csv"
 
-def bucket(first):
-    if first < "20260801":
-        return "before Aug"
-    return first[:6]  # YYYYMM
+
+def push_days():
+    """{YYYYMMDD: article_id} for every alert in the push log (UTC dates)."""
+    days = {}
+    try:
+        text = requests.get(PUSH_LOG, timeout=30).text
+        for row in csv.DictReader(io.StringIO(text)):
+            stamp = (row.get("timestamp_utc") or "")[:10].replace("-", "")
+            if len(stamp) == 8:
+                days[stamp] = row.get("article_id", "")
+    except Exception as e:  # the report still works without the marks
+        print(f"could not read the push log: {e}")
+    return days
 
 
 def main():
@@ -31,88 +48,88 @@ def main():
         sys.exit(1)
     creds = service_account.Credentials.from_service_account_info(json.loads(sa_json))
     client = BetaAnalyticsDataClient(credentials=creds)
+    pushes = push_days()
 
-    def event_filter(name):
+    def event_filter(name, begins=False):
+        match = (Filter.StringFilter.MatchType.BEGINS_WITH if begins
+                 else Filter.StringFilter.MatchType.EXACT)
         return FilterExpression(filter=Filter(
             field_name="eventName",
-            string_filter=Filter.StringFilter(value=name),
+            string_filter=Filter.StringFilter(match_type=match, value=name),
         ))
 
-    windows = [
-        ("Aug 20 to Sep 30 (old team)", "2026-08-20", "2026-09-30"),
-        ("Oct 8 to today (new team)", "2026-10-08", "today"),
-    ]
-    for label, start, end in windows:
-        print(f"\n== {label}: notification_open by first-session month")
-        resp = client.run_report(RunReportRequest(
-            property=f"properties/{prop}",
-            date_ranges=[DateRange(start_date=start, end_date=end)],
-            dimensions=[Dimension(name="platform"), Dimension(name="firstSessionDate")],
-            metrics=[Metric(name="eventCount"), Metric(name="totalUsers")],
-            dimension_filter=event_filter("notification_open"),
-            limit=20000,
-        ))
-        agg = defaultdict(lambda: [0, 0])
-        for r in resp.rows:
-            plat, first = (v.value for v in r.dimension_values)
-            key = (plat, bucket(first))
-            agg[key][0] += int(r.metric_values[0].value)
-            agg[key][1] += int(r.metric_values[1].value)
-        print("platform  first session  opens  users")
-        for key in sorted(agg):
-            print(f"{key[0]:8s}  {key[1]:13s}  {agg[key][0]:5d}  {agg[key][1]:5d}")
-
-    # New users per month and platform, for scale.
-    print("\n== new users per month")
+    # 1) Per alert: iPhone opens on the push day and the day after.
     resp = client.run_report(RunReportRequest(
         property=f"properties/{prop}",
-        date_ranges=[DateRange(start_date="2026-08-01", end_date="today")],
-        dimensions=[Dimension(name="platform"), Dimension(name="yearMonth")],
-        metrics=[Metric(name="newUsers")],
-        limit=1000,
+        date_ranges=[DateRange(start_date="2026-09-15", end_date="today")],
+        dimensions=[Dimension(name="date"), Dimension(name="platform"), Dimension(name="eventName")],
+        metrics=[Metric(name="eventCount")],
+        dimension_filter=event_filter("notification_", begins=True),
+        limit=20000,
     ))
-    for r in sorted(resp.rows, key=lambda r: [v.value for v in r.dimension_values]):
-        plat, ym = (v.value for v in r.dimension_values)
-        print(f"{plat:8s}  {ym}  {r.metric_values[0].value}")
+    table = defaultdict(lambda: defaultdict(int))
+    for r in resp.rows:
+        d, plat, ev = (v.value for v in r.dimension_values)
+        table[d][(plat, ev)] += int(r.metric_values[0].value)
 
-    # iOS opens by first-session DATE in the new-team window, newest cohorts.
-    print("\n== iOS, Oct 8 to today: opens from users first seen on or after 2026-10-01")
+    def next_day(d):
+        return (datetime.strptime(d, "%Y%m%d") + timedelta(days=1)).strftime("%Y%m%d")
+
+    print("== per alert: opens on the push day plus the day after")
+    print("push day  | iPhone opens | Android opens | Android received | article")
+    for d in sorted(pushes):
+        if d < "20260915":
+            continue
+        n = next_day(d)
+        ios = table[d][("iOS", "notification_open")] + table[n][("iOS", "notification_open")]
+        a_open = table[d][("Android", "notification_open")] + table[n][("Android", "notification_open")]
+        a_recv = table[d][("Android", "notification_receive")] + table[n][("Android", "notification_receive")]
+        print(f"{d}  | {ios:12d} | {a_open:13d} | {a_recv:16d} | {pushes[d]}")
+
+    # 2) iPhone opens by app version for the three latest alerts.
     resp = client.run_report(RunReportRequest(
         property=f"properties/{prop}",
-        date_ranges=[DateRange(start_date="2026-10-08", end_date="today")],
-        dimensions=[Dimension(name="platform"), Dimension(name="firstSessionDate"),
-                    Dimension(name="appVersion")],
+        date_ranges=[DateRange(start_date="45daysAgo", end_date="today")],
+        dimensions=[Dimension(name="date"), Dimension(name="platform"), Dimension(name="appVersion")],
         metrics=[Metric(name="eventCount")],
         dimension_filter=event_filter("notification_open"),
         limit=20000,
     ))
-    rows = []
+    by_version = defaultdict(lambda: defaultdict(int))
     for r in resp.rows:
-        plat, first, ver = (v.value for v in r.dimension_values)
-        if plat == "iOS" and first >= "20261001":
-            rows.append((first, ver, int(r.metric_values[0].value)))
-    for first, ver, n in sorted(rows):
-        print(f"first session {first}  version {ver:8s}  opens {n}")
-    if not rows:
-        print("none")
+        d, plat, ver = (v.value for v in r.dimension_values)
+        if plat == "iOS":
+            by_version[d][ver] += int(r.metric_values[0].value)
+    print("\n== iPhone opens by app version, three latest alerts (push day plus the day after)")
+    for d in sorted(pushes)[-3:]:
+        n = next_day(d)
+        merged = defaultdict(int)
+        for day in (d, n):
+            for ver, count in by_version[day].items():
+                merged[ver] += count
+        parts = ", ".join(f"{ver}: {merged[ver]}" for ver in sorted(merged)) or "none yet"
+        print(f"{d}  {parts}")
 
-    # Today so far.
-    print("\n== today so far, notification events")
+    # 3) How far 2.5.4 has spread.
     resp = client.run_report(RunReportRequest(
         property=f"properties/{prop}",
-        date_ranges=[DateRange(start_date="today", end_date="today")],
-        dimensions=[Dimension(name="platform"), Dimension(name="eventName")],
-        metrics=[Metric(name="eventCount")],
+        date_ranges=[DateRange(start_date="7daysAgo", end_date="today")],
+        dimensions=[Dimension(name="platform"), Dimension(name="appVersion")],
+        metrics=[Metric(name="activeUsers")],
         limit=1000,
     ))
-    seen = False
+    print("\n== iPhone active users by app version, last 7 days")
     for r in sorted(resp.rows, key=lambda r: [v.value for v in r.dimension_values]):
-        plat, ev = (v.value for v in r.dimension_values)
-        if ev.startswith("notification_"):
-            seen = True
-            print(f"{plat:8s}  {ev:26s}  {r.metric_values[0].value}")
-    if not seen:
-        print("no notification events processed yet")
+        plat, ver = (v.value for v in r.dimension_values)
+        if plat == "iOS":
+            print(f"{ver:10s} {r.metric_values[0].value}")
+
+    # 4) Today so far, in case the alert went out today.
+    today = datetime.utcnow().strftime("%Y%m%d")
+    print(f"\n== today so far ({today}, still being processed)")
+    row = table.get(today, {})
+    print(f"iPhone opens: {row.get(('iOS', 'notification_open'), 0)}, "
+          f"Android received: {row.get(('Android', 'notification_receive'), 0)}")
 
 
 if __name__ == "__main__":
