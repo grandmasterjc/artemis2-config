@@ -8,6 +8,7 @@ on:
         type: choice
         options:
           - show-current
+          - show-builds
           - dry-run
           - apply
         default: show-current
@@ -38,6 +39,9 @@ jobs:
           case "${{ inputs.mode }}" in
             show-current)
               python scripts/update_asc_metadata.py --show-current
+              ;;
+            show-builds)
+              python scripts/update_asc_metadata.py --show-builds
               ;;
             dry-run)
               python scripts/update_asc_metadata.py --dry-run
