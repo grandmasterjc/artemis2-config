@@ -266,6 +266,14 @@ Start with: NASA white paper "Why Artemis Will Focus on the Lunar South Polar Re
 Overlap: `lunar-south-pole-november-18` gave the basin three sentences as one reason for the landing site. This piece is about the basin itself, so keep the ice and lighting to a line.
 Added: 2026-11-21, from `lunar-south-pole-november-18`, which called the basin the largest and oldest in the solar system without explaining how it formed or how its age would be measured.
 
+### 24. How safe is a nuclear reactor next to a moon base
+Status: open
+Question: NASA wants a fission reactor running about a kilometer from where astronauts live. What keeps the crew, and the launch, safe?
+What the piece explains: why a reactor that has never run is only mildly radioactive at launch, how shielding and distance cut the dose at the habitat (the Lunar Reactor-1 solicitation allows 5 rem a year at 1 kilometer), what a "permanent, passive safe state" at the end of its life means, how a reactor differs from the plutonium generators Apollo left on the surface, and what the Kilopower ground test showed about a core that regulates itself.
+Start with: NASA Space Power and Reactor Capabilities solicitation (November 2026), DOE-STD-1271, NASA Kilopower/KRUSTY test results, NASA Radioisotope Power Systems safety pages.
+Overlap: `lunar-night-power-november-25` explains why a base needs a reactor and how it makes electricity. Keep this one on radiation, shielding and safety, and give the night-power case a sentence. #12 covers natural space radiation, not the reactor's.
+Added: 2026-11-25, from `lunar-night-power-november-25`, which gave the 5 rem limit and the no-power-before-landing rule without explaining the safety reasoning behind them.
+
 ## Used
 
 (Move entries here, or mark them in place, once an article has been written.)
