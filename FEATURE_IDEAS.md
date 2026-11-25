@@ -130,7 +130,7 @@ Start with: LRO, Lunar Crater Observation and Sensing Satellite (LCROSS),
 Chandrayaan results, NASA candidate landing regions.
 
 ### 9. How to keep a moon base powered through a two-week night
-Status: open
+Status: used 2026-11-25 lunar-night-power-november-25
 Question: The lunar night lasts about 14 Earth days. How do you keep people
 warm and machines running?
 What the piece explains: solar power and its limits, batteries, why NASA is
