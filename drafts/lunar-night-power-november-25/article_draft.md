@@ -10,9 +10,9 @@ push_title: "How do you power a moon base through a two-week night?"
 push_body: "Batteries for 354 hours of darkness would weigh about 44 tons. NASA has just asked industry for a 20-kilowatt reactor instead."
 ---
 
-The sun set on Firefly Aerospace's Blue Ghost lander on March 16, 2025. The spacecraft had worked through 346 hours of daylight since landing on March 2, running on solar power. After sunset it kept going on its batteries for just over five hours and sent its last data at about 6:15 p.m. Central time, according to Firefly. Then it went silent.
+The sun set on Firefly Aerospace's Blue Ghost lander on March 16, 2025. The spacecraft had worked through 346 hours of daylight since landing on March 2, running on solar power. After sunset it kept going on its batteries for more than five hours and sent its last data at about 6:15 p.m. Central time, according to Firefly. Then it went silent.
 
-The night that followed lasted two weeks. Blue Ghost was a robot whose mission was planned to end shortly after dusk. A crewed base has to keep people warm and machines running until the sun comes back.
+The night lasted two weeks. Blue Ghost was a robot whose mission was planned to end shortly after dusk. A crewed base has to keep people warm and machines running until the sun comes back.
 
 On Nov. 23, NASA asked industry to build its answer: Lunar Reactor-1 (LR-1), a fission reactor producing 20 kilowatts of electricity. "A reliable source of safe and abundant energy will be vital to future exploration of the lunar and Martian surface," said Brian Giblin, the program's manager at NASA. Batteries, decaying plutonium and well-chosen ridges at the south pole each cover part of the night. The reactor is NASA's plan for the rest.
 
