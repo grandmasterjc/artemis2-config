@@ -1,6 +1,17 @@
 {
   "updates": [
     {
+      "id": "lunar-night-power-november-25",
+      "title": "The moon's night lasts two weeks, and NASA wants a nuclear reactor to get a base through it",
+      "subtitle": "Sunlight disappears for up to 354 hours at a stretch and the ground cools to minus 208 degrees Fahrenheit. On Nov. 23, NASA asked industry for a 20-kilowatt fission reactor that keeps running in the dark.",
+      "date": "2026-11-25T11:53:32Z",
+      "mission": "artemis3",
+      "premium": false,
+      "hero_image": "https://grandmasterjc.github.io/artemis2-config/updates/images/lunar-night-power-november-25.jpg",
+      "summary": "Sunlight disappears for up to 354 hours at a stretch and the ground cools to minus 208 degrees Fahrenheit. On Nov. 23, NASA asked industry for a 20-kilowatt fission reactor that keeps running in the d",
+      "author": "Joachim Gresslien"
+    },
+    {
       "id": "lunar-south-pole-november-18",
       "title": "Artemis is headed for the moon's south pole because of craters the sun never reaches",
       "subtitle": "Apollo landed six times near the lunar equator and found dry rock. A tilt of 1.5 degrees gives the south pole ice and ridges in near-constant sunlight, on some of the oldest ground on the moon.",
