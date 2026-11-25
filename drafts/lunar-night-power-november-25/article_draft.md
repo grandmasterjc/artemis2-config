@@ -54,6 +54,8 @@ Location does part of the work. At the south pole, where Artemis crews are heade
 
 A team led by Philipp Gläser simulated 19 years of lighting on the ridge between Shackleton and de Gerlache craters for a 2014 study. It found spots that are sunlit 92.3 percent of the time at 2 meters (6.6 feet) above the ground and 95.66 percent at 10 meters (33 feet). The longest stretches of darkness there typically last three to five days.
 
+![Hours of darkness on the moon compared. Graphic: Artemis Briefing.](https://grandmasterjc.github.io/artemis2-config/updates/images/lunar-night-power-november-25-darkness.jpg)
+
 So NASA's solar hardware for the pole stands upright. In 2022 the agency awarded $19.4 million to three companies for prototype arrays that deploy up to 32 feet (10 meters) high, because the sun never climbs far above the polar horizon. The user's guide sets a first-phase target to match: 5 kilowatts of generation and storage, and survival through more than 120 hours, or five days, of darkness.
 
 The well-lit ridges are small, and the ice that draws NASA to the pole lies in craters the sun never reaches.
@@ -62,7 +64,7 @@ The well-lit ridges are small, and the ice that draws NASA to the pole lies in c
 
 A fission reactor makes heat by splitting uranium atoms, in sunlight or without it. In LR-1 that heat will drive a closed Brayton cycle, a sealed loop of gas that spins a turbine, and the fuel will be high-assay low-enriched uranium, according to the American Nuclear Society's summary of the solicitation. Heat the turbine cannot use has to be radiated to space from large panels.
 
-![A model of a liquid-metal-cooled reactor with Brayton power conversion, displayed at NASA Headquarters on March 24, 2026. Credit: NASA/Bill Ingalls.](https://grandmasterjc.github.io/artemis2-config/updates/images/lunar-night-power-november-25-reactor-model.jpg)
+![A model of a liquid-metal-cooled reactor, shown at NASA Headquarters in March 2026. Credit: NASA/Bill Ingalls.](https://grandmasterjc.github.io/artemis2-config/updates/images/lunar-night-power-november-25-reactor-model.jpg)
 
 NASA has run a small space reactor on the ground before. From November 2017 through March 2018, its Kilopower experiment ran in Nevada with a uranium core about the size of a paper towel roll, ending in a 28-hour test at full power, according to the agency.
 
